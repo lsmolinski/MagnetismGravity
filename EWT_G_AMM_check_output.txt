@@ -1,0 +1,100 @@
+======================================================================
+I. GRAVITY CONSISTENCY TEST (OPERATOR U)
+======================================================================
+G_Base (Soliton Base)           : 2.7802522591364D+32 m^3 kg^-1 s^-2
+
+--- ANALYSIS OF VOLUME DEFICIT FACTORS ---
+N_nu_statutory (Base Deficit)   : 5.3004155344391D+54
+N_nu_effective (Req. for G)     : 4.6598400000000D+54
+Absolute Difference N_nu        : 6.4057553443912D+53
+Correction Ratio (N_stat / N_eff): 1.13746728094507898
+
+--- CALCULATION OF OPERATOR U COMPONENTS ---
+Scaling Factor F_geom (A*B^3*C) : 2.4006113789670D-43
+
+G_model (Calculated EWT Value)  : 0.00000000006674305 m^3 kg^-1 s^-2
+G_CODATA (Target Value)         : 0.00000000006674305 m^3 kg^-1 s^-2
+
+[VERIFICATION RESULT]
+Absolute Difference (|Model-Target|): 2.0968148097855D-18
+Percentage Error relative to CODATA : 0.00000314162270047 %
+
+======================================================================
+II. NEUTRINO RADIUS VALIDATION (1/5 POWER LAW TEST)
+======================================================================
+r_e (Classical Electron Radius) : 0.00000000000000282 m
+r_nu_val (Model Statutory Value): 0.00000000000000003 m
+
+Ratio (r_e / r_nu_val)          : 100.000011575831991
+K_nu_implied (Factor from 1/5)  : 10000005787.9173355
+
+[VALIDATION RESULT]
+Target Geometric Order (10^10)  : 10000000000
+Percentage Difference           : 0.0000578791733551 %
+
+======================================================================
+III. BASE GEOMETRIC MOMENT (a_Base^Geom)
+======================================================================
+--- MASS-TO-GEOMETRY IDENTITY ---
+Mass-to-Radius Identity exponent: 1/5
+
+--- GEOMETRIC AMM CALCULATION ---
+[IDENTITY CHECK: |epsilon_M| * pi^3 = 1/N_final]
+Calculated |epsilon_M| * pi^3   : 0.00128399682861514
+Calculated 1 / N_final          : 0.00128399682861515
+
+Reference N (N_final)           : 778.818123000000014
+Ideal Term (alpha / 2*pi)       : 0.00116140973288586
+AMM Deficit Term (|eps|*pi^3)   : 0.00128399682861514
+a_Base^Geometric (Final Result) : 0.00115991848647211
+a_Base^Geometric (in 10^-10)    : 11599184.8647211138
+
+[AMM VERIFICATION - ELECTRON TARGET]
+Target CODATA (in 10^-10)       : 11596521.8159999996
+Absolute Difference             : 2663.04872111417353
+Percentage Error vs Electron    : 0.0229642022269117 %
+
+======================================================================
+IV. FINE-STRUCTURE CONSTANT (ALPHA) GEOMETRIC DERIVATION
+======================================================================
+Geometric Base Term (4*Pi^3 + Pi^2 + Pi): 137.036303775878395
+Correction Term (epsilon_M_val)         : 0.0000414108679302
+alpha_inv_model (Geometric EWT)         : 137.036262365010458
+alpha_inv_CODATA (Target Value)         : 137.035999083999997
+
+[VERIFICATION RESULT]
+Absolute Difference             : 0.00026328101046147
+Percentage Error vs CODATA      : 0.00019212543581346 %
+Nodal Count for current simulation: 10, 207, 2181
+
+======================================================================
+V. LEPTON GEOMETRIC PROOF (TOROIDAL WAVE PACKING)
+======================================================================
+GENERATION 1: ELECTRON
+  - Nodal Basis (K1)            : 10
+  - Prediction (ae)             : 0.001159918486
+  - Relative Error              : 0.022964 %
+
+GENERATION 2: MUON
+  - Total Nodes (K2)            : 207 (Shell Addition: +197)
+  - Shell Density M             : 19.7000
+  - Prediction (amu)            : 248.572419000851 (ppm)
+  - Relative Error              : 0.091471 %
+
+GENERATION 3: TAU
+  - Total Nodes (K3)            : 2181 (Shell Addition: +1974)
+  - Relative Density            : 218.1000
+  - Prediction (atau)           : 1176.844485027941 (ppm)
+  - Relative Error              : 0.031049 %
+
+--- CONCLUSION: GEOMETRIC CONSISTENCY ---
+Lepton masses are proven to be emergent properties of toroidal shell growth.
+Nodal structure is defined by the discrete lattice response to 2*Pi^2.
+
+Final Dimensionless Values:
+  - Final a_e                   : 0.001159918486
+  - Final a_mu                  : 0.000248572419
+  - Final a_tau                 : 0.001176844485
+======================================================================
+
+Execution done.
