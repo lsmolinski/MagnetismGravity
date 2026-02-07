@@ -92,7 +92,7 @@ Version: 4.1.12
 
 \section*{Abstract}
 {\boldmath \textbf{
-A unified geometric wave model is proposed, deriving the Gravitational Constant ($G$), the Fine-Structure Constant ($\alpha$), and lepton anomalous magnetic moments ($a_l$) from a single structural modulator: the geometric vacuum stiffness $|\epsilon_M|$. $G$ is established as a precise, $\hbar$-independent identity rooted in the soliton's wave geometry, achieving 10-digit agreement with experimental benchmarks. The same $|\epsilon_M|$ factor governs a recursive nodal integration that recovers the anomalous magnetic moments of the entire lepton family ($e, \mu, \tau$) without perturbative QED calibrations. The framework posits that the observed invariance of $G$ is a low-field artefact of a dynamic geometric equilibrium, predicting testable deviations ($G_{eff} \neq G$) in environments with strong local magnetic moments where this equilibrium is exceeded.
+A unified geometric wave model is proposed, deriving the Gravitational Constant ($G$), the Fine-Structure Constant ($\alpha$), and lepton anomalous magnetic moments ($a_l$) from a single structural modulator: the geometric vacuum stiffness $\epsilon_M$. $G$ is established as a precise, $\hbar$-independent identity rooted in the soliton's wave geometry, achieving 10-digit agreement with experimental benchmarks. The same $\epsilon_M$ factor governs a recursive nodal integration that recovers the anomalous magnetic moments of the entire lepton family ($e, \mu, \tau$) without perturbative QED calibrations. The framework posits that the observed invariance of $G$ is a low-field artefact of a dynamic geometric equilibrium, predicting testable deviations ($G_{eff} \neq G$) in environments with strong local magnetic moments where this equilibrium is exceeded.
 }}
 \\
 % TODO: include a table of contents (optional)
@@ -266,6 +266,19 @@ The complete equation for the inverse fine-structure constant in the context of 
 \end{equation}
 \noindent Where $\epsilon_{M}$ and $\epsilon_{G}$ are dimensionless geometric correction constants, and $N_{WC}$ is the number of constituent wave centers.
 
+\subsubsection{Normalization of the Deficit Sign}
+
+While Equation \eqref{eq:alpha_full_geometric_deficit} provides the complete algebraic summation of all geometric components, the physical interpretation of the \textbf{Deficit Terms} within the BCC lattice necessitates a sign normalization. The term $\epsilon_{M}$ is established as a strictly positive geometric constant ($\epsilon_{M} > 0$). 
+
+Furthermore, since the contribution of the gravitational deficit ($\sum \epsilon_{G}$) for a single lepton is negligible, the final operative equation for high-precision validation is simplified to the subtraction of the magnetic deficit from the ideal geometric base:
+
+\begin{equation}
+	\frac{1}{\alpha_{\text{final}}} = \left(4\pi^{3} + \pi^{2} + \pi\right) - \epsilon_{M}
+	\label{eq:alpha_normalized_final}
+\end{equation}
+
+This normalization aligns the theoretical geometric model with the observed CODATA value ($137.035999...$), identifying $\epsilon_{M}$ as the \textbf{precise energetic cost} of the particle's spin-induced magnetic moment.
+
 \section{Analysis of Neutrino Boundary Conditions}
 \label{sec:neutrino-analysis}
 
@@ -419,17 +432,17 @@ Consequently, this framework proposes a shift from a kinematic to a structural o
 	\label{fig:neutrino_topology_new}
 \end{figure}
 
-\subsubsection{Dynamic Magnetic Deficit Factor $|\epsilon_{M}|$}
-The final scaling of the Gravitational Constant $\mathbf{G}$ (as derived in Equation \ref{eq:G_EWT_Final_Identity}) is dynamically modulated by the **Magnetic Deficit Factor** ($\mathbf{|\epsilon_{M}}|$) \cite{yee2025geometriccorrection} This dimensionless term is crucial for establishing the total energy balance, linking the Soliton's intrinsic magnetic properties (spin) to the resulting gravitational field.
+\subsubsection{Dynamic Magnetic Deficit Factor $\epsilon_{M}$}
+The final scaling of the Gravitational Constant $\mathbf{G}$ (as derived in Equation \ref{eq:G_EWT_Final_Identity}) is dynamically modulated by the **Magnetic Deficit Factor** ($\mathbf{\epsilon_{M}}$) \cite{yee2025geometriccorrection} This dimensionless term is crucial for establishing the total energy balance, linking the Soliton's intrinsic magnetic properties (spin) to the resulting gravitational field.
 
 The definition of the Magnetic Deficit Factor, derived from the requirements of EMC packing density and volume correction, is given by:
 \begin{equation}
-	\mathbf{|\epsilon_{M}|} \equiv \frac{1}{\mathbf{N}_{\text{final}} \cdot \pi^3}
+	\mathbf{\epsilon_{M}} \equiv \frac{1}{\mathbf{N}_{\text{final}} \cdot \pi^3}
 	\label{eq:epsilon_M_definition}
 \end{equation}
 where $\mathbf{N}_{\text{final}}$ is the dimensionless nodal stiffness constant of the BCC lattice substrate.
 
-The geometric constant $\mathbf{\pi^3}$ contained within $\mathbf{|\epsilon_{M}|}$ is a \textbf{static scaling constant} inherently linked to the \textbf{volumetric constraint} of the standing-wave packing within the BCC lattice. It defines the boundary conditions of the spherical $\mathbf{EMC}$ $\mathbf{quantum}$ $\mathbf{cell}$, ensuring that the Soliton structure remains compatible with the tridimensionality of the medium. In this context, $\mathbf{|\epsilon_{M}|}$ represents the \textbf{linear geometric deficit} resulting from the interplay between the nodal stiffness $N$ and the space-filling requirement of the vacuum lattice.
+The geometric constant $\mathbf{\pi^3}$ contained within $\mathbf{\epsilon_{M}}$ is a \textbf{static scaling constant} inherently linked to the \textbf{volumetric constraint} of the standing-wave packing within the BCC lattice. It defines the boundary conditions of the spherical $\mathbf{EMC}$ $\mathbf{quantum}$ $\mathbf{cell}$, ensuring that the Soliton structure remains compatible with the tridimensionality of the medium. In this context, $\mathbf{\epsilon_{M}}$ represents the \textbf{linear geometric deficit} resulting from the interplay between the nodal stiffness $N$ and the space-filling requirement of the vacuum lattice.
 
 \begin{table}[htbp]
 	\centering
@@ -508,7 +521,7 @@ The derivation of the Gravitational Constant $\mathbf{G}$ presented in equation 
 	
 	\item \textbf{Emergent Base Factor ($\mathbf{\Omega_{E}}$):} The final Emergent Base Factor is constructed by applying the **Effective Volume Deficit** ($\mathbf{N_{\nu, \text{effective}}}$) correction to the static base: $\mathbf{\Omega_{E}} \equiv \mathbf{A}_{\pi} \cdot \frac{1} {\mathbf{\sqrt{\mathbf{N_{\nu, \text{effective}}}}}} $. The term $\mathbf{N_{\nu, \text{effective}}}$ is a dimensionless **Holographic Dilution Factor**, not a count of physical neutrinos. It quantifies the degree to which the effective surface area for energy propagation has been diluted, requiring the square root ($\mathbf{N^{-1/2}}$) to represent a linear decrease in emergent radial flux. This factor defines the overall fundamental gravitational weakness scale based on surface phenomenon emergence.
 	
-	\item \textbf{Dynamic Magnetic Modulator ($\mathbf{\Omega_{M}}$):} The dynamic component, $\mathbf{\Omega_{M}}$, is intrinsically derived from the previously defined **Magnetic Deficit Factor** ($\mathbf{|\epsilon_{M}|}$) and its necessary volume correction: $\mathbf{\Omega_{M}} \equiv \mathbf{|\epsilon_{M}|}^{\mathbf{3}}$.
+	\item \textbf{Dynamic Magnetic Modulator ($\mathbf{\Omega_{M}}$):} The dynamic component, $\mathbf{\Omega_{M}}$, is intrinsically derived from the previously defined **Magnetic Deficit Factor** ($\mathbf{\epsilon_{M}}$) and its necessary volume correction: $\mathbf{\Omega_{M}} \equiv \mathbf{\epsilon_{M}}^{\mathbf{3}}$.
 	
 	\item \textbf{Final Gravitational Identity ($\mathbf{G}_{\text{final}}$):} Combining the $\mathbf{G}_{\text{Base}}$ with the two decomposed geometric modulators yields the final Gravitational Identity, which geometrically resolves the magnitude of the gravitational constant:
 	\begin{equation}
@@ -527,14 +540,14 @@ The powers and roots within the geometric factor $\mathbf{\Omega_G}$ are not arb
 \subsubsection*{Static Geometric Volume ($\mathbf{\pi^3}$)}
 The explicit presence of the geometric constant $\pi^3$ in the definition of
 \[
-|\epsilon_{M}| = \frac{1}{N_{\rm final}\,\pi^3}
+\epsilon_{M} = \frac{1}{N_{\rm final}\,\pi^3}
 \]
 serves a dual purpose. On the one hand, it is a \emph{static, dimensionless scaling constant} derived from the modal density of the Soliton, codifying the volumetric normalization of the 3D EMC quantum cell. On the other hand, its explicit form highlights the geometric origin of the correction: $\pi^3$ is not an arbitrary coefficient, but the natural volumetric factor that arises from three-dimensional packing. Presenting the factor in symbolic form rather than hiding it in a numerical value emphasizes that the Enhanced EWT Model is grounded in geometry rather than empirical fitting.
 
-\subsubsection*{Potency 3: Dynamic Volume Scaling ($\mathbf{|\epsilon_M|}^{\mathbf{3}}$)}
-The term $\left( \frac{1}{\mathbf{N}_{\text{final}} \pi^{3}} \right)^{3}$, representing the Dynamic Magnetic Correction ($\mathbf{|\epsilon_M|}^{\mathbf{3}}$), is raised to the \textbf{third power} to account for the \textbf{volume-based nature of the Soliton's mass and energy}. The stability of the Soliton, maintained by the magnetic field of its spinning wave structure, scales volumetrically. This exponent $\mathbf{3}$ confirms that the magnetic energy is balanced across all three spatial dimensions, acting as a dynamic volume correction factor.
+\subsubsection*{Potency 3: Dynamic Volume Scaling ($\mathbf{\epsilon_M}^{\mathbf{3}}$)}
+The term $\left( \frac{1}{\mathbf{N}_{\text{final}} \pi^{3}} \right)^{3}$, representing the Dynamic Magnetic Correction ($\mathbf{\epsilon_M}^{\mathbf{3}}$), is raised to the \textbf{third power} to account for the \textbf{volume-based nature of the Soliton's mass and energy}. The stability of the Soliton, maintained by the magnetic field of its spinning wave structure, scales volumetrically. This exponent $\mathbf{3}$ confirms that the magnetic energy is balanced across all three spatial dimensions, acting as a dynamic volume correction factor.
 
-\textbf{Crucially, the factor $\mathbf{|\epsilon_M|}$ quantifies the internal magnetic coherence state, not simply the external dipole moment.} The model posits that $\mathbf{G}$ is fundamentally proportional to the presence of the geometric structure responsible for magnetism. Consequently, a system **inherently lacking a magnetic source** (a hypothetical particle without the required Soliton structure) would exhibit drastically weaker or zero gravity. Conversely, a loss of the *macroscopic* magnetic moment due to **quantum interference/coherence** (such as in a Bose-Einstein Condensate) is predicted to result in only a **subtle modulation** ($\delta_{\rm BEC}$) of $G$, which constitutes the key testable distinction (Section \ref{sec:BEC_test}).
+\textbf{Crucially, the factor $\mathbf{\epsilon_M}$ quantifies the internal magnetic coherence state, not simply the external dipole moment.} The model posits that $\mathbf{G}$ is fundamentally proportional to the presence of the geometric structure responsible for magnetism. Consequently, a system **inherently lacking a magnetic source** (a hypothetical particle without the required Soliton structure) would exhibit drastically weaker or zero gravity. Conversely, a loss of the *macroscopic* magnetic moment due to **quantum interference/coherence** (such as in a Bose-Einstein Condensate) is predicted to result in only a **subtle modulation** ($\delta_{\rm BEC}$) of $G$, which constitutes the key testable distinction (Section \ref{sec:BEC_test}).
 
 \subsubsection*{Square Root: Gravitational Surface Effect ($\mathbf{\sqrt{\mathbf{N_{\nu, \text{effective}}}}})$}
 The application of the \textbf{square root} to the Volume Deficit ($\mathbf{N_{\nu, \text{effective}}}$) suggests that gravity is an \textbf{emergent surface phenomenon} rather than a purely volumetric force. Since $\mathbf{N_{\nu}}$ scales with volume ($\sim L^3$), the resulting $\mathbf{\sqrt{\mathbf{N_{\nu}}}}$ is a scale factor that aligns with the principle that gravitational information is encoded on the boundary (surface) of the Soliton, representing the **surface tension** or strain induced on the Elastic Medium. This surface scaling aligns conceptually with the **holographic and thermodynamic principles of gravity** \cite{padmanabhan2010thermodynamics, verlinde2016emergent}.
@@ -632,7 +645,7 @@ Although the geometric potential distribution is mathematically modeled by the s
 \subsection{Asymptotic Justification of the Constant Factor $\mathbf{\pi^3}$}
 \label{sec:pi3}
 
-The constant factor $\mathbf{\pi^3}$, which appears in the geometric corrections (e.g., in the denominator of the magnetic deficit factor $\mathbf{|\epsilon_{M}|}$), originates from the discrete structure of standing modes within a three-dimensional spherical resonator. A brief, asymptotic justification based on classical modal calculations (Weyl's law / counting of states) is provided below to explain why the ratio of length and natural radial quantization yields $\mathbf{\pi}$ factors that combine into $\mathbf{\pi^3}$.
+The constant factor $\mathbf{\pi^3}$, which appears in the geometric corrections (e.g., in the denominator of the magnetic deficit factor $\mathbf{\epsilon_{M}}$), originates from the discrete structure of standing modes within a three-dimensional spherical resonator. A brief, asymptotic justification based on classical modal calculations (Weyl's law / counting of states) is provided below to explain why the ratio of length and natural radial quantization yields $\mathbf{\pi}$ factors that combine into $\mathbf{\pi^3}$.
 
 Consider standing waves in a spherical space with radius $r_{\nu}$ under Dirichlet boundary conditions. In the asymptotic (high-modal) limit, the number of modes with a wave vector $\boldsymbol{\kappa}\le \mathbf{\kappa}_{\text{max}}$ satisfies Weyl's law:
 \begin{equation}
@@ -752,24 +765,24 @@ The numerical result for the geometric model is $\mathbf{G_{\rm model} \approx 6
 
 \section{The Core Soliton Model: Wave Equation and Internal Stability}\label{sec:soliton_stability}
 
-The geometric identity derived for $\mathbf{G}$ fundamentally relies on the internal parameters of the Soliton, specifically the effective geometric deficit ($\mathbf{N_{\nu, \text{effective}}}$) and the dynamic magnetic correction ($\mathbf{|\epsilon_{M}|}$). This section formalizes the wave equation that governs the stability and existence of the Soliton (the Wave Center), confirming the necessity of these geometric factors in its core mechanics.
+The geometric identity derived for $\mathbf{G}$ fundamentally relies on the internal parameters of the Soliton, specifically the effective geometric deficit ($\mathbf{N_{\nu, \text{effective}}}$) and the dynamic magnetic correction ($\mathbf{\epsilon_{M}}$). This section formalizes the wave equation that governs the stability and existence of the Soliton (the Wave Center), confirming the necessity of these geometric factors in its core mechanics.
 
 \subsection{Soliton Stability: The Non-linear Wave Equation}
 
-The stability of the Electron as a Soliton is governed by a non-linear wave equation that must include a term $\mathcal{F}$ preventing dispersion, which is closely related to the aether's elasticity. This stabilizing force must explicitly depend on the dynamic magnetic correction $\mathbf{|\epsilon_{M}|}$, which dictates the Soliton's internal energy and spin coherence.
+The stability of the Electron as a Soliton is governed by a non-linear wave equation that must include a term $\mathcal{F}$ preventing dispersion, which is closely related to the aether's elasticity. This stabilizing force must explicitly depend on the dynamic magnetic correction $\mathbf{\epsilon_{M}}$, which dictates the Soliton's internal energy and spin coherence.
 
 \begin{itemize}
 	\item \textbf{General Form of the Soliton Wave Equation:}
 	\begin{equation}
-		\left( \frac{\partial^2}{\partial t^2} - c^2 \nabla^2 \right) \Psi(\mathbf{r}, t) + \mathcal{F}(\Psi, \mathbf{\epsilon_{G}}, \mathbf{|\epsilon_{M}|}, N_{\nu}) = 0
+		\left( \frac{\partial^2}{\partial t^2} - c^2 \nabla^2 \right) \Psi(\mathbf{r}, t) + \mathcal{F}(\Psi, \mathbf{\epsilon_{G}}, \mathbf{\epsilon_{M}}, N_{\nu}) = 0
 		\label{eq:soliton_wave_eq}
 	\end{equation}
 	\item \textbf{Example of Stabilizing Nonlinear Term $\mathcal{F}$:} The term $\mathcal{F}$ is required to be non-linear with respect to the wave function $\Psi$ to balance dispersion. A possible specific form, known from NLS equations, is:
 	\begin{equation}
-		\mathcal{F} = k(\mathbf{|\epsilon_{M}|}) \cdot \Psi^{3}
+		\mathcal{F} = k(\mathbf{\epsilon_{M}}) \cdot \Psi^{3}
 		\label{eq:stabilizing_force_example}
 	\end{equation}
-	This term is understood to represent the non-linear interaction energy of the Elastic Medium Constituent. The coefficient $k(\mathbf{|\epsilon_{M}|})$ describes the non-linear elasticity of the aether medium, and is explicitly a function of the \textbf{Dynamic Magnetic Deficit ($\mathbf{|\epsilon_{M}|}$)}. This dependence confirms that the Soliton's stability and its resulting mass (energy) are intrinsically linked to its internal magnetic/spin coherence, which is necessary for the geometric self-stabilization demonstrated in the derivation of $\mathbf{G}$.
+	This term is understood to represent the non-linear interaction energy of the Elastic Medium Constituent. The coefficient $k(\mathbf{\epsilon_{M}})$ describes the non-linear elasticity of the aether medium, and is explicitly a function of the \textbf{Dynamic Magnetic Deficit ($\mathbf{\epsilon_{M}}$)}. This dependence confirms that the Soliton's stability and its resulting mass (energy) are intrinsically linked to its internal magnetic/spin coherence, which is necessary for the geometric self-stabilization demonstrated in the derivation of $\mathbf{G}$.
 \end{itemize}
 
 \section{Relation to Existing Emergent Gravity Frameworks}
@@ -787,7 +800,7 @@ The EWT model differs from established EG frameworks in three critical aspects: 
 \begin{itemize}
 	\item \textbf{Thermodynamic/Entropic (Jacobson, Verlinde):} The DoF are typically macroscopic or informational, related to the **area elements of a holographic screen** or **entanglement** between quantum fields in the vacuum.
 	\item \textbf{Induced (Sakharov):} The DoF are the **quantum fields themselves**, with gravity arising from the zero-point energy of the vacuum.
-	\item \textbf{EWT (Geometric Soliton):} The DoF are \textbf{explicitly geometric} and local: the internal structure and energy density profile $\mathbf{\rho(r)}$ of the Soliton, and its internal magnetic coherence $\mathbf{|\epsilon_M|}$. This provides a tangible, particle-scale physical realization of the underlying DoF.
+	\item \textbf{EWT (Geometric Soliton):} The DoF are \textbf{explicitly geometric} and local: the internal structure and energy density profile $\mathbf{\rho(r)}$ of the Soliton, and its internal magnetic coherence $\mathbf{\epsilon_M}$. This provides a tangible, particle-scale physical realization of the underlying DoF.
 \end{itemize}
 
 \subsubsection{Source of Gravitational Emergence}
@@ -813,9 +826,9 @@ The frameworks rely on fundamentally different scaling parameters to define the 
 	\item \textbf{Induced (Sakharov):} $G$ is inversely proportional to the **fourth power of the quantum field theory cutoff scale ($\mathbf{\Lambda}$)**, $\mathbf{G} \propto 1/\mathbf{\Lambda}^4$.
 	\item \textbf{EWT (Geometric Soliton):} $G$ is scaled by the complete, derived, dimensionless scaling factor $\mathbf{\Omega_G}$:
 	$$
-	\mathbf{G} = \mathbf{G}_{\text{Base}} \cdot \mathbf{\Omega_G}, \quad \text{where } \mathbf{\Omega_G} = \mathbf{A}_{\pi} \cdot \mathbf{N_{\nu, \text{effective}}}^{-1/2} \cdot \mathbf{|\epsilon_M|}^{\mathbf{3}}
+	\mathbf{G} = \mathbf{G}_{\text{Base}} \cdot \mathbf{\Omega_G}, \quad \text{where } \mathbf{\Omega_G} = \mathbf{A}_{\pi} \cdot \mathbf{N_{\nu, \text{effective}}}^{-1/2} \cdot \mathbf{\epsilon_M}^{\mathbf{3}}
 	$$
-	The EWT scaling factor is \textbf{explicitly constructed} from the Soliton's geometric parameters ($\mathbf{A}_{\pi}$ and $\mathbf{N}_{\nu, \text{effective}}$) and magnetic coherence ($\mathbf{|\epsilon_M|}$), linking $G$ to the Soliton's internal dynamics rather than external thermodynamic quantities.
+	The EWT scaling factor is \textbf{explicitly constructed} from the Soliton's geometric parameters ($\mathbf{A}_{\pi}$ and $\mathbf{N}_{\nu, \text{effective}}$) and magnetic coherence ($\mathbf{\epsilon_M}$), linking $G$ to the Soliton's internal dynamics rather than external thermodynamic quantities.
 \end{itemize}
 
 The EWT model thus acts as a bridge, providing the explicit, geometric and non-thermodynamic identity $\mathcal{U}(\mathbf{P})$ required to link fundamental particle parameters to the macroscopic gravitational constant $G$, while remaining compatible with the holographic and entropic concepts that underlie the vacuum structure.
@@ -874,17 +887,17 @@ The quintic relationship between energy and radius ($E \propto r^5$), as identif
 The product of these factors ($r^3 \times r^1 \times r^1 = r^5$) confirms that mass is a measure of "dynamic information density". However, the divergence between this quintic energy surge and the cubic geometric compensation capacity ($\propto r^3$) explains the precision limits encountered in earlier models (e.g., the 10-16\% error for the muon and tau in \cite{yee2014leptons}). 
 
 The EWT expansion presented in this work resolves these discrepancies through the \textbf{Onion Model} described in \ref{sec:onion_analysis}. By identifying the $r^5/r^3$ disparity as a mechanical saturation point, it is shown that the vacuum must redistribute excess potential into recursive, nested geometric shells. This transition ensures that the energy density remains within the elastic limits of the lattice, allowing for the 10-digit precision achieved in the derivation of $a_\mu$, $a_\tau$, and the gravitational constant $G$.
-\subsection{The Fundamental Magnetic Deficit $|\epsilon_M|$}
+\subsection{The Fundamental Magnetic Deficit $\epsilon_M$}
 \label{sec:magnetic_deficit}
 
-In EWT, the magnetic moment correction is a purely geometric phenomenon resulting from the non-ideal stiffness of the elastic medium. The fundamental magnetic deficit constant, $|\epsilon_M|$, is defined by the stiffness modulus ($N$) and the volumetric factor ($\pi^3$):
+In EWT, the magnetic moment correction is a purely geometric phenomenon resulting from the non-ideal stiffness of the elastic medium. The fundamental magnetic deficit constant, $\epsilon_M$, is defined by the stiffness modulus ($N$) and the volumetric factor ($\pi^3$):
 
 \begin{equation}
 	\label{eq:epsilon_M_fundamental}
-	|\epsilon_M| \equiv \frac{1}{N \cdot \pi^3}
+	\epsilon_M \equiv \frac{1}{N \cdot \pi^3}
 \end{equation}
 
-The total stiffness deficit (Loss Factor) of the elastic medium is thus expressed as $|\epsilon_M| \cdot \pi^3 = 1/N$.
+The total stiffness deficit (Loss Factor) of the elastic medium is thus expressed as $\epsilon_M \cdot \pi^3 = 1/N$.
 
 \subsection{Derivation of the $a_e$ Base Formula}
 \label{sec:a_e_derivation}
@@ -893,7 +906,7 @@ The anomalous magnetic moment of the electron ($a_e$) is derived as the product 
 
 \begin{equation}
 	\label{eq:a_base_geom}
-	\boxed{a_{\text{Base}}^{\text{Geometric}} = \frac{\alpha}{2\pi} \cdot \left( 1 - |\epsilon_M| \cdot \pi^3 \right)}
+	\boxed{a_{\text{Base}}^{\text{Geometric}} = \frac{\alpha}{2\pi} \cdot \left( 1 - \epsilon_M \cdot \pi^3 \right)}
 \end{equation}
 
 Numerical verification, using $N = 778.818123$ and $\alpha \approx 0.0072973525693$, yields $a_{\text{Base}}^{\text{Geometric}} \approx 11599184.86 \times 10^{-10}$. This result aligns with the experimental value of the electron ($a_e^{\text{exp}} \approx 11596521.82 \times 10^{-10}$) with a relative error of approximately $0.0229\%$, establishing the electron as the fundamental geometric ground state.
@@ -1020,19 +1033,19 @@ The transition from the electron core to higher-order generations is governed by
 \subsubsection*{1. Generation 1: Electron Root ($n=1$)}
 Established by the core nodal count ($K_e=10$) and the primary geometric modulator:
 \begin{equation}
-	a_{e} = \frac{\alpha}{2\pi} \cdot (1 - |\epsilon_M| \pi^3)
+	a_{e} = \frac{\alpha}{2\pi} \cdot (1 - \epsilon_M \pi^3)
 \end{equation}
 
 \subsubsection*{2. Generation 2: Muon Expansion ($n=2$)}
 The first toroidal shell contribution is modulated by the Fibonacci invariant $L_{\mu}=5$. The operator $B_{\mu}$ accounts for the planar resonance surface within the BCC lattice:
 \begin{equation}
-	a_{\mu} = a_{e} + B_{\mu} \cdot (1 - |\epsilon_M|)^{M_{\mu} \pi^3}, \quad \text{where} \quad B_{\mu} = \frac{3 A_{\pi} \pi^3}{2 L_{\mu}^2}
+	a_{\mu} = a_{e} + B_{\mu} \cdot (1 - \epsilon_M)^{M_{\mu} \pi^3}, \quad \text{where} \quad B_{\mu} = \frac{3 A_{\pi} \pi^3}{2 L_{\mu}^2}
 \end{equation}
 
 \subsubsection*{3. Generation 3: Tau Expansion ($n=3$)}
 The second shell expansion incorporates the 3D structural impedance of the BCC vacuum. The energy density is projected onto the 8 primary vertices of the unit cell, adjusted by the diagonal factor $\sqrt{2}$:
 \begin{equation}
-	a_{\tau} = a_{\mu} + \left[ B_{\tau} \cdot (1 - |\epsilon_M|)^{M_{\tau} \pi^3} \right] + L_{\mu}^2
+	a_{\tau} = a_{\mu} + \left[ B_{\tau} \cdot (1 - \epsilon_M)^{M_{\tau} \pi^3} \right] + L_{\mu}^2
 \end{equation}
 The Tau-specific coupling constant $B_{\tau}$ includes the geometric vacuum offset $A_{\pi}/2$:
 \begin{equation}
@@ -1042,7 +1055,7 @@ The Tau-specific coupling constant $B_{\tau}$ includes the geometric vacuum offs
 
 
 \subsubsection*{Physical Interpretation: Geometric Continuity}
-The term $L_{\mu}^2 = 25$ functions as the \textbf{interface tension}, a residual binding energy that anchors the high-density Tau shell to the Muon core. Unlike the Standard Model's radiative corrections, the EWT framework defines these generations as structural phase transitions of the soliton's tail. As the nodal count $K$ increases, the increased damping $(1 - |\epsilon_M|)^{M \pi^3}$ reflects the growing lattice-mediated resistance against the magnetic spin precession.
+The term $L_{\mu}^2 = 25$ functions as the \textbf{interface tension}, a residual binding energy that anchors the high-density Tau shell to the Muon core. Unlike the Standard Model's radiative corrections, the EWT framework defines these generations as structural phase transitions of the soliton's tail. As the nodal count $K$ increases, the increased damping $(1 - \epsilon_M)^{M \pi^3}$ reflects the growing lattice-mediated resistance against the magnetic spin precession.
 
 \subsubsection*{Physical Interpretation: Geometric Transition from 2D to 3D}
 The structural difference between the coupling constants $B_{\mu}$ and $B_{\tau}$ reflects the evolution of the lepton resonance as it expands through the BCC vacuum:
@@ -1086,7 +1099,7 @@ The emergence of the recursive "Onion Model" is not an arbitrary structural choi
 \subsection{Final Results and Experimental Correlation}
 \label{sec:final_experimental_proof}
 
-The anomalous magnetic moments derived purely from the BCC lattice geometry ($K_n$) and the universal stiffness deficit ($|\epsilon_M|$) are compared against CODATA benchmarks. The values presented in Table \ref{tab:final_results_confirmed} represent the standalone geometric predictions from the EWT simulation.
+The anomalous magnetic moments derived purely from the BCC lattice geometry ($K_n$) and the universal stiffness deficit ($\epsilon_M$) are compared against CODATA benchmarks. The values presented in Table \ref{tab:final_results_confirmed} represent the standalone geometric predictions from the EWT simulation.
 
 \begin{table}[ht]
 	\centering
@@ -1107,7 +1120,7 @@ The high convergence observed in Table \ref{tab:final_results_confirmed}, partic
 
 \subsection{Conclusion: Geometric Continuity and Physics Beyond the Standard Model}
 
-The alignment of the Tau prediction ($0.031\%$) and Muon prediction ($0.091\%$) using a standalone recursive law proves that lepton masses and anomalies are emergent properties of toroidal wave-packing. Crucially, while the magnetic deficit $|\epsilon_M|$ is required to establish the electron's ground state, the subsequent generations effectively inherit this core geometric tension. 
+The alignment of the Tau prediction ($0.031\%$) and Muon prediction ($0.091\%$) using a standalone recursive law proves that lepton masses and anomalies are emergent properties of toroidal wave-packing. Crucially, while the magnetic deficit $\epsilon_M$ is required to establish the electron's ground state, the subsequent generations effectively inherit this core geometric tension. 
 
 It is important to note that the residual relative errors may not necessarily represent model inaccuracies, but rather the artifacts of interpreting experimental data through the lens of the Standard Model (SM). While SM treats leptons as point-like particles with radiative corrections (Feynman diagrams), EWT defines them as extended toroidal resonances within a discrete lattice. The "Muon g-2" tension observed in modern physics further supports the possibility that current experimental benchmarks are influenced by vacuum-interaction effects that only a geometric, lattice-based theory like EWT can fully account for. The $10^{n-1} \cdot 2\pi^2$ relationship thus establishes a deterministic bridge between discrete lattice topology and observed moments, offering a path toward a more fundamental description of particle physics.
 
@@ -1127,7 +1140,7 @@ In a discrete BCC lattice, only specific degrees of freedom are permitted for st
 \end{itemize}
 
 \subsubsection*{3. AMM as a Manifestation of Vacuum Elasticity}
-In the EWT framework, the anomalous magnetic moment (AMM) is not a byproduct of virtual particle loops, but a direct measure of the medium's stiffness deficit ($|\epsilon_M|$). The simulation results prove that the Muon and Tau are not distinct elementary particles, but the same fundamental core (Electron) subject to increased geometric resistance. The precision of the Tau prediction ($1176.8$ ppm) confirms that the lepton hierarchy is strictly determined by the topology of the lattice medium.
+In the EWT framework, the anomalous magnetic moment (AMM) is not a byproduct of virtual particle loops, but a direct measure of the medium's stiffness deficit ($\epsilon_M$). The simulation results prove that the Muon and Tau are not distinct elementary particles, but the same fundamental core (Electron) subject to increased geometric resistance. The precision of the Tau prediction ($1176.8$ ppm) confirms that the lepton hierarchy is strictly determined by the topology of the lattice medium.
 
 \subsubsection*{4. Structural Impedance and Dimensional Transition ($B_{\mu}$ vs $B_{\tau}$)}
 The physical transition from the Muon to the Tau generation represents a shift in how the vacuum medium resists the toroidal expansion. 
@@ -1284,51 +1297,51 @@ As established in Sections \ref{density_duality}–\ref{sec:hyp_1_pushout}, the 
 	The soliton maintains stability through the vacuum stiffness $N$, which prevents structural collapse at the elastic limit. Rather than undergoing dissolution, the base electron soliton serves as the fundamental geometric substrate for subsequent layers. Higher generations (muon and tau) do not replace the electron but emerge as nested shells (\textit{Onion Model}) necessitated by the scaling disparity between the quintic increase of the base potential ($r^5$) and the cubic capacity of the geometric push-out mechanism ($r^3$). This non-linear divergence provides a deterministic proof that particle generations are not distinct entities, but recursive wave resonances required to maintain equilibrium when the energy density of a single-cell soliton exceeds the vacuum's volumetric compensation threshold.
 \end{quote}
 
-This dual causality reveals that the observed invariance of $G$ is a result of the exact cancellation between energy concentration and geometric restoration, a balance maintained by the vacuum's elastic modulus $N$. This equilibrium is dynamically stable as long as the magnetic coherence term remains within its \textbf{admissible range}. In this regime, the increase in internal energy concentration is precisely balanced by the structural dilution of the packing density. In the EWT framework, this balance is quantified by the universal geometric modulator $|\epsilon_M| \pi^3$, which acts as the restoring force of the vacuum lattice:
+This dual causality reveals that the observed invariance of $G$ is a result of the exact cancellation between energy concentration and geometric restoration, a balance maintained by the vacuum's elastic modulus $N$. This equilibrium is dynamically stable as long as the magnetic coherence term remains within its \textbf{admissible range}. In this regime, the increase in internal energy concentration is precisely balanced by the structural dilution of the packing density. In the EWT framework, this balance is quantified by the universal geometric modulator $\epsilon_M \pi^3$, which acts as the restoring force of the vacuum lattice:
 
 \begin{equation}
 	\label{eq:compensation_condition_final}
-	\Delta \rho_E \text{ (concentration)} \approx - \Delta \rho(r) \text{ (push-out deficit)} \propto |\epsilon_M| \pi^3
+	\Delta \rho_E \text{ (concentration)} \approx - \Delta \rho(r) \text{ (push-out deficit)} \propto \epsilon_M \pi^3
 \end{equation}
 
 The neutrino, \textbf{lacking magnetic coherence}, cannot enter this compensatory regime, which explains its \textbf{larger equilibrium radius} ($r_{\nu}$) as derived in Section \ref{eq:r_nu_corr}. While the charged leptons (electron, muon, tau) are "compressed" by their intrinsic magnetic/spin energy, the neutrino remains in a relaxed geometric state, defining the statutory volume of the medium deficit used to calculate the base Gravitational Constant $G$.
 
 \textbf{Critically, the invariance of $G$ is therefore not fundamental but emergent, arising from the self-regulating geometry of the soliton.} While the observable outcome is numerically equivalent to Hypothesis 3 (static $G$), the physical genesis in EWT is a metastable result of active geometric compensation. 
 
-The non-linear scaling disparity between the magnetic deficit (modulated by $|\epsilon_M| \pi^3 \propto r^3$) and the energy storage ($\propto r^5$) ensures that in extreme fields, such as those defining the heavy lepton shells, this compensation must follow the recursive "Onion Model" logic. The fact that the Tau lepton achieves the highest predictive precision ($0.0057\%$) confirms that the apparent constancy of $G$ and $\alpha$ is a \textbf{low-field artefact} of the vacuum's elastic limit, rather than an absolute universal principle.
+The non-linear scaling disparity between the magnetic deficit (modulated by $\epsilon_M \pi^3 \propto r^3$) and the energy storage ($\propto r^5$) ensures that in extreme fields, such as those defining the heavy lepton shells, this compensation must follow the recursive "Onion Model" logic. The fact that the Tau lepton achieves the highest predictive precision ($0.0057\%$) confirms that the apparent constancy of $G$ and $\alpha$ is a \textbf{low-field artefact} of the vacuum's elastic limit, rather than an absolute universal principle.
 
 The potential empirical validity of Hypothesis 3 (static $G$) does not invalidate the EWT framework; rather, it identifies the specific regime where the Geometric Compensation Effect achieves near-perfect equilibrium. In this context, a constant $G$ is not a rigid fundamental postulate, but an emergent property of the vacuum lattice's elastic resilience. The model remains robust as it explains why $G$ appears constant, while simultaneously predicting the extreme physical conditions  under which this apparent invariance must break down.
 
-\section{Interpretation: Geometric Factor $|\mathbf{\epsilon_M}|$ vs. Magnetic Permeability}
+\section{Interpretation: Geometric Factor $\mathbf{\epsilon_M}$ vs. Magnetic Permeability}
 \label{sec:EM_vs_mu0}
 
-The universal geometric factor $|\mathbf{\epsilon_M}|$, defined as
+The universal geometric factor $\mathbf{\epsilon_M}$, defined as
 $\frac{1}{\mathbf{N}_{\text{final}} \cdot \pi^3}$ in Equation (\ref{eq:epsilon_M_definition}) \textemdash which relates the Soliton structure $\mathbf{N}$ to the geometric constant $\mathbf{\pi^3}$ \textemdash can be interpreted as a \emph{geometric analogue} of the vacuum magnetic permeability $\mu_0$.
 
 \subsubsection*{Static Geometric Volume ($\mathbf{\pi^3}$)}
-The explicit presence of the geometric constant $\pi^3$ in the definition of the factor $|\mathbf{\epsilon_M}|$ serves a dual purpose. On the one hand, it is a \emph{static, dimensionless scaling constant} derived from the modal density of the Soliton, codifying the volumetric normalization of the 3D EMC quantum cell. On the other hand, its explicit form highlights the geometric origin of the correction: $\pi^3$ is not an arbitrary coefficient, but the natural volumetric factor that arises from three-dimensional standing-wave packing. Presenting the factor in symbolic form rather than hiding it in a numerical value emphasizes that the Enhanced EWT Model is grounded in geometry rather than empirical fitting, and makes clear that the same volumetric coherence principle underlies the corrections to $G$, $\alpha$, and the recursive hierarchical structure of lepton AMM.
+The explicit presence of the geometric constant $\pi^3$ in the definition of the factor $\mathbf{\epsilon_M}$ serves a dual purpose. On the one hand, it is a \emph{static, dimensionless scaling constant} derived from the modal density of the Soliton, codifying the volumetric normalization of the 3D EMC quantum cell. On the other hand, its explicit form highlights the geometric origin of the correction: $\pi^3$ is not an arbitrary coefficient, but the natural volumetric factor that arises from three-dimensional standing-wave packing. Presenting the factor in symbolic form rather than hiding it in a numerical value emphasizes that the Enhanced EWT Model is grounded in geometry rather than empirical fitting, and makes clear that the same volumetric coherence principle underlies the corrections to $G$, $\alpha$, and the recursive hierarchical structure of lepton AMM.
 
 \subsection{Conceptual Comparison}
 \begin{itemize}
-	\item \textbf{Definition:} The factor $|\mathbf{\epsilon_M}|$ arises from discrete mode counting and radial quantization in a soliton resonator, whereas $\mu_0$ is a fundamental constant describing the magnetic response of vacuum.
-	\item \textbf{Units:} $|\mathbf{\epsilon_M}|$ is dimensionless, acting as a structural correction factor. $\mu_0$ carries SI units (H/m).
-	\item \textbf{Physical Role:} Both quantify the ``magnetic elasticity'' of a medium: $|\mathbf{\epsilon_M}|$ for the soliton structure, $\mu_0$ for free space.
-	\item \textbf{Implications:} The presence of $|\mathbf{\epsilon_M}|$ in $G$, $\alpha$, and AMM equations suggests that gravitational and electromagnetic couplings share a common volumetric coherence factor.
+	\item \textbf{Definition:} The factor $\mathbf{\epsilon_M}$ arises from discrete mode counting and radial quantization in a soliton resonator, whereas $\mu_0$ is a fundamental constant describing the magnetic response of vacuum.
+	\item \textbf{Units:} $\mathbf{\epsilon_M}$ is dimensionless, acting as a structural correction factor. $\mu_0$ carries SI units (H/m).
+	\item \textbf{Physical Role:} Both quantify the ``magnetic elasticity'' of a medium: $\mathbf{\epsilon_M}$ for the soliton structure, $\mu_0$ for free space.
+	\item \textbf{Implications:} The presence of $\mathbf{\epsilon_M}$ in $G$, $\alpha$, and AMM equations suggests that gravitational and electromagnetic couplings share a common volumetric coherence factor.
 \end{itemize}
 
 \subsection{Testable Consequences}
-If $|\mathbf{\epsilon_M}|$ indeed plays the role of a geometric permeability:
+If $\mathbf{\epsilon_M}$ indeed plays the role of a geometric permeability:
 \begin{enumerate}
 	\item Systems with enhanced magnetic coherence (e.g. solitonic states) should exhibit measurable shifts in $G_{\rm eff}$.
 	\item Bose--Einstein condensates, where macroscopic magnetic moments are suppressed by quantum interference, should show only subtle modulations $\delta_{\rm BEC}$ of $G$ (as detailed in Section \ref{sec:BEC_test}).
-	\item Observation of such effects would support the interpretation of $|\mathbf{\epsilon_M}|$ as a structural counterpart to $\mu_0$.
+	\item Observation of such effects would support the interpretation of $\mathbf{\epsilon_M}$ as a structural counterpart to $\mu_0$.
 \end{enumerate}
 \subsection{Discussion and Implications for SM Structure}
 
-This analogy strengthens the unification perspective: just as $\mu_0$ links electromagnetism to the speed of light via $c^2 = 1/(\mu_0 \varepsilon_0)$, the factor $|\epsilon_M| \pi^3$ in the EWT framework provides the essential link between gravitational strength, fine structure, and the hierarchical magnetic anomalies of the lepton family through a unified geometric origin.
+This analogy strengthens the unification perspective: just as $\mu_0$ links electromagnetism to the speed of light via $c^2 = 1/(\mu_0 \varepsilon_0)$, the factor $\epsilon_M \pi^3$ in the EWT framework provides the essential link between gravitational strength, fine structure, and the hierarchical magnetic anomalies of the lepton family through a unified geometric origin.
 
 \subsubsection*{Geometric Permeability: The Missing Structural Link}
-The successful incorporation of the universal term $|\epsilon_M| \pi^3$ into the fundamental derivations of $G$, $\alpha$, and the recursive AMM sequence ($a_e, a_{\mu}, a_{\tau}$) demonstrates that the geometric stiffness of the soliton is the primary physical driver of magnetic anomalies.
+The successful incorporation of the universal term $\epsilon_M \pi^3$ into the fundamental derivations of $G$, $\alpha$, and the recursive AMM sequence ($a_e, a_{\mu}, a_{\tau}$) demonstrates that the geometric stiffness of the soliton is the primary physical driver of magnetic anomalies.
 
 
 
@@ -1390,11 +1403,11 @@ Rather than assuming a static universality or relying on empirical mass-scaling,
 \end{equation}
 This result aligns with current experimental benchmarks and CODATA-referenced targets with a relative precision of \textbf{0.031049\%}. 
 
-Achieving this level of accuracy for the most massive lepton generation — using the universal stiffness deficit $|\epsilon_M|$ and the Fibonacci-Lucas invariant $L_{\tau}=34$ — provides a definitive test for the EWT framework. It confirms that the hierarchical scaling of lepton anomalies is a topological consequence of the soliton's nodal expansion within the BCC lattice. This mechanism effectively replaces the mass-dependent perturbative calibrations (QED loops) of the Standard Model with a single, unified geometric modulator.
+Achieving this level of accuracy for the most massive lepton generation — using the universal stiffness deficit $\epsilon_M$ and the Fibonacci-Lucas invariant $L_{\tau}=34$ — provides a definitive test for the EWT framework. It confirms that the hierarchical scaling of lepton anomalies is a topological consequence of the soliton's nodal expansion within the BCC lattice. This mechanism effectively replaces the mass-dependent perturbative calibrations (QED loops) of the Standard Model with a single, unified geometric modulator.
 
 \subsection{Magnetic Sensitivity $G(B)$ and Hypotheses Testing}
 \label{sec:G_magnetic_sensitivity_pp}
-The model predicts a dependence of the effective value of $G$ on the degree of internal magnetic coherence, quantified by the geometric factor $|\epsilon_M|$. As established in Section \ref{sec:emergent_gravity_equilibrium}, the observed invariance of $G$ in standard environments is interpreted as a \textbf{low-field artefact} maintained by the dynamic geometric equilibrium between energy density ($\rho_E \propto r^5$) and volumetric displacement ($\rho \propto r^3$). 
+The model predicts a dependence of the effective value of $G$ on the degree of internal magnetic coherence, quantified by the geometric factor $\epsilon_M$. As established in Section \ref{sec:emergent_gravity_equilibrium}, the observed invariance of $G$ in standard environments is interpreted as a \textbf{low-field artefact} maintained by the dynamic geometric equilibrium between energy density ($\rho_E \propto r^5$) and volumetric displacement ($\rho \propto r^3$). 
 
 Consequently, the central prediction $G_{eff} \neq G$ is expected to manifest primarily in \textbf{extreme magnetic environments} where this compensatory mechanism reaches its non-linear limit. The sign of the predicted change is determined by the Magneto-Geometric Hypotheses:
 \begin{itemize}
@@ -1402,18 +1415,18 @@ Consequently, the central prediction $G_{eff} \neq G$ is expected to manifest pr
 	\item $G_{eff} < G$ is consistent with the \textbf{Consolidation Mechanism (Hypothesis 2)}.
 \end{itemize}
 
-The approximation $\Delta G/G \simeq |\epsilon_M| \pi^3$ represents the \textbf{theoretical saturation limit} of the vacuum modulation. However, in laboratory conditions, this effect is heavily suppressed by the compensatory geometric equilibrium. The observable shift is thus scaled by a coupling efficiency factor $\xi(B)$, where:
+The approximation $\Delta G/G \simeq \epsilon_M \pi^3$ represents the \textbf{theoretical saturation limit} of the vacuum modulation. However, in laboratory conditions, this effect is heavily suppressed by the compensatory geometric equilibrium. The observable shift is thus scaled by a coupling efficiency factor $\xi(B)$, where:
 \begin{equation}
-	\left( \frac{\Delta G}{G} \right)_{obs} = \xi(B) \cdot |\epsilon_M| \pi^3
+	\left( \frac{\Delta G}{G} \right)_{obs} = \xi(B) \cdot \epsilon_M \pi^3
 \end{equation}
 For standard laboratory fields, $\xi(B) \approx 10^{-7}$ to $10^{-10}$, bringing the predicted deviation into the reachable, yet challenging range of $10^{-9} - 10^{-12}$ relative precision.
 
 
 \subsection{AMM as a Strong Test of Geometric Universality}
 \label{sec:amm_strong_test}
-Because AMM measurements are exceptionally precise, they provide an ideal testing ground for the EWT geometric mechanism. The \textbf{geometric scaling} proposed here is parsimonious, as it eliminates independent coupling constants in favor of the universal modulator $|\epsilon_M| \pi^3$.
+Because AMM measurements are exceptionally precise, they provide an ideal testing ground for the EWT geometric mechanism. The \textbf{geometric scaling} proposed here is parsimonious, as it eliminates independent coupling constants in favor of the universal modulator $\epsilon_M \pi^3$.
 
-\textbf{Most importantly, the EWT framework predicts that the hierarchical shift in AMM across generations (Electron $\to$ Muon $\to$ Tau) is governed by a single, deterministic recursive rule.} This provides a fundamental conflict with the Standard Model, where mass-dependent shifts arise from independent virtual particle loops. The ability of the EWT to match the Tau anomaly with a precision of $\mathbf{0.0310\%}$ using only the core geometric deficit $|\epsilon_M|$ and structural invariants $L_{dim}$ makes AMM the prime discriminant between structural determinism and perturbative QFT.
+\textbf{Most importantly, the EWT framework predicts that the hierarchical shift in AMM across generations (Electron $\to$ Muon $\to$ Tau) is governed by a single, deterministic recursive rule.} This provides a fundamental conflict with the Standard Model, where mass-dependent shifts arise from independent virtual particle loops. The ability of the EWT to match the Tau anomaly with a precision of $\mathbf{0.0310\%}$ using only the core geometric deficit $\epsilon_M$ and structural invariants $L_{dim}$ makes AMM the prime discriminant between structural determinism and perturbative QFT.
 \subsection{Correlations with Neutrino Flux}
 \label{sec:neutrino_correlations_pp}
 Since $G$ emerges from the $N_{\nu, \text{effective}}$ scaling, the model admits minute, local correlations between the measured $G$ value and the intensity of the neutrino flux. High local neutrino flux densities should momentarily induce a subtle change in the **local properties of the Elastic Medium**, implying measurable sub-ppm modulations in the effective measured $G$.
@@ -1429,7 +1442,7 @@ The hypothesis of the modal nature of $\pi^3$ implies that changes in the intern
 The unified geometric model allows for new tests regarding the medium's response to high-energy perturbations.
 
 \subsubsection*{GW Speed and Dispersion.}
-If the Gravitational Constant $G$ is an emergent property linked to the vacuum's geometric deficit $|\epsilon_M|$, the propagation of gravitational waves (GWs) through the cosmic neutrino background might exhibit subtle dispersion effects.
+If the Gravitational Constant $G$ is an emergent property linked to the vacuum's geometric deficit $\epsilon_M$, the propagation of gravitational waves (GWs) through the cosmic neutrino background might exhibit subtle dispersion effects.
 \begin{equation}
 	v_{\rm GW} \;\simeq\; c \cdot \left(1 - \delta_{\rm dispersion}\right),
 \end{equation}
@@ -1438,11 +1451,11 @@ where $\delta_{\rm dispersion}$ is a deviation factor depending on the local nod
 
 \subsection{Test on Bose-Einstein Condensates (BEC)}
 \label{sec:BEC_test}
-The core identity of the model suggests that gravitational interaction is proportional to the internal magnetic coherence, quantified by the universal modulator $|\epsilon_M| \pi^3$. Bose-Einstein Condensates (BEC) represent macroscopic quantum states where individual magnetic properties (spins) align into a single, coherent wave function.
+The core identity of the model suggests that gravitational interaction is proportional to the internal magnetic coherence, quantified by the universal modulator $\epsilon_M \pi^3$. Bose-Einstein Condensates (BEC) represent macroscopic quantum states where individual magnetic properties (spins) align into a single, coherent wave function.
 
 If the EWT model is correct, the gravitational coupling of a system in the BEC state should differ from its non-coherent state:
 \begin{equation}
-	G_{\rm eff}^{\rm (BEC)} \; = \; G \cdot (1 + \delta_{\rm BEC}), \qquad \delta_{\rm BEC} \propto |\epsilon_M| \pi^3
+	G_{\rm eff}^{\rm (BEC)} \; = \; G \cdot (1 + \delta_{\rm BEC}), \qquad \delta_{\rm BEC} \propto \epsilon_M \pi^3
 \end{equation}
 where $\delta_{\rm BEC}$ represents the shift in effective gravitational coupling due to the emergence of collective coherence. 
 
@@ -1450,7 +1463,7 @@ where $\delta_{\rm BEC}$ represents the shift in effective gravitational couplin
 
 \textbf{The Primary Prediction:} Consistent with the \textbf{Push-Out Mechanism (Hypothesis 1)}, the EWT model predicts that the effective gravitational constant will increase upon BEC formation ($G_{eff} > G$). 
 
-The relevance of the BEC test lies in the transition from stochastic to coherent geometric strain. While the compensatory equilibrium ($\rho_E$ vs $\rho$) masks non-linearities in individual solitons, the BEC state acts as a \textbf{"quantum lever"}. The macroscopic wave function synchronizes the $|\epsilon_M| \pi^3$ contributions across the entire cloud, making the $G_{eff} \neq G$ deviation detectable even at ultra-low energy densities.
+The relevance of the BEC test lies in the transition from stochastic to coherent geometric strain. While the compensatory equilibrium ($\rho_E$ vs $\rho$) masks non-linearities in individual solitons, the BEC state acts as a \textbf{"quantum lever"}. The macroscopic wave function synchronizes the $\epsilon_M \pi^3$ contributions across the entire cloud, making the $G_{eff} \neq G$ deviation detectable even at ultra-low energy densities.
 
 \emph{Test:} A high-precision measurement of gravitational acceleration ($g$) acting on an ultra-cold atomic cloud **before** and **after** BEC transition. Utilizing atom interferometry and cold atom gravity gradiometers, this test seeks to verify $\delta_{\rm BEC} \neq 0$, providing the first experimental evidence of the $\text{coherence} \to \text{gravity}$ coupling.
 
@@ -1463,7 +1476,7 @@ The following outcomes represent critical tests that can either **falsify the co
 	\item \textbf{Falsification of Fundamental Constants ($G$):} Precise measurements of $G$ consistently rejecting $G_{\rm model}$ (Eq. \ref{sec:g_predictions_pp}) beyond the level of uncertainty while maintaining the assumed values of microscopic parameters.
 	\item \textbf{Falsification of Dynamic Coupling ($G(B)$):} The observation of a null effect, i.e., the absence of any observed $G(B)$ dependence above the detection threshold, assuming the technical feasibility of such a test. This outcome would support \textbf{Hypothesis 3 (No Influence)} and refute the core idea of magneto-geometric coupling.
 	\item \textbf{Falsification of Correlations:} The absence of statistical correlations between fluctuations in $G$ and external factors (neutrino flux, magnetic fields) within the range predicted by the model (ref. Section \ref{sec:neutrino_correlations_pp}).
-	\item \textbf{Falsification of Recursive Lepton Scaling ($a_{\tau}$):} Future high-precision measurements of the Tau Anomalous Magnetic Moment ($a_{\tau}$) that deviate significantly from the recursive prediction based on the universal geometric modulator $|\epsilon_M| \pi^3$. The model is falsified if $a_{\tau}$ does not follow the predicted hierarchical nodal growth established in Table \ref{tab:final_results_confirmed}, which currently aligns with experimental targets within a relative precision of \textbf{0.031049\%}.
+	\item \textbf{Falsification of Recursive Lepton Scaling ($a_{\tau}$):} Future high-precision measurements of the Tau Anomalous Magnetic Moment ($a_{\tau}$) that deviate significantly from the recursive prediction based on the universal geometric modulator $\epsilon_M \pi^3$. The model is falsified if $a_{\tau}$ does not follow the predicted hierarchical nodal growth established in Table \ref{tab:final_results_confirmed}, which currently aligns with experimental targets within a relative precision of \textbf{0.031049\%}.
 \end{itemize}
 
 \subsection{Practical Considerations and Detection Limits}
@@ -1529,7 +1542,7 @@ The second robustness test evaluates the stability of the fine-structure constan
 The analysis of the results presented in Figure \ref{fig:alpha_sensitivity} confirms:
 \begin{itemize}
 	\item \textbf{Geometric Necessity:} Precise alignment with $\alpha^{-1}_{\text{CODATA}}$ ($\approx 137.035999$) occurs only when the complete stability factor is applied. The "Golden Point" intersection at $N \approx 778.818$ proves that the fine-structure constant emerges from a rigid geometric base corrected by a finite magnetic deficit.
-	\item \textbf{Force Hierarchy Indication:} The sensitivity analysis reveals that while the modulator $|\epsilon_M|$ is shared by both $G$ and $\alpha^{-1}$, the gravitational constant operates on a significantly different scale of the volume deficit ($N_{\nu}$). The slight shift in the required $N$ between the electromagnetic and gravitational optimal points provides a geometric explanation for the hierarchy problem and the relative weakness of gravity.
+	\item \textbf{Force Hierarchy Indication:} The sensitivity analysis reveals that while the modulator $\epsilon_M$ is shared by both $G$ and $\alpha^{-1}$, the gravitational constant operates on a significantly different scale of the volume deficit ($N_{\nu}$). The slight shift in the required $N$ between the electromagnetic and gravitational optimal points provides a geometric explanation for the hierarchy problem and the relative weakness of gravity.
 \end{itemize}
 
 \subsection{Phase Space Analysis: EWT Trajectory vs Standard Model Interpretation}
@@ -1548,7 +1561,7 @@ The phase space mapping between the inverse fine-structure constant ($\alpha^{-1
 
 While the experimental CODATA 2022 point aligns closely with this EWT trajectory, a systematic shift of $\Delta a_e \approx 2663.04 \times 10^{-10}$ is observed. In the framework of EWT, this residual relative error ($0.0229\%$) is interpreted not as a model inaccuracy, but as a \textbf{systematic interpretational artifact} of the Standard Model (SM). 
 
-The observed tension suggests that current experimental benchmarks are inherently influenced by vacuum-interaction effects that the Standard Model misinterprets as radiative corrections (Feynman diagrams) due to its point-like particle assumption. The consistency of this shift across all lepton generations—as evidenced by the $0.0915\%$ and $0.0310\%$ offsets in the Muon and Tau \textit{Geometric Base}—proves that the magnetic deficit $|\epsilon_M|$ establishes a core geometric tension inherited by all leptonic states. This confirms that the EWT trajectory represents the true physical vacuum state, while the SM-interpreted values are effectively "shifted" by the dimensional mismatch between toroidal wave-packing and point-like mathematics.
+The observed tension suggests that current experimental benchmarks are inherently influenced by vacuum-interaction effects that the Standard Model misinterprets as radiative corrections (Feynman diagrams) due to its point-like particle assumption. The consistency of this shift across all lepton generations—as evidenced by the $0.0915\%$ and $0.0310\%$ offsets in the Muon and Tau \textit{Geometric Base}—proves that the magnetic deficit $\epsilon_M$ establishes a core geometric tension inherited by all leptonic states. This confirms that the EWT trajectory represents the true physical vacuum state, while the SM-interpreted values are effectively "shifted" by the dimensional mismatch between toroidal wave-packing and point-like mathematics.
 
 \subsection{Parametric Unification: The Stability Path of $G$ and $\alpha$}
 \label{sec:parametric_unification}
@@ -1718,20 +1731,20 @@ This computational framework aims to serve as a \textbf{theoretical complement t
 
 The formalization within the Energy Wave Theory (EWT) establishes the \textbf{Minimal Wave Center (WC)} – the Neutrino Soliton – as a fundamental geometric structure. The central finding of this work is the derivation of the gravitational constant ($\mathbf{G}$) as a precise, $\hbar$-independent geometric identity equation (\ref{eq:G_EWT_Final_Identity}), **and the prediction of the Muon Anomalous Magnetic Moment ($\mathbf{a_{\mu}}$) via the same underlying geometric parameters.** This necessitates a critical re-evaluation of the Soliton's geometric parameters.
 
-\subsection{Geometric Unification in a Nutshell: The $|\epsilon_M|$ Flowchart}
+\subsection{Geometric Unification in a Nutshell: The $\epsilon_M$ Flowchart}
 \label{sec:nutshell}
 
-The Enhanced EWT Model operates on the principle of \textbf{Structural Monism}, where all fundamental coupling constants are derived from the same vacuum stiffness deficit. Rather than treating gravitation, electromagnetism, and lepton anomalies as independent phenomena, they are expressed as direct geometric functions of the primary modulator $|\epsilon_M|$.
+The Enhanced EWT Model operates on the principle of \textbf{Structural Monism}, where all fundamental coupling constants are derived from the same vacuum stiffness deficit. Rather than treating gravitation, electromagnetism, and lepton anomalies as independent phenomena, they are expressed as direct geometric functions of the primary modulator $\epsilon_M$.
 
 The unified schematic of this derivation is summarized as follows:
 
 \begin{equation}
-	|\epsilon_M| \implies 
+	\epsilon_M \implies 
 	\begin{cases} 
-		G = G_{\text{Base}} \cdot \mathbf{A}_{\pi}^{-1} \cdot |\epsilon_M|^3 \cdot \frac{1}{\sqrt{N_{\nu, \text{effective}}}} & \text{(Gravitational Weakness)} \\
-		\alpha^{-1} = \mathbf{A}_{\pi}^{-1} - |\epsilon_M| & \text{(Electromagnetic Scaling)} \\
-		a_e = \frac{\alpha}{2\pi} \cdot \left( 1 - |\epsilon_M| \cdot \pi^3 \right) & \text{(Magnetic Deficit)} \\
-		R_l = \text{recursive}(|\epsilon_M|, L_{Fib}) & \text{(Leptonic Shell Resonance)}
+		G = G_{\text{Base}} \cdot \mathbf{A}_{\pi}^{-1} \cdot {\epsilon_M}^3 \cdot \frac{1}{\sqrt{N_{\nu, \text{effective}}}} & \text{(Gravitational Weakness)} \\
+		\alpha^{-1} = \mathbf{A}_{\pi}^{-1} - \epsilon_M & \text{(Electromagnetic Scaling)} \\
+		a_e = \frac{\alpha}{2\pi} \cdot \left( 1 - \epsilon_M \cdot \pi^3 \right) & \text{(Magnetic Deficit)} \\
+		R_l = \text{recursive}(\epsilon_M, L_{Fib}) & \text{(Leptonic Shell Resonance)}
 	\end{cases}
 \end{equation}
 
@@ -1741,7 +1754,7 @@ In the unified flowchart, the ratio between the modulator and the geometric back
 \begin{itemize}
 	\item \textbf{Local Volumetric Deficit ($V$):} 
 	\begin{equation}
-		|\epsilon_M|^3 \implies V \propto r^3
+		{\epsilon_M}^3 \implies V \propto r^3
 	\end{equation}
 	
 	\item \textbf{Conserved Energy as Mass and Charge ($E$):} 
@@ -1753,14 +1766,14 @@ In the unified flowchart, the ratio between the modulator and the geometric back
 The gravitational coupling thus emerges as the mechanical projection of a $r^3$ volumetric void onto a $r^5$ energy background.
 
 \subsubsection*{The Unitary Geometric Path}
-As illustrated in the schematic, $|\epsilon_M|$ acts as the \textbf{Universal Gear Ratio} of the vacuum lattice. A single modulator simultaneously determines:
+As illustrated in the schematic, $\epsilon_M$ acts as the \textbf{Universal Gear Ratio} of the vacuum lattice. A single modulator simultaneously determines:
 \begin{itemize}
 	\item The curvature of the vacuum (yielding $G$);
 	\item The nodal density of the lattice (yielding $\alpha^{-1}$);
 	\item The damping of the magnetic precession across generations (yielding $a_e, a_{\mu}, a_{\tau}$).
 \end{itemize}
 
-This flowchart confirms that the Enhanced EWT Model is not a collection of independent equations, but a \textbf{Unitary Geometric Circuit}. Any change in the value of $|\epsilon_M|$ would simultaneously shift all fundamental constants, maintaining the internal coherence of the BCC vacuum topology.
+This flowchart confirms that the Enhanced EWT Model is not a collection of independent equations, but a \textbf{Unitary Geometric Circuit}. Any change in the value of $\epsilon_M$ would simultaneously shift all fundamental constants, maintaining the internal coherence of the BCC vacuum topology.
 
 \subsection{The Geometry of the Constituent: From Cubic Grids to Spherical Units}
 \label{sec:spherical_geometry}
@@ -1818,7 +1831,7 @@ From a thermodynamic and structural perspective, the \textbf{EMC Push-Out Mechan
 \subsection{Pillar 2: The Dynamic Scaling Operator $\mathbf{\Omega}_{\text{EMCs Push Out}}$: Duality of Correction}
 \label{sec:Pillar3_pushout_duality}
 
-The Dynamic Push Out Operator, $\mathbf{\Omega}_{\text{EMCs Push Out}} \equiv \mathbf{T}_{\text{I}} \mathbf{T}_{\text{II}}$, is the central mechanism in the $\mathbf{G}$ equation, performing a dual corrective function essential for bridging the scales between the Elastic Medium's potential and the observed gravity. This operator contains the geometric factors (such as the magnetic component $\mathbf{|\epsilon_{M}|}$) derived from the Soliton's internal dynamics.
+The Dynamic Push Out Operator, $\mathbf{\Omega}_{\text{EMCs Push Out}} \equiv \mathbf{T}_{\text{I}} \mathbf{T}_{\text{II}}$, is the central mechanism in the $\mathbf{G}$ equation, performing a dual corrective function essential for bridging the scales between the Elastic Medium's potential and the observed gravity. This operator contains the geometric factors (such as the magnetic component $\mathbf{\epsilon_{M}}$) derived from the Soliton's internal dynamics.
 
 \subsubsection*{Dual Action of the Push Out Operator:}
 The terms $\mathbf{T}_{\text{I}}$ and $\mathbf{T}_{\text{II}}$ operate simultaneously to achieve two necessary scaling effects on the gravitational equation:
@@ -1830,10 +1843,10 @@ The terms $\mathbf{T}_{\text{I}}$ and $\mathbf{T}_{\text{II}}$ operate simultane
 This duality confirms that the dynamic structural changes within the Soliton are the single source for achieving the correct order of magnitude for the gravitational constant, simultaneously defining the initial suppression of $\mathbf{G}_{\text{Base}}$ and the mitigation of the $\mathbf{N_{\nu}}$ scale difference.
 
 \subsubsection*{Unifying Role of Magnetic-Geometric Coupling}
-The factor $\mathbf{|\epsilon_M|}$ identified as the component reducing the gravitational scale discrepancy also plays a central role in the model's prediction of the \textbf{lepton anomalous magnetic moments ($\mathbf{g-2})_{l}$}. The geometrical derivation of this universal correction is governed by the structural scaling shown in section \eqref{sec:recursive_math_final}, demonstrating that the same Soliton structure is responsible for both the emergence of gravity and the quantum magnetic correction. Crucially, the extension of this mechanism to the higher-order generations (Muon and Tau) via recursive nodal integration is formalized as the final proof of the model's consistency in \textbf{Pillar 3} (see Section \ref{sec:Pillar3_recursive}).
+The factor $\mathbf{\epsilon_M}$ identified as the component reducing the gravitational scale discrepancy also plays a central role in the model's prediction of the \textbf{lepton anomalous magnetic moments ($\mathbf{g-2})_{l}$}. The geometrical derivation of this universal correction is governed by the structural scaling shown in section \eqref{sec:recursive_math_final}, demonstrating that the same Soliton structure is responsible for both the emergence of gravity and the quantum magnetic correction. Crucially, the extension of this mechanism to the higher-order generations (Muon and Tau) via recursive nodal integration is formalized as the final proof of the model's consistency in \textbf{Pillar 3} (see Section \ref{sec:Pillar3_recursive}).
 
 \subsubsection*{Stability Invariance: The Nodal Anchor}
-A fundamental property of the $\mathbf{\Omega}_{\text{EMCs Push Out}}$ operator is its inherent resistance to geometric noise. As demonstrated in the numerical robustness analysis (Section \ref{sec:robustness_lepton}), the operator functions as a \textbf{mechanical anchor} within the BCC lattice. While the base gravitational potential is highly sensitive to the volumetric deficit, the magnetic-geometric coupling $|\epsilon_M|$ exhibits a self-stabilizing behavior. Any fluctuation in the resonance radius $dr/r$ is countered by a restorative shift in the nodal stiffness $N$, effectively "locking" the anomalous magnetic moments into their respective generation-specific corridors. This confirms that the duality of correction is not merely a numerical coincidence, but a structurally enforced stability gain that ensures the consistency of physical constants across diverse scales.
+A fundamental property of the $\mathbf{\Omega}_{\text{EMCs Push Out}}$ operator is its inherent resistance to geometric noise. As demonstrated in the numerical robustness analysis (Section \ref{sec:robustness_lepton}), the operator functions as a \textbf{mechanical anchor} within the BCC lattice. While the base gravitational potential is highly sensitive to the volumetric deficit, the magnetic-geometric coupling $\epsilon_M$ exhibits a self-stabilizing behavior. Any fluctuation in the resonance radius $dr/r$ is countered by a restorative shift in the nodal stiffness $N$, effectively "locking" the anomalous magnetic moments into their respective generation-specific corridors. This confirms that the duality of correction is not merely a numerical coincidence, but a structurally enforced stability gain that ensures the consistency of physical constants across diverse scales.
 
 \subsection{Pillar 3: The Recursive Paradigm – Hierarchical Nodal Integration}
 \label{sec:Pillar3_recursive}
@@ -1844,7 +1857,7 @@ The EWT model achieves its final unification by extending the geometric logic to
 The predictive power of this recursive model lies in its autonomy: the anomalies for the muon and tau are not independent parameters, but are \textbf{mandatory, correlated results} of the same underlying vacuum lattice deficit established in the core. As detailed in the structural derivation, the anomaly for each generation is a deterministic expansion of the preceding total. This recursive architecture replaces the perturbative "loop" paradigm of the Standard Model with a single, \textbf{Unified Geometric Identity}. Here, the Fibonacci invariants act as the physical "latches" that stabilize the toroidal wave-packing within the BCC medium, ensuring that the soliton remains commensurate with the vacuum lattice.
 
 \subsubsection*{Numerical Verification of the Hierarchy}
-As demonstrated in Table \ref{tab:final_results_confirmed}, the EWT model successfully recovers the experimental benchmarks for all three generations. The fact that the standalone prediction for the Tau lepton reaches a relative precision of \textbf{0.031049\%} using only the core geometric deficit $|\epsilon_M|$ and structural growth rules confirms that the "Onion Model" correctly identifies the physical evolution of the lepton. This provides a definitive test: the hierarchical scaling of lepton anomalies is shown to be a topological consequence of the soliton's expansion within the BCC lattice.
+As demonstrated in Table \ref{tab:final_results_confirmed}, the EWT model successfully recovers the experimental benchmarks for all three generations. The fact that the standalone prediction for the Tau lepton reaches a relative precision of \textbf{0.031049\%} using only the core geometric deficit $\epsilon_M$ and structural growth rules confirms that the "Onion Model" correctly identifies the physical evolution of the lepton. This provides a definitive test: the hierarchical scaling of lepton anomalies is shown to be a topological consequence of the soliton's expansion within the BCC lattice.
 
 \subsubsection*{Stability of the Recursive Chain}
 The robustness of this hierarchical integration is confirmed by the stability analysis in Figure \ref{fig:lepton_stability}. The "Onion Model" exhibits a self-correcting gradient: while the Muon shell operates on a planar compliance, the Tau shell transitions to a higher volumetric impedance. The numerical results show that even under a $\pm5\%$ lattice fluctuation, the recursive chain remains anchored to the global nodal stiffness $N$. This proves that the Fibonacci invariants $L_{dim}$ are not merely scaling factors, but mechanical limiters that enforce the topological continuity of the lepton family, shielding the high-density Tau shell from vacuum decoherence.
@@ -1862,14 +1875,14 @@ As established in the preceding sections, the Soliton is a region of dual densit
 In standard laboratory conditions, this process reaches a state of \textbf{Geometric Equilibrium} where (Section \ref{sec:dynamic_equilibrium}):
 \begin{equation}
 	\label{eq:compensation_condition_final}
-	\Delta \rho_E \text{ (concentration)} \approx - \Delta \rho(r) \text{ (push-out deficit)} \propto |\epsilon_M| \pi^3
+	\Delta \rho_E \text{ (concentration)} \approx - \Delta \rho(r) \text{ (push-out deficit)} \propto \epsilon_M \pi^3
 \end{equation}
 This equilibrium ensures that the external observer perceives $G$ as a static invariant. This suggests that the \textbf{apparent constancy of $G$ is a low-field artefact}—a metastable state where the self-regulating geometry of the Soliton masks its underlying magneto-geometric coupling. Only in extreme magnetic environments, where the non-linear scaling of $\rho_E$ ($\propto r^5$) outpaces the volumetric deficit ($\propto r^3$), does this compensation break, revealing the true dynamic nature of gravity.
 
 
 
 \subsubsection{Symmetry Breaking in Extreme Magnetic Fields}
-The EWT model predicts that the geometric compensation between energy density and volumetric displacement is not universal. The non-linear scaling disparity between the volumetric magnetic deficit (governed by the $|\epsilon_M| \pi^3$ modulator $\propto r^3$) and the internal energy storage potential ($\propto r^5$) ensures that in environments of extreme magnetic flux density $\mathbf{B}$, the "admissible range" of this self-regulation is exceeded. 
+The EWT model predicts that the geometric compensation between energy density and volumetric displacement is not universal. The non-linear scaling disparity between the volumetric magnetic deficit (governed by the $\epsilon_M \pi^3$ modulator $\propto r^3$) and the internal energy storage potential ($\propto r^5$) ensures that in environments of extreme magnetic flux density $\mathbf{B}$, the "admissible range" of this self-regulation is exceeded. 
 
 
 
@@ -1890,7 +1903,7 @@ The dimensionless Total Gravitational Weakness Factor ($\mathbf{\Omega_G}$) that
 		\item \textbf{Effective Volume Deficit ($\mathbf{N_{\nu, \text{effective}}}$):} This component confirms the emergence of gravity as a **surface phenomenon** ($\propto 1/\sqrt{\mathbf{N_{\nu, \text{effective}}}}$), correcting the raw geometric deficit based on the Soliton's internal non-uniform density.
 	\end{enumerate}
 	
-	\item \textbf{Dynamic Magnetic Modulator ($\mathbf{\Omega_{M}}$):} This factor is the **cube of the Magnetic Deficit Factor ($\mathbf{|\epsilon_{M}|}^{\mathbf{3}}$)**. The base factor is $\mathbf{|\epsilon_{M}|} \equiv \mathbf{\frac{1}{\mathbf{N}_{\text{final}} \cdot \pi^3}}$, where the term $\mathbf{\pi^3}$ represents the **static geometric volume** (modal density) $\mathbf{of}$ $\mathbf{the}$ **3D EMC quantum cell**. The exponent $\mathbf{3}$ (external) represents a necessary **dynamic volume correction factor** required to balance the total energy, clearly separating the static cell volume ($\mathbf{\pi^3}$) from the overall dynamic scaling (exponent $\mathbf{3}$).
+	\item \textbf{Dynamic Magnetic Modulator ($\mathbf{\Omega_{M}}$):} This factor is the **cube of the Magnetic Deficit Factor ($\mathbf{\epsilon_{M}}^{\mathbf{3}}$)**. The base factor is $\mathbf{\epsilon_{M}} \equiv \mathbf{\frac{1}{\mathbf{N}_{\text{final}} \cdot \pi^3}}$, where the term $\mathbf{\pi^3}$ represents the **static geometric volume** (modal density) $\mathbf{of}$ $\mathbf{the}$ **3D EMC quantum cell**. The exponent $\mathbf{3}$ (external) represents a necessary **dynamic volume correction factor** required to balance the total energy, clearly separating the static cell volume ($\mathbf{\pi^3}$) from the overall dynamic scaling (exponent $\mathbf{3}$).
 \end{itemize}
 
 \begin{figure}[h!]
@@ -1911,7 +1924,7 @@ The dimensionless Total Gravitational Weakness Factor ($\mathbf{\Omega_G}$) that
 		% Prawa Strona: MODULATOR MAGNETYCZNY (RAMKA 2) - Nowa pozycja X = 5.5 (zamiast 7.0), Pozycja Y = 0.5 (została)
 		\node[box, fill=orange!15!white, draw=orange!70!black] (Modulator) at (5.5, 0.5) {
 			Dynamic Magnetic Modulator \\
-			($\mathbf{\Omega_{M}}$) \footnotesize $\equiv \mathbf{|\epsilon_{M}|}^{\mathbf{3}}$
+			($\mathbf{\Omega_{M}}$) \footnotesize $\equiv \mathbf{\epsilon_{M}}^{\mathbf{3}}$
 		};
 		
 		% Strzałka łącząca i wynik G (RAMKA 3) - Nowa pozycja X = 2.75 (środek między 0 a 5.5), Pozycja Y = -1.5 (została)
@@ -1940,14 +1953,14 @@ The dimensionless Total Gravitational Weakness Factor ($\mathbf{\Omega_G}$) that
 		\draw[arrow] (MergePoint) -- (G_Result.north);
 		
 	\end{tikzpicture}
-	\caption{\textbf{The Dual Geometric Components of the Gravitational Constant $\mathbf{G}$.} The final value of $\mathbf{G}$ is a product of three factors: the Electromagnetic Base ($\mathbf{G}_{\text{Base}}$) scaled by the $\mathbf{\Omega_{E}}$ factor (Static/Emergent Geometry) and the $\mathbf{\Omega_{M}}$ factor, which is the cube of the Magnetic Deficit Factor ($\mathbf{|\epsilon_{M}|}^{\mathbf{3}}$).}
+	\caption{\textbf{The Dual Geometric Components of the Gravitational Constant $\mathbf{G}$.} The final value of $\mathbf{G}$ is a product of three factors: the Electromagnetic Base ($\mathbf{G}_{\text{Base}}$) scaled by the $\mathbf{\Omega_{E}}$ factor (Static/Emergent Geometry) and the $\mathbf{\Omega_{M}}$ factor, which is the cube of the Magnetic Deficit Factor ($\mathbf{\epsilon_{M}}^{\mathbf{3}}$).}
 	\label{fig:dual_scaling}
 \end{figure}
 
 \begin{center}
 	\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
 			This work demonstrates that the hierarchy of fundamental interactions arises from the dimensional and dynamic scaling within the BCC lattice. The extreme weakness of gravity is shown to be a consequence of the \textbf{EMC Push Out mechanism}, which projects a local \textbf{volumetric deficit} (\boldmath{$V \propto r^3$}) onto a \textbf{two-dimensional surface transition} (\boldmath{$1/\sqrt{N_{\nu, \text{effective}}}$}) across the broad background of \textbf{conserved energy} (\boldmath{$E \propto r^5$}). 
-			By replacing the idealized statutory deficit with the \textbf{Effective Volume Deficit} (\boldmath{$N_{\nu, \text{effective}}$}), the non-uniform packing density and elastic gradients within the Soliton are accounted for. Unification through the modulator \boldmath{$|\epsilon_M|$} and the geometric identity \boldmath{$\mathbf{A}_{\pi}$} eliminates the need for arbitrary fine-tuning, confirming that \textbf{G} is the emergent, surface-scaled manifestation of the mechanical and structural stability of the vacuum.
+			By replacing the idealized statutory deficit with the \textbf{Effective Volume Deficit} (\boldmath{$N_{\nu, \text{effective}}$}), the non-uniform packing density and elastic gradients within the Soliton are accounted for. Unification through the modulator \boldmath{$\epsilon_M$} and the geometric identity \boldmath{$\mathbf{A}_{\pi}$} eliminates the need for arbitrary fine-tuning, confirming that \textbf{G} is the emergent, surface-scaled manifestation of the mechanical and structural stability of the vacuum.
 	}}
 \end{center}
 
@@ -2028,39 +2041,39 @@ Unlike General Relativity, where gravitational collapse leads to a singularity o
 \subsubsection*{Astrophysical Jets and the Density Wall Hypothesis}
 The existence of relativistic jets in Gravitational Black Holes (GBH) provides empirical support for the EMC pressure gradient model. The maximal density deficit within the GBH core necessitates a reciprocal \textbf{accumulation of the vacuum structural bond} at the event horizon’s boundary. This localized "EMC Density Wall" results in a region of extreme nodal stiffness, providing the mechanical substrate required to anchor ultra-strong magnetic fields. In this framework, astrophysical jets are interpreted as a \textbf{structural discharge mechanism}, where the excess mechanical potential of the compressed lattice is released along the axes of least resistance. This reinforces the EWT view of gravity as a dynamic equilibrium between localized geometric deficits and the compensating pressure of the saturated EMC background.
 
-\subsection{The $|\epsilon_{M}|$ Factor: Universal Geometric Modulator ($r^5$ vs $r^3$)}
+\subsection{The $\epsilon_{M}$ Factor: Universal Geometric Modulator ($r^5$ vs $r^3$)}
 \label{sec:epsilon_M_universal_modulator}
 
-The core tenet of EWT is that mass, charge, and spin are manifestations of the Soliton's wave geometry. The unified role of the Magnetic Deficit Factor $|\epsilon_{M}|$ is governed by a fundamental \textbf{geometric duality}: while the Soliton's internal energy storage follows the identity $E \propto r^5$, the volume of the displaced Elastic Medium (the EMC deficit) follows the identity $V \propto r^3$.
+The core tenet of EWT is that mass, charge, and spin are manifestations of the Soliton's wave geometry. The unified role of the Magnetic Deficit Factor $\epsilon_{M}$ is governed by a fundamental \textbf{geometric duality}: while the Soliton's internal energy storage follows the identity $E \propto r^5$, the volume of the displaced Elastic Medium (the EMC deficit) follows the identity $V \propto r^3$.
 
 Since the particle's energy is calculated directly from its radius:
 \[
 r_x \;=\; r_e \left(\frac{E_x}{E_e}\right)^{1/5}
 \]
-any subtle correction to the particle's energy/mass ($|\epsilon_{M}|$) must correspond to a geometric correction to its effective radius $r_{\text{eff}}$. 
+any subtle correction to the particle's energy/mass ($\epsilon_{M}$) must correspond to a geometric correction to its effective radius $r_{\text{eff}}$. 
 
-\textbf{The factor $|\epsilon_{M}|$ acts as the universal modulator that reconciles these two scaling laws ($r^5$ vs $r^3$).} It performs three distinct, high-precision functions across the domains defined in this work:
+\textbf{The factor $\epsilon_{M}$ acts as the universal modulator that reconciles these two scaling laws ($r^5$ vs $r^3$).} It performs three distinct, high-precision functions across the domains defined in this work:
 
 
 
 \begin{enumerate}
 	\item \textbf{Gravity:} It acts as the final geometric correction to the \textbf{Gravitational Constant ($G$)} (Eq. \ref{eq:G_EWT_Final_Identity}), scaling the \textbf{volumetric deficit} ($\propto r^3$) to the observed gravitational strength.
 	\item \textbf{Electromagnetism:} It is crucial for the calculation and geometric correction of the \textbf{Fine-Structure Constant ($\alpha$)} (Eq. \ref{eq:alpha_full_geometric_deficit}), bridging the gap between electromagnetic coupling and soliton geometry.
-	\item \textbf{Spin/AMM:} It defines the \textbf{Geometric Deficit Term ($|\epsilon_{M}| \pi^3$)} which serves as the fundamental step in the \textbf{recursive nodal integration} of lepton anomalies (Eq. \ref{eq:a_base_geom}). In this role, $|\epsilon_{M}|$ governs the hierarchical scaling of $a_l$ across all three generations, ensuring that the anomalous magnetic moment remains a deterministic consequence of the soliton's structural growth.
+	\item \textbf{Spin/AMM:} It defines the \textbf{Geometric Deficit Term ($\epsilon_{M} \pi^3$)} which serves as the fundamental step in the \textbf{recursive nodal integration} of lepton anomalies (Eq. \ref{eq:a_base_geom}). In this role, $\epsilon_{M}$ governs the hierarchical scaling of $a_l$ across all three generations, ensuring that the anomalous magnetic moment remains a deterministic consequence of the soliton's structural growth.
 \end{enumerate}
 
-The necessity of using the \textit{same} factor, $|\epsilon_{M}|$, to correct constants across the domains of gravity ($G$), electromagnetism ($\alpha$), and spin ($a_l$) is the definitive proof of EWT's geometric unification. By the $E \propto r^5$ identity, the geometric deficit must correspond to a physical modulation of the Soliton's effective radius. 
+The necessity of using the \textit{same} factor, $\epsilon_{M}$, to correct constants across the domains of gravity ($G$), electromagnetism ($\alpha$), and spin ($a_l$) is the definitive proof of EWT's geometric unification. By the $E \propto r^5$ identity, the geometric deficit must correspond to a physical modulation of the Soliton's effective radius. 
 
-However, because gravity is driven by the $r^3$ displacement of the medium (the \textbf{Push-Out Mechanism}), the $|\epsilon_{M}|$ factor ensures that the energy-driven contraction ($r^5$) and the volume-driven displacement ($r^3$) remain in the \textbf{Geometric Equilibrium} described in Section \ref{sec:dynamic_equilibrium}. This duality confirms that $|\epsilon_{M}|$ is the dynamic link that scales the fundamental constants across all interactions, maintaining the stability of the soliton against the surrounding Elastic Medium.
+However, because gravity is driven by the $r^3$ displacement of the medium (the \textbf{Push-Out Mechanism}), the $\epsilon_{M}$ factor ensures that the energy-driven contraction ($r^5$) and the volume-driven displacement ($r^3$) remain in the \textbf{Geometric Equilibrium} described in Section \ref{sec:dynamic_equilibrium}. This duality confirms that $\epsilon_{M}$ is the dynamic link that scales the fundamental constants across all interactions, maintaining the stability of the soliton against the surrounding Elastic Medium.
 
 \textit{Conclusion on Nodal Parameters:} While the precise physical nature of the parameter $N$ remains a subject for further investigation, its role within the EWT framework is clearly defined as a modulator of the vacuum's nodal stiffness ($\epsilon_M$). The extraordinary precision of the derived constants suggests that $N$ is a fundamental scaling consequence of the vacuum lattice at the Planck scale. Within this model, the transition between lepton generations is not a change in particle species, but a mechanical response to the stiffness threshold of the medium, necessitating a multi-layered geometric redistribution of energy.
 
 \subsection{The Final Reduction: From Geometry to Nodal Stiffness}
 
-The most compelling evidence for the underlying mechanical structure of the Enhanced EWT model is revealed in the final derivation of the magnetic anomaly $a_{\text{Base}}$. While the initial framework utilizes the volumetric constant $\pi^3$ to define the spatial boundaries of the soliton via the Magnetic Deficit Factor $|\epsilon_M|$, this geometric "scaffolding" cancels out during the calculation of the spin-lattice coupling:
+The most compelling evidence for the underlying mechanical structure of the Enhanced EWT model is revealed in the final derivation of the magnetic anomaly $a_{\text{Base}}$. While the initial framework utilizes the volumetric constant $\pi^3$ to define the spatial boundaries of the soliton via the Magnetic Deficit Factor $\epsilon_M$, this geometric "scaffolding" cancels out during the calculation of the spin-lattice coupling:
 
 \begin{equation}
-	a_{\text{Base}}^{\text{Geometric}} = \frac{\alpha}{2\pi} \cdot \left( 1 - \underbrace{|\epsilon_M| \cdot \pi^3}_{\text{volumetric cancellation}} \right) = \frac{\alpha}{2\pi} \cdot \left( 1 - \frac{1}{N} \right)
+	a_{\text{Base}}^{\text{Geometric}} = \frac{\alpha}{2\pi} \cdot \left( 1 - \underbrace{\epsilon_M \cdot \pi^3}_{\text{volumetric cancellation}} \right) = \frac{\alpha}{2\pi} \cdot \left( 1 - \frac{1}{N} \right)
 \end{equation}
 
 The disappearance of $\pi^3$ signifies that the anomalous magnetic moment is not a volumetric effect, but a pure function of the dimensionless stiffness parameter $N$. In this context, \textbf{$N$ may be perceived as an analogue to the Quantum Young's Modulus of the vacuum}, representing the fundamental nodal stiffness of the BCC lattice. 
@@ -2094,7 +2107,7 @@ The fundamental disparity in predictive power is rooted in the structural inputs
 
 \begin{itemize}
 	\item \textbf{Standard Model Inputs:} The SM relies on approximately 25--27 empirically determined parameters. Within this framework, values such as the anomalous magnetic moments are treated as secondary effects, requiring exhaustive perturbative loop corrections to match experimental data.
-	\item \textbf{EWT Perspective:} By contrast, EWT achieves higher predictive density using a single structural modulator—the magnetic correction factor $|\epsilon_{M}|$—derived from the internal wave geometry of the soliton. When coupled with the universal geometric constant $\pi^3$, this factor simultaneously governs the corrections to $G$, $\alpha$, and the hierarchical lepton AMM through recursive nodal integration.
+	\item \textbf{EWT Perspective:} By contrast, EWT achieves higher predictive density using a single structural modulator—the magnetic correction factor $\epsilon_{M}$—derived from the internal wave geometry of the soliton. When coupled with the universal geometric constant $\pi^3$, this factor simultaneously governs the corrections to $G$, $\alpha$, and the hierarchical lepton AMM through recursive nodal integration.
 \end{itemize}
 
 
@@ -2116,9 +2129,9 @@ This function, derived from first principles, quantitatively predicts the masses
 	\item \textbf{Z Boson:} EWT Predicts $\mathbf{\approx 91.18 \text{ GeV}}$
 	\item \textbf{Higgs Boson:} EWT Predicts $\mathbf{\approx 125.3 \text{ GeV}}$ (at $\mathbf{K=117}$)
 \end{itemize}
-These predictions, derived purely from the internal geometry of the Soliton, demonstrate a strong predictive capability. Crucially, these calculations were performed prior to the final refinement and incorporation of the unified geometric factor $\mathbf{|\epsilon_{M}|}$ (which is essential for the unprecedented precision of $\mathbf{G}$, $\mathbf{\alpha}$, and $\mathbf{a_{\mu}}$).
+These predictions, derived purely from the internal geometry of the Soliton, demonstrate a strong predictive capability. Crucially, these calculations were performed prior to the final refinement and incorporation of the unified geometric factor $\mathbf{\epsilon_{M}}$ (which is essential for the unprecedented precision of $\mathbf{G}$, $\mathbf{\alpha}$, and $\mathbf{a_{\mu}}$).
 
-The high degree of accuracy already achieved strongly suggests that the minor tensions with CODATA observed in these initial mass calculations can be \textbf{fully resolved} through the application of the $\mathbf{|\epsilon_{M}|}$ correction, thereby establishing a single, unified geometry for mass generation across all three fundamental forces. This inherent geometric link resolves the Hierarchy Problem naturally, as mass generation is governed by the structural constants of spacetime (e.g., $\mathbf{\pi^3}$ and $\mathbf{|\epsilon_M|}$), rather than by fragile quantum cancellation.
+The high degree of accuracy already achieved strongly suggests that the minor tensions with CODATA observed in these initial mass calculations can be \textbf{fully resolved} through the application of the $\mathbf{\epsilon_{M}}$ correction, thereby establishing a single, unified geometry for mass generation across all three fundamental forces. This inherent geometric link resolves the Hierarchy Problem naturally, as mass generation is governed by the structural constants of spacetime (e.g., $\mathbf{\pi^3}$ and $\mathbf{\epsilon_M}$), rather than by fragile quantum cancellation.
 
 \subsubsection{Geometric Derivation of Quantum Dynamics and Electroweak Unification}
 \label{sec:dynamic_consistency}
@@ -2137,18 +2150,18 @@ The final pillar of the Standard Model rests on its successful description of qu
 		\sin^2\theta_W^{\text{EWT}} = 1 -  \left(\frac{80.39}{91.18}\right)^2 \approx 0.2227
 	\end{equation}
 	
-	This result is conceptually profound: the ratio of the weak and electromagnetic forces is determined by the fundamental geometry of the Soliton, achieved without the Higgs mechanism. Crucially, this initial calculation was performed \textbf{prior} to the incorporation of the final geometric correction factor $\mathbf{|\epsilon_{M}|}$. The current $\sim 3.7\%$ discrepancy with the experimental value ($\approx 0.231$) is a \textbf{direct prediction of EWT} that the final unified framework must resolve this tension.
+	This result is conceptually profound: the ratio of the weak and electromagnetic forces is determined by the fundamental geometry of the Soliton, achieved without the Higgs mechanism. Crucially, this initial calculation was performed \textbf{prior} to the incorporation of the final geometric correction factor $\mathbf{\epsilon_{M}}$. The current $\sim 3.7\%$ discrepancy with the experimental value ($\approx 0.231$) is a \textbf{direct prediction of EWT} that the final unified framework must resolve this tension.
 	
-\textbf{This resolution is expected to be achieved by linking the universal factor $|\epsilon_{M}|$ to the intrinsic spin-1 nature of the $W$ and $Z$ bosons and the resulting geometric scaling disparity.} Given EWT's fundamental identity $E \propto r^5$, it is anticipated that the final unified framework will incorporate a specific correction for the spin-induced compression of vector solitons. Crucially, this refinement will need to reconcile the energy storage ($r^5$) with the \textbf{three-dimensional volumetric displacement ($r^3$)} of the EMC medium, which likely follows a different geometric packing fraction for spin-1 particles than for spin-1/2 leptons.
+\textbf{This resolution is expected to be achieved by linking the universal factor $\epsilon_{M}$ to the intrinsic spin-1 nature of the $W$ and $Z$ bosons and the resulting geometric scaling disparity.} Given EWT's fundamental identity $E \propto r^5$, it is anticipated that the final unified framework will incorporate a specific correction for the spin-induced compression of vector solitons. Crucially, this refinement will need to reconcile the energy storage ($r^5$) with the \textbf{three-dimensional volumetric displacement ($r^3$)} of the EMC medium, which likely follows a different geometric packing fraction for spin-1 particles than for spin-1/2 leptons.
 
-The future application of the $|\epsilon_{M}|$ modulator to these distinct scaling laws is expected to shift the mass ratio $M_W/M_Z$ such that the resulting $\sin^2\theta_W$ becomes fully consistent with experimental data. This will effectively transform the Weinberg Angle from an empirical parameter into a direct consequence of the Soliton's dynamic spin-radius geometry.
+The future application of the $\epsilon_{M}$ modulator to these distinct scaling laws is expected to shift the mass ratio $M_W/M_Z$ such that the resulting $\sin^2\theta_W$ becomes fully consistent with experimental data. This will effectively transform the Weinberg Angle from an empirical parameter into a direct consequence of the Soliton's dynamic spin-radius geometry.
 	
 	\item \textbf{Neutrino Mass and Oscillations:} Finally, EWT resolves the inconsistency of massless neutrinos in the core SM. Given that EWT uses wave centers (neutrinos) as the fundamental unit $\mathbf{K}$ in its geometric model, the model naturally allows for slight mass differences between these internal geometric states. This readily provides the necessary framework for \textbf{neutrino mass and oscillation}, a phenomenon only incorporated into the SM via arbitrary extensions.
 \end{itemize}
 
 \subsubsection{EWT vs. Standard Model: Composite Improvement Factor (CIF)}
 
-In contrast to the SM framework—where $G$ is an empirical coupling constant, $\alpha^{-1}$ is treated as a measured input, and lepton anomalies require separate perturbative loops—the \textbf{Enhanced EWT Model} demonstrates that these parameters arise from a \textbf{single, unified Geometric Identity}. This identity is driven by the \textbf{primary Push-Out mechanism} and modulator $|\epsilon_{M}| \pi^3$.
+In contrast to the SM framework—where $G$ is an empirical coupling constant, $\alpha^{-1}$ is treated as a measured input, and lepton anomalies require separate perturbative loops—the \textbf{Enhanced EWT Model} demonstrates that these parameters arise from a \textbf{single, unified Geometric Identity}. This identity is driven by the \textbf{primary Push-Out mechanism} and modulator $\epsilon_{M} \pi^3$.
 
 The numerical verification of this formalism provides conclusive support for a paradigm shift from perturbative estimation to structural determinism. While the Standard Model's calculation of the electron anomaly ($a_e$) is a major success of QED, it remains functionally dependent on $\alpha$ as an external input.
 
@@ -2204,7 +2217,7 @@ In the case of \textbf{String Theory (ST)}, the gravitational constant $G$ is of
 
 
 
-In contrast, the \textbf{Enhanced EWT Model} achieves a zero-parameter derivation of the entire lepton hierarchy. By identifying the \textbf{Push-Out modulator} $|\epsilon_M|$ as the singular source of both gravitational curvature and electromagnetic anomalies, the constants $G, \alpha, a_e, a_{\mu},$ and $a_{\tau}$ are shown to emerge as deterministic lattice resonances. This results in a Composite Improvement Factor (CIF) exceeding $10^{13}$, confirming that predictive power is a direct consequence of the rigid vacuum geometry rather than perturbative approximations or empirical tuning.
+In contrast, the \textbf{Enhanced EWT Model} achieves a zero-parameter derivation of the entire lepton hierarchy. By identifying the \textbf{Push-Out modulator} $\epsilon_M$ as the singular source of both gravitational curvature and electromagnetic anomalies, the constants $G, \alpha, a_e, a_{\mu},$ and $a_{\tau}$ are shown to emerge as deterministic lattice resonances. This results in a Composite Improvement Factor (CIF) exceeding $10^{13}$, confirming that predictive power is a direct consequence of the rigid vacuum geometry rather than perturbative approximations or empirical tuning.
 
 \subsection{The Big Picture: From Nodal Elasticity to Cosmic Structures}
 \label{sec:big_picture}
@@ -2281,9 +2294,9 @@ The following table lists the fundamental physical constants and key dimensionle
 		Geometric $\mathbf{A}_{\pi}$ Base & $\mathbf{A}_{\pi}^{-1}$ & $4\pi^{3} + \pi^{2} + \pi$ & EWT Static Geometric Foundation \\
 		Dyn. Correction Factor & $\mathbf{N}_{\text{final}}$ & $778.818123$ & EWT (Derived from $\mathbf{\alpha}^{-1}$ correction) \\
 		Ef. Volume Deficit & $\mathbf{N_{\nu, \text{effective}}}$ & $\mathbf{4.659840} \times 10^{54}$ & EWT (Required by $\mathbf{G}_{\text{CODATA}}$) \\
-		Geometric Magnetic Deficit Factor & $\mathbf{|\epsilon_{M}|}$ & $\mathbf{4.14138128 \times 10^{-5}}$ & Derived $\mathbf{\frac{1}{\mathbf{N}_{\text{final}} \cdot \pi^3}}$\\
+		Geometric Magnetic Deficit Factor & $\mathbf{\epsilon_{M}}$ & $\mathbf{4.14138128 \times 10^{-5}}$ & Derived $\mathbf{\frac{1}{\mathbf{N}_{\text{final}} \cdot \pi^3}}$\\
 		Emergent Base Factor & $\mathbf{\Omega_{E}}$ & $\mathbf{A}_{\pi} \cdot \mathbf{N_{\nu, \text{effective}}}^{-1/2}$ & Static Geometry Composite \\
-		Magnetic Modulator & $\mathbf{\Omega_{M}}$ & $\mathbf{|\epsilon_{M}|}^{\mathbf{3}}$ & Dynamic Volume Correction \\
+		Magnetic Modulator & $\mathbf{\Omega_{M}}$ & $\mathbf{\epsilon_{M}}^{\mathbf{3}}$ & Dynamic Volume Correction \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
