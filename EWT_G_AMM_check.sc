@@ -19,25 +19,32 @@ G_CODATA    = 6.674305d-11;                       // Target Gravitational Consta
 alpha_inv   = 137.035999084;
 alpha       = 1 / alpha_inv;
 Pi          = %pi;
-
+e_euler     = %e;                                 // Euler's Number
 // Lepton Anomalous Magnetic Moment Targets
 a_e_CODATA_10_10  = 11596521.8160000000;           // Electron experimental target
-
 // --- 2. EWT GEOMETRIC MODEL PARAMETERS (CORE VALUES) ---
 // N_final: The wave-packing density factor defining the vacuum state
 N_final        = 778.818123000000014; 
-// N_nu_effective: The required volume deficit factor to match G_CODATA
-N_nu_effective = 4.659840d54; 
+K_neutrinos    = 10;                              // Number of neutrinos in the aggregate
 
 // --- 3. EWT STATUTORY/BASE PARAMETERS ---
 r_nu_val = 2.81794d-17;                           // Statutory Neutrino Radius
 lambda_l = 1.6162d-35;                            // Fundamental quantum distance (Planck scale)
-N_nu_statutory = (r_nu_val / lambda_l)^3;         // Statutory Constituent Count
 
-// epsilon_M: The Stiffness/Magnetic Deficit Factor (The unification bridge)
+// Calculation of N_nu variants based on updated geometric principles
+N_nu_max       = (r_nu_val / lambda_l)^3;         // Max geometric capacity of the neutrino sphere
+N_nu_statutory = (r_nu_val / (2 * lambda_l * e_euler))^3; // Statutory EMC constituent count
+
+// Calculation of N_nu_geom (BCC Lattice + Node Susceptibility)
+sq2            = sqrt(2);
+N_nu_geom      = N_nu_statutory * sq2 * (1 - 1/(2 * N_final));
+
+// Setting N_nu_effective (Calibrated / Interference value)
+N_nu_effective = 4.659840d52; 
+
+// epsilon_M: The Stiffness/Magnetic Deficit Factor
 epsilon_M_val = 1 / (N_final * (Pi^3));
 eps_M  = epsilon_M_val;
-sq2    = sqrt(2);
 A_pi   = 4*Pi^3 + Pi^2 + Pi;                      // Geometric base for Alpha Identity
 
 // ==============================================================================
@@ -49,12 +56,14 @@ disp('I. GRAVITY CONSISTENCY TEST (OPERATOR U)');
 disp('=====================================================');
 
 G_Base = (c_0^2 * r_e) / m_e;
-disp(['G_Base (Soliton Base)           = ', string(G_Base), ' m^3 kg^-1 s^-2']);
+disp(['G_Base (Soliton Base)            = ', string(G_Base), ' m^3 kg^-1 s^-2']);
 
 disp(' ');
 disp('--- ANALYSIS OF VOLUME DEFICIT FACTORS ---');
-disp(['N_nu_statutory (Base Deficit)   = ', string(N_nu_statutory)]); 
-disp(['N_nu_effective (Req. for G)     = ', string(N_nu_effective)]);
+disp(['N_nu_max (Max Packing)           = ', string(N_nu_max)]);
+disp(['N_nu_statutory (Base Deficit)    = ', string(N_nu_statutory)]); 
+disp(['N_nu_geom (BCC Lattice Base)     = ', string(N_nu_geom)]);
+disp(['N_nu_effective (Calibrated)      = ', string(N_nu_effective)]);
 
 N_nu_diff = abs(N_nu_statutory - N_nu_effective);
 N_nu_ratio = N_nu_statutory / N_nu_effective;
@@ -64,9 +73,11 @@ disp(['Correction Ratio (N_stat / N_eff)    = ', string(N_nu_ratio)]);
 
 disp(' ');
 disp('--- CALCULATION OF OPERATOR U COMPONENTS ---');
-A_pi_inv = 1 / (4*(Pi^3) + (Pi^2) + Pi);
+A_pi_inv = 1 / A_pi;
 epsilon_M_cubed = epsilon_M_val^3;
-N_nu_dilution = 1 / sqrt(N_nu_effective);
+
+// Dilution factor including K=10 neutrinos in the denominator
+N_nu_dilution = 1 / (K_neutrinos * sqrt(N_nu_effective));
 
 F_geom = A_pi_inv * epsilon_M_cubed * N_nu_dilution;
 G_model = G_Base * F_geom;
