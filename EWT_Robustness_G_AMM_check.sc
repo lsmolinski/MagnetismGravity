@@ -19,7 +19,7 @@ N_final        = 778.818123000000014;
 N_nu_effective = 4.659840d54; 
 r_nu_val = 2.81794d-17;                           
 lambda_l = 1.6162d-35;                            
-N_nu_statutory = (r_nu_val / lambda_l)^3;         
+N_nu_statutory = (r_nu_val / (2 * lambda_l * %e))^3;         
 epsilon_M_val = 1 / (N_final * (Pi^3));
 A_pi_inv = 1 / (4*(Pi^3) + (Pi^2) + Pi);
 
@@ -233,56 +233,62 @@ printf("\n[EXPORT]  File saved as: %s", pdf_m6);
 printf("\n[DATA]    e: %.4f%%, tau: %.4f%%, mu: %.4f%%", lepton_errors(1), lepton_errors(2), lepton_errors(3));
 printf("\n=====================================================\n");
 // =============================================================================
-// MODULE 7: STRUCTURAL ROBUSTNESS OF CONSTITUENT COUNT (N_nu)
+// MODULE 7: STRUCTURAL ROBUSTNESS OF STATUTORY DENSITY (N_nu_stat)
 // =============================================================================
-// Range of relative changes from -30% to +30%
+// Scan range for relative fluctuations: +/- 30%
 dr_ratio = linspace(-0.3, 0.3, 200); 
 
-// Initialize result arrays
+// Initialize stability tracking arrays
 compliance_r_nu  = [];
 compliance_r_emc = [];
 
-// Calculate the statutory base value for N_nu (reference point 1.0)
-N_nu_base = (r_nu_val / lambda_l)^3;
+// Calculate the Statutory Background Density (Reference Lock-in Point)
+// Based on Eulerian Dilution factor (2e) as defined in EWT vacuum mechanics
+N_nu_stat_base = (r_nu_val / (2 * lambda_l * %e))^3;
 
 for dr = dr_ratio
-    // Variation 1: Change in r_nu (numerator in the equation)
+    // Scenario A: Perturbation of the Soliton Radius (Numerator)
+    // Reflects lattice deformation affecting the wave center boundary
     r_nu_dynamic = r_nu_val * (1 + dr);
-    N_dynamic_1  = (r_nu_dynamic / lambda_l)^3;
-    compliance_r_nu = [compliance_r_nu, N_dynamic_1 / N_nu_base];
+    N_dynamic_A  = (r_nu_dynamic / (2 * lambda_l * %e))^3;
+    compliance_r_nu = [compliance_r_nu, N_dynamic_A / N_nu_stat_base];
     
-    // Variation 2: Change in lambda_l (denominator in the equation)
+    // Scenario B: Perturbation of the Planck Scale / EMC spacing (Denominator)
+    // Reflects fundamental medium elasticity fluctuations
     lambda_dynamic = lambda_l * (1 + dr);
-    N_dynamic_2    = (r_nu_val / lambda_dynamic)^3;
-    compliance_r_emc = [compliance_r_emc, N_dynamic_2 / N_nu_base];
+    N_dynamic_B    = (r_nu_val / (2 * lambda_dynamic * %e))^3;
+    compliance_r_emc = [compliance_r_emc, N_dynamic_B / N_nu_stat_base];
 end
 
 h_fig17 = scf(17); clf(); drawlater();
 
-// Geometric stability boundary lines
-plot(dr_ratio, ones(1,200) * 1.3, 'r:', 'linewidth', 1); // Upper limit
-plot(dr_ratio, ones(1,200) * 0.7, 'r:', 'linewidth', 1); // Lower limit
-plot(dr_ratio, ones(1,200) * 1.0, 'k--', 'linewidth', 2); // Ideal compliance (1.0)
+// Stability boundary markers (0.7 - 1.3 compliance zone)
+plot(dr_ratio, ones(1,200) * 1.3, 'r:', 'linewidth', 1); // Upper tolerance limit
+plot(dr_ratio, ones(1,200) * 0.7, 'r:', 'linewidth', 1); // Lower tolerance limit
+plot(dr_ratio, ones(1,200) * 1.0, 'k--', 'linewidth', 2); // Statutory Equilibrium (1.0)
 
-// Key stability curves based on r_nu and lambda_l data
+// Execution of stability curves for statutory density hierarchy
 plot(dr_ratio, compliance_r_nu, 'b-', 'linewidth', 2);
 plot(dr_ratio, compliance_r_emc, 'r-', 'linewidth', 2);
 
-xtitle("Structural Robustness of Constituent Count N_nu", ..
-       "Relative Change in Radius (dr/r)", "Normalized N_nu Stability");
+xtitle("Structural Robustness of Statutory Density N_nu_stat", ..
+       "Relative Lattice Fluctuation (dr/r)", "Normalized N_stat Stability Response");
 
-// Format axes for consistency with TikZ/LaTeX documentation
+// Axis formatting for high-precision scientific documentation
 gca().tight_limits = "on";
-gca().data_bounds = [-0.3, 0.6; 0.3, 1.5]; // Y-axis range: 0.6 - 1.5
+gca().data_bounds = [-0.3, 0.6; 0.3, 1.5]; // Normalized Y-range
 gca().x_ticks = tlist(["ticks", "locations", "labels"], ..
                 [-0.3, -0.15, 0, 0.15, 0.3], ["-30%", "-15%", "0%", "15%", "30%"]);
 
-legend(["Upper Bound (1.3)"; "Lower Bound (0.7)"; "Statutory Reference (1.0)"; ..
-        "Variation by r_nu"; "Variation by r_EMC"], "in_upper_left");
+legend(["Upper Bound (1.3)"; "Lower Bound (0.7)"; "Statutory Lock-in (1.0)"; ..
+        "Fluctuation by r_nu"; "Fluctuation by lambda_l"], "in_upper_left");
 
-xgrid(12); drawnow();
+xgrid(12); 
+drawnow();
 show_window(h_fig17); 
 sleep(500); 
+
+// Exporting finalized robustness data for LaTeX figure integration
 pdf_m7 = "EWT_Robustness_Analysis_DataDriven.pdf";
 xs2pdf(h_fig17, script_path + pdf_m7);
 
