@@ -342,39 +342,44 @@ Gravity in model is not treated as an independent fundamental force, but as a \t
 	\textbf{Geometric Scaling Factor ($K$):} The multiplier $K$ represents the total number of Wave Centers (WC) that constitute the rest mass of a particle. It serves as the geometric scaling factor, determining the total number of $\epsilon_{G}$ deficit sources and thus the particle's total gravitational contribution, bridging the geometry of the Soliton to the fine-structure constant $\alpha$ \cite{yee2025geometriccorrection}.
 \end{itemize}
 
-\subsubsection{Geometric Values and Calculation of $\mathbf{N_{\nu}}$}
+\subsubsection{Geometric Density Levels and Nodal Scaling of $\mathbf{N_{\nu}}$}
 \label{radius_robustness_analysis}
-The number of constituents $\mathbf{N_{\nu}}$ is a dimensionless geometric quantity derived from the ratio of the Soliton’s radius ($\mathbf{r_{\nu}}$) and the radius of the Elastic Medium Constituent $\mathbf{r_{EMC}}$ (see fig. \ref{fig:neutrino_topology_new}):
+The constituent count $\mathbf{N_{\nu}}$ is a dimensionless geometric quantity representing the density of the Elastic Medium Constituents (EMC) within the soliton. Building upon the unified framework of the EWT model \cite{yee2019spacetime, Yee2020Aether}, we distinguish three fundamental levels of density that define the transition from pure vacuum geometry to physical gravity.
 
+\subsubsection*{1. Absolute Maximum Capacity ($N_{\nu, \text{max}}$)}
+The theoretical maximum number of EMCs that can be packed into the soliton's radius $r_{\nu}$ relative to the fundamental Planck scale $\lambda_l$ is defined by the geometric limits of the elastic medium \cite{yee2019spacetime}:
 \begin{equation}
-	\mathbf{N_{\nu}} = \left(\frac{\mathbf{r_{\nu}}}{\mathbf{r_{EMC}}}\right)^3
-	\label{eq:N_nu}
+	N_{\nu, \text{max}} = \left( \frac{r_{\nu}}{\lambda_l} \right)^3 \approx 5.3004 \times 10^{54}
+	\label{eq:N_nu_max}
 \end{equation}
+This value represents the "solid-state" saturation of the vacuum before any lattice dynamics or dilution effects are considered.
 
-This ratio provides the key numerical factor for the Geometric Model.
-
-\subsubsection*{Derivation of the Statutory Radius ($\mathbf{r_{\nu}}$):}
-The Neutrino Soliton radius ($\mathbf{r_{\nu}}$) is identified with the \textbf{Fundamental Longitudinal Wavelength ($\mathbf{\lambda}$)} for the Minimal Stable Soliton ($K=1$) \cite{yee2019geometry}. The uncorrected base wavelength ($\mathbf{\lambda}_{\text{uncorr}}$) is calculated using $\mathbf{q}_P$ and $\mathbf{e}$ (Euler's number):
+\subsubsection*{2. Statutory Background Density ($N_{\nu, \text{stat}}$)}
+As derived in the study of the relationship between light speed and medium density \cite{Yee2020Aether}, the actual equilibrium density of the vacuum is governed by the Eulerian Dilution factor ($2e$). This defines the statutory background state:
 \begin{equation}
-	\mathbf{\lambda}_{\text{uncorr}} = 2 \mathbf{q}_P \mathbf{e}^2 \approx \mathbf{2.77171 \times 10^{-17} \text{ m}}
-	\label{eq:r_nu_uncorr}
+	N_{\nu, \text{stat}} = \left( \frac{r_{\nu}}{2 \lambda_l e} \right)^3 \approx 3.2986 \times 10^{52}
+	\label{eq:N_nu_stat}
 \end{equation}
-The final Statutory Radius ($\mathbf{r_{\nu}}$) is obtained by applying the geometric $\mathbf{g}$-factor ($\mathbf{g}_v \approx 0.983592$):
+This level establishes the \textbf{Eulerian Dilution} ($\approx 99.37\%$), providing the reference constituent count against which all particle deficits and gravitational gradients are measured.
+
+\subsubsection*{3. Effective Gravitational Density ($N_{\nu, \text{eff}}$)}
+The emergence of physical gravity corresponds to a second stage of dilution, defined here as the \textbf{Soliton Push-out}. Within the BCC lattice structure, the effective density for the electron soliton ($K=10$ wave centers) is further reduced:
 \begin{equation}
-	\mathbf{r_{\nu}} = \frac{\mathbf{\lambda}_{\text{uncorr}}}{\mathbf{g}_v} \approx \mathbf{2.81794 \times 10^{-17} \text{ m}}
-	\label{eq:r_nu_corr}
+	N_{\nu, \text{eff}} \approx 6.2525 \times 10^{48}
+	\label{eq:N_nu_eff}
 \end{equation}
+This represents a cumulative dilution of approximately $99.98\%$ relative to the background $N_{\nu, \text{stat}}$. In the EWT framework, this exceedingly low effective density explains the extreme weakness of the gravitational force, characterizing it as a pressure deficit (buoyancy) within the high-density medium.
 
-\subsubsection*{Calculation of the Statutory Constituent Count $\mathbf{N_{\nu}}$:}
-The explicit calculation of the \textbf{Statutory Constituent Count} using the corrected radius $\mathbf{r_{\nu}}$ and the Planck length $\mathbf{r_{EMC}} \approx 1.6162 \times 10^{-35} \text{ m}$ is:
 
-\begin{equation}
-	\mathbf{N_{\nu}} = \left(\frac{\mathbf{2.81794 \cdot 10^{-17} \text{ m}}}{\mathbf{1.6162 \cdot 10^{-35} \text{ m}}}\right)^3 \approx \mathbf{5.30 \cdot 10^{54}}
-	\label{eq:n_nu_statutory}
-\end{equation}
-The resulting value of $\mathbf{N_{\nu}} \approx \mathbf{5.30 \cdot 10^{54}}$ represents the \textbf{total quantity of EMC elements} contained within the volume of the neutrino soliton, which establishes the maximum geometric scaling factor required by the EWT model's fundamental constants. This count defines the neutral volume reference point against which the geometric deficit is dynamically measured.
 
-This immense constituent count $N_{\nu}$ provides the structural basis for the \textbf{Holographic Dilution Factor}, as discussed in Section \ref{neutrion_radius_interaction}. This mechanism explains how a soliton with a substantial geometric radius ($r_{\nu} \approx 10^{-17}$ m) yields an exceedingly small interaction cross-section $\sigma_{\nu}$, reconciling the model's geometry with experimental neutrino data.
+\subsubsection*{Summary of Density Hierarchy}
+The transition from the Planck scale to the gravitational scale in EWT is governed by a hierarchical dilution process:
+\begin{itemize}
+	\item \textbf{Max Packing ($10^{54}$):} Pure geometric capacity \cite{yee2019spacetime}.
+	\item \textbf{Background ($10^{52}$):} Dynamic vacuum equilibrium \cite{Yee2020Aether}.
+	\item \textbf{Effective ($10^{48}$):} Gravitational active density (EMC capacity).
+\end{itemize}
+This multi-stage dilution reconciles the substantial geometric radius of the soliton ($r_{\nu} \approx 10^{-17}$ m) with the observed CODATA value of $G$ through the $X_{\text{eff}}$ scaling factor.
 
 \subsubsection*{Justification for the Geometric $\mathbf{g}$-Factor $\mathbf{g}_v$ and Consistency Check:}
 The geometric correction factor $\mathbf{g}_v$ is applied to maintain **numerical consistency with the core EWT model**. While the fundamental \textbf{Lorentz-like shortening} of matter in motion is an integral part of the EWT framework, the specific factor $\mathbf{g}_v$ used to define $\mathbf{r_{\nu}}$ (which results in **radius expansion** relative to the uncorrected wavelength) is \textbf{not interpreted as a kinematic Doppler shift}. Instead, it is better interpreted as a consequence of the **absence, or near-absence, of the magnetic deformation term $\mathbf{\epsilon_M}$** in the neutral neutrino. This term is critical for describing the electron's spin and anomalous magnetic moment, suggesting the expansion is driven by the fundamental difference in magnetic/spin geometry between the two leptons.
@@ -527,10 +532,14 @@ The cancellation of $\hbar$ confirms the hypothesis that the base gravitational 
 The observed gravitational constant $\mathbf{G}$ is obtained by scaling $\mathbf{G}_{\text{Base}}$ with the \textbf{Total Dimensionless Gravitational Weakness Factor ($\mathbf{\Omega_G}$)}. This factor is composed of the Geometric EM Base (${\mathbf{A}_{\pi}}^{-1}$), the Dynamic Magnetic Correction ($\mathbf{N}_{\text{final}}$), and the Effective Volume Deficit ($\mathbf{N_{\nu, \text{effective}}}$).
 
 The derived geometric identity for $\mathbf{G}$ is:
-\begin{equation}
-	\mathbf{G} \equiv \mathbf{G}_{\text{Base}} \cdot \mathbf{\Omega_G} = \frac{c^2 \mathbf{r_e}}{\mathbf{m_e}} \cdot \frac{1}{\left(4\pi^{3} + \pi^{2} + \pi\right)} \cdot \left( \frac{1}{\mathbf{N}_{\text{final}} \pi^{3}} \right)^{3} \cdot \frac{1}{\mathbf{\sqrt{\mathbf{N_{\nu, \text{effective}}}}}}
-	\label{eq:G_EWT_Final_Identity}
-\end{equation}
+
+
+	\begin{equation}
+		\mathbf{G} \equiv \mathbf{G}_{\text{Base}} \cdot \mathbf{\Omega_G} = \frac{c^2 \mathbf{r_e}}{\mathbf{m_e}} \cdot \frac{1}{\left(4\pi^{3} + \pi^{2} + \pi\right)} \cdot \left( \frac{1}{\mathbf{N}_{\text{final}} \pi^{3}} \right)^{3} \cdot \frac{1}{\mathbf{\sqrt{\mathbf{N_{\nu, \text{effective}}}}}}
+		\label{eq:G_EWT_Final_Identity}
+	\end{equation}
+
+
 
 \subsection{The Gravitational Identity Flow: From Electromagnetic Base to Final $\mathbf{G}$}
 
