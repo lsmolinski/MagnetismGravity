@@ -1,7 +1,8 @@
 // ==============================================================================
 // SCILAB SCRIPT: EWT MODEL COMPLETE NUMERICAL CALCULATOR AND CONSISTENCY CHECK
-// FINAL VERSION: Version: 4.1.3 (Recursive Nesting)
+// FINAL VERSION: Version: 4.2.1 (G from geom)
 // ==============================================================================
+
 clear;        
 clearglobal;  
 clc;          
@@ -36,8 +37,9 @@ N_nu_max       = (r_nu_val / lambda_l)^3;         // Max geometric capacity of t
 N_nu_statutory = (r_nu_val / (2 * lambda_l * e_euler))^3; // Statutory EMC constituent count
 
 // Calculation of N_nu_geom (BCC Lattice + Node Susceptibility)
+// Applied 1/sqrt(2) to reflect structural dilution (Push-Out) in BCC lattice
 sq2            = sqrt(2);
-N_nu_geom      = N_nu_statutory * sq2 * (1 - 1/(2 * N_final));
+N_nu_geom      = N_nu_statutory * (1/sq2) * (1 - 1/(2 * N_final));
 
 // Setting N_nu_effective (Calibrated / Interference value)
 N_nu_effective = 4.659840d52; 
@@ -48,7 +50,7 @@ eps_M  = epsilon_M_val;
 A_pi   = 4*Pi^3 + Pi^2 + Pi;                      // Geometric base for Alpha Identity
 
 // ==============================================================================
-// PART I: GRAVITY CONSISTENCY TEST (OPERATOR U)
+// PART I: GRAVITY CONSISTENCY TEST (OPERATOR U - NEW GEOMETRIC CALIBRATION)
 // ==============================================================================
 disp(' ');
 disp('=====================================================');
@@ -58,42 +60,46 @@ disp('=====================================================');
 G_Base = (c_0^2 * r_e) / m_e;
 disp(['G_Base (Soliton Base)            = ', string(G_Base), ' m^3 kg^-1 s^-2']);
 
-disp(' ');
-disp('--- ANALYSIS OF VOLUME DEFICIT FACTORS ---');
-disp(['N_nu_max (Max Packing)           = ', string(N_nu_max)]);
-disp(['N_nu_statutory (Base Deficit)    = ', string(N_nu_statutory)]); 
-disp(['N_nu_geom (BCC Lattice Base)     = ', string(N_nu_geom)]);
-disp(['N_nu_effective (Calibrated)      = ', string(N_nu_effective)]);
+// --- GEOMETRIC BRIDGE & PROJECTION ---
+L_p        = 1.1486801482; // Lattice Projection Factor
+alpha_geom = 1 / (A_pi - eps_M);
 
-N_nu_diff = abs(N_nu_statutory - N_nu_effective);
-N_nu_ratio = N_nu_statutory / N_nu_effective;
-
-disp(['Absolute Difference N_nu (|Stat-Eff|)= ', string(N_nu_diff)]);
-disp(['Correction Ratio (N_stat / N_eff)    = ', string(N_nu_ratio)]); 
+// C_Unif variants
+C_Raw      = (1 + K_neutrinos) / K_neutrinos; 
+C_Unif     = (1 / K_neutrinos) + 1 + (alpha_geom / (Pi * L_p)); 
 
 disp(' ');
-disp('--- CALCULATION OF OPERATOR U COMPONENTS ---');
-A_pi_inv = 1 / A_pi;
-epsilon_M_cubed = epsilon_M_val^3;
-
-// Dilution factor including K=10 neutrinos in the denominator
-N_nu_dilution = 1 / (K_neutrinos * sqrt(N_nu_effective));
-
-F_geom = A_pi_inv * epsilon_M_cubed * N_nu_dilution;
-G_model = G_Base * F_geom;
-
-disp(['Scaling Factor F_geom (A*B^3*C) = ', string(F_geom)]);
-disp(' ');
-disp(['G_model (Calculated EWT Value) = ', string(G_model), ' m^3 kg^-1 s^-2']);
-disp(['G_CODATA (Target Value)        = ', string(G_CODATA), ' m^3 kg^-1 s^-2']);
-
-Error_abs = abs(G_model - G_CODATA);
-Error_perc = (Error_abs / G_CODATA) * 100;
+disp(['--- ANALYSIS OF VOLUME DEFICIT FACTORS (PUSH-OUT LOGIC) ---']);
+printf("N_nu_max (Absolute Max):       %.15e\n", N_nu_max);
+printf("N_nu_statutory (Background):   %.15e\n", N_nu_statutory);
+printf("N_nu_geom (Effective EMC):     %.15e\n", N_nu_statutory / ((A_pi * 3 * K_neutrinos * sqrt(2)) / C_Unif));
 
 disp(' ');
-disp('--- VERIFICATION RESULT ---');
-disp(['Absolute Difference (|G_model - G_CODATA|) = ', string(Error_abs)]);
-disp(['Percentage Error relative to CODATA      = ', string(Error_perc), ' %']);
+disp('--- CALCULATION OF G_MODEL VARIANTS ---');
+
+// Calculation of G using the fundamental EWT Formula
+X_raw         = (A_pi * 3 * K_neutrinos * sqrt(2)) / C_Raw;
+X_eff_geom    = (A_pi * 3 * K_neutrinos * sqrt(2)) / C_Unif;
+G_EWT_raw     = (G_Base / A_pi) * (1 / (N_final * A_pi)^3) * (1 / (K_neutrinos * sqrt(N_nu_statutory / X_raw)));
+G_EWT_unified = (G_Base / A_pi) * (1 / (N_final * A_pi)^3) * (1 / (K_neutrinos * sqrt(N_nu_statutory / X_eff_geom)));
+
+disp(['G_EWT_RAW (Pure K+1)           = ', msprintf("%.15e", G_EWT_raw), ' m^3 kg^-1 s^-2']);
+disp(['G_EWT_UNIFIED (Alpha-Link)     = ', msprintf("%.15e", G_EWT_unified), ' m^3 kg^-1 s^-2']);
+disp(['G_CODATA (Target Value)        = ', msprintf("%.15e", G_CODATA), ' m^3 kg^-1 s^-2']);
+
+// --- VERIFICATION RESULT (Formatted like Alpha Section) ---
+Error_abs_G  = abs(G_EWT_unified - G_CODATA);
+Error_perc_G = (Error_abs_G / G_CODATA) * 100;
+
+disp(' ');
+disp('--- G-FACTOR VERIFICATION RESULT ---');
+disp(['Absolute Difference (|Model - CODATA|)   = ', msprintf("%.20e", Error_abs_G)]);
+disp(['Percentage Error relative to CODATA      = ', msprintf("%.15f", Error_perc_G), ' %']);
+disp(['Raw Geometry Gap (Pre-Alpha)             = ', msprintf("%.10f", (G_EWT_raw - G_CODATA)/G_CODATA * 100), ' %']);
+disp('-----------------------------------------------------');
+printf("EMC DILUTION (X_eff):          %.10f\n", X_eff_geom);
+printf("Lattice Projection (L_p):      %.10f\n", L_p);
+disp('=====================================================');
 
 // ==============================================================================
 // PART II: NEUTRINO RADIUS VALIDATION (1/5 POWER LAW TEST)
