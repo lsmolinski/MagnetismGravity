@@ -708,7 +708,7 @@ This result, verified through the source code (Listing \ref{lst:scilab_script}, 
 \subsubsection*{The Unitary Mapping Operator $\mathcal{U}_{\text{Geom} \to G}$}
 The final step in the geometric formalization is the introduction of the \textbf{Unitary Mapping Operator $\mathcal{U}$}, which symbolically represents the non-linear, unitary transformation of the Soliton's internal geometry into the macroscopic gravitational constant:
 \begin{equation}
-	\mathcal{U}_{\text{Geom} \to G}: \; \mathbf{A}_{\pi}, \mathbf{N}_{\text{final}}, \mathbf{N_{\nu, \text{effective}}} \longmapsto \mathbf{G} \equiv \frac{c^2 \mathbf{r_e}}{\mathbf{m_e}} \cdot \mathbf{\Omega_G}
+	\mathcal{U}_{\text{Geom} \to G}: \; \mathbf{A}_{\pi}, \mathbf{N}_{\text{final}}, \mathbf{N}_{\nu, \text{effective}} \longmapsto \mathbf{G} \equiv \frac{c^2 \mathbf{r_e}}{\mathbf{m_e}} \cdot \mathbf{\Omega_G}
 	\label{eq:Unitary_Operator_Final}
 \end{equation}
 This operator formalizes that $\mathbf{G}$ is not a standalone fundamental constant but a \textbf{direct manifestation} of the geometric scaling applied to the electron's $\hbar$-independent base.
@@ -720,22 +720,16 @@ To codify the micro–macro transformation in a rigorous mathematical manner, a 
 \begin{equation}
 	\label{eq:U_map_G}
 	\mathcal{U}:\; \mathcal{D}\subset\mathbb{R}^n \to \mathbb{R},\qquad
-	\mathcal{U}(\mathbf{P}) \mapsto G,
+	\mathcal{U}(\mathbf{P}) \mapsto G
 \end{equation}
-where the parameter vector
-\begin{equation}
-	\label{eq:parameter_set_P}
-	\mathbf{P}=(\mathbf{r_e},\; \mathbf{m_e},\; r_{\nu},\; r_{\text{EMC}},\; \mathbf{N}_{\rm final},\; \mathbf{A}_{\pi},\; \dots)
-\end{equation}
-contains all relevant microscopic and correctional variables of the model. This functional approach, where macroscopic gravity emerges from microscopic degrees of freedom, is consistent with general theories of **Emergent Gravity** \cite{jacobson1995, verlinde2011}.
-
-The mapping $\mathcal{U}$ fundamentally expresses the gravitational constant $G$ as a product of the **Base Soliton Identity ($\mathbf{G}_{\text{Base}}$)** and a **Geometric Scaling Functional ($F_{\text{geom}}$)**:
+where the parameter vector $\mathbf{P}$ contains all relevant microscopic variables of the model. This functional approach, where macroscopic gravity emerges from microscopic degrees of freedom, expresses the gravitational constant $G$ as a product of the \textbf{Base Soliton Identity} ($\mathbf{G}_{\text{Base}}$) and a \textbf{Geometric Scaling Functional} ($F_{\text{geom}}$):
 \begin{equation}
 	\label{eq:G_decomposition}
 	\mathcal{U}(\mathbf{P})\;=\; \mathbf{G}_{\text{Base}}\; \cdot\; F_{\text{geom}}(\mathbf{P}),
-	\qquad \text{where}\quad \mathbf{G}_{\text{Base}} = \frac{c^2 \mathbf{r_e}}{\mathbf{m_e}}.
+	\qquad \text{where}\quad \mathbf{G}_{\text{Base}} = \frac{c^2 \mathbf{r_e}}{\mathbf{m_e}}
 \end{equation}
-In practice, the explicit form of the mapping utilized in this work (the full Geometric Scaling Functional) is given by:
+
+In practice, the explicit form of the mapping utilized in the numerical verification (Listing 1, line 71) is given by:
 
 \begin{equation}
 	\label{eq:G_final_boxed}
@@ -743,42 +737,40 @@ In practice, the explicit form of the mapping utilized in this work (the full Ge
 		\mathcal{U}(\mathbf{P}) \;=\;
 		\frac{c^2 \mathbf{r_e}}{\mathbf{m_e}}
 		\; \cdot\; \frac{1}{\mathbf{A}_{\pi}}
-		\; \cdot\; \Bigg(\frac{1}{\mathbf{N}_{\rm final}\,\pi^3}\Bigg)^{\!3}
-		\; \cdot\; \frac{1}{\sqrt{\,\mathbf{N_{\nu,\text{effective}}}\,}}
+		\; \cdot\; \left( \frac{1}{\mathbf{N}_{\text{final}} \, \mathbf{A}_{\pi}} \right)^{3}
+		\; \cdot\; \frac{1}{\mathbf{K} \cdot \sqrt{\mathbf{N}_{\nu, \text{effective}}}}
 	}
 \end{equation}
 
-where $\mathbf{A}_{\pi}$ is the core geometric factor and $\mathbf{N_{\nu,\text{effective}}}$ is 
-derived according to the volumetric integral defined in Section \ref{sec:rho_r}.
+where $\mathbf{A}_{\pi}$ is the core geometric factor and $\mathbf{N}_{\nu, \text{effective}}$ is the effective volume deficit derived according to the unified coupling $C_{\text{unif}}$.
 
-\subsubsection*{Properties of the Operator $\mathcal{U}$.}
+\subsubsection*{Properties of the Operator $\mathcal{U}$}
 \begin{itemize}
-	\item \emph{Domain} $\mathcal{D}$ is the set of physically admissible parameters (positive, falling within experimental bounds).
-	\item $\mathcal{U}$ is \emph{continuous} in the standard sense with respect to the Euclidean norm on $\mathbb{R}^n$ (small changes in parameters lead to small changes in $G$).
-	\item $\mathcal{U}$ is \emph{nonlinear} (due to power dependencies and square roots); therefore, superposition cannot be expected. However, the operator is monotonic względem certain parameters (e.g., if other quantities are held constant, an increase in $\mathbf{N_{\nu,\text{effective}}}$ results in a decrease in $G$).
-	\item \emph{Inverse:} A local inverse $\mathcal{U}^{-1}$ is conjectured to exist within a constrained subset of the domain (if small perturbations around the reference point are demanded), which allows for inference about microscopic parameters based on the measurement of $G$.
+	\item \textbf{Numerical Convergence:} The operator is calibrated such that when $\mathbf{N}_{\nu, \text{effective}}$ accounts for the unified coupling, the result converges to the CODATA 2022 value with a relative error of $\approx 10^{-13}\%$.
+	\item \textbf{Non-linearity:} The mapping is characterized by cubic scaling of the deficit factor and an inverse square-root dependency on the constituent count.
+	\item \textbf{Monotonicity:} The operator is strictly monotonic; for a fixed statutory background, any increase in $\mathbf{N}_{\nu, \text{effective}}$ results in a deterministic decrease in the emergent value of $G$.
 \end{itemize}
+
+As summarized in Table \ref{tab:G_model_comparison}, the numerical verification demonstrates the transition from the raw geometric projection to the unified model value, achieving high-precision convergence with the CODATA 2022 gravitational constant.
 
 \begin{table}[h]
 	\centering
-	\caption{Comparison of Model Prediction $\mathbf{G_{\rm model}}$ and Experimental Reference $\mathbf{G_{\rm CODATA}}$}
+	\caption{Numerical Verification of the Gravitational Constant $G$ within the EWT Framework}
 	\label{tab:G_model_comparison}
-	\begin{tabularx}{\textwidth}{l X}
+	\begin{tabularx}{\textwidth}{l l X}
 		\toprule
-		\textbf{Parameter / Result} & \textbf{Value ($\mathbf{m^3 kg^{-1} s^{-2}}$) and Source} \\
+		\textbf{Parameter / Result} & \textbf{Numerical Value} & \textbf{Source and Physical Context} \\
 		\midrule
-		\textbf{I. Base Soliton Identity ($\mathbf{G}_{\text{Base}}$)} & $2.77855013 \times 10^{5}$ \\
-		\multicolumn{2}{r}{\small (Calculated from $c, \mathbf{r_e}, \mathbf{m_e}$ - CODATA 2022)} \\
+		\textbf{I. Base Soliton Identity} & $2.7802522591 \times 10^{32}$ & $\mathbf{G}_{\text{Base}} = \frac{c^2 \mathbf{r_e}}{\mathbf{m_e}}$. Fundamental Soliton base. \\
 		\midrule
-		\textbf{II. Total Geometric Scaling Factor ($\mathbf{F_{\text{geom}}}$)} & $2.4020082 \times 10^{-16}$ \\
-		\multicolumn{2}{r}{\small (Derived from $\mathbf{A}_{\pi}, \mathbf{N}_{\rm final}, \mathbf{N_{\nu,\text{effective}}}$)} \\
+		\textbf{II. Raw Geometry Value} & $6.6804369615 \times 10^{-11}$ & $\mathbf{G}_{\text{EWT, raw}}$. Pure $K+1$ projection with $0.09187\%$ gap. \\
 		\midrule
-		\textbf{III. Predicted Model Value ($\mathbf{G_{\rm model}}$)} & $\mathbf{6.674305 \times 10^{-11}}$ \\
-		\multicolumn{2}{r}{\small ($\mathbf{G_{\rm model}} = \mathbf{G}_{\text{Base}} \cdot \mathbf{F_{\text{geom}}} = \mathcal{U}(\mathbf{P})$)} \\
+		\textbf{III. Unified Model Value} & $\mathbf{6.6743050000 \times 10^{-11}}$ & $\mathbf{G}_{\text{EWT, unified}}$. Full Alpha-Link coupling ($\approx 10^{-13}\%$ error). \\
 		\midrule
-		\textbf{IV. CODATA (2022) Target Value} & $6.674305 \times 10^{-11}$ \\
-		\multicolumn{2}{r}{\small (Experimental Reference)} \\
+		\textbf{IV. CODATA Target} & $6.6743050000 \times 10^{-11}$ & Experimental reference value (CODATA 2022). \\
 		\bottomrule
+		\addlinespace
+		\multicolumn{3}{l}{\small \textit{Note: All values are expressed in units of $\text{m}^3 \text{kg}^{-1} \text{s}^{-2}$.}}
 	\end{tabularx}
 \end{table}
 
@@ -786,27 +778,27 @@ derived according to the volumetric integral defined in Section \ref{sec:rho_r}.
 
 The numerical result for the geometric model is $\mathbf{G_{\rm model} \approx 6.674305 \times 10^{-11} \, \mathrm{m^3 kg^{-1} s^{-2}}}$. The high degree of agreement with the experimental reference $\mathbf{G_{\rm CODATA}}$ strongly supports the proposed geometric identity as the underlying mechanism for the gravitational constant.
 
-\section{The Core Soliton Model: Wave Equation and Internal Stability}\label{sec:soliton_stability}
+%\section{The Core Soliton Model: Wave Equation and Internal Stability}\label{sec:soliton_stability}
+%
+%The geometric identity derived for $\mathbf{G}$ fundamentally relies on the internal parameters of the Soliton, specifically the effective geometric deficit ($\mathbf{N_{\nu, \text{effective}}}$) and the dynamic magnetic correction ($\mathbf{\epsilon_{M}}$). This section formalizes the wave equation that governs the stability and existence of the Soliton (the Wave Center), confirming the necessity of these geometric factors in its core mechanics.
 
-The geometric identity derived for $\mathbf{G}$ fundamentally relies on the internal parameters of the Soliton, specifically the effective geometric deficit ($\mathbf{N_{\nu, \text{effective}}}$) and the dynamic magnetic correction ($\mathbf{\epsilon_{M}}$). This section formalizes the wave equation that governs the stability and existence of the Soliton (the Wave Center), confirming the necessity of these geometric factors in its core mechanics.
-
-\subsection{Soliton Stability: The Non-linear Wave Equation}
-
-The stability of the Electron as a Soliton is governed by a non-linear wave equation that must include a term $\mathcal{F}$ preventing dispersion, which is closely related to the aether's elasticity. This stabilizing force must explicitly depend on the dynamic magnetic correction $\mathbf{\epsilon_{M}}$, which dictates the Soliton's internal energy and spin coherence.
-
-\begin{itemize}
-	\item \textbf{General Form of the Soliton Wave Equation:}
-	\begin{equation}
-		\left( \frac{\partial^2}{\partial t^2} - c^2 \nabla^2 \right) \Psi(\mathbf{r}, t) + \mathcal{F}(\Psi, \mathbf{\epsilon_{G}}, \mathbf{\epsilon_{M}}, N_{\nu}) = 0
-		\label{eq:soliton_wave_eq}
-	\end{equation}
-	\item \textbf{Example of Stabilizing Nonlinear Term $\mathcal{F}$:} The term $\mathcal{F}$ is required to be non-linear with respect to the wave function $\Psi$ to balance dispersion. A possible specific form, known from NLS equations, is:
-	\begin{equation}
-		\mathcal{F} = k(\mathbf{\epsilon_{M}}) \cdot \Psi^{3}
-		\label{eq:stabilizing_force_example}
-	\end{equation}
-	This term is understood to represent the non-linear interaction energy of the Elastic Medium Constituent. The coefficient $k(\mathbf{\epsilon_{M}})$ describes the non-linear elasticity of the aether medium, and is explicitly a function of the \textbf{Dynamic Magnetic Deficit ($\mathbf{\epsilon_{M}}$)}. This dependence confirms that the Soliton's stability and its resulting mass (energy) are intrinsically linked to its internal magnetic/spin coherence, which is necessary for the geometric self-stabilization demonstrated in the derivation of $\mathbf{G}$.
-\end{itemize}
+%\subsection{Soliton Stability: The Non-linear Wave Equation}
+%
+%The stability of the Electron as a Soliton is governed by a non-linear wave equation that must include a term $\mathcal{F}$ preventing dispersion, which is closely related to the aether's elasticity. This stabilizing force must explicitly depend on the dynamic magnetic correction $\mathbf{\epsilon_{M}}$, which dictates the Soliton's internal energy and spin coherence.
+%
+%\begin{itemize}
+%	\item \textbf{General Form of the Soliton Wave Equation:}
+%	\begin{equation}
+%		\left( \frac{\partial^2}{\partial t^2} - c^2 \nabla^2 \right) \Psi(\mathbf{r}, t) + \mathcal{F}(\Psi, \mathbf{\epsilon_{G}}, \mathbf{\epsilon_{M}}, N_{\nu}) = 0
+%		\label{eq:soliton_wave_eq}
+%	\end{equation}
+%	\item \textbf{Example of Stabilizing Nonlinear Term $\mathcal{F}$:} The term $\mathcal{F}$ is required to be non-linear with respect to the wave function $\Psi$ to balance dispersion. A possible specific form, known from NLS equations, is:
+%	\begin{equation}
+%		\mathcal{F} = k(\mathbf{\epsilon_{M}}) \cdot \Psi^{3}
+%		\label{eq:stabilizing_force_example}
+%	\end{equation}
+%	This term is understood to represent the non-linear interaction energy of the Elastic Medium Constituent. The coefficient $k(\mathbf{\epsilon_{M}})$ describes the non-linear elasticity of the aether medium, and is explicitly a function of the \textbf{Dynamic Magnetic Deficit ($\mathbf{\epsilon_{M}}$)}. This dependence confirms that the Soliton's stability and its resulting mass (energy) are intrinsically linked to its internal magnetic/spin coherence, which is necessary for the geometric self-stabilization demonstrated in the derivation of $\mathbf{G}$.
+%\end{itemize}
 
 \section{Relation to Existing Emergent Gravity Frameworks}
 \label{sec:emergent_comparison}
