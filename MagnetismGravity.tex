@@ -356,7 +356,39 @@ Gravity in model is not treated as an independent fundamental force, but as a \t
 
 \subsubsection{Geometric Density Levels and Nodal Scaling of $\mathbf{N_{\nu}}$}
 \label{radius_robustness_analysis}
-The constituent count $\mathbf{N_{\nu}}$ is a dimensionless geometric quantity representing the density of the Elastic Medium Constituents (EMC) within the soliton. Building upon the unified framework of the EWT model \cite{yee2019spacetime, Yee2020Aether}, we distinguish three fundamental levels of density that define the transition from pure vacuum geometry to physical gravity.
+The number of constituents $\mathbf{N_{\nu}}$ is a dimensionless geometric quantity derived from the ratio of the Soliton’s radius ($\mathbf{r_{\nu}}$) and the radius of the Elastic Medium Constituent $\mathbf{r_{EMC}}$ (see fig. \ref{fig:neutrino_topology_unified}):
+
+\begin{equation}
+	\mathbf{N_{\nu}} = \left(\frac{\mathbf{r_{\nu}}}{\mathbf{r_{EMC}}}\right)^3
+	\label{eq:N_nu}
+\end{equation}
+
+This ratio provides the key numerical factor for the Geometric Model.
+
+\subsubsection*{Derivation of the Statutory Radius ($\mathbf{r_{\nu}}$):}
+The Neutrino Soliton radius ($\mathbf{r_{\nu}}$) is identified with the \textbf{Fundamental Longitudinal Wavelength ($\mathbf{\lambda}$)} for the Minimal Stable Soliton ($K_{WC}=1$) \cite{yee2019geometry}. The uncorrected base wavelength ($\mathbf{\lambda}_{\text{uncorr}}$) is calculated using $\mathbf{q}_P$ and $\mathbf{e}$ (Euler's number):
+\begin{equation}
+	\mathbf{\lambda}_{\text{uncorr}} = 2 \mathbf{q}_P \mathbf{e}^2 \approx \mathbf{2.77171 \times 10^{-17} \text{ m}}
+	\label{eq:r_nu_uncorr}
+\end{equation}
+The final Statutory Radius ($\mathbf{r_{\nu}}$) is obtained by applying the geometric $\mathbf{g}$-factor ($\mathbf{g}_v \approx 0.983592$):
+\begin{equation}
+	\mathbf{r_{\nu}} = \frac{\mathbf{\lambda}_{\text{uncorr}}}{\mathbf{g}_v} \approx \mathbf{2.81794 \times 10^{-17} \text{ m}}
+	\label{eq:r_nu_corr}
+\end{equation}
+
+\subsubsection*{Justification for the Geometric $\mathbf{g}$-Factor $\mathbf{g}_v$ and Consistency Check:}
+The geometric correction factor $\mathbf{g}_v$ is applied to maintain **numerical consistency with the core EWT model**. While the fundamental \textbf{Lorentz-like shortening} of matter in motion is an integral part of the EWT framework, the specific factor $\mathbf{g}_v$ used to define $\mathbf{r_{\nu}}$ (which results in **radius expansion** relative to the uncorrected wavelength) is \textbf{not interpreted as a kinematic Doppler shift}. Instead, it is better interpreted as a consequence of the **absence, or near-absence, of the magnetic deformation term $\mathbf{\epsilon_M}$** in the neutral neutrino. This term is critical for describing the electron's spin and anomalous magnetic moment, suggesting the expansion is driven by the fundamental difference in magnetic/spin geometry between the two leptons.
+
+Specifically, it is proposed that the magnetic field of a charged lepton acts as a geometric torque that actively compresses the soliton radius $\mathbf{r}$, whereas the absence of this strain in the neutral neutrino allows it to maintain its expanded statutory radius $\mathbf{r_{\nu}}$.
+
+The numerical consistency script (Listing \ref{lst:scilab_script} in the Appendix) verifies that this statutory value $\mathbf{r_{\nu}}$ adheres to the power-law relationships that govern the ratios of Lepton Soliton radii ($\mathbf{r_e} / \mathbf{r_{\nu}}$) \cite{yee2014leptons}. The numerical test confirms that $\mathbf{r_{\nu}}$ yields an implied geometric scaling factor of $\mathbf{\approx 10^{10}}$, validating its derived magnitude with exceptional precision (see the full execution results in Listing \ref{lst:scilab_output}, Part II). The model's demonstrated robustness against large relative changes in radius (Figure \ref{fig:robustness_analysis}). 
+
+Consequently, this framework proposes a shift from a kinematic to a structural origin of the $g_v$ factor, a hypothesis that is formally validated in the subsequent derivations of the magnetic anomaly.
+
+
+
+Building upon the unified framework of the EWT model \cite{yee2019spacetime, Yee2020Aether}, we distinguish three fundamental levels of density that define the transition from pure vacuum geometry to physical gravity:
 
 \subsubsection*{1. Absolute Maximum Capacity ($N_{\nu, \text{max}}$)}
 The theoretical maximum number of EMCs that can be packed into the soliton's radius $r_{\nu}$ relative to the fundamental Planck scale $\lambda_l$ is defined by the geometric limits of the elastic medium \cite{yee2019spacetime}:
@@ -392,16 +424,6 @@ The transition from the Planck scale to the gravitational scale in EWT is govern
 	\item \textbf{Effective ($10^{48}$):} Gravitational active density (EMC capacity).
 \end{itemize}
 This multi-stage dilution reconciles the substantial geometric radius of the soliton ($r_{\nu} \approx 10^{-17}$ m) with the observed CODATA value of $G$ through the $X_{\text{eff}}$ scaling factor.
-
-\subsubsection*{Justification for the Geometric $\mathbf{g}$-Factor $\mathbf{g}_v$ and Consistency Check:}
-The geometric correction factor $\mathbf{g}_v$ is applied to maintain **numerical consistency with the core EWT model**. While the fundamental \textbf{Lorentz-like shortening} of matter in motion is an integral part of the EWT framework, the specific factor $\mathbf{g}_v$ used to define $\mathbf{r_{\nu}}$ (which results in **radius expansion** relative to the uncorrected wavelength) is \textbf{not interpreted as a kinematic Doppler shift}. Instead, it is better interpreted as a consequence of the **absence, or near-absence, of the magnetic deformation term $\mathbf{\epsilon_M}$** in the neutral neutrino. This term is critical for describing the electron's spin and anomalous magnetic moment, suggesting the expansion is driven by the fundamental difference in magnetic/spin geometry between the two leptons.
-
-Specifically, it is proposed that the magnetic field of a charged lepton acts as a geometric torque that actively compresses the soliton radius $\mathbf{r}$, whereas the absence of this strain in the neutral neutrino allows it to maintain its expanded statutory radius $\mathbf{r_{\nu}}$.
-
-The numerical consistency script (Listing \ref{lst:scilab_script} in the Appendix) verifies that this statutory value $\mathbf{r_{\nu}}$ adheres to the power-law relationships that govern the ratios of Lepton Soliton radii ($\mathbf{r_e} / \mathbf{r_{\nu}}$) \cite{yee2014leptons}. The numerical test confirms that $\mathbf{r_{\nu}}$ yields an implied geometric scaling factor of $\mathbf{\approx 10^{10}}$, validating its derived magnitude with exceptional precision (see the full execution results in Listing \ref{lst:scilab_output}, Part II). The model's demonstrated robustness against large relative changes in radius (Figure \ref{fig:robustness_analysis}). 
-
-Consequently, this framework proposes a shift from a kinematic to a structural origin of the $g_v$ factor, a hypothesis that is formally validated in the subsequent derivations of the magnetic anomaly.
-
 
 \begin{figure}[ht!]
 	\centering
@@ -1330,14 +1352,19 @@ As established in Sections \ref{density_duality}–\ref{sec:hyp_1_pushout}, the 
 
 \begin{quote}
 	\textit{\textbf{Remark on Soliton Stability and Generational Hierarchy:}} 
-	The soliton maintains stability through the vacuum stiffness $N$, which prevents structural collapse at the elastic limit. Rather than undergoing dissolution, the base electron soliton serves as the fundamental geometric substrate for subsequent layers. Higher generations (muon and tau) do not replace the electron but emerge as nested shells (\textit{Onion Model}) necessitated by the scaling disparity between the quintic increase of the base potential ($r^5$) and the cubic capacity of the geometric push-out mechanism ($r^3$). This non-linear divergence provides a deterministic proof that particle generations are not distinct entities, but recursive wave resonances required to maintain equilibrium when the energy density of a single-cell soliton exceeds the vacuum's volumetric compensation threshold.
+	The soliton maintains stability through the vacuum stiffness $N$, which prevents structural collapse at the elastic limit. Rather than undergoing dissolution, the base electron soliton serves as the fundamental geometric substrate for subsequent layers. Higher generations (muon and tau) do not replace the electron but emerge as nested shells (\textit{Onion Model}) necessitated by the scaling disparity between the quintic increase of the base potential ($r^5$) and the cubic capacity of the geometric push-out mechanism ($r^3$). This non-linear divergence provides a deterministic proof that particle generations are not distinct entities, but recursive wave resonances required to maintain equilibrium when the energy density of a single complex soliton exceeds the vacuum's volumetric compensation threshold.
 \end{quote}
 
-This dual causality reveals that the observed invariance of $G$ is a result of the exact cancellation between energy concentration and geometric restoration, a balance maintained by the vacuum's elastic modulus $N$. This equilibrium is dynamically stable as long as the magnetic coherence term remains within its \textbf{admissible range}. In this regime, the increase in internal energy concentration is precisely balanced by the structural dilution of the packing density. In the EWT framework, this balance is quantified by the universal geometric modulator $\epsilon_M \pi^3$, which acts as the restoring force of the vacuum lattice:
+This dual causality reveals that the observed invariance of $G$ is a result of the exact cancellation between energy concentration and geometric restoration, a balance maintained by the vacuum's elastic modulus $N_{\text{final}}$. This equilibrium is dynamically stable as long as the magnetic coherence term remains within its \textbf{admissible range}. In this regime, the increase in internal energy concentration is precisely balanced by the structural dilution of the packing density. In the EWT framework, this balance is quantified by the \textbf{Push-Out Operator} $\Omega_{\text{Push}}$, which acts as the restoring force of the vacuum lattice and defines the cubic scaling of the gravitational deficit:
 
 \begin{equation}
 	\label{eq:compensation_condition_final}
-	\Delta \rho_E \text{ (concentration)} \approx - \Delta \rho(r) \text{ (push-out deficit)} \propto \epsilon_M \pi^3
+	\Delta \rho_E \text{ (concentration)} \approx - \Delta \rho(r) \text{ (push-out deficit)} \propto \Omega_{\text{Push}}
+\end{equation}
+
+Where the dynamic coupling is governed by the cubic geometric identity:
+\begin{equation}
+	\Omega_{\text{Push}} = \left( \frac{1}{A_{\pi} \cdot N_{\text{final}}} \right)^{3}
 \end{equation}
 
 The neutrino, \textbf{lacking magnetic coherence}, cannot enter this compensatory regime, which explains its \textbf{larger equilibrium radius} ($r_{\nu}$) as derived in Section \ref{eq:r_nu_corr}. While the charged leptons (electron, muon, tau) are "compressed" by their intrinsic magnetic/spin energy, the neutrino remains in a relaxed geometric state, defining the statutory volume of the medium deficit used to calculate the base Gravitational Constant $G$.
