@@ -147,14 +147,13 @@ N_unify_range = linspace(500, 2000, 3000);
 G_path = []; 
 Alpha_inv_path = [];
 A_pi_base_inv_local = 137.036040608; 
-N_nu_fixed = 4.659840d54;   
 G_Base_local = (c_0^2 * r_e) / m_e; 
 
 for n_v = N_unify_range
     eps_m_local = 1 / (n_v * %pi^3);
     a_inv_local = A_pi_base_inv_local - eps_m_local;
     Alpha_inv_path = [Alpha_inv_path, a_inv_local];
-    g_val_local = G_Base_local * (1/A_pi_base_inv_local) * (eps_m_local^3) * (1/sqrt(N_nu_fixed));
+    g_val_local = (G_Base / A_pi) * (1 / (n_v * A_pi)^3) * (1 / (K_neutrinos * sqrt(N_nu_effective)));
     G_path = [G_path, g_val_local];
 end
 
