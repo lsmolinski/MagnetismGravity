@@ -301,72 +301,70 @@ printf("\n[DATA]    N_nu_statutory: %.2e", N_nu_stat_base);
 printf("\n[EXPORT]  File saved as: %s", pdf_m7);
 printf("\n=====================================================\n");
 // =============================================================================
-// MODULE 8: STIFFNESS-VOLUME STABILITY (N vs N_nu_eff) 
+// MODULE 8: STIFFNESS-VOLUME STABILITY (FINAL PRECISION VERSION)
 // =============================================================================
+// Purpose: Demonstrate G-stability via N ~ N_eff^(-1/6) relationship
+// =============================================================================
+
 pdf_m8 = "EWT_Stiffness_Equilibrium.pdf";
 
-// Updated Hierarchy from TeX documentation
-N_nu_max   = 5.3004155d54; // Pure Geometric Capacity
-N_nu_stat  = 3.2986d52;    // Eulerian Background (2e)
-N_nu_eff   = 6.2525176d48; // Gravitational Target Density
+// 1. PHYSICAL PARAMETERS & HIERARCHY (For Reference)
+N_nu_stat  = 3.2986d52;    // Statutory Background (2e dilution)
+N_nu_eff   = 6.2525176d48; // Effective Gravitational Target
+ratio_stat = N_nu_stat / N_nu_eff; 
 
-// Calculate the Density Gap (Reference for Vacuum Saturation Limit)
-// This ratio defines the "depth" of the gravitational potential well
-ratio_stat_eff = N_nu_stat / N_nu_eff; 
+// 2. STABILITY LAW DERIVATION
+// Fundamental EWT Law: N is proportional to (N_nu_eff)^(-1/6)
+// Geometric coupling: N_nu is proportional to r^3
+// Resulting Radial Law: N is proportional to (r^3)^(-1/6) = r^(-0.5)
+stiffness_exponent = -1/6;
 
-// Input parameters for sensitivity analysis
-dr_range = linspace(-0.25, 0.25, 200); 
-N_nu_norm  = [];
-N_req_norm = [];
+// 3. DATA GENERATION
+dr_range = linspace(-0.25, 0.25, 200);
 
-for dr = dr_range
-    // Volume scaling response: N_nu ~ (1+dr)^3
-    N_nu_norm = [N_nu_norm, (1 + dr)^3];
-    
-    // Nodal stiffness response: N ~ (1+dr)^(-0.5)
-    // Derived from the stability law: N proportional to N_nu_eff^(-1/6)
-    N_req_norm = [N_req_norm, (1 + dr)^(-0.5)];
-end
+// Element-wise power (.^) for vector stability
+N_nu_norm  = (1 + dr_range).^3;
+N_req_norm = (1 + dr_range).^(3 * stiffness_exponent); // The r^-0.5 path
 
-h_fig18 = scf(18); clf(); drawlater();
+// 4. VISUALIZATION
+h_fig18 = scf(18); clf(); 
+h_fig18.figure_size = [900, 700];
+drawlater();
 
-// Plotting the Background Saturation Level (The Statutory Ceiling)
-plot([dr_range(1), dr_range($)], [ratio_stat_eff, ratio_stat_eff], "k--", "linewidth", 1);
+// Plot dynamic response curves
+plot(dr_range, N_nu_norm, "b-", "linewidth", 3); 
+plot(dr_range, N_req_norm, "r-", "linewidth", 3);
 
-// Plotting Relative Physical Responses
-plot(dr_range, N_nu_norm, "b-", "linewidth", 2); 
-plot(dr_range, N_req_norm, "r-", "linewidth", 2);
+// Mark the Effective Lock-in Point (The G-target equilibrium)
+plot(0, 1.0, "ko", "markersize", 12, "thickness", 2);
 
-// Mapping Characteristic Stability Nodes
-plot(0, 1.0, "ko", "markersize", 10, "thickness", 2);            // Effective Point
-plot(0, ratio_stat_eff, "ks", "markersize", 10, "thickness", 2); // Statutory Point
+// Axis and Grid formatting
+ax = gca();
+ax.data_bounds = [-0.25, 0.4; 0.25, 2.0]; 
+ax.grid = [1, 1];
+ax.font_size = 3;
 
 xtitle("Gravity Stability: Nodal Stiffness vs. Soliton Volume", ..
        "Relative Radius Fluctuation (dr/r)", "Normalized Response (Value / N_eff)");
 
-legend(["Statutory Background (10^52)"; "Soliton Volume (N_nu_eff)"; ..
-        "Nodal Stiffness (N)"; "Effective Point (G-Target)"; "Statutory Point"], "in_upper_center");
+// Legend with explicit mathematical bridge
+legend(["Soliton Vol. Response (r^3)"; ..
+        "Nodal Stiffness (r^-0.5 from N_eff^-1/6)"; ..
+        "Effective Lock-in Point"], "in_upper_center");
 
-xgrid(12);
-// Adjusted bounds to visualize both the lock-in point and the background gap
-gca().data_bounds = [-0.25, 0.0; 0.25, max(N_nu_norm) * 1.5]; 
 drawnow();
 
-// --- EXPORT AND LOGS ---
+// 5. EXPORT AND SCIENTIFIC LOGS
 xs2pdf(h_fig18, script_path + pdf_m8);
 
 printf("\n=====================================================");
-printf("\n    EWT MODULE 8: STIFFNESS-VOLUME STABILITY");
+printf("\n    EWT MODULE 8: STABILITY ANALYSIS COMPLETE");
 printf("\n=====================================================");
-printf("\n[STATUS]  Figure generated in Window 18");
-printf("\n[DATA]    Statutory Background N: %.2e", N_nu_stat);
-printf("\n[DATA]    Effective Density N:    %.2e", N_nu_eff);
-printf("\n[DATA]    Density Gap (Stat/Eff): %.2f", ratio_stat_eff);
-printf("\n[EXPORT]  File saved as: %s", pdf_m8);
-printf("\n-----------------------------------------------------");
-printf("\n[ANALYSIS] Vacuum Sensitivity Factor: dN/dr = -0.5");
-printf("\n[RESULT]   The system exhibits mechanical damping.");
-printf("\n[LIMIT]    Gravity Mode: ATTRACTIVE (N_eff < N_stat)");
+printf("\n[STATUS]    Figure generated in Window 18");
+printf("\n[LAW]       N ~ N_eff^(%.3f)", stiffness_exponent);
+printf("\n[RESPONSE]  dN/dr = %.1f (Stability Gain 2.0x)", 3 * stiffness_exponent);
+printf("\n[HIERARCHY] Stat/Eff Density Gap: %.2e", ratio_stat);
+printf("\n[EXPORT]    File saved as: %s", pdf_m8);
 printf("\n=====================================================\n");
 // =============================================================================
 // EWT MODULE 9: LEPTODYNAMICS STABILITY & AMM ROBUSTNESS ANALYSIS
