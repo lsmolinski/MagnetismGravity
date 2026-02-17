@@ -2386,29 +2386,32 @@ The following table lists the fundamental physical constants and key dimensionle
 \small % Using a smaller font for table readability
 \begin{table}[h!]
 	\centering
-	\caption{\textbf{EWT Parameters and CODATA 2022 Values Used in $\mathbf{G}$ Derivation}}
+	\caption{\textbf{EWT Parameters and CODATA 2022 Values Used in $G$ Derivation}}
 	\label{tab:final_parameters}
-	\begin{tabularx}{\textwidth}{p{4.0cm} p{1.8cm} X p{4.0cm}}
+	\begin{tabularx}{\textwidth}{l l l X}
 		\toprule
-		\textbf{Parameter} & \textbf{Symbol} & \textbf{Value Used} & \textbf{Source/Justification} \\
+		\textbf{Parameter} & \textbf{Symbol} & \textbf{Numerical Value} & \textbf{Source / Justification} \\
 		\midrule
 		\multicolumn{4}{l}{\textbf{I. Fundamental Constants (CODATA 2022)}} \\
 		\midrule
-		Speed of Light & $c$ & $299792458 \text{ m/s}$ & Defined Value \\
-		Electron Mass & $\mathbf{m_e}$ & $9.1093837015 \times 10^{-31} \text{ kg}$ & CODATA 2022 \\
-		Classical Electron Radius & $\mathbf{r_e}$ & $2.8179403262 \times 10^{-15} \text{ m}$ & CODATA 2022 \\
-		$\mathbf{G}_{\text{CODATA}}$ Target & $\mathbf{G}_{\text{CODATA}}$ & $\mathbf{6.674305 \times 10^{-11}}\newline \text{m}^3\text{kg}^{-1}\text{s}^{-2}$ & CODATA 2022 (Target Value) \\
-		% USUNIĘTO: Reduced Planck Constant (h-bar)
-		Reciprocal Fine-Structure & $\alpha^{-1}$ & $137.035999084(21)$ & CODATA 2022 \\
+		Speed of Light & $c$ & $299792458$ & Defined constant (m/s). \\
+		Electron Mass & $m_e$ & $9.1093837015 \times 10^{-31}$ & CODATA 2022 reference (kg). \\
+		Classical Radius & $r_e$ & $2.8179403262 \times 10^{-15}$ & CODATA 2022 reference (m). \\
+		Fine-Structure Inv. & $\alpha^{-1}$ & $137.035999084$ & Electromagnetic coupling base. \\
 		\midrule
-		\multicolumn{4}{l}{\textbf{II. Dimensionless EWT Geometric Factors (Derived)}} \\
+		\multicolumn{4}{l}{\textbf{II. Hierarchical Volume Deficit Parameters}} \\
 		\midrule
-		Geometric  Base & $\mathbf{A}_{\pi}$ & $4\pi^{3} + \pi^{2} + \pi$ & EWT Static Geometric Foundation \\
-		Dyn. Correction Factor & $\mathbf{N}_{\text{final}}$ & $778.818123$ & EWT (Derived from $\mathbf{\alpha}^{-1}$ correction) \\
-		Ef. Volume Deficit & $\mathbf{N_{\nu, \text{effective}}}$ & $\mathbf{4.659840} \times 10^{54}$ & EWT (Required by $\mathbf{G}_{\text{CODATA}}$) \\
-		Geometric Magnetic Deficit Factor & $\mathbf{\epsilon_{M}}$ & $\mathbf{4.14138128 \times 10^{-5}}$ & Derived $\mathbf{\frac{1}{\mathbf{N}_{\text{final}} \cdot \pi^3}}$\\
-		Emergent Base Factor & $\mathbf{\Omega_{E}}$ & $\mathbf{A}_{\pi}^{-1} \cdot \mathbf{N_{\nu, \text{effective}}}^{-1/2}$ & Static Geometry Composite \\
-		Magnetic Modulator & $\mathbf{\Omega_{M}}$ & $\mathbf{\epsilon_{M}}^{\mathbf{3}}$ & Dynamic Volume Correction \\
+		Absolute Maximum & $N_{\nu, \text{max}}$ & $5.3004155344 \times 10^{54}$ & Theoretical EMC packing limit. \\
+		Statutory Background & $N_{\nu, \text{stat}}$ & $3.2986518824 \times 10^{52}$ & Eulerian vacuum capacity. \\
+		Effective Deficit & $N_{\nu, \text{eff}}$ & $6.2525176219 \times 10^{48}$ & Integrated Soliton density. \\
+		Dilution Factor & $X_{\text{eff}}$ & $5275.71785$ & Ratio $N_{\nu, \text{stat}} / N_{\nu, \text{eff}}$. \\
+		\midrule
+		\multicolumn{4}{l}{\textbf{III. Geometric and Unified Operators}} \\
+		\midrule
+		Geometric Base & $A_{\pi}$ & $137.081829$ & $4\pi^3 + \pi^2 + \pi$. Static foundation. \\
+		Packing Factor & $N_{\text{final}}$ & $778.818123$ & Derived from $\alpha$ correction. \\
+		Lattice Projection & $L_p$ & $1.1486801482$ & Bridge to BCC lattice geometry. \\
+		Unified Coupling & $C_{\text{unif}}$ & $1.10080613$ & Interfacial tension operator. \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
