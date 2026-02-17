@@ -42,7 +42,7 @@ sq2            = sqrt(2);
 N_nu_geom      = N_nu_statutory * (1/sq2) * (1 - 1/(2 * N_final));
 
 // Setting N_nu_effective (Calibrated / Interference value)
-N_nu_effective = 4.659840d52; 
+ 
 
 // epsilon_M: The Stiffness/Magnetic Deficit Factor
 epsilon_M_val = 1 / (N_final * (Pi^3));
@@ -67,12 +67,12 @@ alpha_geom = 1 / (A_pi - eps_M);
 // C_Unif variants
 C_Raw      = (1 + K_neutrinos) / K_neutrinos; 
 C_Unif     = (1 / K_neutrinos) + 1 + (alpha_geom / (Pi * L_p)); 
-
+N_nu_effective = N_nu_statutory / ((A_pi * 3 * K_neutrinos * sqrt(2)) / C_Unif);
 disp(' ');
 disp(['--- ANALYSIS OF VOLUME DEFICIT FACTORS (PUSH-OUT LOGIC) ---']);
 printf("N_nu_max (Absolute Max):       %.15e\n", N_nu_max);
 printf("N_nu_statutory (Background):   %.15e\n", N_nu_statutory);
-printf("N_nu_geom (Effective EMC):     %.15e\n", N_nu_statutory / ((A_pi * 3 * K_neutrinos * sqrt(2)) / C_Unif));
+printf("N_nu_geom (Effective EMC):     %.15e\n", N_nu_effective);
 
 disp(' ');
 disp('--- CALCULATION OF G_MODEL VARIANTS ---');
@@ -81,7 +81,7 @@ disp('--- CALCULATION OF G_MODEL VARIANTS ---');
 X_raw         = (A_pi * 3 * K_neutrinos * sqrt(2)) / C_Raw;
 X_eff_geom    = (A_pi * 3 * K_neutrinos * sqrt(2)) / C_Unif;
 G_EWT_raw     = (G_Base / A_pi) * (1 / (N_final * A_pi)^3) * (1 / (K_neutrinos * sqrt(N_nu_statutory / X_raw)));
-G_EWT_unified = (G_Base / A_pi) * (1 / (N_final * A_pi)^3) * (1 / (K_neutrinos * sqrt(N_nu_statutory / X_eff_geom)));
+G_EWT_unified = (G_Base / A_pi) * (1 / (N_final * A_pi)^3) * (1 / (K_neutrinos * sqrt(N_nu_effective)));
 
 disp(['G_EWT_RAW (Pure K+1)           = ', msprintf("%.15e", G_EWT_raw), ' m^3 kg^-1 s^-2']);
 disp(['G_EWT_UNIFIED (Alpha-Link)     = ', msprintf("%.15e", G_EWT_unified), ' m^3 kg^-1 s^-2']);
