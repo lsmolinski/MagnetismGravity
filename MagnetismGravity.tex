@@ -236,6 +236,7 @@ The stability of the geometric structure hinges upon the nature of the medium's 
 
 The macroscopic stiffness parameter $N$ (as defined in Eq. \ref{eq:epsilon_M_definition}) used in the derivation of the gravitational constant and anomalous magnetic moments is the emergent aggregate of the microscopic elastic constants $k$ of the BCC lattice substrate. While $k$ defines the fundamental repulsive interaction between individual EMCs following Hooke's Law \eqref{eq:hooke_law}, $N$ represents the global resistance of the vacuum to volumetric displacement. This connection bridges the localized elastic forces shown in Fig. \ref{fig:emc_interaction} with the large-scale stability required for the precise determination of leptonic anomalies.
 
+
 \section{Geometric Equation of the Fine-Structure Constant and the Deficit Terms}\label{sec:alpha_geometric_deficit}
 
 The \textbf{fine-structure constant} ($\alpha$) is defined within Energy Wave Theory (EWT) as a geometric ratio describing the relative strengths of fundamental forces—charge energy, magnetism, and gravity \cite{yee2025geometriccorrection}.
@@ -287,6 +288,17 @@ Furthermore, since the contribution of the gravitational deficit ($\sum \epsilon
 	\label{eq:A_pi_inv}
 \end{equation}
 
+\begin{equation}
+	\label{eq:epsilon_M_definition}
+	\epsilon_M = \frac{1}{N_{\text{final}} \cdot \pi^3}
+\end{equation}
+
+\begin{equation}
+	N_{\text{final}} = 778.818123 
+\end{equation}
+
+The parameter $N_{\text{final}}$ is thus established as the ultimate unifying constant of the EWT framework, serving as the deterministic link that bridges the gravitational constant $G$, the recursive anomalous magnetic moments of leptons, and the fine-structure constant $\alpha$ into a single, cohesive geometric identity
+
 This normalization aligns the theoretical geometric model with the observed CODATA value ($137.035999...$), identifying $\epsilon_{M}$ as the \textbf{precise energetic cost} of the particle's spin-induced magnetic moment.
 
 \section{Analysis of Neutrino Boundary Conditions}
@@ -334,9 +346,9 @@ Gravity in model is not treated as an independent fundamental force, but as a \t
 
 \begin{itemize}
 \item \textbf{Genesis of the Deficit ($\epsilon_{G}$):} The gravitational effect is interpreted as resulting from a constant, \textbf{internal geometric deficit ($\epsilon_{G}$)} within the Soliton (Wave Center). This deficit is identified as a geometrical **shortage of Elastic Medium Components (EMCs)** within the Soliton's volume. Crucially, $\epsilon_{G}$ is defined as an intrinsic, constant geometric factor ($1/N_{\nu}$) in the Wave Center's topology, which is a \textbf{necessary consequence of maintaining the minimal stable volume} in the elastic medium.
-	\item \textbf{Macroscopic Field via Accumulation:} The macroscopic gravitational field is the result of the \textbf{linear accumulation} of these microscopic geometric deficits ($\epsilon_{G}$). For any structure (e.g., the electron, where $K=10$ Wave Centers, or any massive body \cite{yee2019geometry}), the total gravitational effect is calculated as the product of the deficit of a single WC ($\epsilon_{G}$) and the number of those Wave Centers ($K$ or $N_{WC}$):
+	\item \textbf{Macroscopic Field via Accumulation:} The macroscopic gravitational field is the result of the \textbf{linear accumulation} of these microscopic geometric deficits ($\epsilon_{G}$). For any structure (e.g., the electron, where $K_{WC}=10$ Wave Centers, or any massive body \cite{yee2019geometry}), the total gravitational effect is calculated as the product of the deficit of a single WC ($\epsilon_{G}$) and the number of those Wave Centers ($K_{WC}$):
 	\begin{equation}
-		\sum \epsilon_{G} = K \cdot \epsilon_{G} \quad \text{or} \quad \sum \epsilon_{G} = N_{WC} \cdot \epsilon_{G}
+		\sum \epsilon_{G} = K_{WC} \cdot \epsilon_{G}
 		\label{eq:grav_sum_neutrino}
 	\end{equation}
 	\textbf{Geometric Scaling Factor ($K$):} The multiplier $K$ represents the total number of Wave Centers (WC) that constitute the rest mass of a particle. It serves as the geometric scaling factor, determining the total number of $\epsilon_{G}$ deficit sources and thus the particle's total gravitational contribution, bridging the geometry of the Soliton to the fine-structure constant $\alpha$ \cite{yee2025geometriccorrection}.
@@ -407,29 +419,29 @@ Consequently, this framework proposes a shift from a kinematic to a structural o
 		\draw[ultra thick, fill=green!5!white, draw=green!40!black] (0,0) circle (\NeutrinoRadius cm);
 		
 		% Etykieta przeniesiona PONAD okrąg
-		\node[font=\bfseries, align=center, draw=none] (Label) at (0, 2.5) {Neutrino Soliton \\ (Wave Center)};
+		\node[font=\bfseries, align=center, draw=none] (Label) at (0, 2.7) {Neutrino Soliton \\ (Wave Center)};
 		
 		% Strzałka wskazująca na okrąg
 		\draw[->, thick, color=green!40!black] (Label.south) -- (0, 2.0);
 		
 		% Rysowanie EMC wewnątrz (symbolicznie reprezentujące N_nu)
-		\foreach \i in {1, 2, ..., 30} % Zmniejszona liczba kółek, aby uniknąć kolizji
+		\foreach \i in {1, 2, ..., 30} 
 		{
 			\pgfmathsetmacro{\angle}{random(360)}
 			\pgfmathsetmacro{\radius}{random(180)/180 * 1.8}
 			\draw[fill=blue!70, draw=none] (\angle:\radius cm) circle (\GranuleRadius cm);
 		}
 		
-		% Etykieta N_nu (pozostaje wewnątrz, jest kluczowa)
-\node[align=center, draw=black, fill=white, ultra thick, inner sep=5pt, font=\bfseries] at (0, 1.5) {
-	$\mathbf{N_{\nu, max}} \approx 10^{54}$ (Geometric Limit) \\
-	$\mathbf{N_{\nu, stat}} \approx 10^{52}$ (Statutory Vacuum)
-};
+		% Ramka N_nu - czyste wpisy bez problematycznych komend tabelarycznych
+		\node[align=center, draw=black, fill=white, ultra thick, inner sep=6pt, font=\small] at (0, 1.2) {
+			$\mathbf{N_{\nu, max}} \approx 10^{54}$ (Geometric Limit) \\[3pt]
+			$\mathbf{N_{\nu, stat}} \approx 10^{52}$ (Statutory Vacuum) \\[3pt]
+			$\mathbf{N_{\nu, eff}} \approx 10^{48}$ (Effective Deficit)
+		};
+		
 		% Porównanie Promieni (r_nu vs r_EMC)
-		% ZMIANA: Zwiększona grubość linii (thick, dashed)
-		\draw[thick, dashed, red!80!black] (0, 0) -- (\NeutrinoRadius, 0); 
-		% ZMIANA: Powiększona czcionka i margines (above=1pt)
-		\node[above=1pt, red!80!black, font=\large] at (1.0, 0) {$\mathbf{r_{\nu}}$}; 
+		\draw[thick, dashed, red!80!black] (0, 0) -- (\NeutrinoRadius, 0); 
+		\node[above=1pt, red!80!black, font=\large] at (1.0, 0) {$\mathbf{r_{\nu}}$}; 
 		
 		% Wstawka r_EMC (symbolizuje różnicę skali)
 		\node[anchor=south west] at (2.0, 0) {
@@ -441,13 +453,12 @@ Consequently, this framework proposes a shift from a kinematic to a structural o
 		
 		% Strzałka symbolizująca stosunek objętości
 		\draw[very thick, decorate, decoration={snake, amplitude=.5pt, segment length=3pt}, ->] (0, -2.5) -- (0, -3.2);
-\node[below, font=\bfseries] at (0, -3.2) {Statutory Scaling: $\mathbf{N_{\nu, stat}} = \left( \frac{r_{\nu}}{2 \lambda_l e} \right)^3$};
+		\node[below, font=\bfseries] at (0, -3.2) {Statutory Scaling: $\mathbf{N_{\nu, stat}} = \left( \frac{r_{\nu}}{2 \lambda_l e} \right)^3$};
 		
 	\end{tikzpicture}
-\caption{\textbf{Neutrino Soliton as a Composite Wave Center.} The Neutrino's stable volume ($r_{\nu}$) defines a hierarchical structure of Elastic Medium Constituents ($\mathbf{r_{\text{EMC}}}$). The statutory background density ($\mathbf{N_{\nu, \text{stat}}} \approx \mathbf{10^{52}}$), derived from the ratio of these scales and the Eulerian Dilution factor, establishes the reference vacuum state. This intrinsic topology factor provides the high-density baseline required for the subsequent emergence of gravitational pressure deficits in the EWT framework.}
-	\label{fig:neutrino_topology_new}
+	\caption{\textbf{Hierarchical Topology of the Neutrino Soliton.} The model establishes a clear dilution gradient from the theoretical geometric limit ($\mathbf{N_{\nu, \text{max}}}$) to the statutory vacuum density ($\mathbf{N_{\nu, \text{stat}}}$). The final \textbf{effective volume deficit} ($\mathbf{N_{\nu, \text{eff}}} \approx \mathbf{6.25 \times 10^{48}}$) represents the integrated packing density of the wave center, which acts as the source of the gravitational potential. This hierarchical structure confirms that gravity emerges from the residual geometric displacement within the high-density EMC medium.}
+	\label{fig:neutrino_topology_unified}
 \end{figure}
-
 \begin{table}[htbp]
 	\centering
 	\caption{\textbf{EWT Geometric Hierarchy and Key Parameters Defining the Soliton Scales}}
@@ -472,10 +483,10 @@ The profound numerical relationship between the \textbf{Statutory Background Den
 \subsubsection*{The Unified Bridge and Wave Center Dynamics}
 The model demonstrates that gravity emerges as a "pressure deficit" within the statutory background. The final calibration of $G$ is governed by the \textbf{Unified Geometric Bridge}, which links the electromagnetic fine-structure constant ($\alpha$) to the gravitational scaling factor through the Lattice Projection Factor ($L_p \approx 1.14868$). 
 
-Crucially, the electron soliton is characterized by a structural density of **$K=10$ Wave Centers**. While the lattice nodes provide the topological metric for calculation, it is the interaction of these 10 Wave Centers with the BCC geometry that defines the phase space occupancy:
+Crucially, the electron soliton is characterized by a structural density of **$K_{WC}=10$ Wave Centers**. While the lattice nodes provide the topological metric for calculation, it is the interaction of these 10 Wave Centers with the BCC geometry that defines the phase space occupancy:
 
 \begin{equation}
-	C_{\text{unif}} = \frac{1}{K} + 1 + \frac{\alpha_{\text{geom}}}{\pi L_p}
+	C_{\text{unif}} = \frac{1}{K_{WC}} + 1 + \frac{\alpha_{\text{geom}}}{\pi L_p}
 	\label{eq:C_unif}
 \end{equation}
 
@@ -506,7 +517,7 @@ The transition from a purely volumetric displacement to the high-precision gravi
 The structural composition of this operator reveals the three-stage calibration of the medium's response:
 
 \begin{itemize}
-	\item \textbf{The Harmonic Reciprocal ($1/K$):} Representing the specific contribution of the $K=10$ wave centers. This term accounts for the fundamental internal oscillation frequency of the electron soliton, ensuring that the global deficit is normalized to the individual node's displacement capacity.
+	\item \textbf{The Harmonic Reciprocal ($1/K_{WC}$):} Representing the specific contribution of the $K=10$ wave centers. This term accounts for the fundamental internal oscillation frequency of the electron soliton, ensuring that the global deficit is normalized to the individual node's displacement capacity.
 	
 	\item \textbf{The Unitary Baseline ($+1$):} This represents the statutory equilibrium of the medium—the "unperturbed" vacuum state. It ensures that the correction is additive to the existing background density $N_{\nu, \text{stat}}$, maintaining the continuity of the medium's elastic field.
 	
@@ -522,9 +533,9 @@ Numerical verification shows that this coupling reduces the "Raw Geometry Gap" o
 \subsubsection{Scaling Conclusion: Geometric Identity with $\mathbf{1/\epsilon_{G}}$}
 The value $N_{\nu, \text{max}} \approx 10^{54}$ defines the \textbf{Absolute Upper Limit} of the medium's resolution—the maximum geometric capacity of the BCC lattice. Below this ceiling lies the \textbf{Statutory Background Density} ($N_{\nu, \text{stat}} \approx 10^{52}$), representing the intrinsic state of the vacuum. 
 
-The physical Gravitational Constant ($G$) emerges only at the level of the \textbf{Effective Density} ($N_{\nu, \text{eff}} \approx 10^{48}$), which characterizes the **matter-occupied region** of the soliton. This scale is dictated by the $K=10$ Wave Centers, which actively displace the medium from its statutory state to a much lower density within the particle's volume. 
+The physical Gravitational Constant ($G$) emerges only at the level of the \textbf{Effective Density} ($N_{\nu, \text{eff}} \approx 10^{48}$), which characterizes the **matter-occupied region** of the soliton. This scale is dictated by the $K_{WC}=10$ Wave Centers, which actively displace the medium from its statutory state to a much lower density within the particle's volume. 
 
-This establishes a fundamental \textbf{Static Geometric Equivalence}: the strength of gravity is not an arbitrary value but is governed by the specific displacement within this constituent hierarchy. Crucially, while $10^{54}$ and $10^{52}$ are universal limits of the medium, the $10^{48}$ scale is a structural property of the electron soliton; for a hypothetical particle with a different count of Wave Centers (e.g., $K=20$), the effective density and its gravitational signature would necessarily differ.
+This establishes a fundamental \textbf{Static Geometric Equivalence}: the strength of gravity is not an arbitrary value but is governed by the specific displacement within this constituent hierarchy. Crucially, while $10^{54}$ and $10^{52}$ are universal limits of the medium, the $10^{48}$ scale is a structural property of the electron soliton; for a hypothetical particle with a different count of Wave Centers (e.g., $K_{WC}=20$), the effective density and its gravitational signature would necessarily differ.
 
 \subsubsection*{Conclusion: Gravity as Volumetric Displacement Density}
 Gravity is thus revealed not as an independent force, but as the \textbf{volumetric density of the displacement deficit} within the high-density medium. 
@@ -559,12 +570,12 @@ The form of $\mathbf{G}_{\text{Base}}$ is inherently independent of $\hbar$. Thi
 The cancellation of $\hbar$ confirms the hypothesis that the base gravitational scale is a classical geometric property of the electron soliton ($\mathbf{m_e}, \mathbf{r_e}, c$), rather than a purely quantum mechanical effect.
 
 \subsubsection*{The Final Geometric Identity for $G$}
-The observed gravitational constant $\mathbf{G}$ is obtained by scaling $\mathbf{G}_{\text{Base}}$ with the \textbf{Total Dimensionless Gravitational Weakness Factor ($\mathbf{\Omega_G}$)}. This factor is a product of the internal soliton architecture and its interaction with the medium, composed of the Geometric EM Base (${\mathbf{A}_{\pi}}^{-1}$), the Dynamic Magnetic Correction ($\mathbf{N}_{\text{final}}$), and the displacement effect of the **$K=10$ Wave Centers** acting upon the **Effective Volume Deficit** ($\mathbf{N}_{\nu, \text{eff}}$).
+The observed gravitational constant $\mathbf{G}$ is obtained by scaling $\mathbf{G}_{\text{Base}}$ with the \textbf{Total Dimensionless Gravitational Weakness Factor ($\mathbf{\Omega_G}$)}. This factor is a product of the internal soliton architecture and its interaction with the medium, composed of the Geometric EM Base (${\mathbf{A}_{\pi}}^{-1}$), the Dynamic Magnetic Correction ($\mathbf{N}_{\text{final}}$), and the displacement effect of the **$K_{WC}=10$ Wave Centers** acting upon the **Effective Volume Deficit** ($\mathbf{N}_{\nu, \text{eff}}$).
 
 The derived geometric identity for $\mathbf{G}$ is:
 
 \begin{equation}
-	\mathbf{G} \equiv \mathbf{G}_{\text{Base}} \cdot \frac{1}{\mathbf{A}{\pi}} \cdot \left( \frac{1}{\mathbf{N}_{\text{final}} \mathbf{A}{\pi}} \right)^{3} \cdot \frac{1}{K \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}
+	\mathbf{G} \equiv \mathbf{G}_{\text{Base}} \cdot \frac{1}{\mathbf{A}{\pi}} \cdot \left( \frac{1}{\mathbf{N}_{\text{final}} \mathbf{A}{\pi}} \right)^{3} \cdot \frac{1}{K_{WC} \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}
 	\label{eq:G_EWT_Final_Identity}
 \end{equation}
 
@@ -573,7 +584,7 @@ The derived geometric identity for $\mathbf{G}$ is:
 A deeper structural analysis of the identity for $G$ (Eq. \ref{eq:G_EWT_Final_Identity}) reveals a profound geometric normalization. By expanding the static and volumetric scaling terms, the total gravitational attenuation factor converges toward the fourth power of the Soliton’s geometric base (${\mathbf{A}_{\pi}}^4$):
 
 \begin{equation}
-	\mathbf{G} \equiv \frac{\mathbf{G}_{\text{Base}}}{{\mathbf{A}_{\pi}}^4 \cdot {\mathbf{N}_{\text{final}}}^3 \cdot K \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}
+	\mathbf{G} \equiv \frac{\mathbf{G}_{\text{Base}}}{{\mathbf{A}_{\pi}}^4 \cdot {\mathbf{N}_{\text{final}}}^3 \cdot K_{WC} \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}
 	\label{eq:G_normalization}
 \end{equation}
 
@@ -581,7 +592,7 @@ This convergence occurs because the static base ${\mathbf{A}_{\pi}}^{-1}$ and th
 
 
 
-This normalization to the \textbf{fourth power} is not merely a mathematical simplification; it represents the complete phase-saturation of the BCC lattice by the Soliton. It suggests that the gravitational deficit is the result of a four-dimensional interaction between the three-dimensional volume of the medium and the radial propagation of the energy wave generated by the $K$ Wave Centers. %The physical and topological implications of this ${\mathbf{A}_{\pi}}^4$ scaling will be further discussed in the subsequent analysis of the medium's elastic response.
+This normalization to the \textbf{fourth power} is not merely a mathematical simplification; it represents the complete phase-saturation of the BCC lattice by the Soliton. It suggests that the gravitational deficit is the result of a four-dimensional interaction between the three-dimensional volume of the medium and the radial propagation of the energy wave generated by the $K_{WC}$ Wave Centers. %The physical and topological implications of this ${\mathbf{A}_{\pi}}^4$ scaling will be further discussed in the subsequent analysis of the medium's elastic response.
 
 
 \subsection{The Gravitational Identity Flow: From Electromagnetic Base to Surface Transition}
@@ -595,7 +606,7 @@ The derivation of the Gravitational Constant $\mathbf{G}$ follows a systematic, 
 	
 	\item \textbf{Nodal Push-Out Potential ($\mathbf{\Omega}_{\text{Push}}$):} This phase incorporates the volumetric redistribution of energy. By applying the cubic factor $({\mathbf{N}_{\text{final}}} {\mathbf{A}_{\pi}})^{-3}$, the model quantifies the \textbf{structural dilution} (reduction in geometric packing density). This reflects the dichotomy where the Soliton maintains high energy density ($\rho_E$) but exhibits low geometric packing efficiency.
 	
-	\item \textbf{Geometric Surface Transition ($\mathbf{T}_{\text{Surface}}$):} The conversion of the internal displacement into the observable gravitational force is governed by the factor $(K \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}})^{-1}$. Here, $K=10$ Wave Centers act as the primary operators of the \textbf{Push-Out mechanism}, evacuating the medium from its statutory density ($10^{52}$) to the effective density of the matter-occupied region ($10^{48}$). 
+	\item \textbf{Geometric Surface Transition ($\mathbf{T}_{\text{Surface}}$):} The conversion of the internal displacement into the observable gravitational force is governed by the factor $(K_{WC} \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}})^{-1}$. Here, $K_{WC}=10$ Wave Centers act as the primary operators of the \textbf{Push-Out mechanism}, evacuating the medium from its statutory density ($10^{52}$) to the effective density of the matter-occupied region ($10^{48}$). 
 	
 	
 	
@@ -603,7 +614,7 @@ The derivation of the Gravitational Constant $\mathbf{G}$ follows a systematic, 
 	
 	\item \textbf{Final Gravitational Identity:} The integration of these modular scales yields the final geometric identity for $\mathbf{G}$:
 	\begin{equation}
-		\mathbf{G} \equiv \mathbf{G}_{\text{Base}} \cdot \underbrace{\frac{1}{\mathbf{A}_{\pi}} \cdot \left( \frac{1}{\mathbf{N}_{\text{final}} \mathbf{A}_{\pi}} \right)^{3}}_{\mathbf{\Omega}_{\text{Push}}} \cdot \underbrace{\frac{1}{K \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}}_{\mathbf{T}_{\text{Surface}}}
+		\mathbf{G} \equiv \mathbf{G}_{\text{Base}} \cdot \underbrace{\frac{1}{\mathbf{A}_{\pi}} \cdot \left( \frac{1}{\mathbf{N}_{\text{final}} \mathbf{A}_{\pi}} \right)^{3}}_{\mathbf{\Omega}_{\text{Push}}} \cdot \underbrace{\frac{1}{K_{WC} \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}}_{\mathbf{T}_{\text{Surface}}}
 		\label{eq:G_EWT_Final_Identity_flow}
 	\end{equation}
 \end{enumerate}
@@ -643,7 +654,7 @@ The equation for $\mathbf{G}_{\text{eff}}$ is structured as a product of three p
 	
 	\item \textbf{Push Out Terms ($\mathbf{T}_{\text{I}} \mathbf{T}_{\text{II}}$):} These terms quantify the necessary dynamic, relativistic adjustment, specifically the \textbf{structural dilution} (reduction in geometric packing density), that translates the Base Geometric Constant into the Effective Push Out Potential ($\mathbf{\Omega}_{\text{Push}}$). They embody the difference between the static geometric count ($\mathbf{N_{\nu}}$) and the dynamically required deficit.
 	
-	\item \textbf{Geometric Surface Transition Factor ($\mathbf{T}_{\text{Surface}}$):} This final scaling term converts the enormous Push Out Potential into the minute, observed Gravitational Constant. Crucially, this term represents the \textbf{geometric transition} from the underlying three-dimensional packing density deficit to a two-dimensional surface effect ($\propto \mathbf{N}_{\nu, \text{eff}}^{-1/2}$). In this framework, the \textbf{$K=10$ Wave Centers} of the electron act as the active displacement operators, mapping the volumetric deficit onto the Soliton's effective surface. This shift aligns $\mathbf{G}$ with emergent holographic principles, where gravity is the surface-integrated response of the medium to the internal $K$-driven displacement.
+	\item \textbf{Geometric Surface Transition Factor ($\mathbf{T}_{\text{Surface}}$):} This final scaling term converts the enormous Push Out Potential into the minute, observed Gravitational Constant. Crucially, this term represents the \textbf{geometric transition} from the underlying three-dimensional packing density deficit to a two-dimensional surface effect ($\propto \mathbf{N}_{\nu, \text{eff}}^{-1/2}$). In this framework, the \textbf{$K_{WC}=10$ Wave Centers} of the electron act as the active displacement operators, mapping the volumetric deficit onto the Soliton's effective surface. This shift aligns $\mathbf{G}$ with emergent holographic principles, where gravity is the surface-integrated response of the medium to the internal $K$-driven displacement.
 \end{enumerate}
 
 \subsection{The Effective Volume Deficit ($\mathbf{N}_{\nu, \text{eff}}$)}
@@ -738,7 +749,7 @@ In practice, the explicit form of the mapping utilized in the numerical verifica
 		\frac{c^2 \mathbf{r_e}}{\mathbf{m_e}}
 		\; \cdot\; \frac{1}{\mathbf{A}_{\pi}}
 		\; \cdot\; \left( \frac{1}{\mathbf{N}_{\text{final}} \, \mathbf{A}_{\pi}} \right)^{3}
-		\; \cdot\; \frac{1}{\mathbf{K} \cdot \sqrt{\mathbf{N}_{\nu, \text{effective}}}}
+		\; \cdot\; \frac{1}{\mathbf{K_{WC}} \cdot \sqrt{\mathbf{N}_{\nu, \text{effective}}}}
 	}
 \end{equation}
 
@@ -839,11 +850,11 @@ The frameworks rely on fundamentally different scaling parameters to define the 
 \begin{itemize}
 	\item \textbf{Thermodynamic/Entropic:} $G$ is typically scaled by $\mathbf{\hbar}$ and parameters related to the **temperature of the horizon ($\mathbf{T}$)**, e.g., $\mathbf{G} \propto 1/(\mathbf{S} \cdot \mathbf{T})$.
 	\item \textbf{Induced (Sakharov):} $G$ is inversely proportional to the **fourth power of the quantum field theory cutoff scale ($\mathbf{\Lambda}$)**, $\mathbf{G} \propto 1/\mathbf{\Lambda}^4$.
-	\item \textbf{EWT (Geometric Soliton):} $G$ is scaled by the complete, derived, dimensionless scaling factor $\mathbf{\Omega_G}$:
-	$$
-	\mathbf{G} = \mathbf{G}_{\text{Base}} \cdot \mathbf{\Omega_G}, \quad \text{where } \mathbf{\Omega_G} = \mathbf{A}_{\pi} \cdot \mathbf{N_{\nu, \text{effective}}}^{-1/2} \cdot \mathbf{\epsilon_M}^{\mathbf{3}}
-	$$
-	The EWT scaling factor is \textbf{explicitly constructed} from the Soliton's geometric parameters ($\mathbf{A}_{\pi}$ and $\mathbf{N}_{\nu, \text{effective}}$) and magnetic coherence ($\mathbf{\epsilon_M}$), linking $G$ to the Soliton's internal dynamics rather than external thermodynamic quantities.
+\item \textbf{EWT (Geometric Soliton):} $G$ is scaled by the complete, derived, dimensionless scaling factor $\mathbf{\Omega_G}$:
+\begin{equation}
+	\mathbf{G} = \mathbf{G}_{\text{Base}} \cdot \mathbf{\Omega_G}, \quad \text{where } \mathbf{\Omega_G} = \frac{1}{\mathbf{A}_{\pi}} \cdot \left( \frac{1}{\mathbf{N}_{\text{final}} \mathbf{A}_{\pi}} \right)^{3} \cdot \frac{1}{\mathbf{K_{WC}} \cdot \sqrt{\mathbf{N}_{\nu, \text{effective}}}}
+\end{equation}
+The EWT scaling factor $\mathbf{\Omega_G}$ is \textbf{explicitly constructed} from the Soliton's geometric parameters ($\mathbf{A}_{\pi}$, $\mathbf{N}_{\text{final}}$) and the unified volume deficit ($\mathbf{N}_{\nu, \text{effective}}$), linking $G$ to the Soliton's internal dynamics rather than external thermodynamic quantities.
 \end{itemize}
 
 The EWT model thus acts as a bridge, providing the explicit, geometric and non-thermodynamic identity $\mathcal{U}(\mathbf{P})$ required to link fundamental particle parameters to the macroscopic gravitational constant $G$, while remaining compatible with the holographic and entropic concepts that underlie the vacuum structure.
@@ -1268,7 +1279,7 @@ The observed sensitivity of the effective gravitational constant $G$ to local ma
 The increase in magnetic energy acts as a dynamic pressure (push-out effect), forcing more Elastic Medium Constituent (EMC) units out of the Soliton volume. This results in a \textbf{less dense internal packing} ($\mathbf{\rho}(r)$ decreases) and consequently a \textbf{larger Geometric Deficit $\mathbf{N_{\nu}}$} (more 'missing' units). Since gravitational strength is proportional to the deficit magnitude:
 \begin{equation}
 	\label{eq:hyp_1_gravity}
-	\mathbf{\varepsilon_M} \uparrow \implies \mathbf{\rho}(r) \downarrow \implies \text{Geometric Deficit } \uparrow \implies \mathbf{G_{eff}} \uparrow
+	\mathbf{\epsilon_M} \uparrow \implies \mathbf{\rho}(r) \downarrow \implies \text{Geometric Deficit } \uparrow \implies \mathbf{G_{eff}} \uparrow
 \end{equation}
 \emph{Status:} This variant is consistent with the predicted $\mathbf{G_{eff}} > \mathbf{G}$ and provides a structural mechanism for the enhancement.
 
