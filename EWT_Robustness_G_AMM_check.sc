@@ -16,12 +16,14 @@ alpha       = 1 / alpha_inv;
 Pi          = %pi;
 a_e_CODATA_10_10 = 11596521.816;           
 N_final        = 778.818123000000014; 
-N_nu_effective = 4.659840d54; 
+N_nu_effective = 6.252517621935487D48; 
 r_nu_val = 2.81794d-17;                           
 lambda_l = 1.6162d-35;                            
 N_nu_statutory = (r_nu_val / (2 * lambda_l * %e))^3;         
 epsilon_M_val = 1 / (N_final * (Pi^3));
 A_pi_inv = 1 / (4*(Pi^3) + (Pi^2) + Pi);
+A_pi = (4*(Pi^3) + (Pi^2) + Pi);
+K_neutrinos = 10;
 
 // Detect script directory for local export
 try 
@@ -37,12 +39,12 @@ printf("\n[EXPORT]  File will be saved to: %s", script_path);
 // =============================================================================
 // MODULE 1: G-CONSTANT SURFACE TRANSITION ANALYSIS
 // =============================================================================
-N_test_range = linspace(4.2d54, 5.5d54, 1000);
+N_test_range = linspace(1.2d48, 1.0d49, 1000);
 G_results = [];
-Omega_Push = G_Base * A_pi_inv * (epsilon_M_val^3);
 
 for n_v = N_test_range
-    G_results = [G_results, Omega_Push * (1 / sqrt(n_v))];
+    val = [(G_Base / A_pi) * (1 / (N_final * A_pi)^3) * (1 / (K_neutrinos * sqrt(n_v)))];
+	G_results = [G_results, val];
 end
 
 h_fig1 = scf(5); clf();
