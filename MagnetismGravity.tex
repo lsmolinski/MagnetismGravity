@@ -2022,37 +2022,52 @@ In the EWT framework, the EMC is not a wave-packet but the \textbf{primordial co
 \subsubsection*{Implications for Particle Topology}
 Defining the EMC as a sphere provides the necessary mechanical foundation for the \textbf{Toroidal Soliton Packets}. A spherical substrate allows for the "fluid-like" rotation of energy densities, which is required to explain the spin and magnetic anomalies of the lepton hierarchy. This geometric shift ensures that the EWT model remains consistent with the observed sferical symmetry of fundamental interactions while maintaining the rigid stability of the BCC nodal structure.
 
+\subsubsection*{The Transition of Density Levels}
+The granular nature of the EMC directly dictates the three levels of vacuum density identified in the EWT hierarchy:
+\begin{itemize}
+	\item \textbf{Saturation State ($N_{\nu, \text{max}} \approx 10^{54}$):} Represents the theoretical limit where spherical EMCs reach the maximum packing factor, eliminating all degrees of freedom for nodal oscillation.
+	\item \textbf{Statutory State ($N_{\nu, \text{stat}} \approx 10^{52}$):} The equilibrium density of the "relaxed" BCC lattice, where the 0.68 packing factor allows for the emergence of the primary vacuum stiffness.
+	\item \textbf{Effective State ($N_{\nu, \text{eff}} \approx 10^{48}$):} The operational density within the soliton's influence, where the volumetric displacement manifests as measurable mass and gravity.
+\end{itemize}
+
 \subsection{Pillar 1: The $\mathbf{N_{\nu}}$ Deficit and Soliton Stability (EMC Push-Out Mechanism)}
 \label{sec:n_nu_stability}
 
-A cornerstone of the EWT model is the successful derivation of the gravitational constant $\mathbf{G} \sim 10^{-11} \mathrm{m}^3 \mathrm{kg}^{-1} \mathrm{s}^{-2}$ \textbf{solely from the microscopic geometry of the neutrino soliton}, which is characterized by a Volume Deficit factor $\mathbf{N_{\nu}}$ on the order of $\mathbf{10^{54}}$. Achieving such a drastic correlation across \textbf{65 orders of magnitude} is, in itself, powerful evidence for the validity of the geometric approach.
+A cornerstone of the EWT model is the successful derivation of the gravitational constant $\mathbf{G}$ solely from the microscopic geometry of the neutrino soliton. This process identifies $G$ as a manifestation of the structural transition between the absolute vacuum density and the localized displacement caused by the particle's wave centers. Achieving a precise correlation across \textbf{65 orders of magnitude} (from the sub-Planckian $N_{\nu}$ to the macroscopic $G$) is powerful evidence for the validity of the geometric approach.
 
-The numerical refinement required for an exact match to $\mathbf{G}_{\text{CODATA}}$ dictates that the $\mathbf{Effective}$ Volume Deficit ($\mathbf{N_{\nu, \text{effective}}} \approx 4.66 \cdot 10^{54}$) must be $\approx \mathbf{13.75\%}$ lower than the $\mathbf{Statutory}$ Deficit ($\mathbf{N_{\nu, \text{statutory}}} \approx 5.30 \cdot 10^{54}$). This discrepancy is not an arbitrary fitting parameter but is directly tied to the Soliton's internal physical structure and its kinematic state.
+The numerical refinement (verified in Listing \ref{lst:scilab_output}, Part I) dictates that the gravitational interaction is governed by the ratio between the \textbf{Statutory Background} and the \textbf{Effective Volume Deficit}. In the current calibration, we observe a significant divergence between the statutory medium and the soliton's core:
 
 \begin{equation}
-	\mathbf{N_{\nu, \text{statutory}}} \approx \mathbf{5.30 \cdot 10^{54}} \xrightarrow[\text{EMC Push-Out Mechanism}]{\text{Structural Correction } \approx 13.75\%} \mathbf{N_{\nu, \text{effective}}} \approx \mathbf{4.66 \cdot 10^{54}}
+	\mathbf{N}_{\nu, \text{statutory}} \approx 3.30 \cdot 10^{52} \xrightarrow[\text{EMC Push-Out Mechanism}]{\text{Volumetric Dilution } (\sim 10^4)} \mathbf{N}_{\nu, \text{effective}} \approx 6.25 \cdot 10^{48}
 	\label{eq:push_out_transition}
 \end{equation}
 
-\subsubsection*{Structural Justification: EMC Push-Out and Non-Uniform Density $\mathbf{\rho(r)}$}
-The $\mathbf{N_{\nu, \text{statutory}}}$ value represents an idealized volume, assuming a maximum, uniform packing density of the Elastic Medium Constituents (EMC), denoted $\rho_{\text{EMC}}$. The formation of the Soliton is a geometric process where the intense wave activity (packing potential) is maintained via the \textbf{continuous interference of incoming and outgoing wave components}. This active interference mechanism \textbf{physically displaces (pushes out)} a portion of the original EMC constituents from the Soliton volume. This displacement generates the core feature of the particle: a spatially localized region of \textbf{rarer EMC packing} ($\rho(r) < \rho_{\text{EMC}}$), known as the \textbf{Volume Deficit} ($\mathbf{N_{\nu}}$) \cite{yee2019geometry,yee2019masscharge}. This geometric deficit is defined by the fundamental structural relationship:
+\subsubsection*{Structural Justification: EMC Push-Out and Hierarchical Density}
+The $\mathbf{N_{\nu, \text{statutory}}}$ value represents the equilibrium density of the BCC lattice in its "relaxed" state (statutory background). The formation of the Soliton is a geometric process where the intense wave activity from the **$K_{WC}=10$ Wave Centers** physically displaces (pushes out) the Elastic Medium Constituents (EMC). 
+
+This active interference mechanism generates a spatially localized region of \textbf{rarer EMC packing}, reducing the density from the background level ($10^{52}$) to the effective soliton level ($10^{48}$). This geometric deficit is defined by:
 \begin{equation}
 	\label{eq:density_deficit}
-	\rho(r) < \rho_{\text{EMC}}, \quad \forall r \in [0, r_{\nu}]
+	\rho_{\text{eff}} < \rho_{\text{stat}} < \rho_{\text{max}}
 \end{equation}
-\
+
+
+
 \begin{center}
 	\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{
-			Crucially, \textbf{wave interference} is the mechanism that \textbf{effectively conserves the Soliton's energy}, while the deficit $\mathbf{N_{\nu}}$ constitutes the \textbf{structural geometric constraint} that imposes a limit on the maximum energy capacity of this localized region.
+			Crucially, \textbf{wave interference} is the mechanism that \textbf{effectively conserves the Soliton's energy}, while the deficit $\mathbf{N_{\nu, \text{eff}}}$ constitutes the \textbf{structural geometric constraint} that imposes a limit on the maximum energy capacity of this localized region.
 	}}
 \end{center}
-In contrast, the $\mathbf{N_{\nu, \text{effective}}}$ value required for consistency with $\mathbf{G}_{\text{CODATA}}$ (as verified in Listing \ref{lst:scilab_output}, Part I) results from \textbf{integrating the true, non-uniform density function $\mathbf{\rho(r)}$} over the Soliton volume (as formalized in Section \ref{sec:rho_r}). Since elastic forces necessitate that the packing density $\mathbf{\rho(r)}$ decreases from the Soliton's center to its boundary, the \textbf{total integrated number of EMC constituents} must be lower than the idealized statutory maximum. Therefore, the \textbf{correction ratio}, calculated as $\mathbf{N_{\nu, \text{statutory}}} / \mathbf{N_{\nu, \text{effective}}} \approx \mathbf{1.137...}$, serves as a direct, structural measure of the Soliton's non-uniformity (see source code, Listing \ref{lst:scilab_script}). This interpretation transforms a potential objection into a demonstration that $\mathbf{G}$ is dictated by the Soliton's true internal profile.
+
+The ratio between these density levels ($N_{\nu, \text{stat}} / N_{\nu, \text{eff}}$) is identified as a \textbf{multi-order volumetric dilution}. This structural hierarchy explains how the high-density vacuum ($N_{\nu, \text{max}} \approx 10^{54}$) sustains a "low-density" particle architecture, where the resulting pressure gradient between the statutory background and the diluted soliton core manifests as the gravitational force.
 
 \subsubsection*{Kinematic Defect and Model Consistency}
-Furthermore, the factor can be partially interpreted as a \textbf{Kinematic Measurement Defect}. While the geometric potential distribution is mathematically modeled by a static density function $\mathbf{\rho(r)}$, the Soliton's motion relative to the global EMC background introduces a subtle, Lorentz-like distortion to this structure. This distortion modifies the effective "size" measured by experiments, suggesting that the difference between the modeled and observed gravitational source is a function of the Soliton.
+The difference between these levels is further interpreted through the \textbf{Lattice Projection Factor ($L_p$)}. While the static geometry suggests an ideal density, the Soliton’s interaction with the global EMC background introduces a subtle distortion. This $L_p$ factor ($\approx 1.1486$) acts as the final calibration "bridge", ensuring that the theoretical geometric push-out aligns perfectly with the observed $\mathbf{G}_{\text{CODATA}}$.
 
 \subsubsection*{Local Repulsion vs. Global Attraction} 
-From a thermodynamic and structural perspective, the \textbf{EMC Push-Out Mechanism} can be interpreted as a form of \textbf{localized "anti-gravity"}. The standing wave interference within the soliton volume actively exerts a repulsive pressure on the vacuum medium, preventing the lattice from collapsing into the defect. This internal repulsion is the necessary physical condition for the existence of the volume deficit ($N_{\nu, \text{effective}} < N_{\nu, \text{statutory}}$). Crucially, what is macroscopically observed as gravitational attraction is, in fact, the response of the external, higher-density vacuum medium ($N_{\nu, \text{statutory}}$) attempting to restore equilibrium by pressing toward the lower-density soliton core. Thus, in the EWT framework, the local "anti-gravitational" displacement of EMCs by the particle is the very process that generates the global gravitational potential gradient.
+In the EWT framework, the \textbf{EMC Push-Out Mechanism} acts as a form of \textbf{localized "anti-gravity"}. The standing wave interference within the soliton volume actively exerts a repulsive pressure on the vacuum medium, preventing the lattice from collapsing into the defect. This internal repulsion is the necessary physical condition for the existence of the volume deficit ($N_{\nu, \text{eff}} \ll N_{\nu, \text{stat}}$). 
+
+Macroscopic gravitational attraction is, in fact, the response of the external, higher-density vacuum medium ($N_{\nu, \text{stat}}$) attempting to restore equilibrium by pressing toward the lower-density soliton core. Thus, the local "anti-gravitational" displacement of EMCs by the particle is the very process that generates the global gravitational potential gradient.
 
 \subsection{Pillar 2: The Dynamic Scaling Operator $\mathbf{\Omega}_{\text{EMCs Push Out}}$: Duality of Correction}
 \label{sec:Pillar3_pushout_duality}
