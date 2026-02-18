@@ -1,6 +1,6 @@
 // =============================================================================
 // EWT UNIFICATION MASTER SUITE: GRAVITY & LEPTODYNAMICS
-// VERSION: 4.1.10 - SYSTEMATIC RECONSTRUCTION (LOGIC PRESERVED)
+// VERSION: 4.2.1
 // =============================================================================
 
 clear; clearglobal; clc; format(20); 

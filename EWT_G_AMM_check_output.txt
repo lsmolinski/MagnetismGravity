@@ -3,30 +3,33 @@ I. GRAVITY CONSISTENCY TEST (OPERATOR U)
 ======================================================================
 G_Base (Soliton Base)           : 2.7802522591364D+32 m^3 kg^-1 s^-2
 
---- ANALYSIS OF VOLUME DEFICIT FACTORS ---
-N_nu_statutory (Base Deficit)   : 5.3004155344391D+54
-N_nu_effective (Req. for G)     : 4.6598400000000D+54
-Absolute Difference N_nu        : 6.4057553443912D+53
-Correction Ratio (N_stat / N_eff): 1.13746728094507898
+--- ANALYSIS OF VOLUME DEFICIT FACTORS (PUSH-OUT LOGIC) ---
+N_nu_max (Absolute Max)         : 5.300415534439117e+54
+N_nu_statutory (Background)     : 3.298651882390107e+52
+N_nu_geom (Effective EMC)       : 6.252517621935487e+48
 
---- CALCULATION OF OPERATOR U COMPONENTS ---
-Scaling Factor F_geom (A*B^3*C) : 2.4006113789670D-43
+--- CALCULATION OF G_MODEL VARIANTS ---
+G_EWT_RAW (Pure K+1)            : 6.680436961490046e-11 m^3 kg^-1 s^-2
+G_EWT_UNIFIED (Alpha-Link)      : 6.674305000000013e-11 m^3 kg^-1 s^-2
+G_CODATA (Target Value)         : 6.674305000000000e-11 m^3 kg^-1 s^-2
 
-G_model (Calculated EWT Value)  : 0.00000000006674305 m^3 kg^-1 s^-2
-G_CODATA (Target Value)         : 0.00000000006674305 m^3 kg^-1 s^-2
+[G-FACTOR VERIFICATION RESULT]
+Absolute Difference             : 1.2924697071141D-25
+Percentage Error vs CODATA      : 0.000000000000194 %
+Raw Geometry Gap (Pre-Alpha)    : 0.0918741575 %
 
-[VERIFICATION RESULT]
-Absolute Difference (|Model-Target|): 2.0968148097855D-18
-Percentage Error relative to CODATA : 0.00000314162270047 %
+--- DILUTION & PROJECTION PARAMETERS ---
+EMC DILUTION (X_eff)            : 5275.7178497467
+Lattice Projection (L_p)        : 1.1486801482
 
 ======================================================================
 II. NEUTRINO RADIUS VALIDATION (1/5 POWER LAW TEST)
 ======================================================================
 r_e (Classical Electron Radius) : 0.00000000000000282 m
-r_nu_val (Model Statutory Value): 0.00000000000000003 m
+r_nu_val (Model Statutory Val)  : 0.00000000000000003 m
 
 Ratio (r_e / r_nu_val)          : 100.000011575831991
-K_nu_implied (Factor from 1/5)  : 10000005787.9173355
+K_nu_implied (Factor 1/5 Law)   : 10000005787.9173355
 
 [VALIDATION RESULT]
 Target Geometric Order (10^10)  : 10000000000
@@ -65,7 +68,7 @@ alpha_inv_CODATA (Target Value)         : 137.035999083999997
 [VERIFICATION RESULT]
 Absolute Difference             : 0.00026328101046147
 Percentage Error vs CODATA      : 0.00019212543581346 %
-Nodal Count for current simulation: 10, 207, 2181
+Nodal Count (Simulation)        : 10, 207, 2181
 
 ======================================================================
 V. LEPTON GEOMETRIC PROOF (TOROIDAL WAVE PACKING)
