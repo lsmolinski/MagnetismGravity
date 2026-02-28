@@ -1,6 +1,6 @@
 // ==============================================================================
 // SCILAB SCRIPT: EWT MODEL COMPLETE NUMERICAL CALCULATOR AND CONSISTENCY CHECK
-// FINAL VERSION: Version: 4.2.1 (G from geom)
+// FINAL VERSION: Version: 4.3.01 (G from geom)
 // ==============================================================================
 
 clear;        
@@ -490,3 +490,11 @@ disp("--- THE GEOMETRIC LADDER SUMMARY ---");
 printf("6D Volumetric Coupling (pi^6):  %.10e\n", %pi^6 * C_local);
 printf("5D Surface Interaction (pi^5):  %.10e\n", %pi^5 * C_local);
 disp("=====================================================");
+
+// --- 6. PREDICTIVE CALIBRATION OF W-MASS ---
+Mw_predicted = M_Z_ref * sqrt((1 - sw2_target) * C_gap);
+disp(" ");
+disp("--- PREDICTIVE CALIBRATION ---");
+printf("Theoretical W-mass required for 0.23122: %.4f GeV\n", Mw_predicted);
+printf("Current CODATA Reference W-mass:        %.4f GeV\n", M_W_ref);
+printf("Difference (Potential SM Bias):         %.4f GeV\n", Mw_predicted - M_W_ref);
