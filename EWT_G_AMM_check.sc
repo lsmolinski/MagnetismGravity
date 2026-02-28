@@ -413,3 +413,80 @@ for i = 1:size(data, 1)
     disp(msprintf("%-12s | %3d | %18.12f | %.4f%%", data(i,1), K_val, res, err));
 end
 disp("---------------------------------------------------------------");
+// ==============================================================================
+// PART VII: DIMENSIONAL HIERARCHY AND DYNAMIC RESONANT MODULATIONS
+// ------------------------------------------------------------------------------
+// Implementation of the Universal Geometric Modulator (epsilon_M)
+// ------------------------------------------------------------------------------
+// This module reconciles the r^5 (Energy) vs r^3 (Volume) scaling laws
+// using the Magnetic Deficit Factor (eps_M) calculated in PART IV.
+// ==============================================================================
+
+disp(" ");
+disp("=====================================================");
+disp("VII. DIMENSIONAL HIERARCHY & MIXING ANGLES (INTEGRATED)");
+disp("=====================================================");
+
+// --- 1. UNIVERSAL GEOMETRIC MODULATOR ---
+// Using eps_M directly from PART IV (Magnetic Deficit)
+// C_local acts as the bridge to the chiral projection 2*sqrt(2)
+C_local = eps_M / (2 * sqrt(2)); 
+
+// --- 2. EXPERIMENTAL REFERENCE DATA (CODATA 2022) ---
+// Note: We use CODATA mass targets here to isolate the geometric C_gap efficiency
+M_W_ref    = 80.377;        
+M_Z_ref    = 91.1876;       
+M_H_ref    = 125.25;        
+sw2_target = 0.23122;       
+
+// --- 3. THE pi^6 RESONANCE: VOLUMETRIC BOSONIC COUPLING ---
+// C_gap resolves the discrepancy between r^5 energy contraction and r^3 displacement
+// for high-energy vector bosons in the BCC lattice.
+C_gap = 1 + (%pi^6 * C_local);
+
+// Calculated Weak Mixing Angle (Isolating the C_gap geometric shift)
+// Formula: sin^2_theta = 1 - (Mw/Mz)^2 * (1/C_gap)
+sw2_ewt = 1 - ( (M_W_ref / M_Z_ref)^2 * (1 / C_gap) );
+
+disp("--- SECTION 7.2: VOLUMETRIC BOSONIC COUPLING ---");
+printf("Magnetic Deficit (eps_M):       %.10e\n", eps_M);
+printf("Gap Correction Factor (C_gap):  %.10f\n", C_gap);
+printf("EWT Prediction sin^2(theta_W):  %.10f\n", sw2_ewt);
+printf("CODATA 2022 Target:             %.10f\n", sw2_target);
+printf("Final Accuracy Error:           %.6f %%\n", abs(sw2_ewt - sw2_target)/sw2_target * 100);
+
+// --- 4. HIGGS SECTOR: STRUCTURAL SELF-REGULATION ---
+// Predictions for Higgs-Vector Boson mixing based on structural topology (K=117)
+sw2_ZH = 1 - ( (M_Z_ref / M_H_ref)^2 * (1 / C_gap) );
+sw2_WH = 1 - ( (M_W_ref / M_H_ref)^2 * (1 / C_gap) );
+
+disp(" ");
+disp("--- SECTION 7.2.1: HIGGS MIXING PREDICTIONS ---");
+printf("Higgs-Z Mixing sin^2(theta_ZH): %.10f\n", sw2_ZH);
+printf("Higgs-W Mixing sin^2(theta_WH): %.10f\n", sw2_WH);
+disp("Note: ZH stability is higher due to soliton electrical neutrality.");
+
+// --- 5. THE pi^5 RESONANCE: SURFACE INTERACTION (CABIBBO) ---
+// INTEGRATION: Calling mass_quark(K) function defined in PART VI
+m_d_ewt = mass_quark(15);
+m_s_ewt = mass_quark(51);
+
+// C_fermion: Surface Interaction Correction based on pi^5 scale
+C_fermion = (1 + (%pi^5 * C_local))^2;
+
+// Cabibbo Angle Prediction using pure EWT-derived masses
+sc_ewt = sqrt(m_d_ewt / m_s_ewt) * C_fermion;
+
+disp(" ");
+disp("--- SECTION 7.3: CABIBBO MIXING & SURFACE RESONANCE ---");
+printf("EWT d-quark mass (K=15):        %.10f GeV\n", m_d_ewt);
+printf("EWT s-quark mass (K=51):        %.10f GeV\n", m_s_ewt);
+printf("EWT Prediction sin(theta_C):    %.10f\n", sc_ewt);
+printf("PDG 2022 Target:                0.2243000000\n");
+printf("Final Accuracy Error:           %.6f %%\n", abs(sc_ewt - 0.2243)/0.2243 * 100);
+
+disp(" ");
+disp("--- THE GEOMETRIC LADDER SUMMARY ---");
+printf("6D Volumetric Coupling (pi^6):  %.10e\n", %pi^6 * C_local);
+printf("5D Surface Interaction (pi^5):  %.10e\n", %pi^5 * C_local);
+disp("=====================================================");

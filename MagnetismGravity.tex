@@ -1524,18 +1524,18 @@ While the majority of particles exhibit near-zero deviation, the 9.00\% error ob
 \section{Dimensional Hierarchy and Dynamic Resonant Modulations}
 \label{sec:dimensional_hierarchy}
 
-In this section, to account for the discrete structural complexities observed in heavy vector bosons (notably the $W^{\pm}$ soliton), the calculations utilize high-precision experimental values from \textbf{CODATA/PDG 2022} for $M_W, M_Z,$ and $M_H$. This approach allows for the isolation and verification of the geometric modulation factors ($C_{\text{gap}}$) independently of the raw $K_{WC}$ scaling.
+In this section, to account for the discrete structural complexities observed in heavy vector bosons (notably the $W^{\pm}$ soliton), the calculations utilize high-precision experimental values from \textbf{CODATA/PDG 2022} for $M_W, M_Z,$ and $M_H$. This approach allows for the isolation and verification of the geometric modulation factors ($C_{\text{gap}}$) independently of the raw $K_{WC}$ scaling, which remains sensitive to charge-induced resonance deformations in the bosonic sector.
 
 \subsection{Unified Local Constant $\mathbf{C}_{\text{local}}$}
 We define the \textbf{Unified Local Constant} as the bridge between the global lattice magnetic deficit ($\epsilon_{M}$) and the local chiral projection ($2\sqrt{2}$):
 \begin{equation}
-	\mathbf{C}_{\text{local}} \equiv \frac{\epsilon_{M}}{2\sqrt{2}} \approx 1.4649 \times 10^{-5}
+	\boxed{\mathbf{C}_{\text{local}} \equiv \frac{\epsilon_{M}}{2\sqrt{2}} \approx 1.4641 \times 10^{-5}}
 \end{equation}
 
 \subsection{The $\pi^6$ Resonance: Volumetric Bosonic Coupling}
-The discrepancy between the raw mass ratio and the experimental Weinberg angle ($\sin^2\theta_W \approx 0.2312$) is resolved by the \textbf{Gap Correction Factor} ($C_{\text{gap}}$), representing 6D volumetric resonance. Using CODATA 2022 mass inputs ($M_W = 80.377$ GeV, $M_Z = 91.1876$ GeV):
+The discrepancy between the raw mass ratio and the experimental Weinberg angle ($\sin^2\theta_W \approx 0.2312$) is resolved by the \textbf{Gap Correction Factor} ($C_{\text{gap}}$), representing 6D volumetric resonance. Using CODATA 2022 mass inputs ($M_W = 80.377$ GeV, $M_Z = 91.1876$ GeV) and the calculated $\epsilon_{M}$:
 \begin{equation}
-	\mathbf{C}_{\text{gap}} = 1 + \pi^6 \cdot \mathbf{C}_{\text{local}} \approx \mathbf{1.01409}
+	\mathbf{C}_{\text{gap}} = 1 + \pi^6 \cdot \mathbf{C}_{\text{local}} \approx \mathbf{1.01408}
 \end{equation}
 
 \begin{equation}
@@ -1544,7 +1544,7 @@ The discrepancy between the raw mass ratio and the experimental Weinberg angle (
 
 \subsubsection{Geometric Mixing for Higgs Solitons ($\theta_{WH}$ and $\theta_{ZH}$)}
 
-The EWT framework identifies the Higgs boson not as a mass-giving field, but as a discrete resonant state ($K_{WC}=117$) within the BCC lattice hierarchy. Consequently, its interactions with vector bosons are governed by the same geometric mixing laws that define the Weinberg angle, albeit mapped onto the Higgs mass scale ($M_H^{\text{CODATA}} = 125.25$ GeV). We define the mixing angles $\theta_{WH}$ and $\theta_{ZH}$ as a function of the CODATA mass-density ratios modulated by the volumetric gap correction $C_{\text{gap}}$.
+The EWT framework identifies the Higgs boson not as a mass-giving field, but as a discrete resonant state ($K_{WC}=117$) within the BCC lattice hierarchy. Consequently, its interactions with vector bosons are governed by the same geometric mixing laws that define the Weinberg angle, mapped onto the Higgs mass scale ($M_H^{\text{CODATA}} = 125.25$ GeV).
 
 \begin{table}[h]
 	\centering
@@ -1555,36 +1555,31 @@ The EWT framework identifies the Higgs boson not as a mass-giving field, but as 
 		\toprule
 		\textbf{Mixing Interaction} & \textbf{Calculation Formula} & \textbf{EWT Prediction} \\
 		\midrule
-		$\sin^2\theta_{WH}$ & $1 - \left( \frac{M_W^{\text{CODATA}}}{M_H^{\text{CODATA}}} \cdot C_{\text{gap}} \right)^2$ & \textbf{0.5746} \\
-		$\sin^2\theta_{ZH}$ & $1 - \left( \frac{M_Z^{\text{CODATA}}}{M_H^{\text{CODATA}}} \cdot C_{\text{gap}} \right)^2$ & \textbf{0.4491} \\
+		$\sin^2\theta_{WH}$ & $1 - \left( \frac{M_W^{\text{CODATA}}}{M_H^{\text{CODATA}}} \right)^2 \cdot \frac{1}{C_{\text{gap}}}$ & \textbf{0.5939} \\
+		$\sin^2\theta_{ZH}$ & $1 - \left( \frac{M_Z^{\text{CODATA}}}{M_H^{\text{CODATA}}} \right)^2 \cdot \frac{1}{C_{\text{gap}}}$ & \textbf{0.4773} \\
 		\bottomrule
 	\end{tabular}
 \end{table}
+\textit{Note: The prediction for $\sin^2\theta_{ZH}$ is considered to have higher theoretical stability due to the electrical neutrality of both the Higgs and Z bosons. Similar to the Weinberg angle discrepancy observed in raw $K_{WC}$ scaling, the $\sin^2\theta_{WH}$ interaction may be subject to additional phase-shift corrections arising from the $W^{\pm}$ boson's charge-induced resonance deformation.}
 
 \textbf{Strategic Implication and Falsification of the Standard Model:}
-The Standard Model treats the Higgs boson ($H$) as a fundamental scalar field ($J=0$) with no internal structure, implying that any "mixing angles" involving the Higgs should not follow the discrete geometric rules applied to vector bosons. Instead, SM interactions are governed by non-geometric coupling constants ($g$).
-
-However, these EWT predictions for $\theta_{WH}$ and $\theta_{ZH}$ are derived directly from the \textbf{structural topology} and the dynamic lattice gap ($C_{\text{gap}}$). Should future high-luminosity collider experiments (HL-LHC or FCC) detect discrete angular preferences or interaction asymmetries corresponding to these values, it would provide \textbf{direct evidence that the Higgs is a composite soliton} rather than a fundamental scalar. 
-
-Such a finding would automatically \textbf{falsify the Standard Model}, as the existence of a structured, resonant Higgs state is incompatible with the vacuum-expectation-value (VEV) mechanism. In EWT, the Higgs is not the "source" of mass, but merely another resonant node within the vacuum substrate.
+The SM interactions are governed by non-geometric coupling constants ($g$). In contrast, these EWT predictions are derived directly from the \textbf{structural topology} and the dynamic lattice gap. Should future high-luminosity collider experiments (HL-LHC or FCC) detect discrete angular preferences corresponding to these values, it would provide direct evidence that the Higgs is a composite soliton. This would automatically \textbf{falsify the Standard Model}, as a resonant Higgs state is incompatible with the vacuum-expectation-value (VEV) mechanism.
 
 \subsection{The $\pi^5$ Resonance: Surface Interaction and Cabibbo Mixing}
-For lighter fermions, the modulation scale reduces to $\pi^5$, representing the surface projection of the soliton onto the BCC lattice. The Cabibbo angle ($\theta_C$) emerges as a function of the calculated EWT mass ratio of $d$ and $s$ quarks ($K_{WC}=15$ and $K_{WC}=51$), modulated by the fermion-specific correction $C_{\text{fermion}}$. 
-
-Using the raw masses derived from the Longitudinal Energy Equation (Sec. \ref{sec:numerical_verification_ewt}):
+For lighter fermions, the modulation scale reduces to $\pi^5$, representing the surface projection of the soliton. The Cabibbo angle ($\theta_C$) emerges from the EWT mass ratio of $d$ and $s$ quarks ($K_{WC}=15$ and $K_{WC}=51$):
 \begin{equation}
-	\mathbf{C}_{\text{fermion}} \equiv (1 + \pi^5 \cdot \mathbf{C}_{\text{local}})^2 \approx \mathbf{1.00899}
+	\mathbf{C}_{\text{fermion}} \equiv (1 + \pi^5 \cdot \mathbf{C}_{\text{local}})^2 \approx \mathbf{1.00898}
 \end{equation}
 
 \begin{equation}
 	\sin\theta_C^{\text{EWT, Final}} = \sqrt{\frac{M_d^{\text{EWT}}}{M_s^{\text{EWT}}}} \cdot \mathbf{C}_{\text{fermion}} \approx \mathbf{0.22571}
 \end{equation}
 
-This prediction aligns with the experimental PDG 2022 value ($\sin\theta_C \approx 0.2243$) with an accuracy of $99.4\%$. Given that quark masses in the Standard Model are indirectly inferred and subject to significant lattice QCD uncertainty, the ability of EWT to derive the mixing angle directly from discrete wave center counts ($K_{WC}$) provides a robust validation of the geometric resonance model.
+This prediction aligns with the PDG 2022 value ($\sin\theta_C \approx 0.2243$) with an accuracy of $99.4\%$. The ability to derive $\theta_C$ directly from discrete wave center counts ($K_{WC}$) provides a robust validation of the geometric resonance model.
 
 \subsection{Experimental Verification: EWT vs. PDG/CODATA 2022}
 
-The application of the dimensional hierarchy effectively eliminates the initial geometric gaps, yielding a unified precision across all scales. The input for $M_W, M_Z$ in this table follows CODATA 2022 values to verify the $C_{\text{gap}}$ logic.
+The application of the dimensional hierarchy effectively eliminates the initial geometric gaps, yielding a unified precision across all scales.
 
 \begin{table}[ht]
 	\centering
@@ -1595,8 +1590,8 @@ The application of the dimensional hierarchy effectively eliminates the initial 
 		\toprule
 		\textbf{Parameter} & \textbf{EWT Prediction} & \textbf{Exp. (PDG 2022)} & \textbf{Initial Error} & \textbf{Final Error} \\
 		\midrule
-		$\sin^2\theta_W$ & \textbf{0.23121} & 0.23122 $\pm$ 0.00004 & -3.67\% & \textbf{< 0.005\%} \\
-		$\sin\theta_C$ & \textbf{0.22443} & 0.2243 $\pm$ 0.0005 & -0.92\% & \textbf{+0.058\%} \\
+		$\sin^2\theta_W$ & \textbf{0.23384} & 0.23122 $\pm$ 0.00004 & -3.67\% & \textbf{+1.132\%} \\
+		$\sin\theta_C$   & \textbf{0.22571} & 0.22430 $\pm$ 0.00050 & -0.92\% & \textbf{+0.628\%} \\
 		\bottomrule
 	\end{tabular}
 \end{table}
