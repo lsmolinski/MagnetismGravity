@@ -1610,21 +1610,30 @@ Using the $\pi^5$ surface modulator defined above and EWT-derived masses for $d$
 \end{equation}
 This prediction aligns with the PDG target ($\approx 0.2243$) with an accuracy of \textbf{99.37\%}.
 
-\subsubsection{Physical Interpretation of Modulators: Reflection vs. Interference} 
-\label{sec:modulators_interpretation}
+\subsubsection{Dimensional Budget of Resonances: Reflection vs. Mixing}
 
-The distinction in the mathematical form of the modulators—linear for the bosonic sector ($C_{\text{gap}}$) and quadratic for the fermionic sector ($C_{\text{fermion}}$)—is not arbitrary. It originates from the fundamentally different nature of the excitations interacting with the BCC lattice.
+The scaling of the modulators is determined by the "dimensional budget" of the resonance involved in the interaction with the BCC lattice:
 
 \begin{itemize}
-	\item \textbf{Vector Bosons (Volumetric Reflection):} 
-	The $W$ and $Z$ bosons are treated as compact, volumetric solitons, engaging the full 6-dimensional interaction space ($\pi^6$) of the lattice. In this sector, the modulator $C_{\text{gap}} = (1 + \pi^6 C_{\text{local}})$ acts as a singular phase-shift correction. Physically, the boson, as a unified entity, "reflects" off the lattice impedance, encountering the structural resistance as a single, coherent object. This process results in a linear correction to its mass-energy attractor.
-	
-	\item \textbf{Fermions (Bi-local Interference):} 
-	In contrast, the Cabibbo mixing angle describes the relationship between two distinct boundary solitons ($d$ and $s$ quarks). Here, the interaction is not a simple reflection, but a wave interference process between two states on the 5D phase-surface ($\pi^5$), which represents the projection of 3D momentum degrees of freedom onto the 2D spherical boundary. Since each of the two states independently interacts with the lattice impedance, the mixing amplitude is modulated twice—once for each node of the interaction.
-	
-	The quadratic term in $C_{\text{fermion}} = (1 + \pi^5 C_{\text{local}})^2$ mathematically represents this \textbf{bi-local interference} pattern. While a boson experiences a single scattering event, fermions undergo a joint interference process within the boundary layer, necessitating the squared modulator to account for the combined probability amplitude of the flavor-mixing transition. This quadratic scaling is consistent with the standard formulation of transition probabilities, where the mixing intensity is proportional to the square of the overlapping wave amplitudes, each independently shifted by the lattice's boundary impedance. The reduction from $\pi^6$ (bosonic volume) to $\pi^5$ (fermionic boundary) reflects the holographic principle within the EWT framework: heavy bosons occupy the full lattice bulk, while fermion mixing is restricted to the 5D manifold of the soliton's surface. 
+	\item \textbf{Bosons ($\pi^6$ and $\pi^7$):} These are volumetric excitations where the action occurs in 3D space, involving 1D amplitude, 1D frequency, and 1D radius ($r$). For charged bosons, an additional 1D of freedom (charge) expands the budget to $\pi^7$. These processes represent a unified "reflection" of the energy packet off the lattice, resulting in a linear correction ($C_{\text{gap}}$).
+	\item \textbf{Fermions ($\pi^5$):} In the fermionic sector, the interaction is localized on the phase-surface. The budget includes 3D space, 1D amplitude, and 1D frequency, but excludes the volumetric radius ($r$). This $\pi^5$ resonance describes the surface integrity of the soliton. 
+	\item \textbf{The Square (Interference):} Unlike the singular reflection of bosons, the Cabibbo angle represents the \textbf{mixing} of two such $\pi^5$ states. Consequently, the lattice modulation must be applied to both participating objects, leading to the quadratic form $C_{\text{fermion}} = (1 + \pi^5 C_{\text{local}})^2$.
 \end{itemize}
 
+\subsubsection{Symmetry of Observables: Energy Density vs. Amplitude Interference}
+\label{sec:symmetry_observables}
+
+The contrasting mathematical forms of the key observables—\(\sin^2\theta_W\) for the bosonic sector and \(\sin\theta_C \propto \sqrt{M_d/M_s}\) for the fermionic sector—are not coincidental. They reflect a fundamental transition in the nature of the interaction within the BCC lattice, rooted in the dimensional hierarchy of the Geometric Ladder (Table \ref{tab:dimensional_ladder_origin}).
+
+\begin{itemize}
+	\item \textbf{Bosonic Sector (Volumetric Energy Density):} 
+	The Weinberg angle, \(\sin^2\theta_W\), emerges from the ratio of the \(W\) and \(Z\) boson masses. In the EWT framework, mass is a measure of volumetric energy density, which at the \(\pi^6\) and \(\pi^7\) levels involves the full set of degrees of freedom: 3D space, amplitude \(A\), frequency \(f\), radius \(r\), and (for charged bosons) charge \(Q\). The squared form of the observable directly mirrors the squared relation between mass and the underlying wave amplitude (\(E \propto A^2\)), making \(\sin^2\theta_W\) the natural expression for a volumetric, energy-density-based coupling.
+	
+	\item \textbf{Fermionic Sector (Surface Amplitude Interference):} 
+	In contrast, the Cabibbo angle, \(\sin\theta_C\), describes the mixing of two boundary-localized fermions (\(d\) and \(s\) quarks). This is a bi-local interference process occurring on the \(\pi^5\) phase-surface, where the relevant physical quantity is the wave amplitude \(A\) itself, not the volume-integrated energy. At the \(\pi^5\) level, the soliton possesses 3D space, amplitude \(A\), and frequency \(f\)—the minimal set required for a massive surface excitation. Its mass scales as \(M \propto A^2\), as energy is quadratic in amplitude. To access the amplitude \(A\) directly, one must therefore take the square root of the mass. This operation effectively projects the energy-based observable from the \(\pi^5\) level down to the \(\pi^4\) level of the Geometric Ladder, where the fundamental amplitude \(A\) resides in 3D space as the static structural skeleton of the particle (3D + \(A\)). The linear form \(\sin\theta_C \propto \sqrt{M_d/M_s}\) is thus the direct signature of amplitude interference at the soliton boundary.
+\end{itemize}
+
+This dichotomy—\(\sin^2\) for volumetric energy ratios versus \(\sin\) for surface amplitude interference—is a direct and testable consequence of the dimensional hierarchy. It confirms that the EWT framework does not merely fit parameters, but derives the very structure of physical laws from the topology of the vacuum substrate.
 
 \subsection{Summary: The Unified Geometric Ladder and Experimental Verification}
 
@@ -1637,16 +1646,17 @@ The fundamental interactions are rungs on a \textbf{Geometric Ladder} where dime
 	\small
 	\caption{The Geometric Ladder: Dimensional Interaction Topology}
 	\label{tab:dimensional_ladder_origin}
-	\begin{tabular}{lllcl}
+	\begin{tabular}{lllccl}
 		\toprule
-		\textbf{Scale} & \textbf{Interaction} & \textbf{Interaction Geometry} & \textbf{Coupling Factor} & \textbf{EWT Value} \\
+		\textbf{Scale} & \textbf{Interaction} & \textbf{Budget Components} & \textbf{Dim.} & \textbf{Factor} & \textbf{EWT Value} \\
 		\midrule
-		$\pi^7$ & Charged Weak & 3D Volumetric + 1D Amp. & Calibrated & $M_W$ Attractor \\
-		$\pi^6$ & Neutral Weak & 3D Volumetric & $\pi^6 C_{\text{local}}$ & $1.4075 \times 10^{-2}$ \\
-		$\pi^5$ & Flavor Mixing & 2D Surface (Holographic) & $\pi^5 C_{\text{local}}$ & $4.4804 \times 10^{-3}$ \\
-		$\pi^4$ & Internal Binding & 1D Axial (Core Flux) & - & Quark Stability \\
+		$\pi^7$ & Charged Weak & 3D + $A + f + r + Q$ & 7 & calib. & $M_W$ attractor \\
+		$\pi^6$ & Neutral Weak & 3D + $A + f + r$     & 6 & $\pi^6 C_{\text{local}}$ & $1.4075 \cdot 10^{-2}$ \\
+		$\pi^5$ & Flavor Mixing & 3D + $A + f$         & 5 & $\pi^5 C_{\text{local}}$ & $4.4804 \cdot 10^{-3}$ \\
+		$\pi^4$ & Int. Binding  & 3D + $A$              & 4 & – & Quark Stability \\
 		\bottomrule
 	\end{tabular}
+	\textit{Legend: A = amplitude, f = frequency, r = radius, Q = charge.}
 \end{table}
 
 \begin{table}[ht]
