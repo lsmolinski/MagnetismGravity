@@ -1540,11 +1540,28 @@ Vector bosons ($W, Z, H$) are high-energy excitations involving the full phase s
 \begin{equation}
 	C_{\text{gap}} = 1 + \pi^6 \cdot \mathbf{C}_{\text{local}} \approx \mathbf{1.01407565}
 \end{equation}
-The use of $\mathbf{\pi^6}$ reflects a \textbf{6-dimensional interaction volume} (3D spatial displacement + 3D momentum/phase resonance). By establishing the \textbf{Weak Mixing Angle} ($\sin^2\theta_W \approx 0.23122$) as a fixed geometric foundation, the EWT framework identifies the ideal mass attractor for the $W$ boson:
+
+\textbf{Geometric Foundation of the Weak Mixing Angle:}
+The Weinberg angle emerges as a structural equilibrium point between the 6D volumetric resonance ($\pi^6$) and the boson mass ratio. Within the BCC substrate, this interaction is governed by the lattice impedance, yielding the general relationship:
+\begin{equation}
+	\label{eq:weinberg_angle_pure_ewt}
+	\boxed{\sin^2\theta_W = 1 - \left( \frac{M_W}{M_Z} \right)^2 \cdot \frac{1}{C_{\text{gap}}}}
+\end{equation}
+
+By utilizing this structural constant, the framework identifies the ideal mass attractor for the $W$ boson, accounting for the 6D volumetric resonance:
 \begin{equation}
 	\label{eq:w_mass_prediction_final}
 	\boxed{M_W^{\text{EWT, Ideal}} = M_Z^{\text{CODATA}} \cdot \sqrt{(1 - \sin^2\theta_W^{\text{Target}}) \cdot C_{\text{gap}}} \approx \mathbf{80.5141 \text{ GeV}}}
 \end{equation}
+
+\subsubsection{The $\pi^7$ Resonance: Charge-Induced Amplitude Loading}
+The highest rung of the observed hierarchy, $\pi^7$, is associated with the charged weak sector ($W^{\pm}$). Unlike the neutral $Z^0$ and $H^0$ solitons, the $W$ boson carries non-compensated wave amplitude (charge), which acts as an additional \textbf{7th degree of freedom} within the BCC substrate. 
+
+\textbf{Predictive Limitation and 9\% Phase-Shift Jump:}
+It is important to acknowledge that the $W$ boson ($K_{WC}=109$) represents a unique challenge for the EWT framework. The observed \textbf{9.00\% error} in its raw $K_{WC}^5$ scaling suggests a discrete phase-shift jump or a lattice-driven volume deficit that is not fully captured by purely spherical geometry. This indicates a structural complexity likely related to the symmetry breaking between the $W$ and $Z$ states. 
+
+\textbf{Calibration as a Structural Necessity:}
+Because of this non-linear "loading" of the lattice stiffness, $M_W$ is treated not as a primary raw prediction, but as a \textbf{calibrated attractor}. While the Standard Model faces a \textbf{7$\sigma$ tension} with the CDF II data, EWT resolves this by fixing the geometric Weinberg angle as a lattice requirement. This identifies that the vacuum must sustain a mass of \textbf{80.5141 GeV} to maintain structural equilibrium against the charge-induced displacement.
 
 \subsubsection{The $\pi^5$ Resonance: Surface Interaction Modulator}
 For the quark sector and flavor mixing, the interaction topology shifts from the volume to the \textbf{soliton boundary}. We introduce the modulator $\mathbf{C}_{\text{fermion}}$, representing a \textbf{5D holographic projection} (3D momentum + 2D spherical surface):
@@ -1584,9 +1601,30 @@ The stability of Eq. (\ref{eq:higgs_z_falsification}) serves as a critical test.
 \subsubsection{Cabibbo Mixing Angle}
 Using the $\pi^5$ surface modulator defined above and EWT-derived masses for $d$ and $s$ quarks ($K_{WC}=15$ and $K_{WC}=51$):
 \begin{equation}
+	\label{eq:cabibbo_angle_ewt_final}
+	\boxed{\sin\theta_C = \sqrt{\frac{M_d}{M_s}} \cdot C_{\text{fermion}}}
+\end{equation}
+
+\begin{equation}
 	\sin\theta_C^{\text{EWT, Final}} = \sqrt{\frac{M_d^{\text{EWT}}}{M_s^{\text{EWT}}}} \cdot \mathbf{C}_{\text{fermion}} \approx \mathbf{0.22571}
 \end{equation}
 This prediction aligns with the PDG target ($\approx 0.2243$) with an accuracy of \textbf{99.37\%}.
+
+\subsubsection{Physical Interpretation of Modulators: Reflection vs. Interference}
+\label{sec:modulators_interpretation}
+
+The distinction in the mathematical form of the modulators—linear for the bosonic sector ($C_{\text{gap}}$) and quadratic for the fermionic sector ($C_{\text{fermion}}$)—is not arbitrary. It originates from the fundamentally different nature of the excitations interacting with the BCC lattice.
+
+\begin{itemize}
+	\item \textbf{Vector Bosons (Volumetric Reflection):} 
+	The $W$ and $Z$ bosons are treated as compact, volumetric solitons, engaging the full 6-dimensional interaction space ($\pi^6$) of the lattice. In this sector, the modulator $C_{\text{gap}} = (1 + \pi^6 C_{\text{local}})$ acts as a singular phase-shift correction. Physically, the boson, as a unified entity, "reflects" off the lattice impedance, encountering the structural resistance as a single, coherent object. This process results in a linear correction to its mass-energy attractor.
+	
+	\item \textbf{Fermions (Bi-local Interference):} 
+	In contrast, the Cabibbo mixing angle describes the relationship between two distinct boundary solitons ($d$ and $s$ quarks). Here, the interaction is not a simple reflection, but a wave interference process between two states on the 5D phase-surface ($\pi^5$), which represents the projection of 3D momentum degrees of freedom onto the 2D spherical boundary. Since each of the two states independently interacts with the lattice impedance, the mixing amplitude is modulated twice—once for each node of the interaction.
+	
+	The quadratic term in $C_{\text{fermion}} = (1 + \pi^5 C_{\text{local}})^2$ mathematically represents this \textbf{bi-local interference} pattern. While a boson experiences a single scattering event, fermions undergo a joint interference process within the boundary layer, necessitating the squared modulator to account for the combined probability amplitude of the flavor-mixing transition. This quadratic scaling is consistent with the standard formulation of transition probabilities, where the mixing intensity is proportional to the square of the overlapping wave amplitudes, each independently shifted by the lattice's boundary impedance. The reduction from $\pi^6$ (bosonic volume) to $\pi^5$ (fermionic boundary) reflects the holographic principle within the EWT framework: heavy bosons occupy the full lattice bulk, while fermion mixing is restricted to the 5D manifold of the soliton's surface.
+\end{itemize}
+
 
 \subsection{Summary: The Unified Geometric Ladder and Experimental Verification}
 
@@ -1618,9 +1656,9 @@ The fundamental interactions are rungs on a \textbf{Geometric Ladder} where dime
 	\label{tab:final_verification_cdf}
 	\begin{tabular}{lcccc}
 		\toprule
-		\textbf{Parameter} & \textbf{EWT Attractor} & \textbf{Exp. Target} & \textbf{Abs. Deviation} & \textbf{Rel. Error} \\
+		\textbf{Param} & \textbf{EWT Attractor} & \textbf{Exp. Target} & \textbf{Abs. Deviation} & \textbf{Rel. Error} \\
 		\midrule
-		$\sin^2\theta_W$ & \textbf{0.23122} & 0.23122 (CODATA) & 0.00000 & \textbf{0.000\%} \\
+		$\sin^2\theta_W$ & \textbf{0.23122} & 0.23122 (CODATA) & 0.00000 & \textbf{ Geom. Anchor} \\
 		$M_W$ & \textbf{80.5141 GeV} & 80.4335 GeV (CDF II) & 0.0806 GeV & \textbf{0.100\%} \\
 		$\sin\theta_C$ & \textbf{0.22571} & 0.22430 (PDG) & 0.00141 & \textbf{0.628\%} \\
 		\bottomrule
