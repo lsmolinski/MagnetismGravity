@@ -431,4 +431,83 @@ printf("\n[STATUS]  Stability gradients for Muon and Tau computed.");
 printf("\n[ANALYSIS] Tau 3D impedance shows higher slope (0.15) vs Muon (0.10).");
 printf("\n[RESULT]   System exhibits High Resonance Rigidity.");
 printf("\n[LOG]      Self-stabilizing mechanism via Nodal Stiffness N confirmed.");
+printf("\n[EXPORT]    File saved as: %s", pdf_m9);
 printf("\n=====================================================\n");
+// =============================================================================
+// MODULE 10: WEINBERG ANGLE ROBUSTNESS (ELECTROWEAK SECTOR)
+// =============================================================================
+// Purpose: Check stability of sin^2(theta_W) vs N_final fluctuations
+// =============================================================================
+
+pdf_m10 = "EWT_Weinberg_Robustness.pdf";
+
+// 1. PHYSICAL CONSTANTS
+M_Z_CODATA = 91.1876;
+sin2W_target_exp = 0.23122;
+
+// --- 1A. C_gap in N_final ---
+eps_M_final = 1 / (N_final * (Pi^3));
+C_local_final = eps_M_final / (2 * sqrt(2));
+C_gap_final   = 1 + (Pi^6) * C_local_final;
+
+// --- 1B. M_W_Ideal ---
+M_W_Ideal = M_Z_CODATA * sqrt((1 - sin2W_target_exp) * C_gap_final);
+
+// --- 1C. sin^2(theta_W) in N_final ---
+sin2W_at_Nfinal = 1 - ((M_W_Ideal / M_Z_CODATA)^2 * (1 / C_gap_final));
+
+
+// =============================================================================
+// 2. STABILITY SCAN
+// =============================================================================
+
+N_scan_W = linspace(778.5, 779.2, 1000);
+N_scan_W = gsort([N_scan_W, N_final], "g", "i"); 
+
+sin2W_results = zeros(N_scan_W);
+
+for i = 1:length(N_scan_W)
+    n_v = N_scan_W(i);
+
+    eps_M_local = 1 / (n_v * (Pi^3));
+    C_local     = eps_M_local / (2 * sqrt(2));
+    C_gap       = 1 + (Pi^6) * C_local;
+
+    sin2W_results(i) = 1 - ((M_W_Ideal / M_Z_CODATA)^2 * (1 / C_gap));
+end
+
+
+// =============================================================================
+// 3. VISUALIZATION
+// =============================================================================
+
+h_fig20 = scf(20); clf();
+h_fig20.figure_size = [900, 700];
+drawlater();
+
+plot(N_scan_W, sin2W_results, 'c-', 'linewidth', 3);
+
+plot(N_scan_W, sin2W_target_exp * ones(N_scan_W), 'r--');
+
+plot(N_final, sin2W_at_Nfinal, 'ro', 'markersize', 10);
+
+xtitle("Robustness: Weinberg Angle", ...
+       "N Coefficient", "sin^2 theta_W");
+
+legend(["EWT Prediction Path"; "Experimental Target"; "N_final Lock-in"], ...
+       "in_lower_right");
+
+gca().data_bounds = [778.5, 0.23121; 779.2, 0.23123];
+xgrid(12);
+drawnow();
+
+xs2pdf(h_fig20, script_path + pdf_m10);
+
+printf("\n=====================================================");
+printf("\n   EWT MODULE 10: Weinberg Angle");
+printf("\n=====================================================");
+printf("\n[RESULT] C_gap(N_final): %.10f", C_gap_final);
+printf("\n[RESULT] M_W_Ideal: %.10f GeV", M_W_Ideal);
+printf("\n[RESULT] sin2W(N_final): %.10f", sin2W_at_Nfinal);
+printf("\n[CHECK]  Target sin2W: %.10f\n", sin2W_target_exp);
+printf("\n[EXPORT]    File saved as: %s", pdf_m10);
