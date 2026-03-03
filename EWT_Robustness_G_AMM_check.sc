@@ -434,9 +434,7 @@ printf("\n[LOG]      Self-stabilizing mechanism via Nodal Stiffness N confirmed.
 printf("\n[EXPORT]    File saved as: %s", pdf_m9);
 printf("\n=====================================================\n");
 // =============================================================================
-// MODULE 10: WEINBERG ANGLE ROBUSTNESS (ELECTROWEAK SECTOR)
-// =============================================================================
-// Purpose: Check stability of sin^2(theta_W) vs N_final fluctuations
+// MODULE 10: WEINBERG & CABIBBO – GEOMETRIC ROBUSTNESS (SHIFT-NORMALIZED)
 // =============================================================================
 
 pdf_m10 = "EWT_Weinberg_Robustness.pdf";
@@ -446,7 +444,7 @@ M_Z_CODATA = 91.1876;
 sin2W_target_exp = 0.23122;
 
 // --- 1A. C_gap in N_final ---
-eps_M_final = 1 / (N_final * (Pi^3));
+eps_M_final   = 1 / (N_final * (Pi^3));
 C_local_final = eps_M_final / (2 * sqrt(2));
 C_gap_final   = 1 + (Pi^6) * C_local_final;
 
@@ -457,15 +455,12 @@ M_W_Ideal = M_Z_CODATA * sqrt((1 - sin2W_target_exp) * C_gap_final);
 sin2W_at_Nfinal = 1 - ((M_W_Ideal / M_Z_CODATA)^2 * (1 / C_gap_final));
 
 
-h_fig20 = scf(20); clf();
-h_fig20.figure_size = [900, 700];
-
 // =============================================================================
 // 2. STABILITY SCAN
 // =============================================================================
 
 N_scan_W = linspace(778.5, 779.2, 1000);
-N_scan_W = gsort([N_scan_W, N_final], "g", "i"); 
+N_scan_W = gsort([N_scan_W, N_final], "g", "i");
 
 sin2W_results = zeros(N_scan_W);
 
@@ -479,21 +474,17 @@ for i = 1:length(N_scan_W)
     sin2W_results(i) = 1 - ((M_W_Ideal / M_Z_CODATA)^2 * (1 / C_gap));
 end
 
+
 // =============================================================================
-// 4. CABIBBO LINE (sin(theta_C) vs N)
+// 3. CABIBBO LINE (sin(theta_C) vs N)
 // =============================================================================
 
-// --- Quark masses from your EWT model ---
-m_d_ewt = 0.0046597252;//mass_quark(15);
-m_s_ewt = 0.0931160638;//mass_quark(51);
+m_d_ewt = 0.0046597252;
+m_s_ewt = 0.0931160638;
 
-// --- Compute C_fermion at N_final ---
 C_fermion_final = (1 + (%pi^5 * C_local_final))^2;
-
-// --- Cabibbo angle at N_final ---
 sinC_final = sqrt(m_d_ewt / m_s_ewt) * C_fermion_final;
 
-// --- Now generate Cabibbo curve for all N_scan_W ---
 sinC_results = zeros(N_scan_W);
 
 for i = 1:length(N_scan_W)
@@ -501,67 +492,76 @@ for i = 1:length(N_scan_W)
 
     eps_M_local = 1 / (n_v * (Pi^3));
     C_local     = eps_M_local / (2 * sqrt(2));
-
-    // pi^5 surface resonance
     C_fermion_local = (1 + (%pi^5 * C_local))^2;
 
     sinC_results(i) = sqrt(m_d_ewt / m_s_ewt) * C_fermion_local;
 end
 
-// --- Plot Cabibbo line (green) ---
-plot(N_scan_W, sinC_results, 'g-', 'linewidth', 3);
 
-// --- Plot Cabibbo lock-in point ---
-plot(N_final, sinC_final, 'go', 'markersize', 10);
+// =============================================================================
+// 4. SHIFT NORMALIZATION (ALIGN BOTH CURVES AT N_final)
+// =============================================================================
 
-
+shift_C = sin2W_at_Nfinal - sinC_final;
+sinC_shifted = sinC_results + shift_C;
 
 
 // =============================================================================
-// 3. VISUALIZATION (Weinberg + Cabibbo)
+// 5. VISUALIZATION
 // =============================================================================
 
-
+h_fig20 = scf(20); clf();
+h_fig20.figure_size = [900, 700];
 drawlater();
 
-// --- Weinberg curve ---
+// Weinberg curve
 plot(N_scan_W, sin2W_results, 'c-', 'linewidth', 3);
 
-// --- Weinberg target line ---
-plot(N_scan_W, sin2W_target_exp * ones(N_scan_W), 'r--');
-
-// --- Weinberg lock-in point ---
+// Weinberg lock-in
 plot(N_final, sin2W_at_Nfinal, 'ro', 'markersize', 10);
 
-// --- Cabibbo curve ---
-plot(N_scan_W, sinC_results, 'g-', 'linewidth', 3);
+// Cabibbo shifted curve
+plot(N_scan_W, sinC_shifted, 'g-', 'linewidth', 3);
 
-// --- Cabibbo lock-in point ---
-plot(N_final, sinC_final, 'go', 'markersize', 10);
+// Titles and legend
+xtitle("Shift-Normalized Robustness: Weinberg & Cabibbo Angles", ...
+       "N Coefficient", "Angle Value (Shifted)");
 
-// --- Titles and axes ---
-xtitle("Robustness: Weinberg & Cabibbo Angles", ...
-       "N Coefficient", "Angle Value");
+// Tekst z wartością shiftu
+shift_label = msprintf("sin(theta_C) + shift (shift = %.10f)", shift_C);
 
+// Legenda z dynamiczną wartością
 legend(["sin^2(theta_W)"; ...
-        "Weinberg Target"; ...
-        "Weinberg Lock-in"; ...
-        "sin(theta_C)"; ...
-        "Cabibbo Lock-in"], ...
+        "N_final Lock-in"; ...
+        shift_label; ...
+        "Cabibbo Lock-in (shifted)"], ...
         "in_lower_right");
 
-gca().data_bounds = [778.5, 0.22; 779.2, 0.24];
+// Dynamic zoom
+y_min = min([sin2W_results, sinC_shifted]);
+y_max = max([sin2W_results, sinC_shifted]);
+padding = (y_max - y_min) * 0.15;
+if padding == 0 then padding = 1e-6; end
+
+gca().data_bounds = [min(N_scan_W), y_min - padding; max(N_scan_W), y_max + padding];
+
 xgrid(12);
 drawnow();
 
 xs2pdf(h_fig20, script_path + pdf_m10);
 
 
+// =============================================================================
+// 6. LOGGING
+// =============================================================================
+
 printf("\n=====================================================");
-printf("\n   EWT MODULE 10: Weinberg Angle");
+printf("\n   EWT MODULE 10: Weinberg & Cabibbo (Shift-Normalized)");
 printf("\n=====================================================");
 printf("\n[RESULT] C_gap(N_final): %.10f", C_gap_final);
 printf("\n[RESULT] M_W_Ideal: %.10f GeV", M_W_Ideal);
 printf("\n[RESULT] sin2W(N_final): %.10f", sin2W_at_Nfinal);
-printf("\n[CHECK]  Target sin2W: %.10f\n", sin2W_target_exp);
-printf("\n[EXPORT]    File saved as: %s", pdf_m10);
+printf("\n[RESULT] sinC(N_final): %.10f", sinC_final);
+printf("\n[SHIFT ] Cabibbo shift applied: %.10f", shift_C);
+printf("\n[EXPORT] File saved as: %s\n", pdf_m10);
+
