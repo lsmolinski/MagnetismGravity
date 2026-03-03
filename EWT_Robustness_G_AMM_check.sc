@@ -457,6 +457,9 @@ M_W_Ideal = M_Z_CODATA * sqrt((1 - sin2W_target_exp) * C_gap_final);
 sin2W_at_Nfinal = 1 - ((M_W_Ideal / M_Z_CODATA)^2 * (1 / C_gap_final));
 
 
+h_fig20 = scf(20); clf();
+h_fig20.figure_size = [900, 700];
+
 // =============================================================================
 // 2. STABILITY SCAN
 // =============================================================================
@@ -476,32 +479,83 @@ for i = 1:length(N_scan_W)
     sin2W_results(i) = 1 - ((M_W_Ideal / M_Z_CODATA)^2 * (1 / C_gap));
 end
 
+// =============================================================================
+// 4. CABIBBO LINE (sin(theta_C) vs N)
+// =============================================================================
+
+// --- Quark masses from your EWT model ---
+m_d_ewt = 0.0046597252;//mass_quark(15);
+m_s_ewt = 0.0931160638;//mass_quark(51);
+
+// --- Compute C_fermion at N_final ---
+C_fermion_final = (1 + (%pi^5 * C_local_final))^2;
+
+// --- Cabibbo angle at N_final ---
+sinC_final = sqrt(m_d_ewt / m_s_ewt) * C_fermion_final;
+
+// --- Now generate Cabibbo curve for all N_scan_W ---
+sinC_results = zeros(N_scan_W);
+
+for i = 1:length(N_scan_W)
+    n_v = N_scan_W(i);
+
+    eps_M_local = 1 / (n_v * (Pi^3));
+    C_local     = eps_M_local / (2 * sqrt(2));
+
+    // pi^5 surface resonance
+    C_fermion_local = (1 + (%pi^5 * C_local))^2;
+
+    sinC_results(i) = sqrt(m_d_ewt / m_s_ewt) * C_fermion_local;
+end
+
+// --- Plot Cabibbo line (green) ---
+plot(N_scan_W, sinC_results, 'g-', 'linewidth', 3);
+
+// --- Plot Cabibbo lock-in point ---
+plot(N_final, sinC_final, 'go', 'markersize', 10);
+
+
+
 
 // =============================================================================
-// 3. VISUALIZATION
+// 3. VISUALIZATION (Weinberg + Cabibbo)
 // =============================================================================
 
-h_fig20 = scf(20); clf();
-h_fig20.figure_size = [900, 700];
+
 drawlater();
 
+// --- Weinberg curve ---
 plot(N_scan_W, sin2W_results, 'c-', 'linewidth', 3);
 
+// --- Weinberg target line ---
 plot(N_scan_W, sin2W_target_exp * ones(N_scan_W), 'r--');
 
+// --- Weinberg lock-in point ---
 plot(N_final, sin2W_at_Nfinal, 'ro', 'markersize', 10);
 
-xtitle("Robustness: Weinberg Angle", ...
-       "N Coefficient", "sin^2 theta_W");
+// --- Cabibbo curve ---
+plot(N_scan_W, sinC_results, 'g-', 'linewidth', 3);
 
-legend(["EWT Prediction Path"; "Experimental Target"; "N_final Lock-in"], ...
-       "in_lower_right");
+// --- Cabibbo lock-in point ---
+plot(N_final, sinC_final, 'go', 'markersize', 10);
 
-gca().data_bounds = [778.5, 0.23121; 779.2, 0.23123];
+// --- Titles and axes ---
+xtitle("Robustness: Weinberg & Cabibbo Angles", ...
+       "N Coefficient", "Angle Value");
+
+legend(["sin^2(theta_W)"; ...
+        "Weinberg Target"; ...
+        "Weinberg Lock-in"; ...
+        "sin(theta_C)"; ...
+        "Cabibbo Lock-in"], ...
+        "in_lower_right");
+
+gca().data_bounds = [778.5, 0.22; 779.2, 0.24];
 xgrid(12);
 drawnow();
 
 xs2pdf(h_fig20, script_path + pdf_m10);
+
 
 printf("\n=====================================================");
 printf("\n   EWT MODULE 10: Weinberg Angle");
