@@ -436,6 +436,11 @@ M_H_ref      = 125.25;         // Higgs mass target
 sw2_target   = 0.23122;        // Fixed Geometric Foundation (Weinberg Angle)
 M_W_CDFII    = 80.4335;        // The Anchor: 2022 CDF II Measurement
 
+M_Z_EWT      = mass_spherical(110);        // Z-boson mass EWT
+M_H_EWT      = mass_spherical(117);         // Higgs mass EWT
+
+
+
 // --- 3. THE pi^6 RESONANCE: VOLUMETRIC BOSONIC COUPLING ---
 C_gap = 1 + (%pi^6 * C_local);
 
@@ -457,12 +462,12 @@ printf("Absolute Deviation from CDF II:  %.4f GeV\n", abs_diff_cdf);
 printf("Percentage Error vs. CDF II:     %.4f %%\n", perc_err_cdf);
 
 // --- 4. HIGGS SECTOR: STRUCTURAL SELF-REGULATION ---
-// Using the EWT-predicted Mw to check Higgs mixing consistency
-sw2_ZH = 1 - ( (M_Z_ref / M_H_ref)^2 * (1 / C_gap) );
-sw2_WH = 1 - ( (Mw_ewt_pred / M_H_ref)^2 * (1 / C_gap) );
+// Using the EWT-predicted Mw to check Higgs mixing
+sw2_ZH = 1 - ( (M_Z_EWT / M_H_EWT)^2 * (1 / C_gap) );
+sw2_WH = 1 - ( (Mw_ewt_pred / M_H_EWT)^2 * (1 / C_gap) );
 
 disp(" ");
-disp("--- SECTION 7.2.1: HIGGS MIXING PREDICTIONS (CALIBRATED) ---");
+disp("--- SECTION 7.2.1: HIGGS MIXING PREDICTIONS ---");
 printf("Higgs-Z Mixing sin^2(theta_ZH): %.10f\n", sw2_ZH);
 printf("Higgs-W Mixing sin^2(theta_WH): %.10f\n", sw2_WH);
 disp("Note: ZH stability is superior due to the neutrality of Z and H solitons.");
