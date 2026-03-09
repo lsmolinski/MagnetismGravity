@@ -542,10 +542,10 @@ disp("a density exactly 10^10 times higher than the electrons base.");
 disp("=====================================================");
 
 // ==============================================================================
-// PART IX: PREDICTIVE RADIOMETRY FOR HEAVY NEUTRAL RESONANCES
+// PART IX: PREDICTIVE RADIUS FOR HEAVY NEUTRAL RESONANCES
 // ------------------------------------------------------------------------------
 // Using the 1/5 Power Law validated above, we extrapolate 
-// the geometric radii for Z and Higgs bosons. This assumes that at high 
+// the geometric radius for Z and Higgs bosons. This assumes that at high 
 // wave-center counts, the spherical symmetry of the standing 
 // wave dominates, rendering spin-induced deviations negligible.
 // ==============================================================================

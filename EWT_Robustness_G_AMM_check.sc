@@ -492,7 +492,7 @@ end
 m_d_ewt = 0.0046597252;
 m_s_ewt = 0.0931160638;
 
-C_fermion_final = (1 + (%pi^5 * C_local_final))^2; // what if we use pi^6 ?
+C_fermion_final = (1 + (%pi^5 * C_local_final))^2; 
 sinC_final = sqrt(m_d_ewt / m_s_ewt) * C_fermion_final;
 
 // Cabibbo angle as a function of N.
