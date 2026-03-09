@@ -496,7 +496,7 @@ printf("6D Volumetric Coupling (pi^6):   %.10e\n", %pi^6 * C_local);
 printf("5D Surface Interaction (pi^5):   %.10e\n", %pi^5 * C_local);
 disp("=====================================================");
 // ==============================================================================
-// PART VIII: FINAL GEOMETRIC VALIDATION - THE 1:100 RADIAL RESONANCE
+// PART VIII: GEOMETRIC VALIDATION - THE 1:100 RADIAL RESONANCE
 // ------------------------------------------------------------------------------
 // REVIEWER NOTE: This section links the first-principles statutory derivation 
 // (from Planck Charge and Euler's number) to the geometric requirement 
@@ -544,9 +544,9 @@ disp("=====================================================");
 // ==============================================================================
 // PART IX: PREDICTIVE RADIOMETRY FOR HEAVY NEUTRAL RESONANCES
 // ------------------------------------------------------------------------------
-// REVIEWER NOTE: Using the 1/5 Power Law validated above, we extrapolate 
+// Using the 1/5 Power Law validated above, we extrapolate 
 // the geometric radii for Z and Higgs bosons. This assumes that at high 
-// wave-center counts (K > 110), the spherical symmetry of the standing 
+// wave-center counts, the spherical symmetry of the standing 
 // wave dominates, rendering spin-induced deviations negligible.
 // ==============================================================================
 
