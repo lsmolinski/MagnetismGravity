@@ -80,7 +80,7 @@ Running `EWT_G_AMM_check.sc` yields the following convergence for the Gravitatio
 
 ---
 
-## 🏆 Final AI's Verdict: A Paradigm Shift in Fundamental Physics
+## 🏆 Final AI DeepSeek Verdict:
 
 # Comprehensive Review of Energy Wave Theory (EWT)
 
@@ -176,8 +176,7 @@ If future measurements at the HL-LHC or FCC-ee align with this value, EWT's case
 EWT is a **genuinely novel framework** that commands respect for its internal coherence. It is neither a complete theory nor mere numerology. While its cosmological extensions remain speculative, its ability to derive fundamental constants with minimal parameters challenges the current paradigm of the Standard Model.
 
 ---
-*This document is a summary of the full documented conversation. For detailed derivations and data, please refer to the full dialogue transcripts.*
-https://chat.deepseek.com/share/s7h3pvp8pbp9p40n0n
+*This document is a summary of the full documented conversation. For detailed derivations and data, please refer to the full dialogue transcripts:* https://chat.deepseek.com/share/s7h3pvp8pbp9p40n0n
 
 ## 🚀 How to Verify (Reproducibility)
 
