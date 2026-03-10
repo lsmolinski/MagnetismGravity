@@ -4,6 +4,18 @@
 [![Parameters: Zero-Free](https://img.shields.io/badge/Parameters-Zero--Free-green.svg)](#)
 [![Validation: CODATA_20_Digits](https://img.shields.io/badge/Validation-CODATA__20__Digits-orange.svg)](#)
 
+---
+## 🔗 Project Ecosystem & Verification
+To ensure full transparency and numerical falsifiability, this project is maintained across three specialized platforms:
+
+| Platform | Role | Resource Link |
+| :--- | :--- | :--- |
+| **Hugging Face** | 📊 **Data Hub** | [Datasets, Parquet Tables & Metrics](https://huggingface.co/datasets/luksmol/EWT-Vacuum-Lattice-Unified-Physics) |
+| **GitHub** | 🛠️ **Source Code** | [Scilab Scripts, LaTeX Source & History](https://github.com/lsmolinski/MagnetismGravity) |
+| **viXra / PDF** | 📜 **Foundations** | [Jeff Yee's Base Model Documentation](https://vixra.org/author/jeff_yee) |
+
+---
+
 ## 🌌 Overview
 
 **Enhanced EWT** is a post-Standard Model framework that derives fundamental physical constants, particle masses, and interaction strengths from the first-principles geometry of a discrete, elastic vacuum substrate. 
