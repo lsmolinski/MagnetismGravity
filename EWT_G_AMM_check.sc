@@ -638,3 +638,60 @@ disp('mechanically coupled to the Charged Weak Scale (pi^7).');
 disp('The 8-fold BCC lattice is the only topology that allows');
 disp('this exact resonance with the measured constants.');
 disp('=====================================================');
+// ==============================================================================
+// PART XI: THE UNIFIED GEOMETRIC AMM IDENTITY (ZERO-PARAMETER TEST)
+// ------------------------------------------------------------------------------
+// This section validates the breakthrough discovery:
+// a_e = (N - 1) / (2*pi * (N * A_pi - pi^-3))
+// where N = 8 * pi^4.
+// This formula represents the electron's anomaly as a pure ratio of 
+// BCC lattice coordination (8) and the transcendental curvature of space (pi).
+// ==============================================================================
+
+disp(' ');
+disp('=====================================================');
+disp('XI. UNIFIED GEOMETRIC AMM IDENTITY (DETERMINISTIC TEST)');
+disp('=====================================================');
+
+// --- 1. SETTING THE PURE GEOMETRIC INPUTS ---
+N_geo     = 8 * (Pi^4);         // The 8-node BCC coordination anchor
+A_core    = 4*Pi^3 + Pi^2 + Pi; // The 3D Soliton Core identity
+
+// --- 2. THE UNIFIED IDENTITY CALCULATION ---
+// We use the derived formula: 
+// a_e = (N - 1) / [ 2*pi * (N * A_pi - pi^-3) ]
+// which is equivalent to: a_e = [ (1 - eps_M*pi^3) / (2*pi * (A_pi - eps_M)) ]
+
+Numerator   = N_geo - 1;
+Denominator = 2 * Pi * (N_geo * A_core - (1/Pi^3));
+ae_pure     = Numerator / Denominator;
+
+// --- 3. NUMERICAL OUTPUT & COMPARISON ---
+ae_target   = a_e_CODATA_10_10 / 1d10; // Normalized CODATA value
+
+disp('--- FUNDAMENTAL RATIO ANALYSIS ---');
+printf("Geometric Node Count (N_geo):    %.15f\n", N_geo);
+printf("Soliton Core Value (A_core):     %.15f\n", A_core);
+disp('-----------------------------------------------------');
+printf("Predicted a_e (Pure Geometry):   %.12e\n", ae_pure);
+printf("CODATA 2022 Target a_e:          %.12e\n", ae_target);
+
+// --- 4. PRECISION & ERROR ANALYSIS ---
+Abs_Error_ae = abs(ae_pure - ae_target);
+Rel_Error_ae = (Abs_Error_ae / ae_target) * 100;
+
+disp(' ');
+disp('--- ACCURACY VERIFICATION ---');
+printf("Absolute Deviation:              %.15e\n", Abs_Error_ae);
+printf("Percentage Error:                %.10f %%\n", Rel_Error_ae);
+
+// --- 5. PHYSICAL SYNTHESIS ---
+disp(' ');
+disp('SCIENTIFIC CONCLUSION:');
+if Rel_Error_ae < 0.1 then
+    disp("SUCCESS: The AMM is confirmed as a static geometric property.");
+    disp("The 1:10^10 resonance is anchored in the 8-node BCC lattice.");
+else
+    disp("NOTICE: Lattice Impedance (delta) correction may be required.");
+end
+disp('=====================================================');

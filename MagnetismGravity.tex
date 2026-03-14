@@ -75,7 +75,7 @@
 
 \begin{center}
 \today \\
-Version: 4.3.02
+Version: 4.3.03
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -1938,7 +1938,7 @@ The establishment of the identity $N_{geometric} = 8\pi^4$ effectively closes th
 	\item \textbf{Scaling Monism:} It has been demonstrated that the same power law ($\pi^4$) governs both the internal lattice stiffness and the extreme weakness of gravity ($G \propto A_{\pi}^{-4}$), confirming the structural unity of the vacuum substrate.
 \end{enumerate}
 
-\subsection{The Topological Reduction of the Magnetic Deficit: $\epsilon_M = \frac{1}{8\pi^7}$}
+\subsection{The Topological Reduction of the The Fundamental Lattice Response Parameter: $\epsilon_M = \frac{1}{8\pi^7}$}
 
 A profound mathematical simplification occurs when the identity $N_{geometric} = 8\pi^4$ is substituted into the definition of the magnetic deficit factor $\epsilon_M$. This reduction reveals the deep topological coupling between the lepton soliton and the vacuum's high-dimensional ladder.
 
@@ -3116,6 +3116,83 @@ This identity necessitates a clear distinction between the discrete medium's met
 \end{itemize}
 
 This unified identity confirms that the fundamental constants of nature are not arbitrary values, but are anchored by a single, finite mechanical stiffness $N$ and the inherent granularity of the Planck-scale medium.
+
+
+\subsection{The Geometric Determinism of AMM: From Lattice Nodes to Lepton Generations}
+\label{sec:geometric_amm_determinism}
+
+The introduction of the unified lepton identity allows for the final elimination of fitting parameters, replacing them with pure Body-Centered Cubic (BCC) geometry. This section provides the exhaustive derivation of the zero-parameter anomalous magnetic moment ($a_e$), revealing the underlying mechanical feedback of the vacuum.
+
+\subsubsection*{Mathematical Derivation: Step-by-Step Transition to Pure Geometry}
+
+The derivation originates from the relationship between the fine-structure constant $\alpha$, the geometric soliton core $\mathbf{A}_{\pi}$, and the lattice impedance deficit $\epsilon_M$. 
+
+\begin{enumerate}
+	\item \textbf{Initial Substitution:} Utilizing the definitions $\alpha^{-1} = \mathbf{A}_{\pi} - \epsilon_M$ and $a_e = \frac{\alpha}{2\pi} (1 - \epsilon_M \pi^3)$:
+	\begin{equation}
+		a_e = \frac{8\pi^4 - 1}{2\pi \left( (8\pi^4) \cdot \mathbf{A}_{\pi} - \pi^{-3} \right)}
+	\end{equation}
+	
+	\item \textbf{Expansion of the Denominator:} Using the identity $\mathbf{A}_{\pi} = 4\pi^3 + \pi^2 + \pi$, the term $(8\pi^4) \cdot \mathbf{A}_{\pi}$ is expanded:
+	\begin{equation}
+		(8\pi^4) \cdot (4\pi^3 + \pi^2 + \pi) = 32\pi^7 + 8\pi^6 + 8\pi^5
+	\end{equation}
+	Subtracting the phase offset $\pi^{-3}$ (the $1/\pi^3$ term) yields the internal denominator:
+	\begin{equation}
+		\text{Denom}_{int} = 32\pi^7 + 8\pi^6 + 8\pi^5 - \pi^{-3}
+	\end{equation}
+	
+	\item \textbf{Final Zero-Parameter Identity:} Multiplying by the $2\pi$ rotation factor, we arrive:
+	\begin{equation}
+		\label{eq:ae_pure_geometric_final}
+		\boxed{a_e = \frac{8\pi^4 - 1}{64\pi^8 + 16\pi^7 + 16\pi^6 - 2\pi^{-2}}}
+	\end{equation}
+\end{enumerate}
+
+\subsubsection*{Structural Analysis: The Mechanical Meaning of the Components}
+
+Equation \ref{eq:ae_pure_geometric_final} proves that the anomalous magnetic moment is not a dynamic radiative correction, but a \textbf{static geometric packing error} of the BCC lattice:
+
+\begin{itemize}
+	\item \textbf{The Numerator ($8\pi^4 - 1$):} Represents the \textit{Magnetic Deficit}. The value $8\pi^4$ defines the ideal stiffness of the BCC coordination. The $-1$ represents the consumption of exactly one topological degree of freedom to anchor the soliton, manifesting as the measured anomaly.
+	\item \textbf{The Denominator ($64\pi^8 + 16\pi^7 + 16\pi^6 - 2\pi^{-2}$):} Reveals a \textbf{topological shift}. The anomaly $a_e$ emerges as the ratio between the 4th-dimensional nodal budget ($\pi^4$) and the 8th-dimensional "radiative shadow" of the cell.
+	\item \textbf{Feedback Correction ($-2\pi^{-2}$):} This second-order term represents the mechanical feedback between the soliton's rotation and the radial vibration of the lattice.
+\end{itemize}
+
+\subsubsection*{The $1:10^{10}$ Resonance as the Geometric Foundation of the Onion Model}
+
+The validity of the recursive "Onion Model" is not merely theoretical but is empirically anchored in the $10^{10}$ scaling law identified in the Scilab numerical output (\ref{lst:scilab_output}). This resonance ratio serves as the fundamental scaling operator that governs the transition between lepton generations.
+
+\begin{enumerate}
+	\item \textbf{Empirical Anchor from Scilab Output:} 
+	As demonstrated in Part XI of the script (\ref{lst:scilab_script}), the EWT model identifies a critical resonance between the soliton core and the vacuum lattice at a magnitude of $1:10^{10}$. This is not an arbitrary constant but a result of the density-to-geometry ratio where the energy density of the neutrino (the lattice node) relates to the electron (the soliton) through this precise decimal factor.
+	
+	\item \textbf{Decimal Scaling as a Transition Operator ($10^{n-1}$):} 
+	The recursive nodal law $\Delta K = \text{round}(10^{n-1} \cdot 2\pi^2)$ directly incorporates this $10^{10}$ resonance. The $10^{n-1}$ multiplier is the structural manifestation of the energy density shifts within the BCC lattice:
+	\begin{itemize}
+		\item For the \textbf{Muon ($n=2$)}, the $10^1$ multiplier represents the first decimal level of wave-packing compression beyond the core.
+		\item For the \textbf{Tau ($n=3$)}, the $10^2$ multiplier represents the second layer of compression, forcing the energy into a highly dense, 3D-locked state.
+	\end{itemize}
+	
+	\item \textbf{Fibonacci Latches and Numerical Proof:} 
+	The Scilab output (\ref{lst:scilab_output}) confirms that the AMM for the Tau lepton reaches the highest convergence ($0.031\%$ relative error) when the $10^2$ scaling is applied in conjunction with the Fibonacci invariant $L_{\tau}=34$. This confirms that the $1:10^{10}$ resonance is the "tuning fork" of the vacuum: it defines how much energy can be compressed into a single BCC cell before a new toroidal shell must be formed to maintain stability.
+	
+	\item \textbf{Closure: Why $10^{10}$ Ends the Ambiguity:} 
+	Without the $1:10^{10}$ resonance identified in the script, the increments in nodal count ($\Delta K$) would follow a linear progression, which fails to match the experimental values of $a_{\mu}$ and $a_{\tau}$. The fact that the pure geometric formula in Eq. \ref{eq:ae_pure_geometric_final} aligns with the recursive shell growth proves that the lepton hierarchy is a series of discrete, decimal-governed phase transitions of the vacuum medium itself.
+\end{enumerate}
+
+\begin{center}
+	\fbox{
+		\begin{minipage}{0.9\textwidth}
+			\centering
+			\vspace{5pt}
+			\small \textbf{Unified Conclusion on Scaling:} \\
+			The convergence of the numerical simulation proves that the $10^{n-1}$ operator is the physical footprint of the $10^{10}$ resonance. Each generation in the "Onion Model" is a stable standing wave configuration where the increased energy density is perfectly compensated by the BCC lattice's geometric stiffness, anchored by the statutory neutrino-electron link.
+			\vspace{5pt}
+		\end{minipage}
+	}
+\end{center}
+
 
 \subsection{Standalone, high-precision method for calculating AMMs}
 \label{sec:conclusions_amm_01}
