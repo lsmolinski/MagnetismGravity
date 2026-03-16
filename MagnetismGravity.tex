@@ -75,7 +75,7 @@
 
 \begin{center}
 \today \\
-Version: 4.4.01	
+Version: 4.4.02	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -236,6 +236,8 @@ The stability of the geometric structure hinges upon the nature of the medium's 
 
 The macroscopic stiffness parameter $N$ (as defined in Eq. \ref{eq:epsilon_M_definition}) used in the derivation of the gravitational constant and anomalous magnetic moments is the emergent aggregate of the microscopic elastic constants $k$ of the BCC lattice substrate. While $k$ defines the fundamental repulsive interaction between individual EMCs following Hooke's Law \eqref{eq:hooke_law}, $N$ represents the global resistance of the vacuum to volumetric displacement. This connection bridges the localized elastic forces shown in Fig. \ref{fig:emc_interaction} with the large-scale stability required for the precise determination of leptonic anomalies.
 
+\subsection{From Energy Domain to Geometric Domain}
+The Energy Wave Theory (EWT), as developed by Yee \cite{yee2020constants}, successfully derived 23 fundamental physical constants from five wave constants: longitudinal amplitude $A_l$, longitudinal wavelength $\lambda_l$, aether density $\rho$, wave speed $c$, and the electron's wave center count $K_e=10$. In that framework, charge was already reinterpreted as wave amplitude, measured in meters, hinting at an underlying geometric reality. The present work extends this program by identifying the physical substrate of these waves: a Body-Centered Cubic (BCC) lattice of spherical Elastic Medium Constituents (EMCs). The wave constants are thus replaced by geometric invariants of this lattice: the statutory neutrino radius $r_{\nu}$ (related to $\lambda_l$ and $K_e$), the nodal stiffness $N = 8\pi^4$ (derived from the BCC coordination number), and the magnetic deficit $\epsilon_M = 1/(8\pi^7)$ (encoding the 7-dimensional weak interaction scale). This transition from the energy domain to the geometric domain not only preserves the predictive power of EWT but also unifies gravity, electromagnetism, and the weak force under a single topological framework.
 
 \section{Geometric Equation of the Fine-Structure Constant and the Deficit Terms}\label{sec:alpha_geometric_deficit}
 
@@ -2166,6 +2168,76 @@ The Energy Wave Theory (EWT) provides a standalone, high-precision method for ca
 
 The results of the sensitivity analysis suggest that the slight discrepancies between the EWT Standalone values and the CODATA targets originate from the systemic bias inherent in the Standard Model (SM) radiative corrections, rather than from a limitation of the EWT framework. By achieving a precision of \textbf{up to $0.0016\%$} at the resonance peak (as shown in Table \ref{tab:predictive_power_final}), it has been demonstrated that the anomalous magnetic moment is a deterministic property of the vacuum medium's structural impedance. This work establishes a new foundation for understanding the lepton hierarchy as a recursive geometric manifestation of a single resonant core, offering a loop-free path for future investigations into the nature of fundamental physical constants.
 
+
+\section{Other Geometric Constants Derived from the Lattice}
+
+The EWT framework demonstrates that fundamental physical constants are not independent inputs but deterministic results of the vacuum's granularity. As established in Section \ref{sec:planck_paradigm}, the Planck Length ($l_P$) is the physical boundary of the medium's constituents, making the Planck constant ($h$) a direct manifestation of the lattice's mechanical impedance.
+
+
+\subsection{The Rydberg Constant ($R_{\infty}$): An Atomic Resonance Gap}
+\label{sec:rydberg_constant}
+
+In this zero-parameter framework, the Rydberg constant emerges as the fundamental "resonance gap" between the lepton soliton ($K=10$ wave centers) and the background BCC medium. Since the electron mass ($m_e$) and the Planck constant ($h$) are emergent properties of the $N_{\nu}$ density hierarchy, $R_{\infty}$ must be expressible as a purely geometric ratio, eliminating the need for these empirical inputs.
+
+\subsubsection{Anchoring to the Physical Boundary}
+The Rydberg constant is traditionally linked to the energy scale of the atom via $R_{\infty} = \alpha^2 m_e c / 2h$. In EWT, this scale is anchored to the \textbf{Statutory Radius ($r_{\nu}$)} (Eq. \ref{eq:r_nu_corr}), which defines the fundamental longitudinal wavelength allowed by the medium's granularity. Because the classical electron radius $r_e$ maintains a fixed $1:100$ resonance link to $r_{\nu}$ (as confirmed in Sec. \ref{sec:10_10_resonance}), the spectroscopic limit defined by $R_{\infty}$ becomes a structural damping factor of the lattice itself.
+
+\subsubsection{Geometric Derivation: The $\alpha^3/(4\pi r_e)$ Identity}
+A compact geometric expression for the Rydberg constant can be obtained by eliminating $m_e$ and $h$ in favor of the classical electron radius $r_e = \alpha \hbar / (m_e c) = \alpha^2/(2R_{\infty})$. A straightforward rearrangement of the standard definition yields a form that depends only on $\alpha$ and $r_e$:
+\begin{equation}
+	R_{\infty} = \frac{\alpha^3}{4\pi r_e}
+	\label{eq:rydberg_geometric_form}
+\end{equation}
+\noindent Within the EWT framework, this expression carries deep physical significance. The factor $\alpha^3$ represents the \textbf{volumetric coupling efficiency} of the soliton's energy to the lattice, while $4\pi r_e$ corresponds to the \textbf{effective circumference} of the electron's energy shell, projecting the 3D lattice impedance onto a 1D spectroscopic line. The isotropy required for the $1/r$ potential is ensured by the Degraded EMC Wall, which averages the discrete BCC nodes into a smooth spherical gradient (see Sec. \ref{subsubsec:pressure_driven}).
+
+\subsubsection{Zero-Parameter Identity}
+Substituting the zero-parameter definition of the fine-structure constant, $\alpha^{-1} = A_{\pi} - \epsilon_M$, where $A_{\pi} = 4\pi^3 + \pi^2 + \pi$ and $\epsilon_M = 1/(8\pi^7)$ (see Sec. \ref{sec:eliminating_fine_tunig_paradigm}), along with the geometric link $r_e = 100 \cdot r_{\nu}$, yields the final geometric identity for the Rydberg constant:
+\begin{equation}
+	\label{eq:rydberg_final}
+	\boxed{R_{\infty} = \frac{\left[ (4\pi^3 + \pi^2 + \pi) - \frac{1}{8\pi^7} \right]^{-3}}{4\pi \cdot (100 \cdot r_{\nu})}}
+\end{equation}
+
+\subsubsection{Numerical Verification}
+Using the statutory neutrino radius $r_{\nu} = 2.81794 \times 10^{-17}$ m (Eq. \ref{eq:r_nu_corr}) and the zero-parameter fine-structure constant derived in Sec. \ref{sec:eliminating_fine_tunig_paradigm}, the predicted value from Eq. \ref{eq:rydberg_final} is:
+\begin{align}
+	\alpha_{\text{geom}} &= \left[ (4\pi^3 + \pi^2 + \pi) - \frac{1}{8\pi^7} \right]^{-1} = 0.007297338548 \\
+	r_e^{\text{geom}} &= 100 \cdot r_{\nu} = 2.817939732995698 \times 10^{-15} \text{ m} \\
+	R_{\infty}^{\text{EWT}} &= \frac{\alpha_{\text{geom}}^3}{4\pi r_e^{\text{geom}}} = 10973670.62263460 \text{ m}^{-1}
+\end{align}
+This aligns with the CODATA 2022 value $R_{\infty} = 10973731.568157 \text{ m}^{-1}$ to within a relative error of approximately \textbf{5.55 ppm} ($5.55 \times 10^{-6}$).
+
+\begin{table}[h]
+	\centering
+	\caption{Numerical Verification of the Rydberg Constant}
+	\label{tab:rydberg_verification}
+	\begin{tabular}{lcc}
+		\toprule
+		\textbf{Source} & \textbf{Value} ($\text{m}^{-1}$) & \textbf{Relative Error} \\
+		\midrule
+		EWT Prediction (Eq. \ref{eq:rydberg_final}) & $10973670.62263460$ & --- \\
+		CODATA 2022 & $10973731.56815700$ & $\mathbf{5.55 \times 10^{-6}}$ (5.55 ppm) \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Physical Interpretation: The Resonance Gap}
+Dimensional analysis confirms $[R_{\infty}] = \text{m}^{-1}$, identifying it as a spatial frequency. Physically, $R_{\infty}$ represents the lowest possible energy shift allowed by the BCC lattice before the standing wave resonance of the soliton breaks – the fundamental "cutoff" frequency of the aether's standing wave. The precision of 5.55 ppm confirms that this "resonance gap" is a rigid property of the medium. 
+
+Crucially, this derivation bridges the gap between gravitational push-out and atomic spectroscopy using the same geometric logic. The isotropy of the force, essential for the $1/r$ potential, is provided by the \textbf{Degraded EMC Wall} – a structural boundary layer that averages the discrete BCC lattice into a continuous spherical gradient, as discussed in Sec. \ref{subsubsec:pressure_driven}. This ensures that $R_{\infty}$ manifests as a universal scalar, independent of the underlying lattice orientation.
+
+\subsubsection{Relation to the Energy Domain Derivation}
+The geometric form $R_{\infty} = \alpha^3/(4\pi r_e)$ is not new to this work; it appears in the foundational Energy Wave Theory (EWT) derivations by Yee \cite{yee2020constants}, where it was expressed in terms of wave constants as $R_{\infty} = \left(\frac{\pi\lambda_l}{2K_e^7}\right)^2\left(\frac{3}{4A_l}\right)^3 g_\lambda^{-1}$. The present work advances this result by eliminating the wave constants ($\lambda_l$, $A_l$, $g_\lambda$) in favor of purely geometric quantities: the statutory neutrino radius $r_{\nu}$ and the 8-node BCC lattice correction $1/(8\pi^7)$. This transition from the energy domain to the geometric domain demonstrates the underlying unity of the EWT framework.
+
+%\subsubsection{The Aether Density $\rho$ as an Emergent Property}
+%In the energy-domain formulation of EWT, Yee \cite{yee2020speed} derived the aether density $\rho$ using three independent methods, all yielding $\rho \approx 4 \times 10^{22} \, \mathrm{kg/m^3}$. Of particular relevance to the geometric model is the relation involving the electron (Eq. 1.2):
+%\begin{equation}
+%	\rho = \frac{\mu_0}{\frac{4}{3}\pi r_e^2}
+%\end{equation}
+%In the geometric domain, the classical electron radius is fixed by the 1:100 resonance: $r_e = 100 r_\nu$. Furthermore, the magnetic constant $\mu_0$ can be expressed in terms of the BCC lattice parameters. For instance, from the definition of the Planck units \cite{yee2020constants}:
+%\begin{equation}
+%	\mu_0 = \frac{4\pi m_P l_P}{q_P^2}
+%\end{equation}
+%where $m_P$, $l_P$, and $q_P$ themselves have geometric interpretations (e.g., $q_P = 2A_l g_A^{-1}$, with $A_l$ related to $r_\nu$ and $\alpha$). Substituting these expressions into Eq. (1.2) yields a purely geometric formula for $\rho$, confirming that the aether density is not an independent constant but a derived property of the BCC lattice. Numerical evaluation using the geometric values of $r_\nu$, $\alpha$, and the lattice parameters reproduces $\rho = 4 \times 10^{22} \, \mathrm{kg/m^3}$ within the same precision as the other constants, further demonstrating the consistency between the energy and geometric domains.
 
 \section{Mathematical Foundations of the Energy Wave Theory Lattice}
 
