@@ -1,6 +1,6 @@
 // ==============================================================================
 // SCILAB SCRIPT: EWT MODEL COMPLETE NUMERICAL CALCULATOR AND CONSISTENCY CHECK
-// FINAL VERSION: Version: 4.4.01
+// FINAL VERSION: Version: 4.4.02
 // ==============================================================================
 
 clear;        
@@ -701,8 +701,8 @@ disp('=====================================================');
 // This section derives three fundamental atomic constants from purely geometric
 // inputs: the Rydberg constant (R_inf), the Bohr radius (a0), and the electron
 // Compton wavelength (lambda_C). All three derive from the same two geometric inputs:
-//   • r_nu (statutory neutrino radius) – the fundamental length scale of the BCC lattice
-//   • 8*%pi^7 (lattice correction) – encoding the 7-dimensional weak interaction budget
+//   r_nu (statutory neutrino radius) - the fundamental length scale of the BCC lattice
+//   8*%pi^7 (lattice correction) - encoding the 7-dimensional weak interaction budget
 // ==============================================================================
 
 disp(' ');
@@ -766,8 +766,8 @@ printf("Relative error:                           %.6f ppm  (%.6f %%)\n", Error_
 disp(' ');
 disp('--- PHYSICAL INTERPRETATION ---');
 disp('All three atomic scales derive from the same two geometric inputs:');
-disp('  • r_nu (statutory neutrino radius) – the fundamental length scale of the BCC lattice,');
-disp('  • 8*%pi^7 (lattice correction) – encoding the 7-dimensional weak interaction budget.');
+disp('  r_nu (statutory neutrino radius) - the fundamental length scale of the BCC lattice,');
+disp('  8*%pi^7 (lattice correction) - encoding the 7-dimensional weak interaction budget.');
 disp(' ');
 disp('The relations:');
 disp('  R_inf = alpha^3 / (4*%pi * r_e)   (spectroscopic energy scale)');
