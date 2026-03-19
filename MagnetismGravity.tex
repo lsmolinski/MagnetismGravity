@@ -75,7 +75,7 @@
 
 \begin{center}
 \today \\
-Version: 4.4.02	
+Version: 4.4.03	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -780,6 +780,22 @@ The \textbf{effective number} ($N_{\nu, \text{eff}}$) is derived from the weight
 \end{equation}
 The specific value $N_{\nu,\text{eff}}$ results directly from the structural parameters $\mathbf{k}$, $\mathbf{p}$, and $\mathbf{\psi}_{\rm unit}$. This value reflects the finalized structural dilution within the matter-occupied region, which, when coupled with the fine-structure constant $\alpha$, achieves a null-error convergence with the CODATA value of $G$.
 
+It is important to note that while the ansatz $\rho(r)$ provides 
+a physically motivated description of the internal density gradient, 
+the numerical value of $N_{\nu,\text{eff}}$ is derived algebraically 
+in the computational implementation (Listing~\ref{lst:scilab_script}, 
+Part~I) via the Unified Coupling Operator $C_{\text{unif}}$:
+\begin{equation}
+	N_{\nu,\text{eff}} = \frac{N_{\nu,\text{stat}}}{X_{\text{eff}}}, 
+	\quad \text{where} \quad 
+	X_{\text{eff}} = \frac{A_{\pi} \cdot 3 \cdot K_{WC} \cdot \sqrt{2}}{C_{\text{unif}}}
+\end{equation}
+This expression contains only geometrically determined quantities --- 
+$A_{\pi}$, the wave center count $K_{WC} = 10$, and the BCC diagonal 
+factor $\sqrt{2}$ --- with no free parameters. The structural parameters 
+$\mathbf{k}$ and $\mathbf{p}$ of the ansatz are therefore not inputs 
+to the gravitational calculation but characterize the physical shape 
+of the density profile consistent with this algebraically derived value
 
 \subsection{Asymptotic Justification of the Constant Factor $\pi^3$}
 \label{sec:pi3}
