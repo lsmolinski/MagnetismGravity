@@ -368,25 +368,16 @@ function E = mass_orbital(K)
     else E = 0; end
 endfunction
 
-// Sub-Shell Phase Correction (Quarks)
-// Adjusts the spherical resonance for non-integer or off-axis shell placement.
-function E = mass_quark(K)
-    E_raw = mass_spherical(K);
-    if K == 7 then E = E_raw * 26.5;         // Quark 'u' adjustment
-    elseif K == 15 then E = E_raw * 1.155;    // Quark 'd' adjustment
-    elseif K == 51 then E = E_raw * 0.048;    // Quark 's' adjustment
-    else E = E_raw; end
-endfunction
 
 // --- 3. DATA PROCESSING & VALIDATION ENGINE ---
 
 data = [
     "Neutrino",     "1",   "0.00000000238", "sph";
-    "Quark u",      "7",   "0.002162",      "qrk";
+    "Quark u",      "13",   "0.002162",      "sph";
     "Electron",     "10",  "0.00051099",    "sph";
-    "Quark d",      "15",  "0.004692",      "qrk";
+    "Quark d",      "15",  "0.004692",      "sph";
     "Muon",         "20",  "0.09488543",    "orb";
-    "Quark s",      "51",  "0.094954",      "qrk";
+    "Quark s",      "28",  "0.094954",      "sph";
     "Tau",          "50",  "1.75619909",    "orb";
     "W Boson",      "109", "80.387",        "sph";
     "Z Boson",      "110", "91.182",        "sph";
@@ -418,16 +409,12 @@ disp("---------------------------------------------------------------");
 // ------------------------------------------------------------------------------
 // Implementation of the Universal Geometric Modulator (epsilon_M)
 // ------------------------------------------------------------------------------
-// STRATEGY: Using CDF II Consistency to define the Geometric Lattice Anchor.
-// ==============================================================================
-
 disp(" ");
 disp("=====================================================");
 disp("VII. DIMENSIONAL HIERARCHY & MIXING ANGLES (INTEGRATED)");
 disp("=====================================================");
 
 // --- 1. UNIVERSAL GEOMETRIC MODULATOR ---
-// eps_M (Magnetic Deficit) is the primary driver of lattice impedance
 C_local = eps_M / (2 * sqrt(2)); 
 
 // --- 2. EXPERIMENTAL REFERENCE DATA (CODATA 2022 & CDF II) ---
@@ -435,18 +422,19 @@ M_Z_ref      = 91.1876;        // Standard Candle (Z-boson)
 M_H_ref      = 125.25;         // Higgs mass target
 sw2_target   = 0.23122;        // Fixed Geometric Foundation (Weinberg Angle)
 M_W_CDFII    = 80.4335;        // The Anchor: 2022 CDF II Measurement
+M_Z_EWT      = mass_spherical(110);
+M_H_EWT      = mass_spherical(117);
 
-M_Z_EWT      = mass_spherical(110);        // Z-boson mass EWT
-M_H_EWT      = mass_spherical(117);         // Higgs mass EWT
-
-
+// --- PDG 2022 TARGET QUARK MASSES (for Cabibbo sensitivity test) ---
+m_d_pdg = 0.004692;            // d-quark PDG 2022 [GeV]
+m_s_pdg = 0.094954;            // s-quark PDG 2022 [GeV]
 
 // --- 3. THE pi^6 RESONANCE: VOLUMETRIC BOSONIC COUPLING ---
 C_gap = 1 + (%pi^6 * C_local);
 
 // CALCULATING THE PREDICTED W-MASS BASED ON PURE GEOMETRY (EWT)
-// Formula: Mw = Mz * sqrt( (1 - sin^2_theta) * C_gap )
 Mw_ewt_pred = M_Z_ref * sqrt((1 - sw2_target) * C_gap);
+
 // Precision calculations relative to the 2022 CDF II Standard
 abs_diff_cdf = abs(Mw_ewt_pred - M_W_CDFII);
 perc_err_cdf = (abs_diff_cdf / M_W_CDFII) * 100;
@@ -462,7 +450,6 @@ printf("Absolute Deviation from CDF II:  %.4f GeV\n", abs_diff_cdf);
 printf("Percentage Error vs. CDF II:     %.4f %%\n", perc_err_cdf);
 
 // --- 4. HIGGS SECTOR: STRUCTURAL SELF-REGULATION ---
-// Using the EWT-predicted Mw to check Higgs mixing
 sw2_ZH = 1 - ( (M_Z_EWT / M_H_EWT)^2 * (1 / C_gap) );
 sw2_WH = 1 - ( (Mw_ewt_pred / M_H_EWT)^2 * (1 / C_gap) );
 
@@ -473,22 +460,44 @@ printf("Higgs-W Mixing sin^2(theta_WH): %.10f\n", sw2_WH);
 disp("Note: ZH stability is superior due to the neutrality of Z and H solitons.");
 
 // --- 5. THE pi^5 RESONANCE: SURFACE INTERACTION (CABIBBO) ---
-m_d_ewt = mass_quark(15);
-m_s_ewt = mass_quark(51);
+// Variant A: EWT-derived quark masses (spherical mode)
+m_d_ewt = mass_spherical(15);
+m_s_ewt = mass_spherical(28);
 
 // C_fermion: Surface Interaction Correction based on pi^5 scale
 C_fermion = (1 + (%pi^5 * C_local))^2;
 
-// Cabibbo Angle Prediction
-sc_ewt = sqrt(m_d_ewt / m_s_ewt) * C_fermion;
+// Cabibbo Angle: Variant A (EWT masses)
+sc_ewt_A = sqrt(m_d_ewt / m_s_ewt) * C_fermion;
+err_A     = abs(sc_ewt_A - 0.2243) / 0.2243 * 100;
+
+// Cabibbo Angle: Variant B (PDG 2022 target masses)
+sc_ewt_B = sqrt(m_d_pdg / m_s_pdg) * C_fermion;
+err_B     = abs(sc_ewt_B - 0.2243) / 0.2243 * 100;
 
 disp(" ");
 disp("--- SECTION 7.3: CABIBBO MIXING & SURFACE RESONANCE ---");
-printf("EWT d-quark mass (K=15):         %.10f GeV\n", m_d_ewt);
-printf("EWT s-quark mass (K=51):         %.10f GeV\n", m_s_ewt);
-printf("EWT Prediction sin(theta_C):     %.10f\n", sc_ewt);
-printf("PDG 2022 Target:                 0.2243000000\n");
-printf("Final Accuracy Error:            %.6f %%\n", abs(sc_ewt - 0.2243)/0.2243 * 100);
+printf("C_fermion (pi^5 operator):       %.10f\n", C_fermion);
+printf("-----------------------------------------------------\n");
+disp("  VARIANT A: EWT-derived quark masses (spherical mode)");
+printf("  EWT d-quark mass (K=15):       %.10f GeV\n", m_d_ewt);
+printf("  EWT s-quark mass (K=28):       %.10f GeV\n", m_s_ewt);
+printf("  EWT Prediction sin(theta_C):   %.10f\n", sc_ewt_A);
+printf("  PDG 2022 Target:               0.2243000000\n");
+printf("  Percentage Error:              %.6f %%\n", err_A);
+printf("-----------------------------------------------------\n");
+disp("  VARIANT B: PDG 2022 target quark masses (mechanism test)");
+printf("  PDG d-quark mass:              %.10f GeV\n", m_d_pdg);
+printf("  PDG s-quark mass:              %.10f GeV\n", m_s_pdg);
+printf("  EWT Prediction sin(theta_C):   %.10f\n", sc_ewt_B);
+printf("  PDG 2022 Target:               0.2243000000\n");
+printf("  Percentage Error:              %.6f %%\n", err_B);
+printf("-----------------------------------------------------\n");
+disp("  INTERPRETATION:");
+disp("  Variant A error originates from EWT light quark mass predictions.");
+disp("  Variant B isolates the geometric mixing mechanism (pi^5 operator).");
+disp("  The residual error in Variant B represents the intrinsic precision");
+disp("  of C_fermion, independent of the quark mass prediction problem.");
 
 disp(" ");
 disp("--- THE GEOMETRIC LADDER SUMMARY ---");
@@ -782,3 +791,79 @@ disp('BCC lattice topology. The slightly larger error in R_inf reflects the cumu
 disp('effect of the alpha^3 factor, consistent with the spherical packing impedance delta');
 disp('discussed in Part X.');
 disp('=====================================================');
+
+
+// ==============================================================================
+// PART XIII: VERIFICATION FOR ELECTRON, PROTON AND Xi_cc+ (NEW PARTICLE)
+// ==============================================================================
+disp(' ');
+disp('=====================================================');
+disp('XIII. VERIFICATION FOR ELECTRON, PROTON AND Xi_cc+');
+disp('=====================================================');
+
+// --- FUNCTION FOR MESON STYLE (K^5 SCALING FROM ELECTRON) ---
+function m = mass_meson_style(K)
+    m_e_GeV = 0.00051099895; // Electron mass in GeV
+    K_e = 10;
+    m = m_e_GeV * (K^5 / K_e^5);
+endfunction
+
+// --- TARGET MASSES (GeV/c^2) ---
+m_e_target   = 0.00051099895;      // Electron (CODATA 2022)
+m_p_target   = 0.93827208816;      // Proton (CODATA 2022)
+m_Xi_target  = 3.61997;            // Xi_cc+ from LHCb 2026 (preliminary)
+
+// --- ELECTRON (K = 10) ---
+K_e = 10;
+m_e_sph   = mass_spherical(K_e);
+m_e_orb   = mass_orbital(K_e);
+m_e_meson = mass_meson_style(K_e);
+
+disp(' ');
+disp('--- ELECTRON (K = 10) ---');
+printf("Target mass:                %.12f GeV\n", m_e_target);
+printf("Spherical mode:             %.12f GeV (error = %.3e GeV)\n", m_e_sph, abs(m_e_sph - m_e_target));
+printf("Orbital mode:               %.12f GeV (error = %.3e GeV)\n", m_e_orb, abs(m_e_orb - m_e_target));
+printf("Meson (K^5) mode:           %.12f GeV (error = %.3e GeV)\n", m_e_meson, abs(m_e_meson - m_e_target));
+
+// --- PROTON (K = 45 from previous scan) ---
+K_p = 45;
+m_p_sph   = mass_spherical(K_p);
+m_p_orb   = mass_orbital(K_p);
+m_p_meson = mass_meson_style(K_p);
+
+disp(' ');
+disp('--- PROTON (K = 45) ---');
+printf("Target mass:                %.9f GeV\n", m_p_target);
+printf("Spherical mode:             %.9f GeV (error = %.3e GeV)\n", m_p_sph, abs(m_p_sph - m_p_target));
+printf("Orbital mode:               %.9f GeV (error = %.3e GeV)\n", m_p_orb, abs(m_p_orb - m_p_target));
+printf("Meson (K^5) mode:           %.9f GeV (error = %.3e GeV)\n", m_p_meson, abs(m_p_meson - m_p_target));
+
+// --- Xi_cc+ (find K from meson mode, then compare all modes) ---
+// Solve K from meson mode: m = m_e * (K/10)^5  => K = 10 * (m / m_e)^(1/5)
+m_ratio = m_Xi_target / m_e_target;
+K_Xi = 10 * m_ratio^(1/5);
+printf("\nComputed exact K for Xi_cc+ from meson mode: %.6f\n", K_Xi);
+
+// For integer-based functions, round to nearest integer
+K_Xi_int = round(K_Xi);
+printf("Rounded to nearest integer K = %d\n", K_Xi_int);
+
+m_Xi_sph   = mass_spherical(K_Xi_int);
+m_Xi_orb   = mass_orbital(K_Xi_int);
+m_Xi_meson = mass_meson_style(K_Xi_int);
+
+disp(' ');
+disp('--- Xi_cc+ (K = ' + string(K_Xi_int) + ', rounded from meson mode) ---');
+printf("Target mass:                %.5f GeV\n", m_Xi_target);
+printf("Spherical mode:             %.5f GeV (error = %.3e GeV)\n", m_Xi_sph, abs(m_Xi_sph - m_Xi_target));
+printf("Orbital mode:               %.5f GeV (error = %.3e GeV)\n", m_Xi_orb, abs(m_Xi_orb - m_Xi_target));
+printf("Meson (K^5) mode:           %.5f GeV (error = %.3e GeV)\n", m_Xi_meson, abs(m_Xi_meson - m_Xi_target));
+
+// Exact meson mode using fractional K (for reference)
+m_Xi_meson_exact = m_e_target * (K_Xi / 10)^5;
+printf("\nExact meson mode (fractional K = %.6f): %.5f GeV (error = %.3e GeV)\n", K_Xi, m_Xi_meson_exact, abs(m_Xi_meson_exact - m_Xi_target));
+
+disp('=====================================================');
+
+
