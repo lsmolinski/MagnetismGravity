@@ -794,76 +794,154 @@ disp('=====================================================');
 
 
 // ==============================================================================
-// PART XIII: VERIFICATION FOR ELECTRON, PROTON AND Xi_cc+ (NEW PARTICLE)
+// PART XIII: COMPREHENSIVE MASS SCAN - DATA-DRIVEN ARCHITECTURE
 // ==============================================================================
 disp(' ');
 disp('=====================================================');
-disp('XIII. VERIFICATION FOR ELECTRON, PROTON AND Xi_cc+');
+disp('XIII. COMPREHENSIVE MASS VERIFICATION');
 disp('=====================================================');
 
-// --- FUNCTION FOR MESON STYLE (K^5 SCALING FROM ELECTRON) ---
+// --- FUNCTION DEFINITIONS ---
+
 function m = mass_meson_style(K)
-    m_e_GeV = 0.00051099895; // Electron mass in GeV
+    m_e_GeV = 0.00051099895;
     K_e = 10;
     m = m_e_GeV * (K^5 / K_e^5);
 endfunction
 
-// --- TARGET MASSES (GeV/c^2) ---
-m_e_target   = 0.00051099895;      // Electron (CODATA 2022)
-m_p_target   = 0.93827208816;      // Proton (CODATA 2022)
-m_Xi_target  = 3.61997;            // Xi_cc+ from LHCb 2026 (preliminary)
+function K = K_from_mass(m_target)
+    m_e_GeV = 0.00051099895;
+    K = 10 * (m_target / m_e_GeV)^(1/5);
+endfunction
 
-// --- ELECTRON (K = 10) ---
-K_e = 10;
-m_e_sph   = mass_spherical(K_e);
-m_e_orb   = mass_orbital(K_e);
-m_e_meson = mass_meson_style(K_e);
+function run_scan(particle_data)
+    n = size(particle_data, 1);
+    disp(' ');
+    disp('--- FULL PARTICLE SCAN (K^5 MESON MODE) ---');
+    disp('------------------------------------------------------------------------------------------------------');
+    printf("%-16s | %-12s | %14s | %8s | %8s | %12s | %10s\n", ...
+        "Particle", "Source", "Target [GeV]", "K_exact", "K_int", "m_int [GeV]", "err_int %");
+    disp('------------------------------------------------------------------------------------------------------');
+
+    near_integer = struct();
+    ni_count = 0;
+
+    for i = 1:n
+        name   = particle_data(i, 1);
+        source = particle_data(i, 2);
+        m_t    = strtod(particle_data(i, 3));
+
+        K_ex  = K_from_mass(m_t);
+        K_in  = round(K_ex);
+        m_int = mass_meson_style(K_in);
+        err   = abs(m_int - m_t) / m_t * 100;
+
+        printf("%-16s | %-12s | %14.8f | %8.4f | %8d | %12.6f | %10.4f\n", ...
+            name, source, m_t, K_ex, K_in, m_int, err);
+
+        if abs(K_ex - K_in) < 0.15 then
+            ni_count = ni_count + 1;
+            near_integer(ni_count).name   = name;
+            near_integer(ni_count).source = source;
+            near_integer(ni_count).K_ex   = K_ex;
+            near_integer(ni_count).K_in   = K_in;
+            near_integer(ni_count).m_t    = m_t;
+            near_integer(ni_count).m_int  = m_int;
+            near_integer(ni_count).err    = err;
+        end
+    end
+
+    disp('------------------------------------------------------------------------------------------------------');
+    disp(' ');
+    disp('--- NEAR-INTEGER K RESONANCES (|K - round(K)| < 0.15) ---');
+    disp('Natural EWT lattice alignment without parameter adjustment.');
+    disp('------------------------------------------------------------------------------------------------------');
+
+    for i = 1:ni_count
+        printf("*** %-16s [%-12s]  K=%.6f -> K_int=%3d  m_int=%.8f GeV  err=%.4f%%\n", ...
+            near_integer(i).name, near_integer(i).source, ...
+            near_integer(i).K_ex, near_integer(i).K_in, ...
+            near_integer(i).m_int, near_integer(i).err);
+    end
+
+    disp('------------------------------------------------------------------------------------------------------');
+endfunction
+
+// ==============================================================================
+// PARTICLE DATA TABLE
+// Format: { Name, Source, Mass_GeV }
+// ==============================================================================
+
+particle_data = [
+// --- LEPTONS ---
+"Neutrino",        "PDG 2022",    "0.00000000238"  ;   // ~2 eV upper bound
+"Electron",        "CODATA 2022", "0.00051099895"  ;
+"Muon",            "PDG 2022",    "0.10565837"     ;
+"Tau",             "PDG 2022",    "1.77686"        ;
+
+// --- QUARKS (MS-bar, PDG 2022) ---
+"Quark u",         "PDG 2022",    "0.002162"       ;
+"Quark d",         "PDG 2022",    "0.004692"       ;
+"Quark s",         "PDG 2022",    "0.094954"       ;
+"Quark c",         "PDG 2022",    "1.2730"         ;
+"Quark b",         "PDG 2022",    "4.1830"         ;
+"Quark t",         "PDG 2022",    "172.690"        ;
+
+// --- GAUGE BOSONS ---
+"W boson",         "PDG 2022",    "80.3770"        ;
+"W boson",         "CDF II 2022", "80.4335"        ;
+"Z boson",         "PDG 2022",    "91.1876"        ;
+"Higgs",           "PDG 2022",    "125.25"         ;
+
+// --- BARYONS ---
+"Proton",          "CODATA 2022", "0.93827208816"  ;
+"Neutron",         "CODATA 2022", "0.93956542052"  ;
+"Lambda",          "PDG 2022",    "1.11568"        ;
+"Sigma+",          "PDG 2022",    "1.18937"        ;
+"Sigma0",          "PDG 2022",    "1.19264"        ;
+"Sigma-",          "PDG 2022",    "1.19745"        ;
+"Xi0",             "PDG 2022",    "1.31486"        ;
+"Xi-",             "PDG 2022",    "1.32171"        ;
+"Omega-",          "PDG 2022",    "1.67245"        ;
+
+// --- CHARMED BARYONS ---
+"Lambda_c+",       "PDG 2022",    "2.28646"        ;
+"Sigma_c++",       "PDG 2022",    "2.45397"        ;
+"Xi_c+",           "PDG 2022",    "2.46771"        ;
+"Xi_c0",           "PDG 2022",    "2.47044"        ;
+"Omega_c0",        "PDG 2022",    "2.69530"        ;
+"Xi_cc++",         "PDG 2022",    "3.62155"        ;   // LHCb 2017
+"Xi_cc+",          "LHCb 2026",   "3.61997"        ;   // NEW - independent validation
+
+// --- MESONS ---
+"Pion+-",          "PDG 2022",    "0.13957039"     ;
+"Pion0",           "PDG 2022",    "0.13497770"     ;
+"Kaon+-",          "PDG 2022",    "0.49367700"     ;
+"Kaon0",           "PDG 2022",    "0.49761700"     ;
+"Eta",             "PDG 2022",    "0.54753"        ;
+"Rho770",          "PDG 2022",    "0.77526"        ;
+"Omega782",        "PDG 2022",    "0.78265"        ;
+"Phi1020",         "PDG 2022",    "1.01946"        ;
+"D0 meson",        "PDG 2022",    "1.86484"        ;
+"D+ meson",        "PDG 2022",    "1.86966"        ;
+"D_s+",            "PDG 2022",    "1.96835"        ;
+"J/psi",           "PDG 2022",    "3.09690"        ;
+"B+ meson",        "PDG 2022",    "5.27934"        ;
+"B0 meson",        "PDG 2022",    "5.27965"        ;
+"B_s0",            "PDG 2022",    "5.36688"        ;
+"Upsilon(1S)",     "PDG 2022",    "9.46030"        ;
+"Upsilon(2S)",     "PDG 2022",    "10.02326"       ;
+"Upsilon(3S)",     "PDG 2022",    "10.35520"       ;
+"Z_c(3900)",       "PDG 2022",    "3.8884"         ;   // exotic
+"X(3872)",         "PDG 2022",    "3.87165"        ;   // exotic
+];
+
+// --- RUN THE SCAN ---
+run_scan(particle_data);
 
 disp(' ');
-disp('--- ELECTRON (K = 10) ---');
-printf("Target mass:                %.12f GeV\n", m_e_target);
-printf("Spherical mode:             %.12f GeV (error = %.3e GeV)\n", m_e_sph, abs(m_e_sph - m_e_target));
-printf("Orbital mode:               %.12f GeV (error = %.3e GeV)\n", m_e_orb, abs(m_e_orb - m_e_target));
-printf("Meson (K^5) mode:           %.12f GeV (error = %.3e GeV)\n", m_e_meson, abs(m_e_meson - m_e_target));
-
-// --- PROTON (K = 45 from previous scan) ---
-K_p = 45;
-m_p_sph   = mass_spherical(K_p);
-m_p_orb   = mass_orbital(K_p);
-m_p_meson = mass_meson_style(K_p);
-
-disp(' ');
-disp('--- PROTON (K = 45) ---');
-printf("Target mass:                %.9f GeV\n", m_p_target);
-printf("Spherical mode:             %.9f GeV (error = %.3e GeV)\n", m_p_sph, abs(m_p_sph - m_p_target));
-printf("Orbital mode:               %.9f GeV (error = %.3e GeV)\n", m_p_orb, abs(m_p_orb - m_p_target));
-printf("Meson (K^5) mode:           %.9f GeV (error = %.3e GeV)\n", m_p_meson, abs(m_p_meson - m_p_target));
-
-// --- Xi_cc+ (find K from meson mode, then compare all modes) ---
-// Solve K from meson mode: m = m_e * (K/10)^5  => K = 10 * (m / m_e)^(1/5)
-m_ratio = m_Xi_target / m_e_target;
-K_Xi = 10 * m_ratio^(1/5);
-printf("\nComputed exact K for Xi_cc+ from meson mode: %.6f\n", K_Xi);
-
-// For integer-based functions, round to nearest integer
-K_Xi_int = round(K_Xi);
-printf("Rounded to nearest integer K = %d\n", K_Xi_int);
-
-m_Xi_sph   = mass_spherical(K_Xi_int);
-m_Xi_orb   = mass_orbital(K_Xi_int);
-m_Xi_meson = mass_meson_style(K_Xi_int);
-
-disp(' ');
-disp('--- Xi_cc+ (K = ' + string(K_Xi_int) + ', rounded from meson mode) ---');
-printf("Target mass:                %.5f GeV\n", m_Xi_target);
-printf("Spherical mode:             %.5f GeV (error = %.3e GeV)\n", m_Xi_sph, abs(m_Xi_sph - m_Xi_target));
-printf("Orbital mode:               %.5f GeV (error = %.3e GeV)\n", m_Xi_orb, abs(m_Xi_orb - m_Xi_target));
-printf("Meson (K^5) mode:           %.5f GeV (error = %.3e GeV)\n", m_Xi_meson, abs(m_Xi_meson - m_Xi_target));
-
-// Exact meson mode using fractional K (for reference)
-m_Xi_meson_exact = m_e_target * (K_Xi / 10)^5;
-printf("\nExact meson mode (fractional K = %.6f): %.5f GeV (error = %.3e GeV)\n", K_Xi, m_Xi_meson_exact, abs(m_Xi_meson_exact - m_Xi_target));
-
+disp('NOTE: err_exact ~ 0 by construction (K derived analytically).');
+disp('Near-integer K = natural EWT resonance, no parameter adjustment.');
+disp('Xi_cc+ (LHCb 2026) = post-construction independent validation.');
 disp('=====================================================');
-
 

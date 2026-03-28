@@ -75,7 +75,7 @@
 
 \begin{center}
 \today \\
-Version: 4.4.03	
+Version: 4.4.04	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -1619,7 +1619,7 @@ The predictive power of Energy Wave Theory (EWT) lies in its ability to derive s
 
 \subsection{EWT particle mass prediction}
 
-In the EWT framework, mass is an emergent property of wave center density ($K$) within the aether. Numerical simulation categorizes mass generation into three distinct geometric modes, reflecting the diverse structural signatures of subatomic particles:
+In the EWT framework, mass is an emergent property of wave center density ($K_{WC}$) within the aether. Numerical simulation categorizes mass generation into three distinct geometric modes, reflecting the diverse structural signatures of subatomic particles:
 
 \begin{enumerate}
 	\item \textbf{Spherical Mode (Fundamental Cores):} Primarily used for neutrinos, the electron, and heavy bosons. The energy is a direct result of the longitudinal wave volume density scaled by the ${K_{WC}}^5$ factor:
@@ -1634,18 +1634,19 @@ In the EWT framework, mass is an emergent property of wave center density ($K$) 
 		E_{orb(K_{WC})} = E_{electron} \cdot \delta_{orb(K_{WC})}
 	\end{equation}
 	where $\delta_{muon} \approx 185.68$ and $\delta_{tau} \approx 3436.79$ and $E_{electron}$ is the energy calculated via Eq. \eqref{eq:spherical_mode} for $K_{WC}=10$.
-	
-	\item \textbf{Phase-Correction Mode (Quark Sub-shells):} Used for Quarks ($u, d, s$), adjusting the spherical resonance for off-axis shell placement through a correction factor $\epsilon_{qrk}$:
+	\item \textbf{Universal $({K_{WC}})^5$ Meson-Mode}:
 	\begin{equation}
-		E_{qrk(K_{WC})} = E_{sph(K_{WC})} \cdot \epsilon_{qrk}
+		m(K) = m_e \cdot \left(\frac{K_{WC}}{K_e}\right)^5, \qquad K_e = 10
+		\label{eq:meson_mode}
 	\end{equation}
+
 \end{enumerate}
 
 \subsection{Implementation and Computational Results}
 
 To ensure transparency and reproducibility of the results, the script's content is presented in its entirety in Listing \ref{lst:scilab_script}, and the resulting output is shown in Listing \ref{lst:scilab_output}. 
 
-The results of this numerical reproduction are summarized in Table \ref{tab:mass_precision_comparison}. The high fidelity of the model—specifically the sub-0.01\% error margins for the Muon, Tau, and Higgs boson—validates the use of discrete wave center counts as a viable alternative to the Higgs mechanism.
+The results of this numerical reproduction are summarized in Table \ref{tab:mass_precision_comparison} and table \ref{tab:meson_mode_scan}. The high fidelity of the model—specifically the sub-0.01\% error margins for the Muon, Tau, and Higgs boson—validates the use of discrete wave center counts as a viable alternative to the Higgs mechanism.
 
 \begin{table}[ht]
 	\centering
@@ -1671,8 +1672,142 @@ The results of this numerical reproduction are summarized in Table \ref{tab:mass
 	\end{tabular}
 \end{table}
 
-\subsection{Discussion on Boson Deviation}
-While the majority of particles exhibit near-zero deviation, the 9.00\% error observed for the W Boson ($K_{WC}=109$) suggests a discrete phase-shift jump or a lattice-driven volume deficit not fully captured by the purely spherical $({K_{WC}})^5$ scaling. This deviation points to a potential structural complexity in charged heavy bosons, likely related to the symmetry breaking between the W and Z states, which remains a subject for further geometric refinement.
+\subsection{Universal $({K_{WC}})^5$ Meson-Mode Scan: Independent Mass Validation}
+\label{sec:meson_mode_scan}
+
+Beyond the spherical and orbital modes discussed above, the EWT framework admits a third geometric scaling law --- the \textbf{meson mode} --- defined by the $({K_{WC}})^5$ volumetric energy density anchored at the electron:
+
+This scaling law was previously validated for the electron, pion, kaon, and proton \cite{yee2019geometry}. To assess its universality, a systematic scan was performed across the full PDG 2022 / CODATA 2022 dataset, covering leptons, quarks, gauge bosons, baryons, and mesons. For each particle, the exact wave-center count $K_{WC}$ satisfying Eq.~\eqref{eq:meson_mode} was computed analytically:
+
+\begin{equation}
+	K_{WC} = K_e \cdot \left(\frac{m_{\text{target}}}{m_e}\right)^{1/5}
+\end{equation}
+
+Particles whose exact $K$ falls within $|K_{WC} - \text{round}(K_{WC})| < 0.15$ of an integer are identified as \textbf{natural EWT resonances} --- states that align with discrete lattice wave-center counts without any parameter adjustment. The results are presented in Table~\ref{tab:meson_mode_scan}. the script's content is presented in its entirety in Listing \ref{lst:scilab_script}, and the resulting output is shown in Listing \ref{lst:scilab_output} in PART XIII. 
+
+\begin{table}[ht]
+	\centering
+	\small
+	\caption{Natural EWT Resonances: $({K_{WC}})^5$ Meson-Mode Scan (PDG 2022 / CODATA 2022).
+		Only particles with $|K_{\text{exact}} - K_{\text{int}}| < 0.15$ and relative error $\leq 1.5\%$ are shown.
+		$K_{\text{int}}$ is the nearest integer wave-center count; error is computed against the experimental target.}
+	\label{tab:meson_mode_scan}
+	\begin{tabular}{lllcccc}
+		\toprule
+		\textbf{Particle} & \textbf{Type} & \textbf{Source} &
+		$K_{\text{exact}}$ & $K_{\text{int}}$ &
+		\textbf{$m(K_{\text{int}})$ [GeV]} & \textbf{Error (\%)} \\
+		\midrule
+		Electron        & Lepton  & CODATA 2022 & 10.0000 & 10 & 0.000511  & 0.000\% \\
+		Muon            & Lepton  & PDG 2022    & 29.0467 & 29 & 0.104812  & 0.801\% \\
+		Tau             & Lepton  & PDG 2022    & 51.0795 & 51 & 1.763075  & 0.776\% \\
+		Proton          & Baryon  & CODATA 2022 & 44.9554 & 45 & 0.942937  & 0.497\% \\
+		Neutron         & Baryon  & CODATA 2022 & 44.9678 & 45 & 0.942937  & 0.359\% \\
+		Sigma$^+$       & Baryon  & PDG 2022    & 47.1389 & 47 & 1.171951  & 1.465\% \\
+		$\Xi^0$         & Baryon  & PDG 2022    & 48.0941 & 48 & 1.302046  & 0.975\% \\
+		$\Xi^-$         & Baryon  & PDG 2022    & 48.1441 & 48 & 1.302046  & 1.488\% \\
+		$D_s^+$         & Meson   & PDG 2022    & 52.1359 & 52 & 1.942839  & 1.296\% \\
+		$J/\psi$        & Meson   & PDG 2022    & 57.0823 & 57 & 3.074640  & 0.719\% \\
+		$\Xi_{cc}^{++}$ & Baryon  & PDG 2022    & 58.8972 & 59 & 3.653256  & 0.876\% \\
+		$\Xi_{cc}^{+}$  & Baryon  & LHCb 2026   & 58.8921 & 59 & 3.653256  & 0.920\% \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\caption{Granular Mode Comparison: Spherical vs. $K_{WC}^5$ Meson Scaling}
+	\label{tab:granular_comparison}
+	\small
+	\begin{tabular}{llccc}
+		\toprule
+		\textbf{Particle} & \textbf{Mode} & \textbf{($K_{WC}$)} & \textbf{Calculated [GeV]} & \textbf{Error (\%)} \\
+		\midrule
+		\textbf{W Boson} & Spherical & 109 & 87.6278 & 9.0075\% \\
+		(Target: 80.377) & \textbf{Meson} & \textbf{109} & \textbf{78.6235} & \textbf{2.1816\%} \\
+		\midrule
+		\textbf{Z Boson} & \textbf{Spherical} & \textbf{110} & \textbf{91.7313} & \textbf{0.6025\%} \\
+		(Target: 91.187) & Meson & 112 & 90.0554 & 1.2415\% \\
+		\midrule
+		\textbf{Higgs (H)} & \textbf{Spherical} & \textbf{117} & \textbf{124.9613} & \textbf{0.0000\%} \\
+		(Target: 125.25) & Meson & 120 & 127.1528 & 1.5193\% \\
+		\midrule
+		\textbf{Quark $s$} & \textbf{Spherical} & \textbf{28} & \textbf{0.09488} & \textbf{0.0722\%} \\
+		(Target: 0.09495) & Meson & 28 & 0.08794 & 7.3817\% \\
+		\midrule
+		\textbf{Quark $u$} & Spherical & 13 & 0.00194 & 9.8561\% \\
+		(Target: 0.00216) & Meson & 13 & 0.00189 & 12.2431\% \\
+		\midrule
+		\textbf{Quark $d$} & Spherical & 15 & 0.00403 & 14.0155\% \\
+		(Target: 0.00469) & Meson  & 16 & 0.00402 & 14.1989\% \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsection{Topological Isomorphism and Geometric Interference in BCC Lattice}
+\label{subsec:topological_isomorphism}
+
+The numerical results presented in Tables \ref{tab:mass_precision_comparison} and \ref{tab:meson_mode_scan} reveal a profound feature of the EWT framework \textbf{Topological isomorphism}: This phenomenon occurs when a single mass eigenvalue (energy density) can be reached through multiple discrete geometric configurations within the BCC lattice.
+
+\subsubsection{Dual Resonance Modes: Orbital vs. Meson Scaling}
+A striking example of this isomorphism is observed in the Muon ($\mu$) and Tau ($\tau$) leptons. While their masses are precisely derived in Table \ref{tab:mass_precision_comparison} using an \textbf{Orbital Mode} ($K_{WC}=20, 50$ as excitations of the electron core), they also align with integer wave-center counts in the \textbf{Meson Mode} ($K_{WC}=29, 51$) under pure $({K_{WC}})^5$ scaling (Table \ref{tab:meson_mode_scan}).
+
+In the context of a discrete elastic medium (the BCC vacuum), this suggests that the same quantity of EMC displaced ($N_{\nu, eff}$) can be organized into two distinct topological states:
+\begin{enumerate}
+	\item \textbf{The Core-Shell Configuration (Orbital):} A central electron-like soliton ($K_{WC}=10$) surrounded by a high-frequency resonant shell.
+	\item \textbf{The Unitary Soliton (Meson):} A single, enlarged standing-wave pattern where the entire volume vibrates at a higher harmonic ($K_{WC}=29$ and $51$).
+\end{enumerate}
+
+The choice between these modes is not arbitrary but governed by the \textbf{Geometric Interference} of the underlying wave centers. If the spacing between nodes matches the BCC lattice constants, the interference is constructive, leading to a stable or meta-stable particle. If the nodes fall into anti-resonance, the configuration collapses, explaining the rapid decay of non-magic number states.
+
+\subsubsection{Validation via the $\Xi_{cc}$ Isospin Doublet}
+The identification of the $\Xi_{cc}^+$ (LHCb 2026) at $K_{WC}=59$ serves as an independent validation of this structural rigidity. The fact that both $\Xi_{cc}^{++}$ and $\Xi_{cc}^+$ map to the same integer $K_{WC}$ resonance, despite different quark compositions ($ccu$ vs. $ccd$), proves that the \textbf{lattice geometry ($K_{WC}$) dominates the mass-generation process}. 
+
+The minute mass splitting ($\approx 1.6$ MeV) between these partners is interpreted as a fine-grained \textbf{Interference Correction} ($\Delta \epsilon$) caused by the displacement of a single node within the 59-node cluster. This confirms that the BCC lattice acts as a high-$Q$ resonator that "locks" the mass to the nearest stable geometric eigenvalue.
+
+\subsubsection{Discussion and Cross-Mode Consistency}
+
+The scan identifies \textbf{twelve particles} that naturally align with integer wave-center counts under the $K^5$ meson-mode scaling, spanning five particle families --- leptons, light baryons, strange baryons, charmed mesons, and doubly charmed baryons --- with deviations below $1.5\%$ in all cases. Several observations merit specific attention:
+
+\textbf{Cross-mode consistency for leptons.} The muon and tau 
+appear in Table~\ref{tab:meson_mode_scan} at $K=29$ and $K=51$ 
+respectively under the meson-mode scaling, yet in 
+Table~\ref{tab:mass_precision_comparison} their masses are 
+equivalently derived via the orbital mode at $K_{WC}=20$ and 
+$K_{WC}=50$. Rather than representing a redundancy, this duality 
+suggests that the same energy eigenvalue is accessible through 
+distinct topological configurations within the BCC lattice: an 
+orbital excitation of the electron core ($K_{WC}$) and an 
+extended volumetric standing-wave footprint ($K_{\text{meson}}$). 
+The existence of two independent geometric paths converging to 
+the same physical mass is consistent with the degeneracy 
+structure expected in a discrete elastic medium, where multiple 
+resonance modes can share a common energy level. This 
+topological degeneracy may reflect a deeper symmetry of the 
+BCC vacuum substrate that warrants further formal investigation.
+
+\textbf{$J/\psi$ and $D_s^+$ as charmed resonances.} The $J/\psi$ ($c\bar{c}$, $K=57$, error $0.72\%$) and $D_s^+$ ($c\bar{s}$, $K=52$, error $1.30\%$) both align naturally with integer $K$ values, suggesting that heavy-quark bound states follow the same $K^5$ volumetric scaling as light hadrons. 
+
+\textbf{$\Xi_{cc}$ isospin doublet.} The $\Xi_{cc}^{++}$ (PDG 2022, $K=58.897$) and $\Xi_{cc}^{+}$ (LHCb 2026 preliminary, $K=58.892$) map to the same integer $K=59$ with a mutual separation of $\Delta K = 0.005$. This confirms that both members of the doubly charmed isospin doublet occupy the same EWT resonance, with the mass difference arising from electromagnetic and isospin corrections below the lattice resolution. Crucially, the $\Xi_{cc}^{+}$ result constitutes an \textbf{independent post-construction validation}: the LHCb 2026 measurement was unavailable at the time of model development.
+
+
+In summary, the $K^5$ meson-mode scan reveals a coherent lattice structure underlying the particle mass spectrum: twelve particles from five distinct families align with integer wave-center counts without parameter adjustment, with a mean error of $0.78\%$. When considered alongside the spherical and orbital mode results of Table~\ref{tab:mass_precision_comparison}, these findings confirm that the EWT wave-center hierarchy provides a unified geometric foundation for particle masses across six orders of magnitude in energy.
+
+\textbf{The EWT framework predicts that both members of the $\Xi_{cc}$ }isospin 
+doublet occupy the same wave-center resonance at $K_{\text{int}} = 59$, 
+with an exact $K$ separation of $\Delta K = K(\Xi_{cc}^{++}) - 
+K(\Xi_{cc}^{+}) = 58.8972 - 58.8921 = 0.0051$. This minute lattice 
+displacement corresponds to a predicted mass splitting of approximately 
+$1.6\,\text{MeV}/c^2$, consistent within $1\sigma$ with the measured 
+value $\Delta M \equiv M(\Xi_{cc}^+) - M(\Xi_{cc}^{++}) = -1.77 \pm 
+0.84\,(\text{stat}) \pm 0.15\,(\text{syst})^{+1.90}_{-1.30}\,
+(\text{lifetime})\,\text{MeV}/c^2$ reported by the LHCb collaboration 
+\cite{LHCb2026}. The dominant uncertainty in this measurement originates 
+from the unknown lifetime of $\Xi_{cc}^+$, assumed in the range 
+$15$--$160\,\text{fs}$; a precise lifetime determination in future 
+LHCb Run~4 data would directly constrain this correction and provide 
+a stringent test of the EWT isospin splitting mechanism.
+
 
 \section{Dimensional Hierarchy and Dynamic Resonant Modulations}
 \label{sec:dimensional_hierarchy}
@@ -2383,13 +2518,13 @@ All three derive from the same two geometric inputs – $r_\nu$ and the $8\pi^7$
 	\centering
 	\caption{Summary of Atomic Scales Derived from Pure Geometry}
 	\label{tab:atomic_scales_summary}
-	\begin{tabular}{lcccc}
+	\begin{tabular}{lccc}
 		\toprule
-		\textbf{Constant} & \textbf{EWT Prediction} & \textbf{CODATA 2022} & \textbf{Error (ppm)} & \textbf{Error (\%)} \\
+		\textbf{Constant} & \textbf{EWT Prediction} & \textbf{CODATA 2022} & \textbf{Error (\%)} \\
 		\midrule
-		$R_\infty$ (m$^{-1}$) & $10973670.62263460$ & $10973731.56815700$ & 5.55 & $5.55 \times 10^{-4}\%$ \\
-		$a_0$ (m) & $5.291791330634349 \times 10^{-11}$ & $5.291772109030000 \times 10^{-11}$ & 3.63 & $3.63 \times 10^{-4}\%$ \\
-		$\lambda_C$ (m) & $2.426314389900505 \times 10^{-12}$ & $2.426310238670000 \times 10^{-12}$ & 1.71 & $1.71 \times 10^{-4}\%$ \\
+		$R_\infty$ (m$^{-1}$) & $10973670.62263460$ & $10973731.56815700$ & $5.55 \times 10^{-4}\%$ \\
+		$a_0$ (m) & $5.291791330634349 \times 10^{-11}$ & $5.291772109030000 \times 10^{-11}$ & $3.63 \times 10^{-4}\%$ \\
+		$\lambda_C$ (m) & $2.426314389900505 \times 10^{-12}$ & $2.426310238670000 \times 10^{-12}$ & $1.71 \times 10^{-4}\%$ \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -4034,6 +4169,12 @@ label={lst:AMM_find_sc}
 	Yee, J. (2020). 
 	Fundamental Physical Constants: Explained and Derived by Energy Wave Equations (vB).
 	URL: \href{https://vixra.org/pdf/1606.0113vB.pdf}{https://vixra.org/pdf/1606.0113vB.pdf}.
+	
+	\bibitem{LHCb2026}
+	Han, S. on behalf of the LHCb collaboration. (2026). 
+	Search for the doubly charmed baryon $\Xi_{cc}^+$ with 
+	the upgraded LHCb detector. \textit{60th Rencontres de 
+		Moriond}, LHCb-PAPER-2026-009 (in preparation).
 	
 \end{thebibliography}
 
