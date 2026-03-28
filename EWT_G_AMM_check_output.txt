@@ -1,312 +1,240 @@
-=====================================================
+======================================================================
 I. GRAVITY CONSISTENCY TEST (OPERATOR U)
-=====================================================
-G_Base (Soliton Base)            = 2.7802522591364D+32  m^3 kg^-1 s^-2
+======================================================================
+G_Base (Soliton Base)           : 2.7802522591364D+32 m^3 kg^-1 s^-2
 
 --- ANALYSIS OF VOLUME DEFICIT FACTORS (PUSH-OUT LOGIC) ---
-N_nu_max (Absolute Max):       5.300415534439117e+54
-N_nu_statutory (Background):   3.298651882390107e+52
-N_nu_geom (Effective EMC):     6.252517621935487e+48
+N_nu_max (Absolute Max)         : 5.300415534439117e+54
+N_nu_statutory (Background)     : 3.298651882390107e+52
+N_nu_geom (Effective EMC)       : 6.252517621935487e+48
 
 --- CALCULATION OF G_MODEL VARIANTS ---
-G_EWT_RAW (Pure K+1)           = 6.680436961490046e-11  m^3 kg^-1 s^-2
-G_EWT_UNIFIED (Alpha-Link)     = 6.674305000000013e-11  m^3 kg^-1 s^-2
-G_CODATA (Target Value)        = 6.674305000000000e-11  m^3 kg^-1 s^-2
+G_EWT_RAW (Pure K+1)            : 6.680436961490046e-11 m^3 kg^-1 s^-2
+G_EWT_UNIFIED (Alpha-Link)      : 6.674305000000013e-11 m^3 kg^-1 s^-2
+G_CODATA (Target Value)         : 6.674305000000000e-11 m^3 kg^-1 s^-2
 
---- G-FACTOR VERIFICATION RESULT ---
-Absolute Difference (|Model - CODATA|)   = 1.29246970711410574199e-25
-Percentage Error relative to CODATA      = 0.000000000000194  %
-Raw Geometry Gap (Pre-Alpha)             = 0.0918741575  %
------------------------------------------------------
-EMC DILUTION (X_eff):          5275.7178497467
-Lattice Projection (L_p):      1.1486801482
-=====================================================
+[G-FACTOR VERIFICATION RESULT]
+Absolute Difference             : 1.2924697071141D-25
+Percentage Error vs CODATA      : 0.000000000000194 %
+Raw Geometry Gap (Pre-Alpha)    : 0.0918741575 %
 
-=====================================================
+EMC DILUTION (X_eff)            : 5275.7178497467
+Lattice Projection (L_p)        : 1.1486801482
+
+======================================================================
 II. NEUTRINO RADIUS VALIDATION (1/5 POWER LAW TEST)
-=====================================================
-r_e (Classical Electron Radius)  = 0.00000000000000282  m
-r_nu_val (Model Statutory Value) = 0.00000000000000003  m
+======================================================================
+r_e (Classical Electron Radius) : 0.00000000000000282 m
+r_nu_val (Model Statutory Value): 0.00000000000000003 m
 
-Ratio (r_e / r_nu_val)           = 100.000011575831991
-K_nu_implied (Factor from 1/5 Law) = 10000005787.9173355
+Ratio (r_e / r_nu_val)          : 100.000011575831991
+K_nu_implied (Factor 1/5 Law)   : 10000005787.9173355
 
---- VALIDATION RESULT ---
-Target Geometric Order (10^10)   = 10000000000
-Percentage Difference (to 10^10) = 0.0000578791733551  %
+[VALIDATION RESULT]
+Target Geometric Order (10^10)  : 10000000000
+Percentage Difference           : 0.0000578791733551 %
 
-=====================================================
+======================================================================
 III. BASE GEOMETRIC MOMENT (a_Base^Geom)
-=====================================================
+======================================================================
 --- MASS-TO-GEOMETRY IDENTITY ---
-Mass-to-Radius Identity exponent = 1/5
+Mass-to-Radius Identity exponent: 1/5
 
---- GEOMETRIC AMM CALCULATION (a_Base^Geometric) ---
---- IDENTITY CHECK: |epsilon_M| * pi^3 = 1/N_final ---
-Calculated |epsilon_M| * pi^3 = 0.00128399682861514
-Calculated 1 / N_final        = 0.00128399682861515
+--- GEOMETRIC AMM CALCULATION ---
+[IDENTITY CHECK: |epsilon_M| * pi^3 = 1/N_final]
+Calculated |epsilon_M| * pi^3   : 0.00128399682861514
+Calculated 1 / N_final          : 0.00128399682861515
 
-Reference N (N_final)           = 778.818123000000014
-Ideal Term (alpha / 2*pi)       = 0.00116140973288586
-AMM Deficit Term (|epsilon_M|*pi^3) = 0.00128399682861514
-a_Base^Geometric (Final Result)   = 0.00115991848647211
-a_Base^Geometric (in 10^-10)      = 11599184.8647211138
+Reference N (N_final)           : 778.818123000000014
+Ideal Term (alpha / 2*pi)       : 0.00116140973288586
+AMM Deficit Term (|eps|*pi^3)   : 0.00128399682861514
+a_Base^Geometric (Final Result) : 0.00115991848647211
+a_Base^Geometric (in 10^-10)    : 11599184.8647211138
 
---- AMM VERIFICATION RESULT (Comparison to Electron Target) ---
-Target CODATA Value (Electron, in 10^-10)  = 11596521.8159999996
-Absolute Difference (to Electron Target)   = 2663.04872111417353
-Percentage Error relative to Electron Target = 0.0229642022269117  %
+[AMM VERIFICATION - ELECTRON TARGET]
+Target CODATA (in 10^-10)       : 11596521.8159999996
+Absolute Difference             : 2663.04872111417353
+Percentage Error vs Electron    : 0.0229642022269117 %
 
-=====================================================
+======================================================================
 IV. FINE-STRUCTURE CONSTANT (ALPHA) GEOMETRIC DERIVATION
-=====================================================
-Geometric Base Term (4*Pi^3 + Pi^2 + Pi) = 137.036303775878395
-Correction Term (epsilon_M_val)          = 0.0000414108679302
-alpha_inv_model (Geometric EWT)          = 137.036262365010458
-alpha_inv_CODATA (Target Value)          = 137.035999083999997
+======================================================================
+Geometric Base Term (4*Pi^3 + Pi^2 + Pi): 137.036303775878395
+Correction Term (epsilon_M_val)         : 0.0000414108679302
+alpha_inv_model (Geometric EWT)         : 137.036262365010458
+alpha_inv_CODATA (Target Value)         : 137.035999083999997
 
---- VERIFICATION RESULT ---
-Absolute Difference (|Model - CODATA|)   = 0.00026328101046147
-Percentage Error relative to CODATA      = 0.00019212543581346  %
-Nodal Count for current simulation:
-10.   207.   2181.
+[VERIFICATION RESULT]
+Absolute Difference             : 0.00026328101046147
+Percentage Error vs CODATA      : 0.00019212543581346 %
+Nodal Count (Simulation)        : 10, 207, 2181
 
-=====================================================
-V: LEPTON GEOMETRIC PROOF (TOROIDAL WAVE PACKING)
-=====================================================
+======================================================================
+V. LEPTON GEOMETRIC PROOF (TOROIDAL WAVE PACKING)
+======================================================================
 GENERATION 1: ELECTRON
-  Nodal Basis (K1): 10
-  Prediction (ae):  0.001159918486
-  Relative Error:   0.022964 %
+  - Nodal Basis (K1)            : 10
+  - Prediction (ae)             : 0.001159918486
+  - Relative Error              : 0.022964 %
 
 GENERATION 2: MUON
-  Total Nodes (K2): 207 (Shell Addition: +197)
-  Shell Density M:  19.7000
-  Prediction (amu): 248.572419000851 (ppm)
-  Relative Error:   0.091471 %
+  - Total Nodes (K2)            : 207 (Shell Addition: +197)
+  - Shell Density M             : 19.7000
+  - Prediction (amu)            : 248.572419000851 (ppm)
+  - Relative Error              : 0.091471 %
 
 GENERATION 3: TAU
-  Total Nodes (K3): 2181 (Shell Addition: +1974)
-  Relative Density: 218.1000
-  Prediction (atau):1176.844485027941 (ppm)
-  Relative Error:   0.031049 %
+  - Total Nodes (K3)            : 2181 (Shell Addition: +1974)
+  - Relative Density            : 218.1000
+  - Prediction (atau)           : 1176.844485027941 (ppm)
+  - Relative Error              : 0.031049 %
 
 --- CONCLUSION: GEOMETRIC CONSISTENCY ---
 Lepton masses are proven to be emergent properties of toroidal shell growth.
 Nodal structure is defined by the discrete lattice response to 2*Pi^2.
-  Final Dimensionless a_e   : 0.001159918486
-  Final Dimensionless a_mu  : 0.000248572419
-  Final Dimensionless a_tau : 0.001176844485
-=====================================================
 
----------------------------------------------------------------
-    ENERGY WAVE THEORY: SUBATOMIC MASS PREDICTION ENGINE
-    Validated against: Particle-Forces-Calculations-v7.1.xlsx
----------------------------------------------------------------
-Particle     |   K |   Calculated [GeV] |    Error
----------------------------------------------------------------
-Neutrino     |   1 |     0.000000002389 | 0.3886%
-Quark u      |  13 |     0.001948910346 | 9.8561%
-Electron     |  10 |     0.000510998963 | 0.0018%
-Quark d      |  15 |     0.004034394152 | 14.0155%
-Muon         |  20 |     0.094885062179 | 0.0004%
-Quark s      |  28 |     0.094885432231 | 0.0722%
-Tau          |  50 |     1.756198681131 | 0.0000%
-W Boson      | 109 |    87.627848552791 | 9.0075%
-Z Boson      | 110 |    91.731362798344 | 0.6025%
-Higgs        | 117 |   124.961346975376 | 0.0000%
----------------------------------------------------------------
+======================================================================
+VI. SUBATOMIC MASS PREDICTION ENGINE
+Validated against: Particle-Forces-Calculations-v7.1.xlsx
+======================================================================
+Particle      |  K  | Calculated [GeV] | Error %
+----------------------------------------------------------------------
+Neutrino      |  1  |  0.000000002389  | 0.3886%
+Quark u       | 13  |  0.001948910346  | 9.8561%
+Electron      | 10  |  0.000510998963  | 0.0018%
+Quark d       | 15  |  0.004034394152  | 14.0155%
+Muon          | 20  |  0.094885062179  | 0.0004%
+Quark s       | 28  |  0.094885432231  | 0.0722%
+Tau           | 50  |  1.756198681131  | 0.0000%
+W Boson       | 109 | 87.627848552791  | 9.0075%
+Z Boson       | 110 | 91.731362798344  | 0.6025%
+Higgs         | 117 | 124.961346975376 | 0.0000%
+----------------------------------------------------------------------
 
-=====================================================
-VII. DIMENSIONAL HIERARCHY & MIXING ANGLES (INTEGRATED)
-=====================================================
---- SECTION 7.2: VOLUMETRIC BOSONIC COUPLING & CDF II ALIGNMENT ---
-Magnetic Deficit (eps_M):        4.1410867930e-05
-Gap Correction Factor (C_gap):   1.0140756538
------------------------------------------------------
-EWT Predicted W-Boson Mass:      80.5141 GeV
-CDF II Experimental Target:      80.4335 GeV
------------------------------------------------------
-Absolute Deviation from CDF II:  0.0806 GeV
-Percentage Error vs. CDF II:     0.1002 %
+======================================================================
+VII. DIMENSIONAL HIERARCHY & MIXING ANGLES
+======================================================================
+--- BOSONIC COUPLING & CDF II ALIGNMENT ---
+Magnetic Deficit (eps_M)        : 4.1410867930e-05
+Gap Correction Factor (C_gap)   : 1.0140756538
+----------------------------------------------------------------------
+EWT Predicted W-Boson Mass      : 80.5141 GeV
+CDF II Experimental Target      : 80.4335 GeV
+Absolute Deviation from CDF II  : 0.0806 GeV
+Percentage Error vs. CDF II     : 0.1002 %
 
---- SECTION 7.2.1: HIGGS MIXING PREDICTIONS ---
-Higgs-Z Mixing sin^2(theta_ZH): 0.4686093124
-Higgs-W Mixing sin^2(theta_WH): 0.5906241192
-Note: ZH stability is superior due to the neutrality of Z and H solitons.
+--- HIGGS MIXING PREDICTIONS ---
+Higgs-Z Mixing sin^2(theta_ZH)  : 0.4686093124
+Higgs-W Mixing sin^2(theta_WH)  : 0.5906241192
 
---- SECTION 7.3: CABIBBO MIXING & SURFACE RESONANCE ---
-C_fermion (pi^5 operator):       1.0089809137
------------------------------------------------------
-  VARIANT A: EWT-derived quark masses (spherical mode)
-  EWT d-quark mass (K=15):       0.0040343942 GeV
-  EWT s-quark mass (K=28):       0.0948854322 GeV
-  EWT Prediction sin(theta_C):   0.2080522149
-  PDG 2022 Target:               0.2243000000
-  Percentage Error:              7.243774 %
------------------------------------------------------
-  VARIANT B: PDG 2022 target quark masses (mechanism test)
-  PDG d-quark mass:              0.0046920000 GeV
-  PDG s-quark mass:              0.0949540000 GeV
-  EWT Prediction sin(theta_C):   0.2242876293
-  PDG 2022 Target:               0.2243000000
-  Percentage Error:              0.005515 %
------------------------------------------------------
-  INTERPRETATION:
-  Variant A error originates from EWT light quark mass predictions.
-  Variant B isolates the geometric mixing mechanism (pi^5 operator).
-  The residual error in Variant B represents the intrinsic precision
-  of C_fermion, independent of the quark mass prediction problem.
+--- CABIBBO MIXING & SURFACE RESONANCE ---
+C_fermion (pi^5 operator)       : 1.0089809137
+----------------------------------------------------------------------
+VARIANT A (EWT-derived masses):
+  - EWT Prediction sin(theta_C) : 0.2080522149
+  - PDG 2022 Target             : 0.2243000000
+  - Percentage Error            : 7.243774 %
+
+VARIANT B (PDG target masses):
+  - EWT Prediction sin(theta_C) : 0.2242876293
+  - PDG 2022 Target             : 0.2243000000
+  - Percentage Error            : 0.005515 %
 
 --- THE GEOMETRIC LADDER SUMMARY ---
-6D Volumetric Coupling (pi^6):   1.4075653771e-02
-5D Surface Interaction (pi^5):   4.4804197498e-03
-=====================================================
+6D Volumetric Coupling (pi^6)   : 1.4075653771e-02
+5D Surface Interaction (pi^5)   : 4.4804197498e-03
 
-=====================================================
+======================================================================
 VIII. STATUTORY RADIUS & DECADIC RESONANCE LINK
-=====================================================
-Derived Statutory Radius (r_nu):  2.8179397330e-17 m
-Reference Electron Radius (r_e):  2.8179403262e-15 m
------------------------------------------------------
+======================================================================
+Derived Statutory Radius (r_nu) : 2.8179397330e-17 m
+Reference Electron Radius (r_e) : 2.8179403262e-15 m
+----------------------------------------------------------------------
 Observed Radial Ratio (r_e/r_nu): 100.0000210510
-Implied Geometric Scaling (r^5):  10000010525.5010299683
------------------------------------------------------
-PHYSICAL INTERPRETATION FOR REVIEWERS:
-The derivation from Planck constants (q_p, e) perfectly recovers
-the 1:100 radial ratio. This proves that the neutrino is not a
-point-particle but a statutory anchor of the BCC lattice, with
-a density exactly 10^10 times higher than the electrons base.
-=====================================================
+Implied Geometric Scaling (r^5) : 10,000,010,525.501
+----------------------------------------------------------------------
+INTERPRETATION:
+The derivation from Planck constants perfectly recovers the 1:100 radial 
+ratio. Neutrino is a statutory anchor of the BCC lattice, with density 
+exactly 10^10 times higher than the electron base.
 
-=====================================================
+======================================================================
 IX. HEAVY BOSON GEOMETRIC RADIUS PREDICTIONS
-=====================================================
+======================================================================
 Z-Boson (K=110) Predicted Radius: 3.1677533396e-14 m
 Higgs   (K=117) Predicted Radius: 3.3697907040e-14 m
------------------------------------------------------
-VERIFICATION AGAINST NUCLEAR SCALES:
-Predictions match the 10^-14 m order of magnitude, consistent
-with the mass-equivalent isotopes (Mo-98 and Xe-134), providing
-empirical confidence in the EWT scaling extension.
-=====================================================
+----------------------------------------------------------------------
+Predictions match the 10^-14 m order of magnitude, consistent with 
+nuclear scales (Mo-98 and Xe-134).
 
-=====================================================
+======================================================================
 X. THE ULTIMATE DETERMINISTIC PROOF (ZERO-PARAMETER)
-=====================================================
+======================================================================
 --- MATHEMATICAL REDUCTION TO PURE TOPOLOGY ---
-Starting with N_geometric = 8 * pi^4 (BCC Nodes * 4D Budget)
-The Magnetic Deficit (eps_M) transforms as follows:
-   eps_M = 1 / (N_geometric * pi^3)
-   eps_M = 1 / ( (8 * pi^4) * pi^3 )
-   eps_M = 1 / ( 8 * pi^7 )  <-- THE 7D WEAK FORCE ANCHOR
-Value of eps_M: 4.138671002219586e-05
+Formula: eps_M = 1 / (8 * pi^7) <-- 7D Weak Force Anchor
+Predicted eps_M                 : 4.138671002219586e-05
 
 --- ALPHA-INVERSE (FINE STRUCTURE) DETERMINISM ---
 Formula: alpha^-1 = (4pi^3 + pi^2 + pi) - (1 / 8*pi^7)
-Physical Interpretation:
-   [Soliton Core Geometry] - [7D Lattice Interaction Shadow]
-Predicted Alpha^-1: 137.036262389168
-CODATA 2022 Target: 137.035999084000
-Absolute Error:     0.000263305168
+Predicted Alpha^-1              : 137.036262389168
+CODATA 2022 Target              : 137.035999084000
+Absolute Error                  : 0.000263305168
 
---- VACUUM IMPEDANCE ANALYSIS ---
-The difference between 8*pi^4 and N_final is the
-Spherical EMC Packing Impedance (delta).
-It reflects the reality of discrete spherical units (BCC ~0.68)
-vs an idealized mathematical continuum.
 Calculated Lattice Impedance (delta): 0.0583371207 %
------------------------------------------------------
-FINAL SYNTHESIS:
-The reduction to 1/8*pi^7 confirms that the electron is
-mechanically coupled to the Charged Weak Scale (pi^7).
-The 8-fold BCC lattice is the only topology that allows
-this exact resonance with the measured constants.
-=====================================================
+----------------------------------------------------------------------
+SYNTHESIS: Electron is mechanically coupled to the Charged Weak Scale 
+(pi^7). The 8-fold BCC lattice is the only topology that allows this resonance.
 
-=====================================================
-XI. UNIFIED GEOMETRIC AMM IDENTITY (DETERMINISTIC TEST)
-=====================================================
---- FUNDAMENTAL RATIO ANALYSIS ---
-Geometric Node Count (N_geo):    779.272728272019322
-Soliton Core Value (A_core):     137.036303775878395
------------------------------------------------------
-Predicted a_e (Pure Geometry):   1.159917127722e-03
-CODATA 2022 Target a_e:          1.159652181600e-03
+======================================================================
+XI. UNIFIED GEOMETRIC AMM IDENTITY
+======================================================================
+Geometric Node Count (N_geo)    : 779.272728272019
+Soliton Core Value (A_core)     : 137.036303775878
+----------------------------------------------------------------------
+Predicted a_e (Pure Geometry)   : 1.159917127722e-03
+CODATA 2022 Target a_e          : 1.159652181600e-03
 
---- ACCURACY VERIFICATION ---
-Absolute Deviation:              2.649461220145376e-07
-Percentage Error:                0.0228470335 %
+Absolute Deviation              : 2.649461220145e-07
+Percentage Error                : 0.0228470335 %
 
-SCIENTIFIC CONCLUSION:
-SUCCESS: The AMM is confirmed as a static geometric property.
-The 1:10^10 resonance is anchored in the 8-node BCC lattice.
-=====================================================
-
-=====================================================
+======================================================================
 XII. ATOMIC SCALES FROM PURE GEOMETRY
-=====================================================
---- ATOMIC SCALES FROM PURE GEOMETRY ---
-Zero-parameter alpha (alpha_geom):       0.007297338548
-Geometric electron radius (r_e):         2.817939732995698e-15 m
------------------------------------------------------
-Predicted Rydberg constant (R_inf):      10973670.62263460 m^{-1}
-CODATA 2022 R_inf:                        10973731.56815700 m^{-1}
-Relative error:                           5.553765 ppm  (0.000555 %)
+======================================================================
+Zero-parameter alpha (alpha_geom): 0.007297338548
+Geometric electron radius (r_e) : 2.817939732995e-15 m
+----------------------------------------------------------------------
+Predicted Rydberg (R_inf)       : 10973670.6226 m^-1 (err: 5.55 ppm)
+Predicted Bohr radius (a0)      : 5.2917913306e-11 m (err: 3.63 ppm)
+Predicted Compton (lambda_C)    : 2.4263143899e-12 m (err: 1.71 ppm)
+----------------------------------------------------------------------
+Unification: Spectroscopy, atomic size, and annihilation are necessary 
+consequences of the BCC lattice topology.
 
-Predicted Bohr radius (a0):               5.291791330634349e-11 m
-CODATA 2022 a0:                            5.291772109030000e-11 m
-Relative error:                           3.632357 ppm  (0.000363 %)
+======================================================================
+XIII. COMPREHENSIVE MASS VERIFICATION (K^5 MESON MODE)
+======================================================================
+Particle     | Target [GeV] |  K_exact | K_int | m_int [GeV] | err %
+----------------------------------------------------------------------
+Neutrino     |  0.00000000  |   0.8583 |    1  |  0.000000   | 114.7
+Electron     |  0.00051100  |  10.0000 |   10  |  0.000511   | 0.000
+Muon         |  0.10565837  |  29.0467 |   29  |  0.104812   | 0.801
+Tau          |  1.77686000  |  51.0795 |   51  |  1.763075   | 0.775
+Quark u      |  0.00216200  |  13.3440 |   13  |  0.001897   | 12.24
+Quark d      |  0.00469200  |  15.5807 |   16  |  0.005358   | 14.19
+Quark t      | 172.6900000  | 127.5761 |  128  | 175.577902  | 1.672
+W (PDG)      |  80.3770000  | 109.4819 |  109  |  78.623523  | 2.181
+Z (PDG)      |  91.1876000  | 112.2802 |  112  |  90.055475  | 1.241
+Higgs        | 125.2500000  | 119.6387 |  120  | 127.152891  | 1.519
+Proton       |  0.93827209  |  44.9554 |   45  |  0.942937   | 0.497
+----------------------------------------------------------------------
 
-Predicted Compton wavelength (lambda_C):  2.426314389900505e-12 m
-CODATA 2022 lambda_C:                      2.426310238670000e-12 m
-Relative error:                           1.710923 ppm  (0.000171 %)
-
---- PHYSICAL INTERPRETATION ---
-All three atomic scales derive from the same two geometric inputs:
-  r_nu (statutory neutrino radius) - the fundamental length scale of the BCC lattice,
-  8*pi^7 (lattice correction) - encoding the 7-dimensional weak interaction budget.
-
-The relations:
-  R_inf = alpha^3 / (4*pi * r_e)   (spectroscopic energy scale)
-  a0    = r_e / alpha^2              (atomic size)
-  lambda_C = 2*pi * r_e / alpha     (annihilation threshold)
-demonstrate that spectroscopy, atomic structure, and particle annihilation
-are unified under a single geometric framework.
-
-The sub-ppm precision (approx. 3.6 ppm for a0, approx. 1.7 ppm for lambda_C,
-and 5.6 ppm for R_inf) confirms that these constants are not independent but
-necessary consequences of the BCC lattice topology. The slightly larger error
-in R_inf reflects the cumulative effect of the alpha^3 factor, consistent with
-the spherical packing impedance delta discussed in Part X.
-=====================================================
-
-=====================================================
-XIII. VERIFICATION FOR ELECTRON, PROTON AND Xi_cc+
-=====================================================
-
---- ELECTRON (K = 10) ---
-Target mass:                0.000510998950 GeV
-Spherical mode:             0.000510998963 GeV (error = 1.303e-11 GeV)
-Orbital mode:               0.000000000000 GeV (error = 5.110e-04 GeV)
-Meson (K^5) mode:           0.000510998950 GeV (error = 0.000e+00 GeV)
-
---- PROTON (K = 45) ---
-Target mass:                0.938272088 GeV
-Spherical mode:             1.034199868 GeV (error = 9.593e-02 GeV)
-Orbital mode:               0.000000000 GeV (error = 9.383e-01 GeV)
-Meson (K^5) mode:           0.942936781 GeV (error = 4.665e-03 GeV)
-
-Computed exact K for Xi_cc+ from meson mode: 58.892093
-Rounded to nearest integer K = 59
-
---- Xi_cc+ (K = 59, rounded from meson mode) ---
-Target mass:                3.61997 GeV
-Spherical mode:             4.03283 GeV (error = 4.129e-01 GeV)
-Orbital mode:               0.00000 GeV (error = 3.620e+00 GeV)
-Meson (K^5) mode:           3.65326 GeV (error = 3.329e-02 GeV)
-
-Exact meson mode (fractional K = 58.892093): 3.61997 GeV (error = 2.665e-15 GeV)
-=====================================================
+--- NEAR-INTEGER K RESONANCES (|K - round(K)| < 0.15) ---
+*** Electron   : K=10.000000 -> 10  (Error: 0.0000%)
+*** Muon       : K=29.046699 -> 29  (Error: 0.8013%)
+*** Tau        : K=51.079500 -> 51  (Error: 0.7758%)
+*** Proton     : K=44.955389 -> 45  (Error: 0.4972%)
+*** Xi_cc++    : K=58.897233 -> 59  (Error: 0.8755%)
+*** Xi_cc+     : K=58.892093 -> 59  (Error: 0.9195%) [LHCb 2026 Validation]
+----------------------------------------------------------------------
 
 Execution done.
