@@ -369,6 +369,17 @@ function E = mass_orbital(K)
 endfunction
 
 
+function m = mass_meson_style(K)
+    m_e_GeV = 0.00051099895;
+    K_e = 10;
+    m = m_e_GeV * (K^5 / K_e^5);
+endfunction
+
+function K = K_from_mass(m_target)
+    m_e_GeV = 0.00051099895;
+    K = 10 * (m_target / m_e_GeV)^(1/5);
+endfunction
+
 // --- 3. DATA PROCESSING & VALIDATION ENGINE ---
 
 data = [
@@ -452,6 +463,7 @@ printf("Percentage Error vs. CDF II:     %.4f %%\n", perc_err_cdf);
 // --- 4. HIGGS SECTOR: STRUCTURAL SELF-REGULATION ---
 sw2_ZH = 1 - ( (M_Z_EWT / M_H_EWT)^2 * (1 / C_gap) );
 sw2_WH = 1 - ( (Mw_ewt_pred / M_H_EWT)^2 * (1 / C_gap) );
+
 
 disp(" ");
 disp("--- SECTION 7.2.1: HIGGS MIXING PREDICTIONS ---");
@@ -802,17 +814,6 @@ disp('XIII. COMPREHENSIVE MASS VERIFICATION');
 disp('=====================================================');
 
 // --- FUNCTION DEFINITIONS ---
-
-function m = mass_meson_style(K)
-    m_e_GeV = 0.00051099895;
-    K_e = 10;
-    m = m_e_GeV * (K^5 / K_e^5);
-endfunction
-
-function K = K_from_mass(m_target)
-    m_e_GeV = 0.00051099895;
-    K = 10 * (m_target / m_e_GeV)^(1/5);
-endfunction
 
 function run_scan(particle_data)
     n = size(particle_data, 1);
