@@ -947,18 +947,8 @@ disp('Xi_cc+ (LHCb 2026) = post-construction independent validation.');
 disp('=====================================================');
 
 
-// ==============================================================================
-// PART XIV: CGEOMETRIC DERIVATION OF THE NEUTRINO RADIUS (r_nu)
-// ==============================================================================
-disp(' ');
-disp('=====================================================');
-disp('PART XIV. GEOMETRIC DERIVATION OF THE NEUTRINO RADIUS (r_nu)');
-disp('=====================================================');
-
-
-
+// PART XIV: GEOMETRIC DERIVATION OF THE NEUTRINO RADIUS (r_nu)
 // =============================================================================
-// EWT: GEOMETRIC DERIVATION OF THE NEUTRINO RADIUS (r_nu)
 // 
 // This script derives the statutory neutrino radius from the BCC vacuum lattice
 // topology, the geometric fine-structure constant, and the natural wave dynamics.
@@ -970,15 +960,19 @@ disp('=====================================================');
 // (BCC coordination). The derivation is consistent with the earlier formula
 // r_nu = 2 q_P e^2 / g_v, providing a deeper insight into its origin.
 // =============================================================================
+disp(' ');
+disp('=====================================================');
+disp('PART XIV. GEOMETRIC DERIVATION OF THE NEUTRINO RADIUS (r_nu)');
+disp('=====================================================');
+
 // --- 1. FUNDAMENTAL GEOMETRIC CONSTANTS ---
-Pi    = %pi;                      // Transcendental constant (spherical symmetry)
-Ee    = %e;                       // Euler's number (natural wave gradient)
+Pi    = %pi;                      
+Ee    = %e;                       
 qP    = 1.875546e-18;             // Planck charge [m] - fundamental wave amplitude
 N_bcc = 8;                        // BCC coordination number (nearest neighbours)
 gv    = 0.98359223;               // Geometric correction factor from lattice dynamics
 
 // --- 2. FINE-STRUCTURE CONSTANT (PURE GEOMETRY) ---
-// alpha_inv = (4*pi^3 + pi^2 + pi) - 1/(8*pi^7)
 epsilon_M = 1 / (8 * (Pi^7));
 alpha_inv = (4*(Pi^3) + (Pi^2) + Pi) - epsilon_M;
 
@@ -987,27 +981,10 @@ printf("1. Geometric fine-structure constant (inverse):\n");
 printf("   alpha_inv = %.12f\n\n", alpha_inv);
 
 // --- 3. DECOMPOSITION OF THE SCALING FACTOR K = r_nu / q_P ---
-// The scaling factor K is the ratio of the neutrino radius to the Planck charge.
-// It arises from three distinct mechanisms:
-
-// A. Static Lattice Projection: distributes the soliton potential over the 8
-//    BCC nodes and the spherical symmetry (pi). This term represents the
-//    "static" contribution of the lattice geometry.
-K_proj = alpha_inv / (N_bcc + Pi);
-
-// B. Dynamic Wave Expansion: Euler's number e appears naturally from the
-//    integrated exponential decay of the standing wave amplitude from the
-//    centre outward. It encodes the quintic energy scaling (r^5) of the soliton.
+K_proj     = alpha_inv / (N_bcc + Pi);
 K_expansion = Ee;
-
-// C. Discrete Lattice Impedance: correction due to the mismatch at the soliton
-//    boundary. The factor (1 - g_v) accounts for the geometric deformation,
-//    while (sqrt(2) - 1) reflects wave propagation along the face diagonals of the
-//    BCC unit cell (the "stiffest" paths). This term is of order 0.04% of K.
-delta_imp = (1 - gv) * (sqrt(2) - 1);
-
-// Total scaling factor
-K_final = K_proj + K_expansion + delta_imp;
+delta_imp  = (1 - gv) * (sqrt(2) - 1);
+K_final    = K_proj + K_expansion + delta_imp;
 
 printf("2. Components of the scaling factor K = r_nu / q_P:\n");
 printf("   - Static lattice projection:   %.10f  [alpha_inv / (8+pi)]\n", K_proj);
@@ -1018,26 +995,91 @@ printf("   => Total K:                    %.10f\n\n", K_final);
 // --- 4. NEUTRINO RADIUS ---
 r_nu = qP * K_final;
 printf("3. Neutrino radius:\n");
-printf("   r_nu = q_P * K = %.25e m\n", r_nu);
+printf("   r_nu = q_P * K = %.25e m\n\n", r_nu);
 
 // --- 5. CONSISTENCY CHECK WITH EARLIER FORMULA ---
-// The earlier expression r_nu = 2 q_P e^2 / g_v yields the same K.
 K_earlier = 2 * (Ee^2) / gv;
-printf("\n4. Consistency with earlier derivation:\n");
+printf("4. Consistency with earlier derivation:\n");
 printf("   Earlier K (2 e^2 / g_v)   = %.10f\n", K_earlier);
 printf("   Current K (sum)           = %.10f\n", K_final);
 printf("   Relative difference        = %.10e\n\n", abs(K_final - K_earlier)/K_earlier);
 
-// --- 6. PHYSICAL INTERPRETATION ---
-printf("5. Physical interpretation:\n");
-printf("   * The neutrino is approximately %.2f times larger than the Planck charge.\n", K_final);
-printf("   * Mass corresponds to standing wave energy; charge to travelling wave amplitude.\n");
-printf("   * Euler number e emerges from the natural exponential gradient of the\n");
-printf("     standing wave amplitude (maximum at the centre, decaying outward).\n");
-printf("   * The static projection term (alpha_inv/(8+pi)) reflects the distribution\n");
-printf("     of the soliton potential over the 8 BCC nodes and the spherical symmetry.\n");
-printf("   * The impedance correction (1-g_v)*(sqrt(2)-1) accounts for discrete lattice\n");
-printf("     effects and diagonal propagation, consistent with the BCC packing fraction.\n");
-printf("   * The consistency with the r^5/r^3 balance is verified\n");
-printf("     by the target K = 15.0246 (deviation < 10^{-8}).\n");
-printf("\n--- Execution done. ---\n");
+// --- 6. SELF-CONSISTENT QUADRATIC EQUATION FOR g_v ---
+disp('=====================================================');
+disp('5. SELF-CONSISTENT QUADRATIC EQUATION FOR g_v');
+disp('=====================================================');
+
+a_coef =   sqrt(2) - 1;
+b_coef = -(K_proj + Ee + sqrt(2) - 1);
+c_coef =   2 * Ee^2;
+
+printf("   Quadratic coefficients:\n");
+printf("   a = (sqrt(2)-1)             = %.15f\n", a_coef);
+printf("   b = -(alpha_inv/(8+pi) + e + sqrt(2) - 1) = %.15f\n", b_coef);
+printf("   c = 2*e^2                   = %.15f\n\n", c_coef);
+
+// Discriminant
+discriminant = b_coef^2 - 4*a_coef*c_coef;
+printf("   Discriminant (b^2 - 4ac)    = %.15e\n\n", discriminant);
+
+if discriminant >= 0 then
+    gv_root1 = (-b_coef + sqrt(discriminant)) / (2*a_coef);
+    gv_root2 = (-b_coef - sqrt(discriminant)) / (2*a_coef);
+
+    printf("   Root 1: g_v = %.15f\n", gv_root1);
+    printf("   Root 2: g_v = %.15f\n\n", gv_root2);
+
+    printf("   Physical selection criterion: 0 < g_v < 1\n");
+
+    if gv_root1 > 0 & gv_root1 < 1 then
+        label1 = 'PHYSICAL';
+    else
+        label1 = 'UNPHYSICAL';
+    end
+
+    if gv_root2 > 0 & gv_root2 < 1 then
+        label2 = 'PHYSICAL';
+    else
+        label2 = 'UNPHYSICAL';
+    end
+
+    printf("   => Root 1 (%.6f): %s\n", gv_root1, label1);
+    printf("   => Root 2 (%.6f): %s\n\n", gv_root2, label2);
+
+    // Select physical root
+    if gv_root1 > 0 & gv_root1 < 1 then
+        gv_predicted = gv_root1;
+    else
+        gv_predicted = gv_root2;
+    end
+
+    printf("   => Selected geometric fixed point: g_v = %.15f\n\n", gv_predicted);
+
+    // Verification: recompute K and r_nu with predicted g_v
+    delta_imp_pred = (1 - gv_predicted) * (sqrt(2) - 1);
+    K_pred         = K_proj + Ee + delta_imp_pred;
+    r_nu_pred      = qP * K_pred;
+    K_dyn_pred     = 2 * Ee^2 / gv_predicted;
+
+    printf("   Verification with predicted g_v:\n");
+    printf("   K (geometric sum)          = %.15f\n", K_pred);
+    printf("   K (dynamic 2e^2/g_v)       = %.15f\n", K_dyn_pred);
+    printf("   Relative difference K      = %.6e\n", abs(K_pred - K_dyn_pred)/K_dyn_pred);
+    printf("   r_nu (predicted)           = %.15e m\n", r_nu_pred);
+    printf("   r_nu (earlier, gv=0.98359) = %.15e m\n", r_nu);
+    printf("   Relative difference r_nu   = %.6e\n\n", abs(r_nu_pred - r_nu)/r_nu);
+
+    printf("   Input g_v (phenomenological) = %.8f\n", gv);
+    printf("   Predicted g_v (fixed point)  = %.8f\n", gv_predicted);
+    printf("   Difference                   = %.6e\n", abs(gv_predicted - gv));
+else
+    printf("   ERROR: Negative discriminant - no real roots.\n");
+end
+
+disp('=====================================================');
+
+printf("\n6. Physical interpretation:\n");
+printf("   * g_v is the unique geometric fixed point of the BCC lattice.\n");
+printf("   * Only one root satisfies 0 < g_v < 1.\n");
+printf("   * This uniqueness suggests g_v is not a free parameter\n");
+printf("     but a topological necessity of the vacuum lattice.\n");
