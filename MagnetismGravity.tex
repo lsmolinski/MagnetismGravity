@@ -1036,6 +1036,20 @@ This conceptualization places EWT in close affinity with models advocating that 
 
 This interpretation provides direct justification for the appearance of the square root term ($\mathbf{N_{\nu, \text{effective}}}^{-1/2}$) in the scaling factor $\mathbf{\Omega_G}$. This term represents the **geometric transition** from the underlying three-dimensional volume deficit ($\mathbf{N_{\nu, \text{effective}}}$) to the **two-dimensional surface effect** (pressure) exerted by the EWT medium, aligning EWT with the surface-based scaling principles of holographic gravity models.
 
+\subsubsection{The Degraded EMC Wall: Spherical Masking and Isotropy}
+\label{subsubsec:degraded_emc_wall}
+
+A fundamental puzzle in any geometric theory of matter is how an asymmetric, rotating toroidal soliton (such as the electron) can generate a perfectly isotropic gravitational field. The resolution lies in a structural boundary layer that surrounds every soliton – the \textbf{Degraded EMC Wall}.
+
+The Degraded EMC Wall is a spherical shell of finite thickness located at a radius $r_{\text{mask}}$ where the packing density of Elastic Medium Constituents (EMCs) transitions from the diluted interior of the soliton toward the statutory background density $N_{\nu,\text{stat}}$. The wall is a region of \textbf{elevated EMC density} caused by the active push-out mechanism: as the soliton's standing waves displace EMCs from the interior, these constituents accumulate just outside the soliton boundary, creating a local density peak:
+\begin{equation}
+	\rho_{\text{EMC}}(r_{\text{mask}}^-) \;<\; \rho_{\text{EMC}}(r_{\text{wall}}),
+\end{equation}
+where $r_{\text{wall}}$ denotes a point located strictly inside the Degraded EMC Wall. The exact value of this peak relative to $N_{\nu,\text{stat}}$ depends on the strength of the push-out – in ordinary solitons it remains moderate, while in extreme gravitational environments (such as those leading to a Geometric Black Hole) it can become very large.
+
+The Degraded EMC Wall acts as a mandatory transducer between the toroidal core and the exterior. Because the individual EMCs are spherical units, the BCC lattice can only achieve a stable, static interface with the statutory background by adopting a spherical shape. The wall therefore enforces a \textbf{spherical boundary condition} on the energy density distribution $\rho_E(\theta,\phi)$ emerging from the toroidal core. The effect can be quantified by the \textit{Isotropy Operator} $\mathcal{I}$ (introduced in Sec.~\ref{sec:spherical_masking}). The Degraded EMC Wall thus decouples the internal toroidal dynamics from the external isotropic gravitational response.
+
+The existence of such a wall is a mechanical necessity. Any departure from spherical symmetry would introduce shear stresses $\sigma_{shear}$ that the lattice cannot sustain without continuous energy input. The Degraded EMC Wall therefore represents the \textbf{unique optimal operating point} where the internal push-out is balanced by the external statutory pressure, and it is implicitly present in every derivation that uses the spherical masking condition.
 % ==============================================================================
 % SECTION: GEOMETRIC VALIDATION AND THE BASE AMM STATE
 % ==============================================================================
@@ -2570,7 +2584,8 @@ A compact geometric expression for the Rydberg constant can be obtained by elimi
 	R_{\infty} = \frac{\alpha^3}{4\pi r_e}
 	\label{eq:rydberg_geometric_form}
 \end{equation}
-\noindent Within the EWT framework, this expression carries deep physical significance. The factor $\alpha^3$ represents the \textbf{volumetric coupling efficiency} of the soliton's energy to the lattice, while $4\pi r_e$ corresponds to the \textbf{effective circumference} of the electron's energy shell, projecting the 3D lattice impedance onto a 1D spectroscopic line. The isotropy required for the $1/r$ potential is ensured by the Degraded EMC Wall, which averages the discrete BCC nodes into a smooth spherical gradient (see Sec. \ref{subsubsec:pressure_driven}).
+\noindent Within the EWT framework, this expression carries deep physical significance. The factor $\alpha^3$ represents the \textbf{volumetric coupling efficiency} of the soliton's energy to the lattice, while $4\pi r_e$ corresponds to the \textbf{effective circumference} of the electron's energy shell, projecting the 3D lattice impedance onto a 1D spectroscopic line. The isotropy required for the $1/r$ potential is ensured by the Degraded EMC Wall, which averages the discrete BCC nodes into a smooth spherical gradient (see Sec. \ref{subsubsec:degraded_emc_wall}).
+
 
 \subsubsection{Zero-Parameter Identity}
 Substituting the zero-parameter definition of the fine-structure constant, $\alpha^{-1} = A_{\pi} - \epsilon_M$, where $A_{\pi} = 4\pi^3 + \pi^2 + \pi$ and $\epsilon_M = 1/(8\pi^7)$ (see Sec. \ref{sec:eliminating_fine_tunig_paradigm}), along with the geometric link $r_e = 100 \cdot r_{\nu}$, yields the final geometric identity for the Rydberg constant:
@@ -2634,7 +2649,7 @@ Using the statutory neutrino radius $r_\nu = 2.81794 \times 10^{-17}$ m and the 
 \end{equation}
 which aligns with the CODATA 2022 value $a_0 = 5.291772109030000 \times 10^{-11}$ m to within a relative error of \textbf{3.63 ppm} ($3.63 \times 10^{-6}$), or \textbf{0.000363\%}. This precision confirms that the atomic scale is not an independent constant but a necessary consequence of the same BCC lattice geometry that governs the electron radius and the fine-structure constant.
 
-Physically, $a_0$ represents the equilibrium distance where the attractive Coulomb force and the repulsive "quantum pressure" balance. In the EWT picture, this balance is mediated by the Degraded EMC Wall (Sec. \ref{subsubsec:pressure_driven}), which projects the discrete lattice structure into a smooth $1/r$ potential, ensuring the isotropy and universality of the atomic scale.
+Physically, $a_0$ represents the equilibrium distance where the attractive Coulomb force and the repulsive "quantum pressure" balance. In the EWT picture, this balance is mediated by the Degraded EMC Wall (Sec. \ref{subsubsec:degraded_emc_wall}), which projects the discrete lattice structure into a smooth $1/r$ potential, ensuring the isotropy and universality of the atomic scale.
 
 % ------------------------------------------------------------------------------
 \subsection{The Electron Compton Wavelength ($\lambda_C$): Threshold of Annihilation}
@@ -3496,7 +3511,7 @@ Unlike General Relativity, EWT defines the interior of a GBH as a domain of \tex
 \textbf{Empirical Validation (Supernovae):} The observation that \textbf{99\% of supernova energy is released as neutrinos} constitutes empirical confirmation that the collapse of matter under extreme gravity leads to the conversion of the dominant mass into the \textbf{minimal geometric state} of the Neutrino ($r_{\nu}$) at the point $d_{crit}$. This fact justifies the adoption of the Neutrino as the fundamental WC for the GBH model.
 
 \subsubsection*{The EMC Wall and the Push-Out Mechanism}
-The EMC Wall is a physical density barrier in a vacuum created when the medium (BCC network) cannot keep up with the redistribution of displaced components (EMC). The EMC wall defines the geometric event horizon of a black hole. The relationship between the black hole core's energy and the wall's density is defined by the displacement flux:
+The EMC Wall is a physical density barrier in a vacuum created when the medium (BCC network) cannot keep up with the redistribution of displaced components (EMC). In ordinary solitons (such as leptons) this barrier exists in a \textbf{degraded} form – the \textit{Degraded EMC Wall} discussed in Sec.~\ref{subsubsec:degraded_emc_wall} – where the local EMC density exceeds the statutory background $N_{\nu,\text{stat}}$ only moderately, and the wall acts as a passive geometric low-pass filter. In a Geometric Black Hole (GBH), however, the push-out mechanism is driven to its extreme: the core exhausts the vacuum so severely that the accumulated EMC density at the wall \textbf{significantly exceeds} the statutory background $N_{\nu,\text{stat}}$, turning the wall into an insurmountable barrier. The EMC wall then defines the geometric event horizon of the black hole. The relationship between the black hole core's energy and the wall's density is defined by the displacement flux:
 
 \begin{equation}
 	\Delta \rho_{E (\text{core})} \xrightarrow{\text{push-out}} \Delta \rho_{(\text{wall})} \ge N_{\nu, \text{stat}}
