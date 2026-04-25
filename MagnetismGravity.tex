@@ -324,11 +324,6 @@ Furthermore, since the contribution of the gravitational deficit ($\sum \epsilon
 \end{equation}
 
 \begin{equation}
-	{\mathbf{A}_{\pi}}^{-1} = \frac{1}{4\pi^{3} + \pi^{2} + \pi}
-	\label{eq:A_pi_inv}
-\end{equation}
-
-\begin{equation}
 	\label{eq:epsilon_M_definition}
 	\epsilon_M = \frac{1}{N_{\text{final}} \cdot \pi^3}
 \end{equation}
@@ -1563,11 +1558,22 @@ The results visualized in Figures \ref{fig:3d_peak} and \ref{fig:topography} con
 
 
 
-\subsection{Critique of the Standard Model Target Bias}
+\subsection{Critique of the Standard Model Target Bias: The Circularity of QED Precision}
+\label{sec:qed_critique}
 
-It is essential to consider the nature of the experimental targets used in the sensitivity analysis. The CODATA values for the muon and tau anomalous magnetic moments are not raw experimental data; they are the result of complex data reduction processes that incorporate Standard Model (SM) radiative corrections.
+It is essential to consider the nature of the experimental targets used in the sensitivity analysis. The celebrated "12 decimal places" of QED precision are often misinterpreted as an absolute verification of the theory from first principles. In practice, the comparison between the measured electron anomalous magnetic moment ($a_e$) and the theoretical prediction is a test of internal consistency rather than independent proof.
 
-In the framework of Energy Wave Theory, it is hypothesized that these SM-based corrections introduce a systemic bias. While the numerical scan identifies a "Resonance Peak" (Table \ref{tab:target_comparison}) that closely follows the CODATA baseline, the EWT Standalone values derived from the $2\pi^2$ operator are considered the unperturbed geometric truth. The discrepancy suggests that the lattice resonance identifies stability points independent of perturbative loop interpretations.
+The determination of $a_e$ follows a semi-circular logical path:
+\begin{equation}
+	\alpha_{\text{atom}} \xrightarrow{\text{QED Calculations}} a_e^{\text{theory}} \approx a_e^{\text{measured}} \xrightarrow{\text{QED Inversion}} \alpha_{g-2}
+\end{equation}
+To extract $a_e$ from raw Penning trap frequency ratios, one must apply over 13,000 Feynman diagrams (up to the 5th order), along with hadronic and weak force corrections. Furthermore, the value of the fine-structure constant $\alpha$ used as an input must be imported from independent experiments (e.g., Rubidium or Cesium recoil measurements). 
+
+Crucially, recent high-precision measurements of $\alpha$ using Rubidium (Morel et al., 2020) and Cesium demonstrate a $2.5\sigma$ discrepancy. This discrepancy propagates directly into the $a_e$ prediction, revealing that the "experimental target" is itself a moving baseline subject to unresolved systemic effects.
+
+In the framework of Energy Wave Theory, the residual errors observed in Table \ref{tab:target_comparison} (e.g., $0.09\%$ for the muon) are hypothesized to be artifacts of this interpretational bias. While the SM treats the vacuum as a source of virtual particle loops that "correct" a point-like particle, EWT treats the vacuum as a discrete BCC lattice with a fixed geometric stiffness deficit ($\epsilon_M$). The "tension" in Muon $g-2$ observed at Fermilab may not be "New Physics" in the form of new particles, but rather the first experimental evidence that the perturbative loop-based approach of QED fails to account for the underlying lattice topology of the vacuum. 
+
+Consequently, the EWT Standalone values derived from the $2\pi^2$ operator are proposed as the true geometric benchmarks, independent of the recursive fitting inherent in the Standard Model framework.
 
 \section{The Magneto-Geometric Hypotheses: Dynamic Deficit Modification}
 \label{sec:magneto_geometric_hypotheses}
@@ -3110,6 +3116,19 @@ In the $Im\bar{3}m$ (BCC) symmetry, each EMC unit possesses a coordination numbe
 
 \subsubsection{Packing Fraction and the $\delta$ Correction}
 The small residual correction $\delta \approx 0.058\%$ (where $N_{final} = 8\pi^4(1-\delta)$) is a direct consequence of the BCC packing fraction ($\eta \approx 0.68$). Unlike a hypothetical ideal continuum, the discrete BCC lattice is "near-optimal" but not perfect. The $\delta$ factor represents the geometric impedance of a lattice that is $68\%$ saturated, providing a physical basis for the minute deviations in the fine-structure constant and anomalous moments.
+
+The magnitude of $\delta$ is consistent with the per-node 
+void impedance, normalized to the occupied fraction:
+\begin{equation}
+	\delta \;\sim\; \frac{1-\eta}{\eta \cdot N_{\text{ideal}}} 
+	= \frac{1 - \frac{\sqrt{3}\pi}{8}}{\frac{\sqrt{3}\pi}{8} 
+		\cdot 8\pi^4} 
+	= \frac{8 - \sqrt{3}\pi}{\sqrt{3}\pi \cdot 8\pi^4}
+	\approx 6.0 \times 10^{-4},
+\end{equation}
+within $3.4\%$ of the observed $\delta \approx 5.8 \times 10^{-4}$.
+The normalization by $\eta$ reflects that geometric impedance 
+acts on the \emph{occupied} sublattice, not the total volume.
 
 \subsubsection{Topological Consistency: The $2\pi^2$ Factor and BCC Axes}
 The consistency of the lepton generation numbers ($K_{\mu}, K_{\tau}$) further confirms the BCC choice. The topological invariant for higher generations involves the characteristic geometric factor $2\pi^2$ (which equals the surface area of a torus, but may also arise from other genus-1 configurations) and the $10^{n-1}$ scaling:
