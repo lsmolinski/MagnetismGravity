@@ -75,7 +75,7 @@
 
 \begin{center}
 \today \\
-Version: 4.4.08	
+Version: 4.4.09	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -697,14 +697,12 @@ To facilitate direct calculations, the \textbf{Total Nodal Saturation} $N_{\text
 
 By expressing $N_{\text{final}}$ in this way, we can see that the nodal density is the inverse of the geometric deficit scaled by the spherical phase volume $\pi^3$. Substituting Eq. \ref{eq:N_final_derivation} back into the primary gravitational identity (Eq. \ref{eq:G_normalization}) highlights that $G$ is inversely proportional to the cube of the nodal density, reinforcing the model's core premise: \textit{gravity is the macroscopic manifestation of microscopic vacuum displacement.}
 
-This substitution leads to the most compact and physically revealing form of the gravitational identity, expressing the volumetric push-out directly through the nodal magnetic deficit $\epsilon_M$:
+This substitution leads to the most compact and physically revealing form of the gravitational identity, expressing the volumetric push-out by the participation of the nodal magnetic deficit $\epsilon_M$:
 
 \begin{equation}
 	\mathbf{G} = \frac{\mathbf{G}_{\text{Base}}}{\mathbf{A}_{\pi}} \cdot \left( \frac{\epsilon_M \cdot \pi^3}{\mathbf{A}_{\pi}} \right)^3 \cdot \frac{1}{K_{WC} \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}
 	\label{eq:G_final_epsilon_compact}
 \end{equation}
-
-
 
 This specific arrangement of terms allows for a clear physical decomposition:
 \begin{itemize}
@@ -713,9 +711,7 @@ This specific arrangement of terms allows for a clear physical decomposition:
 	\item $(K_{WC} \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}})^{-1}$: The \textbf{Structural Resistance Factor}, accounting for the attenuation of the gravitational flux and the \textbf{Surface Projection Effect} (transition from $3D$ volume to $2D$ boundary).
 \end{itemize}
 
-
-
-The inclusion of this identity in the overall EWT framework confirms that gravity is a secondary, emerging property of the medium's geometry, driven by the same parameter $\epsilon_M$ that governs the anomalous magnetic moment of the electron.
+The inclusion of this identity in the overall EWT framework confirms that gravity is a secondary, emerging property of the medium's geometry, dependent on the same parameter $\epsilon_M$ that governs the anomalous magnetic moment of the electron.
 
 \subsection{The Gravitational Identity Flow: From Electromagnetic Base to Surface Transition}
 
@@ -1361,8 +1357,8 @@ Consequently, the $B_{\mu}$ and $B_{\tau}$ operators establish a deterministic b
 \subsubsection*{The Interface Tension ($\delta$)}
 A crucial discovery in the EWT recursive model is the role of $L_{\mu}^2 = 25$ as a stabilization constant. In the Scilab implementation, this value is added to the Tau prediction to represent the \textbf{interface tension} between the shells. Physically, this ensures that the Tau generation remains anchored to the pre-existing Muon foundation, maintaining topological continuity in the ``Onion Model''. Without this binding energy, the high-density Tau shell would lack the geometric leverage required to achieve the observed $0.031\%$ experimental convergence. The same topological reasoning that mandates $L_{\mu}^2$ as the binding energy also determines the geometric budget available to the tauon shell: for instance, a closed surface of genus 1 (such as a torus) embedded within a 3D sphere divides the phase space into two topologically equivalent regions of equal measure — the interior and the exterior. Within the shell hierarchy, the muon core therefore occupies exactly half of the available phase space, effectively halving the geometric budget for the tauon shell. Consequently, the core area term scales as $A_{\pi} \to A_{\pi}/2$, a result that follows from topology rather than from empirical adjustment.
 
-\subsubsection*{The Geometric Necessity of Shell Formation} 
-The emergence of the recursive "Onion Model" is not an arbitrary structural choice but a direct consequence of the scaling disparity established in Eq. \ref{eq:energy_scaling_boxed} and \ref{eq:geometry_scaling_boxed}. As the internal energy density $\rho_E$ surges with $r^5$ during nodal compression, the volumetric push-out mechanism $\Delta \rho(r)$, constrained by $r^3$, reaches a saturation threshold. To maintain the stability of the fundamental soliton without violating the vacuum's elastic limits, the system is forced to organize excess energy into nested shells. Each subsequent generation (muon, tau) represents a new resonant layer required to balance this non-linear energy-to-geometry ratio.
+\subsubsection*{The Geometric Necessity of Shell Formation}
+The emergence of the recursive "Onion Model" is not an arbitrary structural choice but a direct consequence of the scaling disparity established in Eq.~\ref{eq:energy_scaling_boxed} and Eq.~\ref{eq:geometry_scaling_boxed}. As the internal energy density $\rho_E$ surges with $r^5$ during nodal compression, the available three-dimensional volume scales only as $r^3$, imposing a fundamental capacity limit. The 3D spatial substrate cannot accommodate arbitrarily high energy densities without exceeding the elastic limits of the BCC lattice. To maintain stability, the system is forced to redistribute the excess energy into nested toroidal shells, each storing energy in additional angular degrees of freedom. Each subsequent generation (muon, tau) thus represents a new resonant layer that circumvents the strict $r^3$ volumetric bottleneck.
 
 \subsubsection*{The Geometric Stability of 3D Wave-Packing}
 
@@ -1635,7 +1631,7 @@ As established in Sections \ref{density_duality}–\ref{sec:hyp_1_pushout}, the 
 
 \begin{quote}
 	\textit{\textbf{Remark on Soliton Stability and Generational Hierarchy:}} 
-	The soliton maintains stability through the vacuum stiffness $N$, which prevents structural collapse at the elastic limit. Rather than undergoing dissolution, the base electron soliton serves as the fundamental geometric substrate for subsequent layers. Higher generations (muon and tau) do not replace the electron but emerge as nested shells (\textit{Onion Model}) necessitated by the scaling disparity between the quintic increase of the base potential ($r^5$) and the cubic capacity of the geometric push-out mechanism ($r^3$). This non-linear divergence provides a deterministic proof that particle generations are not distinct entities, but recursive wave resonances required to maintain equilibrium when the energy density of a single complex soliton exceeds the vacuum's volumetric compensation threshold.
+	The soliton maintains stability through the vacuum stiffness $N$, which prevents structural collapse at the elastic limit. Rather than undergoing dissolution, the base electron soliton serves as the fundamental geometric substrate for subsequent layers. Higher generations (muon and tau) do not replace the electron but emerge as nested shells (\textit{Onion Model}) necessitated by the scaling disparity between the quintic increase of the base potential ($r^5$) and the cubic capacity ($r^3$). This non-linear divergence provides a deterministic proof that particle generations are not distinct entities, but recursive wave resonances required to maintain equilibrium when the energy density of a single complex soliton exceeds the vacuum's volumetric compensation threshold.
 \end{quote}
 
 This dual causality reveals that the observed invariance of $G$ is a result of the exact cancellation between energy concentration and geometric restoration, a balance maintained by the vacuum's elastic modulus $N_{\text{final}}$. This equilibrium is dynamically stable as long as the magnetic coherence term remains within its \textbf{admissible range}. In this regime, the increase in internal energy concentration is precisely balanced by the structural dilution of the packing density. In the EWT framework, this balance is quantified by the \textbf{Push-Out Operator} $\mathbf{T}_{\text{II}}$, which acts as the restoring force of the vacuum lattice and defines the cubic scaling of the gravitational deficit:
@@ -3052,6 +3048,9 @@ The transition from the asymmetric core (defined by an arbitrary, non-spherical 
 
 For a soliton composed of  discrete Wave Centers  distributed within a finite volume, perfect spherical symmetry is possible only for specific numbers that correspond to the vertices of regular polyhedra or optimal spherical codes (e.g., $K_{WC} = 4, 6, 8, 12, 20$). For all other values, including the electron ($K_{WC}= 10$), the minimal-energy configuration is inherently asymmetric. This is a direct consequence of the geometric frustration of arranging identical point sources on a sphere (analogous to the Thomson problem or Tammes problem). Therefore, the core of any soliton—regardless of generation—is necessarily asymmetric. This universal asymmetry is the very reason why a masking mechanism, provided by the Degraded EMC Wall, is required to recover the observed isotropy of the gravitational field. %This inherent geometric frustration is recognized in the foundational EWT model, where a collection of ten wave centers is described as forming a three‑level tetrahedron – a configuration that is manifestly non‑spherical.
 
+\subsubsection{Intrinsic Sphericity of Standing Waves}
+While the individual Wave Centers are arranged asymmetrically (the "engine"), the energy they radiate into the BCC medium manifests as a \textbf{coherent standing wave resonance}. In any elastic 3D medium, a stable standing wave packet naturally adopts a spherical Bessel-like distribution to satisfy the principle of least action. Thus, the resonance itself is inherently "striving" for sphericity; the asymmetric nodal arrangement acts only as the discrete excitation source, while the medium's linearity at the boundary ensures the final wave-front is an isotropic $S^2$ shell.
+
 \subsubsection{Geometric Low-Pass Filter}
 We define the \textit{Isotropy Operator} $\mathcal{I}$, which acts as a geometric low-pass filter on the energy density distribution $\rho_E(\theta, \phi)$ that reflects the underlying asymmetric topology of Wave Centers. At the boundary of the \textbf{Degraded EMC Wall} ($r = r_{\text{mask}}$), the BCC lattice enforces a spherical boundary condition:
 
@@ -3186,7 +3185,7 @@ The prediction for the Tau lepton is of particular significance. While the theor
 \end{table}
 The alignment of EWT Peaks with experimental targets demonstrates that the so-called 'g-2 tension' is an artifact of the Standard Model's perturbative approach. By identifying the $K=200$ and $K=2180$ nodes as the true physical states, the EWT framework recovers experimental reality without the need for virtual particle corrections.
 
-Beyond electromagnetic anomalies, the structural integrity of the EWT framework is further validated by its ability to derive fundamental masses and mixing hierarchies from a single geometric origin. As detailed in Table \ref{tab:mass_precision_comparison}, the longitudinal energy equation accurately predicts the masses of quarks ($u, d, s$), leptons ($e, \mu, \tau$), and bosons ($W, Z, H$) with unprecedented precision, often outperforming the Standard Model's perturbative estimates. Furthermore, the application of dimensional resonance ($\pi^5$ and $\pi^6$) successfully resolves the historical "gaps" in mixing parameters, establishing the geometric basis fnieor the Weinberg and Cabibbo angles (see Table \ref{tab:final_verification_cdf}). The specific geometric radius predictions for heavy bosons, derived from the validated $r^5$ scaling law and vacuum saturation limits, are detailed in Section \ref{sub:radius_bosons}.
+Beyond electromagnetic anomalies, the structural integrity of the EWT framework is further validated by its ability to derive fundamental masses and mixing hierarchies from a single geometric origin. As detailed in Table \ref{tab:mass_precision_comparison}, the longitudinal energy equation accurately predicts the masses and radius, leptons ($e, \mu, \tau$), and bosons ($W, Z, H$) with unprecedented precision, often outperforming the Standard Model's perturbative estimates. Furthermore, the application of dimensional resonance ($\pi^5$ and $\pi^6$) successfully resolves the historical "gaps" in mixing parameters, establishing the geometric basis fnieor the Weinberg and Cabibbo angles (see Table \ref{tab:final_verification_cdf}). The specific geometric radius predictions for heavy bosons, derived from the validated $r^5$ scaling law and vacuum saturation limits, are detailed in Section \ref{sub:radius_bosons}.
 
 
 \subsection{Prediction of the Fundamental Value of $G$}
