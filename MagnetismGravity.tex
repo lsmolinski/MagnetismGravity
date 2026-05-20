@@ -1,12 +1,4 @@
-\documentclass{appolb}
-
-\makeatletter
-
-\setlength{\w@slab}{2.0em}  
-\setlength{\w@sslab}{3em} 
-\setlength{\w@ssslab}{5em} 
-\makeatother
-
+\documentclass[10pt,a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -75,7 +67,7 @@
 
 \begin{center}
 \today \\
-Version: 4.4.14	
+Version: 4.4.15	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -100,9 +92,15 @@ A unified geometric wave model is proposed, deriving the Gravitational Constant 
 % To remove the TOC, simply cut the following block
 \vspace{10pt}
 \noindent\rule{\textwidth}{1pt}
+
+
+\vspace{1em}
+\noindent\textbf{Keywords:} Anomalous Magnetic Moments, Fine-Structure Constant, Gravitational Constant, Weinberg angle, Cabibbo angle, BCC lattice, Geometric Origin, Unification Theory.
+
 \tableofcontents\thispagestyle{plain}
 \noindent\rule{\textwidth}{1pt}
 \vspace{10pt}
+
 
 \section{Geometric Hierarchy of EWT and Spacetime Elasticity}
 
@@ -4316,7 +4314,7 @@ As illustrated in Fig. \ref{fig:ewt_flowchart}, the progression from the fundame
 \clearpage
 
 \appendix
-\section{}
+\section{Appendix}
 \subsection{List of Model Parameters and Physical Constants}
 
 The following table lists the fundamental physical constants and key dimensionless geometric factors used in the Geometric Soliton Model derivation of $\mathbf{G}$. The numerical consistency of the model relies on the exact values shown below, combining CODATA 2022 constants with the derived EWT geometric parameters.
@@ -4379,6 +4377,8 @@ The following listing presents the complete console output from the execution of
 \lstinputlisting[
 %language={}, % Wyłącza kolorowanie składni (czysty tekst/konsola)
 basicstyle=\scriptsize\ttfamily, % Mała czcionka monospaced
+breaklines=true,
+breakatwhitespace=false,
 %numbers=none, % Bez numeracji linii
 frame=single, % Ramka wokół
 breaklines=true, % Umożliwia łamanie długich linii
@@ -4448,6 +4448,24 @@ caption={EWT Core Calculation: Nodal Mapping and AMM Resonance Discovery.},
 label={lst:AMM_find_sc}
 ]{AMM_find.sc}
 
+\section*{Statements and Declarations}
+
+\textbf{Funding:} The author declares that no funds, grants, or other support were received during the preparation of this manuscript.
+
+\textbf{Competing Interests:} The author has no relevant financial or non-financial interests to disclose.
+
+\textbf{Author Contributions:} Ł. Smoliński is the sole author of this manuscript, responsible for the conceptualization, methodology, formal analysis, and writing.
+
+\textbf{Data and Code Availability:} The complete repository for Project MagnetismGravity is openly accessible to support scientific reproducibility:
+\begin{itemize}
+	\item \textbf{Datasets:} The EWT core dataset is available on Hugging Face: \url{https://huggingface.co/datasets/luksmol/EWT-Vacuum-Lattice-Unified-Physics/tree/main}.
+	\item \textbf{Interactive Auditor:} The web-based EWT Auditor application is deployed at: \url{https://huggingface.co/spaces/luksmol/EWTAuditor}.
+	\item \textbf{Version Control:} The active development source code is maintained on GitHub: \url{https://github.com/lsmolinski/MagnetismGravity}.
+	\item \textbf{Archived Document \& Core Script:} The comprehensive unifying identity document and the primary calculation script (\texttt{EWT\_G\_AMM\_check.sc}) are archived under DOI: \url{https://doi.org/10.5281/zenodo.17698582}.
+	\item \textbf{Robustness Analysis Script:} The Module 10 script (\texttt{EWT\_Robustness\_G\_AMM\_check.sc}) is archived under DOI: \url{https://doi.org/10.5281/zenodo.18469103}.
+	\item \textbf{Resonance Search Script:} The AMM search module (\texttt{AMM\_find.sc}) is archived under DOI: \url{https://doi.org/10.5281/zenodo.18469206}.
+	\item \textbf{Standard Model Comparison Script:} The benchmark script (\texttt{EWT\_VS\_SM.sc}) is archived under DOI: \url{https://doi.org/10.5281/zenodo.17726690}.
+\end{itemize}
 \clearpage
 
 \begin{thebibliography}{99}
