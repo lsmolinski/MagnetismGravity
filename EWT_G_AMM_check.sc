@@ -1,6 +1,6 @@
 // ==============================================================================
 // SCILAB SCRIPT: EWT MODEL COMPLETE NUMERICAL CALCULATOR AND CONSISTENCY CHECK
-// FINAL VERSION: Version: 4.4.04
+// FINAL VERSION: Version: 4.4.16
 // ==============================================================================
 
 clear;        
@@ -99,6 +99,33 @@ disp(['Raw Geometry Gap (Pre-Alpha)             = ', msprintf("%.10f", (G_EWT_ra
 disp('-----------------------------------------------------');
 printf("EMC DILUTION (X_eff):          %.10f\n", X_eff_geom);
 printf("Lattice Projection (L_p):      %.10f\n", L_p);
+disp('=====================================================');
+
+// ==============================================================================
+// ADDITIONAL VARIANT: geometric L_p = 2 / sqrt(3)  with alpha_geom
+// ==============================================================================
+disp(' ');
+disp('=====================================================');
+disp('I B. GEOMETRIC VARIANT (L_p = 2 / sqrt(3), alpha_geom)');
+disp('=====================================================');
+
+L_p_geo = 2 / sqrt(3);
+C_Unif_geo = (1 / K_neutrinos) + 1 + (alpha_geom / (Pi * L_p_geo));
+X_eff_geo = (A_pi * 3 * K_neutrinos * sqrt(2)) / C_Unif_geo;
+N_nu_effective_geo = N_nu_statutory / X_eff_geo;
+G_EWT_geo = (G_Base / A_pi) * (1 / (N_final * A_pi)^3) * (1 / (K_neutrinos * sqrt(N_nu_effective_geo)));
+
+Error_abs_G_geo = abs(G_EWT_geo - G_CODATA);
+Error_perc_G_geo = (Error_abs_G_geo / G_CODATA) * 100;
+
+printf("alpha_geom (with eps_M)          = %.12f\n", alpha_geom);
+printf("L_p_geo (2/sqrt(3))                  = %.15f\n", L_p_geo);
+printf("C_Unif_geo                      = %.15f\n", C_Unif_geo);
+printf("N_nu_effective_geo              = %.15e\n", N_nu_effective_geo);
+printf("G_EWT_GEO                       = %.15e m^3 kg^-1 s^-2\n", G_EWT_geo);
+printf("G_CODATA                        = %.15e m^3 kg^-1 s^-2\n", G_CODATA);
+printf("Absolute difference             = %.20e\n", Error_abs_G_geo);
+printf("Relative error                  = %.12f %%  (%.2f ppm)\n", Error_perc_G_geo, Error_perc_G_geo*1e4);
 disp('=====================================================');
 
 // ==============================================================================
