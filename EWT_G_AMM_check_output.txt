@@ -21,7 +21,16 @@ Raw Geometry Gap (Pre-Alpha)             = 0.0918741575 %
 EMC DILUTION (X_eff):          5275.7178497467
 Lattice Projection (L_p):      1.1486801482
 =====================================================
- 
+I B. GEOMETRIC VARIANT (L_p = 2 / sqrt(3), alpha_geom)
+=====================================================
+alpha_geom (with eps_M)          = 0.007297338549
+L_p_geo (2/sqrt(3))                  = 1.154700538379252
+C_Unif_geo                      = 1.102011616800936
+N_nu_effective_geo              = 6.252457803455382e+48
+G_EWT_GEO                       = 6.674336927110799e-11 m^3 kg^-1 s^-2
+G_CODATA                        = 6.674305000000000e-11 m^3 kg^-1 s^-2
+Absolute difference             = 3.19271107990139353942e-16
+Relative error                  = 0.000478358583 %  (4.78 ppm)
 =====================================================
 II. NEUTRINO RADIUS VALIDATION (1/5 POWER LAW TEST)
 =====================================================
