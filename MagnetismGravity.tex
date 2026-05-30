@@ -4161,7 +4161,7 @@ The final pillar of the Standard Model rests on its successful description of qu
 	
 	\item \textbf{Weinberg Angle and Electroweak Unification:}  Direct prediction of EWT is described in section \ref{sec:dimensional_hierarchy}.
 	
-	\item \textbf{Neutrino Mass and Oscillations:} Finally, EWT resolves the inconsistency of massless neutrinos in the core SM. Given that EWT uses wave centers (neutrinos) as the fundamental unit $\mathbf{K}$ in its geometric model, the model naturally allows for slight mass differences between these internal geometric states. This readily provides the necessary framework for \textbf{neutrino mass and oscillation}, a phenomenon only incorporated into the SM via arbitrary extensions.
+	\item \textbf{Neutrino Mass and Oscillations:} Finally, EWT resolves the inconsistency of massless neutrinos in the core SM. Given that EWT uses wave centers (neutrinos) as the fundamental unit $\mathbf{K_{WC}}$ in its geometric model, the model naturally allows for slight mass differences between these internal geometric states. This readily provides the necessary framework for \textbf{neutrino mass and oscillation}, a phenomenon only incorporated into the SM via arbitrary extensions.
 \end{itemize}
 
 \subsubsection{EWT vs. Standard Model: Composite Improvement Factor (CIF)}
@@ -4352,13 +4352,20 @@ The following table lists the fundamental physical constants and key dimensionle
 		\midrule
 		Geometric Base & $A_{\pi}$ & $137.081829$ & $4\pi^3 + \pi^2 + \pi$. Static foundation. \\
 		Packing Factor & $N_{\text{final}}$ & $778.818123$ & Derived from $\alpha$ correction. \\
-		Lattice Projection & $L_p$ & $1.1486801482$ & Bridge to BCC lattice geometry. \\
-		Unified Coupling & $C_{\text{unif}}$ & $1.10080613$ & Interfacial tension operator. \\
+		Lattice Projection (fitted) & $L_p$ & $1.1486801482$ & Empirical calibration to $G_{\text{CODATA}}$. \\
+		Unified Coupling & $C_{\text{unif}}$ & $1.10202215996$ & Interfacial tension operator (fitted $L_p$). \\
+		\addlinespace
+		\multicolumn{4}{l}{\textbf{IV. Geometric Variant (Ideal BCC Projection)}} \\
+		\midrule
+		Lattice Projection (ideal) & $L_p^{\text{geom}}$ & $1.154700538379252$ & $2/\sqrt{3}$, inverse of nearest-neighbour distance. \\
+		Unified Coupling (geom) & $C_{\text{unif}}^{\text{geom}}$ & $1.102011616800936$ & Using $L_p^{\text{geom}}$ in Eq.~\ref{eq:C_unif}. \\
+		Effective Deficit (geom) & $N_{\nu,\text{eff}}^{\text{geom}}$ & $6.252457803455382 \times 10^{48}$ & $N_{\nu,\text{stat}} / X_{\text{eff}}^{\text{geom}}$. \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
 \normalsize
 
+\clearpage
 
 \subsection{Numerical Verification Script}
 \label{app:scilab_script}
