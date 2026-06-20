@@ -2938,6 +2938,7 @@ Particles in EWT are stable, extended solitons on the discrete manifold of EMCs.
 The electron stability arises from the winding number $Q$, defined as:
 \begin{equation}
 	Q = \frac{1}{4\pi} \int_{S^2} \Psi^* \omega \in \mathbb{Z}
+	\label{eq:winding_number}
 \end{equation}
 where $\omega$ is the normalized area form on $S^2$. In EWT, $Q = K_{WC} = 10$.
 
@@ -3295,7 +3296,8 @@ and~\ref{sec:alpha_geometric_deficit} determine the coupling constants of the
 vacuum, but they do not by themselves constitute a dynamical stability proof.
 A stable soliton requires a nonlinear term $\mathcal{F}$ in the wave equation
 that counteracts dispersion. The form of $\mathcal{F}$ is constrained by the
-BCC lattice geometry and the topological class of the electron.
+BCC lattice geometry, the topological class of the electron, and the native
+1-3-6 wave-centre arrangement inherited from the EWT standing-wave model.
 
 \subsection{General Soliton Wave Equation}
 
@@ -3317,8 +3319,8 @@ parameter derived in Section~\ref{sec:magnetic_deficit}:
 	= \frac{1}{8\pi^{7}} .
 \end{equation}
 Physically, $\epsilon_{M}$ measures the fractional loss of stiffness caused by
-the soliton's spin-induced magnetic torque. To eliminate any systemic ambiguity 
-with the standard wave vector $k$, the natural nonlinear coupling strength is 
+the soliton's spin-induced magnetic torque. To eliminate any systemic ambiguity
+with the standard wave vector $k$, the natural nonlinear coupling strength is
 designated by the parameter $\gamma$, defined as the inverse of this deficit:
 \begin{equation}\label{eq:gamma_coeff}
 	\gamma \equiv \frac{1}{\epsilon_{M}}
@@ -3329,8 +3331,11 @@ number (8) and the dimensional budget of the charged weak scale ($\pi^{7}$).
 
 \subsection{Proposed Forms of the Nonlinear Term}
 
+Three complementary variants are proposed, ordered by increasing structural
+fidelity to the EWT 1-3-6 architecture.
+
 \subsubsection*{Variant A --- Pure cubic nonlinearity}
-The simplest form compatible with the NLS-type soliton equations is the cubic
+The simplest form compatible with NLS-type soliton equations is the cubic
 (self-focusing) nonlinearity:
 \begin{equation}\label{eq:F_cubic}
 	\boxed{\mathcal{F}(\Psi) = \gamma\,\Psi^{3}
@@ -3356,36 +3361,87 @@ in the soliton core where $\rho(r) \ll \rho_{0}$, and vanishes in the
 surrounding statutory vacuum. This provides a unified description of soliton
 stability and gravitational emergence from a single density deficit.
 
+\subsubsection*{Variant C --- Explicit 1-3-6 source-driven dynamics}
+In the native EWT model the wave centres (WCs) are not an abstract continuum
+but ten discrete, mobile sources arranged in the 1-3-6 configuration.
+The vector wave equation of M4 then takes the driven form
+\begin{equation}\label{eq:F_source}
+	\boxed{\Bigl( \frac{\partial^{2}}{\partial t^{2}} - c^{2}\nabla^{2} \Bigr)
+		\mathbf{\Psi}(\mathbf{r},t) + \gamma\,\|\mathbf{\Psi}\|^{2}\,\mathbf{\Psi}
+		= \mathbf{J}_{1\text{-}3\text{-}6}(\mathbf{r},t)} ,
+\end{equation}
+where the source operator $\mathbf{J}_{1\text{-}3\text{-}6}$ is the sum of ten
+vectorial centres partitioned into three topological classes:
+\begin{equation}\label{eq:J_operator}
+	\mathbf{J}_{1\text{-}3\text{-}6}(\mathbf{r},t) =
+	\mathbf{j}_{\text{core}}(\mathbf{r} - \mathbf{r}_{0})
+	+ \sum_{i=1}^{3} \mathbf{j}_{\text{inner}}(\mathbf{r} - \mathbf{r}_{i}(t))
+	+ \sum_{j=1}^{6} \mathbf{j}_{\text{outer}}(\mathbf{r} - \mathbf{r}_{j}(t)) .
+\end{equation}
+Each class carries a distinct phase offset, and the kinematic rule inherited
+from the Yee standing-wave model applies: every centre migrates toward the
+local minimum of the field amplitude $\|\mathbf{\Psi}\|$.  The phase asymmetry
+between the inner (3) and outer (6) groups forces a synchronised rotation of
+the vertices, generating the $720^{\circ}$ spin characteristic of the electron.
+
+\subsection{Structural Emergence of the 1-3-6 Geometry}
+
+Why the 1-3-6 arrangement, and not another partition of ten?  The answer
+follows from the interplay of the nonlinearity and the BCC lattice topology:
+
+\begin{enumerate}
+	\item The \textbf{core} (1) anchors the soliton at a single BCC lattice node,
+	providing the central phase reference.
+	\item The \textbf{inner shell} (3) forms an equilateral triangle.  Three is the
+	minimal number of vertices that can define a plane; the plane's normal
+	coincides with the spin axis.  Any other number would either fail to define
+	a unique axis (1 or 2) or introduce internal phase frustration (4 or more on
+	a single shell at this radius).
+	\item The \textbf{outer shell} (6) completes the octahedral coordination of the
+	BCC unit cell.  Six wave centres placed at the face-centre-equivalent
+	positions saturate the remaining propagation axes, guaranteeing isotropic
+	far-field emission after spherical masking by the Degraded EMC Wall
+	(Section~\ref{sec:spherical_masking}).
+\end{enumerate}
+
+A configuration such as 2-3-5 or 2-2-6 would either misalign the spin axis
+or leave some BCC axes unmatched, producing a net multipole moment that the
+nonlinearity cannot cancel.  The 1-3-6 triad is therefore the unique
+self-consistent solution that simultaneously satisfies:
+(a) the topological winding number $Q=10$,
+(b) the cubic nonlinearity with coefficient $\gamma$, and
+(c) the octahedral symmetry of the $Im\bar{3}m$ vacuum lattice.
+
 \subsection{Topological Selection Rule and the Electron Ground State}
 
 The nonlinear wave equation alone does not select a specific number of wave
 centres. The selection of $K_{\text{WC}}=10$ is enforced by the topological
 class of the soliton (Section~\ref{subsec:topological_isomorphism}). On the
 spherical shell $S^{2}$ that encloses the soliton, the field configuration is
-characterised by an integer winding number
-\begin{equation}
+characterised by an integer winding number (equation \ref{eq:winding_number}):
+$$
 	Q = \frac{1}{4\pi} \int_{S^{2}} \Psi^{*}\,\omega \in \mathbb{Z},
-\end{equation}
+$$
 where $\omega$ is the normalised area form on $S^{2}$. For the electron
 $Q = K_{\text{WC}} = 10$.
 
-This topological winding number is not an empirical adjustment; it emerges 
-from the discrete projection of the BCC lattice's $Im\bar{3}m$ space group symmetry 
-onto the continuous spherical boundary $S^2$. While the 8 primary propagation axes 
-define the innermost volumetric kernel, the configuration of $Q=10$ wave centres 
-represents the lowest-energy, stable homotopy class capable of establishing a 
-fully isotropic boundary condition on $S^2$ (analogous to the global minimum of a 
-spherical Thomson packing problem for discrete phase nodes). 
+This topological winding number is not an empirical adjustment; it emerges
+from the discrete projection of the BCC lattice's $Im\bar{3}m$ space group symmetry
+onto the continuous spherical boundary $S^2$. While the 8 primary propagation axes
+define the innermost volumetric kernel, the configuration of $Q=10$ wave centres
+represents the lowest-energy, stable homotopy class capable of establishing a
+fully isotropic boundary condition on $S^2$ (analogous to the global minimum of a
+spherical Thomson packing problem for discrete phase nodes).
 
-Because $Q$ is a topological invariant, it cannot change under continuous 
-deformations of the wave field; a transition to $Q=9$ or $Q=8$ would require 
-a discontinuous rupture of the elastic medium, requiring infinite energy. 
-The soliton is therefore permanently protected against perturbations that would 
+Because $Q$ is a topological invariant, it cannot change under continuous
+deformations of the wave field; a transition to $Q=9$ or $Q=8$ would require
+a discontinuous rupture of the elastic medium, requiring infinite energy.
+The soliton is therefore permanently protected against perturbations that would
 alter its internal multiplicity.
 
-Equation~\eqref{eq:soliton_wave_eq} together with the nonlinear term
-\eqref{eq:F_cubic} (or \eqref{eq:F_density}) and the topological condition
-$Q=10$ constitutes a complete, falsifiable model of the electron core:
+Equation~\eqref{eq:soliton_wave_eq} together with any of the three nonlinear
+variants and the topological condition $Q=10$ constitutes a complete,
+falsifiable model of the electron core:
 
 \begin{enumerate}
 	\item The \textbf{nonlinearity} ($\gamma$) creates a deep, narrow potential well that
@@ -3394,7 +3450,7 @@ $Q=10$ constitutes a complete, falsifiable model of the electron core:
 	has exactly ten wave centres --- not by empirical input, but as a consequence
 	of the homotopy class of the field on $S^{2}$ under $Im\bar{3}m$ constraints.
 	\item The \textbf{BCC stiffness constant} $N_{\text{final}}$ (or its geometric
-	limit $8\pi^{7}$) fixes the numerical value of the coupling without
+	limit $8\pi^{4}$) fixes the numerical value of the coupling without
 	adjustable parameters.
 \end{enumerate}
 
@@ -3422,15 +3478,23 @@ ensuring that the nonlinear restoring force acts isotropically.
 	$(\partial_{t}^{2} - c^{2}\nabla^{2})\Psi + \mathcal{F}(\Psi) = 0$.
 	\item The coupling coefficient is fixed by BCC geometry:
 	$\gamma = 1/\epsilon_{M} = N_{\text{final}}\pi^{3} \approx 2.41\times 10^{4}$.
-	\item Two candidate forms for $\mathcal{F}$ are proposed:
-	$\gamma\Psi^{3}$ (pure cubic) and $\gamma(1-\rho/\rho_{0})\Psi^{3}$
-	(density-modulated).
+	\item Three complementary forms for $\mathcal{F}$ are proposed:
+	\begin{enumerate}
+		\item[Variant A:] $\gamma\Psi^{3}$ (pure cubic, minimal implementation);
+		\item[Variant B:] $\gamma(1-\rho/\rho_{0})\Psi^{3}$ (density-modulated,
+		links stability to the EMC push-out deficit);
+		\item[Variant C:] $\gamma\|\mathbf{\Psi}\|^{2}\mathbf{\Psi}$ with an explicit
+		1-3-6 source operator $\mathbf{J}_{1\text{-}3\text{-}6}(\mathbf{r},t)$
+		(directly encodes the discrete wave-centre architecture of the electron).
+	\end{enumerate}
 	\item The winding number $Q=10$ on $S^{2}$ provides the topological
 	selection rule that isolates the electron ground state under $Im\bar{3}m$ constraints.
+	\item The 1-3-6 partition is the unique arrangement that simultaneously satisfies
+	the topological winding, the cubic nonlinearity, and the octahedral symmetry
+	of the BCC lattice.
 	\item The coupling $\gamma = 8\pi^{7}$ directly expresses the 7‑dimensional
 	charged-weak budget of the BCC lattice.
 \end{itemize}
-
 
 \section{Predictive Power}
 \label{sec:predictive_power}
