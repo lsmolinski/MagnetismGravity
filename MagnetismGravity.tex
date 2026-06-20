@@ -4088,22 +4088,75 @@ Although this model focuses on leptonic structure, the unification of geometric 
 \section{Outlook and Computational Tools}
 \label{sec:outlook}
 
-The formal establishment of the Magneto-Geometric Hypotheses (Section \ref{sec:magneto_geometric_hypotheses}) provides clear, testable predictions for the effective gravitational constant $G$ (Section \ref{sec:G_magnetic_sensitivity_pp}). Beyond direct experimental verification, future work will focus on \textbf{computational modeling of the Soliton geometry and its dynamic coupling to the Elastic Medium Constituent (EMC)}.
+The formal establishment of the Magneto-Geometric Hypotheses
+(Section~\ref{sec:magneto_geometric_hypotheses}) provides clear, testable
+predictions for the effective gravitational constant $G$
+(Section~\ref{sec:G_magnetic_sensitivity_pp}).  Beyond direct experimental
+verification, the computational modelling of the Soliton geometry and its
+dynamic coupling to the Elastic Medium Constituent (EMC) is being pursued
+on the open‑source platform \textbf{OpenWave}
+(\url{https://github.com/openwave-labs/openwave}).
 
-A dedicated computational platform, \textbf{Open Wave Labs (OWL)}, is currently under development as of \today, with public access planned soon. This application is designed to simulate the dynamics of the EMC medium within the Soliton and its environment.
+\subsection*{Progress in the Scalar M3 Model}
 
-\begin{center}
-	\textbf{Project URL:} \url{https://openwavelabs.com/}
-\end{center}
+In the scalar Wolff‑LaFreniere model (M3), a spherical‑phyllotaxis
+(golden‑angle, $\sim 137.5^{\circ}$) configuration of wave centres was
+implemented and tested as a proof‑of‑concept.  The results provided the
+first in‑platform demonstration that a spherical, minimally interfering
+geometry can create K‑selectivity: only $K_{WC}=10$ formed a stable standing
+wave, while $K_{WC}=9$ and $K_{WC}=11$ decayed systematically.  This validated the
+underlying principle that phyllotactic packing suppresses destructive
+interference, a principle that will be essential for the high‑multiplicity
+recursive shells of the muon and tau.  For the
+electron core itself, the native EWT topology (1‑3‑6 tetrahedron) remains
+the physically required configuration, as it alone guarantees the correct
+multipole structure for far‑field forces.  The golden‑angle module,
+together with the logged simulation data, is available in the
+\texttt{m3\_wolff\_lafreniere} directory of the OpenWave repository.
 
-\textbf{Ultimately, the platform's computational capabilities will allow researchers to pursue, among other things, the following investigations vital for the Enhanced EWT Model:}
+\subsection*{Diagnostics in the Vector M4 Model and Implementation Plan}
 
-\begin{itemize}
-	\item \textbf{Test Geometric Hypotheses:} Numerically simulate the impact of \textbf{magnetic coherence ($\mathbf{\varepsilon_M}$)} on the \textbf{EMC packing density ($\mathbf{\rho}(r)$)} (e.g., the \textbf{Push-Out (H1)} and \textbf{Consolidation (H2)} mechanisms), providing a numerical determination of the predicted direction of $\Delta G$.
-	\item \textbf{Determine EMC Deficit:} Precisely model the geometric volume deficit ($\mathbf{N_{\nu, effective}}$) under various internal conditions to refine the calculated value of $G_{\rm model}$.
-\end{itemize}
+The same golden‑angle arrangement does \emph{not} stabilise the
+electron core in the vector model M4 (neither with nor without an
+initial spin), indicating that the missing ingredient in M4 is not
+geometric but nonlinear.  The immediate goal is to stabilise the native
+1‑3‑6 electron topology by introducing the nonlinear self‑trapping term
+derived in Section~\ref{sec:nonlinear_stability}.  Once the electron
+core is stable with its proper geometry, the golden‑angle phyllotaxis
+will be applied to the high‑multiplicity recursive shells of the muon
+and tau, where it is expected to be indispensable.
+Consequently, the following implementation roadmap has been adopted
+(Issue~\#203 of the OpenWave repository):
 
-This computational framework aims to serve as a \textbf{theoretical complement to physical experiments}, allowing for rapid iteration and falsification of the Soliton's micro-geometric constraints within the \textbf{EWT Model}.
+\begin{enumerate}
+	\item \textbf{Nonlinear term $\mathcal{F}(\Psi)$:} A cubic self‑trapping
+	term $\gamma\,\Psi^{3}$ will be added to the M4 wave kernel, with the
+	coupling coefficient $\gamma = 1/\epsilon_{M} = N_{\text{final}}\pi^{3}
+	\approx 2.41\times 10^{4}$ derived from the BCC geometry.
+	\item \textbf{Degraded EMC Wall:} A radial density gradient will be
+	introduced to suppress shear instabilities and to provide a natural
+	boundary where the phyllotaxis can later be introduced for the outer
+	shells.
+	\item \textbf{Validation:} Once the nonlinearity is in place, the native
+	EWT topology (1‑3‑6 tetrahedron) will be tested for K‑selectivity.
+	\item \textbf{Shell application:} After the core is stabilised, the
+	golden‑angle arrangement will be deployed for the muon and tau shells.
+\end{enumerate}
+
+\subsection*{Connection to the Nonlinear Stability Equation}
+
+A sketch of the required nonlinear wave equation was proposed in part
+by the OpenWave team during the collaborative development of the M3 and
+M4 engines.  Building on that foundation, a formal nonlinear wave
+equation that guarantees the electron's stability is derived in
+Section~\ref{sec:nonlinear_stability}, where the geometric constants
+$\epsilon_M$ and $\gamma = 1/\epsilon_M$ determine the self‑trapping
+term.  The full implementation of this equation in the OpenWave M4
+kernel is the immediate next step.
+
+This computational framework serves as a \textbf{theoretical complement
+	to physical experiments}, allowing rapid iteration and falsification of
+the Soliton's micro‑geometric constraints within the EWT Model.
 
 
 \section{Conclusion: The Geometric Paradigm, Correlated Lepton Anomalies, and Emergent Gravity}\label{sec:conclusion}
