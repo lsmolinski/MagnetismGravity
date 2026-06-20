@@ -1876,25 +1876,25 @@ However, it is important to note that current mass-eigenvalue calculations assum
 		Only particles with $|K_{\text{exact}} - K_{\text{int}}| < 0.15$ and relative error $\leq 1.5\%$ are shown.
 		$K_{\text{int}}$ is the nearest integer wave-center count; error is computed against the experimental target.}
 	\label{tab:meson_mode_scan}
-	\begin{tabular}{lllcccc}
+	\begin{tabular}{lllccccc}
 		\toprule
-		\textbf{Particle} & \textbf{Type} & \textbf{Source} &
+		\textbf{Particle} & \textbf{Type} & \textbf{Source} & \textbf{Spin ($J$)} &
 		$K_{\text{exact}}$ & $K_{\text{int}}$ &
 		\textbf{$m(K_{\text{int}})$ [GeV]} & \textbf{Error (\%)} \\
 		\midrule
-		Electron        & Lepton  & CODATA 2022 & 10.0000 & 10 & 0.000511  & 0.000\% \\
-		Muon            & Lepton  & PDG 2022    & 29.0467 & 29 & 0.104812  & 0.801\% \\
-		Tau             & Lepton  & PDG 2022    & 51.0795 & 51 & 1.763075  & 0.776\% \\
-		Proton          & Baryon  & CODATA 2022 & 44.9554 & 45 & 0.942937  & 0.497\% \\
-		Neutron         & Baryon  & CODATA 2022 & 44.9678 & 45 & 0.942937  & 0.359\% \\
-		Sigma$^+$       & Baryon  & PDG 2022    & 47.1389 & 47 & 1.171951  & 1.465\% \\
-		$\Xi^0$         & Baryon  & PDG 2022    & 48.0941 & 48 & 1.302046  & 0.975\% \\
-		$\Xi^-$         & Baryon  & PDG 2022    & 48.1441 & 48 & 1.302046  & 1.488\% \\
-		$D_s^+$         & Meson   & PDG 2022    & 52.1359 & 52 & 1.942839  & 1.296\% \\
-		$J/\psi$        & Meson   & PDG 2022    & 57.0823 & 57 & 3.074640  & 0.719\% \\
-		$\Xi_{cc}^{++}$ & Baryon  & PDG 2022    & 58.8972 & 59 & 3.653256  & 0.876\% \\
-		$\Xi_{cc}^{+}$  & Baryon  & LHCb 2026   & 58.8921 & 59 & 3.653256  & 0.920\% \\
-		$B_c^{*+}$      & Meson   & ATLAS 2026  & 65.8749 & 66 & 6.399406  & 0.953\% \\
+		Electron        & Lepton  & CODATA 2022 & 1/2 & 10.0000 & 10 & 0.000511  & Anchor \\
+		Muon            & Lepton  & PDG 2022    & 1/2 & 29.0467 & 29 & 0.104812  & 0.801\% \\
+		Tau             & Lepton  & PDG 2022    & 1/2 & 51.0795 & 51 & 1.763075  & 0.776\% \\
+		Proton          & Baryon  & CODATA 2022 & 1/2 & 44.9554 & 45 & 0.942937  & 0.497\% \\
+		Neutron         & Baryon  & CODATA 2022 & 1/2 & 44.9678 & 45 & 0.942937  & 0.359\% \\
+		Sigma$^+$       & Baryon  & PDG 2022    & 1/2 & 47.1389 & 47 & 1.171951  & 1.465\% \\
+		$\Xi^0$         & Baryon  & PDG 2022    & 1/2 & 48.0941 & 48 & 1.302046  & 0.975\% \\
+		$\Xi^-$         & Baryon  & PDG 2022    & 1/2 & 48.1441 & 48 & 1.302046  & 1.488\% \\
+		$D_s^+$         & Meson   & PDG 2022    & 0   & 52.1359 & 52 & 1.942839  & 1.296\% \\
+		$J/\psi$        & Meson   & PDG 2022    & 1   & 57.0823 & 57 & 3.074640  & 0.719\% \\
+		$\Xi_{cc}^{++}$ & Baryon  & PDG 2022    & 1/2 & 58.8972 & 59 & 3.653256  & 0.876\% \\
+		$\Xi_{cc}^{+}$  & Baryon  & LHCb 2026   & 1/2 & 58.8921 & 59 & 3.653256  & 0.920\% \\
+		$B_c^{*+}$      & Meson   & ATLAS 2026  & 1   & 65.8749 & 66 & 6.399406  & 0.953\% \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1928,6 +1928,21 @@ However, it is important to note that current mass-eigenvalue calculations assum
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\subsubsection{Key conclusions from the meson-mode scan}
+\begin{enumerate}
+	\item \textbf{Spin is not a predictive factor.} Particles with spin $0$, $1/2$, or $1$ can be predicted accurately or poorly depending solely on whether their wave‑center count $K_{WC}$ lies close to an integer.
+	\item \textbf{Geometric matching of the standing wave to the nodal structure (quantisation of $K_{WC}$) is the essential condition.}
+	\item \textbf{The model becomes asymptotically exact at high energies.} Even small deviations of $K_{WC}$ from an integer yield small relative errors because the pure ${K_{WC}}^5$ geometry dominates over non‑perturbative effects.
+\end{enumerate}
+
+\paragraph{The neutrino as a special case: sub‑threshold anchor}
+The neutrino is notably absent from Table~\ref{tab:meson_mode_scan}, because its exact wave‑center count $K_{\text{exact}}\approx 0.86$ lies well below the integer $K_{WC}=1$. 
+This does not indicate a failure of the EWT framework; rather, it delimits the domain of validity of the ${K_{WC}}^5$ meson‑mode scaling. 
+The neutrino is not a ${K_{WC}}^5$ volume resonance but a distinct topological object – the fundamental, torque‑free ground state of the BCC lattice (see Sec.~\ref{sec:nu_radius_geometry}). 
+In the spherical mode ($K_{wc}=1$) its mass is reproduced to $0.39\%$ (Table~\ref{tab:mass_precision_comparison}), and its statutory radius $r_\nu$ serves as the geometric anchor for the entire particle hierarchy. 
+The $10^{10}$ factor between electron and neutrino densities, $(r_e/r_\nu)^5 = 10^{10}$, is exactly the ratio expected from the ${K_{WC}}^5$ law when comparing $K_e=10$ and $K_\nu=1$. 
+Thus the neutrino defines the **lower threshold of quantisation**: $K_{WC}\ge 1$ for spherical solitons, and $K_{WC}\gtrsim 10$ for the ${K_{WC}}^5$ meson mode to yield near‑integer resonances.
 
 \subsection{Topological Isomorphism and Geometric Interference in BCC Lattice}
 \label{subsec:topological_isomorphism}
@@ -3271,6 +3286,150 @@ The separation between the asymmetric core and the isotropic gravitational field
 \end{equation}
 
 This condition states that the asymmetric energy core ($r^5$ domain) is contained within the radius of the Degraded EMC Wall ($r^3$ domain), enforcing gravitational isotropy through the structural constraints of the spherical vacuum units.
+
+\section{Nonlinear Stabilisation of the Electron Soliton}
+\label{sec:nonlinear_stability}
+
+The geometric identities derived in Sections~\ref{sec:geometric_identity}
+and~\ref{sec:alpha_geometric_deficit} determine the coupling constants of the
+vacuum, but they do not by themselves constitute a dynamical stability proof.
+A stable soliton requires a nonlinear term $\mathcal{F}$ in the wave equation
+that counteracts dispersion. The form of $\mathcal{F}$ is constrained by the
+BCC lattice geometry and the topological class of the electron.
+
+\subsection{General Soliton Wave Equation}
+
+The scalar amplitude $\Psi(\mathbf{r},t)$ of the standing wave satisfies
+\begin{equation}\label{eq:soliton_wave_eq}
+	\Bigl( \frac{\partial^{2}}{\partial t^{2}} - c^{2}\nabla^{2} \Bigr)
+	\Psi(\mathbf{r},t) + \mathcal{F}(\Psi) = 0 .
+\end{equation}
+The first two terms describe free wave propagation in the elastic BCC medium;
+the third term encodes the nonlinear self-interaction that makes the soliton
+possible.
+
+\subsection{Coupling Coefficient from BCC Geometry}
+
+The magnetic deficit $\epsilon_{M}$ is the fundamental lattice response
+parameter derived in Section~\ref{sec:magnetic_deficit}:
+\begin{equation}\label{eq:epsM_stability}
+	\epsilon_{M} = \frac{1}{N_{\text{final}}\,\pi^{3}}
+	= \frac{1}{8\pi^{7}} .
+\end{equation}
+Physically, $\epsilon_{M}$ measures the fractional loss of stiffness caused by
+the soliton's spin-induced magnetic torque. To eliminate any systemic ambiguity 
+with the standard wave vector $k$, the natural nonlinear coupling strength is 
+designated by the parameter $\gamma$, defined as the inverse of this deficit:
+\begin{equation}\label{eq:gamma_coeff}
+	\gamma \equiv \frac{1}{\epsilon_{M}}
+	= N_{\text{final}}\,\pi^{3} \approx 2.414 \times 10^{4}.
+\end{equation}
+This coefficient is not a free parameter; it follows from the BCC coordination
+number (8) and the dimensional budget of the charged weak scale ($\pi^{7}$).
+
+\subsection{Proposed Forms of the Nonlinear Term}
+
+\subsubsection*{Variant A --- Pure cubic nonlinearity}
+The simplest form compatible with the NLS-type soliton equations is the cubic
+(self-focusing) nonlinearity:
+\begin{equation}\label{eq:F_cubic}
+	\boxed{\mathcal{F}(\Psi) = \gamma\,\Psi^{3}
+		= \frac{1}{\epsilon_{M}}\,\Psi^{3}
+		= N_{\text{final}}\,\pi^{3}\,\Psi^{3}} .
+\end{equation}
+A term proportional to $\Psi^{3}$ is the lowest-order odd nonlinearity
+that preserves the sign of the restoring force; it appears generically in
+Lagrangian derivations from a quartic potential $V(\Psi)=\frac{1}{4}\gamma\Psi^{4}$.
+
+\subsubsection*{Variant B --- Nonlinearity modulated by EMC packing density}
+In the EWT framework the nonlinear stiffness should be active only where the
+granular (EMC) density is depleted relative to the statutory vacuum background
+$\rho_{0}$. Let $\rho(r)$ be the local EMC density inside the soliton;
+the deficit fraction is $(1-\rho(r)/\rho_{0})$. The nonlinear term then becomes
+\begin{equation}\label{eq:F_density}
+	\boxed{\mathcal{F}(\Psi,\rho)
+		= \gamma\,\Bigl(1-\frac{\rho(r)}{\rho_{0}}\Bigr)\,\Psi^{3}} .
+\end{equation}
+Equation~\eqref{eq:F_density} directly couples the wave equation to the
+push-out mechanism (Section~\ref{density_duality}): the nonlinearity is maximal
+in the soliton core where $\rho(r) \ll \rho_{0}$, and vanishes in the
+surrounding statutory vacuum. This provides a unified description of soliton
+stability and gravitational emergence from a single density deficit.
+
+\subsection{Topological Selection Rule and the Electron Ground State}
+
+The nonlinear wave equation alone does not select a specific number of wave
+centres. The selection of $K_{\text{WC}}=10$ is enforced by the topological
+class of the soliton (Section~\ref{subsec:topological_isomorphism}). On the
+spherical shell $S^{2}$ that encloses the soliton, the field configuration is
+characterised by an integer winding number
+\begin{equation}
+	Q = \frac{1}{4\pi} \int_{S^{2}} \Psi^{*}\,\omega \in \mathbb{Z},
+\end{equation}
+where $\omega$ is the normalised area form on $S^{2}$. For the electron
+$Q = K_{\text{WC}} = 10$.
+
+This topological winding number is not an empirical adjustment; it emerges 
+from the discrete projection of the BCC lattice's $Im\bar{3}m$ space group symmetry 
+onto the continuous spherical boundary $S^2$. While the 8 primary propagation axes 
+define the innermost volumetric kernel, the configuration of $Q=10$ wave centres 
+represents the lowest-energy, stable homotopy class capable of establishing a 
+fully isotropic boundary condition on $S^2$ (analogous to the global minimum of a 
+spherical Thomson packing problem for discrete phase nodes). 
+
+Because $Q$ is a topological invariant, it cannot change under continuous 
+deformations of the wave field; a transition to $Q=9$ or $Q=8$ would require 
+a discontinuous rupture of the elastic medium, requiring infinite energy. 
+The soliton is therefore permanently protected against perturbations that would 
+alter its internal multiplicity.
+
+Equation~\eqref{eq:soliton_wave_eq} together with the nonlinear term
+\eqref{eq:F_cubic} (or \eqref{eq:F_density}) and the topological condition
+$Q=10$ constitutes a complete, falsifiable model of the electron core:
+
+\begin{enumerate}
+	\item The \textbf{nonlinearity} ($\gamma$) creates a deep, narrow potential well that
+	resists dispersion.
+	\item The \textbf{topological winding number} guarantees that the ground state
+	has exactly ten wave centres --- not by empirical input, but as a consequence
+	of the homotopy class of the field on $S^{2}$ under $Im\bar{3}m$ constraints.
+	\item The \textbf{BCC stiffness constant} $N_{\text{final}}$ (or its geometric
+	limit $8\pi^{7}$) fixes the numerical value of the coupling without
+	adjustable parameters.
+\end{enumerate}
+
+\subsection{Connection to the Dimensional Weight Operator}
+
+The Dimensional Weight Operator $\hat{W}(n)$ (Section~\ref{sec:dim_weight_operator})
+assigns a distinct degree of freedom to each factor of $\pi$ in the coupling
+budget. The nonlinear coefficient \eqref{eq:gamma_coeff} can be written as
+\begin{equation}
+	\gamma = \frac{1}{\epsilon_{M}} = 8\pi^{7}
+	= 8\;\cdot\;\pi^{(1)}\pi^{(2)}\pi^{(3)}\pi^{(4)}\pi^{(5)}\pi^{(6)}\pi^{(7)},
+\end{equation}
+where the seven factors correspond to the seven degrees of freedom of the
+charged weak scale (Table~\ref{tab:dimensional_ladder_origin}). Thus the
+stabilisation of the electron is not an isolated electromagnetic phenomenon
+but a direct mechanical consequence of the full 7‑dimensional phase space
+that the BCC lattice makes available to a charged soliton. The factor~8
+reflects the eight primary propagation axes of the $Im\bar{3}m$ unit cell,
+ensuring that the nonlinear restoring force acts isotropically.
+
+\subsection{Summary}
+
+\begin{itemize}
+	\item The general soliton wave equation is
+	$(\partial_{t}^{2} - c^{2}\nabla^{2})\Psi + \mathcal{F}(\Psi) = 0$.
+	\item The coupling coefficient is fixed by BCC geometry:
+	$\gamma = 1/\epsilon_{M} = N_{\text{final}}\pi^{3} \approx 2.41\times 10^{4}$.
+	\item Two candidate forms for $\mathcal{F}$ are proposed:
+	$\gamma\Psi^{3}$ (pure cubic) and $\gamma(1-\rho/\rho_{0})\Psi^{3}$
+	(density-modulated).
+	\item The winding number $Q=10$ on $S^{2}$ provides the topological
+	selection rule that isolates the electron ground state under $Im\bar{3}m$ constraints.
+	\item The coupling $\gamma = 8\pi^{7}$ directly expresses the 7‑dimensional
+	charged-weak budget of the BCC lattice.
+\end{itemize}
 
 
 \section{Predictive Power}
