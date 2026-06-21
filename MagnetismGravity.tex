@@ -544,7 +544,7 @@ As derived in the study of the relationship between light speed and medium densi
 This level establishes the \textbf{Eulerian Dilution} ($\approx 99.37\%$), providing the reference constituent count against which all particle deficits and gravitational gradients are measured.
 
 \subsubsection*{3. Effective Gravitational Density ($N_{\nu, \text{eff}}$)}
-The emergence of physical gravity corresponds to a second stage of dilution, defined here as the \textbf{Soliton Push-out}. Within the BCC lattice structure, the effective density for the electron soliton ($K=10$ wave centers) is further reduced:
+The emergence of physical gravity corresponds to a second stage of dilution, defined here as the \textbf{Soliton Push-out}. Within the BCC lattice structure, the effective density for the electron soliton ($K_{WC}=10$ wave centers) is further reduced:
 \begin{equation}
 	N_{\nu, \text{eff}} \approx 6.2525 \times 10^{48}
 	\label{eq:N_nu_eff}
@@ -694,7 +694,7 @@ The transition from a purely volumetric displacement to the high-precision gravi
 The structural composition of this operator reveals the three-stage calibration of the medium's response:
 
 \begin{itemize}
-	\item \textbf{The Harmonic Reciprocal ($1/K_{WC}$):} Representing the specific contribution of the $K=10$ wave centers. This term accounts for the fundamental internal oscillation frequency of the electron soliton, ensuring that the global deficit is normalized to the individual node's displacement capacity.
+	\item \textbf{The Harmonic Reciprocal ($1/K_{WC}$):} Representing the specific contribution of the $K_{WC}=10$ wave centers. This term accounts for the fundamental internal oscillation frequency of the electron soliton, ensuring that the global deficit is normalized to the individual node's displacement capacity.
 	
 	\item \textbf{The Unitary Baseline ($+1$):} This represents the statutory equilibrium of the medium—the "unperturbed" vacuum state. It ensures that the correction is additive to the existing background density $N_{\nu, \text{stat}}$, maintaining the continuity of the medium's elastic field.
 	
@@ -894,7 +894,7 @@ The fundamental EWT framework defines the \textbf{Absolute Maximum Capacity} ($N
 \subsubsection*{Physical Justification: Gradient Packing Density}
 The \textbf{Effective Volume Deficit} ($N_{\nu, \text{eff}} \approx 6.25 \times 10^{48}$) is the physically manifested value that ensures the geometric identity for $G$ holds. This value reflects the \textbf{non-uniform packing density} of EMCs within the matter-occupied region:
 \begin{itemize}[noitemsep,topsep=0pt]
-	\item \textbf{Dynamic Push-Out:} The $K=10$ Wave Centers of the electron actively displace the medium, reducing the density from the statutory vacuum level ($10^{52}$) to the effective gravitational level ($10^{48}$).
+	\item \textbf{Dynamic Push-Out:} The $K_{WC}=10$ Wave Centers of the electron actively displace the medium, reducing the density from the statutory vacuum level ($10^{52}$) to the effective gravitational level ($10^{48}$).
 	\item \textbf{Elastic Response:} According to Hooke's Law, the packing density $\rho(r)$ decreases from the soliton's boundary toward its core. The value $N_{\nu, \text{eff}}$ represents the integrated result of this density gradient, which precisely dictates the observed gravitational constant.
 \end{itemize}
 
@@ -2782,7 +2782,7 @@ All numerical values used in this section are taken from the output of \textbf{P
 \subsection{The Rydberg Constant ($R_{\infty}$): An Atomic Resonance Gap}
 \label{sec:rydberg_constant}
 
-In this zero-parameter framework, the Rydberg constant emerges as the fundamental "resonance gap" between the lepton soliton ($K=10$ wave centers) and the background BCC medium. Since the electron mass ($m_e$) and the Planck constant ($h$) are emergent properties of the $N_{\nu}$ density hierarchy, $R_{\infty}$ must be expressible as a purely geometric ratio, eliminating the need for these empirical inputs.
+In this zero-parameter framework, the Rydberg constant emerges as the fundamental "resonance gap" between the lepton soliton ($K_{WC}=10$ wave centers) and the background BCC medium. Since the electron mass ($m_e$) and the Planck constant ($h$) are emergent properties of the $N_{\nu}$ density hierarchy, $R_{\infty}$ must be expressible as a purely geometric ratio, eliminating the need for these empirical inputs.
 
 \subsubsection{Anchoring to the Physical Boundary}
 The Rydberg constant is traditionally linked to the energy scale of the atom via $R_{\infty} = \alpha^2 m_e c / 2h$. In EWT, this scale is anchored to the \textbf{Statutory Radius ($r_{\nu}$)} (Eq. \ref{eq:r_nu_corr}), which defines the fundamental longitudinal wavelength allowed by the medium's granularity. Because the classical electron radius $r_e$ maintains a fixed $1:100$ resonance link to $r_{\nu}$ (as confirmed in Sec. \ref{sec:10_10_resonance}), the spectroscopic limit defined by $R_{\infty}$ becomes a structural damping factor of the lattice itself.
@@ -3357,7 +3357,7 @@ For numerical implementation, two values of $\gamma$ are available:
 \end{itemize}
 The choice between them is not arbitrary: the $0.058\%$ difference encodes the
 non‑ideal spherical packing fraction of the physical BCC lattice, and it may
-prove decisive for discriminating $K=10$ from neighbouring configurations in
+prove decisive for discriminating $K_{WC}=10$ from neighbouring configurations in
 a numerical simulation.  The OpenWave implementation should initially use
 $\gamma_{\text{final}}$ (anchored to the measured $\alpha$) and, if
 necessary, explore the geometric limit as a consistency check.
@@ -3546,6 +3546,25 @@ can adiabatically relax the EMC density from its deep core deficit to the
 statutory background, suppressing the sharp gradients that would otherwise
 destabilise the standing wave.
 
+\subsubsection*{Role of a Possible EMC Density Peak}
+
+The preceding estimate fixes the radial scale of the wall, but leaves open
+the question of its internal density profile.  As noted in
+Section~\ref{subsubsec:degraded_emc_wall}, two scenarios are compatible with
+the integral deficit $N_{\nu,\text{eff}}$: a monotonic approach to the
+statutory background, or a local density peak ($\rho_{\text{wall}} >
+\rho_{0}$) caused by the accumulation of EMCs expelled by the push‑out
+mechanism.  If such a peak exists, it would actively assist the nonlinear
+stabilisation in two ways.  First, in Variant~B the factor
+$(1-\rho/\rho_{0})$ would change sign within the peak, turning the
+self‑focusing nonlinearity into a local defocusing barrier that prevents the
+standing wave from leaking outward.  Second, even for the unmodulated
+Variants~A and~C, a density peak implies a locally higher elastic modulus,
+which acts as a partial reflector, increasing the $Q$‑factor of the soliton
+resonator.  Whether the peak is indispensable or merely auxiliary can only
+be decided once the full radial EMC profile is computed from the nonlinear
+wave equation, which remains a task for the OpenWave M4 simulation.
+
 \subsection*{Internal Wave‑Centre Dynamics and Spin}
 
 In the foundational Energy Wave Theory (Yee, 2019), an additional
@@ -3558,7 +3577,7 @@ shifting of centres is the origin of the $720^{\circ}$ spin and, at the
 same time, a dynamic stabilisation mechanism.  The tetrahedral 1‑3‑6
 geometry ensures that only a fraction of the centres are off‑node at any
 instant, while the remainder anchor the structure.  Configurations such
-as $K=9$ or $K=11$ lack this balance and break apart.  This hypothesis
+as $K_{WC}=9$ or $K_{WC}=11$ lack this balance and break apart.  This hypothesis
 has not yet been proven mathematically and should be tested in the
 OpenWave M4 model once the nonlinear term and the Degraded EMC Wall are
 in place: comparing simulations with and without WC motion could reveal
@@ -3575,10 +3594,10 @@ intermediate wave‑centre counts (Section~\ref{sec:geometric_mass_to_radius});
 and (ii) a \textbf{topological} condition requiring an integer winding number
 $Q$ on $S^{2}$ (Section~\ref{subsec:topological_isomorphism}).  These are
 not independent post‑hoc justifications of the same number; they are mutually
-reinforcing constraints.  The $r^{5}/r^{3}$ argument explains why $K$ cannot
+reinforcing constraints.  The $r^{5}/r^{3}$ argument explains why $K_{WC}$ cannot
 be too small (shallow well) or too large (volumetric overload), while the
 topological argument explains why, within the allowed range, only discrete
-integer values are permitted.  The specific value $K=10$ emerges as the
+integer values are permitted.  The specific value $K_{WC}=10$ emerges as the
 unique integer that simultaneously satisfies both constraints under the
 octahedral symmetry of the $Im\bar{3}m$ BCC lattice.  A rigorous proof that
 no other integer passes both filters remains a task for the OpenWave M4
@@ -3615,8 +3634,8 @@ simulation.
 	the topological winding, the cubic nonlinearity, and the octahedral symmetry
 	of the BCC lattice.
 	\item The energetic ($r^{5}/r^{3}$) and topological arguments are complementary:
-	the former restricts the range of allowed $K$, the latter restricts $K$ to
-	integer values; together they single out $K=10$.
+	the former restricts the range of allowed $K$, the latter restricts $K_{WC}$ to
+	integer values; together they single out $K_{WC}=10$.
 	\item The coupling $\gamma = 8\pi^{7}$ directly expresses the 7‑dimensional
 	charged-weak budget of the BCC lattice.
 	\item The model is well-posed and falsifiable; the stability of the 1-3-6
