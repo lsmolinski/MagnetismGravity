@@ -3332,12 +3332,16 @@ The magnetic deficit $\epsilon_{M}$ is the fundamental lattice response
 parameter derived in Section~\ref{sec:magnetic_deficit}:
 \begin{equation}\label{eq:epsM_stability}
 	\epsilon_{M} = \frac{1}{N_{\text{final}}\,\pi^{3}}
-	= \frac{1}{8\pi^{7}} .
+	\;\approx\; \frac{1}{8\pi^{7}} .
 \end{equation}
-Physically, $\epsilon_{M}$ measures the fractional loss of stiffness caused by
-the soliton's spin-induced magnetic torque. To eliminate any systemic ambiguity
-with the standard wave vector $k$, the natural nonlinear coupling strength is
-designated by the parameter $\gamma$, defined as the inverse of this deficit:
+The approximate equality reflects the $0.058\%$ lattice impedance $\delta$
+between the calibrated stiffness $N_{\text{final}}$ and the ideal geometric
+limit $8\pi^{4}$, as discussed in
+Section~\ref{sec:eliminating_fine_tunig_paradigm}.  Physically, $\epsilon_{M}$
+measures the fractional loss of stiffness caused by the soliton's spin-induced
+magnetic torque. To eliminate any systemic ambiguity with the standard wave
+vector $k$, the natural nonlinear coupling strength is designated by the
+parameter $\gamma$, defined as the inverse of this deficit:
 \begin{equation}\label{eq:gamma_coeff}
 	\gamma \equiv \frac{1}{\epsilon_{M}}
 	= N_{\text{final}}\,\pi^{3} \approx 2.414 \times 10^{4}.
@@ -3357,7 +3361,7 @@ For numerical implementation, two values of $\gamma$ are available:
 \end{itemize}
 The choice between them is not arbitrary: the $0.058\%$ difference encodes the
 non‑ideal spherical packing fraction of the physical BCC lattice, and it may
-prove decisive for discriminating $K_{WC}=10$ from neighbouring configurations in
+prove decisive for discriminating $K=10$ from neighbouring configurations in
 a numerical simulation.  The OpenWave implementation should initially use
 $\gamma_{\text{final}}$ (anchored to the measured $\alpha$) and, if
 necessary, explore the geometric limit as a consistency check.
@@ -3428,19 +3432,23 @@ follows from the interplay of the nonlinearity and the BCC lattice topology:
 	\item The \textbf{inner shell} (3) forms an equilateral triangle.  Three is the
 	minimal number of vertices that can define a plane; the plane's normal
 	coincides with the spin axis.  Any other number would either fail to define
-	a unique axis (1 or 2) or introduce internal phase frustration (4 or more on
-	a single shell at this radius).
+	a unique axis (1 or 2) or, it is proposed, introduce internal phase frustration
+	(4 or more on a single shell at this radius) --- a physical claim whose
+	verification requires the same numerical proof as the rest of the stability
+	argument.
 	\item The \textbf{outer shell} (6) completes the octahedral coordination of the
 	BCC unit cell.  Six wave centres placed at the face-centre-equivalent
-	positions saturate the remaining propagation axes, guaranteeing isotropic
-	far-field emission after spherical masking by the Degraded EMC Wall
-	(Section~\ref{sec:spherical_masking}).
+	positions are proposed to saturate the remaining propagation axes, thereby
+	guaranteeing isotropic far-field emission after spherical masking by the
+	Degraded EMC Wall (Section~\ref{sec:spherical_masking}) --- a claim that,
+	like the others in this section, requires numerical verification.
 \end{enumerate}
 
-A configuration such as 2-3-5 or 2-2-6 would either misalign the spin axis
-or leave some BCC axes unmatched, producing a net multipole moment that the
-nonlinearity cannot cancel.  The 1-3-6 triad is therefore the unique
-self-consistent candidate that simultaneously satisfies:
+It is proposed that a configuration such as 2-3-5 or 2-2-6 would either
+misalign the spin axis or leave some BCC axes unmatched, producing a net
+multipole moment that the nonlinearity cannot cancel --- a prediction to be
+tested in the OpenWave M4 simulation.  The 1-3-6 triad is therefore the
+unique self-consistent candidate that simultaneously satisfies:
 (a) the topological winding number $Q=10$,
 (b) the cubic nonlinearity with coefficient $\gamma$, and
 (c) the octahedral symmetry of the $Im\bar{3}m$ vacuum lattice.
@@ -3455,9 +3463,9 @@ centres. The selection of $K_{\text{WC}}=10$ is enforced by the topological
 class of the soliton (Section~\ref{subsec:topological_isomorphism}). On the
 spherical shell $S^{2}$ that encloses the soliton, the field configuration is
 characterised by an integer winding number (equation \ref{eq:winding_number}):
-\begin{equation}
+$$
 	Q = \frac{1}{4\pi} \int_{S^{2}} \Psi^{*}\,\omega \in \mathbb{Z},
-\end{equation}
+$$
 where $\omega$ is the normalised area form on $S^{2}$. For the electron
 $Q = K_{\text{WC}} = 10$.
 
@@ -3489,9 +3497,10 @@ M4 implementation described in Section~\ref{sec:outlook}.
 \begin{enumerate}
 	\item The \textbf{nonlinearity} ($\gamma$) creates a deep, narrow potential well that
 	resists dispersion.
-	\item The \textbf{topological winding number} guarantees that the ground state
-	has exactly ten wave centres --- not by empirical input, but as a consequence
-	of the homotopy class of the field on $S^{2}$ under $Im\bar{3}m$ constraints.
+	\item The \textbf{topological winding number} is proposed to fix the ground state
+	at exactly ten wave centres, pending numerical confirmation that $Q=10$ is
+	energetically preferred over neighbouring integers $Q=8,9,11$ within the
+	$Im\bar{3}m$ projection.
 	\item The \textbf{BCC stiffness constant} $N_{\text{final}}$ (or its geometric
 	limit $8\pi^{4}$) fixes the numerical value of the coupling without
 	adjustable parameters.
@@ -3503,16 +3512,21 @@ The Dimensional Weight Operator $\hat{W}(n)$ (Section~\ref{sec:dim_weight_operat
 assigns a distinct degree of freedom to each factor of $\pi$ in the coupling
 budget. The nonlinear coefficient \eqref{eq:gamma_coeff} can be written as
 \begin{equation}
-	\gamma = \frac{1}{\epsilon_{M}} = 8\pi^{7}
+	\gamma = \frac{1}{\epsilon_{M}} = N_{\text{final}}\,\pi^{3}
+	\;\approx\; 8\pi^{7}
 	= 8\;\cdot\;\pi^{(1)}\pi^{(2)}\pi^{(3)}\pi^{(4)}\pi^{(5)}\pi^{(6)}\pi^{(7)},
 \end{equation}
 where the seven factors correspond to the seven degrees of freedom of the
-charged weak scale (Table~\ref{tab:dimensional_ladder_origin}). Thus the
-stabilisation of the electron is not an isolated electromagnetic phenomenon
-but a direct mechanical consequence of the full 7‑dimensional phase space
-that the BCC lattice makes available to a charged soliton. The factor~8
-reflects the eight primary propagation axes of the $Im\bar{3}m$ unit cell,
-ensuring that the nonlinear restoring force acts isotropically.
+charged weak scale (Table~\ref{tab:dimensional_ladder_origin}).  The approximate
+equality with $8\pi^{7}$ reflects the geometric limit $\gamma_{\text{geo}}$,
+while the exact factorisation in terms of labelled $\pi^{(k)}$ degrees of
+freedom is a formal bookkeeping device that holds irrespective of the numerical
+value of the prefactor.  Thus the stabilisation of the electron is not an
+isolated electromagnetic phenomenon but a direct mechanical consequence of the
+full 7‑dimensional phase space that the BCC lattice makes available to a
+charged soliton. The factor~8 reflects the eight primary propagation axes of
+the $Im\bar{3}m$ unit cell, ensuring that the nonlinear restoring force acts
+isotropically.
 
 \subsection{Geometric Estimate of the Degraded EMC Wall Radius}
 \label{sec:wall_radius_estimate}
@@ -3523,10 +3537,10 @@ EMC deficit region, which is bounded by the Degraded EMC Wall
 radius $r_{\text{wall}}$ is provided by the electron Compton wavelength
 $\lambda_C$, whose geometric derivation is given in
 Section~\ref{sec:compton_wavelength} (see Eq.~\ref{eq:compton_standard}).
-Numerically $\lambda_C \approx 2.426 \times 10^{-12}$~m, which is roughly
-$860\,r_e$ and therefore lies well outside the soliton core.  The EMC
-density $\rho(r)$ must recover its statutory background value $\rho_0$
-somewhere between $r_e$ and $\lambda_C$.  A plausible scale is
+Numerically $\lambda_C \approx 2.426 \times 10^{-12}$~m.  Since the
+classical electron radius is $r_e = \lambda_C \cdot \alpha / 2\pi$, the
+reduced Compton wavelength $\lambda_C/2\pi$ is approximately
+$r_e / \alpha \approx 137\,r_e$.  A plausible scale is
 \begin{equation}
 	\boxed{r_{\text{wall}} \sim \frac{\lambda_C}{2\pi} = \frac{r_e}{\alpha}} .
 \end{equation}
@@ -3539,7 +3553,7 @@ consistency: the same geometric framework that yields $\alpha$ and $\lambda_C$
 from $r_\nu$ and the $8\pi^{7}$ correction also predicts a natural length
 scale for the region in which the nonlinearity is active, providing a unified
 description of particle stability, forces, and annihilation. The considerable
-width of the wall --- roughly $860\,r_e$ --- is not an arbitrary feature but a
+width of the wall --- roughly $137\,r_e$ --- is not an arbitrary feature but a
 geometric consequence of the ratio $1/\alpha \approx 137$.  Physically, this
 extended transition zone provides a broad buffer within which the nonlinearity
 can adiabatically relax the EMC density from its deep core deficit to the
@@ -3622,22 +3636,26 @@ simulation.
 		1-3-6 source operator $\mathbf{J}_{1\text{-}3\text{-}6}(\mathbf{r},t)$
 		(directly encodes the discrete wave-centre architecture of the electron).
 	\end{enumerate}
-	\item The Degraded EMC Wall provides the necessary boundary condition
-	for the nonlinearity: its radius, estimated as $r_{\text{wall}} \sim r_e / \alpha$,
-	is consistent with the Compton wavelength and ensures a broad
-	adiabatic transition zone ($\sim 860\,r_e$) in which the density-modulated
-	term can act without sharp gradients that would otherwise destabilise the
-	standing wave.
-	\item The winding number $Q=10$ on $S^{2}$ provides the topological
-	selection rule that isolates the electron ground state under $Im\bar{3}m$ constraints.
-	\item The 1-3-6 partition is the unique arrangement that simultaneously satisfies
-	the topological winding, the cubic nonlinearity, and the octahedral symmetry
-	of the BCC lattice.
+	\item The Degraded EMC Wall is proposed to provide the necessary boundary
+	condition for the nonlinearity: its radius, estimated as $r_{\text{wall}} \sim
+	r_e / \alpha$, is consistent with the Compton wavelength and may ensure a broad
+	adiabatic transition zone ($\sim 137\,r_e$) in which the density-modulated
+	term can act without sharp gradients.  A possible density peak within the wall
+	would further assist stabilisation by creating a local defocusing barrier.
+	\item The winding number $Q=10$ on $S^{2}$ is proposed as the topological
+	selection rule that would isolate the electron ground state under
+	$Im\bar{3}m$ constraints; rigorous proof that $Q=10$ is energetically
+	preferred over other integers remains a task for the OpenWave M4 simulation.
+	\item The 1-3-6 partition is the unique self-consistent candidate that
+	simultaneously satisfies the topological winding, the cubic nonlinearity,
+	and the octahedral symmetry of the BCC lattice; its stability is a postulate
+	pending numerical verification.
 	\item The energetic ($r^{5}/r^{3}$) and topological arguments are complementary:
-	the former restricts the range of allowed $K$, the latter restricts $K_{WC}$ to
-	integer values; together they single out $K_{WC}=10$.
-	\item The coupling $\gamma = 8\pi^{7}$ directly expresses the 7‑dimensional
-	charged-weak budget of the BCC lattice.
+	the former restricts the range of allowed $K_{WC}$, the latter restricts $K_{WC}$ to
+	integer values; together they single out $K_{WC}=10$ as the only candidate
+	satisfying both constraints.
+	\item The coupling $\gamma \approx 8\pi^{7}$ (in its geometric limit) directly
+	expresses the 7‑dimensional charged-weak budget of the BCC lattice.
 	\item The model is well-posed and falsifiable; the stability of the 1-3-6
 	configuration is a postulate whose numerical verification is the immediate
 	objective of the OpenWave M4 simulation.
