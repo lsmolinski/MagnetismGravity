@@ -417,7 +417,8 @@ data = [
     "Muon",         "20",  "0.09488543",    "orb";
     "Quark s",      "28",  "0.094954",      "sph";
     "Tau",          "50",  "1.75619909",    "orb";
-    "W Boson",      "109", "80.387",        "sph";
+    "Omega_cc*",    "58",  "3.7259",       "sph";
+	"W Boson",      "109", "80.387",        "sph";
     "Z Boson",      "110", "91.182",        "sph";
     "Higgs",        "117", "124.9613",      "sph"
 ];
@@ -963,6 +964,7 @@ particle_data = [
 "Upsilon(3S)",     "PDG 2022",    "10.35520"       ;
 "Z_c(3900)",       "PDG 2022",    "3.8884"         ;   // exotic
 "X(3872)",         "PDG 2022",    "3.87165"        ;   // exotic
+"Omega_cc*",       "CERN 2026",   "3.7259"         ;   // doubly-charmed Omega, K=58 sph
 ];
 
 // --- RUN THE SCAN ---
