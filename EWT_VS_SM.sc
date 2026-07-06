@@ -1,6 +1,6 @@
 // =============================================================================
 // EWT vs Standard Model -- Quantitative Precision Comparison (FINAL VERSION)
-// Version: 4.1.3 (Including Tau Lepton Hierarchy)
+// Version: 4.4.16 (Including Tau Lepton Hierarchy)
 // Comments: English
 // =============================================================================
 
@@ -19,6 +19,52 @@ delta_a_mu_SM = a_mu_exp - a_mu_SM;   // ~251e-11 tension
 // --- 2. EWT MODEL PREDICTIONS (FROM GEOMETRIC DERIVATIONS) ---
 G_EWT         = 6.6743052096814788663e-11; // Derived from vacuum stiffness deficit
 alpha_inv_EWT = 137.03599917755759;        // Derived from BCC lattice geometry
+
+// --- DERIVATION OF EWT INTERNAL TARGETS ---
+// This block computes the muon and tau shell contribution targets
+// from the EWT orbital mass relations and toroidal geometry.
+// See manuscript for details.
+
+Pi          = %pi;
+N_final     = 778.818123000000014;
+eps_M       = 1 / (N_final * (Pi^3));
+A_pi        = 4*Pi^3 + Pi^2 + Pi;
+
+delta_muon  = 185.68543;
+delta_tau   = 3436.795;
+
+L_mu_dim    = 5;
+L_tau_dim   = 34;
+
+K_e         = 10;
+K_mu_total  = 207;
+M_mu_shell  = (K_mu_total - K_e) / K_e;
+B_mu_scale  = (3 * A_pi * Pi^3) / (2 * L_mu_dim^2);
+a_mu_shell_ppm = B_mu_scale * (1 - eps_M)^(M_mu_shell * Pi^3);
+target_a_mu_EWT_ppm = a_mu_shell_ppm;
+
+K_tau_total = 2181;
+M_tau_rel   = K_tau_total / K_e;
+B_tau_base  = ( (3 * A_pi * Pi^3) / (8 * sqrt(2)) ) + (A_pi / 2);
+a_tau_shell_raw_ppm = B_tau_base * (1 - eps_M)^(M_tau_rel * Pi^3);
+target_a_tau_EWT_ppm = a_mu_shell_ppm + a_tau_shell_raw_ppm + L_mu_dim^2;
+
+// Display derived targets
+printf("===============================================================\n");
+printf("   EWT INTERNAL REFERENCE TARGETS (DERIVED IN-SCRIPT)\n");
+printf("===============================================================\n");
+printf("Orbital amplitude factors:\n");
+printf("  delta_muon = %.5f\n", delta_muon);
+printf("  delta_tau  = %.2f\n", delta_tau);
+printf("Muon shell target (ppm):    %.6f\n", target_a_mu_EWT_ppm);
+printf("Tau shell target (ppm):     %.6f\n", target_a_tau_EWT_ppm);
+printf("Muon shell target (dimless): %.12f\n", target_a_mu_EWT_ppm * 1e-6);
+printf("Tau shell target (dimless): %.12f\n", target_a_tau_EWT_ppm * 1e-6);
+printf("===============================================================\n\n");
+
+// The target values are ~248.8 ppm (muon) and ~1177.2 ppm (tau),
+// matching the internal EWT references documented in the manuscript.
+
 a_mu_EWT      = 116592060.95e-11;          // Core |epsilon_M| prediction
 a_tau_EWT     = 117684.45e-9;              // Standalone recursive shell prediction (0.031% error)
 
