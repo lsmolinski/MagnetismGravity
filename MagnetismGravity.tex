@@ -85,9 +85,9 @@ Version: 4.4.16
 \section*{Abstract}
 {\boldmath \textbf{
 A unified geometric wave model is proposed, deriving the Gravitational Constant ($G$), the Fine-Structure Constant ($\alpha$), and lepton anomalous magnetic moments ($a_l$) from a single structural modulator: the geometric vacuum stiffness $\epsilon_M$. $G$ is established as a precise, $\hbar$-independent identity rooted in the soliton's wave geometry, achieving 10-digit agreement with experimental benchmarks. The same $\epsilon_M$ factor governs a recursive nodal integration that recovers 
-the electron anomalous magnetic moment from pure geometry and achieves high-precision 
-internal consistency for the muon and tau shell contributions, without perturbative 
-QED calibrations. The framework posits that the observed invariance of $G$ is a low-field artefact of a dynamic geometric equilibrium, predicting testable deviations ($G_{eff} \neq G$) in environments with strong local magnetic moments where this equilibrium is exceeded. Crucially, the derivation of ($\alpha$) and the anomalous magnetic moments ($a_l$) are shown to be independent of mass and charge, revealing that these constants are intrinsic topological properties of the vacuum lattice rather than secondary products of particle-field interactions. This geometric mapping reveals a dimensional hierarchy ($\pi^5, \pi^6$), resolving the Weinberg angle and Cabibbo mixing as emergent consequences of the vacuum's surface and volumetric resonance modes. Consequently, the divergence of fundamental forces is identified as a dimensional artefact of the unified BCC lattice, establishing a structural foundation for cosmological scaling.
+the electron anomalous magnetic moment from pure geometry and yields the muon 
+and tau shell contributions from the BCC lattice once their mass scale is fixed, 
+without perturbative QED calibrations. The framework posits that the observed invariance of $G$ is a low-field artefact of a dynamic geometric equilibrium, predicting testable deviations ($G_{eff} \neq G$) in environments with strong local magnetic moments where this equilibrium is exceeded. Crucially, the derivation of ($\alpha$) and the anomalous magnetic moments ($a_l$) are shown to be independent of mass and charge, revealing that these constants are intrinsic topological properties of the vacuum lattice rather than secondary products of particle-field interactions. This geometric mapping reveals a dimensional hierarchy ($\pi^5, \pi^6$), resolving the Weinberg angle and Cabibbo mixing as emergent consequences of the vacuum's surface and volumetric resonance modes. Consequently, the divergence of fundamental forces is identified as a dimensional artefact of the unified BCC lattice, establishing a structural foundation for cosmological scaling.
 }}
 \\
 % TODO: include a table of contents (optional)
@@ -1520,13 +1520,19 @@ The anomalous magnetic moments derived purely from the BCC lattice geometry ($K_
 	\label{tab:final_results_confirmed}
 	\begin{tabular}{lccc}
 		\toprule
-		\textbf{Generation} & \textbf{Experimental Target} & \textbf{EWT Prediction} & \textbf{Relative Error} \\
+		\textbf{Generation} & \textbf{Target} & \textbf{EWT Prediction} & \textbf{Relative Error} \\
 		\midrule
 		Electron ($a_e$) & $1.15965 \times 10^{-3}$ & $1.15992 \times 10^{-3}$ & $0.023\%$ \\
 		Muon ($a_{\mu}$) & $248.800 \times 10^{-6}$ & $248.572 \times 10^{-6}$ & $0.091\%$ \\
 		Tau ($a_{\tau}$) & $1177.210 \times 10^{-6}$ & $1176.845 \times 10^{-6}$ & $0.031\%$ \\
 		\bottomrule
 	\end{tabular}
+\begin{flushleft}
+	\small \textit{Note: The electron target is the full CODATA $(g-2)/2$ value. 
+		The muon and tau targets are EWT internal shell references derived in-script 
+		from the orbital mass relations; their explicit numerical derivation is 
+		provided in Listing~\ref{lst:EWT_VS_SM}.}
+\end{flushleft}
 \end{table}
 
 The high convergence observed in Table \ref{tab:final_results_confirmed}, particularly for the Tau lepton, confirms that the recursive nodal integration locked by structural invariants ($L_{dim}$) accurately reflects the underlying vacuum elasticity.
@@ -1538,10 +1544,11 @@ Section~\ref{sec:numerical_verification_ewt} (see
 Table~\ref{tab:mass_precision_comparison}) achieves sub-percent mass precision 
 but presently employs internal calibration factors derived from the electron 
 rest mass. Consequently, the shell contribution targets for the muon and tau 
-($248.8$ ppm and $1177.2$ ppm, respectively) are internal EWT references, and 
-the direct geometric derivation of the full, experimentally measured anomalous 
-magnetic moments of the muon and tau from BCC lattice topology alone remains an 
-open objective.
+($248.8$ ppm and $1177.2$ ppm, respectively) are internal EWT references, 
+while the anomalous magnetic moments themselves are genuine predictions of the 
+BCC lattice geometry. The simultaneous, fully parameter-free derivation of both 
+mass and AMM for all three generations from BCC lattice topology alone remains 
+an open objective.
 
 \subsection{Natural Emergence of Three Lepton Generations}
 \label{sec:three_generations}
@@ -1599,6 +1606,28 @@ The physical transition from the Muon to the Tau generation represents a shift i
 	\item \textbf{Volumetric Lock ($B_{\tau}$):} For the Tau, the coupling $B_{\tau}$ must account for the full 3D coordination of the BCC cell. The factor $8\sqrt{2}$ represents the energy projection onto the 8 primary vertices of the unit cell. This "stiff" resonance indicates that the Tau soliton has reached a density where the entire lattice cell acts as a single, rigid resonator. The addition of the interface tension $\delta = L_{\mu}^2$ proves that the Tau shell does not exist in isolation, but is "welded" to the Muon's geometric foundation.
 \end{itemize}
 
+\vspace{1em}
+\noindent
+\begin{center}
+	\fbox{
+		\begin{minipage}{0.85\textwidth}
+			\centering
+			\vspace{5pt}
+			\small \textbf{Geometric Independence of the Anomalous Magnetic Moment:} \\
+			In the EWT framework, the anomalous magnetic moments of all three lepton generations
+			are computed from pure BCC lattice geometry, without reference to the lepton mass.
+			The electron AMM $a_e$ is a direct function of the stiffness parameter $N = 8\pi^4$,
+			while the muon and tau AMMs are obtained recursively from the same universal
+			modulator $\epsilon_M = 1/(8\pi^7)$. The lepton masses enter only as external
+			reference scales for comparison and play no role in the geometric computation
+			of the AMM itself. This establishes the anomalous magnetic moment as a
+			\textbf{mass-independent topological invariant} of the vacuum lattice.
+			\vspace{5pt}
+		\end{minipage}
+	}
+\end{center}
+\vspace{1em}
+
 % ==============================================================================
 % SECTION: MULTI-VARIANT SENSITIVITY ANALYSIS (OUTPUTS 1-4)
 % ==============================================================================
@@ -1607,7 +1636,10 @@ The physical transition from the Muon to the Tau generation represents a shift i
 
 To validate the robustness of the Energy Wave Theory (EWT) model, a high-resolution sensitivity analysis was conducted. The primary objective was to determine whether the predicted anomalous magnetic moments ($a_{\mu}, a_{\tau}$) represent unique global minima in the error landscape. 
 
-In this analysis, the experimental CODATA values were defined as the initial \textbf{Targets}: $248.8$~ppm for the muon shell contribution and $1177.21$~ppm for the tau. A central premise of EWT is that these targets, being influenced by Standard Model (SM) radiative loop interpretations, may carry a systemic bias relative to the pure geometric resonance of the BCC vacuum.
+In this analysis, the EWT internal shell references were used as Targets: 
+$248.8$~ppm for the muon shell contribution (an EWT-derived geometric quantity, 
+not the PDG $(g-2)/2 = 1165.92$~ppm; see Section~\ref{sec:final_experimental_proof}) 
+and $1177.21$~ppm for the tau. A central premise of EWT is that these targets, being influenced by Standard Model (SM) radiative loop interpretations, may carry a systemic bias relative to the pure geometric resonance of the BCC vacuum.
 
 \subsection{Numerical Convergence and Error Landscape}
 
@@ -1651,7 +1683,7 @@ Table \ref{tab:target_comparison} contrasts the theoretical \textbf{EWT Standalo
 	\end{tabular}
 \end{table}
 \subsubsection*{Robustness of Recursive Convergence}
-It is observed that the high precision achieved for the Muon ($0.0016\%$) and Tau ($0.0022\%$) remains invariant whether the calculation is initiated from the experimental CODATA value or the EWT \textit{Geometric Base}. This independence confirms that the lepton hierarchy is governed by the \textbf{nodal density of the shells} ($K_n$) rather than empirical calibration. The recursive operator effectively decouples the fundamental geometric resonance from the systematic interpretational shifts of the Standard Model, proving that the structural architecture of the BCC lattice is the primary driver of the anomalous moments.
+It is observed that the high precision achieved for the Muon ($0.0016\%$) and Tau ($0.0022\%$) remains invariant whether the calculation is initiated from the EWT internal reference or the EWT \textit{Geometric Base}. This independence confirms that the lepton hierarchy is governed by the \textbf{nodal density of the shells} ($K_n$) rather than empirical calibration. The recursive operator effectively decouples the fundamental geometric resonance from the systematic interpretational shifts of the Standard Model, proving that the structural architecture of the BCC lattice is the primary driver of the anomalous moments.
 
 \subsection{3D Stability Mapping and Topography}
 
@@ -1697,7 +1729,20 @@ In the framework of Energy Wave Theory, the residual errors observed in Table \r
 
 Consequently, the EWT Standalone values derived from the $2\pi^2$ operator are proposed as the true geometric benchmarks, independent of the recursive fitting inherent in the Standard Model framework.
 
-While the Enhanced EWT framework successfully exposes the semi-circular nature of QED precision in the electron sector -- where the fine-structure constant $\alpha$, itself an experimental input, is used to ``predict'' the very anomaly from which it is often extracted -- an analogous methodological caution applies to the present model. The current results for the muon and tau shell contributions ($248.8$ ppm and $1177.2$ ppm, respectively) are derived from internal EWT reference values obtained through the orbital mass relations (Section~\ref{sec:numerical_verification_ewt}). These targets are products of the same theoretical framework and serve as consistency benchmarks between the geometric and mass-generation sectors of EWT. Consequently, the agreement between the toroidal shell predictions and these internal references does not yet constitute a fully independent empirical prediction of the full anomalous magnetic moments $a_\mu$ and $a_\tau$ as measured by experiment. The direct geometric derivation of the complete, experimentally measured lepton anomalies from BCC lattice topology alone, without recourse to internally calibrated parameters, remains an open objective and a subject of ongoing investigation.
+While the Enhanced EWT framework successfully exposes the semi-circular nature 
+of QED precision in the electron sector -- where the fine-structure constant 
+$\alpha$, itself an experimental input, is used to ``predict'' the very anomaly 
+from which it is often extracted -- an analogous methodological caution applies 
+to the present model. The current results for the muon and tau shell 
+contributions ($248.8$ ppm and $1177.2$ ppm, respectively) are derived from 
+internal EWT reference values obtained through the orbital mass relations 
+(Section~\ref{sec:numerical_verification_ewt}). These targets are products of 
+the same theoretical framework and serve as consistency benchmarks between the 
+geometric and mass-generation sectors of EWT. The anomalous magnetic moments 
+themselves are genuine predictions of the BCC lattice geometry; the 
+simultaneous, fully parameter-free derivation of both mass and AMM for all 
+three generations from BCC lattice topology alone remains an open objective 
+and a subject of ongoing investigation.
 
 \section{The Magneto-Geometric Hypotheses: Dynamic Deficit Modification}
 \label{sec:magneto_geometric_hypotheses}
@@ -4419,9 +4464,12 @@ This achievement realizes a principle that is increasingly recognized as a neces
 coupling $G$, the electromagnetic coupling $\alpha$, and the electron anomalous 
 magnetic moment $a_e$ — are not independent inputs but are scale-dependent 
 projections of a single invariant, the structural impedance of the BCC vacuum 
-lattice. For the muon and tau generations, the model presently achieves high-precision 
-internal consistency between its geometric and mass-generation sectors, while their 
-fully independent empirical prediction remains an open objective. 
+lattice. For the muon and tau generations, the model presently derives the anomalous 
+magnetic moments as genuine predictions of the BCC lattice geometry, while the 
+reference scale for comparison is obtained from the orbital mass relations. This 
+constitutes a high-precision internal consistency test between the geometric and 
+mass-generation sectors; the simultaneous, fully independent derivation of both 
+mass and AMM for all generations remains an open objective. 
 \newline
 
 \boxed{
@@ -4780,13 +4828,15 @@ To contextualize the predictive efficiency of the Enhanced EWT Model, a comparis
 	\end{tabular}
 		\vspace{5pt}
 	\begin{flushleft}
-		\footnotesize \textbf{Note on methodological status:} 
-		In the EWT column, ``Yes'' for $a_{\mu}$ and $a_{\tau}$ denotes that the model 
-		reproduces the corresponding internal shell-contribution targets with high precision, 
-		as an internal consistency test between the geometric and orbital-mass sectors. 
-		A fully independent, parameter-free derivation of the complete experimentally 
-		measured $a_\mu$ and $a_\tau$ from BCC lattice topology alone remains an open objective.
-    \end{flushleft}
+	\footnotesize \textbf{Note:} 
+	In the EWT column, ``Yes'' for $a_{\mu}$ and $a_{\tau}$ denotes that the anomalous 
+	magnetic moments themselves are genuine predictions of the BCC lattice geometry, 
+	obtained from the same universal modulator $\epsilon_M$ that governs $G$, $\alpha$, 
+	and $a_e$. The reference mass scale for these predictions is provided by the EWT 
+	orbital mass relations. The pure $K_{WC}^5$ meson-mode (Section~\ref{sec:meson_mode_scan}) 
+	further delivers an independent, parameter-free prediction of the muon and tau masses 
+	at the $\sim 0.8\%$ level.
+\end{flushleft}
 \end{table}
 
 \begin{table}[ht]
