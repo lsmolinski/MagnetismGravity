@@ -313,10 +313,17 @@ K_mu_delta = K_mu_total - K_e;
 M_mu_shell = K_mu_delta / K_e;     
 
 B_mu_scale = (3 * A_pi * Pi^3) / (2 * L_mu_dim^2);
+
 // Geometric shell contribution ONLY, in ppm
 a_mu_shell_ppm = B_mu_scale * (1 - eps_M)^(M_mu_shell * Pi^3);
 
 err_a_mu_shell = abs(a_mu_shell_ppm - target_a_mu_shell_ppm) / target_a_mu_shell_ppm * 100;
+
+a_mu_geometric_ppm = (alpha / (2 * Pi)) * (1 - eps_M * (M_e * Pi^3)) * 1e6;
+a_mu_shell_correction = a_mu_shell_ppm / (L_mu_dim^2 + Pi^2);
+a_mu_EWT_ppm = a_mu_geometric_ppm + a_mu_shell_correction;
+a_mu_EWT     = a_mu_EWT_ppm * 1e-6;
+a_mu_exp      = 116592061e-11;        // Fermilab/Brookhaven average
 
 disp(' ');
 disp('GENERATION 2: MUON (Shell Contribution Only)');
@@ -325,6 +332,12 @@ disp(msprintf("  Shell Density M:  %.4f", M_mu_shell));
 disp(msprintf("  Prediction (a_mu_shell): %.6f ppm", a_mu_shell_ppm));
 disp(msprintf("  Target (EWT shell ref):  %.6f ppm", target_a_mu_shell_ppm));
 disp(msprintf("  Relative Error (internal EWT consistency): %.6f %%", err_a_mu_shell));
+printf("  -----------------------------------------------------\n");
+printf("  DYNAMIC FULL AMM PREDICTION:   %.12f ppm\n", a_mu_EWT_ppm);
+printf("  Value in dimensionless scale:  %.14e\n", a_mu_EWT);
+printf("  Experimental Target (CODATA):  1.1659206100e-03\n");
+printf("  Absolute Error vs CODATA:      %.6e\n", abs(a_mu_EWT - a_mu_exp));
+printf(" \n");
 
 // --- 4. GENERATION 3: TAU (Second Toroidal Shell) ---
 // The total tau shell contribution is the recursive accumulation of:
@@ -342,16 +355,29 @@ a_tau_shell_total_ppm = a_mu_shell_ppm + a_tau_shell_raw_ppm + L_mu_dim^2;
 // Error computed against the internal EWT shell target
 err_a_tau_shell = abs(a_tau_shell_total_ppm - target_a_tau_shell_ppm) / target_a_tau_shell_ppm * 100;
 
+a_tau_geometric_ppm = (alpha / (2 * Pi)) * (1 - eps_M * (M_e * Pi^3)) * 1e6;
+a_tau_shell_correction = (a_tau_shell_total_ppm - a_tau_geometric_ppm) / (L_mu_dim * Pi); 
+a_tau_EWT_ppm = a_tau_geometric_ppm + a_tau_shell_correction;
+a_tau_exp     = 1177.210d-6;;                    // PDG target
+
+
+a_tau_EWT = a_tau_EWT_ppm * 1e-6; // conversion ppm to dimensionless (10^-3)
+
 disp(' ');
-disp('GENERATION 3: TAU (Shell Contribution Only)');
+disp('GENERATION 3: TAU (Shell Contribution & Full Prediction)');
 disp(msprintf("  Total Nodes (K3): %d (Shell Addition: +%d)", K_tau_total, K_tau_delta));
 disp(msprintf("  Relative Density: %.4f", M_tau_rel));
 disp(msprintf("  Muon shell (accumulated): %.6f ppm", a_mu_shell_ppm));
-disp(msprintf("  Raw tau term:             %.6f ppm", a_tau_shell_raw_ppm));
+disp(msprintf("  Raw tau term:              %.6f ppm", a_tau_shell_raw_ppm));
 disp(msprintf("  Interface tension (L_mu^2): 25.0 ppm"));
 disp(msprintf("  Prediction (a_tau_shell total): %.6f ppm", a_tau_shell_total_ppm));
 disp(msprintf("  Target (EWT shell ref):         %.6f ppm", target_a_tau_shell_ppm));
-disp(msprintf("  Relative Error (internal EWT consistency): %.6f %%", err_a_tau_shell))
+disp(msprintf("  Relative Error (internal EWT consistency): %.6f %%", err_a_tau_shell));
+printf("  -----------------------------------------------------\n");
+printf("  DYNAMIC FULL AMM PREDICTION (ppm):       %.6f ppm\n", a_tau_EWT_ppm);
+printf("  Value in dimensionless scale (a_tau_EWT):%.14e\n", a_tau_EWT);
+printf("  Experimental Target (PDG):               %.14e\n", a_tau_exp);
+printf("  Absolute Error vs Experimental Target:   %.6e\n", abs(a_tau_EWT - a_tau_exp));
 disp('=====================================================');
 // ==============================================================================
 // PART VI: ENERGY WAVE THEORY (EWT) PARTICLE MASS CALCULATOR
