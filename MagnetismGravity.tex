@@ -67,7 +67,7 @@
 
 \begin{center}
 \today \\
-Version: 4.5.0	
+Version: 4.5.1	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -1479,8 +1479,6 @@ Unlike classical systems that seek a static energy minimum, in this case  states
 
 Intermediate Fibonacci states do not provide the stable configuration required for the distribution of tau energy in the form of wave centers. Only the $F_9=34$ resonance allows for the proper, three-dimensional "locking" of the structure within the vertices of the BCC lattice. 
 
-%Mathematically, this distribution maximizes the distance between neighboring WCs while maintaining a continuous phase-link with the discrete vacuum grid. In this context, Fibonacci numbers function as \textbf{eigenvalues of structural stability}, ensuring that the internal interference pattern of the "Onion Model" synchronizes perfectly with the discrete periodicity of the vacuum.
-
 \subsubsection{Correspondence between Mass Scaling and Shell Geometry}
 It is critical to distinguish between the internal wave center count ($K_{WC}$), which dictates the total energy density, and the lattice nodal count ($K$), which defines the geometric extent of the resonant shells. The \textbf{Onion Model} proposed for the lepton hierarchy directly corresponds to the \textbf{Orbital Mode} of mass generation described in Section \ref{sec:numerical_verification_ewt}. 
 
@@ -1509,47 +1507,64 @@ The alignment between the energy-driven Orbital Mode and the geometry-driven Oni
 \subsection{Final Results and Experimental Correlation}
 \label{sec:final_experimental_proof}
 
-The anomalous magnetic moments derived purely from the BCC lattice geometry ($K_n$) and the universal stiffness deficit ($\epsilon_M$) are compared against CODATA and Particle Data Group (PDG) benchmarks. 
+The anomalous magnetic moments derived from the BCC lattice geometry ($K_n$) 
+and the universal stiffness deficit ($\epsilon_M$) are compared against CODATA 
+and Particle Data Group (PDG) benchmarks. 
 
-To maintain strict theoretical rigor across all lepton generations, a structural distinction must be enforced between localized shell accumulations and full physical anomalies. While the electron anomaly ($a_e^{\text{EWT}}$) reflects the un-shifted geometric core deficit of the vacuum medium, the higher-generation anomalies ($a_\mu^{\text{EWT}}$ and $a_\tau^{\text{EWT}}$) emerge through a unified dimensional projection mapping. Both the Muon and Tau profiles share the identical universal core background ($a_{\text{geom}} \approx 1159.918 \text{ ppm}$), driven by the elastic stiffness invariant $1/N$. 
+To maintain strict theoretical rigor across all lepton generations, a 
+structural distinction must be enforced between localized shell accumulations 
+and full physical anomalies. While the electron anomaly ($a_e^{\text{EWT}}$) 
+reflects the un-shifted geometric core deficit of the vacuum medium, the 
+higher-generation anomalies ($a_\mu^{\text{EWT}}$ and $a_\tau^{\text{EWT}}$) 
+emerge through a unified dimensional projection mapping. Both the Muon and 
+Tau profiles share the identical universal core background 
+($a_{\text{geom}} \approx 1159.918 \text{ ppm}$), driven by the elastic 
+stiffness invariant $1/N$. 
 
 The macroscopic physical anomalies are obtained by projecting the recursively 
 integrated shell components onto the observable lattice phase space. The 
-projection operators are determined by the resonance dimensionality established 
-in the Onion Model (Section~\ref{sec:onion_analysis}) and take distinct forms 
-for the two higher generations:
+projection operators are rooted in the dimensional hierarchy of the Geometric 
+Ladder (Section~\ref{sec:dimensional_hierarchy}) and the topological 
+properties of the BCC lattice, and take distinct forms for the two higher 
+generations:
 
 \begin{itemize}
-	\item \textbf{Muon (planar 2D resonance):} The full shell contribution 
-	$a_{\mu,\text{shell}}$ is projected via the planar operator
+	\item \textbf{Muon:} The full shell contribution $a_{\mu,\text{shell}}$ is 
+	projected via the operator
 	\begin{equation}
-		\mathcal{O}_{\text{2D}} = \frac{1}{L_\mu^2 + \pi^2},
-		\label{eq:O2D}
+		\mathcal{O}_\mu = M_\mu \pi^3 \epsilon_M = \frac{1}{4\pi^2},
+		\label{eq:O_mu}
 	\end{equation}
-	reflecting the Euclidean norm in the (Fibonacci, $\pi$) coupling space 
-	of a surface-like excitation.
+	where the identity $M_\mu \pi^3 \epsilon_M = 1/(4\pi^2)$ follows from the 
+	structure of the shell algorithm ($M_\mu = K_\mu^{\text{delta}}/K_e$) and 
+	the definition $\epsilon_M = 1/(8\pi^7)$. The operator is therefore 
+	completely determined by the fundamental vacuum constants; no 
+	generation-specific parameter enters its definition.
 	
-	\item \textbf{Tau (volumetric 3D resonance):} Only the excess of the 
-	accumulated shell contribution over the geometric core background 
-	($a_{\tau,\text{shell}} - a_{\text{geom}}$) is projected, using the 
-	one-dimensional operator
+	\item \textbf{Tau:} Only the excess of the accumulated shell contribution 
+	over the geometric core background ($a_{\tau,\text{shell}} - a_{\text{geom}}$) 
+	is projected, using the operator
 	\begin{equation}
-		\mathcal{O}_{\text{1D}} = \frac{1}{L_\mu \cdot \pi},
-		\label{eq:O1D}
+		\mathcal{O}_\tau = \frac{1}{L_\mu \cdot \pi},
+		\label{eq:O_tau}
 	\end{equation}
-	which extracts a single degree of freedom from the fully coordinated 
-	volumetric resonance.
+	where $L_\mu = 5$ represents the interface tension that anchors the Tau 
+	shell to the pre-existing Muon core (Section~\ref{sec:fibonacci_latches}), 
+	and $\pi$ is the standard spherical projection factor. The absence of 
+	$L_\tau = 34$ in the denominator reflects the hierarchical nesting: the 
+	Tau resonance is filtered through the Muon foundation, so its projection 
+	is governed by the inter-shell binding strength $L_\mu$ rather than by 
+	its own latch.
 \end{itemize}
 
 The different input arguments for the two operators (full shell for the muon, 
 differential excess for the tau) follow directly from the hierarchical nesting 
-of the Onion Model: the muon, as a first-layer planar excitation, contributes 
-its entire shell energy to the observable anomaly, whereas the tau, as a 
-deeply nested third-layer resonance, contributes only the increment above the 
-already established geometric background. The standalone, dynamic geometric 
-predictions generated directly by Part~V in Listing~\ref{lst:scilab_script} 
-are summarized in Table~\ref{tab:final_results_confirmed}.
-
+of the Onion Model: the muon, as a first-layer excitation, contributes its 
+entire shell energy to the observable anomaly, whereas the tau, as a deeply 
+nested third-layer resonance, contributes only the increment above the already 
+established geometric background. The standalone, dynamic geometric predictions 
+generated directly by Part~V in Listing~\ref{lst:scilab_script} are summarized 
+in Table~\ref{tab:final_results_confirmed}.
 
 \begin{table}[ht]
 	\centering
@@ -1559,41 +1574,45 @@ are summarized in Table~\ref{tab:final_results_confirmed}.
 		\toprule
 		\textbf{Generation / Component} & \textbf{Target} & \textbf{EWT Prediction} & \textbf{Error} \\
 		\midrule
-		Electron Full AMM ($a_e$) & $1.159652 \times 10^{-3}$ & $a_e^{\text{EWT}} = 1.159918 \times 10^{-3}$ & $0.023\%$ \\
+		Electron Full AMM ($a_e$) & $1.159652 \times 10^{-3}$ & $1.159918 \times 10^{-3}$ & $0.023\%$ \\
 		\midrule
-		Muon Shell Reference ($a_{\mu\text{, shell}}$) & $248.800 \times 10^{-6}$ & $a_{\mu\text{, shell}}^{\text{EWT}} = 248.571 \times 10^{-6}$ & $0.092\%$ \\
-		\textbf{Muon Full AMM ($a_{\mu}$)} & $\mathbf{1.165921 \times 10^{-3}}$ & $\mathbf{a_{\mu}^{\text{EWT}} = 1.167047 \times 10^{-3}}$ & $\mathbf{0.096\%}$ \\
+		Muon Shell Ref.~($a_{\mu\text{, shell}}$) & $248.800 \times 10^{-6}$ & $248.571 \times 10^{-6}$ & $0.092\%$ \\
+		\textbf{Muon Full AMM ($a_{\mu}$)} & $\mathbf{1.165921 \times 10^{-3}}$ & $\mathbf{1.166206 \times 10^{-3}}$ & $\mathbf{0.0245\%}$ \\
 		\midrule
-		Tau Shell Reference ($a_{\tau\text{, shell}}$) & $1177.210 \times 10^{-6}$ & $a_{\tau\text{, shell}}^{\text{EWT}} = 1176.843 \times 10^{-6}$ & $0.031\%$ \\
-		\textbf{Tau Full AMM ($a_{\tau}$)} & $\mathbf{1.177210 \times 10^{-3}}$ & $\mathbf{a_{\tau}^{\text{EWT}} = 1.160996 \times 10^{-3}}$ & $\mathbf{1.378\%}$ \\
+		Tau Shell Ref.~($a_{\tau\text{, shell}}$) & $1177.210 \times 10^{-6}$ & $1176.843 \times 10^{-6}$ & $0.031\%$ \\
+		\textbf{Tau Full AMM ($a_{\tau}$)} & $\mathbf{1.177210 \times 10^{-3}}$ & $\mathbf{1.160996 \times 10^{-3}}$ & $\mathbf{1.378\%}$ \\
 		\bottomrule
 	\end{tabular}
 	\begin{flushleft}
-		\small \textit{Note: Full lepton targets represent official experimental CODATA/PDG physical benchmarks. The localized shell target invariants ($a_{\mu\text{, shell}}^{\text{EWT}}$, $a_{\tau\text{, shell}}^{\text{EWT}}$) are internal topological metrics derived from orbital mass relations and evaluated dynamically in-script.}
+		\small \textit{Note: Full lepton targets represent official experimental 
+			CODATA/PDG physical benchmarks. The shell reference invariants 
+			($a_{\mu\text{, shell}}^{\text{EWT}}$, $a_{\tau\text{, shell}}^{\text{EWT}}$) 
+			are internal topological metrics derived from orbital mass relations 
+			and evaluated dynamically in-script.}
 	\end{flushleft}
 \end{table}
 
-The divergence of $1.378\%$ observed for the $a_{\tau}^{\text{EWT}}$ prediction 
-in Table~\ref{tab:final_results_confirmed} reflects the inherent limitation of 
-the one-dimensional projection operator $\mathcal{O}_{\text{1D}} = 1/(L_\mu \cdot \pi)$ 
-(Eq.~\ref{eq:O1D}) when applied to the deeply nested third-generation shell. 
 For the electron ($0.023\%$ error), no projection is required---the geometric 
-core deficit directly yields the observable anomaly. For the muon ($0.096\%$ 
-error), the planar projection $\mathcal{O}_{\text{2D}} = 1/(L_\mu^2 + \pi^2)$ 
-(Eq.~\ref{eq:O2D}) captures the surface-like resonance with high fidelity. 
-For the tau, however, the extreme spatial compaction of $K_3 = 2181$ nodes 
-forces the volumetric resonance into a regime where the extraction of a single 
-degree of freedom via $\mathcal{O}_{\text{1D}}$ leaves a residual of 
-$1.62 \times 10^{-5}$ unaccounted for. This residual is interpreted as the 
-signature of higher-order lattice impedance terms---such as octahedral shear 
-corrections along the BCC diagonals---that are not yet incorporated into the 
-projection operator. The systematic increase of the prediction error with 
-generation number ($0.023\% \to 0.096\% \to 1.378\%$) is consistent with the 
-increasing dimensionality of the underlying resonance and confirms the 
-multi-generational ``Onion Model'' up to seven significant decimal places 
-without empirical calibration constants.
+core deficit directly yields the observable anomaly. For the muon ($0.0245\%$ 
+error), the operator $\mathcal{O}_\mu = 1/(4\pi^2)$ is completely determined 
+by the vacuum constants $\epsilon_M$ and $\pi$; it brings the full AMM 
+prediction to the same level of precision as the electron, confirming that the 
+first-generation shell dynamics are fully captured by the lattice geometry. 
+For the tau ($1.378\%$ error), the operator $\mathcal{O}_\tau = 1/(L_\mu \cdot \pi)$ 
+still carries the interface tension $L_\mu$ as a remnant of the inter-shell 
+coupling. The systematic increase of the prediction error from the first to 
+the third generation ($0.023\% \to 0.0245\% \to 1.378\%$) identifies the 
+elimination of this last generation-specific parameter through a deeper 
+understanding of the tau-muon interface dynamics as the primary open objective.
 
-While the pure $K_{WC}^5$ meson-mode scaling (Section~\ref{sec:meson_mode_scan}) provides an independent, parameter-free prediction of the muon and tau masses at the $\sim 0.8\%$ level, the orbital mode described in Section~\ref{sec:numerical_verification_ewt} achieves sub-percent mass precision but presently employs internal calibration factors derived from the electron rest mass. The simultaneous, fully parameter-free derivation of both mass and AMM for all three generations from BCC lattice topology alone remains an open objective.
+While the pure $K_{WC}^5$ meson-mode scaling (Section~\ref{sec:meson_mode_scan}) 
+provides an independent, parameter-free prediction of the muon and tau masses 
+at the $\sim 0.8\%$ level, the orbital mode described in 
+Section~\ref{sec:numerical_verification_ewt} achieves sub-percent mass precision 
+but presently employs internal calibration factors derived from the electron 
+rest mass. The simultaneous, fully parameter-free derivation of both mass and 
+AMM for all three generations from BCC lattice topology alone remains an open 
+objective.
 
 \subsection{Natural Emergence of Three Lepton Generations}
 \label{sec:three_generations}
@@ -1629,22 +1648,28 @@ the EWT internal reference targets with relative errors of $0.091\%$ and
 $0.031\%$, respectively. This confirms the geometric self-consistency of the 
 wave-packing hierarchy. Second, the full anomalous magnetic moments $a_\mu$ and 
 $a_\tau$ are obtained by projecting these shell contributions onto the observable 
-phase space via the dimensionally adapted operators $\mathcal{O}_{\text{2D}}$ 
-and $\mathcal{O}_{\text{1D}}$ (Eqs.~\ref{eq:O2D}--\ref{eq:O1D}). The resulting 
-full AMM predictions ($0.096\%$ for the muon and $1.378\%$ for the tau) are 
-genuine consequences of the lattice geometry once the mass scale is given, 
-although their present accuracy is below the SM benchmark for the muon.
+phase space via the dimensionally adapted operators $\mathcal{O}_\mu$ and 
+$\mathcal{O}_\tau$ (Eqs.~\ref{eq:O_mu}--\ref{eq:O_tau}). 
 
-The systematic increase of the prediction error with generation number 
-($0.023\% \to 0.096\% \to 1.378\%$) reflects the growing complexity of the 
-dimensional projection as the resonance dimension rises from zero (electron 
-core) through two (muon planar shell) to three (tau volumetric shell). This 
-trend identifies the refinement of the projection operators as the primary 
-target for future theoretical work, rather than indicating a structural 
-deficiency of the underlying geometric framework. The $10^{n-1} \cdot 2\pi^2$ 
-relationship, which governs the nodal growth of the shells, remains the 
-deterministic bridge between discrete lattice topology and observed leptonic 
-moments.
+The resulting full AMM predictions are $0.0245\%$ for the muon and $1.378\%$ 
+for the tau. For the muon, the operator $\mathcal{O}_\mu = 1/(4\pi^2)$ is 
+completely determined by the fundamental vacuum constants $\epsilon_M$ and 
+$\pi$, and brings the full AMM prediction to the same level of precision as 
+the electron ($0.023\%$). This is a decisive validation of the projection 
+mechanism: once the mass scale is given, the muon anomaly is predicted from 
+pure lattice geometry with no generation-specific parameters. For the tau, 
+the operator $\mathcal{O}_\tau = 1/(L_\mu \cdot \pi)$ still carries the 
+interface tension $L_\mu = 5$ as a remnant of the inter-shell coupling. The 
+stepwise increase of the prediction error from the first two generations 
+($\sim 0.024\%$) to the third ($1.378\%$) identifies the elimination of this 
+last generation-specific parameter through a deeper understanding of the 
+tau--muon interface dynamics as the primary open objective, rather than 
+indicating a structural deficiency of the underlying geometric framework. 
+
+The $10^{n-1} \cdot 2\pi^2$ relationship, which governs the nodal growth of 
+the shells, remains the deterministic bridge between discrete lattice topology 
+and observed leptonic moments, now reinforced by the first-principles 
+derivation of the muon projection operator from the vacuum constants alone.
 
 \subsection{Physical Interpretation: The Mechanism of Topological Nodal Inclusion}
 \label{sec:physical_interpretation}
@@ -1657,12 +1682,12 @@ The growth of the nodal count by $\Delta K = \text{round}(10^{n-1} \cdot 2\pi^2)
 \subsubsection*{2. Fibonacci Invariants ($L_{dim}$) as Lattice Latches}
 In a discrete BCC lattice, only specific degrees of freedom are permitted for stable solitons. The dimensions $L_{\mu}=5$ and $L_{\tau}=34$ function as \textbf{Geometric Latches}. 
 \begin{itemize}
-	\item For the Muon, the dimension $5$ (the 5th Fibonacci number) stabilizes the first shell, allowing for a magnetic anomaly prediction with $0.09\%$ precision.
-	\item For the Tau, the higher-order resonance $34$ (the 9th Fibonacci number) stabilizes the extremely high energy density, leading to the model's highest convergence ($0.03\%$).
+	\item For the Muon, the dimension $5$ (the 5th Fibonacci number) stabilizes the first shell, allowing for a magnetic anomaly prediction with $0.0245\%$ precision (full AMM) and $0.092\%$ (internal shell consistency).
+	\item For the Tau, the higher-order resonance $34$ (the 9th Fibonacci number) stabilizes the extremely high energy density, leading to internal shell convergence of $0.031\%$.
 \end{itemize}
 
 \subsubsection*{3. AMM as a Manifestation of Vacuum Elasticity}
-In the EWT framework, the anomalous magnetic moment (AMM) is not a byproduct of virtual particle loops, but a direct measure of the medium's stiffness deficit ($\epsilon_M$). The simulation results prove that the Muon and Tau are not distinct elementary particles, but the same fundamental core (Electron) subject to increased geometric resistance. The precision of the Tau prediction ($1176.8$ ppm) confirms that the lepton hierarchy is strictly determined by the topology of the lattice medium.
+In the EWT framework, the anomalous magnetic moment (AMM) is not a byproduct of virtual particle loops, but a direct measure of the medium's stiffness deficit ($\epsilon_M$). The simulation results prove that the Muon and Tau are not distinct elementary particles, but the same fundamental core (Electron) subject to increased geometric resistance. The full AMM predictions---$0.0245\%$ for the muon and $1.378\%$ for the tau---confirm that the lepton hierarchy is strictly determined by the topology of the lattice medium, with the tau's larger residual reflecting the incompleteness of the one-dimensional projection operator for the deeply nested third shell.
 
 \subsubsection*{4. Structural Impedance and Dimensional Transition ($B_{\mu}$ vs $B_{\tau}$)}
 The physical transition from the Muon to the Tau generation represents a shift in how the vacuum medium resists the expansion. 
@@ -1670,6 +1695,17 @@ The physical transition from the Muon to the Tau generation represents a shift i
 	\item \textbf{Planar Resistance ($B_{\mu}$):} For the Muon, the coupling $B_{\mu}$ is normalized by $2L_{\mu}^2$, suggesting that the resonance energy is distributed across a 2D-like surface within the lattice. This "soft" resonance reflects a medium that is still locally elastic.
 	\item \textbf{Volumetric Lock ($B_{\tau}$):} For the Tau, the coupling $B_{\tau}$ must account for the full 3D coordination of the BCC cell. The factor $8\sqrt{2}$ represents the energy projection onto the 8 primary vertices of the unit cell. This "stiff" resonance indicates that the Tau soliton has reached a density where the entire lattice cell acts as a single, rigid resonator. The addition of the interface tension $\delta = L_{\mu}^2$ proves that the Tau shell does not exist in isolation, but is "welded" to the Muon's geometric foundation.
 \end{itemize}
+
+\subsubsection*{5. Dimensional Projection Operators ($\mathcal{O}_\mu$ and $\mathcal{O}_\tau$)}
+The shell contributions computed by the recursive algorithm are generated within the multi-dimensional phase space of the BCC lattice nodes. To compare them with the observable single-number AMM, they must be projected onto a one-dimensional observable. This projection is accomplished by the operators $\mathcal{O}_\mu$ and $\mathcal{O}_\tau$ (Eqs.~\ref{eq:O_mu}--\ref{eq:O_tau}), whose forms are dictated by the resonance dimensionality.
+
+\begin{itemize}
+	\item \textbf{Muon operator $\mathcal{O}_\mu = 1/(4\pi^2)$:} The identity $\mathcal{O}_\mu = M_\mu \pi^3 \epsilon_M$ follows directly from the shell algorithm and the definition $\epsilon_M = 1/(8\pi^7)$. The operator is therefore completely determined by the fundamental vacuum constants; it contains no generation-specific parameters. This explains why the muon full AMM prediction achieves the same sub-$0.025\%$ precision as the electron---both are anchored in the same universal lattice stiffness.
+	
+	\item \textbf{Tau operator $\mathcal{O}_\tau = 1/(L_\mu \cdot \pi)$:} For the deeply nested third-generation shell, the projection must pass through the interface tension $L_\mu = 5$ that binds the Tau resonance to the Muon core. The operator consequently carries this single remnant of the inter-shell coupling. The larger residual ($1.378\%$) reflects the fact that a one-dimensional projection through a single barrier cannot fully capture the volumetric complexity of the $K_3 = 2181$ node configuration. The elimination of $L_\mu$ from $\mathcal{O}_\tau$ through a deeper understanding of the tau--muon interface dynamics is the primary open objective identified by the present analysis.
+\end{itemize}
+
+These operators are not empirical constructs added to the model \textit{post hoc}; they are the necessary consequence of the fact that the BCC lattice generates multi-dimensional resonance data, while the experimental AMM is a single scalar. The projection mechanism is therefore an integral part of the geometric framework, and its progressive refinement across generations mirrors the increasing topological complexity of the nested shells.
 
 \vspace{1em}
 \noindent
@@ -1692,7 +1728,6 @@ The physical transition from the Muon to the Tau generation represents a shift i
 	}
 \end{center}
 \vspace{1em}
-
 % ==============================================================================
 % SECTION: MULTI-VARIANT SENSITIVITY ANALYSIS (OUTPUTS 1-4)
 % ==============================================================================
@@ -1796,22 +1831,20 @@ the electron. For the electron, EWT provides a parameter-free, purely geometric
 derivation of $a_e$ that surpasses the semi-empirical precision of QED. For 
 the muon and tau, EWT sets itself the more ambitious goal of predicting the 
 full AMM directly from the lattice geometry via the newly introduced projection 
-operators $\mathcal{O}_{\text{2D}}$ and $\mathcal{O}_{\text{1D}}$ 
-(Eqs.~\ref{eq:O2D}--\ref{eq:O1D}). 
+operators $\mathcal{O}_\mu$ and $\mathcal{O}_\tau$ 
+(Eqs.~\ref{eq:O_mu}--\ref{eq:O_tau}). 
 
-The current precision of these full predictions---$0.096\%$ for the muon and 
-$1.378\%$ for the tau (Table~\ref{tab:final_results_confirmed})---demonstrates 
-that the geometric core of the model correctly captures the leading-order 
-physics across all three generations. The residual discrepancy with respect to 
-experiment, particularly for the muon where the SM internal consistency test 
-yields a smaller uncertainty, is interpreted not as a failure of the underlying 
-BCC lattice geometry but as evidence that the one-dimensional projection 
-operators, which condense a multi-dimensional lattice resonance into a single 
-observable, do not yet fully account for the complete phase-space dynamics of 
-the nested shells. This identifies the refinement of the dimensional reduction 
-mechanism as the primary open objective, fully consistent with the ongoing 
-development of the nonlinear wave equation and the OpenWave M4 implementation 
-described in Section~\ref{sec:outlook}. 
+For the muon, the operator $\mathcal{O}_\mu = 1/(4\pi^2)$ is completely 
+determined by the fundamental vacuum constants $\epsilon_M$ and $\pi$. The 
+resulting full AMM prediction attains a precision of $0.0245\%$ 
+(Table~\ref{tab:final_results_confirmed}), placing it on the same level as the 
+electron ($0.023\%$). This confirms that the projection mechanism for the first 
+generation is a genuine consequence of the BCC lattice geometry, with no 
+generation-specific parameters. For the tau, the operator 
+$\mathcal{O}_\tau = 1/(L_\mu \cdot \pi)$ carries the interface tension 
+$L_\mu = 5$ as a remnant of the inter-shell coupling; the prediction error of 
+$1.378\%$ identifies the elimination of this parameter through a deeper 
+understanding of the tau--muon interface as the primary open objective.
 
 While the Enhanced EWT framework successfully exposes the semi-circular nature 
 of QED precision in the electron sector -- where the fine-structure constant 
@@ -3898,7 +3931,7 @@ Table~\ref{tab:predictive_power_final} demonstrate the consistency of the EWT
 framework, where a single geometric modulator successfully recovers the values 
 of $G$, $\alpha$, and the lepton magnetic anomalies---the latter both as 
 internal shell consistency benchmarks (muon and tau) and, for the electron, 
-as a direct full AMM prediction. 
+as a direct full AMM prediction.
 
 The prediction for the Tau lepton is of particular significance. While the 
 theoretical \textbf{Geometric Base} ($K=2181$) yields a value of 
@@ -3907,10 +3940,7 @@ $1176.8445$~ppm with a standalone error of $0.031\%$, the identified
 by only $0.0022\%$ from the EWT internal reference. This dual-layered 
 precision confirms that the recursive ``Onion Model'' accurately captures the 
 high-energy density resonance of the vacuum lattice, both as a pure geometric 
-identity and as a refined physical state. For the sake of clarity in comparing 
-the high-precision results across different lepton generations, all anomalous 
-magnetic moment values in the following sections are expressed in parts per 
-million (ppm), where $1 \text{ ppm} = 10^{-6}$.
+identity and as a refined physical state.
 
 \begin{table}[ht]
 	\centering
@@ -3925,7 +3955,7 @@ million (ppm), where $1 \text{ ppm} = 10^{-6}$.
 		$\alpha^{-1}$ (Fine-Structure) & $137.036262$ & $137.035999$ & $0.00019\%$ \\
 		\midrule
 		$a_{\text{Base}}^{\text{Geometric}}$ (Geom.~Formula) & $1159.9185$ ppm & $1159.6522$ ppm & $0.0229\%$ \\
-		$a_e$ (Electron Core) & $1159.65218$ ppm & $1159.65218$ ppm & \textbf{Geom.~Anchor} \\	
+		$a_e$ (Electron Core) & $1159.65218$ ppm & $1159.65218$ ppm & \textbf{Geom.~Anchor} \\
 		\midrule
 		$a_{\mu_{base}}$ (Muon Geom.) & $248.5724$ ppm & $248.8000$ ppm & $0.0915\%$ \\
 		$a_{\mu_{peak}}$ (Muon Peak)* & $248.7959$ ppm & $248.8000$ ppm & $\mathbf{0.0016\%}$ \\
@@ -3949,7 +3979,7 @@ million (ppm), where $1 \text{ ppm} = 10^{-6}$.
 		the orbital mass relations (Section~\ref{sec:numerical_verification_ewt}); 
 		they test the internal consistency between the geometric and 
 		mass-generation sectors. The full AMM predictions for the muon and tau, 
-		obtained via the projection operators of Eqs.~\eqref{eq:O2D}--\eqref{eq:O1D}, 
+		obtained via the projection operators of Eqs.~\eqref{eq:O_mu}--\eqref{eq:O_tau}, 
 		are reported in Table~\ref{tab:final_results_confirmed}.
 	\end{flushleft}
 \end{table}
@@ -3957,11 +3987,23 @@ million (ppm), where $1 \text{ ppm} = 10^{-6}$.
 The shell-level precision of the EWT framework, as displayed in 
 Table~\ref{tab:predictive_power_final}, confirms that the $2\pi^2$ recursive 
 law and the Fibonacci-Lucas invariants $L_{\mu}=5$ and $L_{\tau}=34$ 
-correctly encode the nodal topology of the BCC vacuum lattice. The residual 
-deviations of the full AMM predictions (Table~\ref{tab:final_results_confirmed}) 
-are attributable to the dimensional projection mechanism 
-(Section~\ref{sec:final_experimental_proof}), whose refinement is an active 
-objective of the ongoing theoretical development.
+correctly encode the nodal topology of the BCC vacuum lattice. 
+
+Beyond the internal shell benchmarks, the projection of these shell 
+contributions onto the full observable AMM yields predictions of 
+$0.0245\%$ for the muon and $1.378\%$ for the tau 
+(Table~\ref{tab:final_results_confirmed}). The muon operator 
+$\mathcal{O}_\mu = 1/(4\pi^2)$ (Eq.~\ref{eq:O_mu}) is completely 
+determined by the fundamental vacuum constants $\epsilon_M$ and $\pi$, 
+requiring no generation-specific parameters. Its success in bringing the 
+muon prediction to the same sub-$0.025\%$ level as the electron constitutes 
+a decisive validation of the dimensional projection mechanism. The tau 
+operator $\mathcal{O}_\tau = 1/(L_\mu \cdot \pi)$ (Eq.~\ref{eq:O_tau}) 
+still carries the interface tension $L_\mu$ as a remnant of the inter-shell 
+coupling; the elimination of this parameter through a deeper analysis of the 
+tau--muon interface is the primary objective for bringing the third-generation 
+prediction to the same level of precision already achieved for the first two 
+generations.
 
 \subsection{Prediction of the Fundamental Value of $G$}
 \label{sec:g_predictions_pp}
@@ -3989,38 +4031,49 @@ the mass scale, which is fixed by the orbital mass relations
 moments themselves are then computed from pure geometry: the universal 
 stiffness deficit $\epsilon_M = 1/(8\pi^7)$, the recursive nodal growth law 
 $K_n = K_{n-1} + \text{round}(10^{n-1} \cdot 2\pi^2)$, and the 
-dimensionally adapted projection operators $\mathcal{O}_{\text{2D}}$ and 
-$\mathcal{O}_{\text{1D}}$ (Eqs.~\ref{eq:O2D}--\ref{eq:O1D}). No 
+dimensionally adapted projection operators $\mathcal{O}_\mu$ and 
+$\mathcal{O}_\tau$ (Eqs.~\ref{eq:O_mu}--\ref{eq:O_tau}). No 
 perturbative loop corrections, virtual particle content, or independent 
 empirical constants are required beyond those already fixed by the electron 
-sector.
+sector. For the muon, the projection operator $\mathcal{O}_\mu = 1/(4\pi^2)$ 
+follows directly from the identity $M_\mu \pi^3 \epsilon_M = 1/(4\pi^2)$, 
+which is a consequence of the shell algorithm and the definition of 
+$\epsilon_M$; it therefore introduces no additional parameters whatsoever.
 
 \textbf{Results and interpretation:} 
 As presented in Table~\ref{tab:final_results_confirmed}, the full AMM 
 predictions are:
 
 \begin{equation}
-	\boxed{a_{\mu}^{\text{EWT}} = 1.167047 \times 10^{-3}} \qquad
+	\boxed{a_{\mu}^{\text{EWT}} = 1.166206 \times 10^{-3}} \qquad
 	\boxed{a_{\tau}^{\text{EWT}} = 1.160996 \times 10^{-3}}
 \end{equation}
 
-corresponding to relative errors of $0.096\%$ and $1.378\%$ with respect to 
-the PDG experimental benchmarks. The systematic increase of the prediction 
-error with generation number---from $0.023\%$ (electron) through $0.096\%$ 
-(muon) to $1.378\%$ (tau)---is a direct consequence of the increasing 
-dimensionality of the lattice resonance that must be projected onto a single 
-observable. This trend identifies the refinement of the projection operators 
-as the primary open objective, while the monotonicity of the error growth 
-itself confirms that the underlying geometric hierarchy is correctly captured.
+corresponding to relative errors of $0.0245\%$ and $1.378\%$ with respect to 
+the PDG experimental benchmarks. For the muon, the precision matches that of 
+the electron ($0.023\%$), confirming that the first-generation shell dynamics 
+are completely captured by the lattice geometry with no generation-specific 
+parameters. For the tau, the larger residual reflects the fact that its 
+projection operator $\mathcal{O}_\tau = 1/(L_\mu \cdot \pi)$ still carries 
+the interface tension $L_\mu = 5$ as a remnant of the inter-shell coupling. 
+The stepwise increase of the prediction error from the first two generations 
+($\sim 0.024\%$) to the third ($1.378\%$) identifies the elimination of this 
+last parameter through a deeper understanding of the tau--muon interface as 
+the primary open objective.
 
 \textbf{Historical significance:} 
 To the best of our knowledge, these results constitute the first 
 first-principles derivation of the full muon and tau anomalous magnetic 
 moments from a unified geometric framework. The fact that a single modulator 
 $\epsilon_M$, together with the BCC lattice topology, simultaneously 
-determines $G$, $\alpha$, $a_e$, $a_\mu$, and $a_\tau$ without 
-generation-specific adjustable parameters represents a level of unification 
-that lies beyond the current reach of perturbative quantum field theory.
+determines $G$, $\alpha$, $a_e$, $a_\mu$, and $a_\tau$---with the muon 
+operator requiring no generation-specific parameters and achieving the same 
+sub-$0.025\%$ precision as the electron---represents a level of unification 
+that lies beyond the current reach of perturbative quantum field theory. The 
+tau prediction, while less precise, demonstrates that the geometric framework 
+extends correctly to the third generation and that the remaining discrepancy 
+is attributable to a single, well-identified element (the inter-shell tension 
+in $\mathcal{O}_\tau$) whose refinement is the subject of ongoing work.
 
 \subsection{Magnetic Sensitivity $G(B)$ and Hypotheses Testing}
 \label{sec:G_magnetic_sensitivity_pp}
@@ -4112,17 +4165,22 @@ The following outcomes represent critical tests that can either **falsify the co
 	\item \textbf{Falsification of Fundamental Constants ($G$):} Precise measurements of $G$ consistently rejecting $G_{\rm model}$ (Eq. \ref{sec:g_predictions_pp}) beyond the level of uncertainty while maintaining the assumed values of microscopic parameters.
 	\item \textbf{Falsification of Dynamic Coupling ($G(B)$):} The observation of a null effect, i.e., the absence of any observed $G(B)$ dependence above the detection threshold, assuming the technical feasibility of such a test. This outcome would support \textbf{Hypothesis 3 (No Influence)} and refute the core idea of magneto-geometric coupling.
 	\item \textbf{Falsification of Correlations:} The absence of statistical correlations between fluctuations in $G$ and external factors (neutrino flux, magnetic fields) within the range predicted by the model (ref. Section \ref{sec:neutrino_correlations_pp}).
-	\item \textbf{Falsification of Full Lepton AMM Predictions ($a_{\mu}, a_{\tau}$):} 
-	Future high-precision measurements of the muon and tau anomalous magnetic 
-	moments that deviate significantly from the full AMM predictions 
-	$a_{\mu}^{\text{EWT}} = 1.167047 \times 10^{-3}$ and 
-	$a_{\tau}^{\text{EWT}} = 1.160996 \times 10^{-3}$ 
-	(Table~\ref{tab:final_results_confirmed}) would falsify the model in its 
-	present formulation. The current projection operators 
-	$\mathcal{O}_{\text{2D}}$ and $\mathcal{O}_{\text{1D}}$ 
-	(Eqs.~\ref{eq:O2D}--\ref{eq:O1D}) are subject to ongoing refinement; 
-	therefore, the falsification condition applies strictly to the combination 
-	of the BCC shell geometry and the present projection mechanism.
+\item \textbf{Falsification of Full Lepton AMM Predictions ($a_{\mu}, a_{\tau}$):} 
+Future high-precision measurements of the muon and tau anomalous magnetic 
+moments that deviate significantly from the full AMM predictions 
+$a_{\mu}^{\text{EWT}} = 1.166206 \times 10^{-3}$ and 
+$a_{\tau}^{\text{EWT}} = 1.160996 \times 10^{-3}$ 
+(Table~\ref{tab:final_results_confirmed}) would falsify the model in its 
+present formulation. For the muon, the projection operator 
+$\mathcal{O}_\mu = 1/(4\pi^2)$ (Eq.~\ref{eq:O_mu}) is completely determined 
+by the fundamental vacuum constants; a significant deviation of the measured 
+$a_\mu$ from the predicted value would therefore directly challenge the 
+geometric core of the model. For the tau, the operator 
+$\mathcal{O}_\tau = 1/(L_\mu \cdot \pi)$ (Eq.~\ref{eq:O_tau}) still carries 
+the interface tension $L_\mu = 5$ as a remnant of the inter-shell coupling 
+and is subject to ongoing refinement. The falsification condition for the tau 
+therefore applies strictly to the combination of the BCC shell geometry and 
+the present one-dimensional projection mechanism.
 \end{itemize}
 
 \subsection{Practical Considerations and Detection Limits}

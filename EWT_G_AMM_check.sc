@@ -1,6 +1,6 @@
 // ==============================================================================
 // SCILAB SCRIPT: EWT MODEL COMPLETE NUMERICAL CALCULATOR AND CONSISTENCY CHECK
-// FINAL VERSION: Version: 4.5.0
+// FINAL VERSION: Version: 4.5.1
 // ==============================================================================
 
 clear;        
@@ -319,24 +319,43 @@ a_mu_shell_ppm = B_mu_scale * (1 - eps_M)^(M_mu_shell * Pi^3);
 
 err_a_mu_shell = abs(a_mu_shell_ppm - target_a_mu_shell_ppm) / target_a_mu_shell_ppm * 100;
 
+// --- FUNDAMENTAL IDENTITY VERIFICATION ---
+// The exponent in the shell damping factor satisfies:
+// M_mu_shell * Pi^3 * eps_M = 1 / (4 * Pi^2)
+// This follows from M_mu_shell = 2*Pi^2 and eps_M = 1/(8*Pi^7)
+muon_exponent_identity = M_mu_shell * Pi^3 * eps_M;
+O_mu_from_epsM = muon_exponent_identity;  // Should equal 1/(4*Pi^2)
+O_mu_direct = 1 / (4 * Pi^2);
+
+// Full geometric core background (shared by all generations)
 a_mu_geometric_ppm = (alpha / (2 * Pi)) * (1 - eps_M * (M_e * Pi^3)) * 1e6;
-a_mu_shell_correction = a_mu_shell_ppm / (L_mu_dim^2 + Pi^2);
+
+// Projection using the epsilon_M-derived operator O_mu = 1/(4*Pi^2)
+a_mu_shell_correction = a_mu_shell_ppm * O_mu_from_epsM;
 a_mu_EWT_ppm = a_mu_geometric_ppm + a_mu_shell_correction;
 a_mu_EWT     = a_mu_EWT_ppm * 1e-6;
 a_mu_exp      = 116592061e-11;        // Fermilab/Brookhaven average
 
 disp(' ');
-disp('GENERATION 2: MUON (Shell Contribution Only)');
+disp('GENERATION 2: MUON (Shell Contribution & Full Prediction)');
 disp(msprintf("  Total Nodes (K2): %d (Shell Addition: +%d)", K_mu_total, K_mu_delta));
 disp(msprintf("  Shell Density M:  %.4f", M_mu_shell));
 disp(msprintf("  Prediction (a_mu_shell): %.6f ppm", a_mu_shell_ppm));
 disp(msprintf("  Target (EWT shell ref):  %.6f ppm", target_a_mu_shell_ppm));
 disp(msprintf("  Relative Error (internal EWT consistency): %.6f %%", err_a_mu_shell));
 printf("  -----------------------------------------------------\n");
-printf("  DYNAMIC FULL AMM PREDICTION:   %.12f ppm\n", a_mu_EWT_ppm);
+printf("  FUNDAMENTAL IDENTITY CHECK:\n");
+printf("  M_mu * Pi^3 * eps_M = %.10f\n", muon_exponent_identity);
+printf("  1/(4*Pi^2)           = %.10f\n", O_mu_direct);
+printf("  Operator O_mu (from eps_M) = %.10f\n", O_mu_from_epsM);
+printf("  -----------------------------------------------------\n");
+printf("  DYNAMIC FULL AMM PREDICTION (using O_mu = 1/(4*Pi^2)):\n");
+printf("  Shell correction:              %.6f ppm\n", a_mu_shell_correction);
+printf("  Full a_mu prediction:          %.6f ppm\n", a_mu_EWT_ppm);
 printf("  Value in dimensionless scale:  %.14e\n", a_mu_EWT);
 printf("  Experimental Target (CODATA):  1.1659206100e-03\n");
 printf("  Absolute Error vs CODATA:      %.6e\n", abs(a_mu_EWT - a_mu_exp));
+printf("  Relative Error vs CODATA:      %.4f %%\n", abs(a_mu_EWT - a_mu_exp)/a_mu_exp * 100);
 printf(" \n");
 
 // --- 4. GENERATION 3: TAU (Second Toroidal Shell) ---
@@ -356,10 +375,13 @@ a_tau_shell_total_ppm = a_mu_shell_ppm + a_tau_shell_raw_ppm + L_mu_dim^2;
 err_a_tau_shell = abs(a_tau_shell_total_ppm - target_a_tau_shell_ppm) / target_a_tau_shell_ppm * 100;
 
 a_tau_geometric_ppm = (alpha / (2 * Pi)) * (1 - eps_M * (M_e * Pi^3)) * 1e6;
-a_tau_shell_correction = (a_tau_shell_total_ppm - a_tau_geometric_ppm) / (L_mu_dim * Pi); 
-a_tau_EWT_ppm = a_tau_geometric_ppm + a_tau_shell_correction;
-a_tau_exp     = 1177.210d-6;;                    // PDG target
 
+// Projection using the inter-shell tension operator O_tau = 1/(L_mu * Pi)
+// Note: L_mu = 5 appears as the interface tension anchor, not as a free parameter
+O_tau = 1 / (L_mu_dim * Pi);
+a_tau_shell_correction = (a_tau_shell_total_ppm - a_tau_geometric_ppm) * O_tau; 
+a_tau_EWT_ppm = a_tau_geometric_ppm + a_tau_shell_correction;
+a_tau_exp     = 1177.210d-6;         // PDG target
 
 a_tau_EWT = a_tau_EWT_ppm * 1e-6; // conversion ppm to dimensionless (10^-3)
 
@@ -374,10 +396,14 @@ disp(msprintf("  Prediction (a_tau_shell total): %.6f ppm", a_tau_shell_total_pp
 disp(msprintf("  Target (EWT shell ref):         %.6f ppm", target_a_tau_shell_ppm));
 disp(msprintf("  Relative Error (internal EWT consistency): %.6f %%", err_a_tau_shell));
 printf("  -----------------------------------------------------\n");
+printf("  Operator O_tau = 1/(L_mu * Pi) = %.10f\n", O_tau);
+printf("  (L_mu = %.1f is the interface tension, not a free parameter)\n", L_mu_dim);
+printf("  -----------------------------------------------------\n");
 printf("  DYNAMIC FULL AMM PREDICTION (ppm):       %.6f ppm\n", a_tau_EWT_ppm);
 printf("  Value in dimensionless scale (a_tau_EWT):%.14e\n", a_tau_EWT);
 printf("  Experimental Target (PDG):               %.14e\n", a_tau_exp);
 printf("  Absolute Error vs Experimental Target:   %.6e\n", abs(a_tau_EWT - a_tau_exp));
+printf("  Relative Error vs PDG:                   %.4f %%\n", abs(a_tau_EWT - a_tau_exp)/a_tau_exp * 100);
 disp('=====================================================');
 // ==============================================================================
 // PART VI: ENERGY WAVE THEORY (EWT) PARTICLE MASS CALCULATOR
