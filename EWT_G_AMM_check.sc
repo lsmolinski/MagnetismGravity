@@ -1,6 +1,6 @@
 // ==============================================================================
 // SCILAB SCRIPT: EWT MODEL COMPLETE NUMERICAL CALCULATOR AND CONSISTENCY CHECK
-// FINAL VERSION: Version: 4.4.16
+// FINAL VERSION: Version: 4.5.0
 // ==============================================================================
 
 clear;        

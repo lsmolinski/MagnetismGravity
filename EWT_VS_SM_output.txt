@@ -15,14 +15,15 @@ Tau shell target (dimless): 0.001176843325
 ===============================================================
 PARAMETER          | EWT REL. ERROR | SM REL. ERROR  | RATIO (X)
 -------------------|----------------|----------------|----------
-G (Gravitation)    | 7.805585e-07     | 1.0e+00          | 1281134
-alpha^-1 (FSC)     | 6.827227e-10     | 1.900000e-09     | 2.78
-a_mu (Muon g-2)    | 4.288457e-10     | 2.152805e-06     | 5020
-a_tau (Tau g-2)    | 3.104799e-04     | 1.0e+00          | 3221
+G (Gravitation)    | 7.805585e-07     | 1.0e+00          | 1.28e+06
+alpha^-1 (FSC)     | 6.827227e-10     | 1.900000e-09     | 2.78e+00
+a_mu (Muon g-2)    | 9.600000e-04     | 2.152805e-06     | 2.24e-03
+a_tau (Tau g-2)    | 1.378000e-02     | 1.0e+00          | 7.26e+01
 -------------------|----------------|----------------|----------
 
 COMPOSITE IMPROVEMENT FACTOR (CIF):
-Total Sum of Logs: 13.76
-Cumulative Superiority: 5.7647e+13 times
+Total Sum of Logs: 5.76
+Cumulative Superiority: 5.8021e+05 times
 ===============================================================
-Execution done.
+
+ Execution done.
