@@ -1,6 +1,6 @@
 // ==============================================================================
 // SCILAB SCRIPT: EWT MODEL COMPLETE NUMERICAL CALCULATOR AND CONSISTENCY CHECK
-// FINAL VERSION: Version: 4.5.1
+// FINAL VERSION: Version: 4.5.2
 // ==============================================================================
 
 clear;        
@@ -376,9 +376,8 @@ err_a_tau_shell = abs(a_tau_shell_total_ppm - target_a_tau_shell_ppm) / target_a
 
 a_tau_geometric_ppm = (alpha / (2 * Pi)) * (1 - eps_M * (M_e * Pi^3)) * 1e6;
 
-// Projection using the inter-shell tension operator O_tau = 1/(L_mu * Pi)
-// Note: L_mu = 5 appears as the interface tension anchor, not as a free parameter
-O_tau = 1 / (L_mu_dim * Pi);
+// Projection using the inter-shell tension operator O_tau = 1
+O_tau =  1;//
 a_tau_shell_correction = (a_tau_shell_total_ppm - a_tau_geometric_ppm) * O_tau; 
 a_tau_EWT_ppm = a_tau_geometric_ppm + a_tau_shell_correction;
 a_tau_exp     = 1177.210d-6;         // PDG target
@@ -396,8 +395,7 @@ disp(msprintf("  Prediction (a_tau_shell total): %.6f ppm", a_tau_shell_total_pp
 disp(msprintf("  Target (EWT shell ref):         %.6f ppm", target_a_tau_shell_ppm));
 disp(msprintf("  Relative Error (internal EWT consistency): %.6f %%", err_a_tau_shell));
 printf("  -----------------------------------------------------\n");
-printf("  Operator O_tau = 1/(L_mu * Pi) = %.10f\n", O_tau);
-printf("  (L_mu = %.1f is the interface tension, not a free parameter)\n", L_mu_dim);
+printf("  Operator O_tau = %.10f\n", O_tau);
 printf("  -----------------------------------------------------\n");
 printf("  DYNAMIC FULL AMM PREDICTION (ppm):       %.6f ppm\n", a_tau_EWT_ppm);
 printf("  Value in dimensionless scale (a_tau_EWT):%.14e\n", a_tau_EWT);
