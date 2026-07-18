@@ -717,6 +717,93 @@ Gravity is thus revealed not as an independent force, but as the \textbf{volumet
 
 This confirms that the extreme weakness of $G$ is a direct consequence of the immense structural resolution of the BCC lattice and the hierarchical dilution process. The "Raw Geometry Gap" identified in the numerical analysis ($0.091\%$) is the signature of the transition from the statutory constituent count to the effective displacement density. This gap is formally closed by the **Unified Bridge**, which integrates the lattice projection ($L_p$) and the electromagnetic interfacial tension ($\alpha$), revealing gravity as the final, unified macroscopic response of the medium.
 
+\section{Speed of Light as the Metric of Spacetime}
+
+Before deriving the gravitational constant, the role of the speed of light \(c\) must be addressed. In the conventional formulation, \(c\) is treated as a fundamental constant, empirically determined and independent of any underlying structure. Within the EWT framework, this status is revised: \(c\) is not an independent parameter but the intrinsic metric conversion factor between the spatial and temporal dimensions of the BCC lattice, determined entirely by the discrete geometry of the elastic medium.
+
+\subsection{The Causal Structure of the BCC Lattice}
+
+The BCC spacetime lattice is characterised by three distinct density levels that define its structural states:
+\begin{itemize}
+	\item \textbf{Statutory density} \(N_{\nu,\text{stat}}\): the equilibrium density of the undisturbed vacuum, derived in Eq.~(\ref{eq:N_nu_stat}).
+	\item \textbf{Effective density} \(N_{\nu,\text{eff}}\): the reduced density inside a soliton (matter-occupied region), derived in Eq.~(\ref{eq:N_nu_effective}).
+	\item \textbf{Maximum density} \(N_{\nu,\text{max}}\): the absolute saturation limit of the lattice, given by Eq.~(\ref{eq:N_nu_max}).
+\end{itemize}
+
+The lattice is characterised by two fundamental geometric scales:
+\begin{itemize}
+	\item \textbf{The spatial step:} the inter-constituent distance \(\lambda_l\), which follows from the packing geometry of the Elastic Medium Constituents (EMCs) and is identified with the Planck length. Its value is fixed by the statutory neutrino radius \(r_\nu\) and the Eulerian dilution factor \(2e\) through the relation
+	\begin{equation}
+		\lambda_l = \frac{r_\nu}{2 e \, N_{\nu,\text{stat}}^{1/3}},
+		\label{eq:lambda_l_from_Nnu}
+	\end{equation}
+	where \(N_{\nu,\text{stat}}\) is the statutory background density. Equivalently, it appears in the uncorrected neutrino wavelength
+	\begin{equation}
+		\lambda_{\text{uncorr}} = 2 q_P e^2,
+		\label{eq:lambda_uncorr}
+	\end{equation}
+	which, after the geometric correction \(g_v\), yields the statutory radius \(r_\nu = \lambda_{\text{uncorr}} / g_v\) (see Sec.~\ref{sec:nu_radius_geometry}). The spatial step \(\lambda_l\) is thus a derived property of the BCC lattice, not an independent input.
+	
+	\item \textbf{The temporal step:} the fundamental cycle time \(t_p\), which represents the characteristic oscillation period of an EMC in the lattice. In the spring-mass representation of the BCC medium, this period is determined by the effective elastic constant of the lattice and the Planck mass, both of which are themselves consequences of the lattice geometry (Sec.~\ref{sec:planck_paradigm}). The formal derivation of \(t_p\) from first principles is a natural direction for future research; for the present purposes, it suffices to note that \(t_p\) is a structural invariant of the lattice, defined by the discrete causal structure itself.
+\end{itemize}
+
+The Planck charge \(q_P\) is not an independent parameter but the fundamental amplitude scale of the BCC lattice. It is related to the elementary charge \(e\) through the fine-structure constant:
+\begin{equation}
+	e^2 = \alpha q_P^2.
+	\label{eq:e_alpha_qP}
+\end{equation}
+This relation follows directly from the definitions of \(\alpha\) and \(q_P\), and it holds identically in both SI units (where \(q_P = \sqrt{4\pi\epsilon_0\hbar c}\)) and in the EWT amplitude representation (where both charges are measured in meters). It expresses the fact that the elementary charge is the lattice amplitude reduced by the coupling factor \(\alpha\).
+
+\subsection{Axiom: The Maximum Propagation Speed}
+
+We posit the following fundamental axiom:
+
+\begin{quote}
+	\emph{In the BCC lattice at the statutory density \(N_{\nu,\text{stat}}\), there exists a maximum propagation speed \(c\) for any disturbance. This speed is a structural property of the lattice, determined by its density and elastic response, and is independent of the amplitude or frequency of the disturbance.}
+\end{quote}
+
+This axiom is physically motivated: in any elastic medium with finite density and stiffness, there exists a speed of propagation (the speed of sound in the medium). The BCC lattice, as a discrete elastic medium, is no exception. The speed \(c\) is therefore not an empirical input but a derived property of the lattice, on the same footing as the speed of sound in a solid.
+
+In any discrete causal manifold, the maximum propagation speed is fixed by the ratio of the spatial step to the temporal step:
+\begin{equation}
+	c \equiv \frac{\lambda_l}{t_p}.
+	\label{eq:c_metric_definition}
+\end{equation}
+This relation is not a postulate nor an empirical input; it is the definition of the causal structure of the lattice, expressing the unique conversion factor between the temporal and spatial coordinates in the metric:
+\begin{equation}
+	ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2.
+\end{equation}
+
+\subsection{Consequences: Density-Dependent Propagation Speed}
+
+The axiom immediately implies that the propagation speed in the lattice is a function of the local EMC density:
+\begin{equation}
+	v(N_{\nu}) = c \cdot f\left(\frac{N_{\nu}}{N_{\nu,\text{stat}}}\right),
+	\label{eq:v_density_dependence}
+\end{equation}
+where the function \(f\) encodes the elastic response of the lattice. The three density regimes yield distinct physical consequences:
+
+\begin{itemize}
+	\item \textbf{In vacuum} (\(N = N_{\nu,\text{stat}}\)), the speed is exactly \(c\), explaining the constancy of the speed of light in free space. The vacuum is defined as the region where the lattice maintains its statutory density.
+	
+	\item \textbf{In matter} (\(N = N_{\nu,\text{eff}} < N_{\nu,\text{stat}}\)), the speed is reduced, providing a fundamental mechanism for refraction and the slowing of light in media. This is the origin of the refractive index \(n = c / v > 1\).
+	
+	\item \textbf{In the extreme EMC packaging density limit} (\(N \to N_{\nu,\text{max}}\)), the lattice becomes ultrastiff, and the propagation speed increases beyond \(c\). This regime corresponds to the early universe, where the causal structure differs from that of the vacuum.
+\end{itemize}
+
+The ratio of the spatial step to the temporal step in the lattice gives the maximum propagation speed in the statutory vacuum:
+\begin{equation}
+	c \equiv \frac{\lambda_l}{t_p}.
+	\label{eq:c_metric_definition_repeat}
+\end{equation}
+
+\textbf{Remark on the independence of the metric conversion.}  
+A possible concern is that Eq.~(\ref{eq:c_metric_definition}) merely replaces one constant, \(c\), with two others, \(\lambda_l\) and \(t_p\). This concern is unfounded. Both \(\lambda_l\) and \(t_p\) are derived from the same BCC geometry: \(\lambda_l\) from the packing fraction and the Eulerian dilution of the EMC lattice (Eqs.~(\ref{eq:lambda_l_from_Nnu}) and (\ref{eq:lambda_uncorr})), and \(t_p\) from the elastic response of that lattice. The ratio \(\lambda_l / t_p\) is therefore a structural invariant of the lattice, not a separate free parameter. The axiom provides the physical motivation: \(c\) is the maximum speed in the lattice at statutory density, and the ratio \(\lambda_l / t_p\) is its geometric expression.
+
+Consequently, the EWT framework requires no empirical input for \(c\); it is a consequence of the discrete geometry and the statutory density \(N_{\nu,\text{stat}}\), analogous to the ratio of circumference to diameter (\(\pi\)) in Euclidean space.
+
+With this geometric interpretation of the speed of light, the base gravitational scaling may now be derived.
+
 \section{The Geometric Identity of $G$: Derivation and Consistency}\label{sec:geometric_identity}
 
 The core hypothesis of the Energy Wave Theory (EWT) is that the gravitational constant $\mathbf{G}$ is not a fundamental constant but an \textbf{emergent, calculated geometric identity} derived solely from the electron's fundamental properties and dimensionless geometric factors. This section derives a precise $\hbar$-independent formula for $\mathbf{G}$ and justifies the physical meaning of its scaling terms.
@@ -1799,7 +1886,7 @@ This dimensional pattern---$\mathcal{O} = 1$ for 3D resonances, $\mathcal{O} = 1
 			are computed from pure BCC lattice geometry, without reference to the lepton mass.
 			The electron AMM $a_e$ is a direct function of the stiffness parameter $N = 8\pi^4$,
 			while the muon and tau AMMs are obtained recursively from the same universal
-			modulator $\epsilon_M = 1/(8\pi^7)$. The lepton masses enter only as external
+			modulator $\epsilon_M = 1/(8\pi^7)$. The lepton masses enter only as
 			reference scales for comparison and play no role in the geometric computation
 			of the AMM itself. This establishes the anomalous magnetic moment as a
 			\textbf{mass-independent topological invariant} of the vacuum lattice.
