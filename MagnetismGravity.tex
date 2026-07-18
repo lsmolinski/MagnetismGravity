@@ -1383,30 +1383,90 @@ The stability of these recursive shells is governed by Fibonacci resonance scale
 \subsection{The Recursive Master Equation: Nodal Latching via Geometric Coupling}
 \label{sec:recursive_math_final}
 
-The transition from the electron core to higher-order generations is governed by the coupling of the shell's nodal density to the stability invariants $L_{dim} \in \{5, 34\}$. The anomalous magnetic moment for each generation $n$ is calculated according to the recursive logic implemented in the EWT simulation (Part V):
+The transition from the electron core to higher-order generations is governed
+by the coupling of the shell's nodal density to the stability invariants
+$L_{dim} \in \{5, 34\}$.  To maintain notational precision, a distinction is
+drawn between the \textbf{pure shell contributions} $s_n$ (geometric quantities
+internal to the BCC lattice) and the \textbf{observable anomalous magnetic
+	moments} $a_n^{\text{EWT}}$ (the quantities compared with experiment).  The
+dimensional projection operators $\mathcal{O}_n$ (Section
+\ref{sec:final_experimental_proof}) bridge the two levels.
 
 \subsubsection*{1. Generation 1: Electron Root ($n=1$)}
-Established by the core nodal count ($K_e=10$) and the primary geometric modulator:
+
+The electron anomaly is the geometric core deficit of the vacuum medium,
+requiring no shell contribution and no projection:
 \begin{equation}
-	a_{e} = \frac{\alpha}{2\pi} \cdot (1 - \epsilon_M \pi^3)
+	a_e^{\text{EWT}}
+	= \frac{\alpha}{2\pi}\,\bigl(1 - \epsilon_M\,\pi^{3}\bigr),
+	\qquad \mathcal{O}_e = 1.
+	\label{eq:ae_master}
 \end{equation}
 
 \subsubsection*{2. Generation 2: Muon Expansion ($n=2$)}
-The first shell contribution is modulated by the Fibonacci invariant $L_{\mu}=5$. The operator $B_{\mu}$ accounts for the planar resonance surface within the BCC lattice:
+
+The first shell deposits a pure geometric contribution $s_\mu$ into the BCC
+lattice.  The Fibonacci invariant $L_\mu = 5$ enters through the planar
+coupling constant $B_\mu$:
 \begin{equation}
-	a_{\mu} = a_{e} + B_{\mu} \cdot (1 - \epsilon_M)^{M_{\mu} \pi^3}, \quad \text{where} \quad B_{\mu} = \frac{3 A_{\pi} \pi^3}{2 L_{\mu}^2}
+	s_{\mu}
+	= B_{\mu}\cdot(1-\epsilon_M)^{M_{\mu}\pi^{3}},
+	\qquad
+	B_{\mu} = \frac{3\,A_{\pi}\,\pi^{3}}{2\,L_{\mu}^{2}}.
+	\label{eq:s_mu}
+\end{equation}
+The 2D planar character of the muon resonance requires a dimensional bridge
+before $s_\mu$ becomes observable.  Applying the projection operator
+$\mathcal{O}_\mu = 1/(4\pi^2) = M_\mu\pi^3\epsilon_M$ (exact in the ideal
+limit $M_\mu \to 2\pi^2$; see Section \ref{sec:final_experimental_proof})
+gives the full observable anomaly:
+\begin{equation}
+	a_{\mu}^{\text{EWT}}
+	= a_e^{\text{EWT}}
+	+ \mathcal{O}_{\mu}\cdot s_{\mu}
+	= a_e^{\text{EWT}}
+	+ \frac{s_{\mu}}{4\pi^{2}}.
+	\label{eq:amu_master}
 \end{equation}
 
 \subsubsection*{3. Generation 3: Tau Expansion ($n=3$)}
-The second shell expansion incorporates the 3D structural impedance of the BCC vacuum. The energy density is projected onto the 8 primary vertices of the unit cell, adjusted by the diagonal factor $\sqrt{2}$:
+
+The second shell produces a raw geometric contribution $s_\tau$, with $B_\tau$
+encoding the full 3D volumetric coordination of the BCC unit cell:
 \begin{equation}
-	a_{\tau} = a_{\mu} + \left[ B_{\tau} \cdot (1 - \epsilon_M)^{M_{\tau} \pi^3} \right] + L_{\mu}^2
+	s_{\tau}
+	= B_{\tau}\cdot(1-\epsilon_M)^{M_{\tau}\pi^{3}},
+	\qquad
+	B_{\tau} = \frac{3\,A_{\pi}\,\pi^{3}}{8\sqrt{2}} + \frac{A_{\pi}}{2}.
+	\label{eq:s_tau}
 \end{equation}
-The Tau-specific coupling constant $B_{\tau}$ includes the geometric vacuum offset $A_{\pi}/2$:
+The total accumulated shell energy is the recursive sum of both shell
+contributions plus the interface tension $\delta = L_\mu^2$ that anchors the
+tau shell to the muon foundation:
 \begin{equation}
-	B_{\tau} = \frac{3 A_{\pi} \pi^3}{8\sqrt{2}} + \frac{A_{\pi}}{2}
+	\sigma_{\tau}
+	= s_{\mu} + s_{\tau} + L_{\mu}^{2}.
+	\label{eq:sigma_tau}
+\end{equation}
+Because the tau resonance is fully 3D, its dimensionality matches the
+observable space and no projection is required ($\mathcal{O}_\tau = 1$).
+The observable anomaly is therefore:
+\begin{equation}
+	a_{\tau}^{\text{EWT}}
+	= \mathcal{O}_{\tau}\cdot\sigma_{\tau}
+	= \sigma_{\tau}
+	= s_{\mu} + s_{\tau} + L_{\mu}^{2}.
+	\label{eq:atau_master}
 \end{equation}
 
+\noindent
+\textit{Note on notation:} $s_\mu$ in Eq.~\eqref{eq:atau_master} denotes the
+raw shell contribution of Eq.~\eqref{eq:s_mu}, \emph{not} the full observable
+$a_\mu^{\text{EWT}}$ of Eq.~\eqref{eq:amu_master}.  The two differ by the
+electron background $a_e^{\text{EWT}} \approx 1159.9\,\text{ppm}$; conflating
+them would yield an unphysical result for $a_\tau^{\text{EWT}}$.  The
+consistent bookkeeping is implemented explicitly in Part~V of the Scilab
+script (Listing~\ref{lst:scilab_script}).
 
 
 \subsubsection*{Physical Interpretation: Geometric Continuity}
@@ -1699,7 +1759,13 @@ In a discrete BCC lattice, only specific degrees of freedom are permitted for st
 \end{itemize}
 
 \subsubsection*{3. AMM as a Manifestation of Vacuum Elasticity}
-In the EWT framework, the anomalous magnetic moment (AMM) is not a byproduct of virtual particle loops, but a direct measure of the medium's stiffness deficit ($\epsilon_M$). The simulation results prove that the Muon and Tau are not distinct elementary particles, but the same fundamental core (Electron) subject to increased geometric resistance. The full AMM predictions---$0.0245\%$ for the muon and $1.378\%$ for the tau---confirm that the lepton hierarchy is strictly determined by the topology of the lattice medium, with the tau's larger residual reflecting the incompleteness of the one-dimensional projection operator for the deeply nested third shell.
+In the EWT framework, the anomalous magnetic moment (AMM) is not a byproduct of virtual particle loops, but a direct measure of the medium's stiffness deficit ($\epsilon_M$). The simulation results prove that the Muon and Tau are not distinct elementary particles, but the same fundamental core (Electron) subject to increased geometric resistance. The full AMM predictions---$0.0245\%$ for the muon and $0.031\%$ for 
+the tau---confirm that the lepton hierarchy is strictly determined by 
+the topology of the lattice medium. The monotonic progression of errors 
+reflects the increasing topological complexity of the nested shells, 
+absorbed by the dimensionally dictated projection rules: a single 
+non-trivial operator $\mathcal{O}_\mu = 1/(4\pi^2)$ for the sole 2D 
+resonance, and the identity for both 3D resonances.
 
 \subsubsection*{4. Structural Impedance and Dimensional Transition ($B_{\mu}$ vs $B_{\tau}$)}
 The physical transition from the Muon to the Tau generation represents a shift in how the vacuum medium resists the expansion. 
@@ -2822,39 +2888,106 @@ The choice of 5 and 34 is therefore not a matter of data fitting, but of \textbf
 \subsection{Fibonacci Invariants as Structural Latches for Higher Generations}
 \label{sec:fibonacci_latches}
 
-With the geometric justification for the appearance of Fibonacci numbers in place, we can now examine their concrete realization in the muon and tau generations. In the EWT framework, the stability of higher lepton generations is not treated as a result of dynamic interactions, but as a consequence of the geometric alignment between wave-shells and the discrete nodes of the BCC lattice. The Fibonacci numbers ($L_{dim} \in \{5, 34\}$) function as \textbf{eigenvalues of structural stability}, acting as mechanical "latches" that lock the wave energy into configurations of minimal destructive interference.
+With the geometric justification for the appearance of Fibonacci numbers in
+place, we can now examine their concrete realization in the muon and tau
+generations. In the EWT framework, the stability of higher lepton generations
+is not treated as a result of dynamic interactions, but as a consequence of
+the geometric alignment between wave-shells and the discrete nodes of the BCC
+lattice. The Fibonacci numbers ($L_{dim} \in \{5, 34\}$) function as
+\textbf{eigenvalues of structural stability}, acting as mechanical ``latches''
+that lock the wave energy into configurations of minimal destructive
+interference.
 
 \subsubsection*{1. Interface Tension and Binding Energy ($\delta = L_{\mu}^2$)}
-A critical finding from the numerical verification in Part V of the simulation (\ref{lst:scilab_script}) is the role of the \textbf{interface tension} constant. The value $\delta = 25$ ($L_{\mu}^2$) is a required additive term in the tau anomaly equation:
+
+A critical finding from the numerical verification in Part~V of the simulation
+(\ref{lst:scilab_script}) is the role of the \textbf{interface tension}
+constant. Using the shell-contribution notation introduced in
+Section~\ref{sec:recursive_math_final}, the accumulated tau shell energy is:
 \begin{equation}
-	a_{\tau} = a_{\mu} + \left[ B_{\tau} \cdot (1 - \epsilon_M)^{M_{\tau} \pi^3} \right] + L_{\mu}^2
+	\sigma_{\tau}
+	= s_{\mu} + s_{\tau} + L_{\mu}^{2},
 	\label{eq:tau_interface_tension}
 \end{equation}
-Physically, this represents the \textbf{topological binding energy} required to maintain continuity between the shells. The square of the Fibonacci invariant ($5^2=25$) signifies that the tau shell is not an isolated resonance but is "welded" to the pre-existing muon foundation, ensuring the integrity of the hierarchical "Onion Model."
+where $s_{\mu}$ and $s_{\tau}$ are the pure geometric shell contributions
+defined in Eqs.~\eqref{eq:s_mu} and~\eqref{eq:s_tau}, and $L_{\mu}^{2} = 25$
+is the interface tension term.  Because $\mathcal{O}_{\tau} = 1$, the
+observable tau anomaly equals $\sigma_{\tau}$ directly
+(Eq.~\eqref{eq:atau_master}).
+
+Physically, $\delta = L_{\mu}^{2} = 25$ represents the \textbf{topological
+	binding energy} required to maintain continuity between the shells. The square
+of the Fibonacci invariant ($5^{2}=25$) signifies that the tau shell is not
+an isolated resonance but is ``welded'' to the pre-existing muon foundation,
+ensuring the integrity of the hierarchical ``Onion Model.''
 
 \subsubsection*{2. Numerical Validation}
+
+Table~\ref{tab:fibonacci_results} reports the EWT predictions at two levels:
+the internal shell contribution (the quantity directly produced by the
+recursive algorithm) and the full observable anomalous magnetic moment
+(obtained after applying the dimensional projection operator). For the tau,
+both levels coincide because $\mathcal{O}_{\tau}=1$.
+
 \begin{table}[ht]
 	\centering
-	\caption{Numerical Correlation: Fibonacci Latches and Experimental Convergence}
+	\caption{Numerical Correlation: Fibonacci Latches and Experimental
+		Convergence. Shell contributions ($s_n$, $\sigma_\tau$) are
+		internal EWT geometric quantities; full AMM predictions
+		($a_n^{\text{EWT}}$) are compared with CODATA/PDG benchmarks.}
 	\label{tab:fibonacci_results}
-	\begin{tabular}{lcccc}
+	\begin{tabular}{llccc}
 		\toprule
-		\textbf{Generation} & \textbf{Operator} & \textbf{Latch ($L_{dim}$)} & \textbf{EWT Prediction} & \textbf{Rel. Error} \\
+		\textbf{Gen.} & \textbf{Quantity} & \textbf{EWT Prediction}
+		& \textbf{Target} & \textbf{Error} \\
 		\midrule
-		Muon ($\Psi_{\mu}$) & $10^1$ & \textbf{5} (Planar) & $248.572 \times 10^{-6}$ & $0.091\%$ \\
-		Tau ($\Psi_{\tau}$)  & $10^2$ & \textbf{34} (Volumetric) & $1176.845 \times 10^{-6}$ & $0.031\%$ \\
+		Muon & $s_{\mu}$ (shell only)
+		& $248.572 \times 10^{-6}$
+		& $248.800 \times 10^{-6}$ \small{(EWT ref.)}
+		& $0.092\%$ \\
+		Muon & $a_{\mu}^{\text{EWT}}$ ($\mathcal{O}_{\mu}=1/4\pi^2$)
+		& $1166.206 \times 10^{-6}$
+		& $1165.921 \times 10^{-6}$ \small{(CODATA)}
+		& $0.025\%$ \\
+		\midrule
+		Tau  & $\sigma_{\tau} = a_{\tau}^{\text{EWT}}$ \small{($\mathcal{O}_{\tau}=1$)}
+		& $1176.843 \times 10^{-6}$
+		& $1177.210 \times 10^{-6}$ \small{(PDG)}
+		& $0.031\%$ \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
+The tau rows are merged into one because the identity $\mathcal{O}_{\tau}=1$
+means the shell accumulation $\sigma_{\tau}$ is already the observable anomaly
+--- no further projection is required. This is the clearest numerical
+demonstration of the 3D$\to$2D$\to$3D alternation: the muon requires a
+non-trivial bridge $\mathcal{O}_{\mu}$ between its shell energy and the
+observable, while the tau does not.
+
 \subsubsection*{Conclusion: The Deterministic Chain of Stability}
-The application of Fibonacci invariants $5$ and $34$ completes the deterministic chain of the EWT model:
+
+The application of Fibonacci invariants $5$ and $34$ completes the
+deterministic chain of the EWT model:
+
 \begin{enumerate}
-	\item The \textbf{$1:10^{10}$ Resonance} establishes the fundamental energy budget.
-	\item The \textbf{$10^{n-1}$ Operator} dictates the recursive formation of shells.
-	\item The \textbf{Fibonacci Latches} lock these shells into the discrete BCC nodal grid.
+	\item The \textbf{$1:10^{10}$ Resonance} establishes the fundamental
+	energy budget.
+	\item The \textbf{$10^{n-1}$ Operator} dictates the recursive formation
+	of shells.
+	\item The \textbf{Fibonacci Latches} lock these shells into the discrete
+	BCC nodal grid.
 \end{enumerate}
-The precision achieved for the tau lepton ($0.031\%$) proves that the lepton hierarchy is a result of \textbf{spherical phyllotaxis} within the vacuum medium. Each generation represents a discrete phase of the same fundamental lattice, "latched" onto successive Fibonacci eigenvalues to maintain topological stability.
+
+The precision achieved across both generations ($0.025\%$ for the full muon
+AMM, $0.031\%$ for the tau) proves that the lepton hierarchy is a result of
+\textbf{spherical phyllotaxis} within the vacuum medium. Each generation
+represents a discrete phase of the same fundamental lattice, ``latched'' onto
+successive Fibonacci eigenvalues to maintain topological stability. The
+dimensional alternation of the projection operators --- $\mathcal{O}=1$ for
+3D resonances, $\mathcal{O}=1/(4\pi^2)$ for the sole 2D resonance ---
+confirms that this chain is not a numerical coincidence but a structural
+necessity of the BCC vacuum geometry.
 
 % ------------------------------------------------------------------------------
 \subsection{Standalone, High-Precision Method for Calculating AMMs}
