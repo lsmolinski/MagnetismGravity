@@ -788,7 +788,10 @@ where the function \(f\) encodes the elastic response of the lattice. The three 
 	
 	\item \textbf{In matter} (\(N = N_{\nu,\text{eff}} < N_{\nu,\text{stat}}\)), the speed is reduced, providing a fundamental mechanism for refraction and the slowing of light in media. This is the origin of the refractive index \(n = c / v > 1\).
 	
-	\item \textbf{In the extreme EMC packaging density limit} (\(N \to N_{\nu,\text{max}}\)), the lattice becomes ultrastiff, and the propagation speed increases beyond \(c\). This regime corresponds to the early universe, where the causal structure differs from that of the vacuum.
+	\item \textbf{In the extreme EMC packaging density limit} ($N \to N_{\nu,\text{max}}$), the lattice approaches its elastic 
+	saturation limit. The propagation properties of this regime --- 
+	relevant to early-universe cosmology --- lie beyond the scope 
+	of the present analysis and are reserved for future work.
 \end{itemize}
 
 The ratio of the spatial step to the temporal step in the lattice gives the maximum propagation speed in the statutory vacuum:
@@ -797,10 +800,30 @@ The ratio of the spatial step to the temporal step in the lattice gives the maxi
 	\label{eq:c_metric_definition_repeat}
 \end{equation}
 
-\textbf{Remark on the independence of the metric conversion.}  
-A possible concern is that Eq.~(\ref{eq:c_metric_definition}) merely replaces one constant, \(c\), with two others, \(\lambda_l\) and \(t_p\). This concern is unfounded. Both \(\lambda_l\) and \(t_p\) are derived from the same BCC geometry: \(\lambda_l\) from the packing fraction and the Eulerian dilution of the EMC lattice (Eqs.~(\ref{eq:lambda_l_from_Nnu}) and (\ref{eq:lambda_uncorr})), and \(t_p\) from the axiom of maximum propagation speed and the elastic response of that lattice. The ratio \(\lambda_l / t_p\) is therefore a structural invariant of the lattice, not a separate free parameter. The axiom provides the physical motivation: \(c\) is the maximum speed in the lattice at statutory density, and the ratio \(\lambda_l / t_p\) is its geometric expression.
+\textbf{Remark on the dimensional status of $c$.}
+The speed of light $c$ does not appear in any of the dimensionless 
+predictions of the EWT framework (the fine-structure constant $\alpha$, 
+the anomalous magnetic moments $a_e$, $a_\mu$, $a_\tau$, or the lepton 
+mass ratios). It enters only when expressing dimensional SI quantities 
+such as $G$ or $m_e$, where it plays the role of a \emph{metric 
+	conversion factor} between the spatial step $\lambda_l$ and the temporal 
+step $t_p$ of the BCC lattice ($c \equiv \lambda_l / t_p$). 
 
-Consequently, the EWT framework requires no empirical input for \(c\); it is a consequence of the discrete geometry and the statutory density \(N_{\nu,\text{stat}}\), analogous to the ratio of circumference to diameter (\(\pi\)) in Euclidean space.
+In natural units ($c = 1$), the EWT framework is parameter-free: all 
+physical predictions reduce to dimensionless ratios determined by BCC 
+lattice topology alone. The appearance of $c$ in SI expressions reflects 
+the unit system's convention for separating spatial and temporal 
+dimensions, not an independent physical input to the theory. This status 
+is consistent with the SI 2019 definition, in which $c$ is an exact 
+definitional constant rather than a measured quantity.
+
+The formal derivation of $t_p$ --- and hence of the \emph{absolute} 
+numerical value of $c$ in SI units --- from the elastic constants of the 
+BCC medium without reference to $c$ itself remains an open objective. 
+What the present framework establishes is that $c$ enters EWT with the 
+same logical status as $\pi$ in Euclidean geometry: not as a free 
+parameter, but as a structural invariant of the underlying geometric 
+medium.
 
 With this geometric interpretation of the speed of light, the base gravitational scaling may now be derived.
 
@@ -851,7 +874,6 @@ remains in progress within the OpenWave platform.  Establishing the nonlinear
 stabilisation of the electron will provide a stronger, dynamical justification
 for the particle's structure than the geometric necessity argument alone.
 
-
 \subsubsection*{The Final Geometric Identity for $G$}
 The observed gravitational constant $\mathbf{G}$ is obtained by scaling $\mathbf{G}_{\text{Base}}$ with the \textbf{Total Dimensionless Gravitational Weakness Factor ($\mathbf{\Omega_G}$)}. This factor is a product of the internal soliton architecture and its interaction with the medium, composed of the Geometric EM Base (${\mathbf{A}_{\pi}}^{-1}$), the Dynamic Magnetic Correction ($\mathbf{N}_{\text{final}}$), and the displacement effect of the **$K_{WC}=10$ Wave Centers** acting upon the **Effective Volume Deficit** ($\mathbf{N}_{\nu, \text{eff}}$).
 
@@ -861,6 +883,63 @@ The derived geometric identity for $\mathbf{G}$ is:
 	\mathbf{G} \equiv \mathbf{G}_{\text{Base}} \cdot \frac{1}{\mathbf{A}_{\pi}} \cdot \left( \frac{1}{\mathbf{N}_{\text{final}} \mathbf{A}_{\pi}} \right)^{3} \cdot \frac{1}{K_{WC} \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}
 	\label{eq:G_EWT_Final_Identity}
 \end{equation}
+
+\textbf{Remark on the dimensional structure of $G_{\text{Base}}$ 
+	and the role of $c$.}
+Equation~\eqref{eq:G_EWT_Final_Identity} makes explicit a structural 
+feature of the EWT derivation of $G$: the factor $c^2 r_e / m_e$ is 
+the \emph{sole} dimensional term in the entire identity. Every 
+subsequent factor --- $A_\pi$, $N_{\text{final}}$, $K_{WC}$, 
+$N_{\nu,\text{eff}}^{1/2}$ --- is dimensionless. Consequently, 
+in natural units ($c = 1$), the gravitational constant reduces to
+
+\begin{equation}
+	G \;\big|_{c=1}
+	= \frac{r_e}{m_e}
+	\cdot \frac{1}{A_{\pi}}
+	\cdot \left(\frac{1}{N_{\text{final}}\,A_{\pi}}\right)^{3}
+	\cdot \frac{1}{K_{WC}\sqrt{N_{\nu,\text{eff}}}},
+	\label{eq:G_natural_units}
+\end{equation}
+
+i.e.\ a pure ratio of two structural quantities of the electron 
+soliton, $r_e/m_e$, multiplied by dimensionless BCC geometry alone.
+
+The speed of light therefore enters $G$ not as an independent 
+physical input but as the \emph{metric conversion factor} between 
+the spatial step $\lambda_l$ and the temporal step $t_p$ of the 
+BCC lattice ($c \equiv \lambda_l/t_p$, 
+Eq.~\eqref{eq:c_metric_definition}). Its role is to translate the 
+dimensionless geometric ratio $r_e/m_e$ (in natural units) into 
+SI units of $\text{m}^3\,\text{kg}^{-1}\,\text{s}^{-2}$.
+
+A critical distinction from the Standard Model formulation must be 
+noted. In QED, the classical electron radius is a \emph{derived} 
+quantity: $r_e \equiv \alpha\hbar/(m_e c)$. Substituting this into 
+$G_{\text{Base}}$ would reintroduce $\hbar$:
+\begin{equation}
+	G_{\text{Base}}\big|_{\text{QED}}
+	= \frac{c^2 \cdot \alpha\hbar/(m_e c)}{m_e}
+	= \frac{\alpha\hbar c}{m_e^2},
+\end{equation}
+recovering the standard Planck-unit form. In EWT, by contrast, 
+$r_e$ is a \emph{primary} geometric output of the $K_{WC}=10$ 
+wave-centre structure and the $E \propto r^5$ scaling law 
+(Section~\ref{sec:geometric_mass_to_radius}), not a quantity 
+derived from $\hbar$. The cancellation of $\hbar$ demonstrated 
+above is therefore not an algebraic accident: it reflects the 
+genuinely classical (non-quantum) geometric origin of $r_e$ 
+in this framework.
+
+The single remaining dimensional input is the electron mass 
+$m_e$ --- the mass scale of the soliton --- which fixes the 
+overall SI normalisation of $G$. In EWT, $m_e$ is itself 
+derivable from $r_e$ and $c$ through the scaling law 
+(Section~\ref{sec:numerical_verification_ewt}), so the 
+independent primitive content of the $G$ identity reduces to 
+one geometric length ($r_e$, determined by $K_{WC}=10$) 
+and one metric conversion ($c$, determined by the BCC causal 
+structure). $\hbar$ is absent.
 
 \subsection{Geometric Normalization: The Dimensional Scaling of $G$}
 
