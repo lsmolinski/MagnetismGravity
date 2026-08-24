@@ -67,7 +67,7 @@
 
 \begin{center}
 \today \\
-Version: 4.5.5	
+Version: 4.5.6	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -1426,7 +1426,7 @@ They are frequently conflated in continuous medium optics, so it
 is necessary to state them with structural precision.
 
 \begin{enumerate}
-	\item \textbf{Coordinate phase velocity via lattice strain.} In natural lattice units ($c \equiv 1$), the statutory speed of light is defined by the undisturbed cell ratio $c = \lambda_l / t_p = 1$. Around a matter soliton, the radial displacement of EMC nodes creates a spatial strain $\epsilon(r) = \nabla \cdot \vec{u}(r)$. This strain stretches the effective coordinate cell spacing $\lambda_l(r)$, so that a wave packet requires more fundamental time ticks $t_p$ to traverse a unit coordinate distance. This produces an effective slowdown in coordinate speed $v(r) < 1$, encoded by an isotropic scalar refractive index $n(r) = 1/v(r) > 1$.
+	\item \textbf{Coordinate phase velocity via lattice strain.} In natural lattice units ($c \equiv 1$), the statutory speed of light is defined by the undisturbed cell ratio $c = \lambda_l / t_p = 1$. Around a matter soliton, the radial displacement of EMC nodes creates a spatial strain $\epsilon(r) = \nabla \cdot \vec{u}(r)$. This strain stretches the effective coordinate cell spacing $\lambda_l(r)$, so that a wave packet requires more fundamental time ticks $t_p$ to traverse a unit coordinate distance. This produces an effective slowdown in coordinate speed $v(r) < 1$, encoded by an isotropic scalar refractive index $n_\gamma(r) = 1/v(r) > 1$.
 	
 	\item \textbf{Trajectory deflection via restoring displacement.} The actual bending of a wave packet trajectory is driven by the vector displacement field $\vec{u}(r)$, rather than by a scalar density deficit alone. In response to the core deficit of a matter soliton, the surrounding EMC lattice develops a directed restoring displacement field:
 	\begin{equation}
@@ -1444,7 +1444,7 @@ is necessary to state them with structural precision.
 \subsection{Bridging the Vector Displacement to the Scalar Refractive Index}
 \label{sec:bridging_u_to_n}
 
-To connect the vector kinematics of Eq.~\eqref{eq:emc_displacement_vector} to standard ray-tracing integrals, we evaluate the scalar refractive index \(n(r)\) as the local isotropic dilatation factor induced by the dimensionless radial displacement field \(u_r(r)\).
+To connect the vector kinematics of Eq.~\eqref{eq:emc_displacement_vector} to standard ray-tracing integrals, we evaluate the scalar refractive index \(n_\gamma(r)\) as the local isotropic dilatation factor induced by the dimensionless radial displacement field \(u_r(r)\).
 
 A 3D standing-wave soliton exhibits an asymptotic radial energy density deficit decaying as \(1/r\). In the simplest spherical weak-field model, the normalized local EMC density takes the form
 \begin{equation}
@@ -1462,9 +1462,9 @@ Substituting this gradient into Eq.~\eqref{eq:u_radial_integrated} yields exactl
 	\label{eq:u_radial_exact}
 \end{equation}
 
-The scalar refractive index \(n(r)\) represents the local isotropic dilatation factor induced by this displacement field:
+The scalar refractive index \(n_\gamma(r)\) represents the local isotropic dilatation factor induced by this displacement field:
 \begin{equation}
-	n(r) = 1 + u_r(r) = 1 + \frac{r_s}{r} = 1 + 2\Phi_N(r),
+	n_\gamma(r) = 1 + u_r(r) = 1 + \frac{r_s}{r} = 1 + 2\Phi_N(r),
 	\label{eq:n_weak_field_derived}
 \end{equation}
 where \(\Phi_N(r) = GM/r = r_s/(2r)\) is the dimensionless Newtonian gravitational potential per unit energy.
@@ -1474,39 +1474,19 @@ where \(\Phi_N(r) = GM/r = r_s/(2r)\) is the dimensionless Newtonian gravitation
 
 Eq.~\eqref{eq:n_weak_field_derived} corresponds to the first-order weak-field expansion of the full continuous expression:
 \begin{equation}
-	n(r) = \left(1 - \frac{2r_s}{r}\right)^{-1/2}.
+	n_\gamma(r) = \left(1 - \frac{2r_s}{r}\right)^{-1/2}.
 	\label{eq:n_full}
 \end{equation}
 
 It is important to clarify the theoretical status of Eq.~\eqref{eq:n_full}: in Enhanced EWT, this function does not represent an external metric tensor imported from General Relativity, nor is it an ad hoc optical ansatz. Rather, Eq.~\eqref{eq:n_full} is the \emph{asymptotic continuous limit} of the discrete BCC lattice deformation field around a spherical soliton core.
 
-Formally, \(n(r)\) matches the spatial metric component \(g_{rr}^{-1/2}\) of the Schwarzschild solution. In EWT, however, this exact mathematical form arises physically from the nonlinear elastic response of the EMC medium under the \(1/r\) gravitational potential load, without requiring a curved spacetime manifold.
+Formally, \(n_\gamma(r)\) matches the effective optical metric factor of the Schwarzschild geometry. In EWT, however, this exact mathematical form arises physically from the nonlinear elastic response of the EMC medium under the \(1/r\) gravitational potential load, without requiring a curved spacetime manifold.
 
 Expanding Eq.~\eqref{eq:n_full} binomially:
 \begin{equation}
-	n(r) = \left(1 - \frac{2r_s}{r}\right)^{-1/2} \approx 1 + \frac{r_s}{r} + \mathcal{O}\left(\left(\frac{r_s}{r}\right)^2\right),
+	n_\gamma(r) = \left(1 - \frac{2r_s}{r}\right)^{-1/2} \approx 1 + \frac{r_s}{r} + \mathcal{O}\left(\left(\frac{r_s}{r}\right)^2\right),
 \end{equation}
-recovers the exact factor of 2 in front of \(\Phi_N(r)\), providing the structural lattice foundation for the observed \(1.75''\) solar limb deflection. In the undisturbed statutory vacuum (\(r_s/r \to 0\)), \(n(r) \to 1\), restoring the fundamental lattice ratio \(c = \lambda_l / t_p = 1\).
-
-
-\subsection{Asymptotic Continuous Limit and Schwarzschild Equivalence}
-\label{sec:n_from_energy_density}
-
-Eq.~\eqref{eq:n_weak_field_derived} corresponds to the first-order weak-field expansion of the full continuous expression:
-\begin{equation}
-	n(r) = \left(1 - \frac{2r_s}{r}\right)^{-1/2}.
-	\label{eq:n_full}
-\end{equation}
-
-It is important to clarify the theoretical status of Eq.~\eqref{eq:n_full}: in Enhanced EWT, this function does not represent an external metric tensor imported from General Relativity, nor is it an ad hoc optical ansatz. Rather, Eq.~\eqref{eq:n_full} is the \emph{asymptotic continuous limit} of the discrete BCC lattice deformation field around a spherical soliton core.
-
-Formally, $n(r)$ matches the spatial metric component $g_{rr}^{-1/2}$ of the Schwarzschild solution. In EWT, however, this exact mathematical form arises physically from the nonlinear elastic response of the EMC medium under the $1/r$ gravitational potential load, without requiring a curved spacetime manifold.
-
-Expanding Eq.~\eqref{eq:n_full} binomially:
-\begin{equation}
-	n(r) = \left(1 - \frac{2r_s}{r}\right)^{-1/2} \approx 1 + \frac{r_s}{r} + \mathcal{O}\left(\left(\frac{r_s}{r}\right)^2\right),
-\end{equation}
-recovers the exact factor of 2 in front of $\Phi_N(r)$, providing the structural lattice foundation for the observed $1.75''$ solar limb deflection. In the undisturbed statutory vacuum ($r_s/r \to 0$), $n(r) \to 1$, restoring the fundamental lattice ratio $c = \lambda_l / t_p = 1$.
+recovers the exact factor of 2 in front of \(\Phi_N(r)\), providing the structural lattice foundation for the observed \(1.75''\) solar limb deflection. In the undisturbed statutory vacuum (\(r_s/r \to 0\)), \(n_\gamma(r) \to 1\), restoring the fundamental lattice ratio \(c = \lambda_l / t_p = 1\).
 
 \subsection{Mechanical Origin of Gravitational Redshift in the EMC Lattice}
 \label{sec:grav_time_dilation_clock}
@@ -1590,11 +1570,15 @@ metric components and EWT lattice strain:
 	\(v_{\text{clock}}(r) = \eta(r)^{1/2}\), producing gravitational
 	time dilation.
 	
-	\item \textbf{Spatial metric component ($g_{rr}^{-1/2}$):}
+	\item \textbf{Effective optical metric factor:}
 	Encoded by the optical refractive index
 	\(n_\gamma(r) = 1 + r_s/r = 1 + 2\Phi_N(r)\), whose weak-field
 	form is the first-order expansion of
 	\((1 - 2r_s/r)^{-1/2}\), producing solar light deflection.
+	
+	In standard GR language, this effective index combines the
+	contributions of both \(g_{00}\) and \(g_{rr}\). In EWT it
+	arises directly from the integrated EMC displacement \(u_r\).
 \end{itemize}
 
 Both fundamental phenomena are physically unified as dual
