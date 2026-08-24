@@ -1508,6 +1508,102 @@ Expanding Eq.~\eqref{eq:n_full} binomially:
 \end{equation}
 recovers the exact factor of 2 in front of $\Phi_N(r)$, providing the structural lattice foundation for the observed $1.75''$ solar limb deflection. In the undisturbed statutory vacuum ($r_s/r \to 0$), $n(r) \to 1$, restoring the fundamental lattice ratio $c = \lambda_l / t_p = 1$.
 
+\subsection{Mechanical Origin of Gravitational Redshift in the EMC Lattice}
+\label{sec:grav_time_dilation_clock}
+
+In Enhanced EWT, both electromagnetic propagation and gravitational
+time dilation arise from a single microscopic mechanism: the spatial
+deformation of the EMC node separation $\lambda_l(r)$ around a matter
+soliton.
+
+In the natural units of the BCC lattice, the speed of light is the
+fundamental metric conversion factor
+\[
+c \equiv \frac{\lambda_l}{t_p} = 1 .
+\]
+Consequently, length and time share the same dimension,
+\([m]=[s]\), and the gravitational potential is dimensionless
+without the explicit \(c^{2}\) factor that appears only in the
+SI-unit convention. In these natural units, the Newtonian potential
+is simply
+\begin{equation}
+	\Phi_N(r) = \frac{GM}{r},
+\end{equation}
+and the gravitational radius of the source is
+\begin{equation}
+	r_s = 2GM .
+\end{equation}
+
+Define the dimensionless local EMC lattice density ratio as:
+\begin{equation}
+	\eta(r) \equiv \frac{N_\nu(r)}{N_{\text{stat}}}
+	= 1 - \frac{r_s}{r}
+	= 1 - 2\Phi_N(r),
+	\label{eq:emc_density_ratio}
+\end{equation}
+where \(\Phi_N(r) = GM/r = r_s/(2r)\) in natural units.
+
+A physical clock is modeled as a standing-wave soliton whose
+fundamental period \(T(r)\) is determined by the internal round-trip
+time of a longitudinal EMC lattice wave traversing the soliton core.
+Because the internal wave relies on node-to-node propagation across
+the same strained lattice spacing \(\lambda_l(r)\) that dictates
+external optics, its effective propagation rate scales with the
+square root of the local node availability \(\eta(r)\):
+
+\begin{equation}
+	v_{\text{clock}}(r)
+	= \sqrt{\eta(r)}
+	= \sqrt{1 - 2\Phi_N(r)}
+	\approx 1 - \Phi_N(r).
+	\label{eq:internal_clock_speed}
+\end{equation}
+
+For a rest-frame internal path length \(2L_0\), the clock period in
+the gravitational potential field becomes:
+\begin{equation}
+	T(r)
+	= \frac{2L_0}{v_{\text{clock}}(r)}
+	= \frac{T_0}{\sqrt{1 - 2\Phi_N(r)}}
+	\approx T_0\left(1 + \Phi_N(r)\right),
+	\qquad T_0 = 2L_0.
+\end{equation}
+
+The fractional frequency shift reproduces the standard gravitational
+redshift:
+\begin{equation}
+	\frac{\Delta f}{f}
+	= \frac{f(r) - f_0}{f_0}
+	= -\,\Phi_N(r)
+	= -\,\frac{GM}{r}
+	= -\,\frac{r_s}{2r}.
+	\label{eq:grav_redshift_emc}
+\end{equation}
+
+\paragraph{Structural Unity of Metric Phenomena.}
+This completes the mechanical equivalence between General Relativity
+metric components and EWT lattice strain:
+
+\begin{itemize}
+	\item \textbf{Temporal metric component ($\sqrt{g_{00}}$):}
+	Encoded by the internal clock wave speed
+	\(v_{\text{clock}}(r) = \eta(r)^{1/2}\), producing gravitational
+	time dilation.
+	
+	\item \textbf{Spatial metric component ($g_{rr}^{-1/2}$):}
+	Encoded by the optical refractive index
+	\(n_\gamma(r) = 1 + r_s/r = 1 + 2\Phi_N(r)\), whose weak-field
+	form is the first-order expansion of
+	\((1 - 2r_s/r)^{-1/2}\), producing solar light deflection.
+\end{itemize}
+
+Both fundamental phenomena are physically unified as dual
+manifestations of the same local EMC density profile
+\(\eta(r) = 1 - r_s/r\), but they project onto different
+observables: the clock samples the local node availability through
+\(\sqrt{\eta}\), while the light ray samples the integrated radial
+displacement \(u_r = 1 - \eta = r_s/r\).
+
 \section{Relation to Existing Emergent Gravity Frameworks}
 \label{sec:emergent_comparison}
 
