@@ -1417,6 +1417,52 @@ magnetic fields) may discriminate between these possibilities.
 For the purpose of the present work, we treat the wall density 
 ratio as an open parameter $\eta = \rho_{\text{wall}} / N_{\nu,\text{stat}}$.
 
+\subsection{The Two Faces of EMC Displacement: Speed and Trajectory}
+\label{sec:emc_displacement_two_faces}
+
+In the Enhanced EWT framework, light propagation involves two
+distinct, though coupled, consequences of the EMC density field.
+They are frequently conflated in discussions of refraction, so it
+is useful to state them separately.
+
+\begin{enumerate}
+	\item \textbf{Phase velocity.} The speed of a wave front is set
+	by the local EMC spacing.  A lower EMC density means, on
+	average, a larger distance between neighbouring EMCs, and
+	therefore a modified propagation speed relative to the statutory
+	vacuum.  This is an \emph{effective} motion; it does not by
+	itself cause bending.
+	
+	\item \textbf{Trajectory bending.} The trajectory of a wave
+	packet is set by the displacement field of the EMCs, not by the
+	scalar density alone.  Where the EMC density is lower --- as in
+	the interior of a matter soliton --- the surrounding medium
+	moves toward the deficit in order to restore the statutory
+	density \(N_{\nu,\text{stat}}\).  This gives a directed
+	displacement field
+	\begin{equation}
+		\vec{u}(r) = -\chi\, \nabla N_{\nu}(r),
+		\label{eq:emc_displacement_vector}
+	\end{equation}
+	where \(\chi>0\) is a geometric mobility of the lattice.  The
+	negative sign reflects motion \emph{toward} the region of lower
+	EMC density.  Light travelling through such a deformed lattice
+	follows paths determined by the local displacement field, not by
+	a simple isotropic speed gradient.
+\end{enumerate}
+
+Thus the effective refractive index is, at most, a convenient
+scalar encoding of the displacement field:
+\begin{equation}
+	n(r) \;=\; \frac{c}{v(N_{\nu}(r))}
+	\;=\; n(\vec{u}(r)),
+	\label{eq:n_from_u}
+\end{equation}
+but the physical origin of gravitational light bending is the EMC
+\emph{restoring displacement} toward the density deficit, not a
+slow-down in a medium.
+
+
 \section{Relation to Existing Emergent Gravity Frameworks}
 \label{sec:emergent_comparison}
 
