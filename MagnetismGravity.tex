@@ -67,7 +67,7 @@
 
 \begin{center}
 \today \\
-Version: 4.5.6	
+Version: 4.5.7	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -1587,6 +1587,102 @@ manifestations of the same local EMC density profile
 observables: the clock samples the local node availability through
 \(\sqrt{\eta}\), while the light ray samples the integrated radial
 displacement \(u_r = 1 - \eta = r_s/r\).
+
+\subsection{Shapiro Delay from the EMC Refractive Index}
+\label{sec:shapiro_delay_emc}
+
+The third local metric observable is the Shapiro delay: a light signal
+passing near a massive body takes longer to cross the region than it
+would in the undisturbed statutory vacuum. In the Enhanced EWT
+framework, this delay is not an independent postulate but a direct
+consequence of the same EMC lattice strain that produces light bending
+and gravitational redshift.
+
+In natural lattice units ($c \equiv 1$), the coordinate speed of a photon in the
+strained EMC geometry is
+\begin{equation}
+	v_\gamma(r)
+	=
+	\frac{1}{n_\gamma(r)}
+	=
+	\left(1 - \frac{2r_s}{r}\right)^{1/2},
+	\label{eq:photon_speed_shapiro}
+\end{equation}
+where \(n_\gamma(r)\) is the optical refractive index introduced in
+Sec.~\ref{sec:n_from_energy_density}. The coordinate time required for
+a signal to travel along a path \(\mathcal{C}\) is therefore
+\begin{equation}
+	t
+	=
+	\int_{\mathcal{C}}
+	\frac{ds}{v_\gamma(r)}
+	=
+	\int_{\mathcal{C}}
+	n_\gamma(r)\,ds .
+	\label{eq:shapiro_general}
+\end{equation}
+
+In the weak-field limit,
+\begin{equation}
+	n_\gamma(r) - 1
+	=
+	\frac{r_s}{r}
+	=
+	2\Phi_N(r),
+	\qquad
+	\Phi_N(r)=\frac{GM}{r},
+\end{equation}
+so the excess delay relative to the statutory vacuum along a one-way path is
+\begin{equation}
+	\Delta t_{\text{one-way}}
+	=
+	\int_{\mathcal{C}}
+	\bigl(n_\gamma(r)-1\bigr)\,ds
+	=
+	2\int_{\mathcal{C}}
+	\Phi_N(r)\,ds .
+	\label{eq:shapiro_weak}
+\end{equation}
+
+For a round-trip radar signal grazing the solar limb, the dominant contribution
+comes from the near-Sun segment of the trajectory. Approximating the
+path as a straight line with impact parameter \(b \simeq R_\odot\),
+the integral over the two-way path gives the logarithmic form
+\begin{equation}
+	\Delta t_{\text{round-trip}}
+	\approx
+	4GM\,
+	\ln\!\left(\frac{4R_E R_P}{b^2}\right)
+	\qquad
+	(c=1),
+	\label{eq:shapiro_log}
+\end{equation}
+where \(R_E\) and \(R_P\) are the heliocentric distances of the emitter
+and receiver. Restoring the speed of light \(c\) yields the standard SI expression,
+\begin{equation}
+	\Delta t_{\text{round-trip}}
+	\approx
+	\frac{4GM}{c^3}\,
+	\ln\!\left(\frac{4R_E R_P}{b^2}\right)
+	\qquad
+	(\text{SI}),
+	\label{eq:shapiro_log_SI}
+\end{equation}
+which matches the classic relativistic Shapiro delay.
+
+Thus, the single normalized EMC density profile
+\(\eta(r)=1-r_s/r\) unifies all three classic local metric observables without introducing any free parameters:
+
+\begin{itemize}
+	\item \textbf{Solar light bending} through the spatial gradient of
+	\(n_\gamma(r)\),
+	\item \textbf{Gravitational redshift} through the internal clock speed
+	\(v_{\text{clock}}=\sqrt{\eta}\),
+	\item \textbf{Shapiro delay} through the integrated excess of
+	\(n_\gamma(r)-1\) along the propagation path.
+\end{itemize}
+
+The Shapiro delay constitutes the third independent projection of the single EMC lattice deformation surrounding a matter soliton.
 
 \section{Relation to Existing Emergent Gravity Frameworks}
 \label{sec:emergent_comparison}
