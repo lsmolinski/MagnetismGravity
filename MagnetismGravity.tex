@@ -67,7 +67,7 @@
 
 \begin{center}
 \today \\
-Version: 4.5.8	
+Version: 4.5.9	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -1791,6 +1791,66 @@ Thus, the profile contains no free functional parameters and no empirical
 tuning coefficients. The \(1/r\) form is required by the harmonic
 equilibrium of the lattice, and its amplitude is fixed by the enclosed
 gravitational radius \(r_s\).
+
+\subsection{From Microscopic EMC Displacement to the Gravitational Radius}
+\label{sec:micro_to_gravitational_radius}
+
+The far-field EMC density profile
+
+\begin{equation}
+	\eta(r) = 1 - \frac{r_s}{r}
+\end{equation}
+
+contains a single characteristic length scale, \(r_s\). In the preceding numerical implementations, this amplitude was identified with the gravitational radius of the source. This section demonstrates that this identification is a necessary consequence of the additive microscopic EMC displacements of constituent matter solitons, rather than an independent boundary input.
+
+Consider a static, spherically symmetric body of total mass \(M = \sum_i m_i\), composed of elementary matter solitons. In the long-wavelength, weak-field regime, the lattice continuum behaves as a linear elastic medium, ensuring that the total strain field is the linear superposition of individual soliton perturbations.
+
+For any elementary soliton \(i\) of mass \(m_i\), the fundamental geometric identity of EWT yields the individual monopole strain amplitude:
+
+\begin{equation}
+	a_i = 2\,G_{\text{EWT, geo}}\,m_i ,
+\end{equation}
+
+where \(G_{\text{EWT, geo}}\) is the uncalibrated geometric constant derived purely from the ideal BCC lattice projection parameter \(L_p^{\text{geom}} = 2/\sqrt{3}\). Owing to field linearity in the far zone, the total monopole amplitude \(A\) of the macroscopic body is the sum of the constituent amplitudes:
+
+\begin{equation}
+	A = \sum_i a_i = 2\,G_{\text{EWT, geo}} \sum_i m_i = 2\,G_{\text{EWT, geo}}\,M .
+	\label{eq:additive_monopole}
+\end{equation}
+
+Equation~\eqref{eq:additive_monopole} establishes that the macroscopic strain amplitude is strictly proportional to the total mass enclosed.
+
+Applying Gauss's divergence theorem to the radial displacement field \(\delta\eta(r) = \eta(r) - 1\), the outward strain flux through a sphere of radius \(r\) is given by:
+
+\begin{equation}
+	\oint_{\partial V} \nabla (\delta\eta) \cdot d\mathbf{S} = 4\pi r^2 \frac{d\,\delta\eta}{dr} = 4\pi A .
+\end{equation}
+
+For the fundamental harmonic solution \(\delta\eta(r) = -A/r\), the radial derivative evaluates to:
+
+\begin{equation}
+	\frac{d\,\delta\eta}{dr} = \frac{A}{r^2} .
+\end{equation}
+
+Consequently, the Neumann boundary condition enforced at the source radius \(R\) in the numerical implementation is fully derived from first principles:
+
+\begin{equation}
+	\left.\frac{d\,\delta\eta}{dr}\right|_{R} = \frac{2\,G_{\text{EWT, geo}}\,M}{R^2} .
+\end{equation}
+
+Integration yields the unique far-field density profile:
+
+\begin{equation}
+	\eta(r) = 1 - \frac{2\,G_{\text{EWT, geo}}\,M}{r} ,
+\end{equation}
+
+from which the gravitational radius naturally emerges as a derived effective quantity:
+
+\begin{equation}
+	r_s \equiv 2\,G_{\text{EWT, geo}}\,M .
+\end{equation}
+
+No empirical value of \(G\) is injected into this derivation. The minor numerical discrepancy ($\sim 5$~ppm) between \(G_{\text{EWT, geo}}\) and the CODATA value lies within the experimental uncertainty of Newton's constant and is fully accounted for by the non-ideal spherical packing impedance \(\zeta\) (Sec.~\ref{subsub:packing_fraction}). This completes the logical closure: the far-field profile and metric artifacts are generated strictly from microscopic lattice parameters and the enclosed mass.
 
 \subsection{Summary of Local Metric Observables}
 Thus, the single normalized EMC density profile
