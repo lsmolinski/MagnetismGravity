@@ -67,7 +67,7 @@
 
 \begin{center}
 \today \\
-Version: 4.5.10	
+Version: 4.5.11	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -1851,6 +1851,131 @@ from which the gravitational radius naturally emerges as a derived effective qua
 \end{equation}
 
 No empirical value of \(G\) is injected into this derivation. The minor numerical discrepancy ($\sim 5$~ppm) between \(G_{\text{EWT, geo}}\) and the CODATA value lies within the experimental uncertainty of Newton's constant and is fully accounted for by the non-ideal spherical packing impedance \(\zeta\) (Sec.~\ref{subsub:packing_fraction}). This completes the logical closure: the far-field profile and metric artifacts are generated strictly from microscopic lattice parameters and the enclosed mass.
+
+
+\subsection{Emergent Metric Encodings from Lattice Dynamics}
+\label{sec:emergent_metric_encodings}
+
+The elastic constant \(k\) introduced in Sec.~\ref{sec:hookes_law}
+can be derived from a microscopic pair potential \(V(r)\) between
+neighbouring EMCs. In the continuum limit of the one-dimensional
+lattice, the equilibrium spacing is
+\(a \equiv 1/\eta\), where \(\eta\) is the normalised EMC density.
+The stiffness is the second derivative of the pair potential evaluated
+at that equilibrium separation:
+\begin{equation}
+	k(\eta)
+	=
+	\left.
+	\frac{d^{2}V}{dr^{2}}
+	\right|_{r=1/\eta}
+	.
+\end{equation}
+For a logarithmic repulsive core,
+\(V(r) = -V_0 \ln(r)\), this gives
+\begin{equation}
+	k(\eta)
+	=
+	\frac{V_0}{(1/\eta)^{2}}
+	=
+	V_0\,\eta^{2}
+	.
+\end{equation}
+Thus the scaling
+\begin{equation}
+	k \;\propto\; \eta^{2}
+	\label{eq:stiffness_scaling}
+\end{equation}
+is not an independent assumption. It follows from the same discrete
+repulsion that underlies the Hookean description of the vacuum lattice.
+
+The local metric phenomena considered earlier are encoded through two
+relations:
+\begin{equation}
+	n_\gamma \;\propto\; \eta^{-1/2}
+\end{equation}
+and
+\begin{equation}
+	v_{\text{clock}} \;\propto\; \sqrt{\eta}
+	.
+\end{equation}
+Both encodings can be recovered from the microscopic lattice dynamics
+without postulating them.
+
+Consider a one-dimensional spring-mass lattice. The mass per lattice
+site is proportional to the local EMC density,
+\begin{equation}
+	m \;\propto\; \eta .
+	\label{eq:mass_scaling}
+\end{equation}
+The local spring stiffness follows from
+Eq.~\eqref{eq:stiffness_scaling}.
+
+For small longitudinal disturbances, the speed of sound in this
+lattice is
+\begin{equation}
+	v(\eta)
+	=
+	\sqrt{\frac{k(\eta)}{m(\eta)}}
+	=
+	\sqrt{\frac{\eta^{2}}{\eta}}
+	=
+	\sqrt{\eta}
+	.
+\end{equation}
+This is exactly the clock-speed encoding
+\begin{equation}
+	v_{\text{clock}}
+	\;\propto\;
+	\sqrt{\eta}
+	,
+\end{equation}
+now obtained as an emergent property of the microscopic equations.
+
+The corresponding effective refractive index follows from the same wave
+speed:
+\begin{equation}
+	n_\gamma(\eta)
+	=
+	\frac{c_0}{v(\eta)}
+	\;\propto\;
+	\eta^{-1/2}
+	.
+\end{equation}
+Thus the clock samples \(v(\eta)\), while the optical path samples
+\(1/v(\eta)\). The square-root scaling emerges in both cases without
+an independent optical postulate.
+
+A local oscillator placed in a region of density \(\eta\) has the same
+harmonic frequency scale,
+\begin{equation}
+	f
+	\;\propto\;
+	\sqrt{\frac{k}{m}}
+	\;\propto\;
+	\sqrt{\eta}
+	.
+\end{equation}
+
+Consequently, the two exponents previously introduced as geometric
+encodings are the direct mechanical consequence of the lattice model.
+They do not require an independent optical or clock hypothesis.
+
+\noindent
+
+\textbf{Note on the separation of gravitational and electromagnetic domains:}
+In the EWT framework, electromagnetic phenomena operate in the
+\emph{soliton-energy domain}. Charge and radiation are carried by the
+amplitude and phase of standing and travelling waves. Consequently, two
+counter-propagating electromagnetic waves superpose linearly in free
+space: their interference does not produce a leading-order change in
+the EMC packing density \(\rho(r)\). Gravity, by contrast, operates in
+the \emph{EMC density domain}. It is the macroscopic response of the
+lattice to a localized deficit in the packing density
+\(N_{\nu,\text{eff}}\). This distinction explains why gravity is
+universal, acting on all forms of energy that displace the medium,
+while remaining exceptionally weak compared to electromagnetic effects,
+which directly involve the energy amplitudes of the solitons.
 
 \subsection{Summary of Local Metric Observables}
 Thus, the single normalized EMC density profile
