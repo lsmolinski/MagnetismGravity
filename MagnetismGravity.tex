@@ -1858,71 +1858,79 @@ No empirical value of \(G\) is injected into this derivation. The minor numerica
 
 The elastic constant \(k\) introduced in Sec.~\ref{sec:hookes_law}
 can be derived from a microscopic pair potential \(V(r)\) between
-neighbouring EMCs. In the continuum limit of the one-dimensional
+neighbouring EMCs. In the continuum limit of a one-dimensional
 lattice, the equilibrium spacing is
-\(a \equiv 1/\eta\), where \(\eta\) is the normalised EMC density.
-The stiffness is the second derivative of the pair potential evaluated
-at that equilibrium separation:
+\begin{equation}
+	a(\eta)
+	\equiv
+	\frac{1}{\eta}
+	,
+\end{equation}
+where \(\eta\) is the normalised EMC density.
+
+In this one-dimensional chain, the natural contact interaction is
+modelled by the repulsive potential
+\begin{equation}
+	V(r)
+	=
+	\frac{V_0}{r}
+	,
+\end{equation}
+whose first derivative gives the force between neighbouring sites and
+whose second derivative evaluated at the equilibrium spacing defines
+the local spring stiffness:
 \begin{equation}
 	k(\eta)
 	=
 	\left.
 	\frac{d^{2}V}{dr^{2}}
 	\right|_{r=1/\eta}
+	\propto
+	\eta^{3}
 	.
 \end{equation}
-For a logarithmic repulsive core,
-\(V(r) = -V_0 \ln(r)\), this gives
+
+The mass per lattice site is fixed, since each site corresponds to one
+EMC. The mass per unit length is therefore
 \begin{equation}
-	k(\eta)
+	\rho
 	=
-	\frac{V_0}{(1/\eta)^{2}}
+	\frac{m_0}{a(\eta)}
 	=
-	V_0\,\eta^{2}
+	m_0\,\eta
 	.
 \end{equation}
-Thus the scaling
-\begin{equation}
-	k \;\propto\; \eta^{2}
-	\label{eq:stiffness_scaling}
-\end{equation}
-is not an independent assumption. It follows from the same discrete
-repulsion that underlies the Hookean description of the vacuum lattice.
 
-The local metric phenomena considered earlier are encoded through two
-relations:
-\begin{equation}
-	n_\gamma \;\propto\; \eta^{-1/2}
-\end{equation}
-and
-\begin{equation}
-	v_{\text{clock}} \;\propto\; \sqrt{\eta}
-	.
-\end{equation}
-Both encodings can be recovered from the microscopic lattice dynamics
-without postulating them.
-
-Consider a one-dimensional spring-mass lattice. The mass per lattice
-site is proportional to the local EMC density,
-\begin{equation}
-	m \;\propto\; \eta .
-	\label{eq:mass_scaling}
-\end{equation}
-The local spring stiffness follows from
-Eq.~\eqref{eq:stiffness_scaling}.
-
-For small longitudinal disturbances, the speed of sound in this
-lattice is
+The long-wavelength speed of sound in a one-dimensional lattice is not
+\(\sqrt{k/m_0}\), but rather
 \begin{equation}
 	v(\eta)
 	=
-	\sqrt{\frac{k(\eta)}{m(\eta)}}
+	a(\eta)
+	\sqrt{\frac{k(\eta)}{m_0}}
+	.
+\end{equation}
+Using the one-dimensional modulus
+\begin{equation}
+	E(\eta)
 	=
+	k(\eta)\,a(\eta)
+	\;\propto\;
+	\eta^{2}
+	,
+\end{equation}
+this can be written in the standard continuum form
+\begin{equation}
+	v(\eta)
+	=
+	\sqrt{\frac{E(\eta)}{\rho(\eta)}}
+	\;\propto\;
 	\sqrt{\frac{\eta^{2}}{\eta}}
 	=
 	\sqrt{\eta}
 	.
 \end{equation}
+
 This is exactly the clock-speed encoding
 \begin{equation}
 	v_{\text{clock}}
@@ -1930,10 +1938,11 @@ This is exactly the clock-speed encoding
 	\sqrt{\eta}
 	,
 \end{equation}
-now obtained as an emergent property of the microscopic equations.
+now obtained as an emergent property of the microscopic lattice
+dynamics.
 
-The corresponding effective refractive index follows from the same wave
-speed:
+The corresponding effective refractive index follows from the same
+wave speed:
 \begin{equation}
 	n_\gamma(\eta)
 	=
@@ -1942,24 +1951,33 @@ speed:
 	\eta^{-1/2}
 	.
 \end{equation}
-Thus the clock samples \(v(\eta)\), while the optical path samples
-\(1/v(\eta)\). The square-root scaling emerges in both cases without
-an independent optical postulate.
 
-A local oscillator placed in a region of density \(\eta\) has the same
-harmonic frequency scale,
+A physical clock in this medium is a standing-wave soliton of fixed
+linear dimension \(L\). Its fundamental frequency is therefore
 \begin{equation}
-	f
+	f(\eta)
 	\;\propto\;
-	\sqrt{\frac{k}{m}}
+	\frac{v(\eta)}{L}
 	\;\propto\;
 	\sqrt{\eta}
 	.
 \end{equation}
 
-Consequently, the two exponents previously introduced as geometric
-encodings are the direct mechanical consequence of the lattice model.
-They do not require an independent optical or clock hypothesis.
+Thus the two exponents previously introduced as geometric encodings
+follow directly from the lattice dynamics. They do not require an
+independent optical or clock hypothesis.
+
+\noindent
+
+\textbf{Dimensional reduction and 3D extension:}
+The one-dimensional chain represents the effective longitudinal
+propagation along a high-symmetry axis of the three-dimensional BCC
+lattice. In a full 3D lattice, the equilibrium spacing scales as
+\(a(\eta) \propto \eta^{-1/3}\), while the volumetric mass density
+scales as \(\rho_{3D} \propto \eta\). The same wave-speed scaling
+\(v(\eta) = \sqrt{E/\rho} \propto \sqrt{\eta}\) is then recovered from
+a microscopic inverse-cube pair potential
+\(V(r) \propto r^{-3}\).
 
 \noindent
 
