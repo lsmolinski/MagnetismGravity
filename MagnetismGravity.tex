@@ -67,7 +67,7 @@
 
 \begin{center}
 \today \\
-Version: 4.5.12	
+Version: 4.6.1	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -2006,6 +2006,112 @@ Thus, the single normalized EMC density profile
 \end{itemize}
 
 The functional form of this underlying profile is uniquely determined by the harmonic equilibrium of the EMC lattice, with its amplitude strictly fixed by the enclosed gravitational radius \(r_s\).
+
+\section{Newtonian Force from Interacting EMC Deficits}
+\label{sec:newtonian_emc_force}
+
+The same far-field density deficit that reproduces the local metric
+observables also gives rise to the Newtonian force law.
+
+Consider two matter solitons of masses \(M_1\) and \(M_2\), separated
+by a distance \(R\). Each soliton sources a monopole density deficit
+\begin{equation}
+	\delta\eta_i(r)
+	=
+	-\frac{A_i}{r}
+	,
+	\qquad
+	A_i
+	=
+	\frac{2G_{\text{EWT, geo}} M_i}{c^2}
+	.
+\end{equation}
+
+The static interaction energy arises from the integrated overlap of the two
+density gradients in the surrounding medium,
+\begin{equation}
+	U_{\text{int}}(R)
+	=
+	-K_{\text{emc}}
+	\int
+	\nabla(\delta\eta_1)
+	\cdot
+	\nabla(\delta\eta_2)
+	\,dV
+	,
+\end{equation}
+where the minus sign reflects the attractive nature of overlapping volume deficits under external vacuum pressure, and the normalization constant is
+\begin{equation}
+	K_{\text{emc}}
+	=
+	\frac{c^4}{16\pi G_{\text{EWT, geo}}}
+	.
+\end{equation}
+
+In spherical coordinates centred on the first source, the scalar
+product of the two gradients is
+\begin{equation}
+	\nabla(\delta\eta_1)
+	\cdot
+	\nabla(\delta\eta_2)
+	=
+	A_1 A_2
+	\frac{r^2 - rR\cos\theta}
+	{r^{3}(r^{2}+R^{2}-2rR\cos\theta)^{3/2}}
+	.
+\end{equation}
+
+Performing the angular integration over the spherical shell at radius $r$ yields
+\begin{equation}
+	\int_{0}^{2\pi}
+	\int_{0}^{\pi}
+	\left[ \nabla(\delta\eta_1) \cdot \nabla(\delta\eta_2) \right]
+	\sin\theta
+	\,d\theta
+	\,d\phi
+	=
+	\begin{cases}
+		0, & r < R, \\[4pt]
+		\dfrac{4\pi A_1 A_2}{r^4}, & r \ge R,
+	\end{cases}
+\end{equation}
+which is the exact field-theoretic analogue of Newton's shell theorem.
+
+Integrating over the volume element $dV = r^2 \sin\theta \,dr \,d\theta \,d\phi$ for the non-vanishing region $r \ge R$ gives
+\begin{equation}
+	U_{\text{int}}(R)
+	=
+	-\frac{c^4}{16\pi G_{\text{EWT, geo}}}
+	\cdot
+	4\pi A_1 A_2
+	\int_{R}^{\infty}
+	\frac{dr}{r^{2}}
+	=
+	-\frac{c^4 A_1 A_2}{4 G_{\text{EWT, geo}} R}
+	.
+\end{equation}
+
+The attractive force directed along the line connecting the centers is
+\begin{equation}
+	F
+	=
+	-\frac{dU_{\text{int}}}{dR}
+	=
+	-\frac{c^4 A_1 A_2}{4 G_{\text{EWT, geo}} R^{2}}
+	.
+\end{equation}
+
+Substituting the monopole amplitudes $A_i = 2 G_{\text{EWT, geo}} M_i / c^2$ yields precisely
+\begin{equation}
+	F
+	=
+	-\frac{G_{\text{EWT, geo}} M_1 M_2}{R^{2}}
+	.
+\end{equation}
+
+No additional fundamental force is postulated. The inverse-square law
+is the static consequence of two EMC density deficits interacting
+through vacuum push-out pressure. The \(4\pi\) factor emerges dynamically from the 3D angular integration, while the \(16\pi\) factor represents the field stress-energy normalization.
 
 \section{Relation to Existing Emergent Gravity Frameworks}
 \label{sec:emergent_comparison}
