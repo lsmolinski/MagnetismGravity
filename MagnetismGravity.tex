@@ -354,11 +354,12 @@ The macroscopic stiffness parameter $N$ (as defined in Eq. \ref{eq:epsilon_M_def
 \subsection{From Energy Domain to Geometric Domain}
 The Energy Wave Theory (EWT), as developed by Yee \cite{yee2020constants}, successfully derived 23 fundamental physical constants from five wave constants: longitudinal amplitude $A_l$, longitudinal wavelength $\lambda_l$, aether density $\rho$, wave speed $c$, and the electron's wave center count $K_{WC}=10$. In that framework, charge was already reinterpreted as wave amplitude, measured in meters, hinting at an underlying geometric reality. The present work extends this program by identifying the physical substrate of these waves: a Body-Centered Cubic (BCC) lattice of spherical Elastic Medium Constituents (EMCs). The wave constants are thus replaced by geometric invariants of this lattice: the statutory neutrino radius $r_{\nu}$ (related to $\lambda_l$ and $K_{WC}$), the effective nodal stiffness $N_{\text{geom}} = 8\pi^4(1-\zeta)$ (derived from the BCC coordination number and packing impedance), and the magnetic deficit $\epsilon_M = 1/(N_{\text{geom}}\pi^3)$ (encoding the 7-dimensional weak interaction scale). This transition from the energy domain to the geometric domain not only preserves the predictive power of EWT but also unifies gravity, electromagnetism, and the weak force under a single topological framework.
 
-\section{Geometric Equation of the Fine-Structure Constant and the Deficit Terms}\label{sec:alpha_geometric_deficit}
+\section{Geometric Equation of the Fine-Structure Constant and the Deficit Terms}
+\label{sec:alpha_geometric_deficit}
 
-The \textbf{fine-structure constant} ($\alpha$) is defined within Energy Wave Theory (EWT) as a geometric ratio describing the relative strengths of fundamental forces—charge energy, magnetism, and gravity \cite{Yee2019alfa,yee2025geometriccorrection}.
+The \textbf{fine-structure constant} ($\alpha$) is defined within Energy Wave Theory (EWT) as a geometric ratio describing the relative strengths of fundamental forces---charge energy, magnetism, and gravity \cite{Yee2019alfa,yee2025geometriccorrection}.
 
-The derivation of the inverse fine-structure constant ($1/\alpha$) is realized as the \textbf{summation} of all geometric terms inherent to the Soliton (Wave Center, WC) structure. Crucially, the final value requires corrective terms, which are classified as \textbf{Deficit Terms}, to describe the physical manifestation of charge and mass.
+The derivation of the inverse fine-structure constant ($1/\alpha$) is realized as the combination of a purely geometric core and a small topological correction. The core is obtained from the surface geometry of the soliton, while the correction is dictated by the BCC lattice structure.
 
 This approach redefines fundamental particle properties:
 \begin{itemize}
@@ -369,122 +370,134 @@ This approach redefines fundamental particle properties:
 	\alpha = \frac{A_{1}^{2}}{A_{0}^{2}} = \frac{x^{2}}{S}
 \end{equation}
 
-The total surface area $S$ is modeled as the sum of the surface area of a sphere (representing classical wave propagation) and the total surface area of a cone (representing the oscillatory/spin component), based on the key geometric relationships $r=x$ and $l=\pi x$. The relationship $\boldsymbol{l = \pi x}$ postulates that the propagation distance ($l$) is $\pi$ times the source amplitude ($x$) over the same time period.
-
-\subsubsection*{Geometric Soliton Core ($\mathbf{4\pi^{3} + \pi^{2} + \pi}$):} 
+\subsection*{Geometric Soliton Core ($\mathbf{4\pi^{3} + \pi^{2} + \pi}$)}
 
 The derivation of the pure geometric constant $\mathbf{A}_{\pi}$ was first proposed by Jeff Yee \cite{Yee2019alfa} within the framework of the Energy Wave Theory. The core postulate involves equating the fine-structure constant to a specific ratio of surface areas in the quantum background, and the derivation proceeds in the following steps:
 \begin{enumerate}[label=\textbf{Step \arabic*:}]
-\item \textbf{Defining the Total Surface Area $S$}
-The total surface area $S$ is the sum of the sphere surface area and the total cone surface area:
-\begin{equation}
-	S = \underbrace{4\pi l^{2}}_{\text{Sphere Area}} + \underbrace{(\pi r l + \pi r^{2})}_{\text{Total Cone Area}}
-\end{equation}
-
-\item \textbf{Substitution of Geometric Relations ($r=x$, $l=\pi x$)}
-Substituting $r=x$ and $l=\pi x$ expresses $S$ solely in terms of $\pi$ and $x$:
-\begin{equation}
-	S = 4\pi (\pi x)^{2} + (\pi (x) (\pi x) + \pi x^{2})
-\end{equation}
-
-\item \textbf{Simplification}
-The expression is simplified by factoring out $x^2$:
-\begin{equation}
-	S = 4\pi^3 x^2 + \pi^2 x^2 + \pi x^{2} = x^{2}(4\pi^{3} + \pi^{2} + \pi)
-\end{equation}
-
-\item \textbf{Final Geometric Fine-Structure Constant}
-Substituting the simplified $S$ into $\alpha = x^2 / S$, the $x^2$ terms cancel, yielding $\alpha$ as a pure function of $\pi$:
-\begin{equation}
-	{\mathbf{A}_{\pi}}^{-1} = \frac{1}{4\pi^{3} + \pi^{2} + \pi}
-\end{equation}
+	\item \textbf{Defining the Total Surface Area $S$}
+	The total surface area $S$ is the sum of the sphere surface area and the total cone surface area:
+	\begin{equation}
+		S = \underbrace{4\pi l^{2}}_{\text{Sphere Area}} + \underbrace{(\pi r l + \pi r^{2})}_{\text{Total Cone Area}}
+	\end{equation}
+	
+	\item \textbf{Substitution of Geometric Relations ($r=x$, $l=\pi x$)}
+	Substituting $r=x$ and $l=\pi x$ expresses $S$ solely in terms of $\pi$ and $x$:
+	\begin{equation}
+		S = 4\pi (\pi x)^{2} + (\pi (x) (\pi x) + \pi x^{2})
+	\end{equation}
+	
+	\item \textbf{Simplification}
+	The expression is simplified by factoring out $x^2$:
+	\begin{equation}
+		S = 4\pi^3 x^2 + \pi^2 x^2 + \pi x^{2} = x^{2}(4\pi^{3} + \pi^{2} + \pi)
+	\end{equation}
+	
+	\item \textbf{Final Geometric Fine-Structure Constant}
+	Substituting the simplified $S$ into $\alpha = x^2 / S$, the $x^2$ terms cancel, yielding $\alpha$ as a pure function of $\pi$:
+	\begin{equation}
+		{\mathbf{A}_{\pi}}^{-1} = \frac{1}{4\pi^{3} + \pi^{2} + \pi}
+		\label{eq:A_pi}
+	\end{equation}
 \end{enumerate}
 
 \paragraph{Kinematic Origin of the \(\pi\) Factor}
-The relation \(l = \pi x\) is not an arbitrary geometric choice but a
-consequence of the harmonic motion of the central EMC in an elastic
-medium with constant propagation speed \(c\). In one complete oscillation
-the central granule travels a total longitudinal displacement of \(2x\).
-During the same time interval, the disturbance emitted by this motion
-propagates outward at the lattice speed \(c\). Because the central
-granule follows a sinusoidal path, its corresponding longitudinal phase
-advance is exactly \(\pi x\), whereas the undisturbed wavefront travels
-the longer distance \(l = \pi x\). The factor \(\pi\) therefore enters
-through the kinematics of harmonic oscillation, not as a fitted
-parameter:
-\begin{equation}
-	l = \pi x
-	\qquad\text{(harmonic phase advance of the central EMC)}.
-\end{equation}
-This mechanical origin of \(l\) is what ultimately generates the
-characteristic powers \(\pi^{3}, \pi^{2}, \pi\) in the fine-structure
-geometry.
+The relation \(l = \pi x\) defines the propagation distance in terms of the source amplitude. It is not an arbitrary geometric choice but a consequence of the harmonic motion of the central EMC in an elastic medium with constant propagation speed \(c\). In one complete oscillation the central granule travels a total longitudinal displacement of \(2x\). During the same time interval, the disturbance emitted by this motion propagates outward at the lattice speed \(c\). Because the central granule follows a sinusoidal path, its corresponding longitudinal phase advance is exactly \(\pi x\), whereas the undisturbed wavefront travels the longer distance \(l = \pi x\). The factor \(\pi\) therefore enters through the kinematics of harmonic oscillation, not as a fitted parameter. This mechanical origin of \(l\) is what ultimately generates the characteristic powers \(\pi^{3}, \pi^{2}, \pi\) in the fine-structure geometry.
 
-\subsubsection*{The Deficit Terms ($\mathbf{\epsilon_{M} + \sum \epsilon_{G}}$):} The difference between the core geometric value and the measured physical constant is accounted for by the Deficit Terms. These are necessary to describe the macroscopic properties of the particle in question (e.g., the electron). The two terms are attributed to:
+\subsection{BCC Lattice Geometry and the Geometric Ladder}
+
+The vacuum lattice is a discrete body-centred cubic (BCC) lattice of Elastic Medium Constituents (EMCs). The BCC lattice is characterised by:
 \begin{itemize}
-	\item \textbf{Magnetic Deficit ($\epsilon_{M}$):} The slight geometric correction required due to the Soliton's intrinsic magnetic moment (spin).
-	\item \textbf{Gravitational Deficit ($\sum \epsilon_{G}$):} A geometric summation term required to account for the total number of Wave Centers ($K_{WC}$) that accumulate to form the particle. This term represents the aggregate contribution of all constituent wave centers to the fine-structure constant, though its effect is negligible for a single lepton.
+	\item \(8\) nearest neighbours,
+	\item packing fraction
+	\begin{equation}
+		\eta_{\text{BCC}} = \frac{\sqrt{3}\,\pi}{8},
+		\label{eq:eta_BCC}
+	\end{equation}
+	\item ideal projection factor
+	\begin{equation}
+		L_p^{\text{geom}} = \frac{2}{\sqrt{3}},
+		\label{eq:Lp_geom}
+	\end{equation}
 \end{itemize}
 
-The Gravitational Deficit term ($\sum \epsilon_{G}$) is explicitly defined as the product of the number of constituent wave centers ($K_{WC}$), where each WC localizes an immense quantity of Elastic Medium Constituents (EMC), and the individual, minimal geometric gravitational correction constant ($\epsilon_{G}$):
+The factor \(L_p^{\text{geom}}\) is the inverse of the dimensionless nearest-neighbour distance in the BCC lattice. It is not an adjustable constant but a direct consequence of the \(Im\bar{3}m\) space group: the nearest neighbour lies at \(d/a = \sqrt{3}/2\), and its inverse gives the geometric projection factor \(2/\sqrt{3}\).
+
+The geometry of the lattice imposes a natural dimensional hierarchy on the soliton's wave structure. Each additional active degree of freedom contributes one factor of \(\pi\), giving rise to the following geometric ladder:
+
+\begin{table}[h]
+	\centering
+	\small
+	\caption{The Geometric Ladder: Dimensional Interaction Topology}
+	\label{tab:dimensional_ladder_origin}
+	\begin{tabular}{l l l c}
+		\toprule
+		\textbf{Scale} & \textbf{Interaction} & \textbf{Budget Components} & \textbf{Dim.} \\
+		\midrule
+		$\pi^7$ & Charged Weak & 3D + $A + f + r + Q$ & 7 \\
+		$\pi^6$ & Neutral Weak & 3D + $A + f + r$     & 6 \\
+		$\pi^5$ & Flavor Mixing & 3D + $A + f$         & 5 \\
+		$\pi^4$ & Int. Binding  & 3D + $A$              & 4 \\
+		$\pi^3$ & Spatial Substrate & 3D & 3 \\
+		\bottomrule
+	\end{tabular}\\[4pt]
+	\textit{Legend: A = amplitude, f = frequency, r = radius, Q = charge.}
+\end{table}
+
+The \(\pi^7\) rung is particularly important: it represents the charged weak sector, in which the soliton engages seven independent geometric degrees of freedom. The BCC coordination number is \(8\). The magnetic deficit \(\epsilon_M\) introduced below is therefore naturally associated with the inverse of the product \(8\pi^7\), with a small correction due to the non-ideal spherical packing of the lattice.
+
+\subsection{Geometric Magnetic Deficit \(\epsilon_M\)}
+\label{sec:magnetic_deficit}
+
+The ideal stiffness of the BCC lattice follows from its eight nearest neighbours and the four-dimensional saturation budget:
 \begin{equation}
-	\sum \epsilon_{G} = K_{WC} \cdot \epsilon_{G}
-	\label{eq:grav_sum_neutrino}
+	N_{\text{ideal}} = 8\pi^4 .
+	\label{eq:N_ideal}
 \end{equation}
-For the electron, the wave center count is established as $K_{WC}=10$ \cite{yee2020geometry, yee2019geometry}.
 
-The complete equation for the inverse fine-structure constant in the context of EWT is therefore given by the Geometric Soliton Core plus the Deficit Terms:
+The non-ideal spherical packing of the EMCs gives rise to a small lattice impedance
 \begin{equation}
-	\frac{1}{\alpha_{\text{final}}} = \underbrace{\left(4\pi^{3} + \pi^{2} + \pi\right)}_{\text{Geometric Soliton Core (Matter/Charge Base)}} + \underbrace{\epsilon_{M}}_{\text{Magnetic Deficit (Spin)}} + \underbrace{\sum \epsilon_{G}}_{\substack{\text{Gravitational Deficit} \\ \text{where } K_{WC}=10 \text{ (for the Electron)}}}
-	\label{eq:alpha_full_geometric_deficit}
+	\zeta = \frac{1-\eta_{\text{BCC}}}{\eta_{\text{BCC}} N_{\text{ideal}}} .
+	\label{eq:zeta}
 \end{equation}
-\noindent Where $\epsilon_{M}$ and $\epsilon_{G}$ are dimensionless geometric correction constants, and $K_{WC}$ is the number of constituent wave centers.
 
-\subsubsection{Normalization of the Deficit Sign}
-
-While Equation \eqref{eq:alpha_full_geometric_deficit} provides the complete algebraic summation of all geometric components, the physical interpretation of the \textbf{Deficit Terms} within the BCC lattice necessitates a sign normalization. The term $\epsilon_{M}$ is established as a strictly positive geometric constant ($\epsilon_{M} > 0$). 
-
-Furthermore, since the contribution of the gravitational deficit ($\sum \epsilon_{G}$) for a single lepton is \textbf{negligible}, the final operative equation for high-precision validation is simplified to the subtraction of the magnetic deficit from the ideal geometric base:
-
+Applying this impedance to the ideal stiffness yields the effective geometric stiffness:
 \begin{equation}
-	\frac{1}{\alpha_{\text{final}}} = \left(4\pi^{3} + \pi^{2} + \pi\right) - \epsilon_{M}, \quad \text{where} \quad \epsilon_{M} > 0
+	N_{\text{geom}} = N_{\text{ideal}} (1-\zeta) .
+	\label{eq:N_geom}
+\end{equation}
+
+The magnetic deficit is then defined by the key relation
+\begin{equation}
+	\boxed{
+		\epsilon_M = \frac{1}{N_{\text{geom}} \pi^3}
+		= \frac{1}{8\pi^7 (1-\zeta)}
+	}
+	\label{eq:epsilon_M_definition}
+\end{equation}
+
+In the ideal continuum limit \(\zeta \to 0\), this reduces to
+\begin{equation}
+	\epsilon_M^{(\text{ideal})} = \frac{1}{8\pi^7} .
+	\label{eq:epsilon_M_final_geo}
+\end{equation}
+
+For a single lepton, the gravitational deficit \(\sum \epsilon_G\) is negligible, so the full fine-structure constant takes the form
+\begin{equation}
+	\frac{1}{\alpha_{\text{geom}}} = A_\pi - \epsilon_M .
 	\label{eq:alpha_normalized_final}
 \end{equation}
 
-\begin{equation}
-	\mathbf{A}_{\pi} = 4\pi^{3} + \pi^{2} + \pi
-	\label{eq:A_pi}
-\end{equation}
+This expression contains no calibrated parameters. All quantities on the right-hand side are fixed by the BCC lattice geometry and the mathematical constants \(\pi\), \(e\), and \(\sqrt{2}\).
 
-\begin{equation}
-	\label{eq:epsilon_M_definition}
-	\epsilon_M = \frac{1}{N_{\text{final}} \cdot \pi^3}
-\end{equation}
+\subsection{The Fundamental Lattice Response Parameter \(\epsilon_M\)}
 
-\begin{equation}
-	N_{\text{final}} = 778.818123 
-\end{equation}
+A central role in the Enhanced EWT framework is played by the parameter \(\epsilon_M\), traditionally referred to as the \textit{magnetic deficit factor}. Initially, this parameter was identified as a functional heuristic---a "magnetic deficit" required to reconcile the fine-structure constant \(\alpha\) within the energy wave equations. However, as the framework evolved, it became evident that \(\epsilon_M\) was not a localized adjustment, but a fundamental property defining the very "stiffness" of the 3D space occupied by matter.
 
-The parameter $N_{\text{final}}$ is thus established as the ultimate unifying constant of the EWT framework, serving as the deterministic link that bridges the gravitational constant $G$, the recursive anomalous magnetic moments of leptons, and the fine-structure constant $\alpha$ into a single, cohesive geometric identity. $N_{\text{final}}$ is also completed by the discovery of the Weinberg and Cabibbo angles as the structural resonance limits of the vacuum lattice.
+Within the unified geometric context of this work, \(\epsilon_M\) is more fundamentally defined as the \textbf{Global Lattice Impedance Constant}. It represents the intrinsic structural resistance of the BCC vacuum substrate to any deviation from ideal spherical wave symmetry. This realization transformed it from a specialized electromagnetic factor into a cornerstone of Enhanced EWT, acting as a universal "scaling bridge" across different physical sectors.
 
-This normalization aligns the theoretical geometric model with the observed CODATA value ($137.035999...$), identifying $\epsilon_{M}$ as the \textbf{precise energetic cost} of the particle's spin-induced magnetic moment.
+By treating \(\epsilon_M\) as a singular topological property, the model achieves numerical convergence across disparate scales---from the gravitational constant \(G\) to the anomalous magnetic moments of leptons---without the need for independent empirical constants. The structural coherence of this approach is formally validated in Section \ref{sec:robustness}, where it is shown that this single value functions as the primary scaling anchor for the entire theory.
 
-\subsection{The Fundamental Lattice Response Parameter $\epsilon_{M}$}
-A central role in the Enhanced EWT framework is played by the parameter $\epsilon_{M}$, traditionally referred to as the \textit{magnetic deficit factor}. Initially, this parameter was identified as a functional heuristic—a "magnetic deficit" required to reconcile the fine-structure constant $\alpha$ within the energy wave equations. However, as the framework evolved, it became evident that $\epsilon_{M}$ was not a localized adjustment, but a fundamental property defining the very "stiffness" of the 3D space occupied by matter. 
-
-Within the unified geometric context of this work, $\epsilon_{M}$ is more fundamentally defined as the \textbf{Global Lattice Impedance Constant}. It represents the intrinsic structural resistance of the BCC vacuum substrate to any deviation from ideal spherical wave symmetry. This realization transformed it from a specialized electromagnetic factor into a cornerstone of Enhanced EWT, acting as a universal "scaling bridge" across different physical sectors.
-
-
-By treating $\epsilon_{M}$ as a singular topological property, the model achieves numerical convergence across disparate scales—from the gravitational constant $G$ to the anomalous magnetic moments of leptons—without the need for independent empirical constants. The structural coherence of this approach is formally validated in Section \ref{sec:robustness}, where it is shown that this single value functions as the primary scaling anchor for the entire theory. 
-
-\textbf{Ultimately, this work reveals that $\epsilon_{M}$ is not an arbitrary input, but a direct consequence of the BCC lattice coordination.} There, it is demonstrated that the entire physical universe can be reconstructed using only $\pi$, $e$, and the fundamental integers of the vacuum substrate.
-
-\textbf{The emergence of a zero-parameter physics requires $\epsilon_{M}$ to be a fixed topological invariant of the vacuum medium.} Through the geometric derivations presented in this paper, the definitive value of this constant is established finally in section \ref{sec:eliminating_fine_tunig_paradigm} as:
-
-\begin{equation}
-	\label{eq:epsilon_M_final_geo}
-	\boxed{\epsilon_{M} = \frac{1}{8\pi^7}}
-\end{equation}
+\textbf{Ultimately, this work reveals that \(\epsilon_M\) is not an arbitrary input, but a direct consequence of the BCC lattice coordination.} Its explicit geometric form is given in Eq.~\eqref{eq:epsilon_M_definition}.
 
 \section{Analysis of Neutrino Boundary Conditions}
 \label{sec:neutrino-analysis}
