@@ -22,6 +22,7 @@
 %\usepackage{fancyhdr} 
 %\pagestyle{fancy}
 \usepackage{hyperref}
+\usepackage{pdflscape}
 
 \lstset{
 	language=C, % Używamy C dla ogólnego formatowania
@@ -67,7 +68,7 @@
 
 \begin{center}
 \today \\
-Version: 4.6.1	
+Version: 5.0.0	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -84,7 +85,33 @@ Version: 4.6.1
 
 \section*{Abstract}
 {\boldmath \textbf{
-		A unified geometric wave model is proposed, deriving the Gravitational Constant ($G$), the Fine-Structure Constant ($\alpha$), and lepton anomalous magnetic moments ($a_l$) from a single structural modulator: the geometric vacuum stiffness $\epsilon_M$. $G$ is established as a precise, $\hbar$-independent identity rooted in the soliton's wave geometry, achieving 10-digit agreement with experimental benchmarks. The derivation uses only the ideal BCC projection $L_p^{\text{geom}} = 2/\sqrt{3}$, which alone yields $G$ to 5~ppm; the remaining difference reflects the lattice packing impedance, not a free parameter. The same $\epsilon_M$ factor governs a recursive nodal integration that predicts the electron anomalous magnetic moment from pure geometry and yields the full muon and tau anomalous magnetic moments via a unified dimensional projection over the BCC lattice once their mass scale is fixed, without perturbative QED calibrations. The framework posits that the observed invariance of $G$ is a low-field artefact of a dynamic geometric equilibrium, predicting testable deviations ($G_{eff} \neq G$) in environments with strong local magnetic moments where this equilibrium is exceeded. Crucially, the derivation of $\alpha$ and the anomalous magnetic moments ($a_l$) are shown to be independent of mass and charge, revealing that these constants are intrinsic topological properties of the vacuum lattice rather than secondary products of particle-field interactions. This geometric mapping reveals a dimensional hierarchy ($\pi^5, \pi^6$), resolving the Weinberg angle and Cabibbo mixing as emergent consequences of the vacuum's surface and volumetric resonance modes. Consequently, the divergence of fundamental forces is identified as a dimensional artefact of the unified BCC lattice, establishing a structural foundation for cosmological scaling.
+A unified geometric wave model is proposed, deriving the Gravitational
+Constant ($G$), the Fine-Structure Constant ($\alpha$), and lepton
+anomalous magnetic moments ($a_l$) from a single structural modulator:
+the geometric vacuum stiffness $\epsilon_M$. $G$ is established as a
+precise, $\hbar$-independent identity rooted in the soliton's wave
+geometry. The derivation uses the ideal BCC projection
+$L_p^{\text{geom}} = 2/\sqrt{3}$; the remaining deviation from the
+measured value reflects lattice packing impedance, not a free
+parameter. The same $\epsilon_M$ factor governs a recursive nodal
+integration that predicts the electron anomalous magnetic moment from
+pure geometry and yields the full muon and tau anomalous magnetic
+moments via a unified dimensional projection over the BCC lattice,
+without perturbative QED calibrations. The framework posits that the
+observed invariance of $G$ is a low-field artefact of a dynamic
+geometric equilibrium, predicting testable deviations ($G_{eff} \neq
+G$) in environments with strong local magnetic moments where this
+equilibrium is exceeded. Crucially, the derivation of $\alpha$ and the
+anomalous magnetic moments ($a_l$) are shown to be independent of mass
+and charge, revealing that these constants are intrinsic topological
+properties of the vacuum lattice rather than secondary products of
+particle-field interactions. This geometric mapping reveals a
+dimensional hierarchy ($\pi^5, \pi^6$), resolving the Weinberg angle
+and Cabibbo mixing as emergent consequences of the vacuum's surface
+and volumetric resonance modes. Consequently, the divergence of
+fundamental forces is identified as a dimensional artefact of the
+unified BCC lattice, establishing a structural foundation for
+cosmological scaling.
 }}
 \\
 % TODO: include a table of contents (optional)
@@ -373,7 +400,25 @@ Substituting the simplified $S$ into $\alpha = x^2 / S$, the $x^2$ terms cancel,
 \end{equation}
 \end{enumerate}
 
-Numerically, the reciprocal of this pure geometric value is ${\mathbf{A}_{\pi}}^{-1} \approx \mathbf{137.036040608}$.
+\paragraph{Kinematic Origin of the \(\pi\) Factor}
+The relation \(l = \pi x\) is not an arbitrary geometric choice but a
+consequence of the harmonic motion of the central EMC in an elastic
+medium with constant propagation speed \(c\). In one complete oscillation
+the central granule travels a total longitudinal displacement of \(2x\).
+During the same time interval, the disturbance emitted by this motion
+propagates outward at the lattice speed \(c\). Because the central
+granule follows a sinusoidal path, its corresponding longitudinal phase
+advance is exactly \(\pi x\), whereas the undisturbed wavefront travels
+the longer distance \(l = \pi x\). The factor \(\pi\) therefore enters
+through the kinematics of harmonic oscillation, not as a fitted
+parameter:
+\begin{equation}
+	l = \pi x
+	\qquad\text{(harmonic phase advance of the central EMC)}.
+\end{equation}
+This mechanical origin of \(l\) is what ultimately generates the
+characteristic powers \(\pi^{3}, \pi^{2}, \pi\) in the fine-structure
+geometry.
 
 \subsubsection*{The Deficit Terms ($\mathbf{\epsilon_{M} + \sum \epsilon_{G}}$):} The difference between the core geometric value and the measured physical constant is accounted for by the Deficit Terms. These are necessary to describe the macroscopic properties of the particle in question (e.g., the electron). The two terms are attributed to:
 \begin{itemize}
@@ -6742,6 +6787,53 @@ To visualize the transition from microscopic nodal excitations to macroscopic gr
 
 
 As illustrated in Fig. \ref{fig:ewt_flowchart}, the progression from the fundamental BCC substrate to the dynamics of Geometric Black Holes is governed by the resilience of the vacuum's structural bond. This perspective redefines gravitational phenomena not as the influence of independent mass-points, but as the collective response of a thinned vacuum geometry toward its own localized volumetric deficits.
+
+% W preambule dokumentu dodaj:
+% \usepackage{pdflscape}
+% \usepackage{geometry}
+
+% Tymczasowo zmieniamy rozmiar strony na A2 landscape
+\newgeometry{a2paper, landscape, margin=1.5cm}
+
+\begin{landscape}
+	\begin{figure}[p]
+		\centering
+		\tikzset{
+			postulate/.style={rectangle, draw, fill=blue!5, text width=4.2cm,
+				text centered, rounded corners, minimum height=0.9cm,
+				font=\small},
+			input_exp/.style={rectangle, draw, fill=gray!10, text width=3.8cm,
+				text centered, rounded corners, minimum height=0.9cm,
+				font=\small},
+			calib/.style={rectangle, draw, fill=orange!15, text width=4.0cm,
+				text centered, rounded corners, minimum height=0.9cm,
+				font=\small\itshape},
+			result/.style={rectangle, draw, fill=green!5, text width=4.5cm,
+				text centered, rounded corners, minimum height=0.9cm,
+				font=\small\bfseries},
+			interm/.style={rectangle, draw, fill=yellow!10, text width=4.2cm,
+				text centered, rounded corners, minimum height=0.9cm,
+				font=\small},
+			central/.style={rectangle, draw, fill=red!10, text width=4.2cm,
+				text centered, rounded corners, minimum height=1.2cm,
+				font=\small\bfseries},
+			arrow/.style={thick, -{Stealth[scale=1.1]}},
+			dasharrow/.style={thick, dashed, gray, -{Stealth[scale=1.1]}}
+		}
+		
+		\begin{tikzpicture}[node distance=1.8cm, transform shape=false]
+			% ... dokładnie ta sama zawartość grafu co poprzednio, bez skalowania ...
+			% Dla oszczędności miejsca nie powtarzam tu wszystkich węzłów,
+			% wklej cały poprzedni tikzpicture między \begin{tikzpicture} a \end{tikzpicture}.
+		\end{tikzpicture}
+		\caption{Emergence map -- Stage 2. Large A2 landscape version for electronic review.}
+		\label{fig:ewt_emergence_map_stage2_A2}
+	\end{figure}
+\end{landscape}
+
+% Przywróć standardową geometrię strony
+\restoregeometry
+
 
 \clearpage
 
