@@ -422,6 +422,8 @@ The vacuum lattice is a discrete body-centred cubic (BCC) lattice of Elastic Med
 
 The factor \(L_p^{\text{geom}}\) is the inverse of the dimensionless nearest-neighbour distance in the BCC lattice. It is not an adjustable constant but a direct consequence of the \(Im\bar{3}m\) space group: the nearest neighbour lies at \(d/a = \sqrt{3}/2\), and its inverse gives the geometric projection factor \(2/\sqrt{3}\).
 
+The BCC geometry introduces the constants \(\pi\) and \(\sqrt{3}\) directly through the packing fraction. In later derivations, the face-diagonal factor \(\sqrt{2}\) appears in the lattice projection operators and in the unified coupling bridge, while Euler's number \(e\) enters through the Eulerian dilution of the statutory vacuum density. Neither of these constants is fitted; each has a well-defined geometric role in the corresponding section.
+
 The geometry of the lattice imposes a natural dimensional hierarchy on the soliton's wave structure. Each additional active degree of freedom contributes one factor of \(\pi\), giving rise to the following geometric ladder:
 
 \begin{table}[h]
@@ -443,7 +445,9 @@ The geometry of the lattice imposes a natural dimensional hierarchy on the solit
 	\textit{Legend: A = amplitude, f = frequency, r = radius, Q = charge.}
 \end{table}
 
-The \(\pi^7\) rung is particularly important: it represents the charged weak sector, in which the soliton engages seven independent geometric degrees of freedom. The BCC coordination number is \(8\). The magnetic deficit \(\epsilon_M\) introduced below is therefore naturally associated with the inverse of the product \(8\pi^7\), with a small correction due to the non-ideal spherical packing of the lattice.
+The factor \(\pi\) appearing in every rung of this ladder is not introduced by hand. Its origin is the same as in the geometric soliton core: the kinematic relation \(l = \pi x\), which reflects one full harmonic phase advance of the central EMC during one oscillation. Each additional degree of freedom therefore multiplies the phase-space budget by one further factor of \(\pi\).
+
+The \(\pi^7\) rung is particularly important: it represents the charged weak sector, in which the soliton engages seven independent geometric degrees of freedom. The BCC coordination number is \(8\). The magnetic deficit \(\epsilon_M\) introduced below is therefore naturally associated with the inverse of the product \(8\pi^7\), with a small correction due to the non-ideal spherical packing of the lattice. 
 
 \subsection{Geometric Magnetic Deficit \(\epsilon_M\)}
 \label{sec:magnetic_deficit}
@@ -481,11 +485,17 @@ In the ideal continuum limit \(\zeta \to 0\), this reduces to
 	\label{eq:epsilon_M_final_geo}
 \end{equation}
 
-For a single lepton, the gravitational deficit \(\sum \epsilon_G\) is negligible, so the full fine-structure constant takes the form
+The complete geometric inverse fine-structure constant therefore has the form
+\begin{equation}
+	\frac{1}{\alpha} = A_\pi - \epsilon_M - \sum \epsilon_G,
+\end{equation}
+where \(\sum \epsilon_G\) is a lower-order gravitational deficit term.
+For the electron this term is negligible compared with \(\epsilon_M\), so the working expression used throughout this work is
 \begin{equation}
 	\frac{1}{\alpha_{\text{geom}}} = A_\pi - \epsilon_M .
 	\label{eq:alpha_normalized_final}
 \end{equation}
+The omitted lower-order term \(\sum \epsilon_G\) is retained as a formal remainder; it is not fitted and may become relevant when the lower-order gravitational correction is no longer negligible.
 
 This expression contains no calibrated parameters. All quantities on the right-hand side are fixed by the BCC lattice geometry and the mathematical constants \(\pi\), \(e\), and \(\sqrt{2}\).
 
