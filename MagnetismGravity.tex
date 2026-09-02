@@ -751,6 +751,183 @@ In the case of a Geometric Black Hole (GBH) \cite{yee2020geometric}, extreme geo
 \subsubsection*{Hypothesis of Spin Recovery Beyond the GBH Horizon}
 Within the EWT framework, the geometric structure of the WC (and thus its local spin/magnetic properties) may be \textbf{partially recovered or enhanced} outside the GBH's critical boundary \(d_{crit}\). This phenomenon is driven by the reduced compression and resulting non-linear elasticity of the spacetime medium away from the core, aligning conceptually with information preservation hypotheses near the horizon.
 
+\section{Neutrino as the Geometric Anchor}
+\label{sec:neutrino_anchor}
+
+The statutory neutrino radius \(r_\nu\) sets the fundamental length scale of the BCC lattice. In this section, \(r_\nu\) is not treated as an independent input. Instead, it emerges from the geometric fine-structure constant \(\alpha_{\text{geom}}\), the elementary charge amplitude \(e\), and the topology of the BCC lattice.
+
+\subsection{Planck Charge from Geometric Alpha}
+\label{sec:qP_from_alpha}
+
+The Planck charge in EWT is interpreted as the fundamental geometric amplitude. It is not introduced as a separate empirical constant; it follows from the relation between the elementary charge amplitude \(e\) and the geometric fine-structure constant:
+\begin{equation}
+	q_P = \frac{e}{\sqrt{\alpha_{\text{geom}}}},
+	\label{eq:qP_from_alpha}
+\end{equation}
+where \(e = 1.602176634 \times 10^{-19}\) m is the CODATA elementary charge amplitude, and \(\alpha_{\text{geom}}\) is the purely geometric fine-structure constant derived in Section~\ref{sec:alpha_geometric_deficit}.
+
+The resulting ratio
+\begin{equation}
+	\frac{q_P}{e} = \frac{1}{\sqrt{\alpha_{\text{geom}}}} \approx 11.70624886
+\end{equation}
+is therefore a geometric prediction, not a fitted input.
+
+\subsection{Decomposition of the Scaling Factor \(S = r_\nu/q_P\)}
+\label{sec:S_decomposition}
+
+The dimensionless scaling factor \(S = r_\nu/q_P\) is obtained by combining three physically distinct mechanisms that act in the undisturbed BCC vacuum lattice.
+
+\begin{enumerate}
+	\item \textbf{Static lattice projection.}
+	The soliton potential, described by the inverse geometric fine-structure constant \(\alpha_{\text{inv, geom}}\), is distributed over the eight BCC coordination nodes and the spherical wave front:
+	\begin{equation}
+		S_{\text{proj}} = \frac{\alpha_{\text{inv, geom}}}{8 + \pi}.
+	\end{equation}
+	
+	\item \textbf{Dynamic wave expansion.}
+	The natural exponential decay of the standing-wave amplitude from the centre outward introduces Euler's number \(e\) as an integrated factor:
+	\begin{equation}
+		S_{\text{exp}} = e.
+	\end{equation}
+	
+	\item \textbf{Discrete lattice impedance.}
+	The discrete BCC lattice and wave propagation along the face diagonals add a small correction:
+	\begin{equation}
+		\delta_{\text{imp}} = (1 - g_v)(\sqrt{2} - 1).
+	\end{equation}
+	Here \(g_v\) is the geometric correction factor associated with the neutrino ground state. The factor \(\sqrt{2}-1\) measures the excess diagonal path length, while \(1-g_v\) quantifies the deviation of the relaxed neutrino state from an ideal continuum response.
+\end{enumerate}
+
+The total scaling factor is the sum of these components:
+\begin{equation}
+	S_{\text{tot}} = S_{\text{proj}} + S_{\text{exp}} + \delta_{\text{imp}}.
+	\label{eq:S_tot}
+\end{equation}
+
+\subsection{Geometric Fixed Point of \(g_v\)}
+\label{sec:gv_fixed_point}
+
+The dynamic relation for the neutrino radius is
+\begin{equation}
+	r_\nu = \frac{2 q_P e^2}{g_v}.
+\end{equation}
+In terms of the scaling factor, this becomes
+\begin{equation}
+	S_{\text{tot}} = \frac{2 e^2}{g_v}.
+\end{equation}
+
+Equating this with Eq.~\eqref{eq:S_tot} gives
+\begin{equation}
+	\frac{2 e^2}{g_v}
+	=
+	\frac{\alpha_{\text{inv, geom}}}{8 + \pi}
+	+
+	e
+	+
+	(1 - g_v)(\sqrt{2} - 1).
+\end{equation}
+
+Rearranging leads to the quadratic equation
+\begin{equation}
+	(\sqrt{2} - 1) g_v^2
+	-
+	\left(
+	\frac{\alpha_{\text{inv, geom}}}{8 + \pi}
+	+
+	e
+	+
+	\sqrt{2}
+	-
+	1
+	\right) g_v
+	+
+	2 e^2
+	=
+	0 .
+	\label{eq:gv_quadratic}
+\end{equation}
+
+This equation has two roots:
+\begin{equation}
+	g_v \approx 0.983594
+	\qquad\text{and}\qquad
+	g_v \approx 36.27 .
+\end{equation}
+Only the first root satisfies \(0 < g_v < 1\), which is required for stable wave propagation and a physical soliton. Thus
+\begin{equation}
+	g_v \approx 0.983594
+	\label{eq:gv_value}
+\end{equation}
+is the unique geometric fixed point of the BCC lattice. It is not an adjustable parameter, but a direct consequence of the lattice topology.
+
+\subsection{Resulting Neutrino Radius}
+\label{sec:r_nu_result}
+
+Using the fixed-point value of \(g_v\) and the geometric Planck charge \(q_P\), the neutrino radius is
+\begin{equation}
+	r_\nu = q_P S_{\text{tot}}
+	\approx
+	2.817935 \times 10^{-17}\ \text{m}.
+	\label{eq:r_nu_geom}
+\end{equation}
+
+This value is in close agreement with the earlier dynamical expression
+\begin{equation}
+	r_\nu = \frac{2 q_P e^2}{g_v},
+\end{equation}
+and the two approaches differ only at the \(10^{-6}\) level. This confirms that \(r_\nu\) is derived from the same BCC geometry as \(\alpha_{\text{geom}}\) and \(\epsilon_M\).
+
+\subsection{Decadic Resonance Test: \(r_e / r_\nu \approx 100\)}
+\label{sec:decadic_test}
+
+An immediate test of the geometric anchor is provided by the ratio of the classical electron radius to the neutrino radius:
+\begin{equation}
+	\frac{r_e}{r_\nu}
+	\approx
+	100.00017 .
+	\label{eq:decadic_ratio}
+\end{equation}
+
+The corresponding fifth power
+\begin{equation}
+	\left(\frac{r_e}{r_\nu}\right)^5
+	\approx
+	1.0000087 \times 10^{10}
+\end{equation}
+reproduces the \(10^{10}\) scaling expected from the difference between the electron wave-centre count \(K_{WC}=10\) and the neutrino count \(K_{WC}=1\). This is a direct consequence of the geometric mass-to-radius identity, Eq.~\eqref{eq:mass_to_radius_id}, discussed in Section~\ref{sec:geometric_mass_to_radius}. It provides a non-trivial consistency test linking the geometric radius to the \(r^5\) energy scaling used throughout the model.
+
+\subsection{Physical Interpretation: \(\epsilon_M\) as a Global Lattice Parameter}
+\label{sec:neutrino_epsilonM}
+
+The magnetic deficit \(\epsilon_M\) is a global topological property of the BCC lattice and does not vanish for any soliton. What differs between the neutrino and charged leptons is the local magnetic response.
+
+The neutrino carries no charge and no spin; it therefore generates no local magnetic torque. Consequently, its soliton relaxes to the natural radius \(r_\nu\) given by Eq.~\eqref{eq:r_nu_geom}.
+
+For the electron, the local magnetic response compresses the soliton below this relaxed state. The factor \(g_v\) measures exactly this difference: it is the ratio between the relaxed neutrino radius and the compressed wavelength that would follow from the simple wave constants. The global \(\epsilon_M\) remains unchanged; it is the local magnetic compression that differs between particles.
+
+Thus the neutrino is not a “small electron”, but the fundamental, torque-free ground state of the BCC lattice. The electron is a compressed and locally magnetised excitation of this same ground state.
+
+\subsection{Topological Necessity of \(r_\nu\)}
+\label{sec:r_nu_necessity}
+
+The decomposition of \(S_{\text{tot}}\) into
+\begin{equation}
+	\frac{\alpha_{\text{inv, geom}}}{8+\pi},\quad
+	e,\quad
+	(1-g_v)(\sqrt{2}-1)
+\end{equation}
+shows that the neutrino radius is fixed by three simultaneous geometric constraints:
+
+\begin{itemize}
+	\item the static soliton potential distributed over the eight BCC directions and the spherical wave front,
+	\item the natural exponential decay encoded by Euler's number \(e\),
+	\item the discrete lattice correction along the face diagonals.
+\end{itemize}
+
+No free parameter is introduced. All quantities are determined by \(\pi\), \(e\), \(\sqrt{2}\), the BCC coordination number, and the geometric fine-structure constant.
+
+This completes the emergence of the neutrino as a topological anchor of the BCC lattice. No fitted parameter is introduced in this derivation.
+
 \section{Geometric Model of the Neutrino and Gravitational Deficit ($\epsilon_{G}$)}
 
 \subsection{Source of Gravity: The Geometric Deficit $\epsilon_{G}$}\label{sec:source_grav_epsg}
