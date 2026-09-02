@@ -928,6 +928,120 @@ No free parameter is introduced. All quantities are determined by \(\pi\), \(e\)
 
 This completes the emergence of the neutrino as a topological anchor of the BCC lattice. No fitted parameter is introduced in this derivation.
 
+\section{Planck Length and Reduced Planck Constant from Geometry}
+\label{sec:planck_from_geometry}
+
+The geometric fine-structure constant \(\alpha_{\text{geom}}\), the electron radius \(r_e\), and the electron mass \(m_e\) determine the reduced Planck constant without invoking \(\hbar\) as an independent input. The same geometric machinery then yields the Planck length \(\lambda_l\) as a derived quantity.
+
+\subsection{Reduced Planck Constant from Geometric Alpha}
+\label{sec:hbar_from_alpha}
+
+In EWT, the classical electron radius is not defined through \(\hbar\) but is treated as a geometric scale fixed by the electron soliton. The reduced Planck constant follows from the relation
+\begin{equation}
+	\hbar_{\text{geom}}
+	=
+	\frac{m_e c r_e}{\alpha_{\text{geom}}},
+	\label{eq:hbar_geom}
+\end{equation}
+where \(c\) is the metric conversion factor defined in Section~\ref{sec:c_as_metric}.
+
+Using the CODATA values
+\begin{equation}
+	m_e = 9.1093837015 \times 10^{-31}\ \text{kg},
+	\qquad
+	r_e = 2.8179403262 \times 10^{-15}\ \text{m},
+\end{equation}
+and the geometric fine-structure constant \(\alpha_{\text{geom}}\), Eq.~\eqref{eq:hbar_geom} gives
+\begin{equation}
+	\hbar_{\text{geom}}
+	\approx
+	1.0545738 \times 10^{-34}\ \text{kg}\,\text{m}^{2}\,\text{s}^{-1},
+\end{equation}
+in agreement with the CODATA value at the level of the underlying experimental inputs. No new free parameter is introduced.
+
+\subsection{Geometric Planck Length}
+\label{sec:lambda_l_geom}
+
+The Planck length in EWT is identified with the fundamental EMC spacing \(\lambda_l\). In the zero-calibration formulation, \(\lambda_l\) is not taken from experiment; it follows from the geometric identity for the gravitational constant and the Planck-length definition.
+
+Let
+\begin{equation}
+	X_{\text{eff}}
+	=
+	\frac{A_\pi \, 3 \, K_{WC} \sqrt{2}}{C_{\text{unif}}},
+\end{equation}
+where
+\begin{equation}
+	C_{\text{unif}}
+	=
+	\frac{1}{K_{WC}}
+	+
+	1
+	+
+	\frac{\alpha_{\text{geom}}}{\pi L_p^{\text{geom}}},
+\end{equation}
+and \(L_p^{\text{geom}} = 2/\sqrt{3}\). All quantities on the right-hand side are fixed by the BCC lattice geometry and the electron wave-centre count \(K_{WC}=10\).
+
+The analytic solution of the self-consistent geometric equation for \(\lambda_l\) is
+\begin{equation}
+	\lambda_l
+	=
+	\left[
+	\frac{
+		r_e^{2} \sqrt{X_{\text{eff}}}
+	}{
+		\alpha_{\text{geom}}
+		A_\pi^{4}
+		N_{\text{geom}}^{3}
+		K_{WC}
+		\left(
+		\frac{r_\nu}{2 e}
+		\right)^{3/2}
+	}
+	\right]^{2},
+	\label{eq:lambda_l_geometric}
+\end{equation}
+where \(e\) is Euler's number and \(r_\nu\) is the geometric neutrino radius derived in Section~\ref{sec:neutrino_anchor}.
+
+Numerically,
+\begin{equation}
+	\lambda_l
+	\approx
+	1.6166464 \times 10^{-35}\ \text{m}.
+\end{equation}
+The CODATA value is
+\begin{equation}
+	\lambda_{l,\text{CODATA}}
+	=
+	1.6162 \times 10^{-35}\ \text{m},
+\end{equation}
+so the relative deviation is approximately \(0.0276\%\). This is a genuine geometric prediction, not a fit: the only metrical inputs are \(r_e\), \(m_e\), \(c\), and the elementary charge amplitude \(e\).
+
+\subsection{Consistency with the Planck Charge}
+\label{sec:consistency_qP}
+
+The geometric Planck charge was derived earlier as
+\begin{equation}
+	q_P = \frac{e}{\sqrt{\alpha_{\text{geom}}}} .
+\end{equation}
+With the above values,
+\begin{equation}
+	q_P \approx 1.8755478 \times 10^{-18}\ \text{m},
+\end{equation}
+which matches the expected amplitude scale.
+
+The fact that \(\lambda_l\), \(q_P\), and \(\hbar_{\text{geom}}\) all emerge from the same BCC geometry confirms that the model does not treat the Planck scale as an external boundary but as an internal consequence of the lattice structure.
+
+\subsection{Status of Inputs in This Section}
+\label{sec:inputs_planck}
+
+The only experimental inputs used here are
+\begin{equation}
+	r_e,\quad m_e,\quad c,\quad e .
+\end{equation}
+In natural units (\(c = 1\); see Section~\ref{sec:c_as_metric}), \(c\) is a unit conversion and \(m_e\) is geometrically tied to \(r_e\) through the \(r^5\) scaling law.
+In SI units the relation between charge, \(\hbar\), and \(\alpha\) is \(e^2 = 4\pi\epsilon_0\hbar c\alpha\). In the EWT framework \(\epsilon_0\) is not an independent input: together with \(\mu_0\) it is fixed by the metric condition \(c^2 = 1/(\mu_0\epsilon_0)\) and therefore carries no new geometric information. No calibrated parameters appear in this section.
+
 \section{Geometric Model of the Neutrino and Gravitational Deficit ($\epsilon_{G}$)}
 
 \subsection{Source of Gravity: The Geometric Deficit $\epsilon_{G}$}\label{sec:source_grav_epsg}
