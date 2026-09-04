@@ -4659,7 +4659,7 @@ In the $Im\bar{3}m$ (BCC) symmetry, each EMC unit possesses a coordination numbe
 
 \subsubsection{Packing Fraction and the $\zeta$ Correction}
 \label{subsub:packing_fraction}
-The small residual correction $\zeta \approx 0.058\%$ (where $N_{final} = 8\pi^4(1-\zeta)$) is a direct consequence of the BCC packing fraction ($\eta \approx 0.68$). Unlike a hypothetical ideal continuum, the discrete BCC lattice is "near-optimal" but not perfect. The $\zeta$ factor represents the geometric impedance of a lattice that is $68\%$ saturated, providing a physical basis for the minute deviations in the fine-structure constant and anomalous moments.
+The small residual correction $\zeta$ (where $N_{\text{geom}} = 8\pi^4(1-\zeta)$) is a direct consequence of the BCC packing fraction ($\eta_{\text{BCC}} \approx 0.68$). Unlike a hypothetical ideal continuum, the discrete BCC lattice is "near-optimal" but not perfect. The $\zeta$ factor represents the geometric impedance of a lattice that is $68\%$ saturated, providing a physical basis for the minute deviations in the fine-structure constant and anomalous moments.
 
 The magnitude of $\zeta$ is consistent with the per-node 
 void impedance, normalized to the occupied fraction:
@@ -4735,9 +4735,10 @@ possible.
 The magnetic deficit $\epsilon_{M}$ is the fundamental lattice response
 parameter derived in Section~\ref{sec:magnetic_deficit}:
 \begin{equation}\label{eq:epsM_stability}
-	\epsilon_{M} = \frac{1}{N_{\text{final}}\,\pi^{3}}
-	\;\approx\; \frac{1}{8\pi^{7}} .
+	\epsilon_{M} = \frac{1}{N_{\text{geom}}\,\pi^{3}}
+	= \frac{1}{8\pi^{7}(1-\zeta)} .
 \end{equation}
+In the ideal continuum limit \(\zeta\to 0\), this reduces to \(\epsilon_M = 1/(8\pi^7)\).
 The approximate equality reflects the $0.058\%$ lattice impedance $\delta$
 between the calibrated stiffness $N_{\text{final}}$ and the ideal geometric
 limit $8\pi^{4}$, as discussed in
@@ -4748,7 +4749,7 @@ vector $k$, the natural nonlinear coupling strength is designated by the
 parameter $\gamma$, defined as the inverse of this deficit:
 \begin{equation}\label{eq:gamma_coeff}
 	\gamma \equiv \frac{1}{\epsilon_{M}}
-	= N_{\text{final}}\,\pi^{3} \approx 2.414 \times 10^{4}.
+	= N_{\text{geom}}\,\pi^{3} \approx 2.414 \times 10^{4}.
 \end{equation}
 This coefficient is not a free parameter; it follows from the BCC coordination
 number (8) and the dimensional budget of the charged weak scale ($\pi^{7}$).
@@ -5075,259 +5076,129 @@ simulation.
 \section{Predictive Power}
 \label{sec:predictive_power}
 
-The EWT model yields several precise, quantitative predictions that follow 
-directly from the geometry of the Soliton. These predictions can be tested 
-against experimental observations. The results summarized in 
-Table~\ref{tab:predictive_power_final} demonstrate the internal consistency of 
-the EWT framework, where a single geometric modulator successfully recovers the 
-values of $G$, $\alpha$, and the lepton shell contributions---the latter as 
-internal benchmarks that test the geometric self-consistency of the 
-wave-packing hierarchy.
-
-The prediction for the Tau lepton is of particular significance. While the 
-theoretical \textbf{Geometric Base} ($K=2181$) yields a value of 
-$1176.8445$~ppm with a standalone error of $0.031\%$, the identified 
-\textbf{Resonance Peak} ($K=2180$) refines this to $1177.1840$~ppm, deviating 
-by only $0.0022\%$ from the EWT internal reference. This dual-layered 
-precision confirms that the recursive ``Onion Model'' accurately captures the 
-high-energy density resonance of the vacuum lattice, both as a pure geometric 
-identity and as a refined physical state.
+The EWT model yields several precise, quantitative predictions that follow directly from the geometry of the Soliton and the BCC lattice. The results summarized in Table~\ref{tab:predictive_power_geom} demonstrate the internal consistency of the zero-calibration framework.
 
 \begin{table}[ht]
 	\centering
-	\caption{Numerical Predictions of the EWT Framework: Geometric Anchors vs.~Target Values.}
-	\label{tab:predictive_power_final}
+	\caption{Principal Geometric Predictions of the EWT Framework}
+	\label{tab:predictive_power_geom}
 	\begin{tabularx}{\textwidth}{lXXX}
 		\toprule
-		\textbf{Physical Quantity} & \textbf{EWT Prediction} & \textbf{Target Value} & \textbf{Relative Error} \\
+		\textbf{Physical Quantity} & \textbf{Geometric Prediction} & \textbf{Target} & \textbf{Relative Error} \\
 		\midrule
-		$G_{geom}$ (Base Geometry) & $6.674305 \cdot 10^{-11}$ & $6.674305 \cdot 10^{-11}$ & $3.1 \cdot 10^{-6}\%$ \\
-		$G_{unified}$ (Unified Model) & $6.674305 \cdot 10^{-11}$ & $6.674305 \cdot 10^{-11}$ & $1.0 \cdot 10^{-13}\%$ \\
-		$\alpha^{-1}$ (Fine-Structure) & $137.036262$ & $137.035999$ & $0.00019\%$ \\
+		$G_{\text{geom}}$ & $6.6775199755 \times 10^{-11}$ & $6.674305 \times 10^{-11}$ & $0.048169\%$ \\
+		$\alpha_{\text{geom}}^{-1}$ & $137.036262364$ & $137.035999084$ & $0.000192\%$ \\
 		\midrule
-		$a_{\text{Base}}^{\text{Geometric}}$ (Geom.~Formula) & $1159.9185$ ppm & $1159.6522$ ppm & $0.0229\%$ \\
-		$a_e$ (Electron Core) & $1159.65218$ ppm & $1159.65218$ ppm & \textbf{Geom.~Anchor} \\
-		\midrule
-		$a_{\mu_{base}}$ (Muon Geom.) & $248.5724$ ppm & $248.8000$ ppm & $0.0915\%$ \\
-		$a_{\mu_{peak}}$ (Muon Peak)* & $248.7959$ ppm & $248.8000$ ppm & $\mathbf{0.0016\%}$ \\
-		\midrule
-		$a_{\tau_{base}}$ (Tau Geom.) & $1176.8445$ ppm & $1177.2100$ ppm & $0.0310\%$ \\
-		$a_{\tau_{peak}}$ (Tau Peak)** & $1177.1840$ ppm & $1177.2100$ ppm & $\mathbf{0.0022\%}$ \\
+		$a_e^{\text{EWT}}$ & $1159.916228\ \text{ppm}$ & $1159.652182\ \text{ppm}$ & $0.022769\%$ \\
+		$a_\mu^{\text{EWT}}$ & $1166.212608\ \text{ppm}$ & $1165.920610\ \text{ppm}$ & $0.025044\%$ \\
+		$a_\tau^{\text{EWT}}$ & $1176.838130\ \text{ppm}$ & $1177.210000\ \text{ppm}$ & $0.031589\%$ \\
 		\bottomrule
 	\end{tabularx}
 	\begin{flushleft}
-		\small{
-			*Note: The Muon Base reflects the theoretical latch at $K=207$, while the Peak represents the nodal resonance found at $K=200$. \\
-			**Note: The Tau Base reflects the theoretical latch at $K=2181$, while the Peak represents the global resonance found at $K=2180$.
-		}
-	\end{flushleft}
-	\vspace{4pt}
-	\begin{flushleft}
-		\footnotesize
-		\textbf{Note on target values:} For $G$, $\alpha$, and $a_e$ the target 
-		is the full CODATA 2022 experimental value. For $a_{\mu}$ and $a_{\tau}$ 
-		in this table the targets are EWT internal shell references derived from 
-		the orbital mass relations (Section~\ref{sec:numerical_verification_ewt}); 
-		they test the internal consistency between the geometric and 
-		mass-generation sectors. The full AMM predictions for all three lepton 
-		generations, obtained via the dimensionally determined projection rules 
-		of Section~\ref{sec:final_experimental_proof}, are reported in 
-		Table~\ref{tab:final_results_confirmed}.
+		\small \textit{Note: Values for \(a_e\), \(a_\mu\), and \(a_\tau\) are full anomalous magnetic moments. All predictions are obtained from the geometric Python implementation described in the Appendix.}
 	\end{flushleft}
 \end{table}
 
-The shell-level precision of the EWT framework, as displayed in 
-Table~\ref{tab:predictive_power_final}, confirms that the $2\pi^2$ recursive 
-law and the Fibonacci-Lucas invariants $L_{\mu}=5$ and $L_{\tau}=34$ 
-correctly encode the nodal topology of the BCC vacuum lattice. 
-
-Beyond the internal shell benchmarks, the projection of these shell 
-contributions onto the full observable AMM---governed by the dimensional 
-projection rules established in Section~\ref{sec:final_experimental_proof}---
-yields a compact monotonic precision sequence across all three generations:
-\[
-0.023\% \;(e,\; \mathcal{O}_e=1) \;\to\; 
-0.0245\% \;(\mu,\; \mathcal{O}_\mu=1/(4\pi^2)) \;\to\; 
-0.031\% \;(\tau,\; \mathcal{O}_\tau=1).
-\]
-The electron and tau, both 3D resonances with unit projection operators, are 
-directly visible in the observable space. The muon, the sole 2D resonance, is 
-the only generation requiring a dimensional bridge---and its operator 
-$\mathcal{O}_\mu = 1/(4\pi^2)$ is completely determined by the fundamental 
-vacuum constants $\epsilon_M$ and $\pi$. The fact that all three generations 
-converge to the experimental benchmarks at the same $0.02\%$--$0.03\%$ level 
-constitutes a decisive validation of the Geometric Ladder hypothesis: the 
-projection mechanism is not an arbitrary addition to the model, but a 
-necessary consequence of the resonance dimensionality dictated by the BCC 
-lattice topology.
-
-\subsection{Prediction of the Fundamental Value of $G$}
+\subsection{Prediction of the Fundamental Value of \(G\)}
 \label{sec:g_predictions_pp}
-The model predicts the value of $G$ as a direct function of microscopic parameters via the operator $\mathcal{U}$ (Section \ref{sec:operatorU}). For the reference parameters used in this work, the following numerical value is obtained:
+
+The model predicts the value of \(G\) as a direct function of microscopic geometric parameters through the operator \(\mathcal{U}\) (Section~\ref{sec:operatorU}). For the zero-calibration inputs used in this work, the geometric identity gives
 \begin{equation}
-	G_{\rm model} \;=\; \mathcal{U}(\mathbf{P}_{\rm ref}) \approx 6.674305\times 10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}}.
+	G_{\text{geom}}
+	\;\approx\;
+	6.6775199755 \times 10^{-11}
+	\;\mathrm{m^3\,kg^{-1}\,s^{-2}}.
 \end{equation}
-\emph{Test:} Precise experimental measurements of the gravitational constant (e.g., torsion balance, atom interferometry) compared against $G_{\rm model}$ will provide a direct verification of the hypothesis.
+Precise experimental measurements of \(G\) (e.g., torsion balance, atom interferometry) directly test this prediction.
 
 \subsection{Predictions for Lepton Properties: The First-Principles AMM Predictions}
 \label{sec:lepton_predictions_pp}
 
-The geometric architecture of the EWT model achieves its most decisive 
-validation in the prediction of the full anomalous magnetic moments of the 
-entire lepton family. Unlike the Standard Model, where the muon and tau 
-anomalies are not independent predictions but internal consistency checks that 
-rely on externally measured masses and the fine-structure constant as inputs, 
-EWT derives the full $a_e$, $a_\mu$, and $a_\tau$ from the same BCC lattice 
-geometry that governs $G$ and $\alpha$.
-
-\textbf{First-principles character:} 
-For the electron, the derivation is completely parameter-free: 
-$a_e = (8\pi^4 - 1)/(64\pi^8 + 16\pi^7 + 16\pi^6 - 2\pi^{-2})$ contains only 
-$\pi$ and the integer $8$ from the BCC coordination. For the muon and tau, 
-the only empirical information entering the predictions is the mass scale, 
-fixed by the orbital mass relations (Section~\ref{sec:numerical_verification_ewt}). 
-The anomalous magnetic moments themselves are then computed from pure geometry: 
-the universal stiffness deficit $\epsilon_M = 1/(8\pi^7)$, the recursive nodal 
-growth law $K_n = K_{n-1} + \text{round}(10^{n-1} \cdot 2\pi^2)$, and the 
-dimensionally determined projection rules established in 
-Section~\ref{sec:final_experimental_proof}. No perturbative loop corrections, 
-virtual particle content, or independent empirical constants are required.
-
-\textbf{Results and interpretation:} 
-As presented in Table~\ref{tab:final_results_confirmed}, the full AMM 
-predictions form a compact monotonic sequence:
-
+The full anomalous magnetic moments of the entire lepton family are computed from the same BCC lattice geometry that governs \(G\) and \(\alpha_{\text{geom}}\). The results form a compact monotonic sequence:
 \begin{equation}
-	\boxed{a_e^{\text{EWT}} = 1.159918 \times 10^{-3}} \qquad
-	\boxed{a_\mu^{\text{EWT}} = 1.166206 \times 10^{-3}} \qquad
-	\boxed{a_\tau^{\text{EWT}} = 1.176843 \times 10^{-3}}
+	\boxed{a_e^{\text{EWT}} = 1.159916 \times 10^{-3}}
+	\qquad
+	\boxed{a_\mu^{\text{EWT}} = 1.166213 \times 10^{-3}}
+	\qquad
+	\boxed{a_\tau^{\text{EWT}} = 1.176838 \times 10^{-3}}
 \end{equation}
+with relative errors \(0.022769\%\), \(0.025044\%\), and \(0.031589\%\).
 
-corresponding to relative errors of $0.023\%$, $0.0245\%$, and $0.031\%$ with 
-respect to the CODATA/PDG experimental benchmarks. The projection rules 
-underlying these predictions follow the dimensional logic of the Geometric 
-Ladder: the electron (3D core) and tau (3D volumetric shell) require no 
-dimensional reduction ($\mathcal{O}_e = \mathcal{O}_\tau = 1$), while the muon 
-(2D planar shell) requires the single non-trivial bridge 
-$\mathcal{O}_\mu = 1/(4\pi^2)$, which is completely determined by the 
-fundamental vacuum constants. The fact that all three generations converge to 
-the experimental benchmarks at the same $0.02\%$--$0.03\%$ level---with the 
-sole dimensional bridge fixed by $\epsilon_M$ and $\pi$---confirms that the 
-projection mechanism is not an arbitrary addition to the model but a necessary 
-consequence of the resonance dimensionality dictated by the BCC lattice 
-topology.
+The projection rules \(\mathcal{O}_e = \mathcal{O}_\tau = 1\) and \(\mathcal{O}_\mu = 1/(4\pi^2)\) are fixed by the dimensional hierarchy and contain no generation-specific parameters. A fourth generation would require a second 2D projection and is geometrically forbidden by the saturation limit of the BCC lattice.
 
-\textbf{A structural prediction: the absence of a fourth generation.}
-The dimensional logic of the Geometric Ladder carries an immediate corollary 
-for the lepton family structure. The recursive shell sequence alternates 
-between 3D and 2D resonances: core (3D), first shell (2D), second shell (3D). 
-A hypothetical fourth generation would host a third shell with a 2D resonance, 
-which would again require a non-trivial projection operator---presumably 
-involving the next Fibonacci latch $F_{13}=233$ and a higher-order dimensional 
-bridge. The fact that the experimentally observed lepton family terminates 
-precisely at the third generation, before the onset of this second 2D 
-projection requirement, is therefore a \textbf{structural prediction} of the 
-EWT framework: the three-generation structure is not an empirical input but a 
-necessary consequence of the alternating dimensionality of the BCC lattice 
-resonances, and higher generations are geometrically forbidden by the elastic 
-saturation limit of the vacuum medium (Section~\ref{sec:three_generations}).
-
-\textbf{Historical significance:} 
-These results constitute the first-principles derivation of the full muon 
-and tau anomalous magnetic moments from a unified geometric framework. The 
-fact that a single modulator $\epsilon_M$, together with the BCC lattice 
-topology, simultaneously determines $G$, $\alpha$, $a_e$, $a_\mu$, and 
-$a_\tau$---with all three lepton generations converging to the experimental 
-benchmarks at the $0.02\%$--$0.03\%$ level and with the sole dimensional 
-bridge $\mathcal{O}_\mu = 1/(4\pi^2)$ completely fixed by the vacuum 
-constants---represents a level of unification that lies beyond the current 
-reach of perturbative quantum field theory.
-
-\subsection{Magnetic Sensitivity $G(B)$ and Hypotheses Testing}
+\subsection{Magnetic Sensitivity \(G(B)\) and Hypotheses Testing}
 \label{sec:G_magnetic_sensitivity_pp}
-The model predicts a dependence of the effective value of $G$ on the degree of internal magnetic coherence, quantified by the \textbf{Push-Out Operator} $\mathbf{T}_{\text{II}}$. As established in Section \ref{sec:dynamic_equilibrium}, the observed invariance of $G$ in standard environments is interpreted as a \textbf{low-field artefact} maintained by the dynamic geometric equilibrium between energy concentration and the volumetric displacement governed by $\mathbf{T}_{\text{II}}$. 
 
-Consequently, the central prediction $G_{eff} \neq G$ is expected to manifest primarily in \textbf{extreme magnetic environments} where this compensatory mechanism reaches its non-linear limit. The sign of the predicted change is determined by the Magneto-Geometric Hypotheses:
-\begin{itemize}
-	\item $G_{eff} > G$ is consistent with the \textbf{Push-Out Mechanism (Hypothesis 1)}, where $\mathbf{T}_{\text{II}}$ dominates the structural dilution.
-	\item $G_{eff} < G$ is consistent with the \textbf{Consolidation Mechanism (Hypothesis 2)}, suggesting a reversal of the geometric deficit.
-\end{itemize}
-
-The operator $\mathbf{T}_{\text{II}} = (A_{\pi} \cdot N_{\text{final}})^{-3}$ represents the \textbf{theoretical saturation limit} of the vacuum modulation. In laboratory conditions, this effect is heavily suppressed by the compensatory geometric equilibrium. The observable shift is thus scaled by a coupling efficiency factor $\xi(B)$, reflecting the ratio of external magnetic energy to the vacuum's elastic modulus:
+The model predicts a dependence of the effective gravitational coupling on local magnetic coherence, as described in Section~\ref{sec:magneto_geometric_hypotheses}. In the zero-calibration formulation, the push-out operator is expressed through the geometric stiffness:
 \begin{equation}
-	\left( \frac{\Delta G}{G} \right)_{obs} = \xi(B) \cdot \mathbf{T}_{\text{II}}
+	\mathbf{T}_{\text{II}}
+	=
+	\left(
+	\frac{1}{A_\pi \cdot N_{\text{geom}}}
+	\right)^3 .
 \end{equation}
-For standard laboratory fields, the coupling efficiency $\xi(B)$ is estimated at $10^{-7}$ to $10^{-10}$, bringing the predicted deviation into the reachable, yet challenging range of $10^{-9} - 10^{-12}$ relative precision.
 
+The observable shift is expected to be small in ordinary environments:
+\begin{equation}
+	\left( \frac{\Delta G}{G} \right)_{\text{obs}}
+	=
+	\xi(B) \cdot \mathbf{T}_{\text{II}},
+\end{equation}
+where \(\xi(B)\) is the coupling efficiency of the local magnetic field to the soliton's geometry. The sign of the effect distinguishes the hypotheses of Section~\ref{sec:hypotheses_summary_testing}.
 
 \subsection{AMM as a Strong Test of Geometric Universality}
 \label{sec:amm_strong_test}
 
-Because AMM measurements are exceptionally precise, they provide an ideal 
-testing ground for the EWT geometric mechanism. The parsimony of the model---
-a single universal modulator $\epsilon_M$ replacing the independent coupling 
-constants and perturbative loop corrections of the Standard Model---
-establishes the anomalous magnetic moments of all three lepton generations as 
-the prime discriminant between structural determinism and perturbative QFT.
+Because AMM measurements are exceptionally precise, they provide an ideal testing ground for the geometric mechanism. A single universal modulator \(\epsilon_M\), together with the recursive nodal structure, replaces the perturbative loop corrections of the Standard Model.
 
 \subsection{Correlations with Neutrino Flux}
 \label{sec:neutrino_correlations_pp}
-Since $G$ emerges from the $N_{\nu, \text{effective}}$ scaling, the model admits minute, local correlations between the measured $G$ value and the intensity of the neutrino flux. High local neutrino flux densities should momentarily induce a subtle change in the **local properties of the Elastic Medium**, implying measurable sub-ppm modulations in the effective measured $G$.
-\emph{Test:} Analyze simultaneous data from highly sensitive $G$ measurements and neutrino flux monitoring (e.g., IceCube, Super-Kamiokande) to search for statistical correlations.
+
+Since \(G\) emerges from the effective density \(N_{\nu,\text{eff}}\), the model allows minute correlations between measured \(G\) and local neutrino flux densities. High neutrino flux may momentarily alter the local EMC background, leading to sub-ppm modulations of \(G\).
 
 \subsection{Spectral and Geometric Modal Tests}
 \label{sec:modal_tests_pp}
-The hypothesis of the modal nature of $\pi^3$ implies that changes in the internal geometry (e.g., due to the excitation of internal modes) should leave a trace in the "spectrum" of small fluctuations of $G$ or other macroscopic observables.
-\emph{Test:} Analysis of the time-frequency spectra of high-sensitivity $G$ measurements. The EWT model predicts that these fluctuations are not stochastic, but correspond to the characteristic nodal frequencies of the soliton's standing modes within the BCC lattice.
 
-\subsection{Tests using Gravitational Wave Observations (LIGO/Virgo)}
+The modal nature of the \(\pi^3\) factor implies that internal geometric excitations may leave traces in the frequency spectrum of small fluctuations of \(G\). The model predicts characteristic nodal frequencies of the soliton's standing modes.
+
+\subsection{Tests using Gravitational Wave Observations}
 \label{sec:LIGO_test_pp}
-The unified geometric model allows for new tests regarding the medium's response to high-energy perturbations.
 
-\subsubsection*{GW Speed and Dispersion.}
-If the Gravitational Constant $G$ is an emergent property linked to the vacuum's geometric deficit $\epsilon_M$, the propagation of gravitational waves (GWs) through the cosmic neutrino background might exhibit subtle dispersion effects.
+If \(G\) is emergent from the BCC lattice, gravitational waves may exhibit small dispersion effects:
 \begin{equation}
-	v_{\rm GW} \;\simeq\; c \cdot \left(1 - \delta_{\rm dispersion}\right),
+	v_{\text{GW}}
+	\;\simeq\;
+	c \left( 1 - \delta_{\text{dispersion}} \right),
 \end{equation}
-where $\delta_{\rm dispersion}$ is a deviation factor depending on the local nodal density $N_{\nu,\text{effective}}$. 
-\emph{Test:} Analysis of the arrival time delay between GW signals and their electromagnetic counterparts (e.g., GW170817). Even a minute velocity difference would impose direct constraints on the vacuum elasticity postulated by the EWT model.
+where \(\delta_{\text{dispersion}}\) depends on the local nodal density. Arrival-time comparisons between GW and electromagnetic signals constrain this effect.
 
-\subsection{Test on Bose-Einstein Condensates (BEC)}
+\subsection{Test on Bose-Einstein Condensates}
 \label{sec:BEC_test}
-The core identity of the model suggests that gravitational interaction is proportional to the internal magnetic coherence, governed by the \textbf{Push-Out Operator} $\mathbf{T}_{\text{II}}$. Bose-Einstein Condensates (BEC) represent macroscopic quantum states where individual magnetic properties (spins) align into a single, coherent wave function.
 
-If the EWT model is correct, the gravitational coupling of a system in the BEC state should differ from its non-coherent state:
+A BEC state synchronises the local magnetic coherence across a macroscopic volume. The model predicts a shift
 \begin{equation}
-	G_{\text{eff}}^{\text{(BEC)}} = G \cdot (1 + \delta_{\text{BEC}}), \qquad \delta_{\text{BEC}} \propto \mathbf{T}_{\text{II}}
+	G_{\text{eff}}^{\text{(BEC)}}
+	=
+	G \left( 1 + \delta_{\text{BEC}} \right),
+	\qquad
+	\delta_{\text{BEC}} \propto \mathbf{T}_{\text{II}}.
 \end{equation}
-where $\delta_{\text{BEC}}$ represents the shift in effective gravitational coupling due to the emergence of collective coherence. 
+Consistent with the push-out mechanism, the primary prediction is \(G_{\text{eff}} > G\). Atom interferometry on ultra-cold clouds before and after BEC formation can test this directly.
 
+\subsection{The Higgs Soliton vs.\ Fundamental Scalar Field}
 
+The EWT model identifies the Higgs as a resonant state (\(K_{WC}=117\)) rather than a fundamental scalar field. This leads to specific predictions for Higgs-vector mixing:
+\begin{equation}
+	\sin^2\theta_{ZH}
+	\approx
+	0.4686,
+	\qquad
+	\sin^2\theta_{WH}
+	\approx
+	0.5906.
+\end{equation}
 
-\textbf{The Primary Prediction:} Consistent with the \textbf{Push-Out Mechanism (Hypothesis 1)}, the EWT model predicts that the effective gravitational constant will increase upon BEC formation ($G_{\text{eff}} > G$). 
-
-The relevance of the BEC test lies in the transition from stochastic to coherent geometric strain. While the compensatory equilibrium ($\rho_E$ vs $\rho$) masks non-linearities in individual solitons, the BEC state acts as a \textbf{"quantum lever"}. The macroscopic wave function synchronizes the $\mathbf{T}_{\text{II}}$ contributions across the entire cloud, making the $G_{\text{eff}} \neq G$ deviation detectable even at ultra-low energy densities.
-
-\emph{Test Procedure:} A high-precision measurement of gravitational acceleration ($g$) acting on an ultra-cold atomic cloud \textbf{before} and \textbf{after} the BEC transition. Utilizing atom interferometry and cold atom gravity gradiometers, this test seeks to verify $\delta_{\text{BEC}} \neq 0$. A positive result would provide the first experimental evidence of the $\text{coherence} \to \text{gravity}$ coupling, identifying $\mathbf{T}_{\text{II}}$ as the fundamental modulator of gravitational strength.
-
-\subsection{The Higgs Soliton vs. Fundamental Scalar Field}
-
-The Standard Model is built on the premise that the Higgs is a fundamental scalar field ($J=0$) with no internal structure. This implies that the Higgs does not "mix" in the same geometric sense as vector bosons; it only provides mass through a vacuum expectation value (VEV). 
-
-In contrast, EWT identifies the Higgs as a specific \textbf{resonant state} ($K_{WC}=117$) within the BCC lattice. This leads to the following testable predictions (referencing the values in Table \ref{tab:higgs_mixing_variants}):
-
-\begin{enumerate}
-	\item \textbf{Geometric Mixing Angles:} EWT predicts specific mixing values for Higgs-Vector pairs. The $Z-H$ coupling ($\sin^2\theta_{ZH} \approx 0.4686$) is considered the primary benchmark of the theory. Since both the $Z$ and Higgs are neutral solitons, they follow a "pure" 6D volumetric resonance ($\pi^6$).
-	
-	\item \textbf{The Charge-Induced Shift:} The interaction in the $W-H$ sector ($\sin^2\theta_{WH} \approx 0.5906$) reflects the additional energy cost of the $W$ boson's non-compensated amplitude. In EWT, this is interpreted as a transition to a 7D modulation scale ($\pi^7$), where the charge acts as an active degree of freedom against the lattice stiffness.
-	
-	\item \textbf{Internal Structure Effects:} If future high-precision experiments at the High-Luminosity LHC (HL-LHC) or the Future Circular Collider (FCC) detect \textbf{angular asymmetries} or \textbf{interference patterns} in Higgs decays that match these geometric variants, the SM’s scalar field hypothesis is \textbf{falsified}.
-\end{enumerate}
-
-
-
-This approach transforms the Higgs from an abstract field into a structural component, where its coupling constants are emergent properties of the BCC lattice geometry.
-
+Angular asymmetries or interference patterns in Higgs decays at HL-LHC or FCC that match these geometric values would falsify the VEV mechanism of the Standard Model.
 
 \section{Falsifiability and Model Constraints}
 \label{sec:falsifiability_new}
@@ -5341,9 +5212,9 @@ The following outcomes represent critical tests that can either **falsify the co
 \item \textbf{Falsification of Full Lepton AMM Predictions ($a_e$, $a_{\mu}$, $a_{\tau}$):} 
 Future high-precision measurements of the electron, muon, and tau anomalous 
 magnetic moments that deviate significantly from the full AMM predictions 
-$a_e^{\text{EWT}} = 1.159918 \times 10^{-3}$, 
-$a_{\mu}^{\text{EWT}} = 1.166206 \times 10^{-3}$, and 
-$a_{\tau}^{\text{EWT}} = 1.176843 \times 10^{-3}$ 
+$a_e^{\text{EWT}} = 1.159916 \times 10^{-3}$, 
+$a_{\mu}^{\text{EWT}} = 1.166213 \times 10^{-3}$, and 
+$a_{\tau}^{\text{EWT}} = 1.176838 \times 10^{-3}$ 
 (Table~\ref{tab:final_results_confirmed}) would falsify the model in its 
 present formulation. The projection rules underlying these predictions are 
 completely determined by the dimensional hierarchy of the Geometric Ladder: 
@@ -5351,8 +5222,8 @@ $\mathcal{O}_e = 1$ (3D core), $\mathcal{O}_\mu = 1/(4\pi^2)$ (2D planar
 shell), and $\mathcal{O}_\tau = 1$ (3D volumetric shell). A significant 
 deviation of any of the three measured anomalies from the predicted values 
 would therefore directly challenge the geometric core of the model. The 
-compact monotonic sequence of prediction errors---$0.023\% \to 0.0245\% 
-\to 0.031\%$---provides a stringent, correlated test: any future measurement 
+compact monotonic sequence of prediction errors---$0.022769\% \to 0.025044\% 
+\to 0.031589\%$---provides a stringent, correlated test: any future measurement 
 that breaks this monotonicity would also indicate a structural tension with 
 the BCC lattice framework.
 \end{itemize}
