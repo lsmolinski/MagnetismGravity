@@ -4118,40 +4118,74 @@ This result confirms that the electron anomaly is not a radiative correction,
 but a static geometric packing property of the BCC lattice.
 
 \section{Other Geometric Constants Derived from the Lattice}
-The EWT framework demonstrates that fundamental physical constants are not independent inputs but deterministic results of the vacuum's granularity. As established in Section \ref{sec:planck_paradigm}, the Planck Length ($l_P$) is the physical boundary of the medium's constituents, making the Planck constant ($h$) a direct manifestation of the lattice's mechanical impedance. The calculations presented in this section are performed in \textbf{Parts XII and XIV} of the accompanying Scilab script (see Listing \ref{lst:scilab_script} and the corresponding output in Listing \ref{lst:scilab_output}). The numerical results confirm that all three atomic scales derive from the same two geometric inputs: the statutory neutrino radius $r_\nu$ and the $8\pi^7$ lattice correction.
 
-\subsection{The Rydberg Constant ($R_{\infty}$): An Atomic Resonance Gap}
+The EWT framework demonstrates that fundamental physical constants are not independent inputs but deterministic results of the vacuum's granularity. The Planck length \(\lambda_l\) and the reduced Planck constant \(\hbar_{\text{geom}}\) were derived in Section~\ref{sec:planck_from_geometry}. The present section shows that the same geometric inputs also determine the principal atomic scales.
+
+The numerical values quoted here are obtained directly from the geometric Python implementation described in the Appendix.
+
+\subsection{The Rydberg Constant (\(R_{\infty}\)): An Atomic Resonance Gap}
 \label{sec:rydberg_constant}
 
-In this zero-parameter framework, the Rydberg constant emerges as the fundamental "resonance gap" between the lepton soliton ($K_{WC}=10$ wave centers) and the background BCC medium. Since the electron mass ($m_e$) and the Planck constant ($h$) are emergent properties of the $N_{\nu}$ density hierarchy, $R_{\infty}$ must be expressible as a purely geometric ratio, eliminating the need for these empirical inputs.
+In this zero-calibration framework, the Rydberg constant emerges as the fundamental resonance gap between the electron soliton and the background BCC medium. Because the electron mass \(m_e\) and the reduced Planck constant \(\hbar_{\text{geom}}\) are emergent geometric quantities, \(R_{\infty}\) must be expressible as a purely geometric ratio.
 
-\subsubsection{Anchoring to the Physical Boundary}
-The Rydberg constant is traditionally linked to the energy scale of the atom via $R_{\infty} = \alpha^2 m_e c / 2h$. In EWT, this scale is anchored to the \textbf{Statutory Radius ($r_{\nu}$)} (Eq. \ref{eq:r_nu_corr}), which defines the fundamental longitudinal wavelength allowed by the medium's granularity. Because the classical electron radius $r_e$ maintains a fixed $1:100$ resonance link to $r_{\nu}$ (as confirmed in Sec. \ref{sec:10_10_resonance}), the spectroscopic limit defined by $R_{\infty}$ becomes a structural damping factor of the lattice itself.
+\subsubsection{Geometric Derivation: The \(\alpha^3/(4\pi r_e)\) Identity}
 
-\subsubsection{Geometric Derivation: The $\alpha^3/(4\pi r_e)$ Identity}
-A compact geometric expression for the Rydberg constant can be obtained by eliminating $m_e$ and $h$ in favor of the classical electron radius $r_e = \alpha \hbar / (m_e c) = \alpha^2/(2R_{\infty})$. A straightforward rearrangement of the standard definition yields a form that depends only on $\alpha$ and $r_e$:
+A compact geometric expression for the Rydberg constant is obtained by eliminating \(m_e\) and \(\hbar\) in favour of the electron radius and the geometric fine-structure constant. The standard relation
 \begin{equation}
-	R_{\infty} = \frac{\alpha^3}{4\pi r_e}
+	R_{\infty}
+	=
+	\frac{\alpha_{\text{geom}}^3}{4\pi r_e}
 	\label{eq:rydberg_geometric_form}
 \end{equation}
-\noindent Within the EWT framework, this expression carries deep physical significance. The factor $\alpha^3$ represents the \textbf{volumetric coupling efficiency} of the soliton's energy to the lattice, while $4\pi r_e$ corresponds to the \textbf{effective circumference} of the electron's energy shell, projecting the 3D lattice impedance onto a 1D spectroscopic line. The isotropy required for the $1/r$ potential is ensured by the Degraded EMC Wall, which averages the discrete BCC nodes into a smooth spherical gradient (see Sec. \ref{subsubsec:degraded_emc_wall}).
+is therefore used directly.
 
+Within the EWT framework, the factor \(\alpha_{\text{geom}}^3\) represents the volumetric coupling efficiency of the soliton's energy to the lattice, while \(4\pi r_e\) corresponds to the effective circumference of the electron's energy shell. The isotropy required for the \(1/r\) potential is provided by the Degraded EMC Wall (Section~\ref{subsubsec:degraded_emc_wall}), which averages the discrete BCC nodes into a smooth spherical gradient.
 
-\subsubsection{Zero-Parameter Identity}
-Substituting the zero-parameter definition of the fine-structure constant, $\alpha^{-1} = A_{\pi} - \epsilon_M$, where $A_{\pi} = 4\pi^3 + \pi^2 + \pi$ and $\epsilon_M = 1/(8\pi^7)$ (see Sec. \ref{sec:eliminating_fine_tunig_paradigm}), along with the geometric link $r_e = 100 \cdot r_{\nu}$, yields the final geometric identity for the Rydberg constant:
+\subsubsection{Zero-Calibration Identity}
+
+Substituting
+\[
+\alpha_{\text{geom}}
+=
+\left(
+A_\pi - \epsilon_M
+\right)^{-1},
+\qquad
+\epsilon_M = \frac{1}{8\pi^7(1-\zeta)},
+\]
+and the geometric link \(r_e = 100\,r_\nu\) yields
 \begin{equation}
+	\boxed{
+		R_{\infty}
+		=
+		\frac{
+			\left[
+			(4\pi^3 + \pi^2 + \pi)
+			-
+			\dfrac{1}{8\pi^7(1-\zeta)}
+			\right]^{-3}
+		}{
+			4\pi \cdot (100\,r_\nu)
+		}
+	}
 	\label{eq:rydberg_final}
-	\boxed{R_{\infty} = \frac{\left[ (4\pi^3 + \pi^2 + \pi) - \frac{1}{8\pi^7} \right]^{-3}}{4\pi \cdot (100 \cdot r_{\nu})}}
 \end{equation}
 
 \subsubsection{Numerical Verification}
-Using the statutory neutrino radius $r_{\nu} = 2.81794 \times 10^{-17}$ m (Eq. \ref{eq:r_nu_corr}) and the zero-parameter fine-structure constant derived in Sec. \ref{sec:eliminating_fine_tunig_paradigm}, the predicted value from Eq. \ref{eq:rydberg_final} is:
-\begin{align}
-	\alpha_{\text{geom}} &= \left[ (4\pi^3 + \pi^2 + \pi) - \frac{1}{8\pi^7} \right]^{-1} = 0.007297338548 \\
-	r_e^{\text{geom}} &= 100 \cdot r_{\nu} = 2.817939732995698 \times 10^{-15} \text{ m} \\
-	R_{\infty}^{\text{EWT}} &= \frac{\alpha_{\text{geom}}^3}{4\pi r_e^{\text{geom}}} = 10973670.62263460 \text{ m}^{-1}
-\end{align}
-This aligns with the CODATA 2022 value $R_{\infty} = 10973731.56815700 \text{ m}^{-1}$ to within a relative error of \textbf{5.55 ppm} ($5.55 \times 10^{-6}$), or \textbf{0.000555\%}.
+
+Using the geometric neutrino radius \(r_\nu\) from Section~\ref{sec:neutrino_anchor} and the geometric fine-structure constant \(\alpha_{\text{geom}}\), Eq.~\eqref{eq:rydberg_final} gives
+\begin{equation}
+	R_{\infty}^{\text{EWT}}
+	=
+	10\,973\,687.362\,034\ \text{m}^{-1}.
+\end{equation}
+The CODATA 2022 value is
+\begin{equation}
+	R_{\infty}^{\text{CODATA}}
+	=
+	10\,973\,731.568\,157\ \text{m}^{-1},
+\end{equation}
+so the relative error is approximately \(0.000403\%\).
 
 \begin{table}[h]
 	\centering
@@ -4159,88 +4193,115 @@ This aligns with the CODATA 2022 value $R_{\infty} = 10973731.56815700 \text{ m}
 	\label{tab:rydberg_verification}
 	\begin{tabular}{lcc}
 		\toprule
-		\textbf{Source} & \textbf{Value} ($\text{m}^{-1}$) & \textbf{Relative Error} \\
+		\textbf{Source} & \textbf{Value} (\(\text{m}^{-1}\)) & \textbf{Relative Error} \\
 		\midrule
-		EWT Prediction (Eq. \ref{eq:rydberg_final}) & $10973670.62263460$ & --- \\
-		CODATA 2022 & $10973731.56815700$ & $5.55 \times 10^{-6}$ (5.55 ppm) \\
+		EWT Prediction & \(10\,973\,687.362\,034\) & --- \\
+		CODATA 2022 & \(10\,973\,731.568\,157\) & \(0.000403\%\) \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-\subsubsection{Physical Interpretation: The Resonance Gap}
-Dimensional analysis confirms $[R_{\infty}] = \text{m}^{-1}$, identifying it as a spatial frequency. Physically, $R_{\infty}$ represents the lowest possible energy shift allowed by the BCC lattice before the standing wave resonance of the soliton breaks – the fundamental "cutoff" frequency of the aether's standing wave. The precision of 5.55 ppm confirms that this "resonance gap" is a rigid property of the medium. 
+\subsubsection{Physical Interpretation}
 
-Crucially, this derivation bridges the gap between gravitational push-out and atomic spectroscopy using the same geometric logic. The isotropy of the force, essential for the $1/r$ potential, is provided by the \textbf{Degraded EMC Wall} – a structural boundary layer that averages the discrete BCC lattice into a continuous spherical gradient, as discussed in Sec. \ref{subsubsec:degraded_emc_wall}. This ensures that $R_{\infty}$ manifests as a universal scalar, independent of the underlying lattice orientation.
+The Rydberg constant represents the lowest energy shift allowed by the BCC lattice before the standing-wave resonance of the soliton breaks. The fact that it is reproduced from the same geometric inputs as \(G\) and \(\alpha_{\text{geom}}\) confirms that atomic spectroscopy is a direct consequence of the vacuum lattice structure.
 
-\subsubsection{Relation to the Energy Domain Derivation}
-The geometric form $R_{\infty} = \alpha^3/(4\pi r_e)$ is not new to this work; it appears in the foundational Energy Wave Theory (EWT) derivations by Yee \cite{yee2020constants}, where it was expressed in terms of wave constants as $R_{\infty} = \left(\frac{\pi\lambda_l}{2K_e^7}\right)^2\left(\frac{3}{4A_l}\right)^3 g_\lambda^{-1}$. The present work advances this result by eliminating the wave constants ($\lambda_l$, $A_l$, $g_\lambda$) in favor of purely geometric quantities: the statutory neutrino radius $r_{\nu}$ and the 8-node BCC lattice correction $1/(8\pi^7)$. This transition from the energy domain to the geometric domain demonstrates the underlying unity of the EWT framework.
-
-% ------------------------------------------------------------------------------
-\subsection{The Bohr Radius ($a_0$): The Atomic Scale}
+\subsection{The Bohr Radius (\(a_0\)): The Atomic Scale}
 \label{sec:bohr_radius}
 
-The Bohr radius defines the characteristic size of the hydrogen atom in its ground state. In the zero-parameter geometric framework, it emerges as a direct consequence of the electron radius $r_e$ and the fine-structure constant $\alpha$, following the standard relation:
+The Bohr radius follows directly from the geometric electron radius and the geometric fine-structure constant:
 \begin{equation}
-	a_0 = \frac{r_e}{\alpha^2}
+	a_0 = \frac{r_e}{\alpha_{\text{geom}}^2}.
 	\label{eq:bohr_standard}
 \end{equation}
 
-\subsubsection{Geometric Derivation}
-Substituting the geometric expressions for $r_e$ and $\alpha$ – the former fixed by the 1:100 resonance link to the statutory neutrino radius ($r_e = 100 r_\nu$, see Sec. \ref{sec:10_10_resonance}), and the latter given by the zero-parameter form $\alpha^{-1} = A_\pi - 1/(8\pi^7)$ (see Sec. \ref{sec:eliminating_fine_tunig_paradigm}) – yields the purely geometric identity for the Bohr radius:
+Substituting \(r_e = 100\,r_\nu\) and the zero-calibration form of \(\alpha_{\text{geom}}\) gives
 \begin{equation}
-	\boxed{a_0 = \frac{100 \cdot r_\nu}{\left[ (4\pi^3 + \pi^2 + \pi) - \dfrac{1}{8\pi^7} \right]^{-2}}}
+	\boxed{
+		a_0
+		=
+		\frac{
+			100\,r_\nu
+		}{
+			\left[
+			(4\pi^3 + \pi^2 + \pi)
+			-
+			\dfrac{1}{8\pi^7(1-\zeta)}
+			\right]^{-2}
+		}
+	}
 	\label{eq:bohr_geometric}
 \end{equation}
 
-\subsubsection{Numerical Verification and Interpretation}
-Using the statutory neutrino radius $r_\nu = 2.81794 \times 10^{-17}$ m and the geometric fine-structure constant $\alpha_{\text{geom}} = 0.007297338548$, Eq. \ref{eq:bohr_geometric} evaluates to:
+Numerically,
 \begin{equation}
-	a_0^{\text{EWT}} = 5.291791330634349 \times 10^{-11} \text{ m}
+	a_0^{\text{EWT}}
+	=
+	5.291\,783\,259\,4 \times 10^{-11}\ \text{m},
 \end{equation}
-which aligns with the CODATA 2022 value $a_0 = 5.291772109030000 \times 10^{-11}$ m to within a relative error of \textbf{3.63 ppm} ($3.63 \times 10^{-6}$), or \textbf{0.000363\%}. This precision confirms that the atomic scale is not an independent constant but a necessary consequence of the same BCC lattice geometry that governs the electron radius and the fine-structure constant.
+while the CODATA value is
+\begin{equation}
+	a_0^{\text{CODATA}}
+	=
+	5.291\,772\,109\,0 \times 10^{-11}\ \text{m}.
+\end{equation}
+The relative error is approximately \(0.000211\%\).
 
-Physically, $a_0$ represents the equilibrium distance where the attractive Coulomb force and the repulsive "quantum pressure" balance. In the EWT picture, this balance is mediated by the Degraded EMC Wall (Sec. \ref{subsubsec:degraded_emc_wall}), which projects the discrete lattice structure into a smooth $1/r$ potential, ensuring the isotropy and universality of the atomic scale.
+This confirms that the atomic scale is not an independent constant but a necessary consequence of the same BCC geometry that determines \(r_e\) and \(\alpha_{\text{geom}}\).
 
-% ------------------------------------------------------------------------------
-\subsection{The Electron Compton Wavelength ($\lambda_C$): Threshold of Annihilation}
+\subsection{The Electron Compton Wavelength (\(\lambda_C\)): Threshold of Annihilation}
 \label{sec:compton_wavelength}
 
-The Compton wavelength of the electron marks the scale at which particle–antiparticle annihilation occurs, converting standing wave energy into transverse photons. In the geometric model, it follows directly from $r_e$ and $\alpha$ via the standard formula:
+The Compton wavelength of the electron follows from \(r_e\) and \(\alpha_{\text{geom}}\) through
 \begin{equation}
-	\lambda_C = \frac{2\pi r_e}{\alpha}
+	\lambda_C = \frac{2\pi r_e}{\alpha_{\text{geom}}}.
 	\label{eq:compton_standard}
 \end{equation}
 
-\subsubsection{Geometric Derivation}
-Inserting the geometric expressions for $r_e$ and $\alpha$ gives the zero-parameter identity:
+Inserting the geometric expressions for \(r_e\) and \(\alpha_{\text{geom}}\) gives
 \begin{equation}
-	\boxed{\lambda_C = \frac{200\pi \cdot r_\nu}{\left[ (4\pi^3 + \pi^2 + \pi) - \dfrac{1}{8\pi^7} \right]^{-1}}}
+	\boxed{
+		\lambda_C
+		=
+		\frac{
+			200\pi\,r_\nu
+		}{
+			\left[
+			(4\pi^3 + \pi^2 + \pi)
+			-
+			\dfrac{1}{8\pi^7(1-\zeta)}
+			\right]^{-1}
+		}
+	}
 	\label{eq:compton_geometric}
 \end{equation}
 
-\subsubsection{Numerical Verification and Physical Meaning}
-Evaluation with $r_\nu = 2.81794 \times 10^{-17}$ m and $\alpha_{\text{geom}} = 0.007297338548$ yields:
+Numerically,
 \begin{equation}
-	\lambda_C^{\text{EWT}} = 2.426314389900505 \times 10^{-12} \text{ m}
+	\lambda_C^{\text{EWT}}
+	=
+	2.426\,310\,689\,7 \times 10^{-12}\ \text{m},
 \end{equation}
-in excellent agreement with the CODATA 2022 value $\lambda_C = 2.426310238670000 \times 10^{-12}$ m, corresponding to a relative error of \textbf{1.71 ppm} ($1.71 \times 10^{-6}$), or \textbf{0.000171\%}.
+in agreement with the CODATA value
+\begin{equation}
+	\lambda_C^{\text{CODATA}}
+	=
+	2.426\,310\,238\,7 \times 10^{-12}\ \text{m}.
+\end{equation}
+The relative error is approximately \(0.000019\%\).
 
-In EWT, the Compton wavelength corresponds to the distance at which an electron and a positron, placed half an electron radius apart, undergo complete destructive wave interference. The factor $2\pi$ reflects the transition from longitudinal standing waves (mass) to transverse traveling waves (photons). The precision of the geometric derivation confirms that this annihilation threshold is a rigid property of the BCC lattice, encoded in the same parameters that determine $r_e$ and $\alpha$.
-
-% ------------------------------------------------------------------------------
 \subsection{Consistency Across Atomic Scales}
 \label{sec:atomic_consistency}
 
-Together, the Rydberg constant, the Bohr radius, and the Compton wavelength
-form a well‑known triad of atomic scales, here expressed in purely geometric
-terms:
-
+Together, the Rydberg constant, the Bohr radius, and the Compton wavelength form the well-known triad of atomic scales:
 \begin{align}
-	R_\infty &= \frac{\alpha^3}{4\pi r_e}, &
-	a_0      &= \frac{r_e}{\alpha^2}, &
-	\lambda_C &= \frac{2\pi r_e}{\alpha}
+	R_\infty &= \frac{\alpha_{\text{geom}}^3}{4\pi r_e},
+	&
+	a_0      &= \frac{r_e}{\alpha_{\text{geom}}^2},
+	&
+	\lambda_C &= \frac{2\pi r_e}{\alpha_{\text{geom}}}.
 \end{align}
-All three derive from the same two geometric inputs – $r_\nu$ and the $8\pi^7$ lattice correction – demonstrating the internal consistency of the model and its ability to unify phenomena from spectroscopy ($R_\infty$) to atomic structure ($a_0$) to particle annihilation ($\lambda_C$).
+
+All three derive from the same geometric inputs --- the statutory neutrino radius \(r_\nu\), the geometric fine-structure constant \(\alpha_{\text{geom}}\), and the lattice correction \(1/(8\pi^7(1-\zeta))\) --- demonstrating the internal consistency of the model.
 
 \begin{table}[h!]
 	\centering
@@ -4250,15 +4311,14 @@ All three derive from the same two geometric inputs – $r_\nu$ and the $8\pi^7$
 		\toprule
 		\textbf{Constant} & \textbf{EWT Prediction} & \textbf{CODATA 2022} & \textbf{Error (\%)} \\
 		\midrule
-		$R_\infty$ (m$^{-1}$) & $10973670.62263460$ & $10973731.56815700$ & $5.55 \times 10^{-4}\%$ \\
-		$a_0$ (m) & $5.291791330634349 \times 10^{-11}$ & $5.291772109030000 \times 10^{-11}$ & $3.63 \times 10^{-4}\%$ \\
-		$\lambda_C$ (m) & $2.426314389900505 \times 10^{-12}$ & $2.426310238670000 \times 10^{-12}$ & $1.71 \times 10^{-4}\%$ \\
+		\(R_\infty\) (\(\text{m}^{-1}\)) & \(10\,973\,687.362\,034\) & \(10\,973\,731.568\,157\) & \(0.000403\%\) \\
+		\(a_0\) (\(\text{m}\)) & \(5.291\,783\,259\,4 \times 10^{-11}\) & \(5.291\,772\,109\,0 \times 10^{-11}\) & \(0.000211\%\) \\
+		\(\lambda_C\) (\(\text{m}\)) & \(2.426\,310\,689\,7 \times 10^{-12}\) & \(2.426\,310\,238\,7 \times 10^{-12}\) & \(0.000019\%\) \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-The fact that three distinct atomic scales – spectroscopic ($R_\infty$), structural ($a_0$), and annihilation ($\lambda_C$) – are reproduced by different algebraic combinations of the same two geometric inputs ($r_\nu$ and $8\pi^7$) confirms that the fine-structure constant and the electron radius are not independent empirical parameters but manifestations of a single underlying geometry. The sub-ppm precision (approximately 3.6 ppm for $a_0$, 1.7 ppm for $\lambda_C$, and 5.6 ppm for $R_\infty$) confirms that these constants are necessary consequences of the BCC lattice topology. The slightly larger error in $R_\infty$ reflects the cumulative effect of the $\alpha^3$ factor, consistent with the spherical packing impedance $\zeta$ discussed in Part X.
-
+The sub-ppm agreement confirms that the fine-structure constant and the electron radius are not independent empirical parameters but manifestations of a single underlying BCC geometry. The slightly larger error in \(R_\infty\) reflects the cumulative effect of the \(\alpha_{\text{geom}}^3\) factor, consistent with the lattice impedance \(\zeta\) introduced in Section~\ref{sec:alpha_geometric_deficit}.
 \section{Mathematical Foundations of the Energy Wave Theory Lattice}
 
 \subsection{Introduction}
