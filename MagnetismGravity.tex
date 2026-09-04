@@ -404,6 +404,7 @@ The derivation of the pure geometric constant $\mathbf{A}_{\pi}$ was first propo
 The relation \(l = \pi x\) defines the propagation distance in terms of the source amplitude. It is not an arbitrary geometric choice but a consequence of the harmonic motion of the central EMC in an elastic medium with constant propagation speed \(c\). In one complete oscillation the central granule travels a total longitudinal displacement of \(2x\). During the same time interval, the disturbance emitted by this motion propagates outward at the lattice speed \(c\). Because the central granule follows a sinusoidal path, its corresponding longitudinal phase advance is exactly \(\pi x\), whereas the undisturbed wavefront travels the longer distance \(l = \pi x\). The factor \(\pi\) therefore enters through the kinematics of harmonic oscillation, not as a fitted parameter. This mechanical origin of \(l\) is what ultimately generates the characteristic powers \(\pi^{3}, \pi^{2}, \pi\) in the fine-structure geometry.
 
 \subsection{BCC Lattice Geometry and the Geometric Ladder}
+\label{sec:geom_ladder}
 
 The vacuum lattice is a discrete body-centred cubic (BCC) lattice of Elastic Medium Constituents (EMCs). The BCC lattice is characterised by:
 \begin{itemize}
@@ -1603,10 +1604,10 @@ In the natural units of the BCC lattice (\(c=1\), \(4\pi\epsilon_0=1\); see Sect
 \end{equation}
 This is not an independent derivation of \(e\), since \(m_e\) and \(r_e\) are inputs, but it is a powerful internal consistency test: it shows that the electromagnetic scale (\(e\)) is rigidly tied to the soliton's mass and radius, with no residual dependence on \(\hbar\) or \(\alpha\).
 
-\subsection{Status of Inputs in This Section}
+\subsection{Status of Inputs}
 \label{sec:inputs_planck}
 
-The only experimental inputs used here are
+The only experimental inputs in model are
 \begin{equation}
 	r_e,\quad m_e,\quad c,\quad e .
 \end{equation}
@@ -2511,7 +2512,7 @@ The quintic relationship between energy and radius ($E \propto r^5$), as identif
 
 The product of these factors ($r^3 \times r^1 \times r^1 = r^5$) confirms that mass is a measure of "dynamic information density". However, the divergence between this quintic energy surge and the cubic geometric compensation capacity ($\propto r^3$) explains the precision limits encountered in earlier models (e.g., the 10-16\% error for the muon and tau in \cite{yee2014leptons}). 
 
-The EWT expansion presented in this work resolves these discrepancies through the \textbf{Onion Model} described in \ref{sec:onion_analysis}. By identifying the $r^5/r^3$ disparity as a saturation point, it is shown that the vacuum must redistribute excess potential into recursive, nested geometric shells. This transition ensures that the energy density remains within the elastic limits of the lattice, allowing for the 10-digit precision achieved in the derivation of $a_\mu$, $a_\tau$, and the gravitational constant $G$.
+The EWT expansion presented in this work resolves these discrepancies through the \textbf{Onion Model} described in \ref{sec:onion_analysis}. By identifying the $r^5/r^3$ disparity as a saturation point, it is shown that the vacuum must redistribute excess potential into recursive, nested geometric shells.
 
 \subsection{The Geometric Status of Mass: Kilogram as a Derived Unit}
 \label{sec:mass_geometric_status}
@@ -2686,7 +2687,7 @@ laboratory units.
 This geometric dimension admits a direct interpretation within the
 Geometric Ladder of the EWT framework. The sixth degree of freedom
 is associated with the volumetric bosonic budget
-\(3D + A + f + r\), which is represented by the \(\pi^{6}\) rung (Section~\ref{sub:geom_ladder}).
+\(3D + A + f + r\), which is represented by the \(\pi^{6}\) rung (Section~\ref{sec:geom_ladder}).
 The reduced Planck constant is therefore the geometric measure of
 the six-dimensional phase-space volume available to a soliton
 resonance. The dimensional exponent \(6\) is not accidental: it is
@@ -2701,14 +2702,14 @@ define the six-dimensional phase-space cell whose quantum is
 \subsection{The Fundamental Magnetic Deficit $\epsilon_M$}
 \label{sec:magnetic_deficit}
 
-In EWT, the magnetic moment correction is a purely geometric phenomenon resulting from the non-ideal stiffness of the elastic medium. The fundamental magnetic deficit constant, $\epsilon_M$, is defined by the stiffness modulus ($N$) and the volumetric factor ($\pi^3$):
+In EWT, the magnetic moment correction is a purely geometric phenomenon resulting from the non-ideal stiffness of the elastic medium. The fundamental magnetic deficit constant, $\epsilon_M$, is defined by the effective geometric stiffness modulus ($N_{\text{geom}}$) and the volumetric factor ($\pi^3$):
 
 \begin{equation}
 	\label{eq:epsilon_M_fundamental}
-	\epsilon_M \equiv \frac{1}{N \cdot \pi^3}
+	\epsilon_M \equiv \frac{1}{N_{\text{geom}} \cdot \pi^3}
 \end{equation}
 
-The total stiffness deficit (Loss Factor) of the elastic medium is thus expressed as $\epsilon_M \cdot \pi^3 = 1/N$.
+The total stiffness deficit (Loss Factor) of the elastic medium is thus expressed as $\epsilon_M \cdot \pi^3 = 1/N_{\text{geom}}$.
 
 \subsection{Derivation of the $a_e$ Base Formula}
 \label{sec:a_e_derivation}
@@ -2717,25 +2718,22 @@ The anomalous magnetic moment of the electron ($a_e$) is derived as the product 
 
 \begin{equation}
 	\label{eq:a_base_geom}
-	\boxed{a_{\text{Base}}^{\text{Geometric}} = \frac{\alpha}{2\pi} \cdot \left( 1 - \epsilon_M \cdot \pi^3 \right)}
+	\boxed{a_{\text{Base}}^{\text{Geometric}} = \frac{\alpha_{\text{geom}}}{2\pi} \cdot \left( 1 - \epsilon_M \cdot \pi^3 \right)}
 \end{equation}
 
-Numerical verification, using $N = 778.818123$ and $\alpha \approx 0.0072973525693$, yields $a_{\text{Base}}^{\text{Geometric}} \approx 11599184.86 \times 10^{-10}$. This result aligns with the experimental value of the electron ($a_e^{\text{exp}} \approx 11596521.82 \times 10^{-10}$) with a relative error of approximately $0.0229\%$, establishing the electron as the fundamental geometric ground state.
-
+Numerical verification, using the geometric \(\alpha_{\text{geom}}\) and \(\epsilon_M\) from the BCC lattice, yields \(a_{\text{Base}}^{\text{Geometric}} \approx 1159.916228\ \text{ppm}\). This result aligns with the experimental value of the electron (\(a_e^{\text{exp}} \approx 1159.652182\ \text{ppm}\)) with a relative error of approximately \(0.02277\%\), establishing the electron as the fundamental geometric ground state.
 
 \section{The Recursive Lepton Hierarchy: Nodal Shell Resonance Model}
 \label{sec:recursive_prediction}
 
 Heavier leptons — the Muon ($\Psi_{\mu}$) and the Tau ($\Psi_{\tau}$) — emerge through \textbf{Recursive Nodal Inclusion} (the "Onion Model"). Each generation is treated as a cumulative wave-packing excitation within the BCC vacuum lattice, where the nodal structure is governed by a characteristic geometric factor $2\pi^2$ (the surface area of a torus, though other topologies yielding the same factor are not excluded).
 
-The mathematical model discussed in this chapter, including the specific recursive algorithms and nodal density calculations, is implemented in \textbf{Part V} of the Scilab simulation script (see Listing \ref{lst:scilab_script}). The corresponding numerical results and verification logs generated by this implementation are presented in Listing \ref{lst:scilab_output}.
+The numerical values quoted in this section are obtained directly from the geometric Python implementation described in the Appendix.
 
 \subsubsection*{Methodological Framework: Nodal Metrics and Geometric Determinism}
-To maintain theoretical rigor, a distinction is established between the discrete lattice and the resonant excitation. While the \textbf{Wave Center (Soliton)} ($K_{WC}$) is the fundamental physical and energy-conserving entity, its internal dynamics involve a level of complexity that makes direct continuous analysis less efficient. In contrast, the \textbf{Node} provides a highly effective \textbf{topological metric} for the EWT framework. By utilizing the discrete points of the BCC lattice as a reference for \textbf{phase space occupancy}, the "Onion Model" derives lepton generations through the precise counting of nodal density ($K$). 
+To maintain theoretical rigor, a distinction is established between the discrete lattice and the resonant excitation. While the \textbf{Wave Center (Soliton)} ($K_{WC}$) is the fundamental physical and energy-conserving entity, its internal dynamics involve a level of complexity that makes direct continuous analysis less efficient. In contrast, the \textbf{Node} provides a highly effective \textbf{topological metric} for the EWT framework. By utilizing the discrete points of the BCC lattice as a reference for \textbf{phase space occupancy}, the "Onion Model" derives lepton generations through the precise counting of nodal density ($K$).
 
-
-
-In this approach, nodes do not function as a rigid measurement of spatial distance, but rather as a \textbf{quantized gauge of resonant stability}. When the energy surge ($\propto r^5$) exceeds the volumetric capacity ($\propto r^3$) of the base geometry, the system's adaptation is captured by its "latching" onto additional nodal degrees of freedom. By focusing on \textbf{nodal counting} as a measure of structural complexity rather than absolute spatial radii, the model replaces the analytical overhead of wave-center dynamics with the deterministic logic of the lattice, enabling the 10-digit precision observed in the AMM results.
+In this approach, nodes do not function as a rigid measurement of spatial distance, but rather as a \textbf{quantized gauge of resonant stability}. When the energy surge ($\propto r^5$) exceeds the volumetric capacity ($\propto r^3$) of the base geometry, the system's adaptation is captured by its "latching" onto additional nodal degrees of freedom. By focusing on \textbf{nodal counting} as a measure of structural complexity rather than absolute spatial radii, the model replaces the analytical overhead of wave-center dynamics with the deterministic logic of the lattice, enabling sub-percent level predictions without any calibrated parameters.
 
 \subsection{Resonance Growth Law and Fibonacci Stability Metrics}
 \label{sec:toroidal_logic}
@@ -2747,7 +2745,7 @@ The hierarchy is defined by a recursive addition of nested shells. The nodal inc
 	\boxed{K_{n} = K_{n-1} + \text{round}\left( 10^{n-1} \cdot 2\pi^2 \right)}
 \end{equation}
 
-In the EWT framework, as implemented in Part V of the Scilab script, the stability of these shells is governed by specific  \textbf{Fibonacci-lattice} dimensions ($L_{dim}$), which act as scaling factors for the magnetic anomaly.
+In the EWT framework, the stability of these shells is governed by specific \textbf{Fibonacci-lattice} dimensions ($L_{dim}$), which act as scaling factors for the magnetic anomaly.
 
 \subsection{Structural Stability Invariants of the BCC Lattice}
 
@@ -2758,7 +2756,7 @@ The hierarchy of lepton generations is defined by the recursive addition of shel
 	\item \textbf{Tau Resonance ($L_{\tau} = 34$):} The second shell ($K=2181$) is stabilized by the higher-order Fibonacci factor $34$. This value acts as a scaling anchor for the extreme energy density characteristic of the Tau generation.
 \end{itemize}
 
-The numerical verification in Part V (Scilab) confirms that these factors are not arbitrary fit-parameters, but required topological constants to align the geometric wave-packing with experimental magnetic anomalies.
+The numerical verification confirms that these factors are not arbitrary fit-parameters, but required topological constants to align the geometric wave-packing with experimental magnetic anomalies.
 
 \begin{table}[ht]
 	\centering
@@ -2775,7 +2773,7 @@ The numerical verification in Part V (Scilab) confirms that these factors are no
 	\end{tabular}
 \end{table}
 
-The simulation outputs demonstrate that these recursive increments produce a standalone geometric prediction for the Tau lepton of $a_{\tau} \approx 0.00117684$ (Relative Error: $0.031\%$), confirming that Fibonacci indices serve as the physical "latches" for wave-packing in the BCC vacuum.
+The simulation outputs demonstrate that these recursive increments produce a standalone geometric prediction for the Tau lepton of $a_{\tau} \approx 1176.838\ \text{ppm}$ (Relative Error: $0.031589\%$), confirming that Fibonacci indices serve as the physical "latches" for wave-packing in the BCC vacuum.
 
 \subsection{Structural Analysis: The Onion Model}
 \label{sec:onion_analysis}
@@ -2829,7 +2827,7 @@ The stability of these recursive shells is governed by Fibonacci resonance scale
 		\draw[->, >=stealth, thick, gray] (3.2, -1.5) -- (1.8, -1.0) node[pos=0, right, font=\tiny] {Shell Growth};
 		
 	\end{tikzpicture}
-\caption{\textbf{The Lepton Onion Model: Recursive Nodal Integration.} Visualizing the $10^{n-1} \cdot 2\pi^2$ operator logic anchored by Fibonacci invariants $L_n$. The shells are depicted as concentric circles for simplicity; the actual geometry is not constrained beyond the factor $2\pi^2$.}
+	\caption{\textbf{The Lepton Onion Model: Recursive Nodal Integration.} Visualizing the $10^{n-1} \cdot 2\pi^2$ operator logic anchored by Fibonacci invariants $L_n$. The shells are depicted as concentric circles for simplicity; the actual geometry is not constrained beyond the factor $2\pi^2$.}
 	\label{fig:lepton_onion_model_v4}
 \end{figure}
 
@@ -2851,7 +2849,7 @@ The electron anomaly is the geometric core deficit of the vacuum medium,
 requiring no shell contribution and no projection:
 \begin{equation}
 	a_e^{\text{EWT}}
-	= \frac{\alpha}{2\pi}\,\bigl(1 - \epsilon_M\,\pi^{3}\bigr),
+	= \frac{\alpha_{\text{geom}}}{2\pi}\,\bigl(1 - \epsilon_M\,\pi^{3}\bigr),
 	\qquad \mathcal{O}_e = 1.
 	\label{eq:ae_master}
 \end{equation}
@@ -2949,8 +2947,7 @@ $\mathcal{O}_\mu$ identity: $M_\mu \pi^3 \epsilon_M \approx 1/(4\pi^2)$
 to within $0.14\%$. This small residual arises from the net effect of two
 offsetting corrections: the rounding of $M_\mu$ from its ideal value
 $2\pi^2$ to the discrete $19.7$ (about $-0.20\%$), and the lattice
-impedance $\delta \approx 0.058\%$ entering through $N_{\text{final}}$
-(about $+0.06\%$).
+impedance $\zeta$ entering through $N_{\text{geom}}$ (about $+0.06\%$).
 
 \smallskip
 \noindent
@@ -2965,10 +2962,8 @@ the lepton masses as input.
 \textbf{Note on notation:} $s_\mu$ in Eq.~\eqref{eq:atau_master} denotes the
 raw shell contribution of Eq.~\eqref{eq:s_mu}, \emph{not} the full observable
 $a_\mu^{\text{EWT}}$ of Eq.~\eqref{eq:amu_master}. The two differ by the
-electron background $a_e^{\text{EWT}} \approx 1159.9\,\text{ppm}$; conflating
-them would yield an unphysical result for $a_\tau^{\text{EWT}}$. The
-consistent bookkeeping is implemented explicitly in Part~V of the Scilab
-script (Listing~\ref{lst:scilab_script}).
+electron background $a_e^{\text{EWT}} \approx 1159.916\ \text{ppm}$; conflating
+them would yield an unphysical result for $a_\tau^{\text{EWT}}$.
 
 \subsubsection*{Physical Interpretation: Geometric Continuity}
 The term $L_{\mu}^2 = 25$ functions as the \textbf{interface tension}, a residual binding energy that anchors the high-density Tau shell to the Muon core. Unlike the Standard Model's radiative corrections, the EWT framework defines these generations as structural phase transitions of the soliton's tail. As the nodal count $K$ increases, the increased damping $(1 - \epsilon_M)^{M \pi^3}$ reflects the growing lattice-mediated resistance against the magnetic spin precession.
@@ -3000,14 +2995,14 @@ The structural difference between the coupling constants $B_{\mu}$ and $B_{\tau}
 	This reflects a \textbf{geometric shadowing effect}: in a hierarchical lattice 
 	structure, the interior core effectively shields half of the available phase 
 	space. This specific geometric offset is a deterministic requirement to 
-	achieve the observed $0.031\%$ experimental convergence, proving that the 
+	achieve the observed $0.031589\%$ experimental convergence, proving that the 
 	tau lepton is a constrained extension of the muon core.
 \end{itemize}
 
 Consequently, the $B_{\mu}$ and $B_{\tau}$ operators establish a deterministic bridge between discrete lattice topology and observed leptonic moments, replacing empirical Standard Model calibrations with a rigorous geometric framework of volumetric and planar resonances.
 
 \subsubsection*{The Interface Tension ($\delta$)}
-A crucial discovery in the EWT recursive model is the role of $L_{\mu}^2 = 25$ as a stabilization constant. In the Scilab implementation, this value is added to the Tau prediction to represent the \textbf{interface tension} between the shells. Physically, this ensures that the Tau generation remains anchored to the pre-existing Muon foundation, maintaining topological continuity in the ``Onion Model''. Without this binding energy, the high-density Tau shell would lack the geometric leverage required to achieve the observed $0.031\%$ experimental convergence. The same topological reasoning that mandates $L_{\mu}^2$ as the binding energy also determines the geometric budget available to the tauon shell: for instance, a closed surface of genus 1 (such as a torus) embedded within a 3D sphere divides the phase space into two topologically equivalent regions of equal measure — the interior and the exterior. Within the shell hierarchy, the muon core therefore occupies exactly half of the available phase space, effectively halving the geometric budget for the tauon shell. Consequently, the core area term scales as $A_{\pi} \to A_{\pi}/2$, a result that follows from topology rather than from empirical adjustment.
+A crucial discovery in the EWT recursive model is the role of $L_{\mu}^2 = 25$ as a stabilization constant. This value is added to the Tau prediction to represent the \textbf{interface tension} between the shells. Physically, this ensures that the Tau generation remains anchored to the pre-existing Muon foundation, maintaining topological continuity in the ``Onion Model''. Without this binding energy, the high-density Tau shell would lack the geometric leverage required to achieve the observed $0.031589\%$ experimental convergence. The same topological reasoning that mandates $L_{\mu}^2$ as the binding energy also determines the geometric budget available to the tauon shell: for instance, a closed surface of genus 1 (such as a torus) embedded within a 3D sphere divides the phase space into two topologically equivalent regions of equal measure — the interior and the exterior. Within the shell hierarchy, the muon core therefore occupies exactly half of the available phase space, effectively halving the geometric budget for the tauon shell. Consequently, the core area term scales as $A_{\pi} \to A_{\pi}/2$, a result that follows from topology rather than from empirical adjustment.
 
 \subsubsection*{The Geometric Necessity of Shell Formation}
 The emergence of the recursive "Onion Model" is not an arbitrary structural choice but a direct consequence of the scaling disparity established in Eq.~\ref{eq:energy_scaling_boxed} and Eq.~\ref{eq:geometry_scaling_boxed}. As the internal energy density $\rho_E$ surges with $r^5$ during nodal compression, the available three-dimensional volume scales only as $r^3$, imposing a fundamental capacity limit. The 3D spatial substrate cannot accommodate arbitrarily high energy densities without exceeding the elastic limits of the BCC lattice. To maintain stability, the system is forced to redistribute the excess energy into nested toroidal shells, each storing energy in additional angular degrees of freedom. Each subsequent generation (muon, tau) thus represents a new resonant layer that circumvents the strict $r^3$ volumetric bottleneck.
@@ -3029,7 +3024,6 @@ While the mass of the Muon ($K_{WC}=20$) and Tau ($K_{WC}=50$) is derived from t
 	\item \textbf{Geometry ($K$):} Represents the \textit{spatial distribution} of these excitations across the lattice nodes ($K_\mu=207$, $K_\tau=2181$).
 \end{itemize}
 The alignment between the energy-driven Orbital Mode and the geometry-driven Onion Model confirms that the lepton generations are not independent particles, but structural phase transitions where the increased energy density ($K_{WC}$) is forced to reorganize into larger, stable lattice formations ($K$) governed by Fibonacci resonance.
-
 
 \vspace{1em}
 \noindent
@@ -3058,8 +3052,8 @@ and full physical anomalies. While the electron anomaly ($a_e^{\text{EWT}}$)
 reflects the un-shifted geometric core deficit of the vacuum medium, the 
 higher-generation anomalies ($a_\mu^{\text{EWT}}$ and $a_\tau^{\text{EWT}}$) 
 emerge from the same universal core background 
-($a_{\text{geom}} \approx 1159.918 \text{ ppm}$), driven by the elastic 
-stiffness invariant $1/N$, augmented by the recursively accumulated shell 
+($a_e^{\text{geom}} \approx 1159.916228\ \text{ppm}$), driven by the elastic 
+stiffness invariant $1/N_{\text{geom}}$, augmented by the recursively accumulated shell 
 contributions.
 
 The transition from the internal shell densities to the observable macroscopic 
@@ -3083,7 +3077,7 @@ rule is determined by the resonance dimensionality of each generation:
 		\label{eq:O_mu}
 	\end{equation}
 	where the identity $M_\mu \pi^3 \epsilon_M = 1/(4\pi^2)$ follows from the 
-	shell algorithm and the definition $\epsilon_M = 1/(8\pi^7)$. The operator 
+	shell algorithm and the definition $\epsilon_M = 1/(8\pi^7(1-\zeta))$. The operator 
 	is completely determined by the fundamental vacuum constants.
 	
 	\item \textbf{Tau (3D volumetric resonance):} The second shell contribution 
@@ -3104,33 +3098,28 @@ The different input arguments for the three cases (full core for the electron,
 full shell for the muon, full shell for the tau) follow a consistent logic: 
 each generation contributes its entire geometric energy to the observable 
 anomaly, and only the intermediate 2D case requires a dimensional bridge. The 
-standalone, dynamic geometric predictions generated directly by Part~V in 
-Listing~\ref{lst:scilab_script} are summarized in 
+standalone geometric predictions are summarized in 
 Table~\ref{tab:final_results_confirmed}.
 
 \begin{table}[ht]
 	\centering
-	\caption{EWT Standalone Geometric Predictions vs. Physical Lepton Anomalies}
+	\caption{EWT Standalone Geometric Predictions vs.\ Physical Lepton Anomalies}
 	\label{tab:final_results_confirmed}
 	\begin{tabular}{lccc}
 		\toprule
 		\textbf{Generation / Component} & \textbf{Target} & \textbf{EWT Prediction} & \textbf{Error} \\
 		\midrule
-		Electron Full AMM ($a_e$) & $1.159652 \times 10^{-3}$ & $1.159918 \times 10^{-3}$ & $0.023\%$ \\
+		Electron Full AMM (\(a_e\)) & \(1.159652 \times 10^{-3}\) & \(1.159916 \times 10^{-3}\) & \(0.022769\%\) \\
 		\midrule
-		Muon Shell Ref.~($a_{\mu\text{, shell}}$) & $248.800 \times 10^{-6}$ & $248.571 \times 10^{-6}$ & $0.092\%$ \\
-		\textbf{Muon Full AMM ($a_{\mu}$)} & $\mathbf{1.165921 \times 10^{-3}}$ & $\mathbf{1.166206 \times 10^{-3}}$ & $\mathbf{0.0245\%}$ \\
+		Muon Shell Ref. (\(a_{\mu,\text{shell}}\)) & \(248.800 \times 10^{-6}\) & \(248.571 \times 10^{-6}\) & \(0.092\%\) \\
+		\textbf{Muon Full AMM (\(a_{\mu}\))} & \(\mathbf{1.165921 \times 10^{-3}}\) & \(\mathbf{1.166213 \times 10^{-3}}\) & \(\mathbf{0.025044\%}\) \\
 		\midrule
-		Tau Shell Ref.~($a_{\tau\text{, shell}}$) & $1177.210 \times 10^{-6}$ & $1176.843 \times 10^{-6}$ & $0.031\%$ \\
-		\textbf{Tau Full AMM ($a_{\tau}$)} & $\mathbf{1.177210 \times 10^{-3}}$ & $\mathbf{1.176843 \times 10^{-3}}$ & $\mathbf{0.031\%}$ \\
+		Tau Shell Ref. (\(a_{\tau,\text{shell}}\)) & \(1177.210 \times 10^{-6}\) & \(1176.838 \times 10^{-6}\) & \(0.031589\%\) \\
+		\textbf{Tau Full AMM (\(a_{\tau}\))} & \(\mathbf{1.177210 \times 10^{-3}}\) & \(\mathbf{1.176838 \times 10^{-3}}\) & \(\mathbf{0.031589\%}\) \\
 		\bottomrule
 	\end{tabular}
 	\begin{flushleft}
-		\small \textit{Note: Full lepton targets represent official experimental 
-			CODATA/PDG physical benchmarks. The shell reference invariants 
-			($a_{\mu\text{, shell}}^{\text{EWT}}$, $a_{\tau\text{, shell}}^{\text{EWT}}$) 
-			are internal topological metrics derived from orbital mass relations 
-			and evaluated dynamically in-script.}
+		\small \textit{Note: Full lepton targets represent official experimental CODATA/PDG physical benchmarks.}
 	\end{flushleft}
 \end{table}
 
@@ -3140,15 +3129,15 @@ hypothesis. The prediction errors follow a \textbf{monotonic progression}
 across the three generations:
 
 \begin{center}
-	$0.023\%$ (electron, $\mathcal{O}_e = 1$) $\to$ 
-	$0.0245\%$ (muon, $\mathcal{O}_\mu = 1/(4\pi^2)$) $\to$ 
-	$0.031\%$ (tau, $\mathcal{O}_\tau = 1$).
+	$0.022769\%$ (electron, $\mathcal{O}_e = 1$) $\to$ 
+	$0.025044\%$ (muon, $\mathcal{O}_\mu = 1/(4\pi^2)$) $\to$ 
+	$0.031589\%$ (tau, $\mathcal{O}_\tau = 1$).
 \end{center}
 
 This sequence is not accidental. The electron and tau---both 3D resonances 
-with unit projection operators---exhibit errors of $0.023\%$ and $0.031\%$, 
+with unit projection operators---exhibit errors of $0.022769\%$ and $0.031589\%$, 
 respectively. The muon---the sole 2D resonance requiring a non-trivial 
-dimensional bridge---lies between them at $0.0245\%$. The monotonic growth 
+dimensional bridge---lies between them at $0.025044\%$. The monotonic growth 
 with generation number reflects the increasing topological complexity of the 
 nested shells, but the projection mechanism absorbs this complexity into a 
 simple, dimensionally dictated rule: $\mathcal{O} = 1$ when the resonance 
@@ -3186,7 +3175,7 @@ objective.
 			and the BCC vacuum constants, via the identity
 			
 			\vspace{3pt}
-			$M_\mu\pi^3\epsilon_M = 1/(4\pi^2)$ with $\epsilon_M = 1/(8\pi^7)$.
+			$M_\mu\pi^3\epsilon_M = 1/(4\pi^2)$ with $\epsilon_M = 1/(8\pi^7(1-\zeta))$.
 			
 			\vspace{3pt}
 			The same factor is also recovered independently from the normalisation of
@@ -3221,7 +3210,7 @@ objective.
 			\textbf{2D planar resonance} in the BCC lattice. Its projection onto the
 			observable 1D scalar requires the operator $\mathcal{O}_\mu = 1/(4\pi^2)$,
 			which is not an empirical fit but a geometric necessity fixed by
-			$\epsilon_M = 1/(8\pi^7)$ and $\pi$. The Standard Model, lacking the
+			$\epsilon_M = 1/(8\pi^7(1-\zeta))$ and $\pi$. The Standard Model, lacking the
 			concept of a discrete lattice with dimensional constraints, cannot
 			reproduce this operator -- and therefore cannot fully account for the
 			muon's magnetic moment. The resolution of the muon $g-2$ puzzle thus lies
@@ -3289,7 +3278,7 @@ The only empirical information entering the muon and tau AMM predictions is
 the mass scale, fixed by the orbital mass relations 
 (Section~\ref{sec:numerical_verification_ewt}). The anomalous magnetic 
 moments themselves are then computed from pure geometry: the universal 
-stiffness deficit $\epsilon_M = 1/(8\pi^7)$, the recursive nodal growth law 
+stiffness deficit $\epsilon_M = 1/(8\pi^7(1-\zeta))$, the recursive nodal growth law 
 $K_n = K_{n-1} + \text{round}(10^{n-1} \cdot 2\pi^2)$, and the dimensionally 
 determined projection rules $\mathcal{O}_\mu = 1/(4\pi^2)$ and 
 $\mathcal{O}_\tau = 1$, as established in 
@@ -3301,7 +3290,7 @@ and tau anomalous magnetic moments from a unified geometric framework. The
 fact that a single modulator $\epsilon_M$, together with the BCC lattice 
 topology, simultaneously determines $G$, $\alpha$, $a_e$, $a_\mu$, and 
 $a_\tau$---with all three lepton generations converging to the experimental 
-benchmarks at the $0.02\%$--$0.03\%$ level and with the sole dimensional 
+benchmarks at the sub-percent level and with the sole dimensional 
 bridge $\mathcal{O}_\mu = 1/(4\pi^2)$ completely fixed by the vacuum 
 constants---represents a level of unification that lies beyond the current 
 reach of perturbative quantum field theory.
@@ -3317,12 +3306,12 @@ The growth of the nodal count by $\Delta K = \text{round}(10^{n-1} \cdot 2\pi^2)
 \subsubsection*{2. Fibonacci Invariants ($L_{dim}$) as Lattice Latches}
 In a discrete BCC lattice, only specific degrees of freedom are permitted for stable solitons. The dimensions $L_{\mu}=5$ and $L_{\tau}=34$ function as \textbf{Geometric Latches}. 
 \begin{itemize}
-	\item For the Muon, the dimension $5$ (the 5th Fibonacci number) stabilizes the first shell, allowing for a magnetic anomaly prediction with $0.0245\%$ precision (full AMM) and $0.092\%$ (internal shell consistency).
-	\item For the Tau, the higher-order resonance $34$ (the 9th Fibonacci number) stabilizes the extremely high energy density, leading to internal shell convergence of $0.031\%$.
+	\item For the Muon, the dimension $5$ (the 5th Fibonacci number) stabilizes the first shell, allowing for a magnetic anomaly prediction with $0.025044\%$ precision (full AMM) and $0.092\%$ (internal shell consistency).
+	\item For the Tau, the higher-order resonance $34$ (the 9th Fibonacci number) stabilizes the extremely high energy density, leading to internal shell convergence of $0.031589\%$.
 \end{itemize}
 
 \subsubsection*{3. AMM as a Manifestation of Vacuum Elasticity}
-In the EWT framework, the anomalous magnetic moment (AMM) is not a byproduct of virtual particle loops, but a direct measure of the medium's stiffness deficit ($\epsilon_M$). The simulation results prove that the Muon and Tau are not distinct elementary particles, but the same fundamental core (Electron) subject to increased geometric resistance. The full AMM predictions---$0.0245\%$ for the muon and $0.031\%$ for 
+In the EWT framework, the anomalous magnetic moment (AMM) is not a byproduct of virtual particle loops, but a direct measure of the medium's stiffness deficit ($\epsilon_M$). The simulation results prove that the Muon and Tau are not distinct elementary particles, but the same fundamental core (Electron) subject to increased geometric resistance. The full AMM predictions---$0.025044\%$ for the muon and $0.031589\%$ for 
 the tau---confirm that the lepton hierarchy is strictly determined by 
 the topology of the lattice medium. The monotonic progression of errors 
 reflects the increasing topological complexity of the nested shells, 
@@ -3343,7 +3332,7 @@ The shell contributions computed by the recursive algorithm are generated within
 \begin{itemize}
 	\item \textbf{Electron operator $\mathcal{O}_e = 1$:} The electron is the 3D core resonance of the soliton. Its geometric core deficit occupies the full three-dimensional volume of the BCC lattice and is directly visible in the observable 3D space. No dimensional reduction is required, and the operator reduces to the identity.
 	
-	\item \textbf{Muon operator $\mathcal{O}_\mu = 1/(4\pi^2)$:} The muon shell is a 2D planar resonance. Its projection from the intrinsic two-dimensional phase space onto the one-dimensional observable requires a dimensional bridge. The identity $\mathcal{O}_\mu = M_\mu \pi^3 \epsilon_M = 1/(4\pi^2)$ follows directly from the shell algorithm and the definition $\epsilon_M = 1/(8\pi^7)$. The operator is completely determined by the fundamental vacuum constants and contains no generation-specific parameters.
+	\item \textbf{Muon operator $\mathcal{O}_\mu = 1/(4\pi^2)$:} The muon shell is a 2D planar resonance. Its projection from the intrinsic two-dimensional phase space onto the one-dimensional observable requires a dimensional bridge. The identity $\mathcal{O}_\mu = M_\mu \pi^3 \epsilon_M = 1/(4\pi^2)$ follows directly from the shell algorithm and the definition $\epsilon_M = 1/(8\pi^7(1-\zeta))$. The operator is completely determined by the fundamental vacuum constants and contains no generation-specific parameters.
 	
 	\item \textbf{Tau operator $\mathcal{O}_\tau = 1$:} The tau shell is a 3D volumetric resonance that engages all eight primary vertices and the diagonal propagation paths of the BCC unit cell. Because the resonance dimensionality (3D) matches the dimensionality of the observable space, no dimensional reduction is required. Like the electron, the tau shell is directly visible, and its projection operator reduces to the identity.
 \end{itemize}
@@ -3360,9 +3349,9 @@ This dimensional pattern---$\mathcal{O} = 1$ for 3D resonances, $\mathcal{O} = 1
 			\small \textbf{Geometric Independence of the Anomalous Magnetic Moment:} \\
 			In the EWT framework, the anomalous magnetic moments of all three lepton generations
 			are computed from pure BCC lattice geometry, without reference to the lepton mass.
-			The electron AMM $a_e$ is a direct function of the stiffness parameter $N = 8\pi^4$,
+			The electron AMM $a_e$ is a direct function of the geometric stiffness $N_{\text{geom}}$,
 			while the muon and tau AMMs are obtained recursively from the same universal
-			modulator $\epsilon_M = 1/(8\pi^7)$. The lepton masses enter only as
+			modulator $\epsilon_M$. The lepton masses enter only as
 			reference scales for comparison and play no role in the geometric computation
 			of the AMM itself. This establishes the anomalous magnetic moment as a
 			\textbf{mass-independent topological invariant} of the vacuum lattice.
@@ -3371,6 +3360,7 @@ This dimensional pattern---$\mathcal{O} = 1$ for 3D resonances, $\mathcal{O} = 1
 	}
 \end{center}
 \vspace{1em}
+
 % ==============================================================================
 % SECTION: MULTI-VARIANT SENSITIVITY ANALYSIS (OUTPUTS 1-4)
 % ==============================================================================
@@ -3505,131 +3495,102 @@ from BCC lattice topology alone remains the overarching objective.
 
 \section{The Magneto-Geometric Hypotheses: Dynamic Deficit Modification}
 \label{sec:magneto_geometric_hypotheses}
-The observed sensitivity of the effective gravitational constant $G$ to local magnetic coherence (predicted $G_{eff} \neq G$ in Section \ref{sec:G_magnetic_sensitivity_pp}) is highly suggestive of a structural mechanism. Three competing geometric hypotheses are formulated regarding the influence of magnetic coherence ($\mathbf{\varepsilon_M}$) on the Soliton's internal density profile $\mathbf{\rho}(r)$. This analysis assumes that the \textbf{only source of gravity is the density deficit ($\mathbf{N_{\nu}}$)}, and thus any change in $\mathbf{N_{\nu}}$ directly dictates the change in $\mathbf{G_{eff}}$.
 
-\subsection{Hypothesis 1: The Push-Out Mechanism (Density Decreases)}
+The observed sensitivity of the effective gravitational constant \(G\) to local magnetic coherence (predicted \(G_{\text{eff}} \neq G\) in Section~\ref{sec:G_magnetic_sensitivity_pp}) is highly suggestive of a structural mechanism. Three competing geometric hypotheses are formulated regarding the influence of the local magnetic response on the Soliton's internal density profile \(\rho(r)\).
+
+In this section, \(\epsilon_M\) is understood as the global lattice constant fixed by the BCC packing geometry. It does not change locally. The variable that changes with spin or magnetic energy is the local EMC density and the resulting effective volume deficit.
+
+The analysis assumes that the only source of gravity is the density deficit,
+\[
+\Delta N_\nu = N_{\nu,\text{stat}} - N_{\nu,\text{eff}},
+\]
+so any change in \(N_{\nu,\text{eff}}\) directly dictates the change in \(G_{\text{eff}}\).
+
+\subsection{Hypothesis 1: The Push-Out Mechanism}
 \label{sec:hyp_1_pushout}
-The increase in magnetic energy acts as a dynamic pressure (push-out effect), forcing more Elastic Medium Constituent (EMC) units out of the Soliton volume. This results in a \textbf{less dense internal packing} ($\mathbf{\rho}(r)$ decreases) and consequently a \textbf{larger Geometric Deficit $\mathbf{N_{\nu}}$} (more 'missing' units). Since gravitational strength is proportional to the deficit magnitude:
-\begin{equation}
-	\label{eq:hyp_1_gravity}
-	\mathbf{\epsilon_M} \uparrow \implies \mathbf{\rho}(r) \downarrow \implies \text{Geometric Deficit } \uparrow \implies \mathbf{G_{eff}} \uparrow
-\end{equation}
-\emph{Status:} This variant is consistent with the predicted $\mathbf{G_{eff}} > \mathbf{G}$ and provides a structural mechanism for the enhancement.
 
-\subsection{Hypothesis 2: The Consolidation Mechanism (Density Increases)}
-\label{sec:hyp_2_consolidation}
-The increase in magnetic coherence leads to a \textbf{structural consolidation} of the Soliton (e.g., more stable standing waves), resulting in a \textbf{denser internal packing} ($\mathbf{\rho}(r)$ increases). This consolidation leads to a \textbf{smaller Geometric Deficit $\mathbf{N_{\nu}}$} (fewer 'missing' units).
+An increase in the local magnetic energy \(B\) acts as a dynamic pressure, forcing more Elastic Medium Constituent (EMC) units out of the Soliton volume. This results in a lower internal packing density \(\rho(r)\) and consequently a lower effective density \(N_{\nu,\text{eff}}\). The geometric deficit \(\Delta N_\nu\) therefore increases, and the gravitational coupling rises.
+
 \begin{equation}
-	\label{eq:hyp_2_gravity}
-	\mathbf{\varepsilon_M} \uparrow \implies \mathbf{\rho}(r) \uparrow \implies \text{Geometric Deficit }  \downarrow \implies \mathbf{G_{eff}} \downarrow
+	B \uparrow
+	\;\Longrightarrow\;
+	\rho(r) \downarrow
+	\;\Longrightarrow\;
+	N_{\nu,\text{eff}} \downarrow
+	\;\Longrightarrow\;
+	\Delta N_\nu \uparrow
+	\;\Longrightarrow\;
+	G_{\text{eff}} \uparrow .
+	\label{eq:hyp_1_gravity}
 \end{equation}
-\emph{Status:} This variant provides a logically complete structural mechanism but is \textbf{inconsistent with the primary EWT prediction} that magnetic coherence should lead to an enhancement ($\mathbf{G_{eff}} > \mathbf{G}$). If observed, it would support a structural mechanism but falsify the hypothesized $\mathbf{G(B)}$ direction derived from other EWT constraints.
+
+\emph{Status:} This variant is consistent with the predicted \(G_{\text{eff}} > G\) and provides a structural mechanism for the enhancement.
+
+\subsection{Hypothesis 2: The Consolidation Mechanism}
+\label{sec:hyp_2_consolidation}
+
+An increase in magnetic coherence leads to structural consolidation of the Soliton, resulting in a denser internal packing \(\rho(r)\). The effective density \(N_{\nu,\text{eff}}\) increases, the deficit \(\Delta N_\nu\) decreases, and gravity is reduced.
+
+\begin{equation}
+	B \uparrow
+	\;\Longrightarrow\;
+	\rho(r) \uparrow
+	\;\Longrightarrow\;
+	N_{\nu,\text{eff}} \uparrow
+	\;\Longrightarrow\;
+	\Delta N_\nu \downarrow
+	\;\Longrightarrow\;
+	G_{\text{eff}} \downarrow .
+	\label{eq:hyp_2_gravity}
+\end{equation}
+
+\emph{Status:} This variant is logically complete but inconsistent with the primary EWT prediction \(G_{\text{eff}} > G\). If observed, it would falsify the assumed direction of the magneto-geometric coupling.
 
 \subsection{Hypothesis 3: No Magnetic Influence}
 \label{sec:hyp_3_no_influence}
-The magnetic coherence parameter ($\mathbf{\varepsilon_M}$) and the Soliton's density profile ($\mathbf{\rho}(r)$) are fundamentally decoupled.
+
+The magnetic energy and the Soliton's density profile are fundamentally decoupled.
+
 \begin{equation}
+	B \uparrow
+	\;\Longrightarrow\;
+	\rho(r) = \text{const}
+	\;\Longrightarrow\;
+	N_{\nu,\text{eff}} = \text{const}
+	\;\Longrightarrow\;
+	\Delta N_\nu = \text{const}
+	\;\Longrightarrow\;
+	G_{\text{eff}} = \text{const} .
 	\label{eq:hyp_3_gravity}
-	\mathbf{\varepsilon_M} \uparrow \implies \mathbf{\rho}(r) = \text{const} \implies \text{Geometric Deficit }  = \text{const} \implies \mathbf{G_{eff}} = \text{const}
 \end{equation}
-\emph{Status:} This variant is consistent with Newtonian gravity (no $G(B)$ dependence) and would be \textbf{falsified} by the observation of any $\Delta G$ in a magnetic field.
+
+\emph{Status:} This variant is consistent with Newtonian gravity and would be falsified by any observation of \(\Delta G\) in a magnetic field.
 
 \subsection{Summary of Hypotheses Testing}
 \label{sec:hypotheses_summary_testing}
-The three geometric hypotheses regarding the dynamic influence of magnetic coherence ($\mathbf{\varepsilon_M}$) on the Soliton's deficit ($\mathbf{N_{\nu}}$) are fundamentally \textbf{equivalent in theoretical plausibility}, but they lead to distinct experimental outcomes:
+
+The three hypotheses lead to distinct experimental outcomes:
 
 \begin{itemize}
-	\item \textbf{Test $\mathbf{\Delta G}$ Sign:} The observed sign of the shift in $G$ will discriminate between the structural mechanisms: $\mathbf{G_{eff}} > \mathbf{G}$ confirms \textbf{Hypothesis 1 (Push-Out)}, while $\mathbf{G_{eff}} < \mathbf{G}$ confirms \textbf{Hypothesis 2 (Consolidation)}.
-	\item \textbf{Test $\mathbf{\Delta G}$ Existence:} The non-observation of any measurable $\Delta G$ (i.e., $\mathbf{G_{eff}} = \mathbf{G}$) would falsify the core dynamic prediction and support \textbf{Hypothesis 3 (No Influence)}.
+	\item \textbf{Test \(\Delta G\) sign:}
+	\(G_{\text{eff}} > G\) confirms Hypothesis~1 (push-out),
+	while \(G_{\text{eff}} < G\) confirms Hypothesis~2 (consolidation).
+	
+	\item \textbf{Test \(\Delta G\) existence:}
+	The non-observation of any measurable \(\Delta G\)
+	supports Hypothesis~3 (no influence).
 \end{itemize}
 
-The analysis of the geometric derivation of the gravitational constant ($\mathbf{G}$), as defined in Equation \eqref{eq:G_EWT_Final_Identity}, reveals a crucial insight into the scale disparity known as the Hierarchy Problem. It is found that an intrinsic magnetic factor within the Soliton's structure plays a significant role in determining the final strength of gravity. Specifically, this magnetic component is observed to effectively mitigate the inherent weakness of gravity, reducing the estimated raw scale disparity from approximately $10^{52}$ to $10^{42}$. This reduction by a factor of $10^{10}$ provides a clear physical mechanism, linked to electromagnetic phenomena, that accounts for a substantial portion of the gravitational force suppression. This finding strongly supports the primary hypothesis concerning the emergent, geometric origin of gravity and its intrinsic correlation with the electromagnetic field.
+The true physical mechanism must be determined experimentally. The geometric model constrains the sign and magnitude of the effect through the same lattice parameters that determine \(G_{\text{geom}}\), but the precise mechanism remains an open question to be selected by data.
 
-The true physical mechanism must be determined experimentally, with the $\mathbf{G(B)}$ effect being the primary discriminant.
-
-\subsection{Dynamic Equilibrium and the Geometric Compensation Effect}
+\subsection{Dynamic Equilibrium and Geometric Compensation}
 \label{sec:dynamic_equilibrium}
 
-As established in Sections \ref{density_duality}–\ref{sec:hyp_1_pushout}, the soliton simultaneously exhibits increased internal wave-energy density $\rho_E$ and a reduced geometric packing density $\rho(r)$ due to the \textbf{EMC Push-Out mechanism}. In the presence of an intrinsic or external magnetic field $\mathbf{B}$, these quantities enter a deeper level of dynamic coupling mediated by the particle's spin:
+The soliton simultaneously exhibits increased internal energy density \(\rho_E\) and a reduced geometric packing density \(\rho(r)\) due to the EMC push-out mechanism. In the presence of a magnetic field \(B\), these quantities enter a dynamic coupling mediated by the particle's spin. The balance between energy concentration and geometric restoration determines whether \(G\) remains effectively constant in ordinary environments.
 
-\begin{equation}
-	\label{eq:energy_scaling_boxed}
-	\boxed{\mathbf{B} \uparrow \implies \text{Spin Energy} \uparrow \implies r \downarrow \implies \rho_E \uparrow \quad \implies G_{Base} \uparrow \text{ } \propto r^5 \text{ (base potential)}}
-\end{equation}
-\begin{equation}
-	\label{eq:geometry_scaling_boxed}
-	\boxed{\mathbf{B} \uparrow \implies \text{Spin Energy} \uparrow \implies r \downarrow \implies \rho(r) \uparrow \quad \implies \Delta \rho(r) \downarrow \text{ } \propto r^3 \text{ (push-out)}}
-\end{equation}
+The stability of the electron soliton is maintained by the vacuum stiffness \(N_{\text{geom}}\). Higher generations (muon and tau) do not replace the electron; they emerge as nested shells in the Onion Model, required by the scaling disparity between \(r^5\) energy density and \(r^3\) volumetric capacity.
 
-\begin{quote}
-	\textit{\textbf{Remark on Soliton Stability and Generational Hierarchy:}} 
-	The soliton maintains stability through the vacuum stiffness $N$, which prevents structural collapse at the elastic limit. Rather than undergoing dissolution, the base electron soliton serves as the fundamental geometric substrate for subsequent layers. Higher generations (muon and tau) do not replace the electron but emerge as nested shells (\textit{Onion Model}) necessitated by the scaling disparity between the quintic increase of the base potential ($r^5$) and the cubic capacity ($r^3$). This non-linear divergence provides a deterministic proof that particle generations are not distinct entities, but recursive wave resonances required to maintain equilibrium when the energy density of a single complex soliton exceeds the vacuum's volumetric compensation threshold.
-\end{quote}
-
-This dual causality reveals that the observed invariance of $G$ is a result of the exact cancellation between energy concentration and geometric restoration, a balance maintained by the vacuum's elastic modulus $N_{\text{final}}$. This equilibrium is dynamically stable as long as the magnetic coherence term remains within its \textbf{admissible range}. In this regime, the increase in internal energy concentration is precisely balanced by the structural dilution of the packing density. In the EWT framework, this balance is quantified by the \textbf{Push-Out Operator} $\mathbf{T}_{\text{II}}$, which acts as the restoring force of the vacuum lattice and defines the cubic scaling of the gravitational deficit:
-
-\begin{equation}
-	\label{eq:compensation_condition_final}
-	\Delta \rho_E \text{ (concentration)} \approx - \Delta \rho(r) \text{ (push-out deficit)} \propto \mathbf{T}_{\text{II}}
-\end{equation}
-
-Where the dynamic coupling is governed by the cubic geometric identity:
-\begin{equation}
-	\mathbf{T}_{\text{II}} = \left( \frac{1}{A_{\pi} \cdot N_{\text{final}}} \right)^{3}
-\end{equation}
-
-The neutrino, \textbf{lacking magnetic coherence}, cannot enter this compensatory regime, which explains its \textbf{larger equilibrium radius} ($r_{\nu}$) as derived in Section \ref{radius_robustness_analysis}. While the charged leptons (electron, muon, tau) are "compressed" by their intrinsic magnetic/spin energy, the neutrino remains in a relaxed geometric state, defining the statutory volume deficit ($N_{\nu, \text{stat}} \approx 10^{52}$) used to calculate the base Gravitational Constant $G$.
-
-\textbf{Critically, the invariance of $G$ is therefore not fundamental but emergent, arising from the self-regulating geometry of the soliton.} The high-precision convergence of the gravitational constant $G$ and the lepton anomalies ($a_{\mu}, a_{\tau}$) proves that the elastic modulus $N_{\text{final}}$ is the universal coupling constant that governs the transition from pure geometric displacement to observable physical forces.
-
-The non-linear scaling disparity between the magnetic deficit (modulated by $\epsilon_M \pi^3 \propto r^3$) and the energy storage ($\propto r^5$) ensures that in extreme fields, such as those defining the heavy lepton shells, this compensation must follow the recursive "Onion Model" logic. The fact that the Tau lepton achieves the highest predictive precision ($0.031\%$) confirms that the apparent constancy of $G$ and $\alpha$ is a \textbf{low-field artefact} of the vacuum's elastic limit, rather than an absolute universal principle.
-
-The potential empirical validity of Hypothesis 3 (static $G$) does not invalidate the EWT framework; rather, it identifies the specific regime where the Geometric Compensation Effect achieves near-perfect equilibrium. In this context, a constant $G$ is not a rigid fundamental postulate, but an emergent property of the vacuum lattice's elastic resilience. The model remains robust as it explains why $G$ appears constant, while simultaneously predicting the extreme physical conditions  under which this apparent invariance must break down.
-
-\section{Interpretation: Geometric Factor $\mathbf{\epsilon_M}$ vs. Magnetic Permeability}
-\label{sec:EM_vs_mu0}
-
-The universal geometric factor $\mathbf{\epsilon_M}$, defined as
-$\frac{1}{\mathbf{N}_{\text{final}} \cdot \pi^3}$ in Equation (\ref{eq:epsilon_M_definition}), functions as the \textbf{fundamental stiffness deficit} of the vacuum medium. While $\mathbf{\epsilon_M}$ governs the local magnetic response (AMM and $\alpha$), its volumetric integration leads to the emergent gravitational constant.
-
-\subsection{The Scaling Duality: Local vs. Bulk}
-A critical distinction in the Enhanced EWT Model is the scaling of this geometric permeability:
-\begin{itemize}
-	\item \textbf{Local Scale (AMM, $\alpha$):} The interaction is governed by the linear stiffness deficit $\mathbf{\epsilon_M}$. This represents the "point-like" elastic resistance encountered by the soliton's spin.
-	\item \textbf{Bulk Scale (Gravity):} The gravitational constant $G$ emerges from the collective displacement of the medium. This requires the \textbf{Push-Out Operator} $\mathbf{T}_{\text{II}}$, which is the cubic expression of the geometric deficit.
-\end{itemize}
-
-The presence of $\epsilon_M$ as the root of $\mathbf{T}_{\text{II}}$ confirms that gravity is not a separate force, but the macroscopic (cubic) manifestation of the same magnetic elasticity that defines the fine-structure constant.
-
-\subsubsection*{Static Geometric Volume ($\mathbf{\pi^3}$)}
-The explicit presence of the geometric constant $\pi^3$ in the definition of the factor $\mathbf{\epsilon_M}$ serves a dual purpose. On the one hand, it is a \emph{static, dimensionless scaling constant} derived from the modal density of the Soliton, codifying the volumetric normalization of the 3D EMC quantum cell. On the other hand, its explicit form highlights the geometric origin of the correction: $\pi^3$ is not an arbitrary coefficient, but the natural volumetric factor that arises from three-dimensional standing-wave packing. Presenting the factor in symbolic form rather than hiding it in a numerical value emphasizes that the Enhanced EWT Model is grounded in geometry rather than empirical fitting, and makes clear that the same volumetric coherence principle underlies the corrections to $G$, $\alpha$, and the recursive hierarchical structure of lepton AMM.
-
-\subsection{Conceptual Comparison}
-\begin{itemize}
-	\item \textbf{Definition:} The factor $\mathbf{\epsilon_M}$ arises from discrete mode counting and radial quantization in a soliton resonator, whereas $\mu_0$ is a fundamental constant describing the magnetic response of vacuum.
-	\item \textbf{Units:} $\mathbf{\epsilon_M}$ is dimensionless, acting as a structural correction factor. $\mu_0$ carries SI units (H/m).
-	\item \textbf{Physical Role:} Both quantify the ``magnetic elasticity'' of a medium: $\mathbf{\epsilon_M}$ for the soliton structure, $\mu_0$ for free space.
-	\item \textbf{Implications:} The presence of $\mathbf{\epsilon_M}$ in $G$, $\alpha$, and AMM equations suggests that gravitational and electromagnetic couplings share a common volumetric coherence factor.
-\end{itemize}
-
-\subsection{Testable Consequences}
-If $\mathbf{\epsilon_M}$ indeed plays the role of a geometric permeability:
-\begin{enumerate}
-	\item Systems with enhanced magnetic coherence (e.g. solitonic states) should exhibit measurable shifts in $G_{\rm eff}$.
-	\item Bose--Einstein condensates, where macroscopic magnetic moments are suppressed by quantum interference, should show only subtle modulations $\delta_{\rm BEC}$ of $G$ (as detailed in Section \ref{sec:BEC_test}).
-	\item Observation of such effects would support the interpretation of $\mathbf{\epsilon_M}$ as a structural counterpart to $\mu_0$.
-\end{enumerate}
-\subsection{Discussion and Implications for SM Structure}
-
-This analogy strengthens the unification perspective: just as $\mu_0$ links electromagnetism to the speed of light via $c^2 = 1/(\mu_0 \varepsilon_0)$, the factor $\epsilon_M \pi^3$ in the EWT framework provides the essential link between gravitational strength, fine structure, and the hierarchical magnetic anomalies of the lepton family through a unified geometric origin.
-
-\subsubsection*{Geometric Permeability: The Missing Structural Link}
-The successful incorporation of the universal term $\epsilon_M \pi^3$ into the fundamental derivations of $G$, $\alpha$, and the recursive AMM sequence ($a_e, a_{\mu}, a_{\tau}$) demonstrates that the geometric stiffness of the soliton is the primary physical driver of magnetic anomalies.
-
-
-
-The extreme precision achieved — particularly the **$0.031\%$** agreement for the Tau lepton — reveals a **fundamental structural deficiency** in the Standard Model’s perturbative approach. While the SM relies on increasingly complex loop corrections to maintain predictive power, it lacks an intrinsic factor to quantify the vacuum's geometric elasticity. The EWT framework proves that these anomalies are not the result of transient virtual interactions, but are deterministic consequences of the soliton’s nodal integration within the BCC lattice. Consequently, the success of this model constitutes a definitive argument that **geometric permeability** is a necessary foundation for any unified theory, effectively replacing perturbative complexity with structural determinism.
-
+The invariance of \(G\) is therefore not fundamental but emergent, arising from the self-regulating geometry of the soliton. In extreme magnetic fields, this compensation may break down, leading to the predicted deviations in \(G_{\text{eff}}\).
 
 \section{Numerical Verification of EWT Mass Scaling and Structural Sequences}
 \label{sec:numerical_verification_ewt}
@@ -3946,14 +3907,11 @@ As established in the PARTs VIII, IX  on Listing \ref{lst:scilab_script}, the \t
 
 The high fidelity of these mass calculations suggests that at these energy levels, the standing wave volume density (the $r^5$ principle) is the dominant governing factor, overriding secondary spin-induced deformations.
 
-\subsection{The 1:100 Decadic Resonance Discovery}
-A fundamental geometric bridge is identified between the neutrino ground state ($K_{WC}=1$) and the electron ($K_{WC}=10$). Utilizing the derived statutory radius $r_{\nu}$—based on the Planck charge $q_P$ and Euler's number $e$—a precise decadic ratio is observed:
-
+The decadic relation between the neutrino and electron radii has already been established in Section~\ref{sec:decadic_test}. There, the geometric neutrino anchor \(r_\nu\) and the classical electron radius \(r_e\) were shown to satisfy
 \begin{equation}
-	r_{\nu} = \frac{2 q_P e^2}{g_v} \approx 2.8179 \times 10^{-17} \text{ m}
+	\frac{r_e}{r_\nu} \approx 100,
 \end{equation}
-
-As confirmed by the validation in Part II/VIII of the script, the ratio $r_e / r_{\nu}$ is $100.000021$. This 100-fold jump in radius corresponds to a $10^{10}$ energy density scaling, which aligns perfectly with the transition from $K_{WC}=1$ to $K_{WC}=10$. This "Decadic Resonance" confirms the neutrino as the statutory anchor of the BCC lattice.
+which implies the expected \(10^{10}\) energy scaling between the electron and neutrino wave-centre states. This relation is used below only as the starting point for extending the same geometric logic to the heavy boson sector.
 
 \subsection{Predictive Radius for Heavy Bosons}
 \label{sub:radius_bosons}
@@ -3962,16 +3920,16 @@ Given the success of the meson mode in mass prediction, the $r^5$ scaling law is
 \begin{table}[ht]
 	\centering
 	\small
-	\caption{Geometric Radii Derived from High-Precision Spherical and Meson Resonance}
+	\caption{Geometric Radii Derived from High-Precision Spherical Resonance}
 	\label{tab:radius_summary}
 	\begin{tabular}{lcccc}
 		\toprule
-		\textbf{Particle} & \textbf{$K_{WC}$} & \textbf{Mass Error (\%)} & \textbf{Radius [m]} & \textbf{Scaling Regime} \\
+		\textbf{Particle} & \textbf{\(K_{WC}\)} & \textbf{Mass Error (\%)} & \textbf{Radius [m]} & \textbf{Scaling Regime} \\
 		\midrule
-		\textbf{Neutrino} & 1 & 0.3886\% & $2.8179 \times 10^{-17}$ & Statutory (Fixed Anchor) \\
-		\textbf{Electron} & 10 & 0.0018\% & $2.8179 \times 10^{-15}$ & Decadic Resonance (1:100) \\
-		\textbf{Z-Boson}  & 112 & 1.2415\% & $3.1677 \times 10^{-14}$ & Meson Mode (${K_{WC}}^5$ Scaling) \\
-		\textbf{Higgs (H)} & 120 & 1.5193\% & $3.3698 \times 10^{-14}$ & Meson Mode (${K_{WC}}^5$ Scaling) \\
+		\textbf{Neutrino} & 1 & 0.3886\% & \(2.8179 \times 10^{-17}\) & Statutory (Fixed Anchor) \\
+		\textbf{Electron} & 10 & 0.0018\% & \(2.8179 \times 10^{-15}\) & Decadic Resonance (1:100) \\
+		\textbf{Z-Boson}  & 110 & 0.6025\% & \(3.1677 \times 10^{-14}\) & Spherical Mode (\({K_{WC}}^5\) Scaling) \\
+		\textbf{Higgs (H)} & 117 & 0.0000\% & \(3.3698 \times 10^{-14}\) & Spherical Mode (\({K_{WC}}^5\) Scaling) \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -4006,56 +3964,81 @@ The convergence of their radii toward the $10^{-14}$ m scale is dictated by the 
 \subsection{Conclusion on Geometric Consistency}
 The integration of mass prediction accuracy with geometric scaling establish a robust framework. The fact that the most accurate mass results (Higgs and Electron) are linked by the same $r^5$ scaling law to the derived statutory neutrino radius indicates that Energy Wave Theory describes a deeply consistent spatial hierarchy across three orders of magnitude.
 
-\section{The Geometric Identity of Stiffness: Linking $N_{geometric}$ to the Dimensional Ladder}
+\section{The Geometric Identity of Stiffness: Linking \(N_{\text{geom}}\) to the Dimensional Ladder}
 
-The identification of the stiffness constant as $N_{geometric} = 8\pi^4$ provides the final structural link between the vacuum's elastic resistance and the \textbf{Geometric Ladder} of interactions presented in Table \ref{tab:dimensional_ladder_origin}. Within this framework, the $\pi^4$ term is the \textbf{fundamental saturation budget} required for localized stability.
+The identification of the ideal stiffness constant as \(N_{\text{ideal}} = 8\pi^4\) provides the structural link between the vacuum's elastic resistance and the \textbf{Geometric Ladder} of interactions presented in Table~\ref{tab:dimensional_ladder_origin}. Within this framework, the \(\pi^4\) term is the \textbf{fundamental saturation budget} required for localized stability.
 
 \begin{equation}
-	N_{geometric} = 8 \cdot \underbrace{(\pi^3 \cdot \pi^1)}_{\pi^4 \text{ (Internal Binding)}} \approx 779.272
+	N_{\text{ideal}} = 8 \cdot \underbrace{(\pi^3 \cdot \pi^1)}_{\pi^4 \text{ (Internal Binding)}} \approx 779.272
 \end{equation}
 
-The convergence of $N_{geometric}$ with the required physical values represents a unification of three distinct structural necessities:
+The effective geometric stiffness is then
+\begin{equation}
+	N_{\text{geom}} = N_{\text{ideal}}(1-\zeta),
+	\label{eq:N_geom_stiffness}
+\end{equation}
+where \(\zeta\) is the lattice impedance introduced in Section~\ref{sec:alpha_geometric_deficit}.
+
+The convergence of \(N_{\text{geom}}\) with the required physical values represents a unification of three distinct structural necessities:
 \begin{itemize}
-	\item \textbf{Crystallographic Summation:} The factor of $8$ accounts for the primary propagation axes in the $Im\bar{3}m$ lattice, where each EMC unit is coupled to 8 nearest neighbors.
-	\item \textbf{Quark Stability Budget:} The $\pi^4$ scaling, identified in Table \ref{tab:dimensional_ladder_origin} as the threshold for \textit{Internal Binding}, formalizes the coupling between the 3D spatial substrate ($\pi^3$) and the dynamic wave amplitude ($\pi^1$).
-	\item \textbf{Gravitational Anchor:} As gravity emerges from the inverse of this 4D saturation base ($A_{\pi}^{-4}$), $N_{geometric}$ acts as the stiffness anchor that dictates the observed strength of $G$, providing a direct isomorphism with Sakharov’s induced gravity.
+	\item \textbf{Crystallographic Summation:} The factor of \(8\) accounts for the primary propagation axes in the \(Im\bar{3}m\) lattice, where each EMC unit is coupled to 8 nearest neighbours.
+	\item \textbf{Quark Stability Budget:} The \(\pi^4\) scaling, identified in Table~\ref{tab:dimensional_ladder_origin} as the threshold for \textit{Internal Binding}, formalizes the coupling between the 3D spatial substrate (\(\pi^3\)) and the dynamic wave amplitude (\(\pi^1\)).
+	\item \textbf{Gravitational Anchor:} As gravity emerges from the inverse of this 4D saturation base (\(A_{\pi}^{-4}\)), \(N_{\text{geom}}\) acts as the stiffness anchor that dictates the observed strength of \(G\), providing a direct isomorphism with Sakharov's induced gravity.
 \end{itemize}
 
-
-
-This synthesis demonstrates that the lattice stiffness is not an arbitrary input, but a manifestation of the \textbf{Quark Stability budget} ($\pi^4$) summed over the eight structural nodes of the BCC unit cell. The alignment of this geometric attractor with experimental results in Table \ref{tab:dimensional_ladder_origin} confirms that the vacuum medium possesses a rigid, discrete topology that governs the coupling of all fundamental forces.
+This synthesis demonstrates that the lattice stiffness is not an arbitrary input, but a manifestation of the \textbf{Quark Stability budget} (\(\pi^4\)) summed over the eight structural nodes of the BCC unit cell. The alignment of this geometric attractor with experimental results confirms that the vacuum medium possesses a rigid, discrete topology that governs the coupling of all fundamental forces.
 
 \subsection{Eliminating the Fine-Tuning Paradigm}
 \label{sec:eliminating_fine_tunig_paradigm}
-The establishment of the identity $N_{geometric} = 8\pi^4$ effectively closes the EWT system, moving beyond the parameter-heavy nature of the Standard Model. This transition marks the elimination of arbitrary fine-tuning:
+
+The establishment of the identity \(N_{\text{geom}} = 8\pi^4(1-\zeta)\) effectively closes the EWT system, moving beyond the parameter-heavy nature of the Standard Model. This transition marks the elimination of arbitrary fine-tuning:
 \begin{enumerate}
-	\item \textbf{Zero-Parameter Unification:} Since $N$ arises from $8\pi^4$, and all subsequent constants ($\alpha, G, a_e$) are derived from $N$, the physical universe is described using only $\pi$ and integer factors rooted in sphere-packing geometry.
-	\item \textbf{Scaling Monism:} It has been demonstrated that the same power law ($\pi^4$) governs both the internal lattice stiffness and the extreme weakness of gravity ($G \propto A_{\pi}^{-4}$), confirming the structural unity of the vacuum substrate.
+	\item \textbf{Zero-Calibration Unification:} Since \(N_{\text{geom}}\) arises from \(8\pi^4\) and the geometric impedance \(\zeta\), all subsequent constants (\(\alpha_{\text{geom}}\), \(G_{\text{geom}}\), \(a_e\)) are derived without fitted parameters. The physical universe is described using only \(\pi\), \(\sqrt{3}\), integer factors rooted in sphere-packing geometry, and the packing fraction \(\eta_{\text{BCC}}\).
+	\item \textbf{Scaling Monism:} It has been demonstrated that the same power law (\(\pi^4\)) governs both the internal lattice stiffness and the extreme weakness of gravity (\(G \propto A_{\pi}^{-4}\)), confirming the structural unity of the vacuum substrate.
 \end{enumerate}
 
-\subsection{The Topological Reduction of the The Fundamental Lattice Response Parameter: $\epsilon_M = \frac{1}{8\pi^7}$}
+\subsection{The Topological Reduction of the Fundamental Lattice Response Parameter:
+	\(\epsilon_M = \frac{1}{8\pi^7(1-\zeta)}\)}
 
-A profound mathematical simplification occurs when the identity $N_{geometric} = 8\pi^4$ is substituted into the definition of the magnetic deficit factor $\epsilon_M$. This reduction reveals the deep topological coupling between the lepton soliton and the vacuum's high-dimensional ladder.
+A profound mathematical simplification occurs when the effective stiffness \(N_{\text{geom}}\) is substituted into the definition of the magnetic deficit factor \(\epsilon_M\). This reduction reveals the deep topological coupling between the lepton soliton and the vacuum's high-dimensional ladder.
 
 \begin{equation}
 	\label{eq:epsilon_M_reduction}
-	\boxed{\epsilon_M = \frac{1}{N_{geometric} \cdot \pi^3} = \frac{1}{(8\pi^4) \cdot \pi^3} = \frac{1}{8\pi^7}}
+	\boxed{
+		\epsilon_M
+		=
+		\frac{1}{N_{\text{geom}} \cdot \pi^3}
+		=
+		\frac{1}{8\pi^7(1-\zeta)}
+	}
 \end{equation}
 
-\subsubsection{Physical Interpretation of the $8\pi^7$ Attractor}
-This reduction signifies that the magnetic anomaly of the electron is not a perturbative "error," but a structural anchor to the charged weak interaction scale.
+In the ideal continuum limit \(\zeta\to 0\), this reduces to the pure topological form
+\begin{equation}
+	\epsilon_M^{(\text{ideal})} = \frac{1}{8\pi^7}.
+\end{equation}
+
+\subsubsection{Physical Interpretation of the \(8\pi^7\) Attractor}
+
+This reduction signifies that the magnetic anomaly of the electron is not a perturbative ``error'', but a structural anchor to the charged weak interaction scale.
 \begin{itemize}
-	\item \textbf{7th Degree of Freedom:} In the EWT Geometric Ladder (Table \ref{tab:dimensional_ladder_origin}), $\pi^7$ represents the dimensional budget of the charged $W^{\pm}$ bosons. The appearance of $\pi^7$ in the electron's magnetic deficit suggests that spin is a 3D "shadow" of a higher-dimensional ($\pi^7$) resonance.
-	\item \textbf{Coordination Symmetry:} The factor of 8 in the denominator ensures that this 7D energy deficit is distributed equilateral across the 8 primary nodes of the BCC lattice unit cell.
+	\item \textbf{7th Degree of Freedom:} In the EWT Geometric Ladder (Table~\ref{tab:dimensional_ladder_origin}), \(\pi^7\) represents the dimensional budget of the charged \(W^{\pm}\) bosons. The appearance of \(\pi^7\) in the electron's magnetic deficit suggests that spin is a 3D ``shadow'' of a higher-dimensional (\(\pi^7\)) resonance.
+	\item \textbf{Coordination Symmetry:} The factor of \(8\) in the denominator ensures that this 7D energy deficit is distributed equilateral across the 8 primary nodes of the BCC lattice unit cell.
 \end{itemize}
 
-\subsubsection{The Zero-Parameter Fine-Structure Constant}
-The fundamental coupling constant $\alpha$ can now be expressed as a pure relationship between the soliton's core geometry and the vacuum's topological stiffness:
+\subsubsection{The Zero-Calibration Fine-Structure Constant}
+
+The fundamental coupling constant \(\alpha_{\text{geom}}\) can now be expressed as a pure relationship between the soliton's core geometry and the vacuum's topological stiffness:
 \begin{equation}
-	\label{final_alfa)}
-	\alpha^{-1} = \underbrace{(4\pi^3 + \pi^2 + \pi)}_{\text{Geometric Soliton Core}} - \underbrace{\frac{1}{8\pi^7}}_{\text{BCC Lattice Anchor}}
+	\label{final_alfa}
+	\alpha_{\text{geom}}^{-1}
+	=
+	\underbrace{(4\pi^3 + \pi^2 + \pi)}_{\text{Geometric Soliton Core}}
+	-
+	\underbrace{\frac{1}{8\pi^7(1-\zeta)}}_{\text{BCC Lattice Anchor}}
 \end{equation}
-This formula eliminates the need for any "finalized" empirical value of $N$. The discrepancy between the ideal $8\pi^4$ and the experimental $N_{final}$ is thus physically identified as the \textit{geometric impedance} resulting from the \textbf{non-ideal spherical  EMC packing fraction} ($\eta \approx 0.68$) of the BCC lattice.
+
+This formula eliminates the need for any empirical value of \(N\). The small deviation from the ideal \(8\pi^4\) is not fitted; it is the geometric impedance \(\zeta\) resulting from the non-ideal spherical EMC packing fraction \(\eta_{\text{BCC}}\approx 0.68\).
 
 \vspace{5mm}
 \begin{center}
@@ -4063,15 +4046,15 @@ This formula eliminates the need for any "finalized" empirical value of $N$. The
 		\begin{minipage}{0.9\textwidth}
 			\centering
 			\vspace{2mm}
-			\textbf{Final Synthesis: The $8\pi^7$ Convergence} \\
+			\textbf{Final Synthesis: The \(8\pi^7(1-\zeta)\) Convergence} \\
 			\vspace{2mm}
-			The Enhanced EWT concludes that the physical constants of the universe are not independent variables, but integrated resonances of a single BCC substrate. The reduction of the magnetic deficit to \textbf{$1/8\pi^7$} proves that the electron is a "trapped" weak-force resonance, whose magnetic signature is mechanically dictated by the 8-fold coordination of the vacuum and the 7-dimensional budget of charged interactions. Physics is no longer a study of arbitrary forces, but the engineering of topological necessity.
+			The Enhanced EWT concludes that the physical constants of the universe are not independent variables, but integrated resonances of a single BCC substrate. The reduction of the magnetic deficit to \textbf{\(1/(8\pi^7(1-\zeta))\)} proves that the electron is a ``trapped'' weak-force resonance, whose magnetic signature is mechanically dictated by the 8-fold coordination of the vacuum and the 7-dimensional budget of charged interactions. Physics is no longer a study of arbitrary forces, but the engineering of topological necessity.
 			\vspace{2mm}
 		\end{minipage}
 	}
 \end{center}
 
-\noindent The numerical output of the deterministic validation on listing \ref{lst:scilab_output} (Part IX) confirms that the fine-structure constant $\alpha$ is a composite resonance. The observed value $\alpha_{exp}^{-1} \approx 137.0359$ emerges from the subtraction of the 7D topological shadow ($1/8\pi^7$) from the 3D soliton core geometry. The residual discrepancy of $0.058\%$ is not an indication of theoretical instability, but a precise measurement of the \textbf{Spherical EMC Packing Impedance} ($\zeta$) \ref{subsub:packing_fraction}. This impedance is the mechanical signature of a discrete vacuum substrate, shifting the system from a mathematical $\pi$-continuum to a physical $Im\bar{3}m$ lattice reality.
+\noindent The numerical evaluation of the geometric expressions confirms that the fine-structure constant is a composite resonance. The observed value \(\alpha_{\text{exp}}^{-1} \approx 137.0359\) emerges from the subtraction of the 7D topological shadow (\(1/(8\pi^7(1-\zeta))\)) from the 3D soliton core geometry. The residual deviation is not an indication of theoretical instability; it is a direct measure of the \textbf{Spherical EMC Packing Impedance} \(\zeta\). This impedance is the mechanical signature of a discrete vacuum substrate, shifting the system from a mathematical \(\pi\)-continuum to a physical \(Im\bar{3}m\) lattice reality.
 
 \section{The Geometric Unification of Lepton Properties}
 \label{sec:geometric_unification}
@@ -4330,185 +4313,7 @@ The results of the sensitivity analysis suggest that the slight discrepancies be
 
 \section{Other Geometric Constants Derived from the Lattice}
 The EWT framework demonstrates that fundamental physical constants are not independent inputs but deterministic results of the vacuum's granularity. As established in Section \ref{sec:planck_paradigm}, the Planck Length ($l_P$) is the physical boundary of the medium's constituents, making the Planck constant ($h$) a direct manifestation of the lattice's mechanical impedance. The calculations presented in this section are performed in \textbf{Parts XII and XIV} of the accompanying Scilab script (see Listing \ref{lst:scilab_script} and the corresponding output in Listing \ref{lst:scilab_output}). The numerical results confirm that all three atomic scales derive from the same two geometric inputs: the statutory neutrino radius $r_\nu$ and the $8\pi^7$ lattice correction.
-\subsection{Geometric Derivation of the Neutrino Radius and the $g_v$ Factor}
-\label{sec:nu_radius_geometry}
 
-The statutory neutrino radius $r_\nu$ is a cornerstone of the entire EWT framework. It sets the fundamental length scale of the BCC lattice and appears in every subsequent geometric derivation – from the electron radius $r_e = 100\,r_\nu$ to the Rydberg constant $R_\infty$ and the Bohr radius $a_0$. In earlier sections $r_\nu$ was introduced via the relation
-\begin{equation}
-	\label{eq:r_nu_earlier}
-	r_\nu = \frac{2q_P e^2}{g_v},
-\end{equation}
-where $q_P$ is the Planck charge (interpreted as the fundamental wave amplitude), $e$ is Euler’s number, and $g_v\approx 0.983592$ was treated as a phenomenological geometric correction factor. The physical origin of $g_v$ remained somewhat implicit: it was attributed to the absence of magnetic deformation in the neutral neutrino, as opposed to the magnetic torque that compresses the charged electron.
-
-The present section shows that $g_v$ (and therefore $r_\nu$) is not an independent parameter but follows necessarily from the topology of the BCC lattice. The derivation decomposes the scaling factor $K \equiv r_\nu/q_P$ into three contributions, each with a clear geometric meaning, and demonstrates that the earlier expression $2e^2/g_v$ is exactly reproduced by the sum of these contributions.
-
-\subsubsection{Decomposition of the scaling factor $K = r_\nu/q_P$}
-
-The dimensionless ratio $K = r_\nu/q_P$ is obtained by combining three physically distinct mechanisms that act in the undisturbed vacuum lattice.
-
-\begin{enumerate}
-	\item \textbf{Static lattice projection} – the soliton potential $\alpha_{\text{inv}}$ (the geometric fine‑structure constant) is distributed over the eight BCC coordination nodes and the spherical symmetry of the wave, giving
-	\begin{equation}
-		K_{\text{proj}} = \frac{\alpha_{\text{inv}}}{8+\pi}.
-	\end{equation}
-	
-	\item \textbf{Dynamic wave expansion} – the natural exponential decay of the standing‑wave amplitude from the centre outward (maximum at the core, falling to zero at infinity) introduces Euler’s number $e$ as an integrated factor. It encodes the quintic energy scaling $E\propto r^5$ that characterises all solitons. Hence
-	\begin{equation}
-		K_{\text{exp}} = e.
-	\end{equation}
-	
-	\item \textbf{Discrete lattice impedance} – the discrete nature of the BCC lattice and the wave propagation along the face diagonals (the “stiffest” paths) add a small correction
-	\begin{equation}
-		\delta_{\text{imp}} = (1-g_v)(\sqrt{2}-1).
-	\end{equation}
-	The factor $\sqrt{2}-1$ measures the excess diagonal path length relative to the orthogonal axes, while $(1-g_v)$ quantifies the deviation of the relaxed neutrino state from an ideal continuum response. Their product $(1-g_v)(\sqrt{2}-1)$ thus captures the geometric impedance that arises from the discrete nature of the BCC lattice when a spherical wave front is projected onto its cubic grid – a residual effect intimately related to the finite packing fraction $\eta_{\text{BCC}}\approx 0.68$, yet not directly equal to it.
-\end{enumerate}
-
-\vspace{1em}
-\noindent
-\begin{center}
-	\fbox{
-		\begin{minipage}{0.85\textwidth}
-			\centering
-			\vspace{5pt}
-			\small \textbf{Hybrid Impedance Principle:} \\
-			The soliton potential does not ``choose'' between the lattice and the sphere; it sees the total impedance of its environment, which consists of eight point-like reflection centres (the BCC nodes) and one continuous spherical standing‑wave boundary ($\pi$).
-			\vspace{5pt}
-		\end{minipage}
-	}
-\end{center}
-
-The total scaling factor is the sum of these three components:
-\begin{equation}
-	\label{eq:K_sum}
-	K_{\text{tot}} = K_{\text{proj}} + K_{\text{exp}} + \delta_{\text{imp}}.
-\end{equation}
-
-\subsubsection{Numerical evaluation}
-
-Using the geometric fine‑structure constant derived in Sec.~\ref{sec:eliminating_fine_tunig_paradigm},
-\begin{equation}
-	\alpha_{\text{inv}} = (4\pi^3+\pi^2+\pi)-\frac{1}{8\pi^7} = 137.036262389168,
-\end{equation}
-and the BCC coordination number $8$, one obtains
-\begin{equation}
-	K_{\text{proj}} = \frac{137.036262389168}{8+\pi} = 12.2995218592.
-\end{equation}
-With $e = 2.7182818285$ and $g_v = 0.98359223$,
-\begin{equation}
-	\delta_{\text{imp}} = (1-0.98359223)(\sqrt{2}-1) = 0.0067963209.
-\end{equation}
-Thus
-\begin{equation}
-	K_{\text{tot}} = 12.2995218592 + 2.7182818285 + 0.0067963209 = 15.0246000085.
-\end{equation}
-
-The statutory neutrino radius follows immediately:
-\begin{equation}
-	r_\nu = q_P\,K_{\text{tot}} = 1.875546\times10^{-18}\,\text{m} \times 15.0246000085
-	= 2.817932844758866\times10^{-17}\,\text{m},
-\end{equation}
-in perfect agreement with the value used throughout this work (Eq.~\ref{eq:r_nu_corr}).
-
-\subsubsection{Equivalence with the earlier $2e^2/g_v$ expression}
-
-The earlier definition $r_\nu = 2q_P e^2/g_v$ corresponds to a scaling factor
-\begin{equation}
-	K_{\text{earlier}} = \frac{2e^2}{g_v} = \frac{2\times(2.7182818285)^2}{0.98359223}
-	= 15.0246329191.
-\end{equation}
-The relative difference between $K_{\text{tot}}$ and $K_{\text{earlier}}$ is
-\begin{equation}
-	\frac{|K_{\text{tot}}-K_{\text{earlier}}|}{K_{\text{earlier}}}
-	= 2.19\times10^{-6},
-\end{equation}
-well below the precision of the input constants. Hence the two approaches – one purely geometric (based on $\alpha_{\text{inv}}$, $8$, $\pi$, $e$ and the lattice correction) and the one that introduced $g_v$ phenomenologically – are numerically identical.
-
-\subsubsection{Physical interpretation of $g_v$ and the magnetic torque}
-
-The factor $g_v$ now acquires a precise geometric meaning. Because $K_{\text{tot}} = K_{\text{proj}} + e + \delta_{\text{imp}}$, and $K_{\text{earlier}} = 2e^2/g_v$, solving for $g_v$ yields
-\begin{equation}
-	\boxed{g_v = \frac{2e^2}{K_{\text{proj}} + e + \delta_{\text{imp}}}.}
-\end{equation}
-In other words, $g_v$ is not an independent free parameter but is completely determined by the lattice geometry ($8$, $\pi$, $\sqrt{2}$) and the mathematical constants $\pi$ and $e$.
-
-The earlier physical picture is now fully validated: the neutrino, having no charge and no spin, experiences no magnetic torque. Its soliton therefore expands to the natural, “relaxed” radius $r_\nu$ that corresponds to the static lattice projection $K_{\text{proj}}$ together with the natural exponential decay $e$ and a tiny impedance correction. For a charged lepton such as the electron, the magnetic field generates a torque that compresses the soliton, effectively reducing its radius. The factor $g_v$ measures the ratio between the relaxed (neutrino) radius and the “compressed” wavelength that would follow from a naive application of the wave constants; its appearance in the denominator of Eq.~\eqref{eq:r_nu_earlier} reflects that compression (division by $g_v<1$) increases the radius relative to the uncorrected base wavelength $2q_P e^2$.
-
-\subsubsection{Neutrino as the statutory anchor of the BCC lattice}
-
-The decomposition $K = \alpha_{\text{inv}}/(8+\pi) + e + \delta_{\text{imp}}$ reveals that the neutrino radius is the unique length scale at which three independent physical constraints are simultaneously satisfied:
-
-\begin{itemize}
-	\item The static potential of the soliton ($\alpha_{\text{inv}}$) is exactly distributed over the eight BCC coordination directions and the spherical wave front ($\pi$).
-	\item The standing‑wave amplitude follows its natural exponential decay ($e$), which encodes the $r^5$ energy scaling.
-	\item The discrete lattice structure imposes a small but necessary correction that accounts for wave propagation along the face diagonals ($\sqrt{2}$).
-\end{itemize}
-
-\subsubsection{Consistency with the $10^{10}$ scaling and the $r^5/r^3$ balance}
-
-The previously established resonance $r_e/r_\nu = 100$ implies $(r_e/r_\nu)^5 = 10^{10}$. This $10^{10}$ factor is exactly the ratio of energy densities between the electron ($K_{WC}=10$) and the neutrino ($K_{WC}=1$). The present geometric derivation of $r_\nu$ is fully consistent with this scaling: the value $K_{\text{tot}} = 15.0246000085$ is precisely the one that makes the product $q_P K_{\text{tot}}$ reproduce the statutory radius used in the earlier validation of the $10^{10}$ factor (see Sec.~\ref{sec:10_10_resonance} and Part II of the script). Moreover, the tiny residual deviation of $K_{\text{tot}}$ from $2e^2/g_v$ ($2.2\times10^{-6}$) is negligible compared to the $10^{-4}$–$10^{-5}$ level of the spherical packing impedance $\zeta$, confirming that the model is internally consistent.
-
-\subsubsection{Geometric fixed point of $g_v$}
-
-The relation $K_{\text{tot}} = K_{\text{proj}} + e + (1-g_v)(\sqrt{2}-1)$ together with the dynamic constraint $K_{\text{tot}} = 2e^2/g_v$ yields a self-consistent equation that determines the lattice coupling $g_v$:
-
-\begin{equation}
-	\frac{2e^2}{g_v} = \frac{\alpha_{\text{inv}}}{8+\pi} + e + (1-g_v)(\sqrt{2}-1).
-\end{equation}
-
-Rearranging this identity results in a quadratic equation:
-
-\begin{equation}
-	(\sqrt{2}-1)g_v^2 - \left( \frac{\alpha_{\text{inv}}}{8+\pi} + e + \sqrt{2}-1 \right)g_v + 2e^2 = 0.
-\end{equation}
-
-The two roots of this equation are $g_v \approx 0.983594$ and $g_v \approx 36.27$. Only the former satisfies the fundamental physical requirement $0 < g_v < 1$ (sub-luminal wave propagation and stable coupling) and reproduces the observed neutrino radius. 
-
-\vspace{1em}
-\noindent
-\begin{center}
-	\fbox{
-		\begin{minipage}{0.85\textwidth}
-			\centering
-			\vspace{5pt}
-			\small \textbf{Geometric Fixed Point:} \\
-			The coupling constant $g_v$ is not an arbitrary input, but a unique topological fixed point of the BCC lattice—the only value for which the dynamic wave expansion and the static lattice projection are perfectly equilibrated.
-			\vspace{5pt}
-		\end{minipage}
-	}
-\end{center}
-\vspace{1em}
-
-This convergence, with a self-consistency error of $O(10^{-16})$, confirms that $g_v$ (and consequently $r_\nu$) is a derived property of the vacuum geometry rather than a free parameter.
-\subsubsection{Conclusion: two sides of the same coin}
-
-The derivation presented in this section establishes a fundamental equivalence:
-\begin{equation}
-	\underbrace{\frac{2e^2}{g_v}}_{\text{dynamic (no magnetic torque)}} \quad\Longleftrightarrow\quad
-	\underbrace{\frac{\alpha_{\text{inv}}}{8+\pi} + e + (1-g_v)(\sqrt{2}-1)}_{\text{geometric (lattice topology)}}.
-\end{equation}
-
-The left‑hand side describes how the wave energy ($e^2$) is scaled by the lattice response ($g_v$). The right‑hand side describes how the same relaxed state distributes itself over the BCC nodes and the spherical wave front, including the unavoidable impedance of the discrete lattice. The perfect numerical agreement (relative error $<3\times10^{-6}$) shows that the neutrino is not a “small electron” but rather the \textbf{fundamental, torque‑free ground state} of the BCC lattice. The electron, in turn, is a compressed and twisted excitation of this same state, where the magnetic torque reduces the effective radius and introduces the magnetic deficit $\epsilon_M$.
-
-\vspace{1em}
-\noindent
-\begin{center}
-	\fbox{
-		\begin{minipage}{0.85\textwidth}
-			\centering
-			\vspace{5pt}
-			\small \textbf{Topological Necessity of $r_\nu$:} \\
-			Consequently, $r_\nu$ is not a tunable parameter but a topological necessity of the BCC vacuum lattice, defined by the convergence of static projection and dynamic wave expansion.
-			\vspace{5pt}
-		\end{minipage}
-	}
-\end{center}
-
-Thus the statutory neutrino radius $r_\nu$ is now firmly anchored in the geometry of the vacuum lattice, and the factor $g_v$ is revealed as a derived quantity – a direct measure of how much the lattice’s static configuration is modified by the presence of a magnetic moment.
-
-All numerical values used in this section are taken from the output of \textbf{Part XIV} of the accompanying Scilab script (see Listing~\ref{lst:scilab_script}), confirming the consistency between the geometric decomposition and the earlier determination of $g_v$.
-
-% ------------------------------------------------------------------------------
 \subsection{The Rydberg Constant ($R_{\infty}$): An Atomic Resonance Gap}
 \label{sec:rydberg_constant}
 
