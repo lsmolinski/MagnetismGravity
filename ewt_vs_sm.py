@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+From manuscript version: 5.0.0
+
 Enhanced EWT -- Categorical Comparison with Standard Model
 ============================================================
 Compares EWT with SM in two separate categories:
