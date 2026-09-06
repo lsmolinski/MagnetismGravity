@@ -5900,12 +5900,12 @@ electromagnetism, and the lepton hierarchy.
 \section{Appendix}
 \subsection{List of Model Parameters and Physical Constants}
 
-The following table lists the fundamental physical constants and key dimensionless geometric factors used in the Geometric Soliton Model derivation of $\mathbf{G}$. The numerical consistency of the model relies on the exact values shown below, combining CODATA 2022 constants with the derived EWT geometric parameters.
+The following table lists the fundamental physical constants and key dimensionless geometric factors used in the Geometric Soliton Model. The numerical consistency of the model relies on the exact values shown below, combining CODATA 2022 constants with the derived EWT geometric parameters.
 
-\small % Using a smaller font for table readability
+\small
 \begin{table}[h!]
 	\centering
-	\caption{\textbf{EWT Parameters and CODATA 2022 Values Used in $G$ Derivation}}
+	\caption{\textbf{EWT Parameters and CODATA 2022 Values Used in the Geometric Derivations}}
 	\label{tab:final_parameters}
 	\begin{tabularx}{\textwidth}{l l l X}
 		\toprule
@@ -5913,35 +5913,29 @@ The following table lists the fundamental physical constants and key dimensionle
 		\midrule
 		\multicolumn{4}{l}{\textbf{I. Fundamental Constants (CODATA 2022)}} \\
 		\midrule
-		Speed of Light & $c$ & $299792458$ & Defined constant (m/s). \\
-		Electron Mass & $m_e$ & $9.1093837015 \times 10^{-31}$ & CODATA 2022 reference (kg). \\
-		Classical Radius & $r_e$ & $2.8179403262 \times 10^{-15}$ & CODATA 2022 reference (m). \\
-		Fine-Structure Inv. & $\alpha^{-1}$ & $137.035999084$ & Electromagnetic coupling base. \\
+		Speed of Light & \(c\) & \(299792458\) & Defined constant (m/s). \\
+		Electron Mass & \(m_e\) & \(9.1093837015 \times 10^{-31}\) & CODATA 2022 reference (kg). \\
+		Classical Radius & \(r_e\) & \(2.8179403262 \times 10^{-15}\) & CODATA 2022 reference (m). \\
 		\midrule
 		\multicolumn{4}{l}{\textbf{II. Hierarchical Volume Deficit Parameters}} \\
 		\midrule
-		Absolute Maximum & $N_{\nu, \text{max}}$ & $5.3004155344 \times 10^{54}$ & Theoretical EMC packing limit. \\
-		Statutory Background & $N_{\nu, \text{stat}}$ & $3.2986518824 \times 10^{52}$ & Eulerian vacuum capacity. \\
-		Effective Deficit & $N_{\nu, \text{eff}}$ & $6.2525176219 \times 10^{48}$ & Integrated Soliton density. \\
-		Dilution Factor & $X_{\text{eff}}$ & $5275.71785$ & Ratio $N_{\nu, \text{stat}} / N_{\nu, \text{eff}}$. \\
+		Absolute Maximum & \(N_{\nu,\text{max}}\) & \(5.3004 \times 10^{54}\) & Theoretical EMC packing limit. \\
+		Statutory Background & \(N_{\nu,\text{stat}}\) & \(3.2986 \times 10^{52}\) & Eulerian vacuum capacity. \\
+		Effective Deficit & \(N_{\nu,\text{eff}}\) & \(6.2472 \times 10^{48}\) & Integrated Soliton density. \\
+		Dilution Factor & \(X_{\text{eff}}\) & \(5275.7683\) & Ratio \(N_{\nu,\text{stat}} / N_{\nu,\text{eff}}\). \\
 		\midrule
-		\multicolumn{4}{l}{\textbf{III. Geometric and Unified Operators}} \\
+		\multicolumn{4}{l}{\textbf{III. Geometric Operators (Zero-Calibration)}} \\
 		\midrule
-		Geometric Base & $A_{\pi}$ & $137.081829$ & $4\pi^3 + \pi^2 + \pi$. Static foundation. \\
-		Packing Factor & $N_{\text{final}}$ & $778.818123$ & Derived from $\alpha$ correction. \\
-		Lattice Projection (fitted) & $L_p$ & $1.1486801482$ & Empirical calibration to $G_{\text{CODATA}}$. \\
-		Unified Coupling & $C_{\text{unif}}$ & $1.10202215996$ & Interfacial tension operator (fitted $L_p$). \\
-		\addlinespace
-		\multicolumn{4}{l}{\textbf{IV. Geometric Variant (Ideal BCC Projection)}} \\
-		\midrule
-		Lattice Projection (ideal) & $L_p^{\text{geom}}$ & $1.154700538379252$ & $2/\sqrt{3}$, inverse of nearest-neighbour distance. \\
-		Unified Coupling (geom) & $C_{\text{unif}}^{\text{geom}}$ & $1.102011616800936$ & Using $L_p^{\text{geom}}$ in Eq.~\ref{eq:C_unif}. \\
-		Effective Deficit (geom) & $N_{\nu,\text{eff}}^{\text{geom}}$ & $6.252457803455382 \times 10^{48}$ & $N_{\nu,\text{stat}} / X_{\text{eff}}^{\text{geom}}$. \\
+		Geometric Base & \(A_\pi\) & \(137.0363037759\) & \(4\pi^3 + \pi^2 + \pi\). Static foundation. \\
+		Effective Stiffness & \(N_{\text{geom}}\) & \(778.8025179\) & \(8\pi^4(1-\zeta)\). \\
+		Lattice Impedance & \(\zeta\) & \(0.0006033964\) & From BCC packing fraction. \\
+		Magnetic Deficit & \(\epsilon_M\) & \(4.141169769 \times 10^{-5}\) & \(1/(N_{\text{geom}}\pi^3)\). \\
+		Lattice Projection & \(L_p^{\text{geom}}\) & \(1.1547005384\) & \(2/\sqrt{3}\), ideal BCC projection. \\
+		Unified Coupling & \(C_{\text{unif}}\) & \(1.1020116168\) & Using \(L_p^{\text{geom}}\). \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
 \normalsize
-
 \clearpage
 
 \subsection{Numerical Verification Script}
