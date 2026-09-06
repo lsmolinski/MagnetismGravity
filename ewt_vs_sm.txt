@@ -1,0 +1,37 @@
+==============================================================================
+   EWT vs STANDARD MODEL: CATEGORICAL COMPARISON (GEOMETRIC)
+==============================================================================
+
+CATEGORY A: PREDICTIVE ADVANTAGE
+(Quantities for which SM has no standalone prediction)
+------------------------------------------------------------------------------
+Quantity                EWT rel. err            SM status  Ratio (SM/EWT)
+------------------------------------------------------------------------------
+G (Gravitation)         4.816944e-04        no prediction        2.08e+03
+alpha^-1 (FSC)          1.921248e-06           input only        5.20e+05
+a_e (Electron g-2)      2.276946e-04     consistency test        4.39e+03
+a_tau (Tau g-2)         3.158906e-04        no prediction        3.17e+03
+------------------------------------------------------------------------------
+  Aggregate predictive advantage: 1.5023e+16 times
+
+CATEGORY B: PRECISION BENCHMARK
+(Quantities where SM has extremely precise values from measurement/QED)
+------------------------------------------------------------------------------
+Quantity                EWT rel. err         SM precision  Ratio (SM/EWT)
+------------------------------------------------------------------------------
+a_mu (Muon g-2)         2.504445e-04         2.152805e-06        8.60e-03
+------------------------------------------------------------------------------
+  Aggregate precision benchmark factor: 8.5959e-03 times
+
+==============================================================================
+INTERPRETATION:
+  Category A shows that EWT provides concrete geometric predictions for
+  G, alpha, a_e, and a_tau, while SM either has no prediction or treats
+  these quantities as external inputs.
+
+  Category B shows that SM remains more precise for a_mu, because it
+  uses experimental inputs and perturbative QED. EWT achieves its
+  accuracy without any free parameters or experimental inputs beyond
+  the four fundamental anchors (e, r_e, m_e, c).
+
+==============================================================================

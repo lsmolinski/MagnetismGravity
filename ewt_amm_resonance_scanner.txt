@@ -1,0 +1,13 @@
+=== EWT RECURSIVE HIERARCHY ANALYSIS ===
+Reference: Onion Model
+
+POINT: Km=200, Kt=2180 | Err_mu: 0.001681% | Err_tau: 0.002650% | Mean: 0.002165% | amu: 248.7958 | atau: 1177.1788
+POINT: Km=207, Kt=2180 | Err_mu: 0.091522% | Err_tau: 0.021637% | Mean: 0.056580% | amu: 248.5723 | atau: 1176.9553
+POINT: Km=200, Kt=2181 | Err_mu: 0.001681% | Err_tau: 0.012503% | Mean: 0.007092% | amu: 248.7958 | atau: 1177.0628
+POINT: Km=207, Kt=2181 | Err_mu: 0.091522% | Err_tau: 0.031491% | Mean: 0.061506% | amu: 248.5723 | atau: 1176.8393
+EXPORTED: Fig1_Muon_Profile.pdf
+EXPORTED: Fig2_Tau_Profile.pdf
+EXPORTED: Fig3_3D_Peak.pdf
+EXPORTED: Fig4_Topography_3D.pdf
+
+--- ALL DATA SYNCHRONIZED WITH LATEX DOCUMENT ---

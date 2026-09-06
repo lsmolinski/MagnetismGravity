@@ -1,0 +1,13 @@
+Enhanced EWT -- Robustness Plot Suite (Geometric)
+[EXPORT] EWT_Robustness_G_Surface_Transition.pdf
+[EXPORT] EWT_Robustness_Alpha_Sensitivity.pdf
+[EXPORT] EWT_Alpha_vs_AMM_PhasePlot.pdf
+[EXPORT] EWT_Unification_Path_English.pdf
+[EXPORT] EWT_POINT_LOCKED.pdf
+[EXPORT] EWT_Lepton_Error_Spectrum.pdf
+[EXPORT] EWT_Robustness_Analysis_DataDriven.pdf
+[EXPORT] EWT_Stiffness_Equilibrium.pdf
+       [HIERARCHY] Stat/Eff Density Gap: 5.28e+03
+[EXPORT] EWT_AMM_Robustness_Leptons.pdf
+[EXPORT] EWT_Weinberg_Cabibbo_Robustness.pdf
+All figures exported.

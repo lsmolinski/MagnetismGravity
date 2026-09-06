@@ -1,0 +1,20 @@
+EWT EXTENDED LEPTON AMM MODULE
+
+--- EXTENDED LEPTON ANOMALOUS MAGNETIC MOMENTS ---
+  Electron full a_e       : 1159.916228 ppm
+    CODATA reference      : 1159.652182 ppm
+    Full rel. error       : 0.022769 %
+
+  Muon shell (internal)   : 248.571133 ppm
+    EWT shell reference   : 248.800000 ppm
+    Internal rel. error   : 0.091988 %
+  Muon full a_mu          : 1166.212608 ppm
+    Experimental target   : 1165.920610 ppm
+    Full rel. error       : 0.025044 %
+
+  Tau shell total         : 1176.838130 ppm
+    EWT shell reference   : 1177.210000 ppm
+    Internal rel. error   : 0.031589 %
+  Tau full a_tau          : 1176.838130 ppm
+    Experimental target   : 1177.210000 ppm
+    Full rel. error       : 0.031589 %

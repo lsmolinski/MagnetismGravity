@@ -1,0 +1,52 @@
+EWT ELECTROWEAK & BOSON MODULE
+
+--- WEINBERG SECTOR ---
+  EWT Predicted W-Boson Mass:      80.5141 GeV
+  CDF II Experimental Target:      80.4335 GeV
+  Percentage Error vs. CDF II:     0.1002 %
+
+--- EWT SPHERICAL MODE MASSES ---
+  Z boson (K=110): 91.7313627983 GeV
+  Higgs    (K=117): 124.9613469754 GeV
+
+--- HIGGS MIXING PREDICTIONS ---
+  Higgs-Z Mixing sin^2(theta_ZH): 0.4686094602
+  Higgs-W Mixing sin^2(theta_WH): 0.5906241192
+  Note: ZH stability is superior due to the neutrality of Z and H solitons.
+
+--- WEINBERG ANGLE TEST (EWT spherical masses) ---
+  M_Z = 91.7313627983 GeV, M_W = 80.5141221669 GeV
+  Predicted sin²θ_W = 0.2403072946
+  Experimental      = 0.23122
+  Relative error    = 3.930151 %
+
+--- WEINBERG ANGLE TEST (empirical masses) ---
+  M_Z = 91.1876000000 GeV, M_W = 80.4335000000 GeV
+  Predicted sin²θ_W = 0.2327588525
+  Experimental      = 0.23122
+  Relative error    = 0.665536 %
+
+--- HEAVY BOSON GEOMETRIC RADIUS PREDICTIONS ---
+  Z-Boson (K=110) Predicted Radius: 3.1677478423e-14 m
+  Higgs   (K=117) Predicted Radius: 3.3697848561e-14 m
+  VERIFICATION AGAINST NUCLEAR SCALES:
+  Predictions match the 10^-14 m order of magnitude, consistent
+  with the mass-equivalent isotopes (Mo-98 and Xe-134).
+
+--- CABIBBO MIXING & SURFACE RESONANCE ---
+  C_fermion (pi^5 operator):       1.0089810940
+  VARIANT A: EWT-derived quark masses (spherical mode)
+    EWT d-quark mass (K=15):       0.0040343942 GeV
+    EWT s-quark mass (K=28):       0.0948854322 GeV
+    EWT Prediction sin(theta_C):   0.2080522521
+    PDG 2022 Target:               0.2243000000
+    Percentage Error:              7.243757 %
+  VARIANT B: PDG 2022 target quark masses (mechanism test)
+    PDG d-quark mass:              0.0046920000 GeV
+    PDG s-quark mass:              0.0949540000 GeV
+    EWT Prediction sin(theta_C):   0.2242876694
+    PDG 2022 Target:               0.2243000000
+    Percentage Error:              0.005497 %
+  INTERPRETATION:
+  Variant A error originates from EWT light quark mass predictions.
+  Variant B isolates the geometric mixing mechanism (pi^5 operator).
