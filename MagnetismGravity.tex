@@ -1481,7 +1481,7 @@ the G implementation result showed in table \ref{tab:G_model_comparison}.
 	\end{tabularx}
 \end{table}
 
-\subsection{Geometric Planck Length}
+\subsection{Geometric Emergence of the Planck Length}
 \label{sec:lambda_l_geom}
 
 The Planck length in EWT is identified with the fundamental EMC spacing \(\lambda_l\). In the zero-calibration formulation, \(\lambda_l\) is not taken from experiment; it follows from the geometric identity for the gravitational constant and the Planck-length definition.
@@ -1555,6 +1555,13 @@ Substituting these expressions into the Planck-length definition cancels \(m_e\)
 \end{equation}
 where \(e\) is Euler's number.
 
+Planck introduced this length as a formal dimensional combination
+of \(\hbar\), \(G\), and \(c\), without reference to a microscopic
+substrate. In the present framework, the same quantity appears as
+the self-consistent solution of the geometric BCC equations,
+thereby providing a physical origin for the scale that Planck
+treated only as a formal unit.
+
 Equation \eqref{eq:lambda_l_geometric} is therefore not an independent ansatz. It is the direct consequence of combining the geometric fine-structure constant, the geometric gravitational scaling, and the Planck-length definition into a single closed algebraic constraint. Here \(e\) is Euler's number and \(r_\nu\) is the geometric neutrino radius derived in Section~\ref{sec:neutrino_anchor}.
 
 Numerically,
@@ -1570,6 +1577,8 @@ The CODATA value is
 	1.6162 \times 10^{-35}\ \text{m},
 \end{equation}
 so the relative deviation is approximately \(0.0276\%\). This is a genuine geometric prediction.
+
+\(X_{\text{eff}}\) is not a free parameter; it is the geometric bridge that connects the statutory EMC background to the effective soliton deficit. It encapsulates how \(K_{WC}=10\), the ideal BCC projection, and the geometric core \(A_\pi\) jointly dilute the vacuum density inside matter.
 
 \subsection{Consistency with the Planck Charge}
 \label{sec:consistency_qP}
@@ -5259,13 +5268,13 @@ To demonstrate that the Enhanced EWT model is not a result of numerical coincide
 
 The structural integrity of the EWT framework is evaluated through the stability of the fundamental identity
 \begin{equation}
-\Delta N_\nu
-\;\sim\;
-\frac{1}{\epsilon_G}.
+	\Delta N_\nu
+	\;\sim\;
+	\frac{1}{\epsilon_G}.
 \end{equation}
 where \(\epsilon_G\) is the gravitational deficit associated with the reference soliton. This equivalence suggests that the statutory constituent count, derived from the ratio of the neutrino radius to the Planck scale, must inherently align with the geometric deficit required to scale gravity from its classical base \(G_{\text{Base}}\) to the observed value.
 
-To verify the absence of numerical fine-tuning, a sensitivity analysis was conducted by applying relative perturbations of \(\pm 20\%\) to the primary geometric inputs: the statutory neutrino radius \(r_\nu\) and the fundamental EMC spacing \(\lambda_l\). The resulting compliance ratio, defined as the quotient of the calculated constituent count \(N_\nu\) and the required geometric deficit \(1/\epsilon_G\), exhibits high structural resilience.
+To verify the absence of numerical fine-tuning, a sensitivity analysis was conducted by applying relative perturbations of \(\pm 20\%\) to the primary geometric inputs: the statutory neutrino radius \(r_\nu\) and the fundamental EMC spacing \(\lambda_l\). The resulting compliance curves are shown in Fig.~\ref{fig:robustness_analysis}. They demonstrate that even under significant variations in the input scales, the compliance ratios remain strictly within the \(\pm 30\%\) tolerance boundaries.
 
 \begin{figure}[ht!]
 	\centering
@@ -5280,7 +5289,7 @@ To verify the absence of numerical fine-tuning, a sensitivity analysis was condu
 	\label{fig:robustness_analysis}
 \end{figure}
 
-The analysis demonstrates that even under significant variations in the input scales, the compliance curves remain strictly within the \(\pm 30\%\) tolerance boundaries. This performance confirms that the EWT model is not a product of precise numerical coincidence, but is instead rooted in a robust geometric power-law relationship.
+This performance confirms that the EWT model is not a product of precise numerical coincidence, but is instead rooted in a robust geometric power-law relationship.
 
 \subsection{Gravitational Surface Transition and \(N_{\nu,\text{eff}}\)}
 \label{sec:robustness_g}
@@ -5319,7 +5328,7 @@ This test evaluates the stability of the fine-structure constant derivation by e
 	\label{fig:alpha_sensitivity}
 \end{figure}
 
-The analysis confirms:
+The analysis of the results presented in Fig.~\ref{fig:alpha_sensitivity} confirms:
 \begin{itemize}
 	\item \textbf{Geometric necessity:} Precise alignment with \(\alpha^{-1}_{\text{CODATA}}\) occurs only when the complete stability factor is applied. The ``golden point'' intersection at
 	\begin{equation}
@@ -5336,14 +5345,28 @@ The analysis confirms:
 
 The phase-space mapping between the inverse fine-structure constant \(\alpha^{-1}\) and the electron anomalous magnetic moment \(a_e\) reveals a fundamental geometric trajectory. By varying the vacuum stiffness parameter \(N\), the model demonstrates that \(\alpha^{-1}\) and \(a_e\) are not independent constants, but emergent properties of the same underlying geometric modulator.
 
-The experimental CODATA point lies close to this EWT trajectory, with a residual offset of approximately \(0.022769\%\). In the EWT framework, this offset is not interpreted as model failure, but as a consequence of the structural difference between the geometric vacuum picture and the point-like renormalisation programme of the Standard Model.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.85\textwidth]{EWT_Alpha_vs_AMM_PhasePlot.pdf}
+	\caption{Phase space correlation between the inverse fine-structure constant and the electron anomalous magnetic moment. The curve represents the EWT geometric trajectory, showing that \(\alpha^{-1}\) and \(a_e\) emerge from the same vacuum stiffness.}
+	\label{fig:phase_space_amm}
+\end{figure}
+
+The experimental CODATA point lies close to this EWT trajectory, as shown in Fig.~\ref{fig:phase_space_amm}, with a residual offset of approximately \(0.022769\%\). In the EWT framework, this offset is not interpreted as model failure, but as a consequence of the structural difference between the geometric vacuum picture and the point-like renormalisation programme of the Standard Model.
 
 \subsection{Parametric Unification: The Stability Path of \(G\) and \(\alpha\)}
 \label{sec:parametric_unification}
 
 A parametric analysis of the relationship between \(G\) and \(\alpha^{-1}\) was performed by varying the geometric modulator \(N\). The resulting trajectory, derived from the geometric operator \(\mathcal{U}\), shows that \(\alpha^{-1}\) remains tightly constrained by the core geometry \(A_\pi\), whereas \(G\) is significantly more sensitive to changes in the stiffness parameter.
 
-This sensitivity difference follows directly from the algebraic structure:
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.85\textwidth]{EWT_Unification_Path_English.pdf}
+	\caption{The EWT Unification Path. The magenta line represents the geometric correlation between gravity and electromagnetism as a function of the vacuum stiffness parameter \(N\).}
+	\label{fig:unification_path}
+\end{figure}
+
+The resulting trajectory is shown in Fig.~\ref{fig:unification_path}. This sensitivity difference follows directly from the algebraic structure:
 \begin{equation}
 	\alpha_{\text{geom}}^{-1} \sim A_\pi - \frac{1}{N\pi^3},
 	\qquad
@@ -5362,7 +5385,14 @@ A fundamental consistency check is the interdependence between \(G\) and \(a_e\)
 	778.8025.
 \end{equation}
 
-At this point, \(G_{\text{geom}}\) and \(a_e^{\text{EWT}}\) are both determined from the same BCC lattice parameters. This is not a fit: the value of \(N_{\text{geom}}\) is fixed by the packing geometry and the impedance \(\zeta\).
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.85\textwidth]{EWT_POINT_LOCKED.pdf}
+	\caption{EWT Unification: Direct convergence of the gravitational constant \(G\) and the electron anomaly \(a_e\) at the geometric stiffness \(N_{\text{geom}}\).}
+	\label{fig:ewt_point_locked}
+\end{figure}
+
+At this point, \(G_{\text{geom}}\) and \(a_e^{\text{EWT}}\) are both determined from the same BCC lattice parameters, as illustrated in Fig.~\ref{fig:ewt_point_locked}. This is not a fit: the value of \(N_{\text{geom}}\) is fixed by the packing geometry and the impedance \(\zeta\).
 
 \subsection{Robustness Analysis: Geometric Stability and Vacuum Elasticity}
 \label{sec:robustness_equilibrium}
@@ -5373,17 +5403,38 @@ To evaluate the reliability of the derived gravitational constant, a sensitivity
 \end{equation}
 which follows from the volumetric scaling \(N_\nu \propto r^3\) and the stiffness-radius relation \(N \propto r^{-1/2}\).
 
-This damping factor protects the geometric vacuum parameters from large fluctuations of the EMC density. In the current model, the relevant stiffness is \(N_{\text{geom}}\), not an arbitrary fitted value.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.85\textwidth]{EWT_Stiffness_Equilibrium.pdf}
+	\caption{Gravity Stability Equilibrium: The \(r^{-1/2}\) trajectory of nodal stiffness \(N\) relative to the cubic scaling of soliton volume \(N_{\nu}\).}
+	\label{fig:stiffness_equilibrium}
+\end{figure}
+
+The resulting stability relationship is illustrated in Fig.~\ref{fig:stiffness_equilibrium}. This damping factor protects the geometric vacuum parameters from large fluctuations of the EMC density. In the current model, the relevant stiffness is \(N_{\text{geom}}\), not an arbitrary fitted value.
 
 \subsection{Structural Robustness and Resonance Stability of the Lepton Hierarchy}
 \label{sec:robustness_lepton}
 
-The same geometric stiffness \(N_{\text{geom}}\) anchors the recursive lepton hierarchy. The sensitivity gradients of \(a_\mu\) and \(a_\tau\) to small radial perturbations differ because the muon is a 2D surface resonance, while the tau is a 3D volumetric resonance. This is consistent with the dimensional hierarchy established in Section~\ref{sec:dimensional_hierarchy}.
+The same geometric stiffness \(N_{\text{geom}}\) anchors the recursive lepton hierarchy. The sensitivity gradients of \(a_\mu\) and \(a_\tau\) are shown in Fig.~\ref{fig:lepton_stability}. They differ because the muon is a 2D surface resonance, while the tau is a 3D volumetric resonance. This is consistent with the dimensional hierarchy established in Section~\ref{sec:dimensional_hierarchy}.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.85\textwidth]{EWT_AMM_Robustness_Leptons.pdf}
+	\caption{Stability Analysis of the Lepton Hierarchy: Normalized response of \(a_{\mu}\) and \(a_{\tau}\) to geometric perturbations.}
+	\label{fig:lepton_stability}
+\end{figure}
 
 \subsection{Electroweak and CKM Coincidence: Geometric Robustness of \(\sin^2\theta_W\) and \(\sin\theta_C\)}
 \label{subsec:weinberg_cabibbo_robustness}
 
-The electroweak and Cabibbo mixing sectors converge at the same geometric anchor \(N_{\text{geom}}\). The \(\pi^6\) bosonic coupling is steeper than the \(\pi^5\) fermionic coupling, reflecting the difference between volumetric and surface resonances.
+The electroweak and Cabibbo mixing sectors converge at the same geometric anchor \(N_{\text{geom}}\), as shown in Fig.~\ref{fig:weinberg_cabibbo_robustness}. The \(\pi^6\) bosonic coupling is steeper than the \(\pi^5\) fermionic coupling, reflecting the difference between volumetric and surface resonances.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.85\textwidth]{EWT_Weinberg_Cabibbo_Robustness.pdf}
+	\caption{Shift-Normalized Robustness Analysis: The intersection of the \(\sin^2\theta_W\) and \(\sin\theta_C\) trajectories at the geometric lock-in point \(N_{\text{geom}}\).}
+	\label{fig:weinberg_cabibbo_robustness}
+\end{figure}
 
 The Cabibbo sector remains sensitive to the quality of the quark mass inputs. When PDG experimental quark masses are used, the geometric mixing operator \(C_{\text{fermion}}\) reproduces \(\sin\theta_C\) to within \(0.0055\%\). The remaining discrepancy with EWT-derived quark masses originates from the mass prediction sector, not from the mixing geometry itself.
 
