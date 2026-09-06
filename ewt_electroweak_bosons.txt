@@ -16,13 +16,13 @@ EWT ELECTROWEAK & BOSON MODULE
 
 --- WEINBERG ANGLE TEST (EWT spherical masses) ---
   M_Z = 91.7313627983 GeV, M_W = 80.5141221669 GeV
-  Predicted sin²θ_W = 0.2403072946
+  Predicted sin^2(theta_W) = 0.2403072946
   Experimental      = 0.23122
   Relative error    = 3.930151 %
 
 --- WEINBERG ANGLE TEST (empirical masses) ---
   M_Z = 91.1876000000 GeV, M_W = 80.4335000000 GeV
-  Predicted sin²θ_W = 0.2327588525
+  Predicted sin^2(theta_W) = 0.2327588525
   Experimental      = 0.23122
   Relative error    = 0.665536 %
 

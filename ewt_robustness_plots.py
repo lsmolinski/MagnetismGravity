@@ -2,8 +2,8 @@
 """
 Enhanced EWT -- Robustness & Stability Plot Suite
 ==================================================
-Python port of EWT_Robustness_G_AMM_check.sc (Modules 1–10),
-adapted to the zero‑calibration geometric version.
+Python port of EWT_Robustness_G_AMM_check.sc (Modules 1-10),
+adapted to the zero-calibration geometric version.
 
 Uses the geometric eps_M derived from BCC packing impedance
 instead of the old calibrated N_final and L_p.

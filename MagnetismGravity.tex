@@ -25,15 +25,19 @@
 \usepackage{pdflscape}
 
 \lstset{
-	language=C, % Używamy C dla ogólnego formatowania
-	basicstyle=\scriptsize\ttfamily, % Zazwyczaj wystarcza dla długich linii
-	commentstyle=\color[rgb]{0.2,0.6,0.2}, % Kolor dla komentarzy
-	keywordstyle=\color[rgb]{0.0,0.0,0.8}, % Kolor dla słów kluczowych
-	numbers=left, % Numeracja wierszy po lewej
-	numberstyle=\tiny\color{gray}, % Styl numeracji
-	frame=single, % Rysuje ramkę wokół kodu
-	breaklines=true, % Automatyczne łamanie długich linii
-	captionpos=b, % Umieszcza podpis pod kodem (bottom)
+	inputencoding=utf8, 
+	extendedchars=true
+	language=Python,
+	basicstyle=\scriptsize\ttfamily,
+	keywordstyle=\color{blue},
+	commentstyle=\color{green!40!black},
+	stringstyle=\color{orange},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	breaklines=true,
+	frame=single,
+	breaklines=true,
+	captionpos=b, 
 	tabsize=4
 }
 
@@ -5989,99 +5993,167 @@ The following table lists the fundamental physical constants and key dimensionle
 \normalsize
 \clearpage
 
-\subsection{Numerical Verification Script}
-\label{app:scilab_script}
+\subsection{Computational Scripts (Python)}
+\label{app:python_scripts}
 
-This script, used to numerically verify the model's internal consistency (Gravity and AMM factors), is available for inspection and replication. The precision is set to 20 significant digits. The source code is permanently archived and downloadable via the Digital Object Identifier (DOI):
+All numerical results in this work are produced by a set of Python scripts that implement the zero-calibration geometric model described in the main text. The scripts are self-contained and use only standard scientific libraries. The source code and console outputs are listed below. Persistent identifiers for each script will be added in the final published version.
 
-\begin{center}
-	\textbf{DOI:} \url{https://doi.org/10.5281/zenodo.17698582}
-\end{center}
+\subsubsection{Emergence Engine}
+\label{app:ewt_emergence_engine}
 
-The script's content is presented in its entirety in Listing \ref{lst:scilab_script}, and the resulting output is shown in Listing \ref{lst:scilab_output}.
-
-\lstinputlisting[
-caption={Complete Scilab Script for EWT Model Consistency Check.}, 
-label={lst:scilab_script}
-]{EWT_G_AMM_check.sc}
-
-\subsection{Numerical Verification Script Output}
-
-The following listing presents the complete console output from the execution of the \ref{lst:scilab_script} script. This provides direct numerical verification of the derived constants, including the Volume Deficit Correction Ratio ($1.137...$) and the geometric value of the Muon Anomalous Magnetic Moment etc.
+\texttt{ewt\_emergence\_engine.py} is the core geometric engine. It derives the fine-structure constant, magnetic deficit, neutrino radius, Planck length, gravitational constant, lepton anomalous magnetic moments, and atomic scales from the BCC lattice geometry. The script also performs the rigidity tests described in Section~\ref{sec:robustness}.
 
 \lstinputlisting[
-%language={}, % Wyłącza kolorowanie składni (czysty tekst/konsola)
-basicstyle=\scriptsize\ttfamily, % Mała czcionka monospaced
+language=Python,
+caption={Core geometric emergence engine.},
+label={lst:ewt_emergence_engine}
+]{ewt_emergence_engine.py}
+
+\subsubsection{Emergence Engine Output}
+\label{app:ewt_emergence_engine_output}
+
+The console output of \texttt{ewt\_emergence\_engine.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
 breaklines=true,
 breakatwhitespace=false,
-%numbers=none, % Bez numeracji linii
-frame=single, % Ramka wokół
-breaklines=true, % Umożliwia łamanie długich linii
-caption={Console output from the execution of the EWT numerical consistency check script.},
-label={lst:scilab_output}
-]{EWT_G_AMM_check_output.txt}
+frame=single,
+caption={Console output from \texttt{ewt\_emergence\_engine.py}.},
+label={lst:ewt_emergence_engine_output}
+]{ewt_emergence_engine.txt}
 
-\subsection{EWT vs Standard Model – Quantitative Precision Comparison}
-\label{app:EWT_VS_SM}
+\subsubsection{Extended Lepton AMM}
+\label{app:ewt_amm_extended}
 
-This computational script was developed to perform a direct, quantitative verification of the predictive superiority of the **Extended EWT Model** over the Standard Model (SM) with respect to three key fundamental constants: the gravitational constant $\mathbf{G}$, the fine-structure constant $\mathbf{\alpha^{-1}}$, and the muon anomalous magnetic moment $\mathbf{ a_{\mu}}$. The script confirms that the derivation of all three parameters stems from a **single, unified Geometric Identity**: the geometric stiffness parameter $\mathbf{N}$ (Soliton's Volume Deficit). The numerical analysis calculates the relative prediction errors of EWT against CODATA/experimental values and compares them with the current best SM uncertainties/discrepancies, concluding with the calculation of the final \textbf{Composite Improvement Factor (CIF)}.
-
-\begin{center}
-	%\textbf{DOI:} \url{https://doi.org/10.5281/zenodo.17726691}
-	\textbf{DOI:} \url{https://doi.org/10.5281/zenodo.17726690} 
-\end{center}
-
-The script's content is presented in its entirety in Listing \ref{lst:EWT_VS_SM}, and the resulting output is shown in Listing \ref{lst:EWT_VS_SM_output}.
+\texttt{ewt\_amm\_extended.py} computes the full anomalous magnetic moments of the electron, muon, and tau using the geometric fine-structure constant and the magnetic deficit. It also reports the internal shell references and the corresponding consistency errors.
 
 \lstinputlisting[
-caption={EWT vs Standard Model – Quantitative Precision Comparison.}, 
-label={lst:EWT_VS_SM}
-]{EWT_VS_SM.sc}
+language=Python,
+caption={Extended lepton anomalous magnetic moment computation.},
+label={lst:ewt_amm_extended}
+]{ewt_amm_extended.py}
 
-\subsection{EWT vs Standard Model – Quantitative Precision Comparison Output}
+\subsubsection{Extended Lepton AMM Output}
+\label{app:ewt_amm_extended_output}
 
-The following listing presents the complete console output from the execution of the  \ref{lst:EWT_VS_SM} script. 
-\lstinputlisting[
-%language={}, % Wyłącza kolorowanie składni (czysty tekst/konsola)
-basicstyle=\scriptsize\ttfamily, % Mała czcionka monospaced
-%numbers=none, % Bez numeracji linii
-frame=single, % Ramka wokół
-breaklines=true, % Umożliwia łamanie długich linii
-caption={Console output from the execution of the EWT vs Standard Model – Quantitative Precision Comparison script Output.},
-label={lst:EWT_VS_SM_output}
-]{EWT_VS_SM_output.txt}
-
-\subsection{Stability and Robustness Analysis}
-\label{app:EWT_Robustness}
-
-This section details the computational framework used to evaluate the structural stability of the EWT model. The provided script analyzes the response of fundamental constants to infinitesimal fluctuations in the vacuum lattice radius ($dr/r$). It demonstrates a \textbf{Resonance Lock} at $N \approx 778.81$, where the anomalous magnetic moments (AMM) of the muon and tau leptons achieve maximum stability. This robustness test confirms that EWT parameters are emergent topological invariants of the BCC lattice rather than fine-tuned values.
-
-\begin{center}
-	\textbf{DOI:} \url{https://doi.org/10.5281/zenodo.18469103} 
-\end{center}
-
-The full source code for the robustness analysis is provided in Listing \ref{lst:EWT_Robustness_sc}.
+The console output of \texttt{ewt\_amm\_extended.py} is reproduced below.
 
 \lstinputlisting[
-caption={EWT Unification Master Suite: Gravity and Leptodynamics Stability Check.},
-label={lst:EWT_Robustness_sc}
-]{EWT_Robustness_G_AMM_check.sc}
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_amm\_extended.py}.},
+label={lst:ewt_amm_extended_output}
+]{ewt_amm_extended.txt}
 
+\subsubsection{AMM Resonance Scanner}
+\label{app:ewt_amm_resonance_scanner}
 
-
-\subsection{Leptonic Resonance Mapping (AMM Search)}
-\label{app:AMM_find}
-
-The script in Listing \ref{lst:AMM_find_sc} serves as the primary tool for mapping higher-generation lepton shells within the EWT framework. By scanning the nodal count space ($K_m, K_t$), the algorithm identifies the specific geometric configurations where volumetric displacement matches experimental $a_\mu$ and $a_\tau$ values. It verifies the "Onion Model" hierarchy and the critical role of Fibonacci invariants ($L=5, 34$) in defining discrete energy levels for vacuum solitons.
-
-\begin{center}
-	\textbf{DOI:} \url{https://doi.org/10.5281/zenodo.18469205} 
-\end{center}
+\texttt{ewt\_amm\_resonance\_scanner.py} scans the \((K_\mu,K_\tau)\) nodal-count space and identifies the resonance minima. It also generates the PDF figures used in the sensitivity analysis.
 
 \lstinputlisting[
-caption={EWT Core Calculation: Nodal Mapping and AMM Resonance Discovery.},
-label={lst:AMM_find_sc}
-]{AMM_find.sc}
+language=Python,
+caption={AMM resonance scanner and figure generator.},
+label={lst:ewt_amm_resonance_scanner}
+]{ewt_amm_resonance_scanner.py}
+
+\subsubsection{AMM Resonance Scanner Output}
+\label{app:ewt_amm_resonance_scanner_output}
+
+The console output of \texttt{ewt\_amm\_resonance\_scanner.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_amm\_resonance\_scanner.py}.},
+label={lst:ewt_amm_resonance_scanner_output}
+]{ewt_amm_resonance_scanner.txt}
+
+\subsubsection{Electroweak and Boson Module}
+\label{app:ewt_electroweak_bosons}
+
+\texttt{ewt\_electroweak\_bosons.py} computes the W boson mass, Weinberg angle, Cabibbo angle, Higgs mixing angles, and heavy boson radii from the geometric ladder operators.
+
+\lstinputlisting[
+language=Python,
+caption={Electroweak and heavy boson calculations.},
+label={lst:ewt_electroweak_bosons}
+]{ewt_electroweak_bosons.py}
+
+\subsubsection{Electroweak and Boson Module Output}
+\label{app:ewt_electroweak_bosons_output}
+
+The console output of \texttt{ewt\_electroweak\_bosons.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_electroweak\_bosons.py}.},
+label={lst:ewt_electroweak_bosons_output}
+]{ewt_electroweak_bosons.txt}
+
+\subsubsection{Particle Mass Module}
+\label{app:ewt_particle_masses}
+
+\texttt{ewt\_particle\_masses.py} implements the spherical, orbital, and meson mass modes and performs the full PDG/CODATA mass scan.
+
+\lstinputlisting[
+language=Python,
+caption={Particle mass predictions and resonance scan.},
+label={lst:ewt_particle_masses}
+]{ewt_particle_masses.py}
+
+\subsubsection{Particle Mass Module Output}
+\label{app:ewt_particle_masses_output}
+
+The console output of \texttt{ewt\_particle\_masses.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_particle\_masses.py}.},
+label={lst:ewt_particle_masses_output}
+]{ewt_particle_masses.txt}
+
+\subsubsection{Robustness and Stability Plots}
+\label{app:ewt_robustness_plots}
+
+\texttt{ewt\_robustness\_plots.py} generates the stability figures used in Section~\ref{sec:robustness}, including the G surface transition, alpha sensitivity, phase-space trajectory, point-lock convergence, and AMM robustness curves.
+
+\lstinputlisting[
+language=Python,
+caption={Robustness and stability plot generator.},
+label={lst:ewt_robustness_plots}
+]{ewt_robustness_plots.py}
+
+\subsubsection{Robustness and Stability Plots Output}
+\label{app:ewt_robustness_plots_output}
+
+The console output of \texttt{ewt\_robustness\_plots.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_robustness\_plots.py}.},
+label={lst:ewt_robustness_plots_output}
+]{ewt_robustness_plots.txt}
+
 
 \section*{Statements and Declarations}
 

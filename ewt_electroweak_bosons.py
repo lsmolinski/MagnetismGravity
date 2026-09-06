@@ -34,7 +34,7 @@ def weinberg_sector(C_gap: float, M_Z: float, sin2_W: float) -> float:
     Compute W boson mass from the Weinberg angle.
 
     Formula:
-        M_W = M_Z * sqrt( (1 - sin²θ_W) * C_gap )
+        M_W = M_Z * sqrt( (1 - sin^2(theta_W)) * C_gap )
     """
     return M_Z * math.sqrt((1.0 - sin2_W) * C_gap)
 
@@ -50,7 +50,7 @@ def compute_higgs_mixing_angles(
 
     Returns
     -------
-    tuple (sin²θ_ZH, sin²θ_WH)
+    tuple (sin^2(theta_ZH), sin^2(theta_WH))
     """
     sin2_ZH = 1.0 - ((M_Z_EWT / M_H_EWT) ** 2) * (1.0 / C_gap)
     sin2_WH = 1.0 - ((M_W_EWT / M_H_EWT) ** 2) * (1.0 / C_gap)
@@ -130,10 +130,10 @@ def test_weinberg_angle(
     label: str,
 ) -> None:
     """
-    Compute sin²θ_W from geometric C_gap and given boson masses.
+    Compute sin^2(theta_W) from geometric C_gap and given boson masses.
 
     Formula:
-        sin²θ_W = 1 - (M_W² / M_Z²) * (1 / C_gap)
+        sin^2(theta_W) = 1 - (M_W^2 / M_Z^2) * (1 / C_gap)
 
     Parameters
     ----------
@@ -142,7 +142,7 @@ def test_weinberg_angle(
     M_W : float
         W boson mass [GeV].
     C_gap : float
-        Volumetric lattice operator from the π⁶ rung.
+        Volumetric lattice operator from the pi^6 rung.
     label : str
         Descriptive label for the mass source.
     """
@@ -151,7 +151,7 @@ def test_weinberg_angle(
 
     print(f"\n--- WEINBERG ANGLE TEST ({label}) ---")
     print(f"  M_Z = {M_Z:.10f} GeV, M_W = {M_W:.10f} GeV")
-    print(f"  Predicted sin²θ_W = {sin2_W_pred:.10f}")
+    print(f"  Predicted sin^2(theta_W) = {sin2_W_pred:.10f}")
     print(f"  Experimental      = 0.23122")
     print(f"  Relative error    = {rel_err:.6f} %")
 

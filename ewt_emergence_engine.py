@@ -48,9 +48,9 @@ M_W_CDFII         = 80.4335                   # W boson mass, CDF II 2022 [GeV]
 M_H_CODATA        = 125.25                    # Higgs mass [GeV]
 SIN2_THETA_W      = 0.23122                   # Weinberg angle sin^2(theta_W)
 SIN_THETA_C_PDG   = 0.2243                    # Cabibbo angle sin(theta_C)
-R_INF_CODATA     = 10973731.568157       # Rydberg constant [m^-1]
-A0_CODATA        = 5.29177210903e-11     # Bohr radius [m]
-LAMBDA_C_CODATA  = 2.42631023867e-12     # electron Compton wavelength [m]
+R_INF_CODATA      = 10973731.568157           # Rydberg constant [m^-1]
+A0_CODATA         = 5.29177210903e-11         # Bohr radius [m]
+LAMBDA_C_CODATA   = 2.42631023867e-12         # electron Compton wavelength [m]
 
 # Quark masses (MS-bar, PDG 2022) used in flavour mixing test
 M_D_PDG           = 0.004692                  # d-quark mass [GeV]
@@ -64,9 +64,10 @@ A_TAU_EXP         = 1.177210e-3            # tau AMM from PDG
 # as DERIVED once the geometric origin of q_P is explicitly shown.
 Q_P_INPUT         = 1.87554603778e-18         # Planck charge as length [m]
 # Fundamental EMC spacing (Planck length) [m]
-LAMBDA_L = 1.6162e-35
-# Elementary charge (CODATA 2022) — empirical anchor of the amplitude scale
-E_CHARGE_CODATA = 1.602176634e-19
+LAMBDA_L          = 1.6162e-35
+# Elementary charge (CODATA 2022) -- empirical anchor of the amplitude scale
+E_CHARGE_CODATA   = 1.602176634e-19
+
 # -----------------------------------------------------------------------------
 # 1.3 PURE BCC LATTICE GEOMETRY
 # -----------------------------------------------------------------------------
@@ -99,10 +100,10 @@ STATUS = {
 # The alpha core emerges from three geometric postulates:
 #   P1: charge = amplitude (x)
 #   P2: emission surface = sphere + cone
-#   P3: natural length ratios r = x, l = πx
+#   P3: natural length ratios r = x, l = pi*x
 #
 # These postulates lead directly to the geometric ratio:
-#   α_core^{-1} = S_total / x² = 4π³ + π² + π
+#   alpha_core^{-1} = S_total / x^2 = 4*pi^3 + pi^2 + pi
 # =============================================================================
 
 def compute_emission_surface(x: float) -> dict:
@@ -119,11 +120,11 @@ def compute_emission_surface(x: float) -> dict:
     -------
     dict with:
         r         : base radius of the cone (equals x)
-        l         : propagation distance (equals πx)
+        l         : propagation distance (equals pi*x)
         S_sphere  : surface area of the spherical part
         S_cone    : total surface area of the conical part
         S_total   : total emission surface
-        A_pi      : alpha core inverse = S_total / x²
+        A_pi      : alpha core inverse = S_total / x^2
     """
     r = x
     l = PI * x
@@ -151,12 +152,12 @@ def compute_alpha_core() -> float:
     Returns
     -------
     float
-        A_pi = 4π³ + π² + π
+        A_pi = 4*pi^3 + pi^2 + pi
     """
     return compute_emission_surface(1.0)["A_pi"]
 
 # =============================================================================
-# SECTION 2: GEOMETRIC LADDER EMERGENCE
+# SECTION 2B: GEOMETRIC LADDER EMERGENCE
 # -----------------------------------------------------------------------------
 # The geometric ladder is not an input. It is derived from the active
 # degrees of freedom of a soliton embedded in the BCC vacuum lattice.
@@ -186,9 +187,9 @@ def build_geometric_ladder(eps_M: float, source_label: str = "") -> dict:
         eps_M     : magnetic deficit (input)
         source    : source label
         C_local   : local coupling
-        C_gap     : volumetric operator (π⁶)
-        C_fermion : surface operator (π⁵)
-        ladder    : dictionary {3: π³, ..., 7: π⁷}
+        C_gap     : volumetric operator (pi^6)
+        C_fermion : surface operator (pi^5)
+        ladder    : dictionary {3: pi^3, ..., 7: pi^7}
     """
     C_local = eps_M / (2.0 * SQRT2)
 
@@ -211,7 +212,7 @@ def report_ladder(lad: dict) -> None:
     print(f"  C_fermion  : {lad['C_fermion']:.15f}")
     print("  Ladder:")
     for n in sorted(lad["ladder"]):
-        print(f"    π^{n} = {lad['ladder'][n]:.15f}")
+        print(f"    pi^{n} = {lad['ladder'][n]:.15f}")
 
 # =============================================================================
 # SECTION 3: BCC-DERIVED LATTICE IMPEDANCE
@@ -230,7 +231,7 @@ def lattice_impedance(N: float, eta: float = BCC_PACKING_FRACTION) -> float:
     Parameters
     ----------
     N : float
-        Geometric stiffness modulus (e.g. 8π⁴, 8π⁷).
+        Geometric stiffness modulus (e.g. 8*pi^4, 8*pi^7).
     eta : float
         Packing fraction of the BCC lattice.
 
@@ -250,7 +251,7 @@ def derive_eps_M_from_BCC(N_input: float = 8.0 * PI**4) -> dict:
     ----------
     N_input : float
         Ideal geometric stiffness to use as base.
-        Default is 8π⁴ (BCC saturation stiffness).
+        Default is 8*pi^4 (BCC saturation stiffness).
 
     Returns
     -------
@@ -262,7 +263,7 @@ def derive_eps_M_from_BCC(N_input: float = 8.0 * PI**4) -> dict:
         eps_M    : magnetic deficit derived from BCC geometry
     """
     eta = BCC_PACKING_FRACTION
-    zeta = lattice_impedance(N_input, eta) # zeta for stiffness only
+    zeta = lattice_impedance(N_input, eta)
     N_geom = N_input * (1.0 - zeta)
     eps_M = 1.0 / (N_geom * PI**3)
 
@@ -283,19 +284,19 @@ def derive_eps_M_from_BCC(N_input: float = 8.0 * PI**4) -> dict:
 
 def weinberg_sector(C_gap: float, M_Z: float, sin2_W: float) -> dict:
     """
-    Compute the W boson mass from the Weinberg angle using the π⁶ operator.
+    Compute the W boson mass from the Weinberg angle using the pi^6 operator.
 
     Formula:
-        M_W = M_Z * sqrt( (1 - sin²θ_W) * C_gap )
+        M_W = M_Z * sqrt( (1 - sin^2(theta_W)) * C_gap )
 
     Parameters
     ----------
     C_gap : float
-        Volumetric lattice operator from the π⁶ rung.
+        Volumetric lattice operator from the pi^6 rung.
     M_Z : float
         Experimental Z boson mass [GeV].
     sin2_W : float
-        Experimental Weinberg angle sin²θ_W.
+        Experimental Weinberg angle sin^2(theta_W).
 
     Returns
     -------
@@ -318,15 +319,15 @@ def weinberg_sector(C_gap: float, M_Z: float, sin2_W: float) -> dict:
 
 def cabibbo_sector(C_fermion: float, M_d: float, M_s: float) -> dict:
     """
-    Compute the Cabibbo angle from quark masses using the π⁵ operator.
+    Compute the Cabibbo angle from quark masses using the pi^5 operator.
 
     Formula:
-        sin θ_C = sqrt( M_d / M_s ) * C_fermion
+        sin(theta_C) = sqrt( M_d / M_s ) * C_fermion
 
     Parameters
     ----------
     C_fermion : float
-        Surface lattice operator from the π⁵ rung.
+        Surface lattice operator from the pi^5 rung.
     M_d : float
         Down quark mass [GeV].
     M_s : float
@@ -369,11 +370,11 @@ def run_sector_tests(lad: dict) -> None:
 # The alpha core is a purely geometric object emerging from three postulates:
 #   P1: charge = amplitude
 #   P2: cone--sphere emission geometry
-#   P3: natural length ratios (r = x, l = πx)
+#   P3: natural length ratios (r = x, l = pi*x)
 #
 # This section contains only two pure functions:
-#   compute_alpha_core()  → A_pi
-#   compute_alpha_geometric(eps_M) → full geometric inverse alpha
+#   compute_alpha_core()  -> A_pi
+#   compute_alpha_geometric(eps_M) -> full geometric inverse alpha
 # =============================================================================
 
 def compute_alpha_core() -> float:
@@ -384,14 +385,13 @@ def compute_alpha_core() -> float:
     The derivation uses three geometric postulates:
       P1: charge = amplitude (x)
       P2: emission surface = sphere + cone
-      P3: natural length ratios: r = x, l = πx
+      P3: natural length ratios: r = x, l = pi*x
 
     Returns
     -------
     float
-        A_pi = S_total / x² = 4π³ + π² + π
+        A_pi = S_total / x^2 = 4*pi^3 + pi^2 + pi
     """
-    # Use unit amplitude; the final ratio is independent of x.
     x = 1.0
     r = x
     l = PI * x
@@ -410,7 +410,7 @@ def compute_alpha_geometric(eps_M: float) -> float:
     Compute the full geometric inverse fine-structure constant.
 
     Formula:
-        α^{-1} = A_pi - eps_M
+        alpha^{-1} = A_pi - eps_M
 
     Parameters
     ----------
@@ -524,8 +524,8 @@ def derive_neutrino_radius(alpha_geom: float, q_P: float) -> dict:
     Derive the neutrino radius r_nu from the geometric fixed point of g_v.
 
     The derivation uses the self-consistent equation:
-        K_tot = alpha_geom_inv/(8+pi) + e + (1-g_v)*(sqrt2-1)
-        K_tot = 2 e^2 / g_v
+        S_tot = alpha_geom_inv/(8+pi) + e + (1-g_v)*(sqrt2-1)
+        S_tot = 2 e^2 / g_v
     which leads to a quadratic equation for g_v.
 
     Parameters
@@ -539,23 +539,20 @@ def derive_neutrino_radius(alpha_geom: float, q_P: float) -> dict:
     -------
     dict with:
         alpha_inv_geom : geometric inverse alpha
-        K_proj         : static lattice projection
-        K_exp          : dynamic wave expansion (e)
+        S_proj         : static lattice projection
+        S_exp          : dynamic wave expansion (e)
         delta_imp      : lattice impedance term
         gv_pred        : geometric fixed point for g_v
-        K_tot          : total scaling factor
+        S_tot          : total scaling factor
         r_nu           : neutrino radius [m]
     """
     alpha_inv_geom = 1.0 / alpha_geom
 
-    # Components
-    K_proj = alpha_inv_geom / (BCC_NEIGHBOURS + PI)
-    K_exp = EULER
+    S_proj = alpha_inv_geom / (BCC_NEIGHBOURS + PI)
+    S_exp = EULER
 
-    # Quadratic equation for g_v:
-    # a g_v^2 + b g_v + c = 0
     a_coef = SQRT2 - 1.0
-    b_coef = -(K_proj + EULER + SQRT2 - 1.0)
+    b_coef = -(S_proj + EULER + SQRT2 - 1.0)
     c_coef = 2.0 * EULER**2
 
     discriminant = b_coef**2 - 4.0 * a_coef * c_coef
@@ -566,7 +563,6 @@ def derive_neutrino_radius(alpha_geom: float, q_P: float) -> dict:
     root1 = (-b_coef + sqrt_disc) / (2.0 * a_coef)
     root2 = (-b_coef - sqrt_disc) / (2.0 * a_coef)
 
-    # Select physical root: 0 < g_v < 1
     if 0.0 < root1 < 1.0:
         gv_pred = root1
     elif 0.0 < root2 < 1.0:
@@ -575,16 +571,16 @@ def derive_neutrino_radius(alpha_geom: float, q_P: float) -> dict:
         raise ValueError("No physical root for g_v in (0,1)")
 
     delta_imp = (1.0 - gv_pred) * (SQRT2 - 1.0)
-    K_tot = K_proj + K_exp + delta_imp
-    r_nu = q_P * K_tot
+    S_tot = S_proj + S_exp + delta_imp
+    r_nu = q_P * S_tot
 
     return {
         "alpha_inv_geom": alpha_inv_geom,
-        "K_proj": K_proj,
-        "K_exp": K_exp,
+        "S_proj": S_proj,
+        "S_exp": S_exp,
         "delta_imp": delta_imp,
         "gv_pred": gv_pred,
-        "K_tot": K_tot,
+        "S_tot": S_tot,
         "r_nu": r_nu,
     }
 
@@ -779,23 +775,13 @@ def gravity_sector(
         G_EWT         : predicted gravitational constant
         rel_err       : relative error vs CODATA
     """
-    # Base soliton scaling
     G_Base = (c0**2 * r_e) / m_e
-
-    # Core geometric factor
     A_pi = compute_alpha_core()
-
-    # Unified coupling and dilution factors
     C_Unif = compute_C_unif(alpha_geom, L_p_geom, K_WC)
     X_eff = compute_X_eff(alpha_geom, L_p_geom, K_WC)
-
-    # Statutory background density from Eulerian dilution
     N_nu_statutory = (r_nu / (2.0 * lambda_l * EULER)) ** 3
-
-    # Effective volume deficit
     N_nu_eff = N_nu_statutory / X_eff
 
-    # Gravitational constant from geometry
     G_EWT = (
         (G_Base / A_pi)
         * (1.0 / (N_geom * A_pi)) ** 3
@@ -851,7 +837,6 @@ def rigidity_test(
     print("RIGIDITY TEST")
     print("=" * 78)
 
-    # --- 1. Perturb N_geom ---
     print("\n[1] Vary N_geom")
     print("-" * 78)
     print(f"{'N_geom':>12} {'alpha_inv':>14} {'lambda_l [m]':>16} {'G_EWT [m^3/kg/s^2]':>22} {'G_err %':>10}")
@@ -887,7 +872,6 @@ def rigidity_test(
             f"{res['G_EWT']:22.15e} {res['rel_err']:10.6f}"
         )
 
-    # --- 2. Perturb L_p ---
     print("\n[2] Vary L_p_geom")
     print("-" * 78)
     print(f"{'L_p':>10} {'alpha_inv':>14} {'lambda_l [m]':>16} {'G_EWT [m^3/kg/s^2]':>22} {'G_err %':>10}")
@@ -920,7 +904,6 @@ def rigidity_test(
             f"{res['G_EWT']:22.15e} {res['rel_err']:10.6f}"
         )
 
-    # --- 3. Perturb lambda_l directly ---
     print("\n[3] Vary lambda_l directly")
     print("-" * 78)
     print(f"{'lambda_l [m]':>16} {'G_EWT [m^3/kg/s^2]':>22} {'G_err %':>10}")
@@ -952,7 +935,6 @@ def input_rigidity_test(base_alpha_geom, base_r_nu, base_N_geom, base_Lp):
         r_e_test = R_E * factor
         m_e_test = M_E * factor
 
-        # alpha_geom and N_geom unchanged
         lambda_test = derive_lambda_l_geometric(
             alpha_geom=base_alpha_geom,
             r_e=r_e_test,
@@ -981,15 +963,6 @@ def input_rigidity_test(base_alpha_geom, base_r_nu, base_N_geom, base_Lp):
 
 # =============================================================================
 # SECTION 8: LEPTON ANOMALOUS MAGNETIC MOMENTS (AMM)
-# -----------------------------------------------------------------------------
-# This section computes the electron, muon, and tau anomalous magnetic
-# moments using the same geometric alpha and magnetic deficit that
-# already emerged from the BCC lattice.
-#
-# The algorithm follows the recursive "onion" model:
-#   a_e = (alpha_geom / 2π) * (1 - eps_M * π³)
-#   a_mu = a_e + shell correction (2D projection O_mu)
-#   a_tau = a_mu_shell_total + a_tau_raw + interface tension (3D)
 # =============================================================================
 
 def get_AMMi_K(n: int) -> int:
@@ -997,7 +970,7 @@ def get_AMMi_K(n: int) -> int:
     Recursive nodal count for the lepton generations.
 
     K_1 = 10
-    K_n = K_{n-1} + round(10^(n-1) * 2π²)
+    K_n = K_{n-1} + round(10^(n-1) * 2*pi^2)
 
     Parameters
     ----------
@@ -1025,35 +998,11 @@ def compute_lepton_amms(
 ) -> dict:
     """
     Compute the full anomalous magnetic moments for the lepton family.
-
-    Parameters
-    ----------
-    alpha_geom : float
-        Geometric fine-structure constant.
-    eps_M : float
-        Magnetic deficit from BCC geometry.
-    L_mu_dim : int
-        Fibonacci latch for the muon shell.
-    L_tau_dim : int
-        Fibonacci latch for the tau shell.
-    K_WC_e : int
-        Number of wave centres in the electron core.
-
-    Returns
-    -------
-    dict with:
-        a_e_ppm     : full electron AMM [ppm]
-        a_mu_ppm    : full muon AMM [ppm]
-        a_tau_ppm   : full tau AMM [ppm]
-        a_mu_shell_ppm  : internal muon shell contribution [ppm]
-        a_tau_shell_ppm : internal tau shell total contribution [ppm]
     """
     A_pi = compute_alpha_core()
 
-    # --- Electron ---
     a_e_ppm = (alpha_geom / (2.0 * PI)) * (1.0 - eps_M * (PI**3)) * 1e6
 
-    # --- Muon ---
     K_e = K_WC_e
     K_mu_total = get_AMMi_K(2)
     K_mu_delta = K_mu_total - K_e
@@ -1062,23 +1011,18 @@ def compute_lepton_amms(
     B_mu_scale = (3.0 * A_pi * PI**3) / (2.0 * L_mu_dim**2)
     a_mu_shell_ppm = B_mu_scale * (1.0 - eps_M) ** (M_mu_shell * PI**3)
 
-    # Projection operator for 2D -> 1D observable
     O_mu = 1.0 / (4.0 * PI**2)
-
     a_mu_shell_correction = a_mu_shell_ppm * O_mu
     a_mu_ppm = a_e_ppm + a_mu_shell_correction
 
-    # --- Tau ---
     K_tau_total = get_AMMi_K(3)
     M_tau_rel = K_tau_total / K_e
 
     B_tau_base = ((3.0 * A_pi * PI**3) / (8.0 * SQRT2)) + (A_pi / 2.0)
     a_tau_shell_raw_ppm = B_tau_base * (1.0 - eps_M) ** (M_tau_rel * PI**3)
 
-    # Recursive accumulation with interface tension L_mu^2
     a_tau_shell_total_ppm = a_mu_shell_ppm + a_tau_shell_raw_ppm + L_mu_dim**2
 
-    # Projection operator for tau is unity (3D resonance)
     O_tau = 1.0
     a_tau_ppm = a_e_ppm + O_tau * (a_tau_shell_total_ppm - a_e_ppm)
 
@@ -1108,10 +1052,6 @@ def amm_rigidity_test(
 ) -> None:
     """
     Test the rigidity of the lepton AMM sector against changes in eps_M.
-
-    The geometric alpha and eps_M are linked, so perturbing eps_M alters
-    alpha_geom and therefore all AMM predictions. This test demonstrates
-    that there is no free parameter in the AMM sector.
     """
     print("\n" + "=" * 78)
     print("AMM RIGIDITY TEST (vary eps_M)")
@@ -1137,7 +1077,7 @@ def amm_rigidity_test(
         )
 
     print("-" * 78)
-    print(f"Reference experimental:")
+    print("Reference experimental:")
     print(f"  a_e   : {A_E_CODATA*1e6:.6f} ppm")
     print(f"  a_mu  : {A_MU_EXP*1e6:.6f} ppm")
     print(f"  a_tau : {A_TAU_EXP*1e6:.6f} ppm")
@@ -1145,29 +1085,11 @@ def amm_rigidity_test(
 
 # =============================================================================
 # SECTION 9: ATOMIC SCALES FROM PURE GEOMETRY
-# -----------------------------------------------------------------------------
-# The Rydberg constant, Bohr radius, and electron Compton wavelength
-# are derived from the geometric fine-structure constant and the
-# geometric electron radius r_e = 100 * r_nu.
 # =============================================================================
 
 def compute_atomic_scales(alpha_geom: float, r_e_geom: float) -> dict:
     """
     Compute atomic scales from geometric alpha and geometric electron radius.
-
-    Parameters
-    ----------
-    alpha_geom : float
-        Geometric fine-structure constant.
-    r_e_geom : float
-        Geometric electron radius [m] (usually 100 * r_nu).
-
-    Returns
-    -------
-    dict with:
-        R_inf : Rydberg constant [m^-1]
-        a0    : Bohr radius [m]
-        lambda_C : electron Compton wavelength [m]
     """
     R_inf = (alpha_geom**3) / (4.0 * PI * r_e_geom)
     a0 = r_e_geom / (alpha_geom**2)
@@ -1196,17 +1118,11 @@ def report_atomic_scales(res: dict) -> None:
     print(f"    rel_error     : {abs(res['lambda_C'] - LAMBDA_C_CODATA)/LAMBDA_C_CODATA*100:.6f} %")
 
 def main():
-    print("ENHANCED EWT — EMERGENCE ENGINE (PROTOTYPE)")
+    print("ENHANCED EWT - EMERGENCE ENGINE (PROTOTYPE)")
 
-    # -------------------------------------------------------------------------
-    # Alpha core (pure geometry)
-    # -------------------------------------------------------------------------
     A_pi = compute_alpha_core()
-    print(f"\nAlpha core A_pi = 4π³ + π² + π = {A_pi:.15f}")
+    print(f"\nAlpha core A_pi = 4*pi^3 + pi^2 + pi = {A_pi:.15f}")
 
-    # -------------------------------------------------------------------------
-    # Pure BCC geometry with lattice impedance
-    # -------------------------------------------------------------------------
     bcc_derived = derive_eps_M_from_BCC(8.0 * PI**4)
     eps_M_bcc = bcc_derived["eps_M"]
 
@@ -1217,9 +1133,6 @@ def main():
     print(f"  N_geom   = {bcc_derived['N_geom']:.10f}")
     print(f"  eps_M    = {bcc_derived['eps_M']:.15e}")
 
-    # -------------------------------------------------------------------------
-    # Geometric alpha
-    # -------------------------------------------------------------------------
     alpha_inv_bcc = compute_alpha_geometric(eps_M_bcc)
     alpha_geom = 1.0 / alpha_inv_bcc
 
@@ -1229,21 +1142,12 @@ def main():
     print(f"  Pure BCC geometry  : pred = {res_alpha_bcc['alpha_inv_pred']:.12f} | rel_err = {res_alpha_bcc['rel_err']:.6f} %")
     print(f"  CODATA 2022        : {ALPHA_INV_CODATA:.12f}")
 
-    # -------------------------------------------------------------------------
-    # Neutrino anchor
-    # -------------------------------------------------------------------------
-    # hbar from geometric alpha and electron data (SI units)
     hbar_geom = derive_hbar(alpha_geom, R_E, M_E, C0)
-
-    # q_P is currently an explicit INPUT (future derivation from BCC)
     q_P_geom = derive_planck_charge_from_e(alpha_geom, E_CHARGE_CODATA)
 
     print(f"Derived q_P         : {q_P_geom:.15e}")
     print(f"Reference Q_P_INPUT : {Q_P_INPUT:.15e}")
 
-    # -------------------------------------------------------------------------
-    # Geometric ratio q_P / e  (pure prediction from alpha_geom)
-    # -------------------------------------------------------------------------
     ratio_qP_e_derived = q_P_geom / E_CHARGE_CODATA
     ratio_qP_e_expected = 1.0 / math.sqrt(alpha_geom)
 
@@ -1252,7 +1156,6 @@ def main():
     print(f"  expected 1/sqrt(alpha_geom) = {ratio_qP_e_expected:.10f}")
     print(f"  difference              = {abs(ratio_qP_e_derived - ratio_qP_e_expected):.6e}")
 
-    
     lambda_unc = derive_lambda_uncorr(q_P_geom)
 
     print(f"\nDerived hbar        : {hbar_geom:.15e}")
@@ -1268,8 +1171,7 @@ def main():
     print(f"Expected                : {res_nu['expected']}")
     print(f"Relative error         : {res_nu['rel_err']:.6f} %")
     print(f"K_implied (r^5)        : {res_nu['K_implied']:.12e}")
-    
-    # --- Derived lambda_l from geometry ---
+
     lambda_l_geom = derive_lambda_l_geometric(
         alpha_geom=alpha_geom,
         r_e=R_E,
@@ -1283,10 +1185,6 @@ def main():
     print(f"CODATA lambda_l            : {LAMBDA_L:.15e} m")
     print(f"Relative error             : {abs(lambda_l_geom - LAMBDA_L)/LAMBDA_L*100:.6f} %")
 
-    # -------------------------------------------------------------------------
-    # Gravity sector (pure BCC projection L_p = 2/sqrt(3))
-    # -------------------------------------------------------------------------
-    # --- Gravity sector with geometric lambda_l ---
     print("\n--- Gravity Sector (Geometric L_p, derived lambda_l) ---")
     gravity_res = gravity_sector(
         alpha_geom=alpha_geom,
@@ -1315,31 +1213,19 @@ def main():
         c0=C0,
     )
 
-    # -------------------------------------------------------------------------
-    # Build ladder and run sector tests
-    # -------------------------------------------------------------------------
     ladder_bcc = build_geometric_ladder(eps_M_bcc, "BCC packing derived")
 
     print(f"\n--- Geometric Ladder (Pure BCC) ---")
     report_ladder(ladder_bcc)
     run_sector_tests(ladder_bcc)
 
-
-    # -------------------------------------------------------------------------
-    # Lepton AMM sector
-    # -------------------------------------------------------------------------
     amm_results = compute_lepton_amms(alpha_geom, eps_M_bcc)
     report_lepton_amms(amm_results)
-    # AMM rigidity test
     amm_rigidity_test(alpha_geom, eps_M_bcc)
-    
-    # -------------------------------------------------------------------------
-    # Atomic scales
-    # -------------------------------------------------------------------------
+
     r_e_geom = 100.0 * nu_result["r_nu"]
     atomic_res = compute_atomic_scales(alpha_geom, r_e_geom)
     report_atomic_scales(atomic_res)
-
 
     print("\n" + "=" * 78)
     print("END OF TEST")
