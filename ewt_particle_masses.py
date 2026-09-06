@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+From manuscript version: 5.0.0
+
 Enhanced EWT -- Particle Mass Module
 ======================================
 Computes particle masses using the three EWT modes:

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+From manuscript version: 5.0.0
+
 Enhanced EWT -- AMM Resonance Scanner (Onion Model)
 =====================================================
 Python port of the Scilab AMM_find.sc script, adapted to the

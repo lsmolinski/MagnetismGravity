@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+From manuscript version: 5.0.0
+
 Enhanced EWT -- Extended Lepton AMM Module
 ============================================
 Provides the extended lepton anomalous magnetic moments with internal

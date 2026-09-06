@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+From manuscript version: 5.0.0
+
 Enhanced EWT -- Robustness & Stability Plot Suite
 ==================================================
 Python port of EWT_Robustness_G_AMM_check.sc (Modules 1-10),

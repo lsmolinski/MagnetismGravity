@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+From manuscript version: 5.0.0
+
 Enhanced EWT -- Electroweak and Heavy Boson Module
 ====================================================
 Extends the main emergence engine with:
