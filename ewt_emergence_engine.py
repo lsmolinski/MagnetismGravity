@@ -1,4 +1,4 @@
-﻿# From manuscript version: 5.0.0
+﻿# From manuscript version: 5.0.1
 # =============================================================================
 # SECTION 1: GLOBAL INPUTS & CONSTANTS
 # -----------------------------------------------------------------------------
@@ -58,7 +58,7 @@ M_D_PDG           = 0.004692                  # d-quark mass [GeV]
 M_S_PDG           = 0.094954                  # s-quark mass [GeV]
 
 A_MU_EXP          = 1.1659206100e-3        # muon AMM from Fermilab/Brookhaven
-A_TAU_EXP         = 1.177210e-3            # tau AMM from PDG
+A_TAU_EXP         = 1.177210e-3            #  # tau AMM: Standard Model prediction, not direct measuremen
 
 # Fundamental length scale (Planck charge interpreted as geometric amplitude)
 # This is currently treated as an INPUT, but will later be reclassified

@@ -72,7 +72,7 @@
 
 \begin{center}
 \today \\
-Version: 5.0.0	
+Version: 5.0.1	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -963,6 +963,82 @@ and the geometric fine-structure constant \(\alpha_{\text{geom}}\), Eq.~\eqref{e
 	1.0545738 \times 10^{-34}\ \text{kg}\,\text{m}^{2}\,\text{s}^{-1},
 \end{equation}
 in agreement with the CODATA value at the level of the underlying experimental inputs. No new free parameter is introduced.
+
+\section{The Physical Origin of Charge as Wave Amplitude}
+\label{sec:coulomb_derived_unit}
+
+The identification of charge with wave amplitude is a foundational
+postulate of Energy Wave Theory, established in the primary EWT
+literature \cite{yee2019masscharge}. The present section makes the
+dimensional reduction explicit, in the same way that the kilogram was
+reduced to a geometric unit in Section~\ref{sec:mass_geometric_status}.
+
+\subsection{Charge as Spatial Wave Amplitude}
+\label{sec:charge_as_amplitude}
+
+In EWT, the elementary charge $e$ of a single electron represents the physical
+wave displacement amplitude of the lattice constituents at the first wavelength.
+Because displacement in a spatial lattice is fundamentally a geometric length,
+charge carries the dimension of length ($[Q] = [L]$).
+
+In the International System of Units (SI), where the fundamental unit of spatial
+length is the metre, the elementary charge amplitude is given by:
+\begin{equation}
+	e_{\text{geom}} = 1.602176634 \times 10^{-19}\ \text{m}.
+\end{equation}
+This is a direct dimensional mapping: the numerical value of the CODATA elementary
+charge is preserved, while the dimension changes from coulombs ($\text{C}$) to metres ($\text{m}$).
+
+\subsection{Conversion of the Coulomb and Distinction from CGS}
+\label{sec:coulomb_conversion}
+
+From the definition $1\ \text{C} = 1\ \text{A}\,\text{s}$ and the geometric
+representation of charge as amplitude ($\text{m}$), the coulomb is recognized
+as a derived unit of spatial displacement:
+\begin{equation}
+	e_{\text{SI}} = 1.602176634 \times 10^{-19}\ \text{C}
+	\quad \Longleftrightarrow \quad
+	e_{\text{geom}} = 1.602176634 \times 10^{-19}\ \text{m}.
+\end{equation}
+
+\begin{center}
+	\fbox{
+		\begin{minipage}{0.85\textwidth}
+			\centering
+			\vspace{5pt}
+			\small \textbf{Resolution of the CGS / Statcoulomb Ambiguity:} \\
+			\vspace{3pt}
+			It is crucial to emphasize that $e_{\text{geom}}$ is a spatial displacement ($[L]$),
+			not a force-derived quantity. In Gaussian CGS units, the statcoulomb is defined via
+			Coulomb's Law as $\text{g}^{1/2}\,\text{cm}^{3/2}\,\text{s}^{-1}$, which assigns
+			charge a composite mechanical dimension rather than a pure spatial length.
+			
+			Transforming $e_{\text{geom}}$ to CGS spatial units simply corresponds to expressing
+			the displacement in centimetres ($1.602176634 \times 10^{-17}\ \text{cm}$), rather
+			than substituting the numerical value of the statcoulomb ($4.8032 \times 10^{-10}$).
+			The numerical equality $1\ \text{C} \to 1\ \text{m}$ is anchored specifically to the
+			SI convention, where spatial displacement is measured in metres.
+			\vspace{5pt}
+		\end{minipage}
+	}
+\end{center}
+
+\subsection{Consequence for the Planck Charge $q_P$}
+\label{sec:qP_consequence}
+
+The Planck charge in EWT represents the maximum fundamental geometric amplitude
+of the BCC lattice:
+\begin{equation}
+	q_P = \frac{e_{\text{geom}}}{\sqrt{\alpha_{\text{geom}}}}.
+\end{equation}
+Evaluating this relation with $e_{\text{geom}} = 1.602176634 \times 10^{-19}\ \text{m}$ yields:
+\begin{equation}
+	q_P = 1.8755478 \times 10^{-18}\ \text{m}.
+\end{equation}
+The resulting quantity $q_P$ is therefore an absolute spatial length of the lattice.
+The zero-calibration derivation of the statutory neutrino radius $r_\nu = q_P \cdot S_{\text{tot}}$
+is a purely geometric relation mapping this amplitude scale to the lattice step.
+
 
 \section{Geometric Deficit and Density Hierarchy of the Neutrino}
 \label{sec:source_grav_epsg}
@@ -2621,6 +2697,7 @@ base units to a single geometric primitive (the BCC lattice
 spacing $\lambda_l$) is the dimensional expression of the
 claim that EWT is a parameter‑free geometric theory of matter.
 
+
 \subsection{Geometric Dimension of the Reduced Planck and G Constants}
 \label{sec:hbar_geometric_dimension}
 
@@ -2735,6 +2812,7 @@ The anomalous magnetic moment of the electron ($a_e$) is derived as the product 
 \end{equation}
 
 Numerical verification, using the geometric \(\alpha_{\text{geom}}\) and \(\epsilon_M\) from the BCC lattice, yields \(a_{\text{Base}}^{\text{Geometric}} \approx 1159.916228\ \text{ppm}\). This result aligns with the experimental value of the electron (\(a_e^{\text{exp}} \approx 1159.652182\ \text{ppm}\)) with a relative error of approximately \(0.02277\%\), establishing the electron as the fundamental geometric ground state.
+
 
 \section{The Recursive Lepton Hierarchy: Nodal Shell Resonance Model}
 \label{sec:recursive_prediction}
@@ -5108,7 +5186,7 @@ The EWT model yields several precise, quantitative predictions that follow direc
 		\bottomrule
 	\end{tabularx}
 	\begin{flushleft}
-		\small \textit{Note: Values for \(a_e\), \(a_\mu\), and \(a_\tau\) are full anomalous magnetic moments. All predictions are obtained from the geometric Python implementation described in the Appendix.}
+		\small \textit{Note: Values for \(a_e\), \(a_\mu\), and \(a_\tau\) are full anomalous magnetic moments. All predictions are obtained from the geometric Python implementation described in the Appendix. Error for \(a_\tau\) is compered with SM prediction.}
 	\end{flushleft}
 \end{table}
 
@@ -5223,13 +5301,16 @@ The following outcomes represent critical tests that can either **falsify the co
 	\item \textbf{Falsification of Dynamic Coupling ($G(B)$):} The observation of a null effect, i.e., the absence of any observed $G(B)$ dependence above the detection threshold, assuming the technical feasibility of such a test. This outcome would support \textbf{Hypothesis 3 (No Influence)} and refute the core idea of magneto-geometric coupling.
 	\item \textbf{Falsification of Correlations:} The absence of statistical correlations between fluctuations in $G$ and external factors (neutrino flux, magnetic fields) within the range predicted by the model (ref. Section \ref{sec:neutrino_correlations_pp}).
 \item \textbf{Falsification of Full Lepton AMM Predictions ($a_e$, $a_{\mu}$, $a_{\tau}$):} 
-Future high-precision measurements of the electron, muon, and tau anomalous 
+Future high-precision measurements of the electron, and muon, anomalous 
 magnetic moments that deviate significantly from the full AMM predictions 
 $a_e^{\text{EWT}} = 1.159916 \times 10^{-3}$, 
 $a_{\mu}^{\text{EWT}} = 1.166213 \times 10^{-3}$, and 
 $a_{\tau}^{\text{EWT}} = 1.176838 \times 10^{-3}$ 
 (Table~\ref{tab:final_results_confirmed}) would falsify the model in its 
-present formulation. The projection rules underlying these predictions are 
+present formulation. For the tau, the current reference value is the Standard Model prediction
+\(a_{\tau}^{\text{SM}} = 1.177210 \times 10^{-3}\), not a direct measurement.
+Therefore the tau comparison is a consistency test against the SM prediction,
+not a direct experimental falsification. The projection rules underlying these predictions are 
 completely determined by the dimensional hierarchy of the Geometric Ladder: 
 $\mathcal{O}_e = 1$ (3D core), $\mathcal{O}_\mu = 1/(4\pi^2)$ (2D planar 
 shell), and $\mathcal{O}_\tau = 1$ (3D volumetric shell). A significant 
