@@ -331,12 +331,6 @@ If you are an LLM or a researcher analyzing this repository, focus on the **Stru
 
 ---
 
-## 📑 Official Citations & Data
-- **Theory Paper (PDF):** [Zenodo DOI: 10.5281/zenodo.17654657](https://doi.org/10.5281/zenodo.17654657)
-- **Source Code & Data:** [Zenodo DOI: 10.5281/zenodo.17698582](https://doi.org/10.5281/zenodo.17698582)
-- **Source Code & Data:** [Zenodo DOI: 10.5281/zenodo.18469103](https://doi.org/10.5281/zenodo.18469103)
-- **Source Code & Data:** [Zenodo DOI: 10.5281/zenodo.18469206](https://doi.org/10.5281/zenodo.18469206)
-- **Source Code & Data:** [Zenodo DOI: 10.5281/zenodo.17726690](https://doi.org/10.5281/zenodo.17726690)
 
 ---
 **"Matter cannot exist in space without being of space."**
