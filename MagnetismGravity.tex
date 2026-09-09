@@ -1111,7 +1111,7 @@ The lattice is characterised by two fundamental geometric scales:
 		\lambda_{\text{uncorr}} = 2 q_P e^2,
 		\label{eq:lambda_uncorr}
 	\end{equation}
-	which, after the geometric correction \(g_v\), yields the statutory radius \(r_\nu = \lambda_{\text{uncorr}} / g_v\) (see Sec.~\ref{sec:nu_radius_geometry}). The spatial step \(\lambda_l\) is thus a derived property of the BCC lattice, not an independent input.
+	which, after the geometric correction \(g_v\), yields the statutory radius \(r_\nu = \lambda_{\text{uncorr}} / g_v\). The spatial step \(\lambda_l\) is thus a derived property of the BCC lattice, not an independent input.
 	
 	\item \textbf{The temporal step:} the fundamental cycle time \(t_p\), which represents the characteristic oscillation period of an EMC in the lattice. In the spring-mass representation of the BCC medium, this period is determined by the effective elastic constant of the lattice and the Planck mass, both of which are themselves consequences of the lattice geometry (Sec.~\ref{sec:planck_paradigm}). The formal derivation of \(t_p\) from first principles is a natural direction for future research; for the present purposes, it suffices to note that \(t_p\) is a structural invariant of the lattice, defined by the discrete causal structure itself.
 \end{itemize}
@@ -2601,7 +2601,29 @@ The quintic relationship between energy and radius ($E \propto r^5$), as identif
 
 The product of these factors ($r^3 \times r^1 \times r^1 = r^5$) confirms that mass is a measure of "dynamic information density". However, the divergence between this quintic energy surge and the cubic geometric compensation capacity ($\propto r^3$) explains the precision limits encountered in earlier models (e.g., the 10-16\% error for the muon and tau in \cite{yee2014leptons}). 
 
-The EWT expansion presented in this work resolves these discrepancies through the \textbf{Onion Model} described in \ref{sec:onion_analysis}. By identifying the $r^5/r^3$ disparity as a saturation point, it is shown that the vacuum must redistribute excess potential into recursive, nested geometric shells.
+The three contributions combine into two scaling laws that are the formal
+basis of the Onion Model. The first is the energy--radius identity,
+
+\begin{equation}
+	\boxed{ E \propto r^5 }
+	\label{eq:energy_scaling_boxed}
+\end{equation}
+
+which follows directly from the product of the three factors above and is
+identical to the mass-to-radius relation in
+Eq.~\eqref{eq:mass_to_radius_id}. The second is the volumetric capacity
+of the three-dimensional lattice,
+
+\begin{equation}
+	\boxed{ V \propto r^3 }
+	\label{eq:geometry_scaling_boxed}
+\end{equation}
+
+which expresses the geometric compensation available in real space as the
+soliton expands. The mismatch between the quintic energy surge, Eq.~\eqref{eq:energy_scaling_boxed},
+and the cubic geometric compensation, Eq.~\eqref{eq:geometry_scaling_boxed},
+is the source of the \(r^5/r^3 = r^2\) disparity that forces recursive shell
+formation in the Onion Model described in \ref{sec:onion_analysis}.
 
 \subsection{The Geometric Status of Mass: Kilogram as a Derived Unit}
 \label{sec:mass_geometric_status}
@@ -3096,7 +3118,7 @@ Consequently, the $B_{\mu}$ and $B_{\tau}$ operators establish a deterministic b
 A crucial discovery in the EWT recursive model is the role of $L_{\mu}^2 = 25$ as a stabilization constant. This value is added to the Tau prediction to represent the \textbf{interface tension} between the shells. Physically, this ensures that the Tau generation remains anchored to the pre-existing Muon foundation, maintaining topological continuity in the ``Onion Model''. Without this binding energy, the high-density Tau shell would lack the geometric leverage required to achieve the observed $0.031589\%$ experimental convergence. The same topological reasoning that mandates $L_{\mu}^2$ as the binding energy also determines the geometric budget available to the tauon shell: for instance, a closed surface of genus 1 (such as a torus) embedded within a 3D sphere divides the phase space into two topologically equivalent regions of equal measure — the interior and the exterior. Within the shell hierarchy, the muon core therefore occupies exactly half of the available phase space, effectively halving the geometric budget for the tauon shell. Consequently, the core area term scales as $A_{\pi} \to A_{\pi}/2$, a result that follows from topology rather than from empirical adjustment.
 
 \subsubsection*{The Geometric Necessity of Shell Formation}
-The emergence of the recursive "Onion Model" is not an arbitrary structural choice but a direct consequence of the scaling disparity established in Eq.~\ref{eq:energy_scaling_boxed} and Eq.~\ref{eq:geometry_scaling_boxed}. As the internal energy density $\rho_E$ surges with $r^5$ during nodal compression, the available three-dimensional volume scales only as $r^3$, imposing a fundamental capacity limit. The 3D spatial substrate cannot accommodate arbitrarily high energy densities without exceeding the elastic limits of the BCC lattice. To maintain stability, the system is forced to redistribute the excess energy into nested toroidal shells, each storing energy in additional angular degrees of freedom. Each subsequent generation (muon, tau) thus represents a new resonant layer that circumvents the strict $r^3$ volumetric bottleneck.
+The emergence of the recursive "Onion Model" is not an arbitrary structural choice but a direct consequence of the scaling disparity established in Eq.~\ref{eq:mass_to_radius_id} and Eq.~\ref{eq:geometry_scaling_boxed}. As the internal energy density $\rho_E$ surges with $r^5$ during nodal compression, the available three-dimensional volume scales only as $r^3$, imposing a fundamental capacity limit. The 3D spatial substrate cannot accommodate arbitrarily high energy densities without exceeding the elastic limits of the BCC lattice. To maintain stability, the system is forced to redistribute the excess energy into nested toroidal shells, each storing energy in additional angular degrees of freedom. Each subsequent generation (muon, tau) thus represents a new resonant layer that circumvents the strict $r^3$ volumetric bottleneck.
 
 \subsubsection*{The Geometric Stability of 3D Wave-Packing}
 
@@ -3715,8 +3737,6 @@ In the EWT framework, mass is an emergent property of wave center density ($K_{W
 
 \subsection{Implementation and Computational Results}
 
-To ensure transparency and reproducibility of the results, the script's content is presented in its entirety in Listing \ref{lst:scilab_script}, and the resulting output is shown in Listing \ref{lst:scilab_output}. 
-
 The results of this numerical reproduction are summarized in Table \ref{tab:mass_precision_comparison} and table \ref{tab:meson_mode_scan}. The high fidelity of the model—specifically the sub-0.01\% error margins for the Muon, Tau, and Higgs boson—validates the use of discrete wave center counts as a viable alternative to the Higgs mechanism.
 
 \begin{table}[ht]
@@ -3761,7 +3781,7 @@ This scaling law was previously validated for the electron, pion, kaon, and prot
 	K_{WC} = K_e \cdot \left(\frac{m_{\text{target}}}{m_e}\right)^{1/5}
 \end{equation}
 
-Particles whose exact $K$ falls within $|K_{WC} - \text{round}(K_{WC})| < 0.15$ of an integer are identified as \textbf{natural EWT resonances} --- states that align with discrete lattice wave-center counts without any parameter adjustment. The results are presented in Table~\ref{tab:meson_mode_scan}. the script's content is presented in its entirety in Listing \ref{lst:scilab_script}, and the resulting output is shown in Listing \ref{lst:scilab_output} in PART XIII.  
+Particles whose exact $K$ falls within $|K_{WC} - \text{round}(K_{WC})| < 0.15$ of an integer are identified as \textbf{natural EWT resonances} --- states that align with discrete lattice wave-center counts without any parameter adjustment. The results are presented in Table~\ref{tab:meson_mode_scan}.
 
 However, it is important to note that current mass-eigenvalue calculations assume an ideal geometric configuration, neglecting spin-induced radial compression. Consequently, observed minor variances in mass predictions  are attributed to this non-linear modulation of the soliton, where the intrinsic magnetic torque acts as an anisotropic deformation.
 
@@ -3844,7 +3864,7 @@ However, it is important to note that current mass-eigenvalue calculations assum
 \paragraph{The neutrino as a special case: sub‑threshold anchor}
 The neutrino is notably absent from Table~\ref{tab:meson_mode_scan}, because its exact wave‑center count $K_{\text{exact}}\approx 0.86$ lies well below the integer $K_{WC}=1$. 
 This does not indicate a failure of the EWT framework; rather, it delimits the domain of validity of the ${K_{WC}}^5$ meson‑mode scaling. 
-The neutrino is not a ${K_{WC}}^5$ volume resonance but a distinct topological object – the fundamental, torque‑free ground state of the BCC lattice (see Sec.~\ref{sec:nu_radius_geometry}). 
+The neutrino is not a ${K_{WC}}^5$ volume resonance but a distinct topological object – the fundamental, torque‑free ground state of the BCC lattice. 
 In the spherical mode ($K_{wc}=1$) its mass is reproduced to $0.39\%$ (Table~\ref{tab:mass_precision_comparison}), and its statutory radius $r_\nu$ serves as the geometric anchor for the entire particle hierarchy. 
 The $10^{10}$ factor between electron and neutrino energy densities, 
 $(r_e/r_\nu)^5 = 10^{10}$, follows from the same $r^5$ geometric scaling 
@@ -3987,7 +4007,7 @@ In summary, the $K_{WC}^5$ meson-mode scan reveals a coherent lattice structure 
 The analysis of particle radii is inextricably linked to the numerical precision of their mass-energy derivation. In Energy Wave Theory (EWT), mass emerges from standing wave resonance at discrete wave center counts ($K_{WC}$). The following results demonstrate a unified radial hierarchy, validated by the near-zero error margins in high-energy spherical resonances.
 
 \subsection{Numerical Foundation: Spherical Mode Accuracy}
-As established in the PARTs VIII, IX  on Listing \ref{lst:scilab_script}, the \textit{Spherical Mode}—governed by the $K^5$ scaling law—provides exceptional predictive accuracy for fundamental solitons. While lower $K_{WC}$ values correspond to the neutrino and electron, the high-order resonances for the Z and Higgs bosons exhibit a convergence with CODATA/PDG targets that justifies a geometric extrapolation:
+The \textit{Spherical Mode}— is governed by the $K^5$ scaling law—provides exceptional predictive accuracy for fundamental solitons. While lower $K_{WC}$ values correspond to the neutrino and electron, the high-order resonances for the Z and Higgs bosons exhibit a convergence with CODATA/PDG targets that justifies a geometric extrapolation:
 
 \begin{itemize}
 	\item \textbf{Z-Boson ($K_{WC}=110$):} Calculated mass of 91.731 GeV (0.6025\% error).
@@ -4513,10 +4533,7 @@ not a numerical distinction.
 
 The three spatial axes $r_x, r_y, r_z$ together constitute the 3D substrate 
 $\pi^3$, so the composite labels $\pi^{(3)}\pi^{(4)}\pi^{(5)} \equiv \pi^3$ 
-(3D volumetric occupancy). This identification is consistent with the 
-established role of $\pi^3$ in the modal density formula 
-(Section~\ref{sec:pi3}) and in the $\epsilon_M$ definition 
-(Eq.~\ref{eq:epsilon_M_fundamental}). These three degrees of freedom 
+(3D volumetric occupancy). These three degrees of freedom 
 determine not only the position of a single soliton but also the relative 
 distances and geometric arrangements between multiple solitons within the 
 BCC lattice, governing the configurational degrees of freedom that underlie 
