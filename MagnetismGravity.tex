@@ -1067,7 +1067,7 @@ The effective density inside the electron soliton is obtained from the statutory
 	N_{\nu,\text{eff}} = \frac{N_{\nu,\text{stat}}}{X_{\text{eff}}},
 	\label{eq:N_nu_effective}
 \end{equation}
-where \(X_{\text{eff}}\) is the geometric dilution factor defined in Section~\ref{sec:planck_from_geometry}.
+where \(X_{\text{eff}}\) is the geometric dilution factor defined in Section~\ref{sec:lambda_l_geom}.
 
 \subsection{Unified Geometric Coupling}
 \label{sec:unified_coupling}
@@ -1566,13 +1566,28 @@ the G implementation result showed in table \ref{tab:G_model_comparison}.
 
 The Planck length in EWT is identified with the fundamental EMC spacing \(\lambda_l\). In the zero-calibration formulation, \(\lambda_l\) is not taken from experiment; it follows from the geometric identity for the gravitational constant and the Planck-length definition.
 
-Let
+Before the effective dilution factor \(X_{\text{eff}}\) can be written down, the unified coupling operator \(C_{\text{unif}}\) that governs it must be derived. The operator bridges the raw geometric projection of the wave centres onto the BCC lattice with the electromagnetic response of the medium, and its three terms each have a distinct structural origin.
+
+\subsubsection*{The Fundamental Geometric Ratio: \(C_{\text{Raw}}\)}
+
+Prior to any electromagnetic coupling, the model identifies the pure interaction ratio between the soliton's wave centres and the background lattice. This factor,
 \begin{equation}
-	X_{\text{eff}}
-	=
-	\frac{A_\pi \, 3 \, K_{WC} \sqrt{2}}{C_{\text{unif}}},
+	C_{\text{Raw}} = 1 + \frac{1}{K_{WC}},
+	\label{eq:C_raw}
 \end{equation}
-where
+is the ``ideal'' geometric scaffold of the displacement. The term \(1/K_{WC}\) is the harmonic reciprocal of the \(K_{WC}=10\) wave centres; it normalises the global volume deficit to the individual node's displacement capacity. The additive \(+1\) is the statutory equilibrium of the medium, the unperturbed vacuum state that the correction is applied on top of. For \(K_{WC}=10\) this gives \(C_{\text{Raw}} = 1.1\), the baseline efficiency of the vacuum displacement before any elastic or fine-structure corrections.
+
+\subsubsection*{The Lattice Projection Factor \(L_p^{\text{geom}}\)}
+
+The natural geometric starting point for the interfacial correction is the ideal BCC projection factor
+\begin{equation}
+	L_p^{\text{geom}} = \frac{2}{\sqrt{3}} \approx 1.154700538,
+\end{equation}
+which arises as the inverse of the dimensionless nearest-neighbour distance (\(d_{NN}/a = \sqrt{3}/2\)) in the \(Im\bar{3}m\) lattice. Its combination \(\pi L_p^{\text{geom}} = 2\pi/\sqrt{3}\) is the dimensionless fundamental wavevector for a standing wave along the \([111]\) body diagonal, capturing the projection of the 3D lattice onto the 2D soliton interface.
+
+\subsubsection*{The Unified Bridge: \(C_{\text{unif}}\)}
+
+The full operator adds the electromagnetic coupling across the lattice interface:
 \begin{equation}
 	C_{\text{unif}}
 	=
@@ -1580,9 +1595,26 @@ where
 	+
 	1
 	+
-	\frac{\alpha_{\text{geom}}}{\pi L_p^{\text{geom}}},
+	\frac{\alpha_{\text{geom}}}{\pi L_p^{\text{geom}}}.
+	\label{eq:C_unif}
 \end{equation}
-and \(L_p^{\text{geom}} = 2/\sqrt{3}\). All quantities on the right-hand side are fixed by the BCC lattice geometry and the electron wave-centre count \(K_{WC}=10\).
+The three terms correspond to the three distinct contributions of the medium's response:
+
+\begin{itemize}
+	\item \textbf{Harmonic reciprocal \(1/K_{WC}\)}: the specific contribution of the \(K_{WC}=10\) wave centres, ensuring that the global deficit is normalised to the individual node's displacement capacity.
+	
+	\item \textbf{Unitary baseline \(+1\)}: the statutory equilibrium of the medium, the unperturbed vacuum state. It ensures the correction is additive to the existing background density \(N_{\nu,\text{stat}}\), maintaining continuity of the elastic field.
+	
+	\item \textbf{Interfacial tension bridge \(\alpha_{\text{geom}}/(\pi L_p^{\text{geom}})\)}: the electromagnetic strain coupled through the lattice projection factor and the geometric \(\pi\). This term scales the large-scale volumetric deficit down to the interfacial tension at the soliton boundary.
+\end{itemize}
+
+With \(C_{\text{unif}}\) established, the effective dilution factor follows directly:
+\begin{equation}
+	X_{\text{eff}}
+	=
+	\frac{A_\pi \, 3 \, K_{WC} \sqrt{2}}{C_{\text{unif}}},
+\end{equation}
+where \(A_\pi = 4\pi^3 + \pi^2 + \pi\) is the geometric core of the soliton. The numerator counts the active geometric budget of the soliton (the core geometry \(A_\pi\), the three spatial dimensions, the \(K_{WC}\) wave centres, and the \(\sqrt{2}\) face-diagonal coupling); the denominator \(C_{\text{unif}}\) is the structural impedance of the medium through which that budget is projected. The ratio is the geometric dilution of the statutory background density inside the soliton.
 
 The self-consistent derivation of \(\lambda_l\) starts from the Planck-length definition,
 \begin{equation}
