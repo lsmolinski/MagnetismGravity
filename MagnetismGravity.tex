@@ -72,7 +72,7 @@
 
 \begin{center}
 \today \\
-Version: 5.0.2	
+Version: 5.0.3	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -406,6 +406,19 @@ The derivation of the pure geometric constant $\mathbf{A}_{\pi}$ was first propo
 
 \paragraph{Kinematic Origin of the \(\pi\) Factor}
 The relation \(l = \pi x\) defines the propagation distance in terms of the source amplitude. It is not an arbitrary geometric choice but a consequence of the harmonic motion of the central EMC in an elastic medium with constant propagation speed \(c\). In one complete oscillation the central granule travels a total longitudinal displacement of \(2x\). During the same time interval, the disturbance emitted by this motion propagates outward at the lattice speed \(c\). Because the central granule follows a sinusoidal path, its corresponding longitudinal phase advance is exactly \(\pi x\), whereas the undisturbed wavefront travels the longer distance \(l = \pi x\). The factor \(\pi\) therefore enters through the kinematics of harmonic oscillation, not as a fitted parameter. This mechanical origin of \(l\) is what ultimately generates the characteristic powers \(\pi^{3}, \pi^{2}, \pi\) in the fine-structure geometry.
+
+\begin{quote}
+	\small
+	\textit{``In the time that it takes for the center granule to vibrate, traveling a distance (r), and then returning (total of \(2r\)), the granules that it affects will have traveled a distance of length (\(l\)). The harmonic motion of the center granule over time can be represented by a sine wave, where the travel in one direction and a return to equilibrium is a half-wavelength, or \(\pi\).''}
+	
+	\vspace{3pt}
+	
+	\textit{``Assuming constant velocity for granules (expected to be the speed of light), the distance that the granules will have traveled is \(\pi\) times \(x\). In other words, while the center granule travels a total distance of \(2x\) during vibration, the straight-line motion of the granules it effects travels \(\sim 3.14x\) because it doesn't slow down to account for a turn in direction.''}
+	
+	\vspace{3pt}
+	
+	\hfill --- Yee, J. (2019). \textit{The Relationship of the Fine Structure Constant and Pi}, p.~3--4. \cite{Yee2019alfa}
+\end{quote}
 
 \subsection{BCC Lattice Geometry and the Geometric Ladder}
 \label{sec:geom_ladder}
@@ -1665,7 +1678,35 @@ Substituting these expressions into the Planck-length definition cancels \(m_e\)
 	\right]^{2},
 	\label{eq:lambda_l_geometric}
 \end{equation}
-where \(e\) is Euler's number.
+where \(e\) is Euler's number. Normalized form is:
+\begin{equation}
+	\lambda_l
+	=
+	\left[
+	\frac{
+		r_e^{2}
+		\sqrt{\dfrac{3 \sqrt{2} \, A_\pi}{C_{\text{unif}}}}
+	}{
+		\alpha_{\text{geom}}
+		A_\pi^{4}
+		N_{\text{geom}}^{3}
+		\sqrt{K_{WC}}
+		\left(
+		\dfrac{r_\nu}{2 e}
+		\right)^{3/2}
+	}
+	\right]^{2}.
+	\label{eq:lambda_l_geometric_normalized}
+\end{equation}
+Equation \eqref{eq:lambda_l_geometric_normalized} substitutes the definition of
+\(X_{\text{eff}}\) directly, so that the wave-centre count enters once
+through \(\sqrt{K_{WC}}\) rather than twice. The fine-structure constant
+appears twice in the expression, but in two distinct roles: the leading
+\(\alpha_{\text{geom}}\) is the electromagnetic coupling of the soliton
+itself, while the \(\alpha_{\text{geom}}\) inside \(C_{\text{unif}}\) is
+the electromagnetic strain across the soliton--vacuum interface. The two
+appearances are not a redundancy; they reflect the two surfaces through
+which the same coupling is projected.
 
 Planck introduced this length as a formal dimensional combination
 of \(\hbar\), \(G\), and \(c\), without reference to a microscopic
@@ -1674,7 +1715,7 @@ the self-consistent solution of the geometric BCC equations,
 thereby providing a physical origin for the scale that Planck
 treated only as a formal unit.
 
-Equation \eqref{eq:lambda_l_geometric} is therefore not an independent ansatz. It is the direct consequence of combining the geometric fine-structure constant, the geometric gravitational scaling, and the Planck-length definition into a single closed algebraic constraint. Here \(e\) is Euler's number and \(r_\nu\) is the geometric neutrino radius derived in Section~\ref{sec:neutrino_anchor}.
+Equations \eqref{eq:lambda_l_geometric} and \eqref{eq:lambda_l_geometric_normalized} are therefore not an independent ansatz. They are the direct consequence of combining the geometric fine-structure constant, the geometric gravitational scaling, and the Planck-length definition into a single closed algebraic constraint. Here \(e\) is Euler's number and \(r_\nu\) is the geometric neutrino radius derived in Section~\ref{sec:neutrino_anchor}.
 
 Numerically,
 \begin{equation}
