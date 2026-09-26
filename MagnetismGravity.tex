@@ -72,7 +72,7 @@
 
 \begin{center}
 \today \\
-Version: 5.0.3	
+Version: 5.1.0	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -2412,6 +2412,67 @@ Thus, the single normalized EMC density profile
 
 The functional form of this underlying profile is uniquely determined by the harmonic equilibrium of the EMC lattice, with its amplitude strictly fixed by the enclosed gravitational radius \(r_s\).
 
+\subsection{In-Platform Numerical Validation}
+\label{sec:local_metric_validation}
+
+The analytical derivations presented in this section are validated
+numerically in the OpenWave research suite. The scripts implement the
+same EMC density profile $\eta(r) = 1 - r_s/r$ and the same encodings
+used in the analytical treatment, and compare the results against
+established reference values. The numerical outcomes are summarised in
+Table~\ref{tab:local_metric_validation}.
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Numerical validation of the local metric phenomena. All
+		scripts implement the same EMC density profile and encodings
+		derived analytically in this section.}
+	\label{tab:local_metric_validation}
+	\begin{tabular}{llllc}
+		\toprule
+		\textbf{Artifact} & \textbf{Quantity} & \textbf{EWT result} & \textbf{Reference} & \textbf{Difference} \\
+		\midrule
+		M4.3 & Solar-limb light bending & $1.751728$~arcsec & $1.7517$~arcsec (GR) & $0.0016\%$ \\
+		M4.4 & Gravitational redshift $\Delta f/f$ & $-2.123135 \times 10^{-6}$ & GR exact factor & $0$ (identity) \\
+		M4.5 & Shapiro round-trip delay & $239.014~\mu$s & $239.014~\mu$s & $0.000075\%$ \\
+		M4.6 & Far-field profile $\eta(r)$ & RK4 solution & analytic $1-r_s/r$ & $5.7 \times 10^{-14}$ \\
+		M4.8 & Monopole amplitude $A$ & $2.954320 \times 10^{3}$~m & CODATA $G$ & $65.65$~ppm \\
+		M4.9 & Stiffness exponent $\alpha$ & $3.0$ & expected $3.0$ & $< 0.05$ \\
+		M4.9 & Wave-speed exponent $\beta$ & $0.5$ & expected $0.5$ & $< 0.05$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The numerical results reproduce the analytical predictions of this
+section. The scripts are part of the OpenWave research repository
+\cite{OpenWaveM4Metric}.
+
+For M4.3, M4.4, and M4.5 the encoding of the EMC density profile into
+the refractive index and the clock speed is taken from this manuscript;
+the scripts perform the resulting integrations and confirm the
+agreement with the general-relativistic reference values.
+
+For M4.6, the radial Laplace equation is solved numerically with the
+monopole flux condition at the solar surface and the asymptotic Robin
+boundary condition at the outer boundary. The resulting profile
+matches the analytic form to $5.7 \times 10^{-14}$ of $\eta$.
+
+For M4.8, the monopole amplitude is computed from the geometric $G$
+chain of the emergence engine with the packing impedance
+$\zeta_{\text{est}} = (1-\eta_{\text{BCC}})/(\eta_{\text{BCC}}N_{\text{ideal}})$,
+without calibrating to the measured fine-structure constant. The
+resulting amplitude differs from the CODATA value by $65.65$~ppm. The
+pure geometric limit ($\zeta = 0$) gives $1743.57$~ppm, establishing
+the packing correction as the relevant physical input.
+
+For M4.9, the one-dimensional lattice dynamics with a repulsive pair
+potential $V(r) = V_0/r$ yields the exponents $\alpha = 3$ (stiffness
+scaling $k \propto \eta^{\alpha}$) and $\beta = 0.5$ (wave-speed
+scaling $v \propto \eta^{\beta}$), which are the values used in the
+encodings of the clock speed and the refractive index.
+
+
 \section{Newtonian Force from Interacting EMC Deficits}
 \label{sec:newtonian_emc_force}
 
@@ -2517,6 +2578,113 @@ Substituting the monopole amplitudes $A_i = 2 G_{\text{EWT, geo}} M_i / c^2$ yie
 No additional fundamental force is postulated. The inverse-square law
 is the static consequence of two EMC density deficits interacting
 through vacuum push-out pressure. The \(4\pi\) factor emerges dynamically from the 3D angular integration, while the \(16\pi\) factor represents the field stress-energy normalization.
+
+\subsection{In-Platform Validation: Normalization Consistency}
+\label{sec:newtonian_force_validation}
+
+The derivation of the inverse-square force law from EMC field overlap
+is validated numerically in the OpenWave research suite. The baseline
+gate compares the field-overlap force $F_{\text{EMC}}$ with the
+Newtonian force $F_{\text{Newton}}$, both built from the same
+geometric $G_{\text{geom}}$ derived from the BCC lattice. The result
+is summarised in Table~\ref{tab:newtonian_baseline}.
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Baseline gate for the Newtonian force from EMC field overlap.
+		Both $F_{\text{EMC}}$ and $F_{\text{Newton}}$ are built with
+		$G_{\text{geom}} = 6.677519975508460 \times 10^{-11}$~m$^3$~kg$^{-1}$~s$^{-2}$.}
+	\label{tab:newtonian_baseline}
+	\begin{tabular}{lc}
+		\toprule
+		\textbf{Quantity} & \textbf{Value} \\
+		\midrule
+		$F_{\text{EMC}}$        & $3.544205553218 \times 10^{22}$~N \\
+		$F_{\text{Newton}}$     & $3.544205979545 \times 10^{22}$~N \\
+		Relative difference     & $1.203 \times 10^{-5}\%$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Because $G_{\text{geom}}$ enters both the monopole amplitude
+$A_i = 2G_{\text{geom}}M_i/c^2$ and the coupling
+$K_{\text{emc}} = c^4/(16\pi G_{\text{geom}})$, it cancels identically
+in $F_{\text{EMC}} \equiv F_{\text{Newton}}$. The gate therefore
+passes for any value of $G_{\text{geom}}$ and remains a
+normalization-consistency check on $A$, $K_{\text{emc}}$, and the
+angular factor $4\pi$. Mutating any single normalization factor
+breaks the agreement, as shown in Table~\ref{tab:newtonian_mutations}.
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Mutation test of the normalization-consistency gate. Each
+		mutation changes a single normalization factor while keeping
+		the rest of the derivation unchanged.}
+	\label{tab:newtonian_mutations}
+	\begin{tabular}{llc}
+		\toprule
+		\textbf{Mutation} & \textbf{Observed relative difference} & \textbf{Gate result} \\
+		\midrule
+		Baseline                                     & $1.203 \times 10^{-5}\%$ & PASS \\
+		Angular factor ($4\pi \to 3\pi$)             & $25.0\%$                 & FAIL \\
+		Monopole amplitude ($2GM/c^2 \to GM/c^2$)    & $75.0\%$                 & FAIL \\
+		Coupling denominator ($16\pi \to 8\pi$)      & $100.0\%$                & FAIL \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The amplitude can also be written without the symbol $G_{\text{geom}}$,
+directly in the chain factors of the emergence engine:
+\begin{equation}
+	A
+	=
+	\frac{2 M r_e}{m_e}
+	\cdot
+	\frac{\sqrt{X_{\text{eff}}}}
+	{A_\pi^4 \, N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{stat}}}},
+	\qquad
+	X_{\text{eff}} = \frac{N_{\nu,\text{stat}}}{N_{\nu,\text{eff}}}.
+	\label{eq:amplitude_chain_factors}
+\end{equation}
+Every factor on the right-hand side is geometric:
+$A_\pi = 4\pi^3 + \pi^2 + \pi$, $N_{\text{geom}} = 8\pi^4(1-\zeta)$,
+$K_{WC} = 10$, and $X_{\text{eff}}$, $N_{\nu,\text{stat}}$ from the
+geometric chain. The anchors $r_e, m_e$ are the measured dimensional
+quantities. The product of Eq.~\eqref{eq:amplitude_chain_factors} is
+the engine's $G_{\text{EWT}}$ formula multiplied by $2M/c^2$, term for
+term, so $A = 2G_{\text{geom}}M/c^2$ by value. The geometric form
+agrees with the $G$-based form to machine precision
+($1.5 \times 10^{-16}$ for the solar amplitude, $2.0 \times 10^{-16}$
+for the terrestrial amplitude): the two are the same expression, so
+the agreement is an identity, not a confirmation.
+
+The force gate does not depend on the value of $G_{\text{geom}}$.
+Making it a test of $G_{\text{geom}}$ requires an amplitude whose value
+is fixed without passing through the $G_{\text{EWT}}$ formula; this
+remains an open clause in the research program.
+
+\paragraph{Strength clause.} The two halves of the strength clause
+for the gravitational sector are stated as follows.
+
+\begin{itemize}
+	\item \textbf{Circularity: discharged.} $G_{\text{geom}}$ enters
+	the force test directly, derived from the BCC geometry,
+	without re-entering through an input.
+	\item \textbf{Accuracy: stated, not met.} The $G_{\text{geom}}$
+	residual against CODATA is $0.048169\%$, or $21.9\times$
+	the CODATA 2022 relative uncertainty on $G$ (22~ppm). At
+	that distance the derived value does not agree with the
+	measured $G$ within its uncertainty. The dimensional
+	anchors $r_e, m_e, c$ are the measured quantities used to
+	build the dimensionless geometric ratio; the derivation
+	produces $G_{\text{geom}}$ as a dimensionless ratio against
+	$c^2 r_e / m_e$, not $G$ from nothing.
+\end{itemize}
+
+The scripts are part of the OpenWave research repository
+\cite{OpenWaveM4Force}.
 
 \section{Relation to Existing Emergent Gravity Frameworks}
 \label{sec:emergent_comparison}
@@ -5622,7 +5790,7 @@ concerns whether the geometric stiffness $N_{\text{geom}}$ is
 \emph{over-determined} by independent physical sectors, or merely fitted to a
 single observable. The results of such a test are reported below.
 
-\subsubsection*{Method}
+\subsubsection{Method}
 
 For each of seven physical sectors --- $\alpha^{-1}$, $G$, $a_e$, $a_\mu$,
 $a_\tau$, $\sin^2\theta_W$, and $\sin\theta_C$ --- the following quantities
@@ -5653,7 +5821,7 @@ The sectors are classified into three groups according to their resolution:
 	provide no information about $N$.
 \end{itemize}
 
-\subsubsection*{Results}
+\subsubsection{Results}
 
 The resolution analysis is summarised in
 Table~\ref{tab:lock_in_results}. The grouping of sectors follows directly
@@ -5685,7 +5853,7 @@ from the resolution column.
 	\end{tabular}
 \end{table}
 
-\subsubsection*{PRIMARY sectors: $G$, $a_\tau$, and $\sin\theta_C$}
+\subsubsection{PRIMARY sectors: $G$, $a_\tau$, and $\sin\theta_C$}
 
 Three sectors resolve $N$ at the sub-percent level. The two strongest are the
 gravitational constant $G$ ($0.004\%$) and the tau anomalous magnetic moment
@@ -5722,7 +5890,7 @@ no positive $N$ reproduces $\sin\theta_C$. The Cabibbo leg is therefore
 treated as \emph{conditionally} primary, not as a fully independent
 constraint.
 
-\subsubsection*{WEAK sectors: $a_e$, $a_\mu$, and $\sin^2\theta_W$}
+\subsubsection{WEAK sectors: $a_e$, $a_\mu$, and $\sin^2\theta_W$}
 
 Three sectors are consistent with $N_{\text{geom}}$ but cannot discriminate
 it from neighbouring values. Their resolutions of approximately $15$--$18\%$
@@ -5746,7 +5914,7 @@ is $0.22305$. The geometric correction $C_{\text{gap}}$ occupies the same
 slot as a known scheme-conversion factor of approximately $1.06\%$.
 Consequently, the Weinberg leg cannot yet carry independent weight.
 
-\subsubsection*{NO CONSTRAINT: $\alpha^{-1}$}
+\subsubsection{NO CONSTRAINT: $\alpha^{-1}$}
 
 The inverse fine-structure constant provides no constraint on $N$. Its
 logarithmic derivative is $\beta \approx 3 \times 10^{-7}$, giving a
@@ -5757,7 +5925,7 @@ does not constrain its central parameter. Its inclusion in the lock-in
 analysis serves as a consistency check: the absence of a constraint is
 itself a prediction of the model's structure.
 
-\subsubsection*{Interpretation}
+\subsubsection{Interpretation}
 
 The lock-in test demonstrates that $N_{\text{geom}}$ is not a fitted
 parameter in the usual sense. It is a \emph{node} at which two independent
@@ -5765,9 +5933,7 @@ physical sectors --- gravity and the tau anomalous magnetic moment ---
 converge to within $0.14\%$, with completely different construction chains
 and different sensitivities to the lattice stiffness.
 
-The grouping of sectors into PRIMARY, WEAK, and NO CONSTRAINT is not
-arbitrary but reflects the dimensional hierarchy of the BCC lattice. The
-PRIMARY sectors are those whose prediction chains contain $N$ at high
+The PRIMARY sectors are those whose prediction chains contain $N$ at high
 powers ($\beta_G = -12$, $\beta_{a_\tau} = 0.22$) and whose targets are
 known with sufficient precision. The WEAK sectors are those whose
 sensitivity is suppressed by projection operators or by dominant
@@ -6822,6 +6988,18 @@ Addison-Wesley.
 	\textit{M4.11 --- N as the Internal Lock-In Point: Drift, Resolution, Grouping}.
 	OpenWave research repository.
 	URL: \url{https://github.com/openwave-labs/openwave/blob/main/openwave/xperiments/m4_ewt/research/scripts/m4_11_lock_in_n_scan.py}.
+	
+	\bibitem{OpenWaveM4Metric}
+	OpenWave Collaboration (2026).
+	\textit{M4.3--M4.9 --- Local Metric Phenomena and Emergent Encoding Validation Suite}.
+	OpenWave research repository.
+	URL: \url{https://github.com/openwave-labs/openwave/tree/main/openwave/xperiments/m4_ewt/research/scripts}.
+	
+	\bibitem{OpenWaveM4Force}
+	OpenWave Collaboration (2026).
+	\textit{M4.10 and M4.12 --- Newtonian Force from EMC Field Overlap}.
+	OpenWave research repository.
+	URL: \url{https://github.com/openwave-labs/openwave/tree/main/openwave/xperiments/m4_ewt/research/scripts}.
 	
 \end{thebibliography}
 
