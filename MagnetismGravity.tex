@@ -72,7 +72,7 @@
 
 \begin{center}
 \today \\
-Version: 5.1.0	
+Version: 5.1.1	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -140,6 +140,16 @@ cosmological scaling.
 		\toprule
 		\textbf{Version} & \textbf{Changes} \\
 		\midrule
+		5.1.1 &
+		Replaced the preliminary Higgs-sector verification proposal with a
+		fully formulated observable-based test section. Pillar~I is now
+		stated as a falsifiable zero-modification prediction under an
+		explicit restricted tree-level hypothesis ($\mu_{ZH} = 1$);
+		Pillar~II is presented as a search framework using Legendre
+		moments of the $Z$ production angle, with an explicit proof that
+		an $s$-only form factor leaves the normalised angular shape
+		unchanged. Added experimental references\\
+		\midrule
 		5.1.0 &
 		Corrected the $r^5$ scaling label (``Resonance Mode Count'' instead
 		of ``Resonance Frequency''); added the Lock-In Test and in-platform
@@ -148,7 +158,6 @@ cosmological scaling.
 		\bottomrule
 	\end{tabular}
 \end{center}
-
 \medskip
 \noindent
 
@@ -751,6 +760,232 @@ To unify the model, the correction parameters \(C_{\text{gap}}\) and \(C_{\text{
 		\end{minipage}
 	}
 \end{center}
+
+\subsection{Observable-Based Experimental Tests of the EWT Higgs Sector}
+\label{sec:ewt_higgs_observable_tests}
+
+The EWT Higgs sector should be confronted with experimentally defined observables rather than with an unspecified ``production angle.'' The process considered in this section is Higgsstrahlung,
+\begin{equation}
+	e^+e^- \to ZH,
+\end{equation}
+where the notation $ZH$ is used throughout. The notation $WZ$ refers to a different final state and is not used here as a synonym for Higgsstrahlung.
+
+The parameter $\theta_{ZH}$ introduced earlier is a topological
+projection parameter of the soliton overlap region, not an on-shell
+scalar--vector mixing angle. Its physical consequences therefore do
+not include a uniform rescaling of the on-shell $HZZ$ coupling; this
+is why the tests below are framed in terms of observables rather than
+in terms of a production angle. The absence of a tree-level
+modification is itself the EWT prediction under the restricted
+hypothesis stated in Pillar~I.
+
+The proposed tests are divided into two logically distinct pillars. Pillar~I tests the absolute normalization of the $ZH$ production rate under a restricted tree-level EWT hypothesis. Pillar~II tests differential observables that can be sensitive to momentum-dependent or tensorial deformations of the production amplitude. The distinction is essential: agreement with the Standard Model in Pillar~I does not by itself validate EWT, while a shape test requires an explicit EWT amplitude beyond a purely energy-dependent overall normalization.
+
+\subsubsection{Observable definition and recoil-mass reconstruction}
+\label{sec:ewt_recoil_observable}
+
+A particularly clean observable is the inclusive Higgsstrahlung cross section measured with the recoil-mass technique. For a reconstructed dileptonically decaying $Z$ boson,
+\begin{equation}
+	Z\to \ell^+\ell^- ,
+	\qquad \ell=e,\mu,
+\end{equation}
+the recoil four-momentum is
+\begin{equation}
+	p_{\mathrm{recoil}}
+	=p_{e^+}+p_{e^-}-p_{\ell\ell}.
+\end{equation}
+In the centre-of-mass frame of the collision, the recoil mass is therefore
+\begin{equation}
+	m_{\mathrm{recoil}}^2
+	=s+m_{\ell\ell}^2-2\sqrt{s}\,E_{\ell\ell},
+	\label{eq:ewt_recoil_mass}
+\end{equation}
+where $s=(p_{e^+}+p_{e^-})^2$, $m_{\ell\ell}$ is the reconstructed dilepton invariant mass, and $E_{\ell\ell}$ is the dilepton energy in the same centre-of-mass frame. This observable permits an inclusive measurement of $e^+e^-\to ZH$ without requiring reconstruction of the Higgs decay mode, and is consequently appropriate for an absolute test of the $ZH$ production rate \cite{Thomson2015,Fujii2017,Chen2016}.
+
+In a realistic analysis, Eq.~\eqref{eq:ewt_recoil_mass} is not compared directly with an ideal parton-level distribution. The prediction and measurement must use the same treatment of initial-state radiation, beamstrahlung, beam-energy spread, finite detector resolution, event selection, backgrounds, and acceptance. The theoretical prediction must also specify the perturbative order and the input-parameter scheme. These requirements are part of the observable definition rather than optional post-processing corrections.
+
+\subsubsection{Pillar I: absolute $ZH$ cross section}
+\label{sec:ewt_pillar_one}
+
+The first test is formulated through the signal-strength-like ratio
+\begin{equation}
+	\mu_{ZH}(s)
+	\equiv
+	\frac{\sigma_{\mathrm{EWT}}(e^+e^-\to ZH;s)}
+	{\sigma_{\mathrm{SM}}(e^+e^-\to ZH;s)}.
+	\label{eq:ewt_muzh_definition}
+\end{equation}
+
+The restricted EWT hypothesis tested in this pillar is
+\begin{equation}
+	\begin{aligned}
+		g_{HZZ}^{\mathrm{EWT}}&=g_{HZZ}^{\mathrm{SM}},\\
+		g_{eeZ}^{\mathrm{EWT}}&=g_{eeZ}^{\mathrm{SM}},\\
+		\mathcal{M}_{\mathrm{contact}}&=0,\\
+		\mathcal{M}_{\mathrm{new\ tensor}}&=0,
+	\end{aligned}
+	\label{eq:ewt_restricted_hypothesis}
+\end{equation}
+with the EWT and SM predictions evaluated at the same perturbative order and with identical kinematic cuts. At tree level, Eq.~\eqref{eq:ewt_restricted_hypothesis} implies
+\begin{equation}
+	\mathcal{M}^{(0)}_{\mathrm{EWT}}
+	=
+	\mathcal{M}^{(0)}_{\mathrm{SM}},
+	\qquad
+	\mu_{ZH}^{(0)}(s)=1.
+	\label{eq:ewt_muzh_tree}
+\end{equation}
+Thus, the statement $\mu_{ZH}=1$ is a consequence of the explicitly stated restricted hypothesis. It is not an independent numerical prediction of the full EWT framework unless EWT specifies why all additional $HZZ$ structures and contact interactions vanish.
+
+If the amplitude contains a small deformation,
+\begin{equation}
+	\mathcal{M}_{\mathrm{EWT}}
+	=\mathcal{M}_{\mathrm{SM}}+\delta\mathcal{M},
+\end{equation}
+then, to first order in the deformation,
+\begin{equation}
+	\mu_{ZH}
+	\simeq
+	1+2\,\mathrm{Re}\!\left(
+	\frac{\delta\mathcal{M}}{\mathcal{M}_{\mathrm{SM}}}
+	\right),
+	\label{eq:ewt_interference_rate}
+\end{equation}
+with the understanding that the experimentally measured quantity is a phase-space integral including the relevant acceptance and radiative effects. This makes the interference contribution explicit and prevents the rate comparison from being interpreted as a comparison of amplitudes alone.
+
+The corresponding experimental statement should be written as
+\begin{equation}
+	\mu_{ZH}^{\mathrm{meas}}(s)
+	=
+	\mu_{ZH}^{\mathrm{pred}}(s)
+	\pm \delta_{\mathrm{exp}}
+	\pm \delta_{\mathrm{th}},
+\end{equation}
+where the experimental and theoretical uncertainties must be defined. A statistically significant discrepancy with Eq.~\eqref{eq:ewt_muzh_tree}, after the specified corrections and nuisance parameters have been included, would falsify the restricted hypothesis of Eq.~\eqref{eq:ewt_restricted_hypothesis}. It would not, by itself, falsify every possible realization of EWT.
+
+The reference normalization $\kappa_Z=1$ is the Standard Model value. Any statement that present data are consistent with this value must be attached to a specified experimental combination or global fit; it should not be presented as an uncited universal numerical result. Future lepton-collider studies use precisely this type of inclusive $ZH$ measurement to constrain the absolute Higgsstrahlung rate and Higgs couplings \cite{Fujii2017,Chen2016,Snowmass2022}.
+
+\subsubsection{Pillar II: angular observables and amplitude structure}
+\label{sec:ewt_pillar_two}
+
+The second pillar concerns the shape of the production-angle distribution. Let $\theta_Z$ denote the angle between the incoming electron direction and the outgoing $Z$ momentum in the $e^+e^-$ centre-of-mass frame,
+\begin{equation}
+	\cos\theta_Z
+	\equiv
+	\frac{\mathbf{p}_{e^-}\cdot\mathbf{p}_{Z}}
+	{|\mathbf{p}_{e^-}|\,|\mathbf{p}_{Z}|}.
+	\label{eq:ewt_theta_z}
+\end{equation}
+This production angle must be distinguished from decay or helicity angles defined in the rest frame of the $Z$ boson. If a decay angle is used in a future analysis, it must be introduced as a separate observable with its own frame and axis convention.
+
+The normalized production-angle distribution is
+\begin{equation}
+	f(\cos\theta_Z)
+	\equiv
+	\frac{1}{\sigma_{ZH}}
+	\frac{d\sigma_{ZH}}{d\cos\theta_Z},
+	\qquad
+	\int_{-1}^{1}f(x)\,dx=1.
+	\label{eq:ewt_normalized_angular_distribution}
+\end{equation}
+A convention-independent set of Legendre moments is
+\begin{equation}
+	\left\langle P_n\right\rangle
+	\equiv
+	\int_{-1}^{1}dx\,P_n(x)f(x),
+	\qquad x=\cos\theta_Z,
+	\label{eq:ewt_legendre_moments}
+\end{equation}
+where $P_n(x)$ denotes the Legendre polynomial of order $n$. With this definition, $\langle P_0\rangle=1$, and the distribution can be reconstructed formally as
+\begin{equation}
+	f(x)
+	=
+	\frac{1}{2}
+	\sum_{n=0}^{\infty}(2n+1)\left\langle P_n\right\rangle P_n(x).
+	\label{eq:ewt_legendre_expansion}
+\end{equation}
+In an experimental analysis, the reported moments must specify whether they are detector-level, efficiency-corrected, unfolded, or obtained from a likelihood fit. The covariance matrix of the moments should be retained because the moments are generally correlated.
+
+Angular observables can probe information that is not contained in the total rate, including interference between different helicity amplitudes and momentum-dependent tensor structures. Such observables have been studied as probes of anomalous Higgs interactions and EFT operators at future $e^+e^-$ colliders \cite{Craig2016,Liu2016,Ge2016}.
+
+\subsubsection{Why an overall form factor is insufficient to change the normalized shape}
+\label{sec:ewt_form_factor_limit}
+
+Suppose that the EWT modification is represented only by an energy-dependent multiplicative form factor,
+\begin{equation}
+	\mathcal{M}_{\mathrm{EWT}}(s,t,u)
+	=F(s)\,\mathcal{M}_{\mathrm{SM}}(s,t,u).
+	\label{eq:ewt_overall_form_factor}
+\end{equation}
+At fixed centre-of-mass energy, this gives
+\begin{equation}
+	\frac{d\sigma_{\mathrm{EWT}}}{d\cos\theta_Z}
+	=|F(s)|^2
+	\frac{d\sigma_{\mathrm{SM}}}{d\cos\theta_Z},
+	\qquad
+	\sigma_{\mathrm{EWT}}=|F(s)|^2\sigma_{\mathrm{SM}}.
+	\label{eq:ewt_rate_only_form_factor}
+\end{equation}
+Consequently,
+\begin{equation}
+	\frac{1}{\sigma_{\mathrm{EWT}}}
+	\frac{d\sigma_{\mathrm{EWT}}}{d\cos\theta_Z}
+	=
+	\frac{1}{\sigma_{\mathrm{SM}}}
+	\frac{d\sigma_{\mathrm{SM}}}{d\cos\theta_Z},
+	\label{eq:ewt_shape_invariance}
+\end{equation}
+and all normalized angular moments are unchanged. Therefore, a form factor depending only on $s$ is a rate deformation, not a shape deformation.
+
+A genuine angular-shape prediction requires an amplitude of the more general form
+\begin{equation}
+	\mathcal{M}_{\mathrm{EWT}}
+	=
+	\mathcal{M}_{\mathrm{SM}}
+	+\sum_i C_i(s,t,u)\,\mathcal{M}_i,
+	\label{eq:ewt_shape_deformation}
+\end{equation}
+where at least one coefficient or tensor structure depends on additional kinematic variables or changes the helicity content. Examples include momentum-dependent $HZZ$ form factors, derivative interactions, contact terms, modified longitudinal/transverse amplitudes, beam-polarization dependence, or nontrivial $t$- and $u$-dependence. Only after such a structure has been specified can EWT make a quantitative prediction for a shift
+\begin{equation}
+	\Delta\!\left\langle P_n\right\rangle
+	\equiv
+	\left\langle P_n\right\rangle_{\mathrm{EWT}}
+	-
+	\left\langle P_n\right\rangle_{\mathrm{SM}}.
+\end{equation}
+
+\subsubsection{Falsification criteria and scope of the test}
+\label{sec:ewt_falsification_scope}
+
+The experimental logic should distinguish three outcomes:
+\begin{enumerate}
+	\item A statistically significant deviation of the absolute rate from the prediction in Eq.~\eqref{eq:ewt_muzh_tree}, after all specified theoretical and experimental corrections, would falsify the restricted EWT hypothesis tested in Pillar~I.
+	\item A statistically significant deviation in one or more angular moments, relative to the SM prediction and the explicitly specified EWT amplitude, would falsify the corresponding shape hypothesis in Pillar~II.
+	\item Agreement with the SM prediction would constrain the tested EWT parameter space but would not prove EWT, because a model can reproduce the SM limit in the observables considered.
+\end{enumerate}
+
+Accordingly, Pillar~I is a falsifiable null-deformation test, whereas Pillar~II is a quantitative falsification test only after EWT supplies explicit coefficients, tensor structures, parameter values, and a perturbative prescription. Before those ingredients are provided, Pillar~II should be described as a well-defined search strategy rather than as a completed numerical prediction.
+
+The most transparent implementation is therefore a joint likelihood in the absolute rate and differential observables,
+\begin{equation}
+	\mathcal{L}
+	=
+	\mathcal{L}\!\left(
+	\mu_{ZH},
+	\left\langle P_1\right\rangle,
+	\left\langle P_2\right\rangle,
+	\ldots;
+	\boldsymbol{\eta}
+	\right),
+\end{equation}
+where $\boldsymbol{\eta}$ contains experimental nuisance parameters and any explicitly defined EWT or EFT coefficients. This formulation keeps the observable definition, the model assumptions, and the falsification criterion logically separate.
+
+\paragraph{Summary.} Pillar~I is a falsifiable zero-modification
+prediction under a clearly stated hypothesis. Pillar~II is a
+well-defined search framework whose quantitative prediction awaits
+the derivation of the soliton form factor. This separation of status
+is deliberate: it distinguishes what EWT currently predicts from what
+it currently proposes to test.
 
 \section{Analysis of Neutrino Boundary Conditions}
 \label{sec:neutrino-analysis}
@@ -7025,6 +7260,65 @@ Addison-Wesley.
 	\textit{M4.10 and M4.12 --- Newtonian Force from EMC Field Overlap}.
 	OpenWave research repository.
 	URL: \url{https://github.com/openwave-labs/openwave/tree/main/openwave/xperiments/m4_ewt/research/scripts}.
+	
+	\bibitem{Thomson2015}
+	M.~Thomson,
+	\textit{Model-Independent Measurement of the $e^+e^-\to HZ$ Cross Section
+		at a Future $e^+e^-$ Linear Collider using Hadronic $Z$ Decays},
+	arXiv:1509.02853 [hep-ex] (2015).
+	Available at:
+	\href{https://arxiv.org/abs/1509.02853}
+	{https://arxiv.org/abs/1509.02853}.
+	
+	\bibitem{Fujii2017}
+	K.~Fujii \textit{et al.},
+	\textit{Physics Case for the 250 GeV Stage of the International Linear Collider},
+	arXiv:1710.07621 [hep-ex] (2017).
+	Available at:
+	\href{https://arxiv.org/abs/1710.07621}
+	{https://arxiv.org/abs/1710.07621}.
+	
+	\bibitem{Chen2016}
+	Z.~Chen, Y.~Yang, M.~Ruan, D.~Wang, G.~Li, S.~Jin, and Y.~Ban,
+	\textit{Cross Section and Higgs Mass Measurement with Higgsstrahlung at the CEPC},
+	arXiv:1601.05352 [hep-ex] (2016).
+	Available at:
+	\href{https://arxiv.org/abs/1601.05352}
+	{https://arxiv.org/abs/1601.05352}.
+	
+	\bibitem{Snowmass2022}
+	Snowmass 2021 Higgs Physics Topical Group,
+	\textit{Report of the Topical Group on Higgs Physics for Snowmass 2021:
+		The Case for Precision Higgs Physics},
+	arXiv:2209.07510 [hep-ph] (2022).
+	Available at:
+	\href{https://arxiv.org/abs/2209.07510}
+	{https://arxiv.org/abs/2209.07510}.
+	
+	\bibitem{Craig2016}
+	N.~Craig, J.~Gu, Z.~Liu, and K.~Wang,
+	\textit{Beyond Higgs Couplings: Probing the Higgs with Angular Observables
+		at Future $e^+e^-$ Colliders},
+	\textit{Journal of High Energy Physics} \textbf{03} (2016) 050.
+	\href{https://doi.org/10.1007/JHEP03(2016)050}
+	{doi:10.1007/JHEP03(2016)050}.
+	
+	\bibitem{Liu2016}
+	Z.~Liu,
+	\textit{Probing the Higgs with Angular Observables at Future
+		$e^+e^-$ Colliders},
+	\textit{International Journal of Modern Physics A} \textbf{31},
+	1644005 (2016).
+	\href{https://doi.org/10.1142/S0217751X1644005X}
+	{doi:10.1142/S0217751X1644005X}.
+	
+	\bibitem{Ge2016}
+	S.-F.~Ge, H.-J.~He, and R.-Q.~Xiao,
+	\textit{Probing New Physics Scales from Higgs and Electroweak Observables
+		at $e^+e^-$ Higgs Factory},
+	\textit{Journal of High Energy Physics} \textbf{10} (2016) 007.
+	\href{https://doi.org/10.1007/JHEP10(2016)007}
+	{doi:10.1007/JHEP10(2016)007}.
 	
 \end{thebibliography}
 
