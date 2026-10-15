@@ -2627,12 +2627,11 @@ dynamics.
 The corresponding effective refractive index follows from the same
 wave speed:
 \begin{equation}
-	n_\gamma(\eta)
-	=
-	\frac{c_0}{v(\eta)}
-	\;\propto\;
-	\eta^{-1/2}
-	.
+n_\gamma(\eta)
+=
+\bigl(2\eta - 1\bigr)^{-1/2}
+=
+\Bigl(1 - \frac{2r_s}{r}\Bigr)^{-1/2}.
 \end{equation}
 
 A physical clock in this medium is a standing-wave soliton of fixed
@@ -3601,7 +3600,15 @@ electron background $a_e^{\text{EWT}} \approx 1159.916\ \text{ppm}$; conflating
 them would yield an unphysical result for $a_\tau^{\text{EWT}}$.
 
 \subsubsection*{Physical Interpretation: Geometric Continuity}
-The term $L_{\mu}^2 = 25$ functions as the \textbf{interface tension}, a residual binding energy that anchors the high-density Tau shell to the Muon core. Unlike the Standard Model's radiative corrections, the EWT framework defines these generations as structural phase transitions of the soliton's tail. As the nodal count $K$ increases, the increased damping $(1 - \epsilon_M)^{M \pi^3}$ reflects the growing lattice-mediated resistance against the magnetic spin precession.
+The term $L_{\mu}^2 = 25$ functions as the \textbf{interface tension}, a residual binding energy that anchors the high-density Tau shell to the Muon core. Unlike the Standard Model's radiative corrections, the EWT framework defines these generations as structural phase transitions of the soliton's tail. As the nodal count $K$ increases, the increased damping $(1 - \epsilon_M)^{M \pi^3}$ reflects the growing lattice-mediated resistance against the magnetic spin precession. 
+
+\textbf{Dimensional origin of the interface tension.}
+The interface tension is not an independent parameter. It is the square
+of the muon Fibonacci latch, $\delta = L_\mu^2 = 25$, and therefore
+carries the dimension of a two-dimensional interface area. The same
+$L_\mu^2$ appears in the muon coupling $B_\mu$, where it enters with a
+factor of two, $2L_\mu^2$, reflecting the two-sided planar character of
+the muon resonance.
 
 \subsubsection*{Physical Interpretation: Geometric Transition from 2D to 3D}
 The structural difference between the coupling constants $B_{\mu}$ and $B_{\tau}$ reflects the evolution of the lepton resonance as it expands through the BCC vacuum:
@@ -3629,15 +3636,28 @@ The structural difference between the coupling constants $B_{\mu}$ and $B_{\tau}
 	from full spherical coverage ($A_{\pi}$) to a hemispherical potential. 
 	This reflects a \textbf{geometric shadowing effect}: in a hierarchical lattice 
 	structure, the interior core effectively shields half of the available phase 
-	space. This specific geometric offset is a deterministic requirement to 
-	achieve the observed $0.031589\%$ experimental convergence, proving that the 
+	space. This specific geometric offset is a consistent with the observed $0.031589\%$ experimental convergence, proving that the 
 	tau lepton is a constrained extension of the muon core.
 \end{itemize}
 
 Consequently, the $B_{\mu}$ and $B_{\tau}$ operators establish a deterministic bridge between discrete lattice topology and observed leptonic moments, replacing empirical Standard Model calibrations with a rigorous geometric framework of volumetric and planar resonances.
 
 \subsubsection*{The Interface Tension ($\delta$)}
-A crucial discovery in the EWT recursive model is the role of $L_{\mu}^2 = 25$ as a stabilization constant. This value is added to the Tau prediction to represent the \textbf{interface tension} between the shells. Physically, this ensures that the Tau generation remains anchored to the pre-existing Muon foundation, maintaining topological continuity in the ``Onion Model''. Without this binding energy, the high-density Tau shell would lack the geometric leverage required to achieve the observed $0.031589\%$ experimental convergence. The same topological reasoning that mandates $L_{\mu}^2$ as the binding energy also determines the geometric budget available to the tauon shell: for instance, a closed surface of genus 1 (such as a torus) embedded within a 3D sphere divides the phase space into two topologically equivalent regions of equal measure — the interior and the exterior. Within the shell hierarchy, the muon core therefore occupies exactly half of the available phase space, effectively halving the geometric budget for the tauon shell. Consequently, the core area term scales as $A_{\pi} \to A_{\pi}/2$, a result that follows from topology rather than from empirical adjustment.
+
+The interface tension $\delta = L_\mu^2 = 25$ anchors the outer tau
+shell to the muon core, maintaining topological continuity in the
+``Onion Model''. Its dimensional origin is the square of the muon
+Fibonacci latch, so it carries the dimension of a two-dimensional
+interface area. The same interface
+determines the geometric budget available to the tauon shell: the
+interior muon core shadows part of the available phase space as seen
+by the outer shell, reducing the effective core coverage below the
+full spherical value by the factor $A_\pi \to A_\pi/2$. The additive
+interface tension $L_\mu^2$ and the multiplicative shadowing factor
+$1/2$ are therefore not independent adjustments, but two aspects of
+the same shell interface: an energetic contribution and a geometric
+reduction.
+
 
 \subsubsection*{The Geometric Necessity of Shell Formation}
 The emergence of the recursive "Onion Model" is not an arbitrary structural choice but a direct consequence of the scaling disparity established in Eq.~\ref{eq:mass_to_radius_id} and Eq.~\ref{eq:geometry_scaling_boxed}. As the internal energy density $\rho_E$ surges with $r^5$ during nodal compression, the available three-dimensional volume scales only as $r^3$, imposing a fundamental capacity limit. The 3D spatial substrate cannot accommodate arbitrarily high energy densities without exceeding the elastic limits of the BCC lattice. To maintain stability, the system is forced to redistribute the excess energy into nested toroidal shells, each storing energy in additional angular degrees of freedom. Each subsequent generation (muon, tau) thus represents a new resonant layer that circumvents the strict $r^3$ volumetric bottleneck.
@@ -3711,9 +3731,22 @@ rule is determined by the resonance dimensionality of each generation:
 		\mathcal{O}_\mu = M_\mu \pi^3 \epsilon_M = \frac{1}{4\pi^2},
 		\label{eq:O_mu}
 	\end{equation}
-	where the identity $M_\mu \pi^3 \epsilon_M = 1/(4\pi^2)$ follows from the 
-	shell algorithm and the definition $\epsilon_M = 1/(8\pi^7(1-\zeta))$. The operator 
-	is completely determined by the fundamental vacuum constants.
+	where the identity follows algebraically from $\epsilon_M = 1/(N_{\text{geom}}\pi^3)$
+and $M_\mu \to 2\pi^2$ in the continuum limit:
+\begin{equation}
+	M_\mu \pi^3 \epsilon_M
+	=
+	\frac{M_\mu}{N_{\text{geom}}}
+	=
+	\frac{2\pi^2}{8\pi^4}
+	=
+	\frac{1}{4\pi^2}.
+	\label{eq:O_mu_identity}
+\end{equation}
+The $\pi^3$ factors cancel exactly; the residual $0.14\%$ at the discrete
+value $M_\mu = 19.7$ reflects only the rounding $2\pi^2 \to 19.7$ and the
+lattice impedance $\zeta$. The operator is therefore completely determined
+by the fundamental vacuum constants.
 	
 	\item \textbf{Tau (3D volumetric resonance):} The second shell contribution 
 	$a_{\tau,\text{shell}}$ is generated by a fully volumetric excitation that 
