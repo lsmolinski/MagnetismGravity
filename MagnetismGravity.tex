@@ -2035,6 +2035,15 @@ In the natural units of the BCC lattice (\(c=1\), \(4\pi\epsilon_0=1\); see Sect
 \end{equation}
 This is not an independent derivation of \(e\), since \(m_e\) and \(r_e\) are inputs, but it is a powerful internal consistency test: it shows that the electromagnetic scale (\(e\)) is rigidly tied to the soliton's mass and radius, with no residual dependence on \(\hbar\) or \(\alpha\).
 
+The EWT core equations are formulated in geometric electromagnetic
+units and therefore do not require $\epsilon_0$ as an independent
+dynamical parameter. The SI vacuum permittivity appears only when the
+geometric charge amplitude is translated back into conventional
+electromagnetic units. In the present formulation, $e$ is treated as an input
+normalization of the elementary wave amplitude. Consequently,
+$\epsilon_0$ is not an additional EWT parameter and is not required
+for the derivation of the model observables.
+
 \subsection{Status of Inputs}
 \label{sec:inputs_planck}
 
@@ -2674,12 +2683,12 @@ Thus, the single normalized EMC density profile
 \(\eta(r)=1-r_s/r\) unifies all three classic local metric observables without introducing any free parameters:
 
 \begin{itemize}
-	\item \textbf{Solar light bending} through the spatial gradient of \(n_\gamma(r)\),
-	\item \textbf{Gravitational redshift} through the internal clock speed \(v_{\text{clock}}=\sqrt{\eta}\),
+	\item \textbf{Solar light bending} through the spatial gradient of \(n_\gamma(r)=\bigl(1-2r_s/r\bigr)^{-1/2}\),
+	\item \textbf{Gravitational redshift} through the internal clock speed \(v_{\text{clock}}=\sqrt{\eta}=\sqrt{1-r_s/r}\),
 	\item \textbf{Shapiro delay} through the integrated excess of \(n_\gamma(r)-1\) along the propagation path.
 \end{itemize}
 
-The functional form of this underlying profile is uniquely determined by the harmonic equilibrium of the EMC lattice, with its amplitude strictly fixed by the enclosed gravitational radius \(r_s\).
+The two encodings---\(\sqrt{\eta}\) for timelike probes and \((1-2r_s/r)^{-1/2}\) for null probes---reflect that a clock samples the local node availability while a light ray samples the integrated radial displacement of the same lattice deformation. The functional form of this underlying profile is uniquely determined by the harmonic equilibrium of the EMC lattice, with its amplitude strictly fixed by the enclosed gravitational radius \(r_s\).
 
 \subsection{In-Platform Numerical Validation}
 \label{sec:local_metric_validation}
