@@ -140,6 +140,18 @@ cosmological scaling.
 		\toprule
 		\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
 		\midrule
+		5.1.3 & 2026.10.16 &
+		Corrected the refractive-index encoding to $n_\gamma=(2\eta-1)^{-1/2}$
+		and distinguished timelike from null probes in the Summary of Local
+		Metric Observables. Added the algebraic derivation of
+		$\mathcal{O}_\mu = M_\mu/N_{\text{geom}} = 1/(4\pi^2)$ and clarified the
+		dimensional origin of the interface tension $\delta = L_\mu^2 = 25$.
+		Added notes on the role of $s_\mu$ in $\sigma_\tau$, on orbital-mode
+		internal-consistency tests, and on the status of $\epsilon_0$. Removed
+		the VEV-falsification paragraphs and the ``deeper mathematical
+		structure'' claim; rephrased the muon-anomaly remark. Minor
+		typographical corrections. \\
+		\midrule
 		5.1.2 & 2026.10.09 &
 		Replaced the ``Mutual Falsification: The Ultimate Test'' subsection
 		with ``Two Readings of the Higgs Sector: What a Future Measurement
@@ -2025,21 +2037,40 @@ Substituting the geometric expression for \(\hbar\), Eq.~\eqref{eq:hbar_geom}, c
 	e^2 = 4\pi\epsilon_0 m_e c^2 r_e .
 	\label{eq:e2_mass_radius}
 \end{equation}
-In the natural units of the BCC lattice (\(c=1\), \(4\pi\epsilon_0=1\); see Section~\ref{sec:c_as_metric}), this reduces to the purely geometric identity
+In the natural units of the BCC lattice (\(c=1\), \(\epsilon_0=\mu_0=1\),
+the symmetric Lorentz--Heaviside convention; see Section~\ref{sec:c_as_metric}),
+this reduces to the purely geometric identity
 \begin{equation}
-	e^2 = m_e r_e .
+	e^2 = 4\pi\, m_e r_e .
 	\label{eq:e2_geometric}
 \end{equation}
 This is not an independent derivation of \(e\), since \(m_e\) and \(r_e\) are inputs, but it is a powerful internal consistency test: it shows that the electromagnetic scale (\(e\)) is rigidly tied to the soliton's mass and radius, with no residual dependence on \(\hbar\) or \(\alpha\).
 
-The EWT core equations are formulated in geometric electromagnetic
-units and therefore do not require $\epsilon_0$ as an independent
-dynamical parameter. The SI vacuum permittivity appears only when the
-geometric charge amplitude is translated back into conventional
-electromagnetic units. In the present formulation, $e$ is treated as an input
-normalization of the elementary wave amplitude. Consequently,
-$\epsilon_0$ is not an additional EWT parameter and is not required
-for the derivation of the model observables.
+
+\subsubsection*{Remark on the Status of $\epsilon_0$}
+
+The SI vacuum permittivity $\epsilon_0$ is not an independent parameter
+of nature. Historically, it appeared as a ``property of the vacuum'' only
+because the SI separates electric and magnetic units. The relation
+\begin{equation}
+	c^2 = \frac{1}{\mu_0 \epsilon_0}
+\end{equation}
+carries no physical content in natural units: setting $c = 1$ reduces it
+to the unit-definition identity $\mu_0 \epsilon_0 = 1$. What appears as a
+``vacuum property'' in SI is therefore a convention for relating electric
+and magnetic units, not a dynamical parameter of the medium.
+
+After the 1983 redefinition of $c$ and the 2019 SI revision, this is
+manifest: $\epsilon_0$ is a derived unit-conversion factor,
+\begin{equation}
+	\epsilon_0 = \frac{e^2}{2 \alpha h c},
+\end{equation}
+and carries no geometric information beyond that already encoded in
+$\alpha$, $e$, $h$, and $c$. In the EWT framework, where charge is
+identified with wave amplitude in metres, the vacuum permittivity is
+therefore not required as a dynamical parameter. It enters only when
+the geometric charge amplitude is translated back into conventional
+electromagnetic units.
 
 \subsection{Status of Inputs}
 \label{sec:inputs_planck}
