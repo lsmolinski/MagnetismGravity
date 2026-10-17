@@ -13,6 +13,9 @@ The operator is:
     Delta K_k = round(10^k * 2*pi^2)     for k >= 1 (shells)
 
 The Fibonacci latch is F_{4n-3}, advancing by 2^2 = 4 per generation.
+
+Also prints the closure criterion K_n / L_n^2 > 1
+(tab:closure_criterion in the manuscript).
 """
 
 import math
@@ -73,7 +76,8 @@ GENERATIONS = {
 }
 
 
-def main():
+def print_hierarchy_table():
+    """Print the nodal shell parameters (tab:shell_parameters_verified)."""
     print()
     print(f"{'Lepton Shell':<24} {'Operator':<20} "
           f"{'Delta K':>8} {'Total K_n':>10} {'L_dim':>6}")
@@ -96,6 +100,39 @@ def main():
     print()
     print("* Hypothetical.")
     print()
+
+
+def print_closure_table():
+    """Print the closure criterion (tab:closure_criterion)."""
+    print("=" * 76)
+    print("CLOSURE CRITERION: NODE DENSITY AT THE SHELL INTERFACE")
+    print("=" * 76)
+    print()
+    print(f"{'Shell':<24} {'L_n':>6} {'L_n^2':>8} {'K_n':>8} "
+          f"{'K_n/L_n^2':>10} {'Closed':>8}")
+    print("-" * 76)
+
+    for n, label in GENERATIONS.items():
+        L = get_L_invariant(n)
+        K = get_AMMi_K(n)
+        L_sq = L * L
+        ratio = K / L_sq
+        closed = "yes" if ratio > 1.0 else "NO"
+
+        if n == 4:
+            label = label.replace("(hypothetical)", "*(hypo.)")
+
+        print(f"{label:<24} {L:>6} {L_sq:>8} {K:>8} "
+              f"{ratio:>10.3f} {closed:>8}")
+
+    print("-" * 76)
+    print("  Criterion: K_n / L_n^2 > 1  (node density at interface)")
+    print()
+
+
+def main():
+    print_hierarchy_table()
+    print_closure_table()
 
 
 if __name__ == "__main__":
