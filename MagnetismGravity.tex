@@ -72,7 +72,7 @@
 
 \begin{center}
 \today \\
-Version: 5.1.4	
+Version: 5.1.5	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -138,8 +138,16 @@ cosmological scaling.
 \begin{center}
 	\begin{tabular}{@{}p{1.6cm}p{1.8cm}p{10.1cm}@{}}
 		\toprule
-		\midrule
 		\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
+		5.1.5 & 2026.10.17 &
+		Added a unified discrete operator for the nodal shell hierarchy, the
+		``Discrete Resonance Labels'' section with Fibonacci labels $F_{1+4k}$,
+		and the ``Termination at Three Generations'' section with the closure
+		criterion $K_n/L_n^2 > 1$. Stated $L_\mu = F_5 = 5$ explicitly as the
+		model's sole discrete postulate; softened stability language and
+		reconciled interface terminology throughout. Minor typographical
+		corrections. \\
+		\midrule
 		5.1.4 & 2026.10.17 &
 		Introduced a unified discrete operator for the nodal shell hierarchy,
 		$\Delta K_k = \mathrm{round}(10^k \pi^2)$ for the electron core
@@ -2097,7 +2105,8 @@ The only experimental inputs in model are
 	r_e,\quad m_e,\quad c,\quad e .
 \end{equation}
 In natural units (\(c = 1\); see Section~\ref{sec:c_as_metric}), \(c\) is a unit conversion and \(m_e\) is geometrically tied to \(r_e\) through the \(r^5\) scaling law.
-In SI units the relation between charge, \(\hbar\), and \(\alpha\) is \(e^2 = 4\pi\epsilon_0\hbar c\alpha\). In the EWT framework \(\epsilon_0\) is not an independent input: together with \(\mu_0\) it is fixed by the metric condition \(c^2 = 1/(\mu_0\epsilon_0)\) and therefore carries no new geometric information. No calibrated parameters appear in this section.
+
+In SI units the relation between charge, \(\hbar\), and \(\alpha\) is \(e^2 = 4\pi\epsilon_0\hbar c\alpha\). In the EWT framework \(\epsilon_0\) is not an independent input: together with \(\mu_0\) it is fixed by the metric condition \(c^2 = 1/(\mu_0\epsilon_0)\) and therefore carries no new geometric information. No calibrated parameters appear in this section. Note that the lepton AMM sector, discussed in Section~\ref{sec:recursive_prediction}, introduces one additional discrete postulate, the muon Fibonacci label $L_\mu = F_5 = 5$, which is absent from the gravitational and electromagnetic constants derived here.
 
 The quantities \(G_{\text{geom}}\), \(\lambda_l\), \(\hbar_{\text{geom}}\), and \(\alpha_{\text{geom}}\) are not independent predictions. They form a single closed algebraic system fixed by the BCC lattice geometry, the electron soliton inputs \(r_e, m_e, c, e\), and the geometric self-consistency condition
 \begin{equation}
@@ -4107,21 +4116,21 @@ not imply a physical tension with units of force per length.
 \subsubsection*{Interface area and the closure signal}
 We interpret $L_n$ as a linear closure scale and $L_n^2$ as the
 corresponding two-dimensional interface area of shell $n$. Under this
-reading, the node count $K_n$ measures how many discrete wave centres
+reading, the nodal count $K_n$ measures how many discrete lattice nodes
 the shell carries, and the ratio $K_n/L_n^2$ measures the node density
 per unit of interface area. A shell is densely closed when this ratio
-exceeds unity, i.e.\ when its wave centres are packed more tightly than
-one per unit of interface area:
+exceeds unity, i.e.\ when its lattice nodes are packed more tightly
+than one per unit of interface area:
 \begin{equation}
 	\frac{K_n}{L_n^2} > 1 .
 	\label{eq:closure_criterion}
 \end{equation}
-This is a threshold on node density at the shell interface, not on total
-energy or total mass. A shell that carries fewer nodes than its
-interface can accommodate has not yet exhausted the phase space
-available at that interface, and therefore cannot close. The three
-observed generations satisfy the closure signal with decreasing margin,
-while the formally generated fourth shell does not.
+This is a threshold on nodal density at the shell interface, not on
+total energy or total mass. A shell that carries fewer lattice nodes
+than its interface can accommodate has not yet exhausted the phase
+space available at that interface, and therefore cannot close. The
+three observed generations satisfy the closure signal with decreasing
+margin, while the formally generated fourth shell does not.
 Table~\ref{tab:closure_criterion} summarises the numerical values.
 
 \begin{table}[ht]
@@ -7040,11 +7049,13 @@ The factor \(\epsilon_M = (N_{\text{geom}}\pi^3)^{-1}\) is the master key of thi
 \subsection{Pillar 3: The Recursive Paradigm — Hierarchical Nodal Integration}
 \label{sec:Pillar3_recursive}
 
-The transition from the electron core to the muon and tau generations is viewed as a hierarchical integration of nested nodal shells, anchored by the Fibonacci invariants
+The transition from the electron core to the muon and tau generations is
+viewed as a hierarchical integration of nested nodal shells, parametrized
+by the Fibonacci labels
 \begin{equation}
-	L_{\mu} = 5,
+	L_{\mu} = F_5 = 5,
 	\qquad
-	L_{\tau} = 34.
+	L_{\tau} = F_9 = 34.
 \end{equation}
 
 The full AMM predictions are:
@@ -7056,7 +7067,10 @@ The full AMM predictions are:
 	a_\tau^{\text{EWT}} = 1.176838 \times 10^{-3}.
 \end{equation}
 
-The recursive architecture replaces the perturbative loop paradigm of the Standard Model with a single unified geometric identity.
+The recursive architecture provides a unified geometric framework that
+offers an alternative to the perturbative loop approach of the Standard
+Model, deriving all three lepton anomalies from a single common modulator
+$\epsilon_M$ rather than from independent loop corrections.
 
 \subsection{The Soliton Radius and Neutrino Interaction Cross-Section}
 \label{neutrion_radius_interaction}
@@ -7176,10 +7190,9 @@ The model is not claimed to be absolutely parameter-free. It currently uses four
 \begin{equation}
 	r_e,\quad m_e,\quad c,\quad e.
 \end{equation}
-These anchors are fixed by measurement and by the metric convention. They are not adjustable calibration parameters: if any one of them were changed independently while keeping the BCC geometry fixed, the entire set of geometric predictions would break. The model therefore contains no free calibration constants; it is zero-free-parameter in the operational sense.
+These anchors are fixed by measurement and by the metric convention. They are not adjustable calibration parameters: if any one of them were changed independently while keeping the BCC geometry fixed, the entire set of geometric predictions would break. In addition to these four measured anchors, the model contains one discrete postulate: the muon Fibonacci label $L_\mu = F_5 = 5$, from which all higher shell labels follow by the four-step rule of Section~\ref{sec:discrete_resonance_labels}. Apart from this discrete postulate, the model contains no free calibration constants; it is zero-free-parameter in the operational sense.
 
 Of these anchors, \(c\) is a metric conversion factor rather than a dynamical parameter. The electron mass \(m_e\) may also be derivable in the future through the \(E \propto r^5\) scaling law and the \(K_{WC}=10\) stability condition. The true irreducible anchors would then reduce to \(r_e\) and \(e\).
-electromagnetism, and the lepton hierarchy.
 
 \clearpage
 
