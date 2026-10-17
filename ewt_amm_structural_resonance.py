@@ -75,17 +75,18 @@ GENERATIONS = {
 
 def main():
     print()
-    print(f"{'Lepton Shell':<24} {'Operator':<20} {'Delta K':>8} {'Total K_n':>10} {'L_dim':>6}")
+    print(f"{'Lepton Shell':<24} {'Operator':<20} "
+          f"{'Delta K':>8} {'Total K_n':>10} {'L_dim':>6}")
     print("-" * 76)
 
     rows = [
-        (1, "Core (Electron)",          "10^0 * pi^2",       None),
-        (2, "Shell 1 (Muon)",           "10^1 * 2pi^2",      None),
-        (3, "Shell 2 (Tau)",            "10^2 * 2pi^2",      None),
-        (4, "Shell 3 (4th gen.)*",      "10^3 * 2pi^2",      None),
+        (1, "Core (Electron)",     "10^0 * pi^2"),
+        (2, "Shell 1 (Muon)",      "10^1 * 2pi^2"),
+        (3, "Shell 2 (Tau)",       "10^2 * 2pi^2"),
+        (4, "Shell 3 (4th gen.)*", "10^3 * 2pi^2"),
     ]
 
-    for n, label, op, _ in rows:
+    for n, label, op in rows:
         k = n - 1
         dK = get_delta_K(k)
         K = get_AMMi_K(n)
