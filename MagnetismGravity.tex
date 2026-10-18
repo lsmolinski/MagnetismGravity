@@ -72,7 +72,7 @@
 
 \begin{center}
 \today \\
-Version: 5.1.5	
+Version: 5.1.6	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -139,6 +139,18 @@ cosmological scaling.
 	\begin{tabular}{@{}p{1.6cm}p{1.8cm}p{10.1cm}@{}}
 		\toprule
 		\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
+		5.1.6 & 2026.10.18 &
+		Revised the electromagnetic consistency check: the SI
+		identity $e^2 = 4\pi\epsilon_0 m_e c^2 r_e$ is now written in EWT
+		natural units as $x\, e^2 = m_e r_e$ with the dimensionful
+		conversion factor $x = \mu_0/(4\pi) = 10^{-7}\,\text{m}^4$. Added
+		the explicit dimensional check $[x][e^2] = [\text{m}^6] = [m_e][r_e]$
+		and clarified that $x$ is a unit-conversion quantity (structural
+		form from $\alpha, e, h, c$; numerical value from SI conventions),
+		with $k_e = c^2 x$ in SI and $k_e = x$ only in the $c=1$ limit. In
+		the Remark on $\epsilon_0$, the role of the vacuum permittivity is
+		absorbed into $x$. \\
+		\midrule
 		5.1.5 & 2026.10.17 &
 		Stated the muon label $L_\mu = F_5 = 5$ explicitly as the model's
 		sole discrete postulate in ``Status of Inputs'' and ``Final
@@ -2061,14 +2073,52 @@ Substituting the geometric expression for \(\hbar\), Eq.~\eqref{eq:hbar_geom}, c
 	e^2 = 4\pi\epsilon_0 m_e c^2 r_e .
 	\label{eq:e2_mass_radius}
 \end{equation}
-In the natural units of the BCC lattice (\(c=1\), \(\epsilon_0=\mu_0=1\),
-the symmetric Lorentz--Heaviside convention; see Section~\ref{sec:c_as_metric}),
-this reduces to the purely geometric identity
+In the natural units of the BCC lattice (\(c=1\); see
+Section~\ref{sec:c_as_metric}), the SI electromagnetic units are
+absorbed into a single dimensionful conversion factor \(x\),
 \begin{equation}
-	e^2 = 4\pi\, m_e r_e .
+	x\, e^2 = m_e r_e ,
+	\qquad
+	x \equiv 10^{-7}\ \text{m}^4 .
 	\label{eq:e2_geometric}
 \end{equation}
-This is not an independent derivation of \(e\), since \(m_e\) and \(r_e\) are inputs, but it is a powerful internal consistency test: it shows that the electromagnetic scale (\(e\)) is rigidly tied to the soliton's mass and radius, with no residual dependence on \(\hbar\) or \(\alpha\).
+The factor \(x\) is a unit-conversion quantity, not an independent
+geometric parameter: its numerical value \(10^{-7}\ \text{m}^4\) is set
+by the SI definitions of the metre, second, and coulomb. Its structural
+form, \(x = \mu_0/(4\pi) = \alpha h/(2\pi e^2 c)\), is a combination of
+\(\alpha\), \(e\), \(h\), and \(c\), which in EWT are geometric. Thus
+\(x\) inherits whatever geometric content those constants carry, but
+its specific numerical value is a SI convention. In dimensionful EWT units it equals
+\begin{equation}
+	x = \frac{\mu_0}{4\pi} = 10^{-7}\ \text{m}^4 ,
+\end{equation}
+the pre-2019 SI value of the Coulomb constant combination
+\(\mu_0/(4\pi)\), expressed in the EWT dimensions
+\([\mu_0] = [\text{H/m}] = [\text{m}^4]\). Its inverse
+\(1/x = 4\pi/\mu_0\) does not coincide with the Coulomb constant
+\(k_e = c^{2}\mu_0/(4\pi)\) when \(c\) is expressed numerically in SI
+units; the two differ by the factor \(c^{2}\). They coincide only in
+the \(c=1\) limit of the BCC lattice, where \(k_e = x\).
+
+The identity~\eqref{eq:e2_geometric} is dimensionally consistent,
+\begin{equation}
+	[x]\,\cdot\,[e^2]
+	=
+	[\text{m}^4]\cdot[\text{m}^2]
+	=
+	[\text{m}^6]
+	=
+	[\text{m}^5]\cdot[\text{m}]
+	=
+	[m_e]\cdot[r_e],
+\end{equation}
+and numerically both sides equal \(2.5670\times 10^{-45}\ \text{m}^6\).
+
+This is not an independent derivation of \(e\), since \(m_e\), \(r_e\),
+and \(x\) are inputs, but it is a powerful internal consistency test:
+it shows that the electromagnetic scale (\(e\)) is rigidly tied to the
+soliton's mass and radius through a single conversion factor \(x\),
+with no residual dependence on \(\hbar\) or \(\alpha\).
 
 
 \subsubsection*{Remark on the Status of $\epsilon_0$}
@@ -2092,9 +2142,9 @@ manifest: $\epsilon_0$ is a derived unit-conversion factor,
 and carries no geometric information beyond that already encoded in
 $\alpha$, $e$, $h$, and $c$. In the EWT framework, where charge is
 identified with wave amplitude in metres, the vacuum permittivity is
-therefore not required as a dynamical parameter. It enters only when
-the geometric charge amplitude is translated back into conventional
-electromagnetic units.
+therefore not required as a dynamical parameter. Its entire role is
+absorbed into the single dimensionful factor
+$x = 10^{-7}\ \text{m}^4$ of Eq.~\eqref{eq:e2_geometric}.
 
 \subsection{Status of Inputs}
 \label{sec:inputs_planck}
