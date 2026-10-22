@@ -23,6 +23,7 @@
 %\pagestyle{fancy}
 \usepackage{hyperref}
 \usepackage{pdflscape}
+\usepackage{longtable}
 
 \lstset{
 	inputencoding=utf8, 
@@ -131,98 +132,122 @@ cosmological scaling.
 \tableofcontents\thispagestyle{plain}
 \noindent\rule{\textwidth}{1pt}
 \vspace{10pt}
-
+\clearpage
 \section*{Change Log}
 \addcontentsline{toc}{section}{Change Log}
 
-\begin{center}
-	\begin{tabular}{@{}p{1.6cm}p{1.8cm}p{10.1cm}@{}}
-		\toprule
-		\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
-		5.1.6 & 2026.10.18 &
-		Revised the electromagnetic consistency check: the SI
-		identity $e^2 = 4\pi\epsilon_0 m_e c^2 r_e$ is now written in EWT
-		natural units as $x\, e^2 = m_e r_e$ with the dimensionful
-		conversion factor $x = \mu_0/(4\pi) = 10^{-7}\,\text{m}^4$. Added
-		the explicit dimensional check $[x][e^2] = [\text{m}^6] = [m_e][r_e]$
-		and clarified that $x$ is a unit-conversion quantity (structural
-		form from $\alpha, e, h, c$; numerical value from SI conventions),
-		with $k_e = c^2 x$ in SI and $k_e = x$ only in the $c=1$ limit. In
-		the Remark on $\epsilon_0$, the role of the vacuum permittivity is
-		absorbed into $x$. \\
-		\midrule
-		5.1.5 & 2026.10.17 &
-		Stated the muon label $L_\mu = F_5 = 5$ explicitly as the model's
-		sole discrete postulate in ``Status of Inputs'' and ``Final
-		Synthesis''. Aligned Pillar~3 with the Fibonacci label terminology
-		($L_\mu = F_5$, $L_\tau = F_9$) and corrected ``wave centres'' to
-		``lattice nodes'' in the closure criterion. Removed a residual
-		fragment from the Final Synthesis. \\
-		\midrule
-		5.1.4 & 2026.10.17 &
-		Introduced a unified discrete operator for the nodal shell hierarchy,
-		$\Delta K_k = \mathrm{round}(10^k \pi^2)$ for the electron core
-		($k=0$) and $\mathrm{round}(10^k \cdot 2\pi^2)$ for the shells
-		($k\geq 1$), which generates $K_n = 10, 207, 2181, 21920$ without a
-		hard-coded seed. Added the ``Discrete Resonance Labels of the BCC
-		Lattice'' section with Fibonacci labels $F_{1+4k} = 1, 5, 34, 233$
-		and the ``Termination at Three Generations'' section with a candidate
-		closure criterion $K_n/L_n^2 > 1$, satisfied by the three observed
-		generations and violated by the formally generated fourth. Softened
-		stability language in the physical interpretation, reconciled
-		``interface tension'' with ``interface area'' and ``interface
-		contribution'', and rephrased ``topological invariant'' as
-		``topologically determined quantity''. Adopted the symmetric
-		Lorentz--Heaviside convention $\epsilon_0 = \mu_0 = 1$
-		($e^2 = 4\pi m_e r_e$); minor typographical corrections. \\
-		\midrule
-		5.1.3 & 2026.10.16 &
-		Corrected the refractive-index encoding to $n_\gamma=(2\eta-1)^{-1/2}$
-		and distinguished timelike from null probes in the Summary of Local
-		Metric Observables. Added the algebraic derivation of
-		$\mathcal{O}_\mu = M_\mu/N_{\text{geom}} = 1/(4\pi^2)$ and clarified the
-		dimensional origin of the interface tension $\delta = L_\mu^2 = 25$.
-		Added notes on the role of $s_\mu$ in $\sigma_\tau$, on orbital-mode
-		internal-consistency tests, and on the status of $\epsilon_0$. Removed
-		the VEV-falsification paragraphs and the ``deeper mathematical
-		structure'' claim; rephrased the muon-anomaly remark. Minor
-		typographical corrections. \\
-		\midrule
-		5.1.2 & 2026.10.09 &
-		Replaced the ``Mutual Falsification: The Ultimate Test'' subsection
-		with ``Two Readings of the Higgs Sector: What a Future Measurement
-		Can Settle''. Stated the three Standard-Model theses on the Higgs
-		explicitly (fundamental scalar, fundamental VEV, fundamental mass
-		mechanism) and contrasted them with the EWT reading. Removed the
-		claim that a confirmed substructure would make the Standard Model
-		``automatically fall''; the falsification now targets the
-		interpretation, not the effective theory. Added a cross-reference label to the
-		$X_{\text{eff}}$ equation. Minor cross-reference corrections. \\
-		\midrule
-		5.1.1 & 2026.09.28 &
-		Replaced the preliminary Higgs-sector verification proposal with a
-		fully formulated observable-based test section. Pillar~I is now
-		stated as a falsifiable zero-modification prediction under an
-		explicit restricted tree-level hypothesis ($\mu_{ZH} = 1$);
-		Pillar~II is presented as a search framework using Legendre
-		moments of the $Z$ production angle, with an explicit proof that
-		an $s$-only form factor leaves the normalised angular shape
-		unchanged. Added experimental references. \\
-		\midrule
-		5.1.0 & 2026.09.26 &
-		Corrected the $r^5$ scaling label (``Resonance Mode Count'' instead
-		of ``Resonance Frequency''); added the Lock-In Test and in-platform
-		validation subsections; added OpenWave M4 references; minor
-		typographical corrections. \\
-		\bottomrule
-	\end{tabular}
-\end{center}
-\medskip
-\noindent
-
-\noindent\rule{\textwidth}{0.4pt}
-\vspace{1em}
-
+\begin{longtable}{@{}p{1.6cm}p{1.8cm}p{10.1cm}@{}}
+	\toprule
+	\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
+	\midrule
+	\endfirsthead
+	
+	\toprule
+	\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
+	\midrule
+	\endhead
+	
+	\midrule
+	\multicolumn{3}{r}{\small\textit{continued on next page}} \\
+	\endfoot
+	
+	\bottomrule
+	\endlastfoot
+	
+	5.1.7 & 2026.10.22 &
+	Corrected the optical refractive index from
+	$n_\gamma = (1-2r_s/r)^{-1/2}$ to $n_\gamma = \eta^{-1} = (1-r_s/r)^{-1}$,
+	which matches the exact Schwarzschild optical metric factor and removes
+	the spurious singularity at $r = 2r_s$. Split the derivation into the
+	timelike encoding $v_{\text{clock}} = \sqrt{\eta}$ and the null-probe
+	encoding $n_\gamma = \sqrt{g_{rr}/g_{00}} = \eta^{-1}$, closing the
+	algebraic gap. Updated the M4.3 and M4.5 numerical entries in the
+	local-metric validation table. \\
+	\midrule
+	
+	5.1.6 & 2026.10.18 &
+	Revised the electromagnetic consistency check: the SI
+	identity $e^2 = 4\pi\epsilon_0 m_e c^2 r_e$ is now written in EWT
+	natural units as $x\, e^2 = m_e r_e$ with the dimensionful
+	conversion factor $x = \mu_0/(4\pi) = 10^{-7}\,\text{m}^4$. Added
+	the explicit dimensional check $[x][e^2] = [\text{m}^6] = [m_e][r_e]$
+	and clarified that $x$ is a unit-conversion quantity (structural
+	form from $\alpha, e, h, c$; numerical value from SI conventions),
+	with $k_e = c^2 x$ in SI and $k_e = x$ only in the $c=1$ limit. In
+	the Remark on $\epsilon_0$, the role of the vacuum permittivity is
+	absorbed into $x$. \\
+	\midrule
+	
+	5.1.5 & 2026.10.17 &
+	Stated the muon label $L_\mu = F_5 = 5$ explicitly as the model's
+	sole discrete postulate in ``Status of Inputs'' and ``Final
+	Synthesis''. Aligned Pillar~3 with the Fibonacci label terminology
+	($L_\mu = F_5$, $L_\tau = F_9$) and corrected ``wave centres'' to
+	``lattice nodes'' in the closure criterion. Removed a residual
+	fragment from the Final Synthesis. \\
+	\midrule
+	
+	5.1.4 & 2026.10.17 &
+	Introduced a unified discrete operator for the nodal shell hierarchy,
+	$\Delta K_k = \mathrm{round}(10^k \pi^2)$ for the electron core
+	($k=0$) and $\mathrm{round}(10^k \cdot 2\pi^2)$ for the shells
+	($k\geq 1$), which generates $K_n = 10, 207, 2181, 21920$ without a
+	hard-coded seed. Added the ``Discrete Resonance Labels of the BCC
+	Lattice'' section with Fibonacci labels $F_{1+4k} = 1, 5, 34, 233$
+	and the ``Termination at Three Generations'' section with a candidate
+	closure criterion $K_n/L_n^2 > 1$, satisfied by the three observed
+	generations and violated by the formally generated fourth. Softened
+	stability language in the physical interpretation, reconciled
+	``interface tension'' with ``interface area'' and ``interface
+	contribution'', and rephrased ``topological invariant'' as
+	``topologically determined quantity''. Adopted the symmetric
+	Lorentz--Heaviside convention $\epsilon_0 = \mu_0 = 1$
+	($e^2 = 4\pi m_e r_e$); minor typographical corrections. \\
+	\midrule
+	
+	5.1.3 & 2026.10.16 &
+	Corrected the refractive-index encoding to $n_\gamma=(2\eta-1)^{-1/2}$
+	and distinguished timelike from null probes in the Summary of Local
+	Metric Observables. Added the algebraic derivation of
+	$\mathcal{O}_\mu = M_\mu/N_{\text{geom}} = 1/(4\pi^2)$ and clarified the
+	dimensional origin of the interface tension $\delta = L_\mu^2 = 25$.
+	Added notes on the role of $s_\mu$ in $\sigma_\tau$, on orbital-mode
+	internal-consistency tests, and on the status of $\epsilon_0$. Removed
+	the VEV-falsification paragraphs and the ``deeper mathematical
+	structure'' claim; rephrased the muon-anomaly remark. Minor
+	typographical corrections. \\
+	\midrule
+	
+	5.1.2 & 2026.10.09 &
+	Replaced the ``Mutual Falsification: The Ultimate Test'' subsection
+	with ``Two Readings of the Higgs Sector: What a Future Measurement
+	Can Settle''. Stated the three Standard-Model theses on the Higgs
+	explicitly (fundamental scalar, fundamental VEV, fundamental mass
+	mechanism) and contrasted them with the EWT reading. Removed the
+	claim that a confirmed substructure would make the Standard Model
+	``automatically fall''; the falsification now targets the
+	interpretation, not the effective theory. Added a cross-reference
+	to the $X_{\text{eff}}$ equation. Minor cross-reference corrections. \\
+	\midrule
+	
+	5.1.1 & 2026.09.28 &
+	Replaced the preliminary Higgs-sector verification proposal with a
+	fully formulated observable-based test section. Pillar~I is now
+	stated as a falsifiable zero-modification prediction under an
+	explicit restricted tree-level hypothesis ($\mu_{ZH} = 1$);
+	Pillar~II is presented as a search framework using Legendre
+	moments of the $Z$ production angle, with an explicit proof that
+	an $s$-only form factor leaves the normalised angular shape
+	unchanged. Added experimental references. \\
+	\midrule
+	
+	5.1.0 & 2026.09.26 &
+	Corrected the $r^5$ scaling label (``Resonance Mode Count'' instead
+	of ``Resonance Frequency''); added the Lock-In Test and in-platform
+	validation subsections; added OpenWave M4 references; minor
+	typographical corrections. \\
+\end{longtable}
+\clearpage
 \section{Geometric Hierarchy of EWT and Spacetime Elasticity}
 
 Energy Wave Theory (EWT) is based on a quantum medium and establishes a clear hierarchy of entities, starting from the Planck scale. This geometric structure is crucial for the elasticity of spacetime and maintaining the constancy of the speed of light \cite{Yee2020Aether}.
