@@ -72,7 +72,7 @@
 
 \begin{center}
 \today \\
-Version: 5.1.6	
+Version: 5.1.7	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -2263,17 +2263,17 @@ where \(\Phi_N(r) = GM/r = r_s/(2r)\) is the dimensionless Newtonian gravitation
 
 Eq.~\eqref{eq:n_weak_field_derived} corresponds to the first-order weak-field expansion of the full continuous expression:
 \begin{equation}
-	n_\gamma(r) = \left(1 - \frac{2r_s}{r}\right)^{-1/2}.
+	n_\gamma(r) = \frac{1}{\eta(r)} = \left(1 - \frac{r_s}{r}\right)^{-1}.
 	\label{eq:n_full}
 \end{equation}
 
-It is important to clarify the theoretical status of Eq.~\eqref{eq:n_full}: in Enhanced EWT, this function does not represent an external metric tensor imported from General Relativity, nor is it an ad hoc optical ansatz. Rather, Eq.~\eqref{eq:n_full} is the \emph{asymptotic continuous limit} of the discrete BCC lattice deformation field around a spherical soliton core.
+The full expression combines the two distinct effects of the strained BCC medium on a null probe: the effective cell spacing is stretched by a factor $\eta^{-1/2}$, and the local propagation period is dilated by the same factor $\eta^{-1/2}$, so that the coordinate refractive index is $n_\gamma = \eta^{-1}$. In this respect the EWT encoding is identical to the effective optical metric factor of the Schwarzschild geometry, $n_\text{GR} = \sqrt{-g_{rr}/g_{00}} = (1-r_s/r)^{-1}$.
 
-Formally, \(n_\gamma(r)\) matches the effective optical metric factor of the Schwarzschild geometry. In EWT, however, this exact mathematical form arises physically from the nonlinear elastic response of the EMC medium under the \(1/r\) gravitational potential load, without requiring a curved spacetime manifold.
+In EWT, however, this same form arises physically from the nonlinear elastic response of the EMC medium under the $1/r$ gravitational potential load, without requiring a curved spacetime manifold.
 
 Expanding Eq.~\eqref{eq:n_full} binomially:
 \begin{equation}
-	n_\gamma(r) = \left(1 - \frac{2r_s}{r}\right)^{-1/2} \approx 1 + \frac{r_s}{r} + \mathcal{O}\left(\left(\frac{r_s}{r}\right)^2\right),
+	n_\gamma(r) = \left(1 - \frac{r_s}{r}\right)^{-1} \approx 1 + \frac{r_s}{r} + \mathcal{O}\left(\left(\frac{r_s}{r}\right)^2\right),
 \end{equation}
 recovers the exact factor of 2 in front of \(\Phi_N(r)\), providing the structural lattice foundation for the observed \(1.75''\) solar limb deflection. In the undisturbed statutory vacuum (\(r_s/r \to 0\)), \(n_\gamma(r) \to 1\), restoring the fundamental lattice ratio \(c = \lambda_l / t_p = 1\).
 
@@ -2360,10 +2360,11 @@ metric components and EWT lattice strain:
 	time dilation.
 	
 	\item \textbf{Effective optical metric factor:}
-	Encoded by the optical refractive index
-	\(n_\gamma(r) = 1 + r_s/r = 1 + 2\Phi_N(r)\), whose weak-field
-	form is the first-order expansion of
-	\((1 - 2r_s/r)^{-1/2}\), producing solar light deflection.
+Encoded by the optical refractive index
+\(n_\gamma(r) = 1 + r_s/r = 1 + 2\Phi_N(r)\), whose weak-field
+form is the first-order expansion of
+\(\eta(r)^{-1} = (1 - r_s/r)^{-1}\), producing solar light
+deflection.
 	
 	In standard GR language, this effective index combines the
 	contributions of both \(g_{00}\) and \(g_{rr}\). In EWT it
@@ -2374,8 +2375,8 @@ Both fundamental phenomena are physically unified as dual
 manifestations of the same local EMC density profile
 \(\eta(r) = 1 - r_s/r\), but they project onto different
 observables: the clock samples the local node availability through
-\(\sqrt{\eta}\), while the light ray samples the integrated radial
-displacement \(u_r = 1 - \eta = r_s/r\).
+\(\sqrt{\eta}\), while the light ray samples the combined spatial and
+temporal strain through \(\eta^{-1}\).
 
 \subsection{Shapiro Delay from the EMC Refractive Index}
 \label{sec:shapiro_delay_emc}
@@ -2394,7 +2395,9 @@ strained EMC geometry is
 	=
 	\frac{1}{n_\gamma(r)}
 	=
-	\left(1 - \frac{2r_s}{r}\right)^{1/2},
+	1 - \frac{r_s}{r}
+	=
+	\eta(r),
 	\label{eq:photon_speed_shapiro}
 \end{equation}
 where \(n_\gamma(r)\) is the optical refractive index introduced in
@@ -2727,14 +2730,32 @@ This is exactly the clock-speed encoding
 now obtained as an emergent property of the microscopic lattice
 dynamics.
 
-The corresponding effective refractive index follows from the same
-wave speed:
+This wave-speed $\sqrt{\eta}$ is the propagation speed of a timelike
+probe in the strained lattice. For a null probe (light), the
+effective refractive index is not $1/v(\eta) = \eta^{-1/2}$, because
+light samples both the spatial cell stretching ($\eta^{-1/2}$) and the
+temporal propagation-period dilation ($\eta^{-1/2}$) of the strained
+medium. The coordinate speed of a null geodesic is the combination
 \begin{equation}
-n_\gamma(\eta)
-=
-\bigl(2\eta - 1\bigr)^{-1/2}
-=
-\Bigl(1 - \frac{2r_s}{r}\Bigr)^{-1/2}.
+	v_\gamma(\eta)
+	=
+	\sqrt{\frac{g_{00}}{g_{rr}}}
+	=
+	\sqrt{\frac{\eta}{\eta^{-1}}}
+	=
+	\eta,
+	\label{eq:v_gamma_null}
+\end{equation}
+so that the corresponding refractive index is
+\begin{equation}
+	n_\gamma(\eta)
+	=
+	\frac{1}{v_\gamma(\eta)}
+	=
+	\frac{1}{\eta}
+	=
+	\left(1 - \frac{r_s}{r}\right)^{-1}.
+	\label{eq:n_gamma_null}
 \end{equation}
 
 A physical clock in this medium is a standing-wave soliton of fixed
@@ -2748,9 +2769,10 @@ linear dimension \(L\). Its fundamental frequency is therefore
 	.
 \end{equation}
 
-Thus the two exponents previously introduced as geometric encodings
-follow directly from the lattice dynamics. They do not require an
-independent optical or clock hypothesis.
+The clock-speed exponent follows directly from the 1D lattice
+dynamics derived above; the light-index exponent follows from the
+same strain field through the null-probe combination of $g_{00}$ and
+$g_{rr}$. Neither requires an independent optical or clock hypothesis.
 
 \noindent
 
@@ -2785,12 +2807,12 @@ Thus, the single normalized EMC density profile
 \(\eta(r)=1-r_s/r\) unifies all three classic local metric observables without introducing any free parameters:
 
 \begin{itemize}
-	\item \textbf{Solar light bending} through the spatial gradient of \(n_\gamma(r)=\bigl(1-2r_s/r\bigr)^{-1/2}\),
+	\item \textbf{Solar light bending} through the spatial gradient of \(n_\gamma(r)=\eta^{-1}=\bigl(1-r_s/r\bigr)^{-1}\),
 	\item \textbf{Gravitational redshift} through the internal clock speed \(v_{\text{clock}}=\sqrt{\eta}=\sqrt{1-r_s/r}\),
 	\item \textbf{Shapiro delay} through the integrated excess of \(n_\gamma(r)-1\) along the propagation path.
 \end{itemize}
 
-The two encodings---\(\sqrt{\eta}\) for timelike probes and \((1-2r_s/r)^{-1/2}\) for null probes---reflect that a clock samples the local node availability while a light ray samples the integrated radial displacement of the same lattice deformation. The functional form of this underlying profile is uniquely determined by the harmonic equilibrium of the EMC lattice, with its amplitude strictly fixed by the enclosed gravitational radius \(r_s\).
+The two encodings---\(\sqrt{\eta}\) for timelike probes and \(\eta^{-1}\) for null probes---reflect that a clock samples the local node availability while a light ray samples the combined spatial and temporal strain of the same lattice deformation.
 
 \subsection{In-Platform Numerical Validation}
 \label{sec:local_metric_validation}
@@ -2813,9 +2835,9 @@ Table~\ref{tab:local_metric_validation}.
 		\toprule
 		\textbf{Artifact} & \textbf{Quantity} & \textbf{EWT result} & \textbf{Reference} & \textbf{Difference} \\
 		\midrule
-		M4.3 & Solar-limb light bending & $1.751728$~arcsec & $1.7517$~arcsec (GR) & $0.0016\%$ \\
+		M4.3 & Solar-limb light bending & $1.751722$~arcsec & $1.7517$~arcsec (GR) & $0.0012\%$ \\
 		M4.4 & Gravitational redshift $\Delta f/f$ & $-2.123135 \times 10^{-6}$ & GR exact factor & $0$ (identity) \\
-		M4.5 & Shapiro round-trip delay & $239.014~\mu$s & $239.014~\mu$s & $0.000075\%$ \\
+		M4.5 & Shapiro round-trip delay & $239.014~\mu$s & $239.014~\mu$s & $0.000020\%$ \\
 		M4.6 & Far-field profile $\eta(r)$ & RK4 solution & analytic $1-r_s/r$ & $5.7 \times 10^{-14}$ \\
 		M4.8 & Monopole amplitude $A$ & $2.954320 \times 10^{3}$~m & CODATA $G$ & $65.65$~ppm \\
 		M4.9 & Stiffness exponent $\alpha$ & $3.0$ & expected $3.0$ & $< 0.05$ \\
