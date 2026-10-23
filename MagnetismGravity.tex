@@ -393,6 +393,13 @@ The stability of the geometric structure hinges upon the nature of the medium's 
 	\item \textbf{Significance for Solitons and Volume Symmetry:} This elastic interaction ensures that the medium prevents unlimited compression of the Constituents.
 \end{itemize}
 
+\textbf{Linearization and density dependence.}
+Hooke's law in Eq.~\eqref{eq:hooke_law} represents the linearized elastic response of the EMC pair potential around the statutory equilibrium spacing. The microscopic pair potential is nonlinear, $V(r) \propto r^{-n}$ (with $n = 1$ in the 1D reduction and $n = 3$ in the full 3D lattice), and the local effective spring constant is its second derivative evaluated at the instantaneous spacing $a(\eta) = 1/\eta$,
+\begin{equation}
+	k(\eta) = \left.\frac{d^2 V}{dr^2}\right|_{r=1/\eta} \propto \eta^{\,n+2}.
+\end{equation}
+At the statutory equilibrium $\eta = 1$, this reduces to a constant tangent modulus $k(1)$, which is what Eq.~\eqref{eq:hooke_law} encodes. The density dependence $k(\eta) \propto \eta^{\,n+2}$ is used in the wave-speed derivation of Section~\ref{sec:emergent_metric_encodings}, where the full nonlinear response is required to compute the density-dependent sound speed $v(\eta)$.
+
 \begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[scale=1.5] % Zwiększona skala bazowa
