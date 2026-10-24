@@ -73,7 +73,7 @@
 
 \begin{center}
 \today \\
-Version: 5.1.7	
+Version: 5.1.8	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -2299,15 +2299,83 @@ Eq.~\eqref{eq:n_weak_field_derived} corresponds to the first-order weak-field ex
 	\label{eq:n_full}
 \end{equation}
 
-The full expression combines the two distinct effects of the strained BCC medium on a null probe: the effective cell spacing is stretched by a factor $\eta^{-1/2}$, and the local propagation period is dilated by the same factor $\eta^{-1/2}$, so that the coordinate refractive index is $n_\gamma = \eta^{-1}$. In this respect the EWT encoding is identical to the effective optical metric factor of the Schwarzschild geometry, $n_\text{GR} = \sqrt{-g_{rr}/g_{00}} = (1-r_s/r)^{-1}$.
-
-In EWT, however, this same form arises physically from the nonlinear elastic response of the EMC medium under the $1/r$ gravitational potential load, without requiring a curved spacetime manifold.
-
-Expanding Eq.~\eqref{eq:n_full} binomially:
+For a null probe, we \emph{postulate} the coordinate speed of light
 \begin{equation}
-	n_\gamma(r) = \left(1 - \frac{r_s}{r}\right)^{-1} \approx 1 + \frac{r_s}{r} + \mathcal{O}\left(\left(\frac{r_s}{r}\right)^2\right),
+	v_\gamma(r) = \eta(r),
+	\qquad
+	v_\text{clock}(r) = \sqrt{\eta(r)},
+	\label{eq:v_null_v_clock}
 \end{equation}
-recovers the exact factor of 2 in front of \(\Phi_N(r)\), providing the structural lattice foundation for the observed \(1.75''\) solar limb deflection. In the undisturbed statutory vacuum (\(r_s/r \to 0\)), \(n_\gamma(r) \to 1\), restoring the fundamental lattice ratio \(c = \lambda_l / t_p = 1\).
+on the following physical ground: a light ray traverses the strained
+lattice, so its coordinate speed is governed by the ratio of the local
+spatial strain to the local temporal strain, while a clock is a bound
+standing wave whose period is set only by the local node availability.
+In the language of an effective metric with $+---$ signature, this is
+\begin{equation}
+	g_{00}(r) = \eta(r),
+	\qquad
+	g_{rr}(r) = -\frac{1}{g_{00}(r)} = -\eta(r)^{-1},
+	\label{eq:g_coeffs}
+\end{equation}
+with $g_{rr}$ obtained from $g_{00}$ and $v_\gamma$ by the identity
+$g_{rr} = -g_{00}/v_\gamma^2$. The coordinate refractive index follows
+as
+\begin{equation}
+	n_\gamma(r) = \frac{1}{v_\gamma(r)} = \eta(r)^{-1}
+	= \left(1 - \frac{r_s}{r}\right)^{-1},
+	\label{eq:n_gamma_from_postulate}
+\end{equation}
+which is identical to the radial Schwarzschild optical factor
+$n_\text{GR} = \sqrt{-g_{rr}/g_{00}} = (1-r_s/r)^{-1}$, and reproduces
+the standard identity $c_\text{coord}(r) = c\sqrt{g_{00}/(-g_{rr})}$
+of a static metric with the coefficients in
+Eq.~\eqref{eq:g_coeffs}.
+%
+% TODO (open item): The postulate of Eq.~\eqref{eq:v_null_v_clock} is
+% EWT-native: a null probe couples to both strain factors, a clock
+% only to the temporal one. It is NOT derived from the microscopic
+% lattice dynamics. The 1D chain with spacing $a(\eta) = 1/\eta$
+% (Eq.~\eqref{eq:a_eta}, Sec.~\ref{sec:emergent_metric_encodings})
+% and pair potential $V \propto 1/r$ yields a timelike exponent
+% $\beta = 1/2$ and, by the product rule (spatial cell factor times
+% temporal dilation), a null-probe index $\eta^{-3/2}$, not
+% $\eta^{-1}$. Alternative routes checked:
+%   - $a \propto \eta^{-1/q}$, $V \propto r^{-n}$, $q = 3$
+%     (isotropic 3D): gives $\eta^{-5/6}$;
+%   - $(n,q) = (2,2)$: gives $\eta^{-1}$ only with $V \propto r^{-2}$
+%     and planar compression $q=2$, both inconsistent with an
+%     isotropic solar source; rejected as fine-tuning;
+%   - full 3D elasticity (shear and bulk moduli, beyond the axial
+%     reduction): not yet computed. Tracked as open task M4.13,
+%     "Local metric phenomena with fully geometric G", in
+%     `openwave/xperiments/m4_ewt/research/m4_roadmap.md`.
+% The postulate is a hypothesis, not a derivation. It is falsifiable:
+% if 3D lattice dynamics yields a null-probe exponent different from
+% 1, M4.3 and M4.5 must be revised to the derived exponent.
+%
+
+The expansion of Eq.~\eqref{eq:n_full} is
+\begin{equation}
+	n_\gamma(r) = \left(1 - \frac{r_s}{r}\right)^{-1}
+	\approx 1 + \frac{r_s}{r} + \frac{r_s^2}{r^2}
+	+ \mathcal{O}\!\left(\left(\frac{r_s}{r}\right)^3\right),
+	\label{eq:n_full_expansion}
+\end{equation}
+with $r_s/r = 2\Phi_N(r)$ in natural units, giving the factor $2$ in
+front of $\Phi_N(r)$ and the structural foundation for the observed
+$1.75''$ solar limb deflection. In the undisturbed statutory vacuum
+($r_s/r \to 0$), $n_\gamma(r) \to 1$, restoring the fundamental lattice
+ratio $c = \lambda_l/t_p = 1$.
+%
+% TODO (open item): The second-order coefficient of
+% Eq.~\eqref{eq:n_full_expansion} is 1, whereas the exact
+% general-relativistic isotropic index expands as
+% $\tfrac{9}{16}x^2 \simeq 1.0 \times 10^{-11}$ at the solar limb, is
+% far below the resolution of the deflection measurement and is not
+% claimed to be distinguishable. It is a pre-registered falsifier of
+% Eq.~\eqref{eq:v_null_v_clock}: any future measurement at second
+% order in $r_s/r$ discriminates between the two.
+%
 
 \subsection{Mechanical Origin of Gravitational Redshift in the EMC Lattice}
 \label{sec:grav_time_dilation_clock}
@@ -2685,7 +2753,8 @@ lattice, the equilibrium spacing is
 	a(\eta)
 	\equiv
 	\frac{1}{\eta}
-	,
+	.
+	\label{eq:a_eta}
 \end{equation}
 where \(\eta\) is the normalised EMC density.
 
@@ -2763,22 +2832,21 @@ now obtained as an emergent property of the microscopic lattice
 dynamics.
 
 This wave-speed $\sqrt{\eta}$ is the propagation speed of a timelike
-probe in the strained lattice. For a null probe (light), the
-effective refractive index is not $1/v(\eta) = \eta^{-1/2}$, because
-light samples both the spatial cell stretching ($\eta^{-1/2}$) and the
-temporal propagation-period dilation ($\eta^{-1/2}$) of the strained
-medium. The coordinate speed of a null geodesic is the combination
+probe in the strained lattice. For a null probe we \emph{postulate}
+the coordinate speed $v_\gamma(\eta) = \eta$ (see
+Sec.~\ref{sec:n_from_energy_density}, Eq.~\eqref{eq:v_null_v_clock}):
+a light ray samples both the spatial and the temporal strain factors
+of the medium, whereas a clock samples only the local node
+availability. The two metric coefficients are therefore
 \begin{equation}
-	v_\gamma(\eta)
-	=
-	\sqrt{\frac{g_{00}}{g_{rr}}}
-	=
-	\sqrt{\frac{\eta}{\eta^{-1}}}
-	=
-	\eta,
-	\label{eq:v_gamma_null}
+	g_{00}(\eta) = \eta,
+	\qquad
+	g_{rr}(\eta) = -\frac{1}{\eta},
+	\label{eq:g_coeffs_from_eta}
 \end{equation}
-so that the corresponding refractive index is
+with $g_{rr}$ obtained from $g_{00}$ and $v_\gamma$ by
+$g_{rr} = -g_{00}/v_\gamma^2$, and the corresponding refractive index
+is
 \begin{equation}
 	n_\gamma(\eta)
 	=
@@ -2789,6 +2857,18 @@ so that the corresponding refractive index is
 	\left(1 - \frac{r_s}{r}\right)^{-1}.
 	\label{eq:n_gamma_null}
 \end{equation}
+%
+% TODO (open item): $v_\gamma = \eta$ is a postulate
+% (Sec.~\ref{sec:n_from_energy_density}), not a lattice output. The
+% 1D chain derived above ($a(\eta) = 1/\eta$, Eq.~\eqref{eq:a_eta},
+% with $V \propto 1/r$) yields the timelike exponent $\beta = 1/2$;
+% the product rule for a null probe on that chain gives
+% $\eta^{-3/2}$, not $\eta^{-1}$. The postulate's justification is
+% physical (a null probe couples to both strain factors), not
+% algebraic, and it is falsifiable. See the TODO block in
+% Sec.~\ref{sec:n_from_energy_density} for the alternatives checked
+% and the open task M4.13.
+%
 
 A physical clock in this medium is a standing-wave soliton of fixed
 linear dimension \(L\). Its fundamental frequency is therefore
@@ -2802,9 +2882,10 @@ linear dimension \(L\). Its fundamental frequency is therefore
 \end{equation}
 
 The clock-speed exponent follows directly from the 1D lattice
-dynamics derived above; the light-index exponent follows from the
-same strain field through the null-probe combination of $g_{00}$ and
-$g_{rr}$. Neither requires an independent optical or clock hypothesis.
+dynamics derived above. The light-index exponent rests on the
+postulate of Sec.~\ref{sec:n_from_energy_density},
+Eq.~\eqref{eq:v_null_v_clock}; it is not derived from the lattice
+here.
 
 \noindent
 
@@ -2839,7 +2920,7 @@ Thus, the single normalized EMC density profile
 \(\eta(r)=1-r_s/r\) unifies all three classic local metric observables without introducing any free parameters:
 
 \begin{itemize}
-	\item \textbf{Solar light bending} through the spatial gradient of \(n_\gamma(r)=\eta^{-1}=\bigl(1-r_s/r\bigr)^{-1}\),
+	\item \textbf{Solar light bending} through the spatial gradient of the postulated index \(n_\gamma(r)=\eta^{-1}=\bigl(1-r_s/r\bigr)^{-1}\) (Sec.~\ref{sec:n_from_energy_density}),
 	\item \textbf{Gravitational redshift} through the internal clock speed \(v_{\text{clock}}=\sqrt{\eta}=\sqrt{1-r_s/r}\),
 	\item \textbf{Shapiro delay} through the integrated excess of \(n_\gamma(r)-1\) along the propagation path.
 \end{itemize}
