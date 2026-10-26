@@ -1167,6 +1167,8 @@ The total scaling factor is the sum of these components:
 	\label{eq:S_tot}
 \end{equation}
 
+The static projection of the soliton potential over the 8 BCC coordination nodes (8 discrete degrees of freedom) together with the single continuous degree of freedom of the spherically symmetric wavefront $\pi$, combined additively because the two contributions enter the projection energy additively rather than multiplicatively.
+
 \subsection{Geometric Fixed Point of \(g_v\)}
 \label{sec:gv_fixed_point}
 
@@ -3858,7 +3860,27 @@ gives the full observable anomaly:
 \end{equation}
 
 \subsubsection*{3. Generation 3: Tau Expansion ($n=3$)}
-
+Before writing $B_\tau$ explicitly, recall the two structural features
+that fix its form. First, the Onion Model forces the energy excess of
+the soliton --- which grows as $E \propto r^5$ while the available
+volume grows only as $V \propto r^3$ --- into nested shells (see
+Section~\ref{sec:geom_shell_formation}). Second, the interface between
+the muon core and the tau shell is a two-dimensional surface, as fixed
+by the dimensional origin of the interface area $L_\mu^2 = 25$ (see
+Section~\ref{sec:interface_tension}). A two-dimensional interface
+partitions the three-dimensional phase space into two halves: the inner
+half, occupied by the muon core, and the outer half, accessible to the
+tau shell. The interior core therefore shadows half of the available
+phase space as seen from the outer shell, reducing the effective
+spherical coverage from $A_\pi$ to $A_\pi/2$. The muon shell, by
+contrast, is a 2D planar resonance and couples to the full $4\pi$
+steradians of the core wavefront, which is why $B_\mu$ retains the full
+$A_\pi$. The same two-dimensional interface thus produces both the
+additive energetic term $L_\mu^2$ in $\sigma_\tau$ (the cost of closing
+the interface) and the multiplicative geometric reduction $A_\pi/2$ in
+$B_\tau$ (the shadowing of the inner half). These are not independent
+adjustments, but two aspects of one and the same two-dimensional shell
+boundary.
 The second shell produces a raw geometric contribution $s_\tau$, with $B_\tau$
 encoding the full 3D volumetric coordination of the BCC unit cell:
 \begin{equation}
@@ -3947,6 +3969,7 @@ geometric quantity $s_\mu$ thus plays two distinct roles: a projected
 component of $\sigma_\tau$.
 
 \subsubsection*{Physical Interpretation: Geometric Continuity}
+\label{sec:interface_tension}
 The term $L_{\mu}^2 = 25$ functions as the \textbf{interface tension}, a residual binding energy that anchors the high-density Tau shell to the Muon core. Unlike the Standard Model's radiative corrections, the EWT framework defines these generations as structural phase transitions of the soliton's tail. As the nodal count $K$ increases, the increased damping $(1 - \epsilon_M)^{M \pi^3}$ reflects the growing lattice-mediated resistance against the magnetic spin precession. 
 
 \textbf{Dimensional origin of the interface tension.}
@@ -4007,6 +4030,7 @@ reduction.
 
 
 \subsubsection*{The Geometric Necessity of Shell Formation}
+\label{sec:geom_shell_formation}
 The emergence of the recursive "Onion Model" is not an arbitrary structural choice but a direct consequence of the scaling disparity established in Eq.~\ref{eq:mass_to_radius_id} and Eq.~\ref{eq:geometry_scaling_boxed}. As the internal energy density $\rho_E$ surges with $r^5$ during nodal compression, the available three-dimensional volume scales only as $r^3$, imposing a fundamental capacity limit. The 3D spatial substrate cannot accommodate arbitrarily high energy densities without exceeding the elastic limits of the BCC lattice. To maintain stability, the system is forced to redistribute the excess energy into nested toroidal shells, each storing energy in additional angular degrees of freedom. Each subsequent generation (muon, tau) thus represents a new resonant layer that circumvents the strict $r^3$ volumetric bottleneck.
 
 \subsubsection*{Phyllotactic Motivation for the Fibonacci Labels}
@@ -4061,15 +4085,32 @@ The anomalous magnetic moments derived from the BCC lattice geometry ($K_n$)
 and the universal stiffness deficit ($\epsilon_M$) are compared against CODATA 
 and Particle Data Group (PDG) benchmarks. 
 
-To maintain strict theoretical rigor across all lepton generations, a 
-structural distinction must be enforced between localized shell accumulations 
-and full physical anomalies. While the electron anomaly ($a_e^{\text{EWT}}$) 
-reflects the un-shifted geometric core deficit of the vacuum medium, the 
-higher-generation anomalies ($a_\mu^{\text{EWT}}$ and $a_\tau^{\text{EWT}}$) 
-emerge from the same universal core background 
-($a_e^{\text{geom}} \approx 1159.916228\ \text{ppm}$), driven by the elastic 
-stiffness invariant $1/N_{\text{geom}}$, augmented by the recursively accumulated shell 
-contributions.
+To maintain strict theoretical rigor across all lepton generations, a
+structural distinction must be enforced between localized shell
+accumulations and full physical anomalies. The three lepton anomalies
+$a_e^{\text{EWT}}$, $a_\mu^{\text{EWT}}$, and $a_\tau^{\text{EWT}}$ are
+three independent evaluations of the same geometric identity, each
+using the same $\epsilon_M$, $N_{\text{geom}}$, and $A_\pi$. The
+electron anomaly is the direct core deficit of the vacuum medium. The
+muon and tau anomalies are computed from the recursively accumulated
+shell contributions $s_\mu$ and $s_\tau$, which already incorporate
+the core stiffness through the damping factor
+$(1-\epsilon_M)^{M\pi^3}$. In the tau expression
+\begin{equation}
+	a_\tau^{\text{EWT}}
+	= \mathcal{O}_\tau \cdot \sigma_\tau
+	= s_\mu + s_\tau + L_\mu^2,
+	\label{eq:a_tau_final}
+\end{equation}
+the electron core term does not appear as a separate additive
+contribution: it is structurally embedded in the damping factor.
+Numerically, the three leptons evaluate to approximately
+$1160$--$1177\ \text{ppm}$, a proximity that reflects the fact that
+the same geometric structure fixes all three at the same order of
+magnitude, not that $a_\tau$ is constructed as $a_e$ plus a small
+correction. The recursive shell architecture re-expresses the same
+underlying stiffness at each generation rather than superposing
+generation-specific corrections on top of a shared base.
 
 The transition from the internal shell densities to the observable macroscopic 
 magnetic moments is governed by a dimensional projection mechanism dictated by 
