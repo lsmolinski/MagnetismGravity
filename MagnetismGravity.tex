@@ -102,7 +102,17 @@ parameter. The same $\epsilon_M$ factor governs a recursive nodal
 integration that predicts the electron anomalous magnetic moment from
 pure geometry and yields the full muon and tau anomalous magnetic
 moments via a unified dimensional projection over the BCC lattice,
-without perturbative QED calibrations. The framework posits that the
+without perturbative QED calibrations. The model contains four empirical anchors ($r_e$, $m_e$, $c$, $e$)
+that fix the dimensional conversion between the geometric prediction
+and the SI-measured values, together with one explicit discrete
+postulate, the muon Fibonacci label $L_\mu = F_5 = 5$. The electron
+wave-centre count $K_{WC} = 10$ is geometrically fixed, with its dynamical
+stability proof noted as an open objective. Beyond
+these, no continuously adjustable parameters are introduced. All
+geometric operators are parameter-free functional forms of these two
+integers, no
+continuously adjustable quantity appears anywhere in the framework. 
+The framework posits that the
 observed invariance of $G$ is a low-field artefact of a dynamic
 geometric equilibrium, predicting testable deviations ($G_{eff} \neq
 G$) in environments with strong local magnetic moments where this
@@ -1490,6 +1500,17 @@ The following fundamental axiom is posited:
 \begin{quote}
 	\emph{In the BCC lattice at the statutory density \(N_{\nu,\text{stat}}\), there exists a maximum propagation speed \(c\) for any disturbance. This speed is a structural property of the lattice, determined by its density and elastic response, and is independent of the amplitude or frequency of the disturbance.}
 \end{quote}
+
+The BCC lattice is anisotropic at the Planck scale, where the
+wavelength of a propagating mode is comparable to the lattice spacing
+$\lambda_l$; the dispersion relation is not exactly linear, and wave
+speeds depend on direction in the crystal frame. The effective Lorentz
+invariance and isotropic speed of light $c$ are infrared properties: at
+scales $\lambda \gg \lambda_l$, the dispersion relation becomes linear
+to leading order, and the elastic tensor averages over many unit cells
+to an isotropic effective continuum. The Planck-scale BCC crystal is
+the ultraviolet completion of the model; the observed isotropy of $c$
+is a long-wavelength property, not a Planck-scale symmetry.
 
 This axiom is physically motivated: in any elastic medium with finite density and stiffness, there exists a speed of propagation (the speed of sound in the medium). The BCC lattice, as a discrete elastic medium, is no exception. The speed \(c\) is therefore not an empirical input but a derived property of the lattice, on the same footing as the speed of sound in a solid.
 
@@ -7453,6 +7474,80 @@ The following table lists the fundamental physical constants and key dimensionle
 \end{table}
 \normalsize
 \clearpage
+\subsection{Inventory of Inputs, Postulates, and Parameter-Free Forms}
+\label{app:inventory_status}
+
+The following table classifies every element of the model according to
+its logical status: whether it is a measured input (anchor), a test
+anchor used only for consistency checks, a discrete postulate, a
+geometrically fixed integer, a parameter-free functional form, or a
+rounding of a derived quantity. The purpose is to provide the reader
+with an explicit, section-by-section accounting of where each element
+enters and what role it plays.
+
+{\small
+	\begin{longtable}{@{}p{3.2cm}p{1.8cm}p{2.6cm}p{6.0cm}@{}}
+		\toprule
+		\textbf{Element} & \textbf{Section} & \textbf{Status} & \textbf{Role in the model} \\
+		\midrule
+		\endfirsthead
+		\toprule
+		\textbf{Element} & \textbf{Section} & \textbf{Status} & \textbf{Role in the model} \\
+		\midrule
+		\endhead
+		\bottomrule
+		\endlastfoot
+		
+		\multicolumn{4}{l}{\textit{I. Primary empirical anchors (dimensional conversion)}} \\
+		\midrule
+		$r_e$ & \ref{sec:geometric_identity} & Anchor & Classical electron radius, fixes $G_{\text{Base}}$ \\
+		$m_e$ & \ref{sec:geometric_identity} & Anchor & Electron mass, fixes $G_{\text{Base}}$ and the $E \propto r^5$ scale \\
+		$c$    & \ref{sec:c_as_metric} & Anchor (metric) & Conversion between spatial and temporal lattice steps \\
+		$e$    & \ref{sec:coulomb_derived_unit} & Anchor & Elementary charge amplitude; fixes $q_P = e/\sqrt{\alpha_{\text{geom}}}$ and $r_\nu$ \\
+		\midrule
+		\multicolumn{4}{l}{\textit{II. Test anchors (consistency checks, not predictions)}} \\
+		\midrule
+		$M_Z$, $\sin^2\theta_W$ & \ref{sec:dimensional_hierarchy} & Test anchor & Evaluate $C_{\text{gap}}$; $M_W$ prediction tests the operator form \\
+		$M_d$, $M_s$ & \ref{sec:dimensional_hierarchy} & Test anchor & Evaluate $C_{\text{fermion}}$; $\sin\theta_C$ tests the operator form \\
+		$M_W^{\text{CDF II}}$ & \ref{sec:dimensional_hierarchy} & Test anchor & External test of the $C_{\text{gap}}$ prediction \\
+		$a_e$, $a_\mu$ & \ref{sec:final_experimental_proof} & Test anchor & PDG/CODATA values used as external test of the AMM predictions \\
+		$a_\tau^{\text{SM}}$ & \ref{sec:final_experimental_proof} & Test anchor (SM) & Standard-Model prediction, not measurement; no direct experimental anchor available \\
+		\midrule
+		\multicolumn{4}{l}{\textit{III. Discrete postulates and geometrically fixed integers}} \\
+		\midrule
+		$L_\mu = F_5 = 5$ & \ref{sec:discrete_resonance_labels} & Discrete postulate & Muon Fibonacci latch; $L_\mu^2 = 25$ is the interface area \\
+		$K_{WC} = 10$ & \ref{sec:nonlinear_stability} & Geometric integer & 1-3-6 tetrahedral configuration of the BCC lattice; stability proof open in M4 \\
+		$Q = 10$ & \ref{subsec:topological_isomorphism} & Topological invariant & Winding number on $S^2$; coincides with $K_{WC}$ \\
+		\midrule
+		\multicolumn{4}{l}{\textit{IV. Parameter-free functional forms (no continuous knob)}} \\
+		\midrule
+		$\zeta$ & \ref{sec:alpha_geometric_deficit} & Functional form & Lattice impedance $(1-\eta)/(\eta N_{\text{ideal}})$ from BCC packing fraction \\
+		$C_{\text{unif}}$ & \ref{sec:unified_coupling} & Functional form & Unified coupling $1/K_{WC} + 1 + \alpha/(\pi L_p)$ \\
+		$X_{\text{eff}}$ & \ref{sec:unified_coupling} & Functional form & Dilution factor $A_\pi \cdot 3 K_{WC} \sqrt{2}/C_{\text{unif}}$ \\
+		$S_{\text{tot}}$ & \ref{sec:S_decomposition} & Geometric ansatz & $\alpha/(8+\pi) + e + (1-g_v)(\sqrt{2}-1)$; validated by $g_v$ agreement and $r_e/r_\nu = 100$ \\
+		$C_{\text{gap}}$ & \ref{sec:geom_ladder} & Functional form & $1 + \pi^6 C_{\text{local}}$ (volumetric coupling) \\
+		$C_{\text{fermion}}$ & \ref{sec:geom_ladder} & Functional form & $(1 + \pi^5 C_{\text{local}})^2$ (surface coupling) \\
+		$B_\mu$, $B_\tau$ & \ref{sec:recursive_math_final} & Functional form & Shell prefactors: $3 A_\pi \pi^3/(2 L_\mu^2)$ and $3 A_\pi \pi^3/(8\sqrt{2}) + A_\pi/2$ \\
+		$\Delta K_k$ & \ref{sec:discrete_resonance_labels} & Functional form & Shell-rounding operator $\mathrm{round}(10^k \cdot 2\pi^2)$; $K_n = 10, 207, 2181$ follow deterministically \\
+		$\gamma$ & \ref{sec:nonlinear_stability} & Functional form & Nonlinear coefficient $1/\epsilon_M$ in the $\gamma \Psi^3$ term \\
+		$n_\gamma$ & \ref{sec:n_from_energy_density} & Postulate & Null-probe refractive index $(1 - r_s/r)^{-1}$; full derivation open \\
+		\midrule
+		\multicolumn{4}{l}{\textit{V. Roundings of derived quantities (not postulates)}} \\
+		\midrule
+		$r_e = 100\,r_\nu$ & \ref{sec:decadic_test} & Rounding & Exact ratio $100.0001735$ derived from $g_v$; $100$ is a numerical convenience \\
+		$F_{1+4k}$ & \ref{sec:closure_criterion} & Phenomenological label & Classifies the three-generation closure; does not enter AMM numerics \\
+		\bottomrule
+	\end{longtable}
+}
+
+\noindent\textbf{No continuously adjustable parameter appears in this
+	table.} The model's predictive content is fixed once the primary
+anchors of class~I are given. Classes~II--V either test the geometry
+externally, fix discrete structures, or specify parameter-free
+functional forms. The distinction between a \emph{postulate}
+(classes III and IV: chosen form), a \emph{fixed integer} (class III:
+determined by topology), and a \emph{functional form} (class IV:
+parameter-free expression) is made explicit in the Status column.
 
 \subsection{Computational Scripts (Python)}
 \label{app:python_scripts}
