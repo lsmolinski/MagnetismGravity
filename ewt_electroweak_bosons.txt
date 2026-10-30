@@ -1,52 +1,57 @@
-EWT ELECTROWEAK & BOSON MODULE
+EWT ELECTROWEAK & BOSON MODULE (v5.2.0)
 
---- WEINBERG SECTOR ---
-  EWT Predicted W-Boson Mass:      80.5141 GeV
-  CDF II Experimental Target:      80.4335 GeV
-  Percentage Error vs. CDF II:     0.1002 %
+--- GEOMETRY ---
+  C_local             = 1.464125e-05
+  pi^6                = 961.389194
+  pi^7                = 3020.293228
+  C_gap (pure pi^6)   = 1.0140759358
+  C_gap (mixed)       = 1.0106772588
+  O_mixed             = 729.2589
+  C_fermion           = 1.0089810940
 
---- EWT SPHERICAL MODE MASSES ---
-  Z boson (K=110): 91.7313627983 GeV
-  Higgs    (K=117): 124.9613469754 GeV
+--- MIXED W-Z VERTEX (main prediction) ---
+  O_mixed        = 729.2589
+  C_gap (mixed)  = 1.0106772588
+  M_W_EWT        = 80.3791 GeV
 
---- HIGGS MIXING PREDICTIONS ---
-  Higgs-Z Mixing sin^2(theta_ZH): 0.4686094602
-  Higgs-W Mixing sin^2(theta_WH): 0.5906241192
-  Note: ZH stability is superior due to the neutrality of Z and H solitons.
+--- BENCHMARK COMPARISON (EWT mixed vs experiments) ---
+  Reference: PDG 2024 average
+  Benchmark            M_W [GeV]               EWT-bench [MeV]    sigma
+  ------------------------------------------------------------------
+  CDF II 2022          80.4335 +/- 0.0094        -54.4    -5.8 sigma
+  PDG 2022 average     80.3770 +/- 0.0120         +2.1    +0.2 sigma
+  ATLAS 2024           80.3600 +/- 0.0160        +19.1    +1.2 sigma
+  CMS 2024             80.3602 +/- 0.0099        +18.9    +1.9 sigma
+  PDG 2024 average     80.3692 +/- 0.0133         +9.9    +0.7 sigma
 
---- WEINBERG ANGLE TEST (EWT spherical masses) ---
-  M_Z = 91.7313627983 GeV, M_W = 80.5141221669 GeV
-  Predicted sin^2(theta_W) = 0.2403072946
-  Experimental      = 0.23122
-  Relative error    = 3.930151 %
+--- PURE pi^6 W MASS (for comparison) ---
+  C_gap (pure pi^6)  = 1.0140759358
+  M_W (pure pi^6)    = 80.5141 GeV
 
---- WEINBERG ANGLE TEST (empirical masses) ---
-  M_Z = 91.1876000000 GeV, M_W = 80.4335000000 GeV
-  Predicted sin^2(theta_W) = 0.2327588525
-  Experimental      = 0.23122
-  Relative error    = 0.665536 %
+--- HIGGS-VECTOR MIXING ---
+  Z (K=110)   = 91.7313627983 GeV  (spherical mode)
+  H (K=117)   = 124.9613469754 GeV  (spherical mode)
+  sin^2(theta_ZH) [pure pi^6] = 0.4686094602
+  sin^2(theta_WH) [mixed]     = 0.5906241192
 
---- HEAVY BOSON GEOMETRIC RADIUS PREDICTIONS ---
-  Z-Boson (K=110) Predicted Radius: 3.1677478423e-14 m
-  Higgs   (K=117) Predicted Radius: 3.3697848561e-14 m
-  VERIFICATION AGAINST NUCLEAR SCALES:
-  Predictions match the 10^-14 m order of magnitude, consistent
-  with the mass-equivalent isotopes (Mo-98 and Xe-134).
+--- WEINBERG ANGLE CONSISTENCY TESTS ---
+  [EWT spherical masses + mixed]
+    M_Z = 91.731363, M_W = 80.379087
+    sin^2(theta_W) = 0.2403072946  (rel. err. 3.9302%)
+  [empirical masses (PDG 2024) + mixed]
+    M_Z = 91.187600, M_W = 80.360000
+    sin^2(theta_W) = 0.2315850754  (rel. err. 0.1579%)
 
---- CABIBBO MIXING & SURFACE RESONANCE ---
-  C_fermion (pi^5 operator):       1.0089810940
-  VARIANT A: EWT-derived quark masses (spherical mode)
-    EWT d-quark mass (K=15):       0.0040343942 GeV
-    EWT s-quark mass (K=28):       0.0948854322 GeV
-    EWT Prediction sin(theta_C):   0.2080522521
-    PDG 2022 Target:               0.2243000000
-    Percentage Error:              7.243757 %
-  VARIANT B: PDG 2022 target quark masses (mechanism test)
-    PDG d-quark mass:              0.0046920000 GeV
-    PDG s-quark mass:              0.0949540000 GeV
-    EWT Prediction sin(theta_C):   0.2242876694
-    PDG 2022 Target:               0.2243000000
-    Percentage Error:              0.005497 %
-  INTERPRETATION:
-  Variant A error originates from EWT light quark mass predictions.
-  Variant B isolates the geometric mixing mechanism (pi^5 operator).
+--- HEAVY BOSON RADII (spherical mode, r ~ m^(1/5)) ---
+  Z (K=110): r = 3.1677e-14 m
+  H (K=117): r = 3.3698e-14 m
+  Order of magnitude matches nuclear mass-equivalents.
+
+--- CABIBBO SECTOR (pi^5 surface mixing) ---
+  C_fermion = 1.0089810940
+  Variant A (EWT masses K=15,28):
+    M_d = 0.0040343942 GeV, M_s = 0.0948854322 GeV
+    sin(theta_C) = 0.2080522521  (err 7.2438%)
+  Variant B (PDG masses, mechanism test):
+    M_d = 0.0046920000 GeV, M_s = 0.0949540000 GeV
+    sin(theta_C) = 0.2242876694  (err 0.0055%)
