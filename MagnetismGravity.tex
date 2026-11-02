@@ -73,7 +73,7 @@
 
 \begin{center}
 \today \\
-Version: 5.2.0	
+Version: 5.2.1	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -684,7 +684,7 @@ By treating \(\epsilon_M\) as a singular topological property, the model achieve
 \section{Dimensional Hierarchy and Dynamic Resonant Modulations}
 \label{sec:dimensional_hierarchy}
 
-This section translates the geometric ladder introduced in Section~\ref{sec:alpha_geometric_deficit} into concrete lattice operators for the bosonic and fermionic sectors. The mixed nature of the $W$--$Z$ vertex --- one charged soliton, one neutral soliton --- requires a harmonic combination of the $\pi^6$ and $\pi^7$ rungs. The resulting $W$-boson mass prediction lies within $2\sigma$ of the ATLAS~2024, CMS~2024, and PDG~2024 averages; the CDF~II~2022 measurement, previously used as the primary anchor, is now recognized as an outlier at $5.8\sigma$ and is retained only as a benchmark.
+This section translates the geometric ladder introduced in Section~\ref{sec:alpha_geometric_deficit} into concrete lattice operators for the bosonic and fermionic sectors. The mixed nature of the $W$--$Z$ vertex --- one charged soliton, one neutral soliton --- requires a parallel-impedance combination of the $\pi^6$ and $\pi^7$ rungs. The resulting $W$-boson mass prediction lies within $2\sigma$ of the ATLAS~2024, CMS~2024, and PDG~2024 averages; the CDF~II~2022 measurement, previously used as the primary anchor, is now recognized as an outlier at $5.8\sigma$ and is retained only as a benchmark.
 
 \subsection{The Universal Geometric Modulators: Substrate Properties}
 
@@ -715,13 +715,13 @@ For a hypothetical purely neutral $W$ boson (a useful limiting case), this opera
 	M_W^{\text{neutral}} = M_Z^{\text{CODATA}} \cdot \sqrt{(1 - \sin^2\theta_W^{\text{Target}}) \cdot C_{\text{gap}}} \approx 80.514\ \text{GeV}.
 	\label{eq:w_mass_neutral_attractor}
 \end{equation}
-The physical $W$ boson is not purely neutral: it is a charged soliton, and the $W$--$Z$ vertex is mixed. The relevant operator is therefore the harmonic combination of the $\pi^6$ and $\pi^7$ rungs, derived in Section~\ref{sec:mixed_wz_vertex}.
+The physical $W$ boson is not purely neutral: it is a charged soliton, and the $W$--$Z$ vertex is mixed. The relevant operator is therefore the parallel-impedance combination of the $\pi^6$ and $\pi^7$ rungs, derived in Section~\ref{sec:mixed_wz_vertex}.
 
 \subsubsection{The $\pi^7$ Resonance: Charge-Induced Amplitude Loading}
 
 The highest rung of the geometric ladder, $\pi^7$, is associated with the charged weak sector ($W^{\pm}$). Unlike the neutral $Z^0$ and $H^0$ solitons, the $W$ boson carries non-compensated wave amplitude (charge), which acts as an additional \textbf{7th degree of freedom} within the BCC substrate.
 
-A purely charged vertex (for example, a hypothetical $W$--$W$ interaction) would use the $\pi^7$ rung directly. The physical $W$--$Z$ vertex is however \emph{mixed}: one charged and one neutral soliton participate. The relevant operator is therefore the harmonic combination of the $\pi^6$ and $\pi^7$ rungs, derived in Section~\ref{sec:mixed_wz_vertex}, which yields $M_W \approx 80.379$~GeV.
+A purely charged vertex (for example, a hypothetical $W$--$W$ interaction) would use the $\pi^7$ rung directly. The physical $W$--$Z$ vertex is however \emph{mixed}: one charged and one neutral soliton participate. The relevant operator is therefore the parallel-impedance combination of the $\pi^6$ and $\pi^7$ rungs, derived in Section~\ref{sec:mixed_wz_vertex}, which yields $M_W \approx 80.379$~GeV.
 
 \subsubsection{The Mixed $W$--$Z$ Vertex: Harmonic Operator}
 \label{sec:mixed_wz_vertex}
@@ -740,20 +740,24 @@ channel decouples (a hypothetical neutral $W$), the operator must
 reduce to the pure neutral rung $\pi^6$. If the neutral channel
 decouples, it must reduce to the pure charged rung $\pi^7$. Among the
 three elementary combinations of $\pi^6$ and $\pi^7$, only the
-\emph{harmonic mean}
+\emph{parallel-impedance combination}
 \begin{equation}
 	O_{\text{mixed}}
 	= \frac{\pi^6 \cdot \pi^7}{\pi^6 + \pi^7}
 	\approx 729.26
 	\label{eq:mixed_operator}
 \end{equation}
-satisfies both limits: $O_{\text{mixed}} \to \pi^6$ as
-$\pi^7 \to \infty$, and $O_{\text{mixed}} \to \pi^7$ as
-$\pi^6 \to \infty$. The arithmetic mean $(\pi^6+\pi^7)/2$ and the
-geometric mean $\sqrt{\pi^6\pi^7}$ diverge in these limits and cannot
-interpolate the two pure cases.
+satisfies both limits. This is a mathematical property of the
+functional form --- a uniqueness criterion among simple
+parameter-free combinations --- not a statement about a physical
+process: $\pi^6 \approx 961.39$ and $\pi^7 \approx 3020.29$ are fixed
+values determined by the BCC coordination number, and the limit is
+taken on the effective impedance, not on the rung number. The
+arithmetic mean $(\pi^6+\pi^7)/2$ and the geometric mean
+$\sqrt{\pi^6\pi^7}$ do not satisfy both limits and cannot interpolate
+the two pure cases.
 
-The harmonic form is also the standard combination for parallel
+The parallel-impedance form is also the standard combination for parallel
 channels in physics (parallel resistance, series capacitance, reduced
 mass in a two-body problem). The physical picture is that the charged
 and neutral channels of the $W$--$Z$ exchange add as parallel
@@ -784,19 +788,19 @@ experimental benchmarks. The prediction lies within $2\sigma$ of the
 ATLAS~2024, CMS~2024, and PDG~2024 averages. The earlier pure $\pi^6$
 value ($M_W \approx 80.514$~GeV) was $10$--$16\sigma$ above these
 averages; the improvement is due to the mixed-operator correction, not
-to any adjustment of the input electroweak anchors.The only remaining tension is with the CDF~II~2022 measurement ($80.4335$~GeV), which is $5.8\sigma$ \emph{above} the EWT prediction
---- consistent with the CDF~II result now being recognized as an
-outlier by the ATLAS and CMS 2024 measurements.
+to any adjustment of the input electroweak anchors. The only remaining
+tension is with the CDF~II~2022 measurement ($80.4335$~GeV), which is
+$5.8\sigma$ \emph{above} the EWT prediction --- consistent with the
+CDF~II result now being recognized as an outlier by the ATLAS and CMS
+2024 measurements.
 
-\emph{Status.} The harmonic combination is a \emph{methodologically
-	motivated ansatz}, not a first-principles derivation. The two limiting
-cases fix its form uniquely among simple parameter-free combinations,
-but the detailed dynamics of wave interference between the neutral
-and charged channels --- from which the harmonic form should
-ultimately follow --- is not derived in this work. A first-principles
-treatment of the mixed $W$--$Z$ operator from the BCC lattice
-dynamics is an open objective of the OpenWave research programme.
-
+\emph{Status.} The parallel-impedance combination is a
+\emph{methodologically motivated ansatz}, not a first-principles
+derivation. The two limiting cases fix its form uniquely among simple
+parameter-free combinations, but the detailed dynamics of wave
+interference between the neutral and charged channels --- from which
+the parallel-impedance form should ultimately follow --- is not
+derived in this work.
 \begin{table}[ht]
 	\centering
 	\small
@@ -827,6 +831,30 @@ dynamics is an open objective of the OpenWave research programme.
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+The EWT mixed-operator prediction is $M_W = 80.379$~GeV, and the
+SM indirect electroweak fit predicts $M_W^{\text{SM}} = 80.353 \pm
+0.006$~GeV (PDG 2024). The two predictions differ by $26$~MeV.
+
+This difference should be interpreted with care. The SM uncertainty
+of $\pm 6$~MeV reflects only the propagation of input-parameter
+uncertainties ($M_Z$, $m_t$, $m_H$, $\alpha_s$, HVP); it does not
+include the theoretical uncertainty from truncating the perturbative
+series at two loops, the scheme-conversion uncertainty between
+different renormalization schemes, or the model-dependence of the
+hadronic vacuum polarization. Published estimates of the full
+theoretical uncertainty on the SM indirect fit are in the range
+$\pm 10$--$15$~MeV. At this level, the EWT-SM difference of $26$~MeV
+corresponds to approximately $2\sigma$, not $4.3\sigma$.
+
+Both predictions are ansatz-based. The SM calculation uses a
+truncated perturbative expansion in a chosen renormalization scheme,
+with the hadronic vacuum polarization imported from external data or
+lattice QCD. The EWT calculation uses the parallel-impedance
+combination $\pi^6\pi^7/(\pi^6+\pi^7)$, which is a methodologically
+motivated ansatz whose algebraic limits are exact but whose full
+derivation from BCC lattice dynamics is an open objective.
+
 
 \subsubsection{The $\pi^5$ Resonance: Surface Interaction Modulator}
 
@@ -7655,7 +7683,7 @@ enters and what role it plays.
 		$S_{\text{tot}}$ & \ref{sec:S_decomposition} & Geometric ansatz & $\alpha/(8+\pi) + e + (1-g_v)(\sqrt{2}-1)$; validated by $g_v$ agreement and $r_e/r_\nu = 100$ \\
 		$g_v$ & \ref{sec:gv_fixed_point} & Derived fixed point & Unique root of the $S_{\text{tot}}$ quadratic equation; $g_v \approx 0.983594$; determines $r_\nu = q_P S_{\text{tot}}$; no independent parameter \\
 		$C_{\text{gap}}$ & \ref{sec:dimensional_hierarchy} & Functional form & $1 + \pi^6 C_{\text{local}}$; applies to pure neutral vertices ($Z$--$Z$, $Z$--$H$) \\
-		$C_{\text{gap}}^{\text{mixed}}$ & \ref{sec:mixed_wz_vertex} & Methodologically motivated ansatz & $1 + O_{\text{mixed}} C_{\text{local}}$, where $O_{\text{mixed}} = \pi^6\pi^7/(\pi^6+\pi^7)$ is the harmonic mean of the neutral and charged weak rungs; unique simple form with correct single-rung limits; derivation from BCC dynamics is open \\
+		$C_{\text{gap}}^{\text{mixed}}$ & \ref{sec:mixed_wz_vertex} & Methodologically motivated ansatz & $1 + O_{\text{mixed}} C_{\text{local}}$, where $O_{\text{mixed}} = \pi^6\pi^7/(\pi^6+\pi^7)$ is the parallel-impedance combination of the neutral and charged weak rungs; unique simple form with correct single-rung limits; derivation from BCC dynamics is open \\
 		$C_{\text{fermion}}$ & \ref{sec:geom_ladder} & Functional form & $(1 + \pi^5 C_{\text{local}})^2$ (surface coupling) \\
 		$B_\mu$, $B_\tau$ & \ref{sec:recursive_math_final} & Functional form & Shell prefactors: $3 A_\pi \pi^3/(2 L_\mu^2)$ and $3 A_\pi \pi^3/(8\sqrt{2}) + A_\pi/2$ \\
 		$\Delta K_k$ & \ref{sec:discrete_resonance_labels} & Functional form & Shell-rounding operator $\mathrm{round}(10^k \cdot 2\pi^2)$; $K_n = 10, 207, 2181$ follow deterministically \\
@@ -7766,7 +7794,7 @@ label={lst:ewt_amm_resonance_scanner_output}
 \label{app:ewt_electroweak_bosons}
 
 \texttt{ewt\_electroweak\_bosons.py} computes the mixed $W$--$Z$
-vertex operator (harmonic mean of $\pi^6$ and $\pi^7$,
+vertex operator (parallel-impedance combination of $\pi^6$ and $\pi^7$,
 Eq.~\ref{eq:mixed_operator}), the resulting $W$-boson mass prediction,
 the pure-$\pi^6$ neutral attractor for comparison, the Higgs-vector
 mixing angles (ZH via pure $\pi^6$, WH via mixed), the Cabibbo angle,
