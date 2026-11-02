@@ -86,22 +86,28 @@ RIGIDITY TEST
 ==============================================================================
 
 --- Geometric Ladder (Pure BCC) ---
-  Source     : BCC packing derived
-  eps_M      : 4.141169769303932e-05
-  C_local    : 1.464124612959771e-05
-  C_gap      : 1.014075935809472
-  C_fermion  : 1.008981094016494
+  Source       : BCC packing derived
+  eps_M        : 4.141169769303932e-05
+  C_local      : 1.464124612959771e-05
+  C_gap        : 1.014075935809472  (pure pi^6, Z-Z and Z-H)
+  C_gap_mixed  : 1.010677258781862  (mixed W-Z)
+  O_mixed      : 729.258882  (harmonic mean pi^6*pi^7/(pi^6+pi^7))
+  C_fermion    : 1.008981094016494
   Ladder:
     pi^3 = 31.006276680299816
     pi^4 = 97.409091034002415
     pi^5 = 306.019684785281413
     pi^6 = 961.389193575304262
     pi^7 = 3020.293227776791355
-  M_W prediction      : 80.514122 GeV
-  rel. err PDG        : 0.1706 %
-  rel. err CDF II     : 0.1002 %
-  sin theta_C         : 0.2242876694
-  rel. err PDG        : 0.005497 %
+  M_W prediction (mixed)    : 80.379087 GeV
+  rel. err PDG 2024 (mixed) : 0.0123 %
+  rel. err ATLAS 2024       : 0.0238 %
+  rel. err CMS 2024         : 0.0235 %
+  rel. err CDF II 2022      : 0.0676 %  (outlier)
+  M_W (pure pi^6)           : 80.514122 GeV
+  rel. err PDG 2024 (pure)  : 0.1803 %
+  sin theta_C               : 0.2242876694
+  rel. err PDG              : 0.005497 %
 --- Lepton Anomalous Magnetic Moments ---
   Electron a_e   : 1159.916228 ppm  (CODATA: 1159.652182 ppm)
   Muon shell     : 248.571133 ppm

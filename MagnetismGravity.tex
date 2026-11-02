@@ -784,11 +784,9 @@ experimental benchmarks. The prediction lies within $2\sigma$ of the
 ATLAS~2024, CMS~2024, and PDG~2024 averages. The earlier pure $\pi^6$
 value ($M_W \approx 80.514$~GeV) was $10$--$16\sigma$ above these
 averages; the improvement is due to the mixed-operator correction, not
-to any adjustment of the input electroweak anchors. The only remaining
-tension is with the CDF~II~2022 measurement ($80.4335$~GeV), which is
-$5.8\sigma$ below the EWT prediction --- consistent with the CDF~II
-result now being recognized as an outlier by the ATLAS and CMS 2024
-measurements.
+to any adjustment of the input electroweak anchors.The only remaining tension is with the CDF~II~2022 measurement ($80.4335$~GeV), which is $5.8\sigma$ \emph{above} the EWT prediction
+--- consistent with the CDF~II result now being recognized as an
+outlier by the ATLAS and CMS 2024 measurements.
 
 \emph{Status.} The harmonic combination is a \emph{methodologically
 	motivated ansatz}, not a first-principles derivation. The two limiting
@@ -816,11 +814,11 @@ dynamics is an open objective of the OpenWave research programme.
 		\midrule
 		\multicolumn{4}{l}{\textit{Experimental benchmarks}} \\
 		\midrule
-		CDF II 2022 & $80.4335 \pm 0.0094$ & $+64.3$ & $+5.8\sigma$ \\
-		PDG 2022 average & $80.3770 \pm 0.0120$ & $+7.8$ & $+0.8\sigma$ \\
+		CDF II 2022 & $80.4335 \pm 0.0094$ & $+64.3$ & $-5.8\sigma$ \\
+		PDG 2022 average & $80.3770 \pm 0.0120$ & $+7.8$ & $+0.2\sigma$ \\
 		ATLAS 2024 & $80.3600 \pm 0.0160$ & $-9.2$ & $+1.2\sigma$ \\
 		CMS 2024 & $80.3602 \pm 0.0099$ & $-9.0$ & $+1.9\sigma$ \\
-		PDG 2024 average & $80.3692 \pm 0.0133$ & $0.0$ & $+0.8\sigma$ \\
+		PDG 2024 average & $80.3692 \pm 0.0133$ & $0.0$ & $+0.7\sigma$ \\
 		\midrule
 		\multicolumn{4}{l}{\textit{Standard Model reference}} \\
 		\midrule
@@ -7657,7 +7655,7 @@ enters and what role it plays.
 		$S_{\text{tot}}$ & \ref{sec:S_decomposition} & Geometric ansatz & $\alpha/(8+\pi) + e + (1-g_v)(\sqrt{2}-1)$; validated by $g_v$ agreement and $r_e/r_\nu = 100$ \\
 		$g_v$ & \ref{sec:gv_fixed_point} & Derived fixed point & Unique root of the $S_{\text{tot}}$ quadratic equation; $g_v \approx 0.983594$; determines $r_\nu = q_P S_{\text{tot}}$; no independent parameter \\
 		$C_{\text{gap}}$ & \ref{sec:dimensional_hierarchy} & Functional form & $1 + \pi^6 C_{\text{local}}$; applies to pure neutral vertices ($Z$--$Z$, $Z$--$H$) \\
-		$C_{\text{gap}}^{\text{mixed}}$ & \ref{sec:mixed_wz_vertex} & Methodologically motivated ansatz & $1 + O_{\text{mixed}} C_{\text{local}}$, where $O_{\text{mixed}} = \pi^6\pi^7/(\pi^6+\pi^7)$ is the harmonic mean of the neutral and charged weak rungs; unique simple form with correct single-rung limits;\\
+		$C_{\text{gap}}^{\text{mixed}}$ & \ref{sec:mixed_wz_vertex} & Methodologically motivated ansatz & $1 + O_{\text{mixed}} C_{\text{local}}$, where $O_{\text{mixed}} = \pi^6\pi^7/(\pi^6+\pi^7)$ is the harmonic mean of the neutral and charged weak rungs; unique simple form with correct single-rung limits; derivation from BCC dynamics is open \\
 		$C_{\text{fermion}}$ & \ref{sec:geom_ladder} & Functional form & $(1 + \pi^5 C_{\text{local}})^2$ (surface coupling) \\
 		$B_\mu$, $B_\tau$ & \ref{sec:recursive_math_final} & Functional form & Shell prefactors: $3 A_\pi \pi^3/(2 L_\mu^2)$ and $3 A_\pi \pi^3/(8\sqrt{2}) + A_\pi/2$ \\
 		$\Delta K_k$ & \ref{sec:discrete_resonance_labels} & Functional form & Shell-rounding operator $\mathrm{round}(10^k \cdot 2\pi^2)$; $K_n = 10, 207, 2181$ follow deterministically \\
@@ -7772,8 +7770,8 @@ vertex operator (harmonic mean of $\pi^6$ and $\pi^7$,
 Eq.~\ref{eq:mixed_operator}), the resulting $W$-boson mass prediction,
 the pure-$\pi^6$ neutral attractor for comparison, the Higgs-vector
 mixing angles (ZH via pure $\pi^6$, WH via mixed), the Cabibbo angle,
-heavy boson radii, and the benchmark comparison table
-(Table~\ref{tab:mw_comparison}). 
+heavy boson radii, and the benchmark comparison described in
+Table~\ref{tab:mw_comparison}.
 \lstinputlisting[
 language=Python,
 caption={Electroweak and heavy boson calculations.},

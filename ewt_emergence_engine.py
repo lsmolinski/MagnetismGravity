@@ -1,4 +1,4 @@
-﻿# From manuscript version: 5.0.1
+﻿# From manuscript version: 5.2.0 or leter
 # =============================================================================
 # SECTION 1: GLOBAL INPUTS & CONSTANTS
 # -----------------------------------------------------------------------------
@@ -46,6 +46,9 @@ G_CODATA          = 6.674305e-11              # gravitational constant [m^3 kg^-
 M_Z_CODATA        = 91.1876                   # Z boson mass [GeV]
 M_W_PDG           = 80.377                    # W boson mass, PDG 2022 average [GeV]
 M_W_CDFII         = 80.4335                   # W boson mass, CDF II 2022 [GeV]
+M_W_ATLAS_2024    = 80.3600                   # ATLAS 2024 average [GeV]
+M_W_CMS_2024      = 80.3602                   # CMS 2024 average [GeV]
+M_W_PDG_2024      = 80.3692                   # PDG 2024 average [GeV]
 M_H_CODATA        = 125.25                    # Higgs mass [GeV]
 SIN2_THETA_W      = 0.23122                   # Weinberg angle sin^2(theta_W)
 SIN_THETA_C_PDG   = 0.2243                    # Cabibbo angle sin(theta_C)
@@ -185,20 +188,30 @@ def build_geometric_ladder(eps_M: float, source_label: str = "") -> dict:
     Returns
     -------
     dict with:
-        eps_M     : magnetic deficit (input)
-        source    : source label
-        C_local   : local coupling
-        C_gap     : volumetric operator (pi^6)
-        C_fermion : surface operator (pi^5)
-        ladder    : dictionary {3: pi^3, ..., 7: pi^7}
+        eps_M       : magnetic deficit (input)
+        source      : source label
+        C_local     : local coupling
+        C_gap       : pure neutral operator (pi^6); for Z-Z, Z-H vertices
+        C_gap_mixed : mixed W-Z operator (harmonic mean of pi^6 and pi^7);
+                      for W-Z vertex (v5.2.0 default for M_W)
+        O_mixed     : harmonic mean pi^6*pi^7/(pi^6+pi^7)
+        C_fermion   : surface operator (pi^5)
+        ladder      : dictionary {3: pi^3, ..., 7: pi^7}
     """
     C_local = eps_M / (2.0 * SQRT2)
+
+    # Mixed W-Z operator (harmonic mean of pi^6 and pi^7, v5.2.0)
+    pi6 = PI**6
+    pi7 = PI**7
+    O_mixed = (pi6 * pi7) / (pi6 + pi7)
 
     return {
         "eps_M": eps_M,
         "source": source_label,
         "C_local": C_local,
-        "C_gap": 1.0 + PI**6 * C_local,
+        "C_gap": 1.0 + pi6 * C_local,
+        "C_gap_mixed": 1.0 + O_mixed * C_local,
+        "O_mixed": O_mixed,
         "C_fermion": (1.0 + PI**5 * C_local) ** 2,
         "ladder": {n: PI**n for n in range(3, 8)},
     }
@@ -206,11 +219,13 @@ def build_geometric_ladder(eps_M: float, source_label: str = "") -> dict:
 
 def report_ladder(lad: dict) -> None:
     """Print the contents of a ladder dictionary in a readable form."""
-    print(f"  Source     : {lad.get('source', 'unknown')}")
-    print(f"  eps_M      : {lad['eps_M']:.15e}")
-    print(f"  C_local    : {lad['C_local']:.15e}")
-    print(f"  C_gap      : {lad['C_gap']:.15f}")
-    print(f"  C_fermion  : {lad['C_fermion']:.15f}")
+    print(f"  Source       : {lad.get('source', 'unknown')}")
+    print(f"  eps_M        : {lad['eps_M']:.15e}")
+    print(f"  C_local      : {lad['C_local']:.15e}")
+    print(f"  C_gap        : {lad['C_gap']:.15f}  (pure pi^6, Z-Z and Z-H)")
+    print(f"  C_gap_mixed  : {lad['C_gap_mixed']:.15f}  (mixed W-Z)")
+    print(f"  O_mixed      : {lad['O_mixed']:.6f}  (harmonic mean pi^6*pi^7/(pi^6+pi^7))")
+    print(f"  C_fermion    : {lad['C_fermion']:.15f}")
     print("  Ladder:")
     for n in sorted(lad["ladder"]):
         print(f"    pi^{n} = {lad['ladder'][n]:.15f}")
@@ -285,36 +300,72 @@ def derive_eps_M_from_BCC(N_input: float = 8.0 * PI**4) -> dict:
 
 def weinberg_sector(C_gap: float, M_Z: float, sin2_W: float) -> dict:
     """
-    Compute the W boson mass from the Weinberg angle using the pi^6 operator.
+    Compute the W boson mass from the Weinberg angle using a given C_gap operator.
 
-    Formula:
-        M_W = M_Z * sqrt( (1 - sin^2(theta_W)) * C_gap )
-
-    Parameters
-    ----------
-    C_gap : float
-        Volumetric lattice operator from the pi^6 rung.
-    M_Z : float
-        Experimental Z boson mass [GeV].
-    sin2_W : float
-        Experimental Weinberg angle sin^2(theta_W).
-
-    Returns
-    -------
-    dict with:
-        M_W_pred       : predicted W mass [GeV]
-        rel_err_PDG    : relative error to PDG average
-        rel_err_CDFII  : relative error to CDF II measurement
+    Since v5.2.0, the main M_W prediction uses the mixed W-Z operator
+    (see weinberg_sector_mixed). This function remains for:
+      - pure pi^6 calculations (neutral vertices Z-Z, Z-H),
+      - backward compatibility with older scripts.
     """
     M_W_pred = M_Z * math.sqrt((1.0 - sin2_W) * C_gap)
 
     rel_err_PDG = abs(M_W_pred - M_W_PDG) / M_W_PDG * 100.0
     rel_err_CDFII = abs(M_W_pred - M_W_CDFII) / M_W_CDFII * 100.0
+    rel_err_PDG_2024 = abs(M_W_pred - M_W_PDG_2024) / M_W_PDG_2024 * 100.0
 
     return {
         "M_W_pred": M_W_pred,
         "rel_err_PDG": rel_err_PDG,
         "rel_err_CDFII": rel_err_CDFII,
+        "rel_err_PDG_2024": rel_err_PDG_2024,
+    }
+
+
+def weinberg_sector_mixed(lad: dict, M_Z: float, sin2_W: float) -> dict:
+    """
+    Compute W mass via the mixed W-Z operator (harmonic mean pi^6 * pi^7).
+
+    The W-Z vertex is a mixed process: one charged (W) and one neutral
+    (Z) soliton. The harmonic combination
+        O_mixed = pi^6 * pi^7 / (pi^6 + pi^7)
+    is the unique simple parameter-free form that reduces to the correct
+    single-rung limit when one channel decouples. It is a methodologically
+    motivated ansatz, not a first-principles derivation.
+
+    Parameters
+    ----------
+    lad : dict
+        Ladder dictionary from build_geometric_ladder(); must contain
+        "C_gap_mixed" and "O_mixed".
+    M_Z : float
+        Z-boson mass [GeV].
+    sin2_W : float
+        MS-bar Weinberg angle.
+
+    Returns
+    -------
+    dict with:
+        M_W_pred         : predicted W mass [GeV]
+        C_gap_mixed      : the mixed operator value used
+        O_mixed          : harmonic mean of pi^6 and pi^7
+        rel_err_PDG      : relative error vs PDG 2022 [%]
+        rel_err_CDFII    : relative error vs CDF II 2022 [%]
+        rel_err_PDG_2024 : relative error vs PDG 2024 [%]
+        rel_err_ATLAS    : relative error vs ATLAS 2024 [%]
+        rel_err_CMS      : relative error vs CMS 2024 [%]
+    """
+    C_gap_mixed = lad["C_gap_mixed"]
+    M_W_pred = M_Z * math.sqrt((1.0 - sin2_W) * C_gap_mixed)
+
+    return {
+        "M_W_pred": M_W_pred,
+        "C_gap_mixed": C_gap_mixed,
+        "O_mixed": lad["O_mixed"],
+        "rel_err_PDG": abs(M_W_pred - M_W_PDG) / M_W_PDG * 100.0,
+        "rel_err_CDFII": abs(M_W_pred - M_W_CDFII) / M_W_CDFII * 100.0,
+        "rel_err_PDG_2024": abs(M_W_pred - M_W_PDG_2024) / M_W_PDG_2024 * 100.0,
+        "rel_err_ATLAS": abs(M_W_pred - M_W_ATLAS_2024) / M_W_ATLAS_2024 * 100.0,
+        "rel_err_CMS": abs(M_W_pred - M_W_CMS_2024) / M_W_CMS_2024 * 100.0,
     }
 
 
@@ -350,19 +401,31 @@ def run_sector_tests(lad: dict) -> None:
     """
     Run experimental validation tests on a given ladder dictionary.
 
+    Since v5.2.0, the W-mass prediction uses the mixed W-Z operator
+    (harmonic mean of pi^6 and pi^7). The pure pi^6 result is shown
+    for comparison and corresponds to a hypothetical neutral W boson.
+
     Parameters
     ----------
     lad : dict
         Ladder dictionary produced by build_geometric_ladder().
     """
-    result_W = weinberg_sector(lad["C_gap"], M_Z_CODATA, SIN2_THETA_W)
-    print(f"  M_W prediction      : {result_W['M_W_pred']:.6f} GeV")
-    print(f"  rel. err PDG        : {result_W['rel_err_PDG']:.4f} %")
-    print(f"  rel. err CDF II     : {result_W['rel_err_CDFII']:.4f} %")
+    # Mixed operator (main prediction, v5.2.0)
+    result_W_mixed = weinberg_sector_mixed(lad, M_Z_CODATA, SIN2_THETA_W)
+    print(f"  M_W prediction (mixed)    : {result_W_mixed['M_W_pred']:.6f} GeV")
+    print(f"  rel. err PDG 2024 (mixed) : {result_W_mixed['rel_err_PDG_2024']:.4f} %")
+    print(f"  rel. err ATLAS 2024       : {result_W_mixed['rel_err_ATLAS']:.4f} %")
+    print(f"  rel. err CMS 2024         : {result_W_mixed['rel_err_CMS']:.4f} %")
+    print(f"  rel. err CDF II 2022      : {result_W_mixed['rel_err_CDFII']:.4f} %  (outlier)")
+
+    # Pure pi^6 (for comparison / neutral vertices)
+    result_W_pure = weinberg_sector(lad["C_gap"], M_Z_CODATA, SIN2_THETA_W)
+    print(f"  M_W (pure pi^6)           : {result_W_pure['M_W_pred']:.6f} GeV")
+    print(f"  rel. err PDG 2024 (pure)  : {result_W_pure['rel_err_PDG_2024']:.4f} %")
 
     result_C = cabibbo_sector(lad["C_fermion"], M_D_PDG, M_S_PDG)
-    print(f"  sin theta_C         : {result_C['sin_C_pred']:.10f}")
-    print(f"  rel. err PDG        : {result_C['rel_err']:.6f} %")
+    print(f"  sin theta_C               : {result_C['sin_C_pred']:.10f}")
+    print(f"  rel. err PDG              : {result_C['rel_err']:.6f} %")
 
 
 # =============================================================================
