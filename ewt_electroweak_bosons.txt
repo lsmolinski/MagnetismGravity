@@ -47,11 +47,24 @@ EWT ELECTROWEAK & BOSON MODULE (v5.2.0)
   H (K=117): r = 3.3698e-14 m
   Order of magnitude matches nuclear mass-equivalents.
 
---- CABIBBO SECTOR (pi^5 surface mixing) ---
-  C_fermion = 1.0089810940
-  Variant A (EWT masses K=15,28):
-    M_d = 0.0040343942 GeV, M_s = 0.0948854322 GeV
-    sin(theta_C) = 0.2080522521  (err 7.2438%)
-  Variant B (PDG masses, mechanism test):
-    M_d = 0.0046920000 GeV, M_s = 0.0949540000 GeV
-    sin(theta_C) = 0.2242876694  (err 0.0055%)
+--- CABIBBO SECTOR (pi^5 flavor mixing) ---
+  eps_flavor = 1/(8 pi^5)  = 4.0847045538e-04
+  Correction factor        = 1.0004084705
+  Target                   = 0.22430  (PDG |V_us|)
+
+  Variant A (EWT spherical masses, K=15 & K=28):
+    M_d = 0.004034 GeV, M_s = 0.094885 GeV
+    sin(theta_C) = 0.206285  (err 8.032%)
+
+  Variant B (PDG 2024 masses + eps_flavor):
+    M_d = 0.00470 GeV, M_s = 0.0935 GeV
+    sin(theta_C) = 0.224295  (err 0.0020%)
+
+  Variant C (PDG 2022 masses + eps_flavor):
+    M_d = 0.00467 GeV, M_s = 0.0934 GeV
+    sin(theta_C) = 0.223698  (err 0.268%)
+
+  Bare GST reference (no correction):
+    PDG 2024: sin(theta_C) = 0.224204  (err 0.043%)
+    PDG 2022: sin(theta_C) = 0.223607  (err 0.309%)
+

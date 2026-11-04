@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-From manuscript version: 5.2.0 and later
+From manuscript version: 5.2.2 or later
 
 Enhanced EWT -- Electroweak and Heavy Boson Module
 ====================================================
@@ -47,6 +47,8 @@ except ImportError:
 # ============================================================
 
 SIN2_THETA_W_MSBAR = 0.23122   # MS-bar at M_Z (CODATA)
+# Flavor deficit (analogous to epsilon_M = 1/(8*pi^7) for charged weak)
+EPS_FLAVOR = 1.0 / (8.0 * math.pi**5)  # = 1/(8*pi^5) ~ 4.085e-4
 
 # Standard Model reference values
 M_W_SM_TREE = M_Z_CODATA * math.sqrt(1.0 - SIN2_THETA_W_MSBAR)
@@ -184,33 +186,39 @@ def compute_higgs_mixing_angles(
 # ============================================================
 
 def cabibbo_sector(
-    C_fermion: float,
     M_d_EWT: float,
     M_s_EWT: float,
     M_d_PDG: float,
     M_s_PDG: float,
-    target: float = 0.2243,
+    eps_flavor: float = EPS_FLAVOR,
+    target: float = 0.22430,
 ) -> dict:
     """
-    Compute the Cabibbo angle with two quark-mass variants.
+    Compute the Cabibbo angle with the flavor deficit correction.
 
-    Variant A uses EWT spherical-mode quark masses; variant B uses
-    PDG 2022 masses to isolate the geometric mixing mechanism.
+    Formula:
+        sin(theta_C) = sqrt(M_d/M_s) * (1 + eps_flavor)
+
+    where eps_flavor = 1/(8*pi^5) is the flavor deficit at the pi^5
+    rung, analogous to eps_M = 1/(8*pi^7) at the charged weak rung.
 
     Returns
     -------
     dict with keys:
-        C_fermion  : the pi^5 operator value
-        sinC_A     : prediction with EWT masses
-        sinC_B     : prediction with PDG masses
-        err_A_pct  : relative error of Variant A [%]
-        err_B_pct  : relative error of Variant B [%]
-        target     : reference value
+        eps_flavor   : the flavor deficit value
+        correction   : (1 + eps_flavor)
+        sinC_A       : prediction with EWT masses
+        sinC_B       : prediction with PDG masses
+        err_A_pct    : relative error of Variant A [%]
+        err_B_pct    : relative error of Variant B [%]
+        target       : reference value
     """
-    sinC_A = math.sqrt(M_d_EWT / M_s_EWT) * C_fermion
-    sinC_B = math.sqrt(M_d_PDG / M_s_PDG) * C_fermion
+    correction = 1.0 + eps_flavor
+    sinC_A = math.sqrt(M_d_EWT / M_s_EWT) * correction
+    sinC_B = math.sqrt(M_d_PDG / M_s_PDG) * correction
     return {
-        "C_fermion": C_fermion,
+        "eps_flavor": eps_flavor,
+        "correction": correction,
         "sinC_A": sinC_A,
         "sinC_B": sinC_B,
         "err_A_pct": abs(sinC_A - target) / target * 100.0,
@@ -426,26 +434,66 @@ def run_radii_sector(r_e_geom: float) -> dict:
 def run_cabibbo_sector(geom: dict) -> dict:
     M_d_EWT = mass_spherical(15)
     M_s_EWT = mass_spherical(28)
-    M_d_PDG = 0.004692
-    M_s_PDG = 0.094954
-    result = cabibbo_sector(
-        geom["C_fermion"],
+
+    # PDG light-quark masses at mu = 2 GeV
+    M_D_PDG_2022 = 0.00467
+    M_S_PDG_2022 = 0.09340
+    M_D_PDG_2024 = 0.00470
+    M_S_PDG_2024 = 0.09350
+    target = 0.22430
+
+    # Variants with eps_flavor correction
+    result_2024 = cabibbo_sector(
         M_d_EWT=M_d_EWT, M_s_EWT=M_s_EWT,
-        M_d_PDG=M_d_PDG, M_s_PDG=M_s_PDG,
-        target=0.2243,
+        M_d_PDG=M_D_PDG_2024, M_s_PDG=M_S_PDG_2024,
+        target=target,
     )
-    print("--- CABIBBO SECTOR (pi^5 surface mixing) ---")
-    print(f"  C_fermion = {result['C_fermion']:.10f}")
-    print(f"  Variant A (EWT masses K=15,28):")
-    print(f"    M_d = {M_d_EWT:.10f} GeV, M_s = {M_s_EWT:.10f} GeV")
-    print(f"    sin(theta_C) = {result['sinC_A']:.10f}  "
-          f"(err {result['err_A_pct']:.4f}%)")
-    print(f"  Variant B (PDG masses, mechanism test):")
-    print(f"    M_d = {M_d_PDG:.10f} GeV, M_s = {M_s_PDG:.10f} GeV")
-    print(f"    sin(theta_C) = {result['sinC_B']:.10f}  "
-          f"(err {result['err_B_pct']:.4f}%)")
+    result_2022 = cabibbo_sector(
+        M_d_EWT=M_d_EWT, M_s_EWT=M_s_EWT,
+        M_d_PDG=M_D_PDG_2022, M_s_PDG=M_S_PDG_2022,
+        target=target,
+    )
+
+    # Bare GST reference
+    bare_2024 = math.sqrt(M_D_PDG_2024 / M_S_PDG_2024)
+    bare_2022 = math.sqrt(M_D_PDG_2022 / M_S_PDG_2022)
+
+    print("--- CABIBBO SECTOR (pi^5 flavor mixing) ---")
+    print(f"  eps_flavor = 1/(8 pi^5)  = {result_2024['eps_flavor']:.10e}")
+    print(f"  Correction factor        = {result_2024['correction']:.10f}")
+    print(f"  Target                   = {target:.5f}  (PDG |V_us|)")
     print()
-    return result
+    print(f"  Variant A (EWT spherical masses, K=15 & K=28):")
+    print(f"    M_d = {M_d_EWT:.6f} GeV, M_s = {M_s_EWT:.6f} GeV")
+    print(f"    sin(theta_C) = {result_2024['sinC_A']:.6f}  "
+          f"(err {result_2024['err_A_pct']:.3f}%)")
+    print()
+    print(f"  Variant B (PDG 2024 masses + eps_flavor):")
+    print(f"    M_d = {M_D_PDG_2024:.5f} GeV, M_s = {M_S_PDG_2024:.4f} GeV")
+    print(f"    sin(theta_C) = {result_2024['sinC_B']:.6f}  "
+          f"(err {result_2024['err_B_pct']:.4f}%)")
+    print()
+    print(f"  Variant C (PDG 2022 masses + eps_flavor):")
+    print(f"    M_d = {M_D_PDG_2022:.5f} GeV, M_s = {M_S_PDG_2022:.4f} GeV")
+    print(f"    sin(theta_C) = {result_2022['sinC_B']:.6f}  "
+          f"(err {result_2022['err_B_pct']:.3f}%)")
+    print()
+    print(f"  Bare GST reference (no correction):")
+    print(f"    PDG 2024: sin(theta_C) = {bare_2024:.6f}  "
+          f"(err {abs(bare_2024-target)/target*100:.3f}%)")
+    print(f"    PDG 2022: sin(theta_C) = {bare_2022:.6f}  "
+          f"(err {abs(bare_2022-target)/target*100:.3f}%)")
+    print()
+
+    return {
+        "eps_flavor": result_2024["eps_flavor"],
+        "correction": result_2024["correction"],
+        "variant_A": {"sinC": result_2024["sinC_A"], "err": result_2024["err_A_pct"]},
+        "variant_B_2024": {"sinC": result_2024["sinC_B"], "err": result_2024["err_B_pct"]},
+        "variant_C_2022": {"sinC": result_2022["sinC_B"], "err": result_2022["err_B_pct"]},
+        "bare_gst_2024": bare_2024,
+        "bare_gst_2022": bare_2022,
+    }
 
 
 # ============================================================

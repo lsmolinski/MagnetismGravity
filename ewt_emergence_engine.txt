@@ -106,8 +106,9 @@ RIGIDITY TEST
   rel. err CDF II 2022      : 0.0676 %  (outlier)
   M_W (pure pi^6)           : 80.514122 GeV
   rel. err PDG 2024 (pure)  : 0.1803 %
-  sin theta_C               : 0.2242876694
-  rel. err PDG              : 0.005497 %
+  sin theta_C               : 0.2242954604
+  rel. err PDG              : 0.002024 %
+  eps_flavor                : 4.084705e-04
 --- Lepton Anomalous Magnetic Moments ---
   Electron a_e   : 1159.916228 ppm  (CODATA: 1159.652182 ppm)
   Muon shell     : 248.571133 ppm

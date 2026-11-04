@@ -1,4 +1,4 @@
-﻿# From manuscript version: 5.2.0 or leter
+﻿# From manuscript version: 5.2.2 or leter
 # =============================================================================
 # SECTION 1: GLOBAL INPUTS & CONSTANTS
 # -----------------------------------------------------------------------------
@@ -57,8 +57,8 @@ A0_CODATA         = 5.29177210903e-11         # Bohr radius [m]
 LAMBDA_C_CODATA   = 2.42631023867e-12         # electron Compton wavelength [m]
 
 # Quark masses (MS-bar, PDG 2022) used in flavour mixing test
-M_D_PDG           = 0.004692                  # d-quark mass [GeV]
-M_S_PDG           = 0.094954                  # s-quark mass [GeV]
+M_D_PDG           = 0.00470                   # d-quark mass [GeV], PDG 2024
+M_S_PDG           = 0.09350                   # s-quark mass [GeV], PDG 2024
 
 A_MU_EXP          = 1.1659206100e-3        # muon AMM from Fermilab/Brookhaven
 A_TAU_EXP         = 1.177210e-3            #  # tau AMM: Standard Model prediction, not direct measuremen
@@ -369,32 +369,35 @@ def weinberg_sector_mixed(lad: dict, M_Z: float, sin2_W: float) -> dict:
     }
 
 
-def cabibbo_sector(C_fermion: float, M_d: float, M_s: float) -> dict:
+def cabibbo_sector(
+    M_d: float, M_s: float,
+    eps_flavor: float = None,
+    target: float = SIN_THETA_C_PDG,
+) -> dict:
     """
-    Compute the Cabibbo angle from quark masses using the pi^5 operator.
+    Compute the Cabibbo angle from the bare Gatto-Sartori-Tonin
+    relation with the EWT flavor deficit correction:
 
-    Formula:
-        sin(theta_C) = sqrt( M_d / M_s ) * C_fermion
+        sin(theta_C) = sqrt(M_d/M_s) * (1 + eps_flavor)
 
-    Parameters
-    ----------
-    C_fermion : float
-        Surface lattice operator from the pi^5 rung.
-    M_d : float
-        Down quark mass [GeV].
-    M_s : float
-        Strange quark mass [GeV].
+    where eps_flavor = 1/(8*pi^5) by default (v5.3.0).
 
     Returns
     -------
-    dict with:
+    dict with keys:
         sin_C_pred : predicted sin(theta_C)
-        rel_err    : relative error to PDG target
+        rel_err    : relative error vs target [%]
+        eps_flavor : the flavor deficit value used
     """
-    sin_C_pred = math.sqrt(M_d / M_s) * C_fermion
-    rel_err = abs(sin_C_pred - SIN_THETA_C_PDG) / SIN_THETA_C_PDG * 100.0
-
-    return {"sin_C_pred": sin_C_pred, "rel_err": rel_err}
+    if eps_flavor is None:
+        eps_flavor = 1.0 / (8.0 * PI**5)
+    sin_C_pred = math.sqrt(M_d / M_s) * (1.0 + eps_flavor)
+    rel_err = abs(sin_C_pred - target) / target * 100.0
+    return {
+        "sin_C_pred": sin_C_pred,
+        "rel_err": rel_err,
+        "eps_flavor": eps_flavor,
+    }
 
 
 def run_sector_tests(lad: dict) -> None:
@@ -423,9 +426,11 @@ def run_sector_tests(lad: dict) -> None:
     print(f"  M_W (pure pi^6)           : {result_W_pure['M_W_pred']:.6f} GeV")
     print(f"  rel. err PDG 2024 (pure)  : {result_W_pure['rel_err_PDG_2024']:.4f} %")
 
-    result_C = cabibbo_sector(lad["C_fermion"], M_D_PDG, M_S_PDG)
+    result_C = cabibbo_sector(M_D_PDG, M_S_PDG)
+    result_C = cabibbo_sector(M_D_PDG, M_S_PDG)
     print(f"  sin theta_C               : {result_C['sin_C_pred']:.10f}")
     print(f"  rel. err PDG              : {result_C['rel_err']:.6f} %")
+    print(f"  eps_flavor                : {result_C['eps_flavor']:.6e}")
 
 
 # =============================================================================
