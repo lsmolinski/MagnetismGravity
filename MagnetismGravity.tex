@@ -991,12 +991,63 @@ Substituting these values into the same operator yields a deviation of only $0.0
 
 \subsubsection{Dimensional Budget of Resonances: Reflection vs. Mixing}
 
-The scaling of the modulators is determined by the ``dimensional budget'' of the resonance involved in the interaction with the BCC lattice:
+The scaling of the modulators is determined by the ``dimensional budget''
+of the resonance involved in the interaction with the BCC lattice:
 
 \begin{itemize}
-	\item \textbf{Bosons ($\pi^6$ and $\pi^7$):} These are volumetric excitations where the action occurs in 3D space, involving 1D amplitude, 1D frequency, and 1D radius ($r$). For charged bosons, an additional 1D of freedom (charge) expands the budget to $\pi^7$. These processes represent a unified ``reflection'' of the energy packet off the lattice, resulting in a linear correction ($C_{\text{gap}}$).
-	\item \textbf{Fermions ($\pi^5$):} In the fermionic sector, the interaction is localised on the phase-surface. The budget includes 3D space, 1D amplitude, and 1D frequency, but excludes the volumetric radius ($r$). This $\pi^5$ resonance describes the surface integrity of the soliton.
-	\item \textbf{The Square (Interference):} Unlike the singular reflection of bosons, the Cabibbo angle represents the \textbf{mixing} of two such $\pi^5$ states. Consequently, the lattice modulation must be applied to both participating objects, leading to the quadratic form $C_{\text{fermion}} = (1 + \pi^5 C_{\text{local}})^2$.
+	\item \textbf{Bosons ($\pi^6$ and $\pi^7$):} These are volumetric
+	excitations where the action occurs in 3D space, involving 1D
+	amplitude, 1D frequency, and 1D radius ($r$). For charged bosons, an
+	additional 1D of freedom (charge) expands the budget to $\pi^7$.
+	These processes represent a unified ``reflection'' of the energy
+	packet off the lattice, resulting in a linear correction
+	($C_{\text{gap}}$ for pure neutral vertices,
+	$C_{\text{gap}}^{\text{mixed}}$ for mixed $W$--$Z$ vertices).
+	
+	\item \textbf{Fermions ($\pi^5$):} In the fermionic sector, the
+	interaction is localised on the phase-surface. The budget includes
+	3D space, 1D amplitude, and 1D frequency, but excludes the
+	volumetric radius ($r$). This $\pi^5$ resonance describes the
+	surface integrity of the soliton.
+	
+	\item \textbf{The Pair Deficit (Linear):} The Cabibbo angle
+	represents the mixing of two such $\pi^5$ states. The bare
+	Gatto--Sartori--Tonin relation $\sqrt{M_d/M_s}$ captures the
+	\emph{bi-local interference} between the two quarks at the
+	amplitude level: since mass scales as $M \propto A^2$, the square
+	root of the mass ratio directly accesses the wave amplitude $A$
+	(Section~\ref{sec:symmetry_observables}). The lattice response to
+	the pair is a \emph{single} geometric deficit at the $\pi^5$ rung,
+	\begin{equation}
+		\epsilon_{\text{flavor}}
+		= \frac{1}{8\pi^5}
+		\approx 4.085 \times 10^{-4},
+		\label{eq:eps_flavor}
+	\end{equation}
+	analogous to the magnetic deficit $\epsilon_M = 1/(8\pi^7(1-\zeta))$
+	at the charged weak rung (Eq.~\ref{eq:epsilon_M_definition}). Both
+	follow the same structural pattern
+	analogous to the magnetic deficit $\epsilon_M = 1/(8\pi^7(1-\zeta))$
+	at the charged weak rung (Eq.~\ref{eq:epsilon_M_definition}). Both
+	follow the same structural pattern
+	\begin{equation}
+		\epsilon_n = \frac{1}{8\pi^n(1-\zeta)},
+		\qquad n \in \{5, 7\},
+	\end{equation}
+	with $n = 7$ for the charged weak sector ($\epsilon_M$) and $n = 5$
+	for flavor mixing. In the flavor sector the packing-impedance
+	correction is negligible: $\zeta \approx 6 \times 10^{-4}$ shifts
+	$\epsilon_{\text{flavor}}$ by only $0.06\%$, which is far below the
+	$\sim 10\%$ uncertainty on the light-quark masses that enter the
+	Cabibbo relation. We therefore use the simplified form
+	\begin{equation}
+		\epsilon_{\text{flavor}}
+		= \frac{1}{8\pi^5}
+		\approx 4.085 \times 10^{-4}
+		\label{eq:eps_flavor_value}
+	\end{equation}
+	throughout the Cabibbo calculation, with the understanding that the
+	correction from $\zeta$ is subdominant.
 \end{itemize}
 
 \subsubsection{Symmetry of Observables: Energy Density vs. Amplitude Interference}

@@ -88,11 +88,12 @@ RIGIDITY TEST
 --- Geometric Ladder (Pure BCC) ---
   Source       : BCC packing derived
   eps_M        : 4.141169769303932e-05
+  zeta         : 6.0339643713e-04
   C_local      : 1.464124612959771e-05
   C_gap        : 1.014075935809472  (pure pi^6, Z-Z and Z-H)
   C_gap_mixed  : 1.010677258781862  (mixed W-Z)
   O_mixed      : 729.258882  (harmonic mean pi^6*pi^7/(pi^6+pi^7))
-  C_fermion    : 1.008981094016494
+  eps_flavor    : 0.000408717073808
   Ladder:
     pi^3 = 31.006276680299816
     pi^4 = 97.409091034002415
@@ -106,9 +107,10 @@ RIGIDITY TEST
   rel. err CDF II 2022      : 0.0676 %  (outlier)
   M_W (pure pi^6)           : 80.514122 GeV
   rel. err PDG 2024 (pure)  : 0.1803 %
-  sin theta_C               : 0.2242954604
-  rel. err PDG              : 0.002024 %
-  eps_flavor                : 4.084705e-04
+  sin theta_C               : 0.2242955157
+  rel. err PDG              : 0.001999 %
+  eps_flavor                : 4.087171e-04
+  zeta                      : 6.033964e-04
 --- Lepton Anomalous Magnetic Moments ---
   Electron a_e   : 1159.916228 ppm  (CODATA: 1159.652182 ppm)
   Muon shell     : 248.571133 ppm

@@ -31,9 +31,11 @@ try:
     from ewt_emergence_engine import (
         PI, SQRT2, SQRT3, EULER,
         M_Z_CODATA, M_H_CODATA,
+        BCC_PACKING_FRACTION,
         compute_alpha_core,
         derive_eps_M_from_BCC,
         build_geometric_ladder,
+        lattice_impedance,
     )
     from ewt_particle_masses import mass_spherical
 except ImportError:
@@ -47,8 +49,11 @@ except ImportError:
 # ============================================================
 
 SIN2_THETA_W_MSBAR = 0.23122   # MS-bar at M_Z (CODATA)
-# Flavor deficit (analogous to epsilon_M = 1/(8*pi^7) for charged weak)
-EPS_FLAVOR = 1.0 / (8.0 * math.pi**5)  # = 1/(8*pi^5) ~ 4.085e-4
+# Flavor deficit is computed at runtime from the lattice impedance zeta:
+# eps_flavor = 1 / (8 * pi^5 * (1 - zeta))
+# analogous to eps_M = 1 / (8 * pi^7 * (1 - zeta)) for charged weak.
+# The ideal value (zeta = 0) is 1/(8*pi^5) ~ 4.085e-4; with zeta ~ 6e-4,
+# the correction shifts eps_flavor by ~0.06%.
 
 # Standard Model reference values
 M_W_SM_TREE = M_Z_CODATA * math.sqrt(1.0 - SIN2_THETA_W_MSBAR)
@@ -190,7 +195,7 @@ def cabibbo_sector(
     M_s_EWT: float,
     M_d_PDG: float,
     M_s_PDG: float,
-    eps_flavor: float = EPS_FLAVOR,
+    eps_flavor: float = None,
     target: float = 0.22430,
 ) -> dict:
     """
@@ -199,8 +204,21 @@ def cabibbo_sector(
     Formula:
         sin(theta_C) = sqrt(M_d/M_s) * (1 + eps_flavor)
 
-    where eps_flavor = 1/(8*pi^5) is the flavor deficit at the pi^5
-    rung, analogous to eps_M = 1/(8*pi^7) at the charged weak rung.
+    where eps_flavor = 1/(8*pi^5*(1-zeta)) is the flavor deficit at
+    the pi^5 rung, analogous to eps_M = 1/(8*pi^7*(1-zeta)) at the
+    charged weak rung. If eps_flavor is None, the ideal limit
+    (zeta = 0) value 1/(8*pi^5) is used.
+
+    Parameters
+    ----------
+    M_d_EWT, M_s_EWT : float
+        Spherical-mode quark masses [GeV] (Variant A).
+    M_d_PDG, M_s_PDG : float
+        PDG light-quark masses [GeV] (Variant B/C).
+    eps_flavor : float, optional
+        Flavor deficit. Default None -> ideal 1/(8*pi^5).
+    target : float
+        Reference sin(theta_C), default PDG 0.22430.
 
     Returns
     -------
@@ -213,6 +231,8 @@ def cabibbo_sector(
         err_B_pct    : relative error of Variant B [%]
         target       : reference value
     """
+    if eps_flavor is None:
+        eps_flavor = 1.0 / (8.0 * math.pi**5)  # ideal limit (zeta = 0)
     correction = 1.0 + eps_flavor
     sinC_A = math.sqrt(M_d_EWT / M_s_EWT) * correction
     sinC_B = math.sqrt(M_d_PDG / M_s_PDG) * correction
@@ -337,7 +357,6 @@ def run_geometry_summary(geom: dict) -> None:
     print(f"  C_gap (pure pi^6)   = {geom['C_gap_pure']:.10f}")
     print(f"  C_gap (mixed)       = {geom['C_gap_mixed']:.10f}")
     print(f"  O_mixed             = {geom['O_mixed']:.4f}")
-    print(f"  C_fermion           = {geom['C_fermion']:.10f}")
     print()
 
 
@@ -434,6 +453,9 @@ def run_radii_sector(r_e_geom: float) -> dict:
 def run_cabibbo_sector(geom: dict) -> dict:
     M_d_EWT = mass_spherical(15)
     M_s_EWT = mass_spherical(28)
+    
+    zeta = geom["zeta"]
+    eps_flavor = 1.0 / (8.0 * math.pi**5 * (1.0 - zeta))
 
     # PDG light-quark masses at mu = 2 GeV
     M_D_PDG_2022 = 0.00467
@@ -446,11 +468,13 @@ def run_cabibbo_sector(geom: dict) -> dict:
     result_2024 = cabibbo_sector(
         M_d_EWT=M_d_EWT, M_s_EWT=M_s_EWT,
         M_d_PDG=M_D_PDG_2024, M_s_PDG=M_S_PDG_2024,
+        eps_flavor=eps_flavor,
         target=target,
     )
     result_2022 = cabibbo_sector(
         M_d_EWT=M_d_EWT, M_s_EWT=M_s_EWT,
         M_d_PDG=M_D_PDG_2022, M_s_PDG=M_S_PDG_2022,
+        eps_flavor=eps_flavor,
         target=target,
     )
 
@@ -459,9 +483,11 @@ def run_cabibbo_sector(geom: dict) -> dict:
     bare_2022 = math.sqrt(M_D_PDG_2022 / M_S_PDG_2022)
 
     print("--- CABIBBO SECTOR (pi^5 flavor mixing) ---")
-    print(f"  eps_flavor = 1/(8 pi^5)  = {result_2024['eps_flavor']:.10e}")
+    print(f"  zeta (lattice impedance) = {zeta:.10e}")
+    print(f"  eps_flavor = 1/(8 pi^5 (1-zeta)) = {eps_flavor:.10e}")
     print(f"  Correction factor        = {result_2024['correction']:.10f}")
     print(f"  Target                   = {target:.5f}  (PDG |V_us|)")
+    
     print()
     print(f"  Variant A (EWT spherical masses, K=15 & K=28):")
     print(f"    M_d = {M_d_EWT:.6f} GeV, M_s = {M_s_EWT:.6f} GeV")
@@ -507,19 +533,19 @@ def main():
     # --- Geometry (once) ---
     bcc = derive_eps_M_from_BCC(8.0 * PI**4)
     eps_M = bcc["eps_M"]
+    zeta = lattice_impedance(8.0 * PI**4, BCC_PACKING_FRACTION)  # explicit
     ladder = build_geometric_ladder(eps_M, "BCC packing derived")
     C_local = ladder["C_local"]
     C_gap_pure = ladder["C_gap"]
-    C_fermion = ladder["C_fermion"]
     cg_mixed = c_gap_mixed(C_local, PI**6, PI**7)
 
     geom = {
         "eps_M":       eps_M,
+        "zeta":        zeta,
         "C_local":     C_local,
         "C_gap_pure":  C_gap_pure,
         "C_gap_mixed": cg_mixed["C_gap"],
         "O_mixed":     cg_mixed["O_mixed"],
-        "C_fermion":   C_fermion,
         "pi6":         PI**6,
         "pi7":         PI**7,
     }

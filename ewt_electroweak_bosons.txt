@@ -7,7 +7,6 @@ EWT ELECTROWEAK & BOSON MODULE (v5.2.0)
   C_gap (pure pi^6)   = 1.0140759358
   C_gap (mixed)       = 1.0106772588
   O_mixed             = 729.2589
-  C_fermion           = 1.0089810940
 
 --- MIXED W-Z VERTEX (main prediction) ---
   O_mixed        = 729.2589
@@ -48,8 +47,9 @@ EWT ELECTROWEAK & BOSON MODULE (v5.2.0)
   Order of magnitude matches nuclear mass-equivalents.
 
 --- CABIBBO SECTOR (pi^5 flavor mixing) ---
-  eps_flavor = 1/(8 pi^5)  = 4.0847045538e-04
-  Correction factor        = 1.0004084705
+  zeta (lattice impedance) = 6.0339643713e-04
+  eps_flavor = 1/(8 pi^5 (1-zeta)) = 4.0871707381e-04
+  Correction factor        = 1.0004087171
   Target                   = 0.22430  (PDG |V_us|)
 
   Variant A (EWT spherical masses, K=15 & K=28):
@@ -58,7 +58,7 @@ EWT ELECTROWEAK & BOSON MODULE (v5.2.0)
 
   Variant B (PDG 2024 masses + eps_flavor):
     M_d = 0.00470 GeV, M_s = 0.0935 GeV
-    sin(theta_C) = 0.224295  (err 0.0020%)
+    sin(theta_C) = 0.224296  (err 0.0020%)
 
   Variant C (PDG 2022 masses + eps_flavor):
     M_d = 0.00467 GeV, M_s = 0.0934 GeV

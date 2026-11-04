@@ -174,7 +174,8 @@ def compute_alpha_core() -> float:
 # Later sections will compute eps_M and pass it here.
 # =============================================================================
 
-def build_geometric_ladder(eps_M: float, source_label: str = "") -> dict:
+def build_geometric_ladder(eps_M: float, source_label: str = "",
+                           zeta: float = 0.0) -> dict:
     """
     Build the geometric ladder from the magnetic deficit eps_M.
 
@@ -184,35 +185,36 @@ def build_geometric_ladder(eps_M: float, source_label: str = "") -> dict:
         Magnetic deficit parameter.
     source_label : str
         Optional label describing the source of eps_M.
+    zeta : float
+        Lattice impedance (default 0.0 for ideal BCC packing).
 
     Returns
     -------
     dict with:
-        eps_M       : magnetic deficit (input)
+        eps_M       : magnetic deficit
+        zeta        : lattice impedance
         source      : source label
-        C_local     : local coupling
-        C_gap       : pure neutral operator (pi^6); for Z-Z, Z-H vertices
-        C_gap_mixed : mixed W-Z operator (harmonic mean of pi^6 and pi^7);
-                      for W-Z vertex (v5.2.0 default for M_W)
-        O_mixed     : harmonic mean pi^6*pi^7/(pi^6+pi^7)
-        C_fermion   : surface operator (pi^5)
-        ladder      : dictionary {3: pi^3, ..., 7: pi^7}
+        ...
     """
     C_local = eps_M / (2.0 * SQRT2)
 
-    # Mixed W-Z operator (harmonic mean of pi^6 and pi^7, v5.2.0)
     pi6 = PI**6
     pi7 = PI**7
     O_mixed = (pi6 * pi7) / (pi6 + pi7)
 
+    # Flavor deficit (analogous to eps_M, at the pi^5 rung)
+    eps_flavor = 1.0 / (8.0 * pi7 * (1.0 - zeta) / PI**2)  # = 1/(8*pi^5*(1-zeta))
+    # Simplified: eps_flavor = 1 / (8 * PI**5 * (1 - zeta))
+
     return {
         "eps_M": eps_M,
+        "zeta": zeta,
+        "eps_flavor": eps_flavor,
         "source": source_label,
         "C_local": C_local,
         "C_gap": 1.0 + pi6 * C_local,
         "C_gap_mixed": 1.0 + O_mixed * C_local,
         "O_mixed": O_mixed,
-        "C_fermion": (1.0 + PI**5 * C_local) ** 2,
         "ladder": {n: PI**n for n in range(3, 8)},
     }
 
@@ -221,11 +223,12 @@ def report_ladder(lad: dict) -> None:
     """Print the contents of a ladder dictionary in a readable form."""
     print(f"  Source       : {lad.get('source', 'unknown')}")
     print(f"  eps_M        : {lad['eps_M']:.15e}")
+    print(f"  zeta         : {lad.get('zeta', 0.0):.10e}")
     print(f"  C_local      : {lad['C_local']:.15e}")
     print(f"  C_gap        : {lad['C_gap']:.15f}  (pure pi^6, Z-Z and Z-H)")
     print(f"  C_gap_mixed  : {lad['C_gap_mixed']:.15f}  (mixed W-Z)")
     print(f"  O_mixed      : {lad['O_mixed']:.6f}  (harmonic mean pi^6*pi^7/(pi^6+pi^7))")
-    print(f"  C_fermion    : {lad['C_fermion']:.15f}")
+    print(f"  eps_flavor    : {lad['eps_flavor']:.15f}")
     print("  Ladder:")
     for n in sorted(lad["ladder"]):
         print(f"    pi^{n} = {lad['ladder'][n]:.15f}")
@@ -380,7 +383,17 @@ def cabibbo_sector(
 
         sin(theta_C) = sqrt(M_d/M_s) * (1 + eps_flavor)
 
-    where eps_flavor = 1/(8*pi^5) by default (v5.3.0).
+    where eps_flavor = 1/(8*pi^5*(1-zeta)) by default, or
+    1/(8*pi^5) in the ideal limit (zeta = 0).
+
+    Parameters
+    ----------
+    M_d, M_s : float
+        Down and strange quark masses [GeV].
+    eps_flavor : float, optional
+        Flavor deficit. If None, uses ideal value 1/(8*pi^5).
+    target : float
+        Reference sin(theta_C), default PDG value.
 
     Returns
     -------
@@ -390,7 +403,7 @@ def cabibbo_sector(
         eps_flavor : the flavor deficit value used
     """
     if eps_flavor is None:
-        eps_flavor = 1.0 / (8.0 * PI**5)
+        eps_flavor = 1.0 / (8.0 * PI**5)  # ideal limit
     sin_C_pred = math.sqrt(M_d / M_s) * (1.0 + eps_flavor)
     rel_err = abs(sin_C_pred - target) / target * 100.0
     return {
@@ -426,11 +439,14 @@ def run_sector_tests(lad: dict) -> None:
     print(f"  M_W (pure pi^6)           : {result_W_pure['M_W_pred']:.6f} GeV")
     print(f"  rel. err PDG 2024 (pure)  : {result_W_pure['rel_err_PDG_2024']:.4f} %")
 
-    result_C = cabibbo_sector(M_D_PDG, M_S_PDG)
-    result_C = cabibbo_sector(M_D_PDG, M_S_PDG)
+    result_C = cabibbo_sector(
+        M_D_PDG, M_S_PDG,
+        eps_flavor=lad.get("eps_flavor"),
+    )
     print(f"  sin theta_C               : {result_C['sin_C_pred']:.10f}")
     print(f"  rel. err PDG              : {result_C['rel_err']:.6f} %")
     print(f"  eps_flavor                : {result_C['eps_flavor']:.6e}")
+    print(f"  zeta                      : {lad.get('zeta', 0.0):.6e}")
 
 
 # =============================================================================
@@ -1282,7 +1298,7 @@ def main():
         c0=C0,
     )
 
-    ladder_bcc = build_geometric_ladder(eps_M_bcc, "BCC packing derived")
+    ladder_bcc = build_geometric_ladder(eps_M_bcc, "BCC packing derived", zeta=bcc_derived["zeta"])
 
     print(f"\n--- Geometric Ladder (Pure BCC) ---")
     report_ladder(ladder_bcc)
