@@ -868,7 +868,22 @@ The quadratic form reflects the bi-local nature of mixing between two quark stat
 
 \subsubsection{Higgs-Vector Boson Mixing}
 
-The Higgs boson interactions combine pure neutral ($Z$--$H$) and mixed ($W$--$H$) vertices with the Higgs mass scale ($M_H^{\text{CODATA}} = 125.25$~GeV). The $Z$--$H$ mixing uses the pure $\pi^6$ operator $C_{\text{gap}}$ (both solitons are neutral); the $W$--$H$ mixing uses the mixed operator $C_{\text{gap}}^{\text{mixed}}$ (one charged, one neutral soliton) together with the mixed $W$-mass prediction $M_W^{\text{EWT}}$ of Eq.~\eqref{eq:w_mass_mixed}:
+The Higgs boson interactions are computed as a consistency check of the
+auxiliary spherical-mode masses, not as a first-principles prediction
+from the four primary anchors. The calculation uses
+$M_Z^{\text{EWT}} = 91.731$~GeV (from \texttt{mass\_spherical(110)}),
+$M_H^{\text{EWT}} = 124.961$~GeV (from \texttt{mass\_spherical(117)}),
+and the mixed $W$-mass prediction $M_W^{\text{EWT}} = 80.379$~GeV of
+Eq.~\eqref{eq:w_mass_mixed}.
+
+The mixing operators differ by the nature of the vertex. The
+$Z$--$H$ mixing is a pure neutral--neutral vertex (both solitons are
+neutral), so it uses the pure neutral rung $C_{\text{gap}} = 1 + \pi^6
+C_{\text{local}}$. The $W$--$H$ mixing is a mixed charged--neutral
+vertex (one charged, one neutral soliton), so it uses the
+parallel-impedance combination $C_{\text{gap}}^{\text{mixed}} = 1 +
+O_{\text{mixed}} C_{\text{local}}$ defined in
+Eq.~\eqref{eq:cgap_mixed}:
 
 \begin{table}[h]
 	\centering
@@ -889,6 +904,48 @@ The Higgs boson interactions combine pure neutral ($Z$--$H$) and mixed ($W$--$H$
 	\label{eq:higgs_z_falsification}
 	\boxed{\sin^2\theta_{ZH}^{\text{EWT}} = \mathbf{0.4686}}
 \end{equation}
+
+The Higgs boson interactions are computed as a consistency check of the
+auxiliary spherical-mode masses, not as a first-principles prediction
+from the four primary anchors. The calculation uses
+$M_Z^{\text{EWT}} = 91.731$~GeV (from \texttt{mass\_spherical(110)}),
+$M_H^{\text{EWT}} = 124.961$~GeV (from \texttt{mass\_spherical(117)}),
+and the mixed $W$-mass prediction $M_W^{\text{EWT}} = 80.379$~GeV of
+Eq.~\eqref{eq:w_mass_mixed}. The spherical mode is used here rather than
+the meson mode because the spherical-mode masses reproduce $M_Z$ and
+$M_H$ at the $0.2$--$0.6\%$ level, whereas the meson mode gives
+$M_Z \approx 82.3$~GeV ($9.7\%$ off); the spherical-mode calculation
+inherits the legacy wave constants $\rho_a, A_l, \lambda_l$
+(inventory class~V, Section~\ref{app:inventory_status}), which is why
+the mixing angles are classified as auxiliary-mode outputs.
+
+The mixing operators differ by the nature of the vertex. The
+$Z$--$H$ mixing is a pure neutral--neutral vertex (both solitons are
+neutral), so it uses the pure neutral rung $C_{\text{gap}} = 1 + \pi^6
+C_{\text{local}}$. The $W$--$H$ mixing is a mixed charged--neutral
+vertex (one charged, one neutral soliton), so it uses the
+parallel-impedance combination $C_{\text{gap}}^{\text{mixed}} = 1 +
+O_{\text{mixed}} C_{\text{local}}$ defined in
+Eq.~\eqref{eq:cgap_mixed}:
+
+\emph{Status.} The angles $\sin^2\theta_{ZH}$ and $\sin^2\theta_{WH}$
+are not on-shell scalar--vector mixing angles. Within the Standard
+Model, on-shell mixing between a spin-0 Higgs boson and a spin-1
+gauge boson is forbidden by Lorentz invariance and electric charge
+conservation. This is a symmetry-based statement, not a direct
+experimental measurement. Experimental searches for such mixing are
+necessarily indirect and are interpreted within the Standard-Model
+Extension (SME), an effective field theory that parametrizes all
+Lorentz-violating operators consistent with gauge invariance and
+power-counting renormalizability. Within the minimal SME, loop
+corrections and other indirect data yield upper bounds on the
+relevant Higgs-sector coefficients of order $10^{-16}$ or better,
+so that any deviation from the SM prohibition would be
+unobservably small. The angles $\sin^2\theta_{ZH}$ and
+$\sin^2\theta_{WH}$ are therefore topological projection parameters
+of the soliton overlap region, not experimentally accessible
+on-shell mixing angles, as discussed in
+Section~\ref{sec:ewt_higgs_observable_tests}.
 
 \subsubsection{Cabibbo Mixing Angle}
 
