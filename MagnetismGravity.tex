@@ -949,42 +949,100 @@ Section~\ref{sec:ewt_higgs_observable_tests}.
 
 \subsubsection{Cabibbo Mixing Angle}
 
-The leading-order form $\sin\theta_C \approx \sqrt{M_d/M_s}$ is the classic Gatto--Sartori--Tonin relation \cite{Gatto1968}, well established in chiral perturbation theory. In the EWT framework this relation is reinterpreted geometrically: the square-root form is a signature of surface amplitude interference at the $\pi^5$ phase-surface (Section~\ref{sec:symmetry_observables}), and the lattice modulation $C_{\text{fermion}}$ represents the bi-local correction from the BCC substrate.
-Using the $\pi^5$ surface modulator and the EWT-derived masses for $d$ and $s$ quarks, obtained from the spherical mode at wave centre counts $K_{WC}=15$ and $K_{WC}=28$:
+The leading-order form $\sin\theta_C \approx \sqrt{M_d/M_s}$ is the
+classic Gatto--Sartori--Tonin relation \cite{Gatto1968}, well
+established in chiral perturbation theory. In the EWT framework this
+relation is reinterpreted geometrically: the square-root form is a
+signature of surface amplitude interference at the $\pi^5$
+phase-surface (Section~\ref{sec:symmetry_observables}).
+
+The flavor mixing operator is a geometric deficit at the $\pi^5$ rung,
+analogous to the magnetic deficit $\epsilon_M = 1/(8\pi^7(1-\zeta))$
+at the charged weak rung:
 \begin{equation}
-	\boxed{\sin\theta_C = \sqrt{\frac{M_d}{M_s}} \cdot C_{\text{fermion}}}
+	\epsilon_{\text{flavor}}
+	= \frac{1}{8\pi^5(1-\zeta)}
+	\approx 4.087 \times 10^{-4},
+	\label{eq:eps_flavor_cabibbo}
 \end{equation}
-where
+where $8$ is the BCC coordination number, $\pi^5$ is the
+five-dimensional flavor mixing budget
+(Table~\ref{tab:dimensional_ladder_origin}), and $\zeta \approx
+6.03 \times 10^{-4}$ is the lattice impedance from BCC packing. The
+Cabibbo angle is then
 \begin{equation}
-	C_{\text{fermion}} = \left(1 + \pi^5 C_{\text{local}}\right)^2,
+	\boxed{
+		\sin\theta_C
+		= \sqrt{\frac{M_d}{M_s}}
+		\cdot \left(1 + \epsilon_{\text{flavor}}\right)
+	}
+	\label{eq:cabibbo_ewt}
 \end{equation}
-and the masses calculated from the spherical mode are:
+
+Using the EWT-derived spherical-mode quark masses at $K_{WC}=15$ and
+$K_{WC}=28$:
 \begin{align}
 	M_d^{\text{EWT}} &= 0.004034\,\text{GeV}, \\
-	M_s^{\text{EWT}} &= 0.094885\,\text{GeV}.
+	M_s^{\text{EWT}} &= 0.094885\,\text{GeV},
 \end{align}
+the EWT prediction is $\sin\theta_C = 0.2063$ (Variant A in
+Table~\ref{tab:cabibbo_variants}), a relative difference of about
+$8.03\%$ from the measured value $\sin\theta_C = 0.22430$. The
+residual reflects the auxiliary spherical-mode quark masses, which
+differ from PDG by $10$--$14\%$
+(Section~\ref{subsec:quark-mass-interpretation}).
 
-The experimental value (PDG 2022) is $\sin\theta_C \approx 0.2243$. The EWT-derived masses lead to a relative difference of about $7.24\%$ (Variant A in Table~\ref{tab:cabibbo_variants}).
-
-To isolate the precision of the geometric mixing mechanism itself, the calculation is repeated using PDG 2022 experimental quark masses as input:
-\begin{align}
-	M_d^{\text{PDG}} &= 0.004692\,\text{GeV}, \\
-	M_s^{\text{PDG}} &= 0.094954\,\text{GeV}.
-\end{align}
-Substituting these values into the same operator yields a deviation of only $0.0055\%$ (Variant B), confirming that the $\pi^5$ surface resonance operator $C_{\text{fermion}}$ correctly captures the physics of flavour mixing at the level of numerical precision.
+To isolate the geometric mixing mechanism from the quark-mass
+determination, the calculation is repeated using standard PDG
+light-quark masses at $\mu = 2$~GeV. With PDG~2024 values
+($M_d = 0.00470$~GeV, $M_s = 0.09350$~GeV), the prediction is
+$\sin\theta_C = 0.22430$ (Variant B), a residual of $0.002\%$ against
+the measured value. With PDG~2022 values
+($M_d = 0.00467$~GeV, $M_s = 0.09340$~GeV), the prediction is
+$\sin\theta_C = 0.22370$ (Variant C), a residual of $0.27\%$. Both
+residuals are well within the $\sim 10$--$14\%$ uncertainty on the
+light-quark masses themselves (PDG~2024). The bare
+Gatto--Sartori--Tonin relation, without the flavor correction,
+gives $\sin\theta_C = 0.22420$ (PDG~2024) and $0.22361$
+(PDG~2022), corresponding to residuals of $0.04\%$ and $0.31\%$.
+The flavor correction $\epsilon_{\text{flavor}}$ therefore leaves
+the leading-order agreement essentially unchanged, consistent with
+the small size of the geometric deficit ($\epsilon_{\text{flavor}}
+\approx 4 \times 10^{-4}$ versus the $\sim 10\%$ quark-mass
+uncertainty). The $\pi^5$ operator does not distort the successful
+GST relation; it adds a lattice correction of the same relative
+order as the input uncertainties, and its value is not fitted to
+the Cabibbo angle.
 
 \begin{table}[h]
 	\centering
-	\caption{Cabibbo angle prediction: sensitivity to quark mass input.}
+	\caption{Cabibbo angle prediction: sensitivity to quark-mass input.
+		Variant A uses EWT spherical-mode masses; Variants B and C use
+		standard PDG light-quark masses at $\mu = 2$~GeV. The bare
+		Gatto--Sartori--Tonin relation $\sqrt{M_d/M_s}$, without the
+		flavor deficit, is shown for reference. The geometric deficit
+		is $\epsilon_{\text{flavor}} = 1/(8\pi^5(1-\zeta)) \approx
+		4.087 \times 10^{-4}$.}
 	\label{tab:cabibbo_variants}
 	\begin{tabular}{lcccc}
 		\toprule
-		\textbf{Variant} & $M_d$ \textbf{[GeV]} & $M_s$ \textbf{[GeV]} & $\sin\theta_C$ & \textbf{Error} \\
+		\textbf{Variant} & $M_d$ \textbf{[GeV]} & $M_s$ \textbf{[GeV]}
+		& $\sin\theta_C$ & \textbf{Error} \\
 		\midrule
-		A: EWT spherical mode & $0.004034$ & $0.094885$ & $0.20805$ & $7.24\%$ \\
-		B: PDG 2022 targets   & $0.004692$ & $0.094954$ & $0.22429$ & $0.0055\%$ \\
+		A: EWT spherical mode
+		& $0.004034$ & $0.094885$ & $0.2063$ & $8.03\%$ \\
+		B: PDG 2024 + $\epsilon_{\text{flavor}}$
+		& $0.00470$ & $0.09350$ & $0.22430$ & $0.002\%$ \\
+		C: PDG 2022 + $\epsilon_{\text{flavor}}$
+		& $0.00467$ & $0.09340$ & $0.22370$ & $0.27\%$ \\
 		\midrule
-		PDG 2022 (reference) & -- & -- & $0.22430$ & -- \\
+		Bare GST (PDG 2024)
+		& $0.00470$ & $0.09350$ & $0.22420$ & $0.04\%$ \\
+		Bare GST (PDG 2022)
+		& $0.00467$ & $0.09340$ & $0.22361$ & $0.31\%$ \\
+		\midrule
+		PDG 2024 (reference)
+		& -- & -- & $0.22430$ & -- \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1063,7 +1121,14 @@ The contrasting mathematical forms of the key observables---\(\sin^2\theta_W\) f
 	In contrast, the Cabibbo angle, \(\sin\theta_C\), describes the mixing of two boundary-localised fermions (\(d\) and \(s\) quarks). This is a bi-local interference process occurring on the \(\pi^5\) phase-surface, where the relevant physical quantity is the wave amplitude \(A\) itself, not the volume-integrated energy. At the \(\pi^5\) level, the soliton possesses 3D space, amplitude \(A\), and frequency \(f\)---the minimal set required for a massive surface excitation. Its mass scales as \(M \propto A^2\), as energy is quadratic in amplitude. To access the amplitude \(A\) directly, one must therefore take the square root of the mass. This operation effectively projects the energy-based observable from the \(\pi^5\) level down to the \(\pi^4\) level of the Geometric Ladder, where the fundamental amplitude \(A\) resides in 3D space as the static structural skeleton of the particle (3D + \(A\)). The linear form \(\sin\theta_C \propto \sqrt{M_d/M_s}\) is thus the direct signature of amplitude interference at the soliton boundary.
 \end{itemize}
 
-This dichotomy---\(\sin^2\) for volumetric energy ratios versus \(\sin\) for surface amplitude interference---is a direct and testable consequence of the dimensional hierarchy. It confirms that the EWT framework does not merely fit parameters, but derives the very structure of physical laws from the topology of the vacuum substrate.
+This dichotomy---\(\sin^2\) for volumetric energy ratios versus \(\sin\) for surface amplitude interference---is a direct and testable consequence of the dimensional hierarchy. It confirms that the EWT framework does not merely fit parameters, but derives the very structure of physical laws from the topology of the vacuum substrate. 
+
+The geometric flavor deficit $\epsilon_{\text{flavor}} = 1/(8\pi^5(1-\zeta))$
+of Eq.~\eqref{eq:eps_flavor} enters as a small multiplicative correction
+on top of the bare amplitude relation $\sqrt{M_d/M_s}$; it does not
+change the linear form of the fermionic observable, just as the
+bosonic corrections $C_{\text{gap}}$ and $C_{\text{gap}}^{\text{mixed}}$
+do not change the squared form of the bosonic observable.
 
 \subsubsection{Interpretation of Quark Masses in the EWT Framework}
 \label{subsec:quark-mass-interpretation}
@@ -1094,7 +1159,14 @@ While the Standard Model operates on the abstraction of point-particles within a
 \subsection{Structural Transition to \(N\)-Stiffness: From Geometric Volume to Lattice Impedance}
 \label{sec:n_transition}
 
-To unify the model, the correction parameters \(C_{\text{gap}}\) and \(C_{\text{fermion}}\) are expressed directly through the geometric vacuum stiffness \(N_{\text{geom}}\) introduced in Section~\ref{sec:alpha_geometric_deficit}. Using the identity \(C_{\text{local}} = \epsilon_M/(2\sqrt{2})\) and \(\epsilon_M = 1/(N_{\text{geom}}\pi^3)\), the geometric structure reveals the scaling hierarchy:
+To unify the model, the correction operators \(C_{\text{gap}}\) and
+$\epsilon_{\text{flavor}}$ are expressed directly through the geometric
+vacuum stiffness \(N_{\text{geom}}\) introduced in
+Section~\ref{sec:alpha_geometric_deficit}. Using the identity
+\(C_{\text{local}} = \epsilon_M/(2\sqrt{2})\) and
+\(\epsilon_M = 1/(N_{\text{geom}}\pi^3)\), together with
+\(N_{\text{geom}} = 8\pi^4(1-\zeta)\), the geometric structure reveals
+the scaling hierarchy:
 
 \subsubsection*{1. Direct \(N\)-Representation}
 
@@ -1103,15 +1175,34 @@ To unify the model, the correction parameters \(C_{\text{gap}}\) and \(C_{\text{
 \end{equation}
 
 \begin{equation}
-	C_{\text{fermion}} = (1 + \pi^5 \cdot C_{\text{local}})^2 = \left( 1 + \frac{\pi^2}{2\sqrt{2} \cdot N_{\text{geom}}} \right)^2
+	\epsilon_{\text{flavor}} = \frac{1}{8\pi^5(1-\zeta)} = \frac{1}{\pi \cdot N_{\text{geom}}}
+	\label{eq:eps_flavor_N_repr}
 \end{equation}
 
 \subsubsection*{2. Physical Interpretation: The Pi-Power Scaling}
 
 \begin{itemize}
-	\item \textbf{\(C_{\text{gap}}\) (Volumetric Coupling):} The \(\pi^3/N_{\text{geom}}\) term identifies the magnetic gap as a 3D volumetric resonance. The \(\pi^3\) factor represents the interaction of the spherical soliton with the BCC lattice stiffness.
-	\item \textbf{\(C_{\text{fermion}}\) (Surface Scaling):} The reduction to \(\pi^2/N_{\text{geom}}\) within the squared operator identifies the fermion correction as a 2D surface effect. The square accounts for the bi-directional (spin-lattice) coupling required for mass stabilisation.
-	\item \textbf{The \(N_{\text{geom}}\)-Anchor:} Both constants are locked to the same geometric stiffness parameter, proving that the difference between magnetic and mass-surface anomalies is purely a matter of geometric dimensionality (\(\pi^3\) vs \(\pi^2\)).
+	\item \textbf{\(C_{\text{gap}}\) (Volumetric Coupling):} The
+	\(\pi^3/N_{\text{geom}}\) term identifies the magnetic gap as a
+	3D volumetric resonance. The \(\pi^3\) factor represents the
+	interaction of the spherical soliton with the BCC lattice
+	stiffness.
+	
+	\item \textbf{$\epsilon_{\text{flavor}}$ (Surface Scaling):} The
+	reduction to $1/(\pi N_{\text{geom}})$ identifies the flavor
+	correction as a surface effect at the $\pi^5$ rung. Unlike the
+	bosonic correction, which appears multiplicatively inside
+	$C_{\text{gap}}$, the flavor deficit enters additively as
+	$1 + \epsilon_{\text{flavor}}$. The additive form reflects the
+	bi-local nature of the two-quark mixing at the soliton boundary:
+	the interference is a small perturbation of the bare GST
+	amplitude $\sqrt{M_d/M_s}$, not a rescaling of each quark mass.
+	
+	\item \textbf{The \(N_{\text{geom}}\)-Anchor:} Both corrections
+	are locked to the same geometric stiffness parameter, proving
+	that the difference between the magnetic ($\pi^3$ suppression,
+	$n=7$) and flavor ($\pi^1$ suppression, $n=5$) sectors is
+	purely a matter of the dimensionality of the active rung.
 \end{itemize}
 
 \begin{center}
@@ -7016,7 +7107,12 @@ The electroweak and Cabibbo mixing sectors converge at the same geometric anchor
 	\label{fig:weinberg_cabibbo_robustness}
 \end{figure}
 
-The Cabibbo sector remains sensitive to the quality of the quark mass inputs. When PDG experimental quark masses are used, the geometric mixing operator \(C_{\text{fermion}}\) reproduces \(\sin\theta_C\) to within \(0.0055\%\). The remaining discrepancy with EWT-derived quark masses originates from the mass prediction sector, not from the mixing geometry itself.
+The Cabibbo sector remains sensitive to the quality of the quark mass
+inputs. When PDG~2024 quark masses are used, the flavor deficit
+$\epsilon_{\text{flavor}} = 1/(8\pi^5(1-\zeta))$ reproduces
+$\sin\theta_C$ to within $0.002\%$. The remaining discrepancy with
+EWT-derived quark masses originates from the mass prediction sector,
+not from the mixing geometry itself.
 
 \subsection{Lock-In Test: Independent Determination of $N_{\text{geom}}$}
 \label{sec:lock_in_test}
@@ -7774,7 +7870,7 @@ enters and what role it plays.
 		\multicolumn{4}{l}{\textit{II. Test anchors (consistency checks, not predictions)}} \\
 		\midrule
 		$M_Z$, $\sin^2\theta_W$ & \ref{sec:mixed_wz_vertex} & Test anchor & Evaluate $C_{\text{gap}}^{\text{mixed}}$; $M_W$ prediction is compared with ATLAS 2024, CMS 2024, and PDG 2024 \\
-		$M_d$, $M_s$ & \ref{sec:dimensional_hierarchy} & Test anchor & Evaluate $C_{\text{fermion}}$; $\sin\theta_C$ tests the operator form \\
+		$M_d$, $M_s$ & \ref{sec:dimensional_hierarchy} & Test anchor & Evaluate $\epsilon_{\text{flavor}}$; $\sin\theta_C$ tests the operator form \\
 		$a_e$, $a_\mu$ & \ref{sec:final_experimental_proof} & Test anchor & PDG/CODATA values used as external test of the AMM predictions \\
 		$a_\tau^{\text{SM}}$ & \ref{sec:final_experimental_proof} & Test anchor (SM) & Standard-Model prediction, not measurement; no direct experimental anchor available \\
 		\midrule
@@ -7793,7 +7889,7 @@ enters and what role it plays.
 		$g_v$ & \ref{sec:gv_fixed_point} & Derived fixed point & Unique root of the $S_{\text{tot}}$ quadratic equation; $g_v \approx 0.983594$; determines $r_\nu = q_P S_{\text{tot}}$; no independent parameter \\
 		$C_{\text{gap}}$ & \ref{sec:dimensional_hierarchy} & Functional form & $1 + \pi^6 C_{\text{local}}$; applies to pure neutral vertices ($Z$--$Z$, $Z$--$H$) \\
 		$C_{\text{gap}}^{\text{mixed}}$ & \ref{sec:mixed_wz_vertex} & Methodologically motivated ansatz & $1 + O_{\text{mixed}} C_{\text{local}}$, where $O_{\text{mixed}} = \pi^6\pi^7/(\pi^6+\pi^7)$ is the parallel-impedance combination of the neutral and charged weak rungs; unique simple form with correct single-rung limits; derivation from BCC dynamics is open \\
-		$C_{\text{fermion}}$ & \ref{sec:geom_ladder} & Functional form & $(1 + \pi^5 C_{\text{local}})^2$ (surface coupling) \\
+		$\epsilon_{\text{flavor}}$ & \ref{sec:dimensional_hierarchy} & Functional form & $1/(8\pi^5(1-\zeta))$; flavor deficit at the $\pi^5$ rung, analogous to $\epsilon_M = 1/(8\pi^7(1-\zeta))$ at the charged weak rung \\
 		$B_\mu$, $B_\tau$ & \ref{sec:recursive_math_final} & Functional form & Shell prefactors: $3 A_\pi \pi^3/(2 L_\mu^2)$ and $3 A_\pi \pi^3/(8\sqrt{2}) + A_\pi/2$ \\
 		$\Delta K_k$ & \ref{sec:discrete_resonance_labels} & Functional form & Shell-rounding operator $\mathrm{round}(10^k \cdot 2\pi^2)$; $K_n = 10, 207, 2181$ follow deterministically \\
 		$\gamma$ & \ref{sec:nonlinear_stability} & Functional form & Nonlinear coefficient $1/\epsilon_M$ in the $\gamma \Psi^3$ term \\
