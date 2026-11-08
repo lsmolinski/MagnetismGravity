@@ -163,6 +163,30 @@ cosmological scaling.
 	
 	\bottomrule
 	\endlastfoot
+	5.2.2 & 2026.11.08 &
+	Replaced the deprecated quadratic fermionic correction
+	$C_{\text{fermion}} = (1 + \pi^5 C_{\text{local}})^2$ with a linear
+	flavor deficit
+	$\epsilon_{\text{flavor}} = 1/(8\pi^5(1-\zeta))$, structurally
+	analogous to the magnetic deficit
+	$\epsilon_M = 1/(8\pi^7(1-\zeta))$ at the charged weak rung (both
+	follow $\epsilon_n = 1/(8\pi^n(1-\zeta))$ with $n \in \{5, 7\}$).
+	The Cabibbo relation becomes
+	$\sin\theta_C = \sqrt{M_d/M_s}\,(1 + \epsilon_{\text{flavor}})$, the
+	bare Gatto--Sartori--Tonin amplitude multiplied by a single lattice
+	deficit, consistent with the linear form of the bosonic corrections.
+	The previous quadratic form required non-standard quark masses to
+	agree with experiment; the new form uses standard PDG~2024 masses
+	(and a PDG~2022 variant for comparison), improving the agreement with
+	the measured Cabibbo angle. In the N-Stiffness section the flavor
+	deficit is expressed as $\epsilon_{\text{flavor}} =
+	1/(\pi\,N_{\text{geom}})$, the natural $\pi^1$ suppression
+	analogous to the $\pi^3$ suppression of $C_{\text{gap}}$. Updated
+	the inventory, the electroweak module
+	\texttt{ewt\_electroweak\_bosons.py}, and the engine
+	\texttt{ewt\_emergence\_engine.py} (\texttt{build\_geometric\_ladder}
+	now takes the lattice impedance $\zeta$); console outputs in
+	Appendix~A.3 regenerated. \\
 	5.2.1 & 2026.11.02 &
 	Renamed the mixed $W$--$Z$ operator from ``harmonic mean'' to
 	``parallel-impedance combination'', reflecting the correct
@@ -1090,34 +1114,28 @@ of the resonance involved in the interaction with the BCC lattice:
 	the pair is a \emph{single} geometric deficit at the $\pi^5$ rung,
 	\begin{equation}
 		\epsilon_{\text{flavor}}
-		= \frac{1}{8\pi^5}
-		\approx 4.085 \times 10^{-4},
+		= \frac{1}{8\pi^5(1-\zeta)}
+		\approx 4.087 \times 10^{-4},
 		\label{eq:eps_flavor}
 	\end{equation}
-	analogous to the magnetic deficit $\epsilon_M = 1/(8\pi^7(1-\zeta))$
-	at the charged weak rung (Eq.~\ref{eq:epsilon_M_definition}). Both
-	follow the same structural pattern
-	analogous to the magnetic deficit $\epsilon_M = 1/(8\pi^7(1-\zeta))$
-	at the charged weak rung (Eq.~\ref{eq:epsilon_M_definition}). Both
-	follow the same structural pattern
+	analogous to the magnetic deficit
+	$\epsilon_M = 1/(8\pi^7(1-\zeta))$ at the charged weak rung
+	(Eq.~\ref{eq:epsilon_M_definition}). Both follow the same
+	structural pattern
 	\begin{equation}
 		\epsilon_n = \frac{1}{8\pi^n(1-\zeta)},
 		\qquad n \in \{5, 7\},
 	\end{equation}
 	with $n = 7$ for the charged weak sector ($\epsilon_M$) and $n = 5$
-	for flavor mixing. In the flavor sector the packing-impedance
-	correction is negligible: $\zeta \approx 6 \times 10^{-4}$ shifts
-	$\epsilon_{\text{flavor}}$ by only $0.06\%$, which is far below the
-	$\sim 10\%$ uncertainty on the light-quark masses that enter the
-	Cabibbo relation. We therefore use the simplified form
+	for flavor mixing. The flavor correction is therefore
+	\emph{linear},
 	\begin{equation}
-		\epsilon_{\text{flavor}}
-		= \frac{1}{8\pi^5}
-		\approx 4.085 \times 10^{-4}
-		\label{eq:eps_flavor_value}
+		\sin\theta_C = \sqrt{\frac{M_d}{M_s}}
+		\left(1 + \epsilon_{\text{flavor}}\right),
+		\label{eq:cabibbo_linear}
 	\end{equation}
-	throughout the Cabibbo calculation, with the understanding that the
-	correction from $\zeta$ is subdominant.
+	consistent with the linear form of the bosonic corrections
+	$C_{\text{gap}}$ and $C_{\text{gap}}^{\text{mixed}}$.
 \end{itemize}
 
 \subsubsection{Symmetry of Observables: Energy Density vs. Amplitude Interference}

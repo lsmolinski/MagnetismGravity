@@ -527,7 +527,7 @@ def run_cabibbo_sector(geom: dict) -> dict:
 # ============================================================
 
 def main():
-    print("EWT ELECTROWEAK & BOSON MODULE (v5.2.0)")
+    print("EWT ELECTROWEAK & BOSON MODULE")
     print()
 
     # --- Geometry (once) ---
