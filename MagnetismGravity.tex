@@ -73,7 +73,7 @@
 
 \begin{center}
 \today \\
-Version: 5.2.2	
+Version: 5.2.3	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -900,13 +900,55 @@ motivated ansatz whose algebraic limits are exact but whose full
 derivation from BCC lattice dynamics is an open objective.
 
 
-\subsubsection{The $\pi^5$ Resonance: Surface Interaction Modulator}
+\subsubsection{The $\pi^5$ Resonance: Flavor Mixing Deficit}
+\label{sec:pi5_flavor}
 
-For the quark sector and flavour mixing, the interaction topology shifts from the volume to the \textbf{soliton boundary}. The modulator $\mathbf{C}_{\text{fermion}}$ represents a \textbf{5D holographic projection} (3D momentum + 2D spherical surface):
+For the quark sector and flavour mixing, the interaction topology
+shifts from the volume to the \textbf{soliton boundary}. The active
+budget is five-dimensional (3D space $+$ amplitude $+$ frequency),
+excluding the volumetric radius $r$, reflecting the surface character
+of the two-quark mixing vertex. The corresponding geometric deficit
+at the $\pi^5$ rung is
 \begin{equation}
-	\boxed{\mathbf{C}_{\text{fermion}} \equiv (1 + \pi^5 \cdot \mathbf{C}_{\text{local}})^2}
+	\boxed{
+		\epsilon_{\text{flavor}}
+		= \frac{1}{8\pi^5(1-\zeta)}
+		\approx 4.087 \times 10^{-4}
+	}
+	\label{eq:eps_flavor_pi5}
 \end{equation}
-The quadratic form reflects the bi-local nature of mixing between two quark states within the lattice substrate.
+analogous in structure to the magnetic deficit
+$\epsilon_M = 1/(8\pi^7(1-\zeta))$ at the charged weak rung
+(Eq.~\ref{eq:epsilon_M_definition}). Both follow the pattern
+$\epsilon_n = 1/(8\pi^n(1-\zeta))$ with $n \in \{5, 7\}$,
+where $8$ is the BCC coordination number and $(1-\zeta)$ is the
+packing-impedance correction of the discrete lattice.
+
+The flavor correction enters the Cabibbo relation as a single
+additive lattice deficit,
+\begin{equation}
+	\sin\theta_C = \sqrt{\frac{M_d}{M_s}}
+	\cdot \left(1 + \epsilon_{\text{flavor}}\right),
+	\label{eq:cabibbo_pi5}
+\end{equation}
+consistent with the linear form of the bosonic corrections
+$C_{\text{gap}} = 1 + \pi^6 C_{\text{local}}$ (pure neutral) and
+$C_{\text{gap}}^{\text{mixed}} = 1 + O_{\text{mixed}} C_{\text{local}}$
+(mixed $W$--$Z$). The earlier quadratic operator
+$C_{\text{fermion}} = (1+\pi^5 C_{\text{local}})^2$ used in previous
+versions of this work is replaced by this single-deficit form: it
+systematically increased $\sin\theta_C$ and was only consistent with
+experiment when paired with non-standard quark masses. The physical
+picture is that the bare Gatto--Sartori--Tonin amplitude
+$\sqrt{M_d/M_s}$ captures the bi-local interference of the two quark
+states at the soliton boundary, while $\epsilon_{\text{flavor}}$
+represents the \emph{single} vacuum deficit of the pair, not a
+per-quark rescaling.
+
+A detailed derivation of the Cabibbo angle and its comparison with
+PDG quark masses is given in Section~\ref{sec:ewt_higgs_observable_tests}
+(see also Section~\ref{sec:symmetry_observables} for the linear form
+of the fermionic observable).
 
 \subsection{Geometric Mixing Predictions: Higgs and Cabibbo Sectors}
 
@@ -5962,12 +6004,44 @@ Each lattice point is a physical sphere, imbuing every site with an independent,
 Particles in EWT are stable, extended solitons on the discrete manifold of EMCs.
 
 \subsubsection{The Electron Soliton as a Winding Number on $S^2$}
-The electron stability arises from the winding number $Q$, defined as:
+\label{subsub:winding_number}
+
+The stability of the electron soliton is protected by a topological
+charge that cannot change under continuous deformations of the field.
+In the continuum limit, the configuration on the boundary sphere is
+described by a unit vector field $\mathbf{n}(\mathbf{r}) \in S^2$,
+which can be defined from the phase gradient of the wave field,
+$\mathbf{n} = \nabla \arg\Psi / |\nabla \arg\Psi|$, or equivalently
+from the local spin orientation of the constituent wave centres.
+The relevant topological invariant is the degree of the map
+$\mathbf{n}: S^2 \to S^2$,
 \begin{equation}
-	Q = \frac{1}{4\pi} \int_{S^2} \Psi^* \omega \in \mathbb{Z}
+	Q = \frac{1}{4\pi} \int_{S^2}
+	\mathbf{n} \cdot
+	\left(
+	\frac{\partial \mathbf{n}}{\partial \theta}
+	\times
+	\frac{\partial \mathbf{n}}{\partial \phi}
+	\right)
+	d\theta\, d\phi
+	\;\in\; \mathbb{Z},
 	\label{eq:winding_number}
 \end{equation}
-where $\omega$ is the normalized area form on $S^2$. In EWT, $Q = K_{WC} = 10$.
+where $\theta, \phi$ are the polar and azimuthal angles on the boundary
+sphere $S^2$ and $\times$ is the vector cross product in
+$\mathbb{R}^3$. The integer nature of $Q$ follows from
+$\pi_2(S^2) \cong \mathbb{Z}$ \cite{MantonSutcliffe2004}. In the EWT
+framework, the 1-3-6 configuration of $K_{WC}=10$ wave centres on the
+soliton boundary is assigned the topological charge
+\begin{equation}
+	Q = K_{WC} = 10.
+	\label{eq:Q_KWC}
+\end{equation}
+This identification is a structural postulate of the model; a
+first-principles derivation that the 1-3-6 configuration indeed
+carries $Q=10$ and is energetically preferred over neighbouring
+integers remains an open objective of the OpenWave M4 programme
+(Section~\ref{sec:outlook}).
 
 \subsubsection{Higher-Generation Leptons: Topology of Nested Shells}
 The muon and tau represent excitations associated with nested shells of higher topological complexity. The relevant manifold can be characterized by a genus change: from the sphere $S^2$ (genus 0) for the electron to a surface of genus 1 for the muon and tau. A canonical example of a genus-1 surface is the torus $T^2$, whose second cohomology group yields the topological invariant:
@@ -6384,13 +6458,17 @@ fidelity to the EWT 1-3-6 architecture.
 The simplest form compatible with NLS-type soliton equations is the cubic
 (self-focusing) nonlinearity:
 \begin{equation}\label{eq:F_cubic}
-	\boxed{\mathcal{F}(\Psi) = \gamma\,\Psi^{3}
-		= \frac{1}{\epsilon_{M}}\,\Psi^{3}
-		= N_{\text{final}}\,\pi^{3}\,\Psi^{3}} .
+	\boxed{\mathcal{F}(\Psi) = -\gamma\,\Psi^{3}
+		= -\frac{1}{\epsilon_{M}}\,\Psi^{3}
+		= -N_{\text{final}}\,\pi^{3}\,\Psi^{3}} .
 \end{equation}
-A term proportional to $\Psi^{3}$ is the lowest-order odd nonlinearity
-that preserves the sign of the restoring force; it appears generically in
-Lagrangian derivations from a quartic potential $V(\Psi)=\frac{1}{4}\gamma\Psi^{4}$.
+A term proportional to $-\Psi^{3}$ (for $\gamma > 0$) is the lowest-order
+odd nonlinearity that produces self-focusing; it corresponds to the
+inverted quartic potential $V(\Psi)=-\frac{1}{4}\gamma\Psi^{4}$. As is
+well known from the theory of nonlinear Schr\"odinger equations, the pure
+cubic nonlinearity is subject to Derrick-type scaling instability in three
+spatial dimensions; the additional structure of Variants~B and~C is
+introduced to circumvent this instability.
 
 \subsubsection*{Variant B --- Nonlinearity modulated by EMC packing density}
 In the EWT framework the nonlinear stiffness should be active only where the
@@ -6399,13 +6477,12 @@ $\rho_{0}$. Let $\rho(r)$ be the local EMC density inside the soliton;
 the deficit fraction is $(1-\rho(r)/\rho_{0})$. The nonlinear term then becomes
 \begin{equation}\label{eq:F_density}
 	\boxed{\mathcal{F}(\Psi,\rho)
-		= \gamma\,\Bigl(1-\frac{\rho(r)}{\rho_{0}}\Bigr)\,\Psi^{3}} .
+		= -\gamma\,\Bigl(1-\frac{\rho(r)}{\rho_{0}}\Bigr)\,\Psi^{3}} .
 \end{equation}
 Equation~\eqref{eq:F_density} directly couples the wave equation to the
-push-out mechanism (Section~\ref{density_duality}): the nonlinearity is maximal
-in the soliton core where $\rho(r) \ll \rho_{0}$, and vanishes in the
-surrounding statutory vacuum. This provides a unified description of soliton
-stability and gravitational emergence from a single density deficit.
+push-out mechanism (Section~\ref{density_duality}): the self-focusing
+nonlinearity is maximal in the soliton core where $\rho(r) \ll \rho_{0}$,
+and vanishes in the surrounding statutory vacuum.
 
 \subsubsection*{Variant C --- Explicit 1-3-6 source-driven dynamics}
 In the native EWT model the wave centres (WCs) are not an abstract continuum
@@ -6413,7 +6490,7 @@ but ten discrete, mobile sources arranged in the 1-3-6 configuration.
 The vector wave equation of M4 then takes the driven form
 \begin{equation}\label{eq:F_source}
 	\boxed{\Bigl( \frac{\partial^{2}}{\partial t^{2}} - c^{2}\nabla^{2} \Bigr)
-		\mathbf{\Psi}(\mathbf{r},t) + \gamma\,\|\mathbf{\Psi}\|^{2}\,\mathbf{\Psi}
+		\mathbf{\Psi}(\mathbf{r},t) - \gamma\,\|\mathbf{\Psi}\|^{2}\,\mathbf{\Psi}
 		= \mathbf{J}_{1\text{-}3\text{-}6}(\mathbf{r},t)} ,
 \end{equation}
 where the source operator $\mathbf{J}_{1\text{-}3\text{-}6}$ is the sum of ten
@@ -6467,16 +6544,33 @@ remains a task for the OpenWave M4 simulation.
 
 \subsection{Topological Selection Rule and the Electron Ground State}
 
-The nonlinear wave equation alone does not select a specific number of wave
-centres. The selection of $K_{\text{WC}}=10$ is enforced by the topological
-class of the soliton (Section~\ref{subsec:topological_isomorphism}). On the
-spherical shell $S^{2}$ that encloses the soliton, the field configuration is
-characterised by an integer winding number (equation \ref{eq:winding_number}):
-$$
-	Q = \frac{1}{4\pi} \int_{S^{2}} \Psi^{*}\,\omega \in \mathbb{Z},
-$$
-where $\omega$ is the normalised area form on $S^{2}$. For the electron
-$Q = K_{\text{WC}} = 10$.
+The nonlinear wave equation alone does not select a specific number of
+wave centres. The selection of $K_{\text{WC}}=10$ is enforced by the
+topological class of the soliton
+(Section~\ref{subsec:topological_isomorphism}). On the boundary
+sphere $S^2$ that encloses the soliton, the configuration is described
+by a unit vector field $\mathbf{n}: S^2 \to S^2$ (the local spin axis
+of the wave centres, or equivalently the local wavefront normal), and
+the topological invariant is the integer degree of this map
+(Eq.~\ref{eq:winding_number}):
+\begin{equation}
+	Q = \frac{1}{4\pi} \int_{S^2}
+	\mathbf{n} \cdot
+	\left(
+	\frac{\partial \mathbf{n}}{\partial \theta}
+	\times
+	\frac{\partial \mathbf{n}}{\partial \phi}
+	\right)
+	d\theta\, d\phi
+	\;\in\; \mathbb{Z}.
+\end{equation}
+For the electron, the 1-3-6 configuration is assigned
+$Q = K_{\text{WC}} = 10$ (Eq.~\ref{eq:Q_KWC}). Because $Q$ is a
+topological invariant, it cannot change under continuous deformations
+of the wave field; a transition to $Q=9$ or $Q=11$ would require a
+discontinuous rupture of the elastic medium and is therefore
+energetically forbidden. The soliton is protected against perturbations
+that would alter its internal multiplicity.
 
 This topological winding number is not an empirical adjustment; it emerges
 from the discrete projection of the BCC lattice's $Im\bar{3}m$ space group symmetry
@@ -6645,11 +6739,12 @@ simulation.
 	may be critical for K‑selectivity.
 	\item Three complementary forms for $\mathcal{F}$ are proposed:
 	\begin{enumerate}
-		\item[Variant A:] $\gamma\Psi^{3}$ (pure cubic, minimal implementation);
-		\item[Variant B:] $\gamma(1-\rho/\rho_{0})\Psi^{3}$ (density-modulated,
-		links stability to the EMC push-out deficit);
-		\item[Variant C:] $\gamma\|\mathbf{\Psi}\|^{2}\mathbf{\Psi}$ with an explicit
-		1-3-6 source operator $\mathbf{J}_{1\text{-}3\text{-}6}(\mathbf{r},t)$
+		\item[Variant A:] $-\gamma\Psi^{3}$ (pure cubic self-focusing,
+		minimal implementation);
+		\item[Variant B:] $-\gamma(1-\rho/\rho_{0})\Psi^{3}$ (density-modulated
+		self-focusing, links stability to the EMC push-out deficit);
+		\item[Variant C:] $-\gamma\|\mathbf{\Psi}\|^{2}\mathbf{\Psi}$ with an
+		explicit 1-3-6 source operator $\mathbf{J}_{1\text{-}3\text{-}6}(\mathbf{r},t)$
 		(directly encodes the discrete wave-centre architecture of the electron).
 	\end{enumerate}
 	\item The Degraded EMC Wall is proposed to provide the necessary boundary
@@ -7895,7 +7990,7 @@ enters and what role it plays.
 		$r_e$ & \ref{sec:geometric_identity} & Anchor & Classical electron radius, fixes $G_{\text{Base}}$ \\
 		$m_e$ & \ref{sec:geometric_identity} & Anchor & Electron mass, fixes $G_{\text{Base}}$ and the $E \propto r^5$ scale \\
 		$c$    & \ref{sec:c_as_metric} & Anchor (metric) & Conversion between spatial and temporal lattice steps \\
-		$e$    & \ref{sec:coulomb_derived_unit} & Anchor & Elementary charge amplitude; fixes $q_P = e/\sqrt{\alpha_{\text{geom}}}$ and $r_\nu$ \\
+		$e$    & \ref{sec:coulomb_derived_unit} & Anchor & Elementary charge amplitude $e = 1.602176634 \times 10^{-19}$~m (SI numerical value, dimension length); fixes $q_P = e/\sqrt{\alpha_{\text{geom}}}$ and $r_\nu$. \textbf{Notation warning:} the symbol $e$ also denotes Euler's number ($e = 2.71828\ldots$) in $S_{\text{tot}} = \alpha/(8+\pi) + e + (1-g_v)(\sqrt{2}-1)$ and in $r_\nu = 2 q_P e^2/g_v$. The two uses are distinguished by context: elementary charge appears in the anchor and in $q_P$; Euler's number appears in the additive decay term of $S_{\text{tot}}$ and in the neutrino-radius prefactor. In the executable implementation the two are separate constants (\texttt{E\_CHARGE\_CODATA} vs \texttt{EULER}). \\
 		\midrule
 		\multicolumn{4}{l}{\textit{II. Test anchors (consistency checks, not predictions)}} \\
 		\midrule
@@ -7908,15 +8003,16 @@ enters and what role it plays.
 		\midrule
 		$L_\mu = F_5 = 5$ & \ref{sec:discrete_resonance_labels} & Discrete postulate & Muon Fibonacci latch; $L_\mu^2 = 25$ is the interface area \\
 		$K_{WC} = 10$ & \ref{sec:nonlinear_stability} & Geometric integer & 1-3-6 tetrahedral configuration of the BCC lattice; stability proof open in M4 \\
-		$Q = 10$ & \ref{subsec:topological_isomorphism} & Topological invariant & Winding number on $S^2$; coincides with $K_{WC}$ \\
+		$Q = 10$ & \ref{subsub:winding_number} & Topological invariant (structural assignment) & Degree of the map $n: S^2 \to S^2$, $Q = (1/4\pi)\int_{S^2} n\cdot(\partial_\theta n \times \partial_\phi n)\,d\theta\,d\phi \in \mathbb{Z}$ (Eq.~\ref{eq:winding_number}); assigned structurally to the 1-3-6 wave-centre configuration with $K_{WC} = 10$ (Eq.~\ref{eq:Q_KWC}); first-principles derivation that $Q=10$ is energetically preferred over neighbouring integers remains open (OpenWave M4) \\
 		\midrule
-		\multicolumn{4}{l}{\textit{IV. Parameter-free functional forms (no continuous knob)}} \\
+		\multicolumn{4}{l}{\textit{IV. Parameter-free functional forms}} \\
 		\midrule
 		$\zeta$ & \ref{sec:alpha_geometric_deficit} & Functional form & Lattice impedance $(1-\eta)/(\eta N_{\text{ideal}})$ from BCC packing fraction \\
 		$C_{\text{unif}}$ & \ref{sec:unified_coupling} & Functional form & Unified coupling $1/K_{WC} + 1 + \alpha/(\pi L_p)$ \\
 		$X_{\text{eff}}$ & \ref{sec:unified_coupling} & Functional form & Dilution factor $A_\pi \cdot 3 K_{WC} \sqrt{2}/C_{\text{unif}}$ \\
 		$S_{\text{tot}}$ & \ref{sec:S_decomposition} & Geometric ansatz & $\alpha/(8+\pi) + e + (1-g_v)(\sqrt{2}-1)$; validated by $g_v$ agreement and $r_e/r_\nu = 100$ \\
 		$g_v$ & \ref{sec:gv_fixed_point} & Derived fixed point & Unique root of the $S_{\text{tot}}$ quadratic equation; $g_v \approx 0.983594$; determines $r_\nu = q_P S_{\text{tot}}$; no independent parameter \\
+		$r_\nu$ & \ref{sec:r_nu_result} & Derived quantity & Neutrino radius $r_\nu = q_P S_{\text{tot}} \approx 2.8179 \times 10^{-17}$~m; derived from $q_P$ (class~I anchor $e$ and $\alpha_{\text{geom}}$) and $S_{\text{tot}}$ (class~IV, depends on $g_v$); enters $N_{\nu,\text{stat}}$, $N_{\nu,\text{eff}}$, $X_{\text{eff}}$, and the Planck-length derivation (Section~\ref{sec:lambda_l_geom}); no independent parameter \\
 		$C_{\text{gap}}$ & \ref{sec:dimensional_hierarchy} & Functional form & $1 + \pi^6 C_{\text{local}}$; applies to pure neutral vertices ($Z$--$Z$, $Z$--$H$) \\
 		$C_{\text{gap}}^{\text{mixed}}$ & \ref{sec:mixed_wz_vertex} & Methodologically motivated ansatz & $1 + O_{\text{mixed}} C_{\text{local}}$, where $O_{\text{mixed}} = \pi^6\pi^7/(\pi^6+\pi^7)$ is the parallel-impedance combination of the neutral and charged weak rungs; unique simple form with correct single-rung limits; derivation from BCC dynamics is open \\
 		$\epsilon_{\text{flavor}}$ & \ref{sec:dimensional_hierarchy} & Functional form & $1/(8\pi^5(1-\zeta))$; flavor deficit at the $\pi^5$ rung, analogous to $\epsilon_M = 1/(8\pi^7(1-\zeta))$ at the charged weak rung \\
@@ -7929,18 +8025,46 @@ enters and what role it plays.
 		\midrule
 		$r_e = 100\,r_\nu$ & \ref{sec:decadic_test} & Rounding & Exact ratio $100.0001735$ derived from $g_v$; $100$ is a numerical convenience \\
 		$F_{1+4k}$ & \ref{sec:closure_criterion} & Phenomenological label & Classifies the three-generation closure; does not enter AMM numerics \\
+		\midrule
+		\multicolumn{4}{l}{\textit{VI. Legacy baseline-EWT constants and auxiliary calibration factors}} \\
+		\multicolumn{4}{l}{\textit{(diagnostic consistency with the baseline EWT model only; not used in any prediction)}} \\
+		\midrule
+		$\rho_a$ & \ref{sec:numerical_verification_ewt} & Legacy wave constant & Aether density $\rho_a \approx 3.86 \times 10^{22}$~kg/m$^3$ from Yee's original EWT; enters only \texttt{mass\_spherical()} as a dimensional prefactor, for diagnostic comparison with the baseline EWT mass formula \\
+		$A_l$ & \ref{sec:numerical_verification_ewt} & Legacy wave constant & Longitudinal wave amplitude $A_l \approx 9.22 \times 10^{-19}$~m from Yee's original EWT; enters only \texttt{mass\_spherical()} \\
+		$\lambda_l$ (baseline) & \ref{sec:numerical_verification_ewt} & Legacy wave constant & Longitudinal wavelength $\lambda_l \approx 2.85 \times 10^{-17}$~m from Yee's original EWT; enters only \texttt{mass\_spherical()}. Note: this is a \emph{different} quantity from the geometric Planck length $\lambda_l$ of Section~\ref{sec:lambda_l_geom}, which is derived from the BCC geometry \\
+		$\delta_\mu$ & \ref{sec:numerical_verification_ewt} & Orbital multiplier & Empirical amplitude ratio $185.68543$ for muon ($K=20$); enters only \texttt{mass\_orbital()}; not derived from the BCC lattice \\
+		$\delta_\tau$ & \ref{sec:numerical_verification_ewt} & Orbital multiplier & Empirical amplitude ratio $3436.795$ for tau ($K=50$); enters only \texttt{mass\_orbital()}; not derived from the BCC lattice \\
+		$M_K^{\text{ref}}$ & \ref{sec:sensitivity} & Internal reference & Fixed reference values $248.8$~ppm (muon shell) and $1177.21$~ppm (tau shell) used in the diagnostic resonance scanner only; not inputs to any AMM prediction \\
 		\bottomrule
 	\end{longtable}
 }
 
-\noindent\textbf{No continuously adjustable parameter appears in this
-	table.} The model's predictive content is fixed once the primary
-anchors of class~I are given. Classes~II--V either test the geometry
+\noindent\textbf{No continuously adjustable parameter appears in the
+	core predictive content of this table.} The model's predictive
+content is fixed once the primary anchors of class~I
+are given, together with the discrete structures of classes~II--IV
+and the roundings of class~V. Classes~II--V either test the geometry
 externally, fix discrete structures, or specify parameter-free
-functional forms. The distinction between a \emph{postulate}
-(classes III and IV: chosen form), a \emph{fixed integer} (class III:
-determined by topology), and a \emph{functional form} (class IV:
-parameter-free expression) is made explicit in the Status column.
+functional forms.
+
+Class~VI lists the \emph{legacy baseline-EWT constants and auxiliary
+	calibration factors}. These appear only in the auxiliary spherical
+and orbital mass modes and in the diagnostic resonance scanner. They
+serve two purposes: (i) to allow direct numerical comparison with the
+baseline EWT mass formula of Yee (whose results are reproduced by
+\texttt{mass\_spherical()} and \texttt{mass\_orbital()}), and (ii) to
+provide reference benchmarks for the diagnostic resonance scanner of
+Section~\ref{sec:sensitivity}. None of the class~VI entries enters
+any core prediction of the model. Removing the auxiliary mass modes
+and the diagnostic scanner would leave the core predictive content
+unchanged.
+
+The distinction between the classes is therefore tripartite:
+\emph{primary anchors} (class~I: dimensional conversion),
+\emph{structural choices} (classes~II--IV: tested externally, fixed
+discretely, or given as parameter-free forms), and \emph{auxiliary
+	diagnostic quantities} (class~VI: used only to cross-check against
+the baseline EWT formulation, not used in predictions).
 
 \subsection{Computational Scripts (Python)}
 \label{app:python_scripts}
@@ -8518,6 +8642,12 @@ Addison-Wesley.
 	\textit{Gravity as a Theory of Defects in a Crystal with Only Second Gradient Elasticity},
 	Annalen der Physik \textbf{499}, 117--119 (1987).
 	DOI: \href{https://doi.org/10.1002/andp.19874990206}{10.1002/andp.19874990206}.
+	
+	\bibitem{MantonSutcliffe2004}
+	N.~Manton and P.~Sutcliffe,
+	\textit{Topological Solitons},
+	Cambridge University Press, Cambridge (2004).
+	DOI: \href{https://doi.org/10.1017/CBO9780511617034}{10.1017/CBO9780511617034}.
 	
 \end{thebibliography}
 
