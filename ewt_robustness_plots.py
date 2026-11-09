@@ -72,7 +72,10 @@ def pdf_path(filename: str) -> str:
     out_dir = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(out_dir, filename)
 
-
+# ----------------------------------------------------------------------
+# Module-level cached constant
+# ----------------------------------------------------------------------
+A_PI = compute_alpha_core()  
 # ----------------------------------------------------------------------
 # MODULE 1: G-CONSTANT SURFACE TRANSITION ANALYSIS
 # ----------------------------------------------------------------------
@@ -162,7 +165,7 @@ def module2_alpha_sensitivity():
 # ----------------------------------------------------------------------
 def module3_alpha_amm_phase():
     N_scan_range = np.linspace(500, 1500, 2000)
-    A_pi_base_inv = 137.036040608
+    A_pi_base_inv = A_PI
 
     alpha_inv_coords = []
     amm_base_coords = []
@@ -230,7 +233,7 @@ def module4_unification_trajectory():
     N_unify_range = np.linspace(500, 2000, 3000)
     G_Base = (C0**2 * R_E) / M_E
     A_pi = compute_alpha_core()
-    A_pi_base_inv = 137.036040608
+    A_pi_base_inv = A_PI
 
     alpha_path = []
     G_path = []
@@ -274,7 +277,7 @@ def module5_point_locked():
 
     for n_v in N_vec:
         eps_m = 1.0 / (n_v * PI**3)
-        a_inv_lock = 137.036040608 - eps_m
+        a_inv_lock = A_PI - eps_m
         ae_raw.append(((1.0 / a_inv_lock) / (2.0 * PI)) * (1.0 - (1.0 / n_v)) * 1e10)
         G_raw.append(G_CODATA * ((N_geom / n_v) ** 3))
 
@@ -305,8 +308,25 @@ def module5_point_locked():
 # MODULE 6: LEPTON ERROR SPECTRUM (SM SYSTEMATIC BIAS)
 # ----------------------------------------------------------------------
 def module6_lepton_error_spectrum():
-    lepton_errors = [0.0229, 0.031, 0.091]
-    lepton_names = ["Electron", "Tau", "Muon"]
+    # Compute full AMM predictions from the model (not hardcoded)
+    bcc = derive_eps_M_from_BCC(8.0 * PI**4)
+    eps_M = bcc["eps_M"]
+    alpha_geom = 1.0 / compute_alpha_geometric(eps_M)
+    amm = compute_lepton_amms(alpha_geom, eps_M)
+
+    # Reference experimental values (CODATA 2022 / PDG 2022-2024)
+    # a_tau reference is the SM prediction, not a direct measurement
+    a_e_ref = 1159.652182     # ppm
+    a_mu_ref = 1165.920610    # ppm
+    a_tau_ref = 1177.210000   # ppm (SM prediction)
+
+    # Full AMM errors (EWT full prediction vs reference)
+    lepton_errors = [
+        abs(amm["a_e_ppm"]   - a_e_ref)   / a_e_ref   * 100.0,
+        abs(amm["a_mu_ppm"]  - a_mu_ref)  / a_mu_ref  * 100.0,
+        abs(amm["a_tau_ppm"] - a_tau_ref) / a_tau_ref * 100.0,
+    ]
+    lepton_names = ["Electron", "Muon", "Tau"]
 
     plt.figure()
     x = np.arange(len(lepton_errors))
@@ -315,8 +335,9 @@ def module6_lepton_error_spectrum():
     plt.axhline(0.05, color='r', linestyle='--', linewidth=1)
     plt.xlabel("Lepton Generation")
     plt.ylabel("Deviation (%)")
-    plt.title("Lepton Error Spectrum: EWT Geometry vs SM Interpretation")
-    plt.legend(["EWT-to-SM Shift", "Systematic SM Bias Level"], loc="upper left")
+    plt.title("Lepton Full AMM Error Spectrum: EWT Geometry vs Experiment")
+    plt.legend(["Systematic reference level (0.05%)", "EWT prediction error"],
+               loc="upper left")
     plt.grid(True, which='both', ls='-', alpha=0.5)
     plt.savefig(pdf_path("EWT_Lepton_Error_Spectrum.pdf"))
     plt.close()
@@ -379,9 +400,34 @@ def module7_statutory_robustness():
 # MODULE 8: STIFFNESS-VOLUME STABILITY (FINAL PRECISION VERSION)
 # ----------------------------------------------------------------------
 def module8_stiffness_equilibrium():
-    # Hierarchical gap
-    N_nu_stat = 3.2986e52
-    N_nu_eff = 6.2525176e48
+    # Hierarchical gap computed from gravity_sector (not hardcoded)
+    bcc = derive_eps_M_from_BCC(8.0 * PI**4)
+    N_geom = bcc["N_geom"]
+    alpha_geom = 1.0 / compute_alpha_geometric(bcc["eps_M"])
+    r_nu = derive_neutrino_radius(
+        alpha_geom, derive_planck_charge_from_e(alpha_geom, E_CHARGE_CODATA)
+    )["r_nu"]
+    lambda_l = derive_lambda_l_geometric(
+        alpha_geom=alpha_geom,
+        r_e=R_E,
+        r_nu=r_nu,
+        N_geom=N_geom,
+        L_p_geom=2.0 / SQRT3,
+        K_WC=10,
+    )
+    res_gravity = gravity_sector(
+        alpha_geom=alpha_geom,
+        r_nu=r_nu,
+        N_geom=N_geom,
+        L_p_geom=2.0 / SQRT3,
+        K_WC=10,
+        lambda_l=lambda_l,
+        r_e=R_E,
+        m_e=M_E,
+        c0=C0,
+    )
+    N_nu_stat = res_gravity["N_nu_statutory"]
+    N_nu_eff = res_gravity["N_nu_eff"]
     ratio_stat = N_nu_stat / N_nu_eff
 
     stiffness_exponent = -1.0 / 6.0
@@ -415,25 +461,42 @@ def module8_stiffness_equilibrium():
 # MODULE 9: LEPTODYNAMICS STABILITY & AMM ROBUSTNESS ANALYSIS
 # ----------------------------------------------------------------------
 def module9_amm_robustness():
+    # Real sensitivity of a_mu and a_tau to eps_M perturbation
+    # (computed from the model, not synthetic linear placeholders)
+    bcc = derive_eps_M_from_BCC(8.0 * PI**4)
+    eps_M = bcc["eps_M"]
+
+    # Baseline predictions at the model eps_M
+    alpha_geom_base = 1.0 / compute_alpha_geometric(eps_M)
+    amm_base = compute_lepton_amms(alpha_geom_base, eps_M)
+    a_mu_base = amm_base["a_mu_ppm"]
+    a_tau_base = amm_base["a_tau_ppm"]
+
     dr_range = np.linspace(-0.05, 0.05, 100)
+    a_mu_norm = []
+    a_tau_norm = []
 
-    a_mu_ref = 116592061e-11
-    a_tau_ref = 117721e-9
+    for dr in dr_range:
+        eps_M_pert = eps_M * (1.0 + dr)
+        alpha_geom_pert = 1.0 / compute_alpha_geometric(eps_M_pert)
+        amm_pert = compute_lepton_amms(alpha_geom_pert, eps_M_pert)
+        a_mu_norm.append(amm_pert["a_mu_ppm"] / a_mu_base)
+        a_tau_norm.append(amm_pert["a_tau_ppm"] / a_tau_base)
 
-    a_mu_norm = 1.0 + dr_range * 0.1
-    a_tau_norm = 1.0 + dr_range * 0.15
+    a_mu_norm = np.array(a_mu_norm)
+    a_tau_norm = np.array(a_tau_norm)
 
     plt.figure()
     plt.plot(dr_range * 100, a_mu_norm, "g-", linewidth=2)
     plt.plot(dr_range * 100, a_tau_norm, "m-", linewidth=2)
     plt.plot(0, 1.0, "ro", markersize=10)
 
-    plt.xlabel("Radius Fluctuation dr/r (%)")
-    plt.ylabel("Normalized AMM Response (a_i / a_target)")
-    plt.title("Robustness: AMM Stability vs. Lattice Fluctuation")
-    plt.legend(["Muon AMM (2D Planar Slope)",
-                "Tau AMM (3D Volumetric Slope)",
-                "Resonance Lock (N_geom)"], loc="lower right")
+    plt.xlabel("eps_M fluctuation (d(eps_M)/eps_M, %)")
+    plt.ylabel("Normalized AMM Response (a_i / a_i^base)")
+    plt.title("Real Sensitivity: Lepton AMM vs eps_M Perturbation")
+    plt.legend(["Muon AMM (2D planar shell, O_mu-suppressed)",
+                "Tau AMM (3D volumetric shell, O_tau = 1)",
+                "Baseline at N_geom"], loc="upper left")
     plt.grid(True, which='both', ls='-', alpha=0.5)
     plt.savefig(pdf_path("EWT_AMM_Robustness_Leptons.pdf"))
     plt.close()
@@ -468,19 +531,20 @@ def module10_weinberg_cabibbo():
         C_gap = 1.0 + (PI**6) * C_local
         sin2W_results.append(1.0 - ((M_W_Ideal / M_Z_exp) ** 2) * (1.0 / C_gap))
 
-    # Cabibbo using EWT quark masses
-    m_d_ewt = 0.0046597252
-    m_s_ewt = 0.0931160638
+    # Cabibbo using EWT spherical-mode quark masses 
+    m_d_ewt = mass_spherical(15)
+    m_s_ewt = mass_spherical(28)
 
     sinC_results = []
     for n_v in N_scan_W:
-        eps_m_local = 1.0 / (n_v * PI**3)
-        C_local = eps_m_local / (2.0 * math.sqrt(2.0))
-        C_fermion_local = (1.0 + (PI**5) * C_local) ** 2
-        sinC_results.append(math.sqrt(m_d_ewt / m_s_ewt) * C_fermion_local)
+        # eps_flavor(N) = 1/(8*pi^5*(1-zeta)) = 1/(pi*N)
+        eps_flavor_local = 1.0 / (PI * n_v)
+        sinC_results.append(
+            math.sqrt(m_d_ewt / m_s_ewt) * (1.0 + eps_flavor_local)
+        )
 
-    C_fermion_final = (1.0 + (PI**5) * C_local_final) ** 2
-    sinC_final = math.sqrt(m_d_ewt / m_s_ewt) * C_fermion_final
+    eps_flavor_final = 1.0 / (PI * N_geom)
+    sinC_final = math.sqrt(m_d_ewt / m_s_ewt) * (1.0 + eps_flavor_final)
 
     shift_C = sin2W_at_Nfinal - sinC_final
     sinC_shifted = np.array(sinC_results) + shift_C

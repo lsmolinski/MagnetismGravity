@@ -163,6 +163,17 @@ cosmological scaling.
 	
 	\bottomrule
 	\endlastfoot
+	5.2.3 & 2026.11.09 &
+	Fixed cubic nonlinearity sign ($+\gamma\Psi^{3} \to -\gamma\Psi^{3}$,
+	self-focusing) and added Derrick-instability note. Replaced scalar
+	winding number with degree of map $\mathbf{n}: S^2 \to S^2$
+	(Manton--Sutcliffe 2004); $Q = K_{WC} = 10$ now stated as structural
+	postulate. Added inventory class~VI for legacy EWT constants
+	(diagnostic only), $r_\nu$ as derived quantity, $e$-notation warning,
+	and $K_{WC}$ vs.\ $Q$ distinction. Fixed \texttt{ewt\_robustness\_plots.py}:
+	hardcoded $A_\pi$, $C_{\text{fermion}}$, quark masses, and $N_\nu$
+	replaced with model-derived values; modules~6 and~9 use real
+	computations instead of synthetic placeholders. Minor encoding fix. \\
 	5.2.2 & 2026.11.08 &
 	Replaced the deprecated quadratic fermionic correction
 	$C_{\text{fermion}} = (1 + \pi^5 C_{\text{local}})^2$ with a linear
@@ -7216,15 +7227,27 @@ The same geometric stiffness \(N_{\text{geom}}\) anchors the recursive lepton hi
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.85\textwidth]{EWT_AMM_Robustness_Leptons.pdf}
-	\caption{Stability Analysis of the Lepton Hierarchy: Normalized response of \(a_{\mu}\) and \(a_{\tau}\) to geometric perturbations.}
+\caption{Real sensitivity of the lepton AMMs to a perturbation of the
+	universal modulator $\epsilon_M$. The muon (2D planar shell, projected
+	through $\mathcal{O}_\mu = 1/(4\pi^2)$) is almost insensitive to
+	$\epsilon_M$; the tau (3D volumetric shell, $\mathcal{O}_\tau = 1$)
+	shows the full sensitivity. The baseline point at $N_{\text{geom}}$ is
+	marked in red.}
 	\label{fig:lepton_stability}
 \end{figure}
 
 \subsection{Electroweak and CKM Coincidence: Geometric Robustness of \(\sin^2\theta_W\) and \(\sin\theta_C\)}
 \label{subsec:weinberg_cabibbo_robustness}
 
-The electroweak and Cabibbo mixing sectors converge at the same geometric anchor \(N_{\text{geom}}\), as shown in Fig.~\ref{fig:weinberg_cabibbo_robustness}. The \(\pi^6\) bosonic coupling is steeper than the \(\pi^5\) fermionic coupling, reflecting the difference between volumetric and surface resonances.
-
+The electroweak and Cabibbo mixing sectors converge at the same
+geometric anchor \(N_{\text{geom}}\), as shown in
+Fig.~\ref{fig:weinberg_cabibbo_robustness}. The figure uses the
+EWT-derived spherical-mode quark masses (Variant~A of
+Section~\ref{sec:ewt_higgs_observable_tests}); the corresponding
+Cabibbo trajectory is therefore slightly offset from the Weinberg
+one. The \(\pi^6\) bosonic coupling is steeper than the \(\pi^5\)
+fermionic coupling, reflecting the difference between volumetric and
+surface resonances.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.85\textwidth]{EWT_Weinberg_Cabibbo_Robustness.pdf}
@@ -7587,7 +7610,7 @@ and tau, where it is expected to be indispensable.
 Consequently, the following implementation roadmap has been adopted:
 
 \begin{enumerate}
-	\item \textbf{Nonlinear term $\mathcal{F}(\Psi)$:} A cubic self‑trapping
+	\item \textbf{Nonlinear term $\mathcal{F}(\Psi)$:} A cubic self-trapping
 	term $\gamma\,\Psi^{3}$ will be added to the M4 wave kernel, with the
 	coupling coefficient $\gamma = 1/\epsilon_{M} = N_{\text{final}}\pi^{3}
 	\approx 2.41\times 10^{4}$ derived from the BCC geometry.
