@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+From manuscript version: 5.2.4 or leter
 Nodal shell hierarchy and Fibonacci latch generator for the EWT lepton model.
 
 Generates:

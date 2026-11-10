@@ -1,4 +1,4 @@
-﻿# From manuscript version: 5.2.2 or leter
+﻿# From manuscript version: 5.2.4 or leter
 # =============================================================================
 # SECTION 1: GLOBAL INPUTS & CONSTANTS
 # -----------------------------------------------------------------------------
