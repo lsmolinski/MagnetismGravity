@@ -31,7 +31,7 @@ try:
         M_Z_CODATA, M_W_PDG, M_W_CDFII, M_H_CODATA,
         SIN2_THETA_W, SIN_THETA_C_PDG,
         M_D_PDG, M_S_PDG,
-        Q_P_INPUT, LAMBDA_L, E_CHARGE_CODATA,
+        LAMBDA_L, E_CHARGE_CODATA,
         compute_alpha_core,
         compute_alpha_geometric,
         derive_eps_M_from_BCC,

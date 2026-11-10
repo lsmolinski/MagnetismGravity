@@ -1,11 +1,13 @@
-Traceback (most recent call last):
-  File "D:\myDesgins\TeX\MagnetismGravity\ewt_robustness_plots.py", line 27, in <module>
-    from ewt_emergence_engine import (
-ImportError: cannot import name 'Q_P_INPUT' from 'ewt_emergence_engine' (D:\myDesgins\TeX\MagnetismGravity\ewt_emergence_engine.py)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "D:\myDesgins\TeX\MagnetismGravity\ewt_robustness_plots.py", line 62, in <module>
-    raise ImportError(
-ImportError: This module requires ewt_emergence_engine.py, ewt_particle_masses.py and ewt_electroweak_bosons.py in the same directory.
+Enhanced EWT -- Robustness Plot Suite (Geometric)
+[EXPORT] EWT_Robustness_G_Surface_Transition.pdf
+[EXPORT] EWT_Robustness_Alpha_Sensitivity.pdf
+[EXPORT] EWT_Alpha_vs_AMM_PhasePlot.pdf
+[EXPORT] EWT_Unification_Path_English.pdf
+[EXPORT] EWT_POINT_LOCKED.pdf
+[EXPORT] EWT_Lepton_Error_Spectrum.pdf
+[EXPORT] EWT_Robustness_Analysis_DataDriven.pdf
+[EXPORT] EWT_Stiffness_Equilibrium.pdf
+       [HIERARCHY] Stat/Eff Density Gap: 5.28e+03
+[EXPORT] EWT_AMM_Robustness_Leptons.pdf
+[EXPORT] EWT_Weinberg_Cabibbo_Robustness.pdf
+All figures exported.
