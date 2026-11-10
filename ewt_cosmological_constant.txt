@@ -1,0 +1,137 @@
+==============================================================================
+M4.x - Lambda from EWT trinity + one anchor (T_cmb)
+==============================================================================
+
+[1/5] Computing EWT trinity...
+    alpha_geom      = 0.007297338549284
+    alpha_inv       = 137.036262364180743
+    eps_M           = 4.141169769303932e-05
+    zeta            = 6.0339643713e-04
+    N_geom          = 778.8025178842
+    r_nu            = 2.817935e-17 m
+    lambda_l        = 1.616646e-35 m
+    hbar_geom       = 1.054574e-34 J*s
+    G_geom          = 6.677520e-11 m^3/kg/s^2
+    N_nu_stat       = 3.295904e+52
+    N_nu_eff        = 6.247249e+48
+    X_eff           = 5275.768324
+    eta_BCC         = 0.6801747616
+    C_local         = 1.4641246130e-05
+    C_gap           = 1.0140759358
+    C_gap_mixed     = 1.0106772588
+    O_mixed         = 729.258882
+
+[2/5] Deriving T_p from EWT hbar_geom and G_geom...
+    T_p (EWT)       = 1.416444e+32 K
+
+[3/5] Anchor: T_cmb (measured by COBE/FIRAS)...
+    T_cmb           = 2.7255 +/- 0.0006 K
+
+[4/5] Solving Haug's horizon relation for R_H...
+    R_H (EWT)       = 1.382521e+26 m
+    H_0 (EWT)       = 66.911313 km/s/Mpc
+    forward check   = 2.7255000000 K  (must equal T_cmb input)
+
+[5/5] Computing Lambda = 3 / R_H^2 ...
+    Lambda (EWT)    = 1.569560e-52 m^-2
+
+[A] Matter correction test
+------------------------------------------------------------------------------
+    Haug relation assumes pure de Sitter (Omega_Lambda = 1).
+    Test: R_H(Omega_m) = R_H(0) * (1 - Omega_m)^p
+    Find p such that H_0(Omega_m=0.31) = Planck H_0 = 67.36 km/s/Mpc.
+    H_0(Omega_m=0)   = 66.911313 km/s/Mpc
+    target H_0       = 67.3600 km/s/Mpc
+    required ratio   = 0.993339
+    best-fit p       = 0.018011
+    f(0.31)          = 0.993339
+    H_0(corrected)   = 67.360000 km/s/Mpc
+    Lambda(corrected)= 1.590680e-52 m^-2
+    ratio to Planck  = 1.460680
+    NOTE: p is a phenomenological fit; its small value (0.018)
+    shows that de Sitter already dominates and matter is a
+    ~0.6% perturbation. This corrects H_0, not Lambda.
+
+[B] Omega_Lambda WORKING HYPOTHESIS: Omega_L = eta_BCC * C_gap
+------------------------------------------------------------------------------
+    THIS IS A HYPOTHESIS, NOT A DERIVATION.
+    A first-principles horizon-balance argument is NOT available.
+
+    eta_BCC         = 0.6801747616
+    C_gap           = 1.0140759358
+    Omega_L         = 0.6897488579
+
+    Omega_L comparison:
+    Reference                           Omega_L     sigma       rel      tension
+    -------------------------------- ---------- --------- --------- ------------
+    Planck TT,TE,EE+lowE+lensing         0.6847    0.0073   +0.737%       +0.69 sigma
+    Planck + BAO                         0.6889    0.0056   +0.123%       +0.15 sigma
+
+    Implied Omega_m = 1 - Omega_L:
+    Omega_m (pred)            = 0.3103
+    Omega_m (Planck TT)       = 0.3153
+    Omega_m (Planck + BAO)    = 0.3111
+
+    Lambda prediction:
+    Lambda (de Sitter, Omega_L=1) = 1.569560e-52 m^-2
+    Lambda (pred, Omega_L*3H0^2/c^2) = 1.082602e-52 m^-2
+    Lambda (Planck)               = 1.089000e-52 m^-2
+    ratio pred / Planck           = 0.994125
+    discrepancy                   = -0.588%
+
+    Interpretation:
+    - The choice C_gap (neutral) over C_gap_mixed (charged-neutral)
+      is dictated by the charge neutrality of the global vacuum.
+    - The product eta_BCC * C_gap reduces the 1.44x de Sitter
+      discrepancy to 0.59% for Lambda, and matches Planck+BAO
+      Omega_L to 0.12%.
+    - This is a POSTULATE: a first-principles horizon-balance
+      derivation of Omega_L = eta_BCC * C_gap is the open
+      objective.
+
+[C] Tension analysis
+------------------------------------------------------------------------------
+    H_0 tensions (EWT vs reference):
+    Reference                   H_0    sigma      tension
+    -------------------- ---------- -------- ------------
+    Planck 2018               67.36     0.54       -0.83 sigma
+    DESI 2024                 68.52     0.62       -2.59 sigma
+    SH0ES 2022                73.04     1.04       -5.89 sigma
+
+    Lambda tension (EWT de Sitter limit vs Planck):
+    Lambda(EWT de Sitter) = 1.569560e-52 m^-2
+    Lambda(Planck)        = 1.089000e-52 m^-2
+    ratio                 = 1.441285
+    (Haug relation gives Omega_L = 1 by construction;
+     Planck gives 0.6847. The 1.44x ratio is structural.)
+
+==============================================================================
+FULL CHAIN (all values from EWT + one anchor)
+==============================================================================
+    BCC geometry          -> alpha_geom   = 0.007297338549284
+    BCC + charge e        -> r_nu         = 2.817935e-17 m
+    BCC + anchors         -> hbar_geom    = 1.054574e-34 J*s
+    BCC + anchors         -> G_geom       = 6.677520e-11 m^3/kg/s^2
+    Planck closure        -> lambda_l     = 1.616646e-35 m
+    EWT hbar_geom,G_geom  -> T_p          = 1.416444e+32 K
+    ANCHOR (measured)     -> T_cmb        = 2.7255 K
+    Haug relation         -> R_H          = 1.382521e+26 m
+    definition            -> H_0          = 66.9113 km/s/Mpc
+    definition            -> Lambda       = 1.569560e-52 m^-2
+
+    The only empirical inputs are r_e, m_e, c, e (dimensional
+    anchors) and T_cmb (cosmological anchor).
+
+    WORKING HYPOTHESIS (not derived):
+      Omega_L = eta_BCC * C_gap = 0.689749
+      => Lambda_pred            = 1.082602e-52 m^-2
+      vs Planck                 = 1.089000e-52 m^-2
+      discrepancy               = -0.59%
+      vs Planck+BAO Omega_L     = +0.12%
+      A first-principles horizon-balance derivation is OPEN.
+
+------------------------------------------------------------------------------
+NOTE: reference values (Planck, DESI, SH0ES) are used ONLY in
+tension analysis. For EWT internal accuracy checks, see the
+test functions in ewt_emergence_engine.py.
+------------------------------------------------------------------------------
