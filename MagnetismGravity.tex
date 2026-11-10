@@ -6551,9 +6551,53 @@ The scalar amplitude $\Psi(\mathbf{r},t)$ of the standing wave satisfies
 	\Bigl( \frac{\partial^{2}}{\partial t^{2}} - c^{2}\nabla^{2} \Bigr)
 	\Psi(\mathbf{r},t) + \mathcal{F}(\Psi) = 0 .
 \end{equation}
-The first two terms describe free wave propagation in the elastic BCC medium;
-the third term encodes the nonlinear self-interaction that makes the soliton
-possible.
+The first two terms describe free wave propagation in the elastic BCC
+medium; the third term encodes the nonlinear self-interaction that makes
+the soliton possible.
+
+\emph{Units convention.} Throughout this section, the wave equation is
+written in the \emph{natural units of the BCC lattice}. The lattice
+spacing $\lambda_l$, the lattice time step $t_p = \lambda_l/c$, and the
+lattice wave speed $c \equiv \lambda_l/t_p$ are all set to unity, and
+the wave amplitude $\Psi$ is measured in units of the Planck charge
+amplitude $q_P$ (which in the EWT framework has dimension of length;
+Section~\ref{sec:qP_from_alpha}). In these units, $\Psi$ is
+dimensionless and the cubic coupling $\gamma = 1/\epsilon_M \approx
+2.414 \times 10^4$ is also dimensionless. The linear operator
+$(\partial_t^2 - c^2\nabla^2)$ and the nonlinear term
+$\mathcal{F}(\Psi) = -\gamma\Psi^3$ both have the same dimension
+$[T^{-2}]$ in natural units (since both $\Psi$ and $c$ are
+dimensionless), so Eq.~\eqref{eq:soliton_wave_eq} is dimensionally
+homogeneous.
+
+To translate Eq.~\eqref{eq:soliton_wave_eq} to SI units, one restores
+the lattice scales, $\Psi = q_P\varphi$, $t = t_p\tau$, $x =
+\lambda_l\xi$, and rescales the nonlinear coefficient accordingly:
+\begin{equation}
+	\Bigl( \frac{\partial^{2}}{\partial t^{2}} - c^{2}\nabla^{2} \Bigr)
+	\Psi_{\mathrm{SI}}
+	- \gamma_{\mathrm{SI}} \Psi_{\mathrm{SI}}^3 = 0 ,
+	\qquad
+	\gamma_{\mathrm{SI}} = \frac{\gamma}{q_P^2\,t_p^2}.
+	\label{eq:soliton_wave_eq_SI}
+\end{equation}
+Here $\Psi_{\mathrm{SI}}$ is the physical displacement amplitude of
+dimension $[L]$, and the SI coefficient $\gamma_{\mathrm{SI}}$ has
+dimension $[L^{-2}T^{-2}]$, consistent with the dimensional structure
+of the linear operator $(\partial_t^2 - c^2\nabla^2)$ acting on a
+length amplitude: both sides of Eq.~\eqref{eq:soliton_wave_eq_SI} then
+carry dimension $[L/T^2]$. Numerically, with $q_P \approx 1.876 \times
+10^{-18}$~m and $t_p = \lambda_l/c \approx 5.39 \times 10^{-44}$~s,
+the SI coefficient is $\gamma_{\mathrm{SI}} \approx 2.36 \times
+10^{126}$~m$^{-2}$~s$^{-2}$. The large numerical value is simply a
+consequence of the tiny lattice scales: the physically meaningful
+quantity is the dimensionless product $\gamma_{\mathrm{SI}}\Psi_0^2
+t_p^2 = \gamma \approx 2.41 \times 10^4$, where $\Psi_0 = q_P$ is the
+characteristic amplitude.
+
+All equations in Sections~\ref{sec:nonlinear_stability}--\ref{sec:outlook}
+are written in natural lattice units, unless explicitly stated
+otherwise.
 
 \subsection{Coupling Coefficient from BCC Geometry}
 
