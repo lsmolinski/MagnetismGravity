@@ -2771,49 +2771,102 @@ distinct, though coupled, consequences of the EMC lattice strain field.
 They are frequently conflated in continuous medium optics, so it
 is necessary to state them with structural precision.
 
+Light propagation through the strained EMC lattice is described by
+two distinct, though coupled, consequences of the same underlying
+density-deficit field. They are frequently conflated in continuous-
+medium optics, so it is necessary to state them with structural
+precision.
+
 \begin{enumerate}
-	\item \textbf{Coordinate phase velocity via lattice strain.} In natural lattice units ($c \equiv 1$), the statutory speed of light is defined by the undisturbed cell ratio $c = \lambda_l / t_p = 1$. Around a matter soliton, the radial displacement of EMC nodes creates a spatial strain $\epsilon(r) = \nabla \cdot \vec{u}(r)$. This strain stretches the effective coordinate cell spacing $\lambda_l(r)$, so that a wave packet requires more fundamental time ticks $t_p$ to traverse a unit coordinate distance. This produces an effective slowdown in coordinate speed $v(r) < 1$, encoded by an isotropic scalar refractive index $n_\gamma(r) = 1/v(r) > 1$.
+	\item \textbf{Coordinate phase velocity from node availability.}
+	In natural lattice units ($c \equiv 1$), the statutory speed of
+	light is the undisturbed cell ratio $c = \lambda_l / t_p = 1$.
+	Around a matter soliton, the local EMC density drops below the
+	statutory value, so a wave packet traversing the strained region
+	finds fewer nodes per unit coordinate length. This reduces the
+	effective coordinate speed of light, $v_\gamma(r) < 1$, encoded
+	by an isotropic scalar refractive index $n_\gamma(r) =
+	1/v_\gamma(r) > 1$. The reduction is parameterized by the
+	\emph{dimensionless fractional density deficit}
+	\begin{equation}
+		\delta(r) \;\equiv\; 1 - \eta(r)
+		\;=\; 1 - \frac{N_\nu(r)}{N_{\text{stat}}}
+		\;\ge\; 0,
+		\label{eq:density_deficit}
+	\end{equation}
+	which measures how far the local density has fallen below the
+	statutory background. The functional relation between
+	$n_\gamma$ and $\delta$ (equivalently, between $v_\gamma$ and
+	$\eta = 1 - \delta$) is established by the postulate of
+	Eq.~\eqref{eq:v_null_v_clock} in
+	Section~\ref{sec:n_from_energy_density}:
+	$v_\gamma(r) = \eta(r)$, hence $n_\gamma(r) = 1/\eta(r)$.
+	The scalar deficit $\delta(r)$, and not a physical vector
+	displacement, is the geometric object that encodes the lattice
+	strain; a literal displacement $\vec{u}_{\text{phys}}(r)$ of
+	dimension $[L]$ is not required.
 	
-	\item \textbf{Trajectory deflection via restoring displacement.} The actual bending of a wave packet trajectory is driven by the vector displacement field $\vec{u}(r)$, rather than by a scalar density deficit alone. In response to the core deficit of a matter soliton, the surrounding EMC lattice develops a directed restoring displacement field:
-	\begin{equation}
-		\vec{u}(r) = - u_r(r)\, \hat{r},
-		\label{eq:emc_displacement_vector}
-	\end{equation}
-	where the dimensionless radial magnitude \(u_r(r)\) is the cumulative structural response to the normalized density gradient:
-	\begin{equation}
-		u_r(r) = \int_{r}^{\infty} \left|\nabla \left(\frac{N_{\nu}(r')}{N_{\text{stat}}}\right)\right|\, dr'.
-		\label{eq:u_radial_integrated}
-	\end{equation}
-	The negative sign in Eq.~\eqref{eq:emc_displacement_vector} signifies structural displacement \emph{toward} the central deficit. Light rays propagating through this strained lattice continuously realign along the principal axes of the displacement field, deflecting the wavefront toward the mass center.
+	\item \textbf{Trajectory deflection from the refractive-index
+		gradient.} A light ray traverses the strained lattice along a
+	curved trajectory because the scalar refractive index
+	$n_\gamma(r)$ varies spatially. The deflection is governed by
+	the transverse gradient $\nabla_\perp n_\gamma(r)$, which
+	continuously reorients the wavefront toward the mass center,
+	exactly as in classical ray optics in a medium with a spatially
+	varying index. No separate vector restoring field is required:
+	the same scalar $n_\gamma(r)$ that slows the phase velocity
+	also bends the ray.
 \end{enumerate}
 
 \subsection{Bridging the Vector Displacement to the Scalar Refractive Index}
 \label{sec:bridging_u_to_n}
 
-To connect the vector kinematics of Eq.~\eqref{eq:emc_displacement_vector} to standard ray-tracing integrals, we evaluate the scalar refractive index \(n_\gamma(r)\) as the local isotropic dilatation factor induced by the dimensionless radial displacement field \(u_r(r)\).
-
-A 3D standing-wave soliton exhibits an asymptotic radial energy density deficit decaying as \(1/r\). In the simplest spherical weak-field model, the normalized local EMC density takes the form
+The connection between the local density deficit and the scalar
+refractive index is established by the density profile of the soliton
+together with the postulate of Eq.~\eqref{eq:v_null_v_clock}. A 3D
+standing-wave soliton exhibits an asymptotic radial energy-density
+deficit decaying as $1/r$. In the simplest spherical weak-field
+model, the normalized local EMC density takes the form
 \begin{equation}
-	\frac{N_{\nu}(r)}{N_{\text{stat}}} = 1 - \frac{r_s}{r},
+	\eta(r) \;\equiv\; \frac{N_{\nu}(r)}{N_{\text{stat}}}
+	= 1 - \frac{r_s}{r},
 	\label{eq:normalized_density}
 \end{equation}
-where \(r_s = 2GM\) is the gravitational radius in natural units (\(c = 1\)).
-The exact normalized gradient is therefore
+where $r_s = 2GM$ is the gravitational radius in natural units
+($c = 1$). The corresponding dimensionless fractional deficit is
 \begin{equation}
-	\left|\nabla \left(\frac{N_{\nu}(r)}{N_{\text{stat}}}\right)\right| = \frac{r_s}{r^{2}}.
+	\delta(r) \;=\; 1 - \eta(r) \;=\; \frac{r_s}{r}
+	\;=\; 2\Phi_N(r),
+	\label{eq:delta_r}
 \end{equation}
-Substituting this gradient into Eq.~\eqref{eq:u_radial_integrated} yields exactly
-\begin{equation}
-	u_r(r) = \int_{r}^{\infty} \frac{r_s}{r'^{2}}\,dr' = \frac{r_s}{r}.
-	\label{eq:u_radial_exact}
-\end{equation}
+where $\Phi_N(r) = GM/r = r_s/(2r)$ is the dimensionless Newtonian
+gravitational potential per unit energy. The deficit $\delta(r)$
+appearing in Eq.~\eqref{eq:delta_r} is a scalar, dimensionless
+quantity; it is not a physical displacement of dimension $[L]$, and
+its interpretation as a ``radial displacement field'' used in earlier
+versions of this work is superseded by the scalar-deficit description
+above.
 
-The scalar refractive index \(n_\gamma(r)\) represents the local isotropic dilatation factor induced by this displacement field:
+For a null probe, the coordinate refractive index follows directly
+from the postulate $v_\gamma(r) = \eta(r)$:
 \begin{equation}
-	n_\gamma(r) = 1 + u_r(r) = 1 + \frac{r_s}{r} = 1 + 2\Phi_N(r),
+	n_\gamma(r)
+	= \frac{1}{v_\gamma(r)}
+	= \frac{1}{\eta(r)}
+	= \left(1 - \frac{r_s}{r}\right)^{-1}.
+	\label{eq:n_gamma_exact}
+\end{equation}
+In the weak-field limit $r_s/r \ll 1$, the binomial expansion gives
+\begin{equation}
+	n_\gamma(r)
+	= 1 + \frac{r_s}{r} + \left(\frac{r_s}{r}\right)^{2} + \cdots
+	\approx 1 + \frac{r_s}{r}
+	= 1 + 2\Phi_N(r),
 	\label{eq:n_weak_field_derived}
 \end{equation}
-where \(\Phi_N(r) = GM/r = r_s/(2r)\) is the dimensionless Newtonian gravitational potential per unit energy.
+which reproduces the standard first-order gravitational refractive
+index and provides the leading-order input for the solar-deflection
+integral of Section~\ref{sec:shapiro_delay_emc}.
 
 \subsection{Asymptotic Continuous Limit and Schwarzschild Equivalence}
 \label{sec:n_from_energy_density}
