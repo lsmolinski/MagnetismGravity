@@ -73,7 +73,7 @@
 
 \begin{center}
 \today \\
-Version: 5.2.3	
+Version: 5.2.4	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -628,6 +628,42 @@ The relation \(l = \pi x\) defines the propagation distance in terms of the sour
 	
 	\hfill --- Yee, J. (2019). \textit{The Relationship of the Fine Structure Constant and Pi}, p.~3--4. \cite{Yee2019alfa}
 \end{quote}
+
+The decomposition $S = 4\pi l^2 + (\pi r l + \pi r^2)$ has a natural
+geometric reading. The cone has its apex at the center of the sphere
+and its base rim on the sphere's surface, with slant length
+$l = \pi x$ and base radius $r = x$. Its axial height is
+$h = \sqrt{l^2 - r^2} = x\sqrt{\pi^2 - 1} \approx 2.978\,x$, so the
+base rim lies exactly on the sphere of radius $l = \pi x$. The cone is
+therefore fully contained within the sphere, tangent to its surface
+along the rim.
+
+The three terms of $S$ represent three distinct surfaces of wave
+interaction: (i) the outer spherical wavefront $4\pi l^2$, where
+standing waves transition into outgoing traveling waves; (ii) the
+cone's lateral surface $\pi r l$, the internal channel along which
+the wave center's oscillation is directed toward the next unit cell;
+(iii) the cone's base cross-section $\pi r^2$, the effective
+emission aperture. Summing them gives the \emph{total effective
+	interaction area} of the soliton — the outer spherical flux plus the
+inner conical channel — rather than the geometric surface of a single
+disjoint boundary in $\mathbb{R}^3$.
+
+The kinematic argument fixes $l = \pi x$ as the distance traveled by
+the affected granules during one half-oscillation. This is the
+\emph{slant} distance along the cone's generatrix, from apex to rim,
+consistent with the geometric definition of $l$ as the cone's slant
+length. The axial height $h = x\sqrt{\pi^2 - 1}$ is shorter than the
+path traveled, as expected for a wave expanding radially outward from
+the center: the granules follow the slant path, not the axial
+shortcut.
+
+With these identifications, $S = x^2(4\pi^3 + \pi^2 + \pi)$, and
+$A_\pi \equiv S/x^2 = 4\pi^3 + \pi^2 + \pi$ is a geometric quantity
+fixed by the lattice topology (sphere + cone inside sphere) and by
+the kinematic relation $l = \pi x$. The numerical value
+$\alpha_\pi^{-1} = 1/A_\pi \approx 137.036$ agrees with
+$\alpha_{\mathrm{CODATA}}^{-1}$ to six significant digits.
 
 \subsection{BCC Lattice Geometry and the Geometric Ladder}
 \label{sec:geom_ladder}
@@ -2077,17 +2113,43 @@ $\lambda_f$ and the backward wave is expanded to $\lambda_b$:
 	\lambda_b = \lambda_0 (1 + \beta).
 \end{equation}
 
-The resulting standing‑wave wavelength in the direction of motion,
-$\lambda'$, is the geometric mean of the two, modulated by the requirement
-of phase synchronization across the soliton's diameter:
+Two mean wavelengths can be constructed from the Doppler-shifted pair
+$(\lambda_f, \lambda_b)$. The \emph{arithmetic mean} represents the
+laboratory-frame average of the two counter-propagating waves; the
+\emph{geometric mean} represents the wavelength after the phase
+self-consistency condition of the standing wave is imposed (the wave
+must return to itself after one round trip across the soliton boundary,
+which in the multiplicative phase space of Fourier amplitudes
+corresponds to the geometric mean of the two wavelengths):
 \begin{equation}
-	\lambda' = \sqrt{\lambda_f \cdot \lambda_b}
-	= \lambda_0 \sqrt{1 - \beta^{2}}
+	\lambda_{\mathrm{am}}
+	= \frac{\lambda_f + \lambda_b}{2}
+	= \lambda_0,
+	\qquad
+	\lambda_{\mathrm{gm}}
+	= \sqrt{\lambda_f \cdot \lambda_b}
+	= \lambda_0\sqrt{1-\beta^2}
 	= \frac{\lambda_0}{\gamma},
+	\label{eq:doppler_means}
 \end{equation}
-where $\gamma = (1 - \beta^{2})^{-1/2}$ is the Lorentz factor.  This result
-shows that the physical distance between the wave‑center nodes --- the
-``size'' of the particle --- must contract.
+with $\gamma = (1-\beta^2)^{-1/2}$ the Lorentz factor. The contraction
+factor of the soliton is the \emph{ratio} of these two means,
+\begin{equation}
+	g \;\equiv\; \frac{\lambda_{\mathrm{gm}}}{\lambda_{\mathrm{am}}}
+	= \sqrt{1-\beta^2}
+	= \frac{1}{\gamma}.
+	\label{eq:lorentz_ratio}
+\end{equation}
+The physical distance between the wave-center nodes --- the ``size'' of
+the particle as seen in the laboratory frame --- therefore contracts by
+$g = 1/\gamma$. This is the form of the wave-mechanical Lorentz
+contraction derived by LaFrenière~\cite{LaFreniere2000} from the
+Doppler-shifted standing-wave structure of a moving soliton in his analysis
+of the compressibility of standing waves in a material medium. The key
+point is that neither of the two individual Doppler wavelengths follows
+the Lorentz factor; the contraction emerges only as the ratio of the
+geometric mean (which encodes the phase self-consistency of the standing
+wave) to the arithmetic mean (the laboratory-frame reference scale).
 
 \subsection{The Michelson–Morley Null Result as a Mechanical Necessity}
 
