@@ -163,6 +163,24 @@ cosmological scaling.
 	
 	\bottomrule
 	\endlastfoot
+	5.2.4 & 2026.11.10 &
+	Rewrote the local-metric section: replaced the vector displacement
+	field $\vec{u}(r)$ with a scalar density deficit $\delta(r)$ (new
+	eqs.~\texttt{eq:density\_deficit}, \texttt{eq:delta\_r},
+	\texttt{eq:n\_gamma\_exact}); rewrote the Doppler section with an
+	arithmetic/geometric mean construction (new eqs.~\texttt{eq:doppler\_means},
+	\texttt{eq:lorentz\_ratio}). Added geometric interpretation of the
+	emission surface $S = 4\pi l^2 + (\pi rl + \pi r^2)$ (cone inscribed
+	in sphere) and an explicit natural-units convention paragraph.
+	Added $q_P$ to inventory class~IV. Updated
+	\texttt{tab:final\_results\_confirmed} (tau $^\dagger$ note:
+	Shell Ref.\ and Full AMM coincide via $\mathcal{O}_\tau=1$) and
+	\texttt{tab:target\_comparison} (corrected scanner values; the
+	$0.0012$~ppm engine--scanner discrepancy is resolved). Renamed
+	\texttt{Q\_P\_INPUT}$\to$\texttt{Q\_P\_REFERENCE}. Removed a
+	duplicated paragraph in the Higgs--vector mixing section. Fixed SNO
+	bibliography (Charged-Current~$\to$~Neutral-Current), typos, and
+	removed the boxed ``Remark on the Muon Anomaly.'' \\
 	5.2.3 & 2026.11.09 &
 	Fixed cubic nonlinearity sign ($+\gamma\Psi^{3} \to -\gamma\Psi^{3}$,
 	self-focusing) and added Derrick-instability note. Replaced scalar
@@ -1625,7 +1643,7 @@ The dimensionless scaling factor \(S = r_\nu/q_P\) is obtained by combining thre
 	\end{equation}
 	
 	\item \textbf{Dynamic wave expansion.}
-	The natural exponential decay of the standing-wave amplitude from the centre outward introduces Euler's number \(e\) as an integrated factor:
+	The natural exponential decay of the standing-wave amplitude from the centre outward introduces Euler's number \(e\)\footnote{Throughout this work, $e$ denotes Euler's number ($e = 2.71828\ldots$) when it appears in geometric expressions such as $S_{\text{exp}} = e$, $r_\nu = 2 q_P e^2/g_v$, or the $2e$ prefactor in Eq.~\eqref{eq:lambda_l_from_Nnu}. The elementary charge is written $e_{\text{geom}}$ or $e_{\text{charge}}$ wherever ambiguity could arise, and appears as such in $q_P = e/\sqrt{\alpha_{\text{geom}}}$ (Section~\ref{sec:qP_from_alpha}). See Appendix~\ref{app:inventory_status} for the full classification.} as an integrated factor:
 	\begin{equation}
 		S_{\text{exp}} = e.
 	\end{equation}
