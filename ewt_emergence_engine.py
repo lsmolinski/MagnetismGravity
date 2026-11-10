@@ -52,6 +52,14 @@ M_W_PDG_2024      = 80.3692                   # PDG 2024 average [GeV]
 M_H_CODATA        = 125.25                    # Higgs mass [GeV]
 SIN2_THETA_W      = 0.23122                   # Weinberg angle sin^2(theta_W)
 SIN_THETA_C_PDG   = 0.2243                    # Cabibbo angle sin(theta_C)
+# PPM_CONVENTION = 10^-6 is the parts-per-million reporting convention.
+# It happens to coincide numerically with (r_nu/r_e)^3 because the decadic
+# anchor r_e/r_nu ~ 100 = 10^2 has a cube (10^2)^3 = 10^6. This is a
+# numerical coincidence of the decimal system, not a derivation from the
+# BCC lattice: if the decadic anchor were non-decimal, the ppm convention
+# would be unchanged but would not coincide with any simple geometric
+# ratio of the model.
+PPM_CONVENTION = 1.0e-6
 R_INF_CODATA      = 10973731.568157           # Rydberg constant [m^-1]
 A0_CODATA         = 5.29177210903e-11         # Bohr radius [m]
 LAMBDA_C_CODATA   = 2.42631023867e-12         # electron Compton wavelength [m]
@@ -1086,7 +1094,7 @@ def compute_lepton_amms(
     """
     A_pi = compute_alpha_core()
 
-    a_e_ppm = (alpha_geom / (2.0 * PI)) * (1.0 - eps_M * (PI**3)) * 1e6
+    a_e_ppm = (alpha_geom / (2.0 * PI)) * (1.0 - eps_M * (PI**3)) / PPM_CONVENTION
 
     K_e = K_WC_e
     K_mu_total = get_AMMi_K(2)
@@ -1123,11 +1131,11 @@ def compute_lepton_amms(
 def report_lepton_amms(res: dict) -> None:
     """Print lepton AMM results and compare with experimental targets."""
     print("--- Lepton Anomalous Magnetic Moments ---")
-    print(f"  Electron a_e   : {res['a_e_ppm']:.6f} ppm  (CODATA: {A_E_CODATA*1e6:.6f} ppm)")
+    print(f"  Electron a_e   : {res['a_e_ppm']:.6f} ppm  (CODATA: {A_E_CODATA/PPM_CONVENTION:.6f} ppm)")
     print(f"  Muon shell     : {res['a_mu_shell_ppm']:.6f} ppm")
-    print(f"  Muon full a_mu : {res['a_mu_ppm']:.6f} ppm  (Exp: {A_MU_EXP*1e6:.6f} ppm)")
+    print(f"  Muon full a_mu : {res['a_mu_ppm']:.6f} ppm  (Exp: {A_MU_EXP/PPM_CONVENTION:.6f} ppm)")
     print(f"  Tau shell      : {res['a_tau_shell_ppm']:.6f} ppm")
-    print(f"  Tau full a_tau : {res['a_tau_ppm']:.6f} ppm  (Exp: {A_TAU_EXP*1e6:.6f} ppm)")
+    print(f"  Tau full a_tau : {res['a_tau_ppm']:.6f} ppm  (Exp: {A_TAU_EXP/PPM_CONVENTION:.6f} ppm)")
 
 def amm_rigidity_test(
     base_alpha_geom: float,
@@ -1163,9 +1171,9 @@ def amm_rigidity_test(
 
     print("-" * 78)
     print("Reference experimental:")
-    print(f"  a_e   : {A_E_CODATA*1e6:.6f} ppm")
-    print(f"  a_mu  : {A_MU_EXP*1e6:.6f} ppm")
-    print(f"  a_tau : {A_TAU_EXP*1e6:.6f} ppm")
+    print(f"  a_e   : {A_E_CODATA/PPM_CONVENTION:.6f} ppm")
+    print(f"  a_mu  : {A_MU_EXP/PPM_CONVENTION:.6f} ppm")
+    print(f"  a_tau : {A_TAU_EXP/PPM_CONVENTION:.6f} ppm")
     print("=" * 78)
 
 # =============================================================================

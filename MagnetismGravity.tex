@@ -4631,6 +4631,27 @@ implementation in \texttt{ewt\_amm\_extended.py} (Listing~\ref{lst:ewt_amm_exten
 Appendix~\ref{app:ewt_amm_extended}), which serves as the executable
 reference for the ppm convention used throughout.
 
+It is worth noting a numerical coincidence. The ppm factor $10^{-6}$
+happens to coincide with the cube of the neutrino-to-electron radius
+ratio,
+\begin{equation}
+	\left(\frac{r_\nu}{r_e}\right)^3
+	= \left(\frac{1}{100.00017}\right)^3
+	\approx 9.99995 \times 10^{-7}
+	\approx 10^{-6},
+	\label{eq:ppm_ratio}
+\end{equation}
+because the decadic anchor $r_e/r_\nu = 100.00017 \approx 10^2$ has a
+cube $(10^2)^3 = 10^6$ that matches the ppm convention. This is a
+numerical consistency of the decimal system, not a derivation from the
+BCC lattice: if the decadic anchor were a non-decimal number (e.g.,
+$r_e/r_\nu = 137$), the factor $10^{-6}$ would still be the ppm
+convention, but would not coincide with any simple geometric ratio of
+the model. The ppm factor is therefore treated throughout as a
+reporting convention, and the geometric content of the AMM predictions
+resides entirely in the dimensionless ratios $s_\mu$, $s_\tau$, and
+$L_\mu^2$ before conversion to ppm units.
+
 The anomalous magnetic moments derived from the BCC lattice geometry ($K_n$) 
 and the universal stiffness deficit ($\epsilon_M$) are compared against CODATA 
 and Particle Data Group (PDG) benchmarks. 
