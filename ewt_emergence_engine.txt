@@ -13,7 +13,6 @@ Alpha inverse fine-structure constant test:
   Pure BCC geometry  : pred = 137.036262364181 | rel_err = 0.000192 %
   CODATA 2022        : 137.035999084000
 Derived q_P         : 1.875547839472885e-18
-Reference Q_P_INPUT : 1.875546037780000e-18
 
 Geometric ratio q_P / e:
   derived  q_P / e = 11.7062488597
@@ -116,7 +115,7 @@ RIGIDITY TEST
   Muon shell     : 248.571133 ppm
   Muon full a_mu : 1166.212608 ppm  (Exp: 1165.920610 ppm)
   Tau shell      : 1176.838130 ppm
-  Tau full a_tau : 1176.838130 ppm  (Exp: 1177.210000 ppm)
+  Tau full a_tau : 1176.838130 ppm  (SM prediction: 1177.210000 ppm)
 
 ==============================================================================
 AMM RIGIDITY TEST (vary eps_M)

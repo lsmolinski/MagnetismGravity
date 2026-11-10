@@ -16,5 +16,5 @@ EWT EXTENDED LEPTON AMM MODULE
     EWT shell reference   : 1177.210000 ppm
     Internal rel. error   : 0.031589 %
   Tau full a_tau          : 1176.838130 ppm
-    Experimental target   : 1177.210000 ppm
+    SM prediction         : 1177.210000 ppm  (no direct measurement)
     Full rel. error       : 0.031589 %

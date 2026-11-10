@@ -69,12 +69,12 @@ M_D_PDG           = 0.00470                   # d-quark mass [GeV], PDG 2024
 M_S_PDG           = 0.09350                   # s-quark mass [GeV], PDG 2024
 
 A_MU_EXP          = 1.1659206100e-3        # muon AMM from Fermilab/Brookhaven
-A_TAU_EXP         = 1.177210e-3            #  # tau AMM: Standard Model prediction, not direct measuremen
+A_TAU_EXP         = 1.177210e-3            # tau AMM: Standard Model prediction, not a direct measurement
 
-# Fundamental length scale (Planck charge interpreted as geometric amplitude)
-# This is currently treated as an INPUT, but will later be reclassified
-# as DERIVED once the geometric origin of q_P is explicitly shown.
-Q_P_INPUT         = 1.87554603778e-18         # Planck charge as length [m]
+# Reference value of the Planck charge (interpreted as a geometric amplitude).
+# The DERIVED value is q_P_geom = e / sqrt(alpha_geom); see derive_planck_charge_from_e().
+# Q_P_REFERENCE is retained only as a cross-check anchor for the main() report.
+Q_P_REFERENCE     = 1.87554603778e-18         # Planck charge reference value [m]
 # Fundamental EMC spacing (Planck length) [m]
 LAMBDA_L          = 1.6162e-35
 # Elementary charge (CODATA 2022) -- empirical anchor of the amplitude scale
@@ -1086,7 +1086,9 @@ def compute_lepton_amms(
     alpha_geom: float,
     eps_M: float,
     L_mu_dim: int = 5,
-    L_tau_dim: int = 34,
+    L_tau_dim: int = 34,  # Reserved for the 4th-generation extension
+                          # (see Section sec:three_generations in the manuscript);
+                          # not used in the three-generation AMM computation.
     K_WC_e: int = 10,
 ) -> dict:
     """
@@ -1129,13 +1131,13 @@ def compute_lepton_amms(
 
 
 def report_lepton_amms(res: dict) -> None:
-    """Print lepton AMM results and compare with experimental targets."""
+    """Print lepton AMM results and compare with experimental / SM references."""
     print("--- Lepton Anomalous Magnetic Moments ---")
     print(f"  Electron a_e   : {res['a_e_ppm']:.6f} ppm  (CODATA: {A_E_CODATA/PPM_CONVENTION:.6f} ppm)")
     print(f"  Muon shell     : {res['a_mu_shell_ppm']:.6f} ppm")
     print(f"  Muon full a_mu : {res['a_mu_ppm']:.6f} ppm  (Exp: {A_MU_EXP/PPM_CONVENTION:.6f} ppm)")
     print(f"  Tau shell      : {res['a_tau_shell_ppm']:.6f} ppm")
-    print(f"  Tau full a_tau : {res['a_tau_ppm']:.6f} ppm  (Exp: {A_TAU_EXP/PPM_CONVENTION:.6f} ppm)")
+    print(f"  Tau full a_tau : {res['a_tau_ppm']:.6f} ppm  (SM prediction: {A_TAU_EXP/PPM_CONVENTION:.6f} ppm)")
 
 def amm_rigidity_test(
     base_alpha_geom: float,
@@ -1239,7 +1241,6 @@ def main():
     q_P_geom = derive_planck_charge_from_e(alpha_geom, E_CHARGE_CODATA)
 
     print(f"Derived q_P         : {q_P_geom:.15e}")
-    print(f"Reference Q_P_INPUT : {Q_P_INPUT:.15e}")
 
     ratio_qP_e_derived = q_P_geom / E_CHARGE_CODATA
     ratio_qP_e_expected = 1.0 / math.sqrt(alpha_geom)

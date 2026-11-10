@@ -4798,12 +4798,12 @@ Table~\ref{tab:final_results_confirmed}.
 		Muon Shell Ref. (\(a_{\mu,\text{shell}}\)) & \(248.800 \times 10^{-6}\) & \(248.571 \times 10^{-6}\) & \(0.092\%\) \\
 		\textbf{Muon Full AMM (\(a_{\mu}\))} & \(\mathbf{1.165921 \times 10^{-3}}\) & \(\mathbf{1.166213 \times 10^{-3}}\) & \(\mathbf{0.025044\%}\) \\
 		\midrule
-		Tau Shell Ref. (\(a_{\tau,\text{shell}}\)) & \(1177.210 \times 10^{-6}\) & \(1176.838 \times 10^{-6}\) & \(0.031589\%\) \\
-		\textbf{Tau Full AMM (\(a_{\tau}\))} & \(\mathbf{1.177210 \times 10^{-3}}\) & \(\mathbf{1.176838 \times 10^{-3}}\) & \(\mathbf{0.031589\%}\) \\
+		Tau Shell Ref. (\(a_{\tau,\text{shell}}\))$^{\dagger}$ & \(1177.210 \times 10^{-6}\) & \(1176.838 \times 10^{-6}\) & \(0.031589\%\) \\
+		\textbf{Tau Full AMM (\(a_{\tau}\))}$^{\dagger}$ & \(\mathbf{1.177210 \times 10^{-3}}\) & \(\mathbf{1.176838 \times 10^{-3}}\) & \(\mathbf{0.031589\%}\) \\
 		\bottomrule
 	\end{tabular}
 	\begin{flushleft}
-		\small \textit{Note: Full lepton targets represent official experimental CODATA/PDG physical benchmarks. Error for \(a_\tau\) is compered with SM prediction.}
+		\small \textit{Notes: Targets in the ``Full AMM'' rows for the electron and muon are experimental CODATA/PDG benchmarks. The target in the ``Full AMM'' row for the tau is the Standard-Model prediction (no direct measurement is currently available). Targets in the ``Shell Ref.'' rows ($248.8$~ppm for the muon, $1177.21$~ppm for the tau) are EWT-internal shell references (Section~\ref{sec:sensitivity}), not experimental benchmarks. $^{\dagger}$~For the tau lepton, $\mathcal{O}_\tau = 1$ (Section~\ref{sec:final_experimental_proof}), so the Tau Shell Ref.\ and Tau Full AMM rows refer to the same geometric quantity, $a_\tau \equiv \sigma_\tau$. The two rows are retained to preserve the shell-vs-full structure used for the muon; their numerical coincidence is a direct consequence of $\mathcal{O}_\tau = 1$.}
 	\end{flushleft}
 \end{table}
 Full AMM predictions for leptons are calculated without using lepton masses.
@@ -5200,11 +5200,11 @@ Table \ref{tab:target_comparison} contrasts the theoretical \textbf{EWT Standalo
 		\hline
 		\textbf{Method} & \textbf{Lepton Gen.} & \textbf{AMM [ppm]} & \textbf{Nodes ($K$)} & \textbf{Indiv. Error} \\ \hline
 		\textit{EWT Standalone} & Electron Core ($a_e$) & $1159.65218$ & $10$ & Root Anchor \\
-		\textit{EWT Standalone} & Muon Shell ($a_{\mu}$) & $248.5724$ & $207$ & $0.0915\%$ \\
-		\textit{EWT Standalone} & Tau Shell ($a_{\tau}$) & $1176.8445$ & $2181$ & $0.0310\%$ \\ \hline
+		\textit{EWT Standalone} & Muon Shell ($a_{\mu,\text{shell}}$) & $248.5711$ & $207$ & $0.0920\%$ \\
+		\textit{EWT Standalone} & Tau Shell ($a_{\tau}$) & $1176.8381$ & $2181$ & $0.0316\%$ \\ \hline
 		\textbf{Resonance Peak} & Electron Core ($a_e$) & $1159.65218$ & $10$ & $0.0000\%$ \\
-		\textbf{Resonance Peak} & Muon Shell ($a_{\mu}$) & $248.7959$ & $\mathbf{200}$ & $\mathbf{0.0016\%}$ \\
-		\textbf{Resonance Peak} & Tau Shell ($a_{\tau}$) & $1177.1840$ & $\mathbf{2180}$ & $\mathbf{0.0022\%}$ \\ \hline
+		\textbf{Resonance Peak} & Muon Shell ($a_{\mu,\text{shell}}$) & $248.7947$ & $\mathbf{200}$ & $\mathbf{0.0021\%}$ \\
+		\textbf{Resonance Peak} & Tau Shell ($a_{\tau}$) & $1177.1776$ & $\mathbf{2180}$ & $\mathbf{0.0027\%}$ \\ \hline
 	\end{tabular}
 \end{table}
 \subsubsection*{Robustness of Recursive Convergence}
@@ -6529,14 +6529,18 @@ spacing $\lambda_l$, the lattice time step $t_p = \lambda_l/c$, and the
 lattice wave speed $c \equiv \lambda_l/t_p$ are all set to unity, and
 the wave amplitude $\Psi$ is measured in units of the Planck charge
 amplitude $q_P$ (which in the EWT framework has dimension of length;
-Section~\ref{sec:qP_from_alpha}). In these units, $\Psi$ is
-dimensionless and the cubic coupling $\gamma = 1/\epsilon_M \approx
-2.414 \times 10^4$ is also dimensionless. The linear operator
-$(\partial_t^2 - c^2\nabla^2)$ and the nonlinear term
-$\mathcal{F}(\Psi) = -\gamma\Psi^3$ both have the same dimension
-$[T^{-2}]$ in natural units (since both $\Psi$ and $c$ are
-dimensionless), so Eq.~\eqref{eq:soliton_wave_eq} is dimensionally
-homogeneous.
+Section~\ref{sec:qP_from_alpha}). With $c = 1$, the operator
+$(\partial_t^2 - c^2\nabla^2)$ reduces to $(\partial_t^2 - \nabla^2)$:
+the factor $c$ disappears, because $c$ has been absorbed into the unit
+system (Section~\ref{sec:c_as_metric},
+Eq.~\eqref{eq:c_metric_definition}). Every quantity in
+Eq.~\eqref{eq:soliton_wave_eq} --- the field $\Psi$, the cubic coupling
+$\gamma = 1/\epsilon_M \approx 2.414 \times 10^4$, and the operator
+$(\partial_t^2 - \nabla^2)$ --- is therefore a pure number, and the
+equation is \emph{numerically homogeneous}. No dimensional discussion
+is required at the level of the natural-unit equation; the dimensional
+structure of the physical equation is analysed separately below (see
+Eq.~\eqref{eq:soliton_wave_eq_SI}).
 
 To translate Eq.~\eqref{eq:soliton_wave_eq} to SI units, one restores
 the lattice scales, $\Psi = q_P\varphi$, $t = t_p\tau$, $x =
@@ -8191,6 +8195,7 @@ enters and what role it plays.
 		$\Delta K_k$ & \ref{sec:discrete_resonance_labels} & Functional form & Shell-rounding operator $\mathrm{round}(10^k \cdot 2\pi^2)$; $K_n = 10, 207, 2181$ follow deterministically \\
 		$\gamma$ & \ref{sec:nonlinear_stability} & Functional form & Nonlinear coefficient $1/\epsilon_M$ in the $\gamma \Psi^3$ term \\
 		$n_\gamma$ & \ref{sec:n_from_energy_density} & Postulate & Null-probe refractive index $(1 - r_s/r)^{-1}$; full derivation open \\
+		$q_P$ & \ref{sec:qP_from_alpha} & Derived quantity & Planck charge $q_P = e/\sqrt{\alpha_{\rm geom}} \approx 1.8755 \times 10^{-18}$~m. Parameter-free combination of the anchor $e$ (class~I) and the geometric $\alpha_{\rm geom}$ defined in Section~\ref{sec:alpha_geometric_deficit}. Inherits the same relative deviation as $\alpha_{\rm geom}$ vs.\ $\alpha_{\rm CODATA}$ ($\sim 1$~ppm in $q_P$). Not an independent prediction; sets the amplitude scale for $r_\nu$. \\
 		\midrule
 		\multicolumn{4}{l}{\textit{V. Roundings of derived quantities (not postulates)}} \\
 		\midrule

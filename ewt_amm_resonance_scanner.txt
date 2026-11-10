@@ -1,10 +1,10 @@
 === EWT RECURSIVE HIERARCHY ANALYSIS ===
 Reference: Onion Model
 
-POINT: Km=200, Kt=2180 | Err_mu: 0.001681% | Err_tau: 0.002650% | Mean: 0.002165% | amu: 248.7958 | atau: 1177.1788
-POINT: Km=207, Kt=2180 | Err_mu: 0.091522% | Err_tau: 0.021637% | Mean: 0.056580% | amu: 248.5723 | atau: 1176.9553
-POINT: Km=200, Kt=2181 | Err_mu: 0.001681% | Err_tau: 0.012503% | Mean: 0.007092% | amu: 248.7958 | atau: 1177.0628
-POINT: Km=207, Kt=2181 | Err_mu: 0.091522% | Err_tau: 0.031491% | Mean: 0.061506% | amu: 248.5723 | atau: 1176.8393
+POINT: Km=200, Kt=2180 | Err_mu: 0.002147% | Err_tau: 0.002748% | Mean: 0.002448% | amu: 248.7947 | atau: 1177.1776
+POINT: Km=207, Kt=2180 | Err_mu: 0.091988% | Err_tau: 0.021736% | Mean: 0.056862% | amu: 248.5711 | atau: 1176.9541
+POINT: Km=200, Kt=2181 | Err_mu: 0.002147% | Err_tau: 0.012601% | Mean: 0.007374% | amu: 248.7947 | atau: 1177.0617
+POINT: Km=207, Kt=2181 | Err_mu: 0.091988% | Err_tau: 0.031589% | Mean: 0.061789% | amu: 248.5711 | atau: 1176.8381
 EXPORTED: Fig1_Muon_Profile.pdf
 EXPORTED: Fig2_Tau_Profile.pdf
 EXPORTED: Fig3_3D_Peak.pdf
