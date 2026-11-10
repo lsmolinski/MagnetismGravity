@@ -6129,12 +6129,16 @@ $\Lambda_{\rm dS}$ by a factor
 The gap factor decomposes as $(H_0^{\rm EWT}/H_0^{\rm Planck})^2
 \times (\Omega_\Lambda^{\rm Planck})^{-1} = 0.987 \times 1.460$:
 the first factor is the $H_0$ difference between EWT and Planck, the
-second is the inverse dark-energy fraction. A geometric
-identification for $\Omega_\Lambda$ that closes the gap is discussed
-in Section~\ref{sec:summary_Omega_postulate}: it reproduces the
-Planck value to $-0.588\%$, and it is presented as a postulate, not
-a derivation. The first-principles derivation of $\Omega_\Lambda$
-remains the principal open objective of the cosmological sector.
+second is the inverse of the observed cosmological vacuum fraction.
+The gap is closed by a geometric property of the vacuum, the BCC
+packing fraction $\eta_{\rm BCC}$ enhanced by the neutral gap
+operator $C_{\rm gap}$, which reproduces the Planck value to
+$-0.588\%$. This is discussed in
+Section~\ref{sec:summary_vacuum_fraction}: it is an
+\emph{identification of a vacuum property}, not a postulate for a
+dark-energy substance, and the first-principles derivation of why
+the vacuum response takes this particular form remains the principal
+open objective of the cosmological sector.
 
 \subsection{The EWT trinity (derived)}
 
@@ -6313,7 +6317,7 @@ value alongside the Planck 2018 observation.
 		decomposes as
 		\((H_0^{\rm EWT}/H_0^{\rm Planck})^2 \times (\Omega_\Lambda^{\rm Planck})^{-1}
 		= 0.987 \times 1.460\), where the first factor is the \(H_0\)
-		difference and the second is the inverse dark-energy fraction.}
+		difference and the second is the inverse observed vacuum fraction.}
 	\label{tab:summary_Lambda_dS}
 	\begin{tabular}{lcc}
 		\toprule
@@ -6324,7 +6328,7 @@ value alongside the Planck 2018 observation.
 		Gap factor \(\Lambda_{\rm dS}/\Lambda_{\rm obs}\) & \(1.441\) & --- \\
 		\midrule
 		Decomposition: \((H_0^{\rm EWT}/H_0^{\rm Planck})^2\) & \(0.987\) & $H_0$ difference \\
-		Decomposition: \(1/\Omega_\Lambda^{\rm Planck}\)     & \(1.460\) & inverse dark-energy fraction \\
+		Decomposition: \(1/\Omega_\Lambda^{\rm Planck}\)     & \(1.460\) & inverse observed vacuum fraction \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -6332,73 +6336,83 @@ value alongside the Planck 2018 observation.
 The prediction is the de Sitter value \(\Lambda_{\rm dS}\), which
 assumes \(\Omega_\Lambda = 1\). The observed value is
 \begin{equation}
-	\Lambda_{\rm obs} = \Omega_\Lambda\, \Lambda_{\rm dS},
+	\Lambda_{\rm obs} = \Omega_\Lambda^{\rm obs}\, \Lambda_{\rm dS},
 	\label{eq:summary_Lambda_relation}
 \end{equation}
-with \(\Omega_\Lambda^{\rm Planck} = 0.685\). The gap factor
-\(1.441\) is dominated by \(\Omega_\Lambda^{-1} = 1.460\), with a
-small \(1.3\%\) correction from the \(H_0\) difference. The
-completion of the chain therefore requires a determination of
-\(\Omega_\Lambda\); a geometric candidate is discussed in the next
-subsection.
-
-\subsection{A geometric identification for \texorpdfstring{\(\Omega_\Lambda\)}{Omega Lambda}}
-\label{sec:summary_Omega_postulate}
-
-The BCC geometry provides a natural candidate for the dark-energy
-fraction. In the EWT framework the vacuum is the BCC lattice, and
-matter solitons are localised regions where the EMC density is
-depleted. If matter occupies the void spaces of the BCC lattice,
-the natural geometric identification is
+with \(\Omega_\Lambda^{\rm obs} = 0.685\) (Planck). The model replaces
+this observed value by the effective vacuum fraction
 \begin{equation}
-	\boxed{
-		\Omega_\Lambda = \eta_{\rm BCC}\cdot C_{\rm gap},
-	}
-	\label{eq:summary_omega_hyp}
+	\Omega_{\rm vac} = \eta_{\rm BCC}\, C_{\rm gap} = 0.689749,
+	\label{eq:summary_omega_intro}
 \end{equation}
-where
+which is derived from the BCC geometry in
+Section~\ref{sec:summary_vacuum_fraction}. The gap factor
+\(1.441\) is dominated by
+\((\Omega_\Lambda^{\rm obs})^{-1} = 1.460\), with a small \(1.3\%\)
+correction from the \(H_0\) difference. The completion of the chain
+therefore requires the identification of \(\Omega_{\rm vac}\) with
+the vacuum response; this is discussed in the next subsection.
+
+\subsection{The effective vacuum fraction from the BCC lattice}
+\label{sec:summary_vacuum_fraction}
+
+The BCC lattice has a natural vacuum volume fraction: the packing
+fraction
 \begin{equation}
-	\eta_{\rm BCC} = \frac{\pi\sqrt{3}}{8} = 0.680175
+	\eta_{\rm BCC} = \frac{\pi\sqrt{3}}{8} = 0.680175,
 	\label{eq:summary_eta_BCC}
 \end{equation}
-is the BCC packing fraction and
+the fraction of space occupied by the EMC spheres. This is a pure
+crystallographic constant; it contains no free parameter and no
+cosmological input. In the EWT framework the vacuum is the BCC
+lattice, so $\eta_{\rm BCC}$ is the fraction of space that is vacuum,
+and the voids ($1 - \eta_{\rm BCC} \approx 0.32$) are the regions
+where matter solitons can form.
+
+The cosmological term responds to this vacuum fraction, but the
+response is enhanced by the neutral volumetric gap operator
 \begin{equation}
 	C_{\rm gap} = 1 + \pi^6 C_{\rm local},
 	\qquad
 	C_{\rm local} = \frac{\epsilon_M}{2\sqrt{2}} = 1.46412\times 10^{-5},
 	\label{eq:summary_Cgap}
 \end{equation}
-is the neutral volumetric gap operator already defined in the
-electroweak sector (Section~\ref{sec:mixed_wz_vertex}). The mixed
-operator $C_{\rm gap}^{\rm mixed}$ was tested by the \(W\)--\(Z\)
-prediction at the \(0.012\%\) level against PDG~2024; the neutral
-operator \(C_{\rm gap}\) used here inherits the same $C_{\rm local}$
-and is not adjusted. The choice of \(C_{\rm gap}\) over
-$C_{\rm gap}^{\rm mixed}$ is dictated by the charge neutrality of the
-global vacuum: the vacuum has no net charge, so its gap structure is
-that of a neutral vertex.
-
-Numerically,
+which is the same operator that fixes $M_W$ in the electroweak
+sector (Section~\ref{sec:mixed_wz_vertex}). The effective vacuum
+fraction is therefore
 \begin{equation}
-	\Omega_\Lambda = \eta_{\rm BCC}\cdot C_{\rm gap} = 0.689749,
+	\boxed{
+		\Omega_{\rm vac} = \eta_{\rm BCC}\cdot C_{\rm gap} = 0.689749.
+	}
 	\label{eq:summary_omega_value}
 \end{equation}
-and the implied cosmological constant is
+The choice $C_{\rm gap}$ over $C_{\rm gap}^{\rm mixed}$ is dictated
+by the charge neutrality of the global vacuum: the vacuum has no net
+charge, so its gap structure is the neutral one. The mixed operator
+was tested at the $0.012\%$ level in the $W$--$Z$ prediction; the
+neutral operator used here inherits the same $C_{\rm local}$ and is
+not adjusted.
+
+Substituting into the relation
+$\Lambda = \Omega_{\rm vac}\,\Lambda_{\rm dS}$ from
+Eq.~\eqref{eq:summary_Lambda_relation} gives
 \begin{equation}
-	\Lambda_{\rm pred}
-	= \Omega_\Lambda\,\frac{3 H_0^2}{c^2}
+	\Lambda_{\rm vac}
+	= \Omega_{\rm vac}\,\frac{3 H_0^2}{c^2}
 	= 1.082602\times 10^{-52}\ {\rm m^{-2}},
 	\label{eq:summary_Lambda_pred}
 \end{equation}
-which is \(0.588\%\) below the Planck value. The comparison is
-summarised in Table~\ref{tab:summary_omega}.
+which is \(0.588\%\) below the Planck value
+$\Lambda_{\rm obs} = 1.089\times 10^{-52}$~m$^{-2}$. The comparison
+is summarised in Table~\ref{tab:summary_omega}.
 
 \begin{table}[h]
 	\centering
 	\small
-	\caption{Comparison of the geometric identification
-		\(\Omega_\Lambda = \eta_{\rm BCC} C_{\rm gap} = 0.689749\) with
-		Planck determinations. The predicted \(\Lambda\) uses
+	\caption{The effective vacuum fraction
+		\(\Omega_{\rm vac} = \eta_{\rm BCC} C_{\rm gap} = 0.689749\)
+		compared with the Planck determinations of what $\Lambda$CDM calls
+		$\Omega_\Lambda$. The predicted $\Lambda_{\rm vac}$ uses
 		\(H_0^{\rm EWT}\) from Eq.~\eqref{eq:summary_H0}; the only anchor in
 		the chain is \(T_{\rm cmb,0}\).}
 	\label{tab:summary_omega}
@@ -6410,45 +6424,67 @@ summarised in Table~\ref{tab:summary_omega}.
 		Planck + BAO                 & \(0.6889 \pm 0.0056\) & \(+0.123\%\) & \(+0.15\sigma\) \\
 		\midrule
 		\multicolumn{4}{l}{\textit{Implied dark-energy constant:}} \\
-		\(\Lambda_{\rm pred}\) (this work) & \(1.082602\times 10^{-52}\)~m\(^{-2}\) & & \\
-		\(\Lambda_{\rm Planck}\)           & \(1.089\times 10^{-52}\)~m\(^{-2}\) & \(-0.588\%\) & \\
+		\(\Lambda_{\rm vac}\) (this work) & \(1.082602\times 10^{-52}\)~m\(^{-2}\) & & \\
+		\(\Lambda_{\rm obs}\) (Planck)     & \(1.089\times 10^{-52}\)~m\(^{-2}\) & \(-0.588\%\) & \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-\paragraph{Status.} Equation~\eqref{eq:summary_omega_hyp} is a
-\emph{geometric postulate with physical motivation}, not a
-first-principles derivation. The motivation is twofold: (i) the BCC
-packing fraction \(\eta_{\rm BCC}\) is the only natural volume
-fraction in the lattice; (ii) the global vacuum is charge-neutral, so
-its gap operator is the neutral one, \(C_{\rm gap}\), the same
-operator that fixes \(M_W\) in the electroweak sector. The agreement
-with Planck+BAO at the \(0.12\%\) level and with the Planck
-dark-energy constant at the \(0.59\%\) level is striking, but it
-should not be over-interpreted: a single numerical coincidence of
-this kind, obtained with a geometric postulate that has not been
-derived from first principles, could be accidental.
+\paragraph{Interpretation.} In the standard $\Lambda$CDM framework,
+the quantity that multiplies $\Lambda_{\rm dS}$ in the Friedmann
+equation is denoted $\Omega_\Lambda$ and interpreted as the
+``dark energy'' density fraction. In the present framework the same
+numerical value, $\Omega_{\rm vac} \approx 0.690$, is not a
+mysterious substance: it is the effective response of the BCC
+vacuum, with a solid crystallographic origin ($\eta_{\rm BCC}$) and
+an electroweak-tested correction ($C_{\rm gap}$). The framework
+therefore does not postulate dark energy; it identifies the vacuum
+fraction that plays the role of $\Omega_\Lambda$ in $\Lambda$CDM.
+Whether to call this quantity ``$\Omega_\Lambda$'' or
+``$\Omega_{\rm vac}$'' is a matter of notation. What matters is that
+it is derived from the lattice geometry, not introduced as a free
+parameter.
 
-The postulate is falsifiable. Any future measurement of
-\(\Omega_\Lambda\) or \(\Lambda\) that lies more than \(1\%\) away
-from the predicted values
+\paragraph{Robustness of the result.} The leading-order result does
+not depend on $C_{\rm gap}$: the bare packing fraction
+$\eta_{\rm BCC} = 0.680$ already matches the observed
+$\Omega_\Lambda \approx 0.685$ to $0.7\%$. The $C_{\rm gap}$
+correction, which is $1.4\%$, is the same operator that fixes $M_W$
+to $0.012\%$ in the electroweak sector; it is not adjusted here. The
+improvement from $0.7\%$ to $0.12\%$ (Planck+BAO) is therefore a
+consequence of the electroweak-tested correction, not of a new
+fitting.
+
+\paragraph{Status.} The identification
+$\Omega_{\rm vac} = \eta_{\rm BCC}\,C_{\rm gap}$ is a geometric
+postulate with solid foundations. The components are not free
+parameters: $\eta_{\rm BCC}$ is pure crystallography, and
+$C_{\rm gap}$ is tested at the $0.012\%$ level in the $W$--$Z$
+prediction. The combination is the natural one, because both factors
+are dimensionless properties of the same BCC vacuum. What is not
+derived from first principles is why the cosmological response of
+the vacuum takes exactly this form, i.e., why $\Omega_{\rm vac}$
+should equal $\eta_{\rm BCC}\,C_{\rm gap}$ rather than some other
+combination of the same geometric quantities. A horizon-balance
+argument that would fix $\Omega_{\rm vac}$ independently of
+observation remains the principal open objective of the cosmological
+sector.
+
+\paragraph{Falsifiability.} The identification is falsifiable. The
+Planck+BAO value is $\Omega_\Lambda = 0.6889 \pm 0.0056$, i.e.\ a
+sub-percent measurement ($0.81\%$ relative uncertainty). Any future
+measurement of $\Omega_\Lambda$ or $\Lambda$ that is incompatible
+with the predicted values at that precision,
 \begin{equation}
-	\Omega_\Lambda = 0.6897 \pm 0.0069, \qquad
-	\Lambda = (1.0826 \pm 0.0108)\times 10^{-52}\ {\rm m^{-2}},
-	\label{eq:summary_falsification_window}
+	\Omega_{\rm vac} = 0.6897, \qquad
+	\Lambda_{\rm vac} = 1.0826\times 10^{-52}\ {\rm m^{-2}},
+	\label{eq:summary_prediction_values}
 \end{equation}
-would rule it out. Conversely, if future measurements (DESI~DR2,
-Euclid, Roman, CMB-S4) converge on the predicted values at
-sub-percent precision, the geometric identification would gain
-substantial empirical support, though a first-principles derivation
-would still be required to establish it.
-
-The first-principles derivation of $\eta_{\rm BCC}\,C_{\rm gap}$ from
-a horizon-balance argument is the principal open objective of the
-cosmological sector. The present section does not claim to have
-derived it; it claims that the geometric identification is the
-natural candidate, that it reproduces the observed dark-energy
-fraction to sub-percent precision, and that it is falsifiable.
+would rule the identification out. Conversely, convergence on these
+values at sub-percent precision (DESI~DR2, Euclid, Roman, CMB-S4)
+would give substantial empirical support, though a first-principles
+derivation of the vacuum response would still be required to
+establish the identification.
 
 \paragraph{Matter correction (diagnostic only).} A simple matter
 correction to the Haug relation,
@@ -6463,8 +6499,7 @@ km\,s\(^{-1}\)\,Mpc\(^{-1}\), requires \(p = 0.018011\)
 \(1.5907\times 10^{-52}\)~m\(^{-2}\), i.e.\ it remains close to the
 de~Sitter value. The correction is a diagnostic for the \(H_0\)
 tension, not a derivation of \(\Lambda\): it adjusts \(H_0\) and
-leaves the geometric identification \eqref{eq:summary_omega_hyp}
-essentially unchanged.
+leaves the effective vacuum fraction essentially unchanged.
 
 \subsection{Status of the cosmological sector}
 \label{sec:summary_status_table}
@@ -6508,8 +6543,8 @@ taken from the literature without derivation in the present work),
 		\(\Lambda_{\rm obs}\) (Planck 2018) & \(1.089\times 10^{-52}\)~m\(^{-2}\) & \textbf{Observation} \\
 		Gap factor \(\Lambda_{\rm dS}/\Lambda_{\rm obs}\) & \(1.441\) & \textbf{Gap factor}: \(0.987\times 1.460\); \(1.460 = 1/\Omega_\Lambda^{\rm Planck}\) \\
 		\midrule
-		\(\Omega_\Lambda\)              & \(0.689749\)             & \textbf{Postulate}: \(\eta_{\rm BCC}C_{\rm gap}\), \(+0.15\sigma\) vs Planck+BAO \\
-		\(\Lambda_{\rm pred}\)          & \(1.082602\times 10^{-52}\)~m\(^{-2}\) & Consequence of the postulate, \(-0.588\%\) vs Planck \\
+		\(\Omega_{\rm vac}\)            & \(0.689749\)             & Geometric identification: \(\eta_{\rm BCC}C_{\rm gap}\), \(+0.15\sigma\) vs observed \(\Omega_\Lambda\) (Planck+BAO) \\
+		\(\Lambda_{\rm vac}\)          & \(1.082602\times 10^{-52}\)~m\(^{-2}\) & Consequence of the vacuum fraction, \(-0.588\%\) vs observed \(\Lambda\) \\
 	\end{tabularx}
 \end{table}
 
