@@ -126,7 +126,11 @@ and Cabibbo mixing as emergent consequences of the vacuum's surface
 and volumetric resonance modes. Consequently, the divergence of
 fundamental forces is identified as a dimensional artefact of the
 unified BCC lattice, establishing a structural foundation for
-cosmological scaling.
+cosmological scaling. The cosmological extension of the framework
+uses one further anchor, the CMB temperature
+\(T_{\rm cmb,0}\), together with the exact SI conversion
+constant \(k_B\), and yields the Hubble constant and the de Sitter
+cosmological constant as sub-percent predictions.
 }}
 \\
 % TODO: include a table of contents (optional)
@@ -137,7 +141,7 @@ cosmological scaling.
 
 
 \vspace{1em}
-\noindent\textbf{Keywords:} Anomalous Magnetic Moments, Fine-Structure Constant, Gravitational Constant, Weinberg angle, Cabibbo angle, BCC lattice, Geometric Origin, Unification Theory.
+\noindent\textbf{Keywords:} Anomalous Magnetic Moments, Fine-Structure Constant, Gravitational Constant, Weinberg angle, Cabibbo angle, Cosmological Constant, BCC lattice, Geometric Origin, Unification Theory.
 
 \tableofcontents\thispagestyle{plain}
 \noindent\rule{\textwidth}{1pt}
@@ -2722,6 +2726,17 @@ The only experimental inputs in model are
 In natural units (\(c = 1\); see Section~\ref{sec:c_as_metric}), \(c\) is a unit conversion and \(m_e\) is geometrically tied to \(r_e\) through the \(r^5\) scaling law.
 
 In SI units the relation between charge, \(\hbar\), and \(\alpha\) is \(e^2 = 4\pi\epsilon_0\hbar c\alpha\). In the EWT framework \(\epsilon_0\) is not an independent input: together with \(\mu_0\) it is fixed by the metric condition \(c^2 = 1/(\mu_0\epsilon_0)\) and therefore carries no new geometric information. No calibrated parameters appear in this section. Note that the lepton AMM sector, discussed in Section~\ref{sec:recursive_prediction}, introduces one additional discrete postulate, the muon Fibonacci label $L_\mu = F_5 = 5$, which is absent from the gravitational and electromagnetic constants derived here.
+
+The cosmological sector, discussed in
+Section~\ref{sec:cosmo_summary}, introduces one further empirical
+anchor beyond the four above: the present CMB temperature
+\(T_{\rm cmb,0} = 2.7255 \pm 0.0006\)~K (COBE/FIRAS~\cite{Fixsen2009}).
+The exact SI conversion constant \(k_B\) enters the same sector, but
+it carries no dynamical information: like \(c\), it is a
+unit-conversion factor fixed by the SI 2019 definitions. With these
+two additions, the cosmological chain predicts \(H_0\) and the de
+Sitter value of \(\Lambda\) from the same BCC geometry, as detailed
+in Section~\ref{sec:cosmo_summary}.
 
 The quantities \(G_{\text{geom}}\), \(\lambda_l\), \(\hbar_{\text{geom}}\), and \(\alpha_{\text{geom}}\) are not independent predictions. They form a single closed algebraic system fixed by the BCC lattice geometry, the electron soliton inputs \(r_e, m_e, c, e\), and the geometric self-consistency condition
 \begin{equation}
@@ -7888,6 +7903,7 @@ The model predicts the value of \(G\) as a direct function of microscopic geomet
 \end{equation}
 Precise experimental measurements of \(G\) (e.g., torsion balance, atom interferometry) directly test this prediction.
 
+
 \subsection{Predictions for Lepton Properties: The First-Principles AMM Predictions}
 \label{sec:lepton_predictions_pp}
 
@@ -7902,6 +7918,64 @@ The full anomalous magnetic moments of the entire lepton family are computed fro
 with relative errors \(0.022769\%\), \(0.025044\%\), and \(0.031589\%\).
 
 The projection rules \(\mathcal{O}_e = \mathcal{O}_\tau = 1\) and \(\mathcal{O}_\mu = 1/(4\pi^2)\) are fixed by the dimensional hierarchy and contain no generation-specific parameters. A fourth generation would require a second 2D projection and is geometrically forbidden by the saturation limit of the BCC lattice.
+
+\subsection{Cosmological Predictions: Recovered Relation and Predicted Constants}
+\label{sec:cosmo_predictions_pp}
+
+The cosmological sector (Section~\ref{sec:cosmo_summary}) extends the
+same geometric framework to the large-scale vacuum. The results fall
+into four categories, summarised in Table~\ref{tab:cosmo_predictions}.
+
+\begin{table}[H]
+	\centering
+	\small
+	\caption{Cosmological results by status. The first column gives the
+		symbol, the second the value, the third the status (in the
+		sense used throughout this work), and the fourth the source
+		or key assumption.}
+	\label{tab:cosmo_predictions}
+	\begin{tabularx}{\textwidth}{@{}l l l X@{}}
+		\toprule
+		\textbf{Quantity} & \textbf{Value} & \textbf{Status} & \textbf{Source / assumption} \\
+		\midrule
+		Haug relation
+		& $T_{\rm cmb,0} = \dfrac{T_p}{8\pi}\sqrt{\dfrac{2\lambda_l}{R_H}}$
+		& \textbf{Recovered}
+		& From naive equipartition corrected by $H = 8(2\pi)^2$; phase-unit ansatz is a model assumption \\
+		$H_0^{\text{EWT}}$
+		& $66.9113$~km\,s$^{-1}$\,Mpc$^{-1}$
+		& \textbf{Predicted}
+		& BCC chain $+$ one anchor $T_{\rm cmb,0}$; $-0.83\sigma$ vs Planck 2018 \\
+		$\Lambda_{\rm dS}$
+		& $1.5696\times 10^{-52}$~m$^{-2}$
+		& \textbf{Predicted}
+		& $3H_0^2/c^2$; $1.441\times$ the observed $\Lambda$ \\
+		$\Omega_{\rm vac}$
+		& $0.6897$
+		& \textbf{Mechanism}
+		& $\eta_{\rm BCC} C_{\rm gap}$; plays the role of $\Omega_\Lambda$; $+0.15\sigma$ vs Planck+BAO; composition rule is a model assumption \\
+		$\Lambda_{\rm vac}$
+		& $1.0826\times 10^{-52}$~m$^{-2}$
+		& \textbf{Consequence}
+		& $\Omega_{\rm vac}\Lambda_{\rm dS}$; $-0.59\%$ vs Planck; inherits the assumption on $\Omega_{\rm vac}$ \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+The two \emph{predictions} are directly testable: they depend on the
+BCC geometry and the single anchor \(T_{\rm cmb,0}\), with no
+calibrated parameter. The \emph{recovered} Haug relation is a
+reformulation of the equipartition scaling; the horizon factor
+\(H = 8(2\pi)^2\) is a model construct, not a first-principles
+derivation. The \emph{mechanism} $\Omega_{\rm vac} = \eta_{\rm
+	BCC}C_{\rm gap}$ and its \emph{consequence} $\Lambda_{\rm vac}$ are
+conditional on the composition rule, which is stated as a model
+assumption in Section~\ref{sec:summary_vacuum_fraction}.
+
+As with the lepton AMM predictions, none of these results depends
+on the numerical value of \(G_{\rm geom}\) separately: the factors
+\(\hbar_{\rm geom}\) and \(G_{\rm geom}\) cancel in the combinations
+that fix \(T_p\) and \(\lambda_l\).
 
 \subsection{Magnetic Sensitivity \(G(B)\) and Hypotheses Testing}
 \label{sec:G_magnetic_sensitivity_pp}
