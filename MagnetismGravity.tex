@@ -24,7 +24,7 @@
 \usepackage{hyperref}
 \usepackage{pdflscape}
 \usepackage{longtable}
-
+\usepackage{float}
 \lstset{
 	inputencoding=utf8, 
 	extendedchars=true
@@ -6719,7 +6719,7 @@ first-principles derivation of the specific composition),
 (an exact SI constant that sets the unit system), \emph{observation}
 (a measured external value), and \emph{open} (not yet available).
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\footnotesize
 	\caption{Status of the cosmological results.}
@@ -6746,7 +6746,7 @@ first-principles derivation of the specific composition),
 		\(T_p\)                          & \(1.416444\times 10^{32}\)~K & Output of the trinity \\
 		\(T_{\rm cmb,0}\)                & \(2.7255\)~K             & \textbf{Anchor} (COBE/FIRAS) \\
 		\midrule
-		Haug relation \eqref{eq:summary_Haug} & --- & \textbf{Derived} (naive equipartition + \(H\)) \\
+		Haug relation \eqref{eq:summary_Haug} & --- & \textbf{Recovered} (naive equipartition + \(H\)) \\
 		\(H_0^{\rm EWT}\)                & \(66.9113\)~km\,s\(^{-1}\)\,Mpc\(^{-1}\) & \textbf{Prediction} (BCC chain + \(T_{\rm cmb}\); \(-0.83\sigma\)) \\
 		\(\Lambda_{\rm dS}\)            & \(1.569560\times 10^{-52}\)~m\(^{-2}\) & \textbf{Prediction} (de~Sitter limit from BCC \(H_0\)) \\
 		\midrule
@@ -8444,8 +8444,17 @@ The success of the structural EWT framework renders several foundational "myster
 \begin{itemize}
 	\item \textbf{Dark Matter as a Geometric Push-Force:} Rather than invoking undiscovered WIMPs, EWT identifies galactic rotation anomalies as a consequence of the \textbf{massive EMC volume deficit}. The near-total geometric gap at the $G$-operating point creates a pervasive external pressure gradient that "pushes" matter toward regions of lower nodal density.
 	
-	\item \textbf{Dark Energy as Vacuum Static Pressure:} Accelerated expansion is reinterpreted as the \textbf{restorative elastic response} of the BCC lattice. "Dark Energy" is simply the statutory static pressure of the EMC background acting upon the structural voids created by matter solitons—the vacuum’s "desire" to return to its statutory equilibrium.
-	
+	\item \textbf{Dark Energy as Vacuum Static Pressure:} Accelerated
+	expansion is reinterpreted as the \textbf{restorative elastic
+		response} of the BCC lattice: the statutory static pressure of the
+	EMC background acting upon the structural voids created by matter
+	solitons, the vacuum's tendency to return to its statutory
+	equilibrium. The quantitative realization of this picture --- the
+	effective vacuum fraction and the corresponding cosmological
+	constant --- is given in
+	Section~\ref{sec:summary_vacuum_fraction}, where the composition
+	rule is stated explicitly as a model assumption.
+		
 	\item \textbf{Virtual Particles and Loop Complexity:} The thousands of Feynman diagrams are replaced by the \textbf{Nodal Stiffness $N$}. Vacuum fluctuations are revealed to be the deterministic, high-frequency oscillations of the lattice nodes.
 	
 	\item \textbf{The Hierarchy Problem:} The discrepancy between gravity and electromagnetism is a simple ratio: gravity is a statistical effect of \textbf{missing nodes} (EMC deficit), while electromagnetism is a dynamic effect of \textbf{node workload} (energetic load $\rho_E$).
@@ -8955,15 +8964,26 @@ enters and what role it plays.
 		\textbf{Element} & \textbf{Section} & \textbf{Status} & \textbf{Role in the model} \\
 		\midrule
 		\endhead
+		
+		\midrule
+		\multicolumn{4}{r}{\small\textit{continued on next page}} \\
+		\endfoot
+		
 		\bottomrule
 		\endlastfoot
-		
-		\multicolumn{4}{l}{\textit{I. Primary empirical anchors (dimensional conversion)}} \\
+		\multicolumn{4}{l}{\textit{I. Primary inputs and exact conversions}} \\
+		\midrule
+		\multicolumn{4}{l}{\textit{I.A Primary empirical anchors (measured, CODATA 2022 / observational)}} \\
 		\midrule
 		$r_e$ & \ref{sec:geometric_identity} & Anchor & Classical electron radius, fixes $G_{\text{Base}}$ \\
 		$m_e$ & \ref{sec:geometric_identity} & Anchor & Electron mass, fixes $G_{\text{Base}}$ and the $E \propto r^5$ scale \\
-		$c$    & \ref{sec:c_as_metric} & Anchor (metric) & Conversion between spatial and temporal lattice steps \\
 		$e$    & \ref{sec:coulomb_derived_unit} & Anchor & Elementary charge amplitude $e = 1.602176634 \times 10^{-19}$~m (SI numerical value, dimension length); fixes $q_P = e/\sqrt{\alpha_{\text{geom}}}$ and $r_\nu$. \textbf{Notation warning:} the symbol $e$ also denotes Euler's number ($e = 2.71828\ldots$) in $S_{\text{tot}} = \alpha/(8+\pi) + e + (1-g_v)(\sqrt{2}-1)$ and in $r_\nu = 2 q_P e^2/g_v$. The two uses are distinguished by context: elementary charge appears in the anchor and in $q_P$; Euler's number appears in the additive decay term of $S_{\text{tot}}$ and in the neutrino-radius prefactor. In the executable implementation the two are separate constants (\texttt{E\_CHARGE\_CODATA} vs \texttt{EULER}). \\
+		$T_{\text{cmb},0}$ & \ref{sec:cosmo_summary} & Anchor (cosmological) & Present CMB temperature $2.7255 \pm 0.0006$~K (COBE/FIRAS~\cite{Fixsen2009}); single cosmological anchor of the framework \\
+		\midrule
+		\multicolumn{4}{l}{\quad\textit{I.B Exact SI conversions (2019 revision, no uncertainty)}} \\
+		\midrule
+		$c$    & \ref{sec:c_as_metric} & Unit conversion (metric) & Exact by SI 2019 ($299\,792\,458$~m\,s$^{-1}$); conversion between spatial and temporal lattice steps; not a dynamical input \\
+		$k_B$ & \ref{sec:cosmo_summary} & Unit conversion (thermodynamic) & Exact by SI 2019 ($1.380649 \times 10^{-23}$~J\,K$^{-1}$); converts Planck energy to Planck temperature $T_p$; not a dynamical input \\
 		\midrule
 		\multicolumn{4}{l}{\textit{II. Test anchors (consistency checks, not predictions)}} \\
 		\midrule
@@ -8971,6 +8991,8 @@ enters and what role it plays.
 		$M_d$, $M_s$ & \ref{sec:dimensional_hierarchy} & Test anchor & Evaluate $\epsilon_{\text{flavor}}$; $\sin\theta_C$ tests the operator form \\
 		$a_e$, $a_\mu$ & \ref{sec:final_experimental_proof} & Test anchor & PDG/CODATA values used as external test of the AMM predictions \\
 		$a_\tau^{\text{SM}}$ & \ref{sec:final_experimental_proof} & Test anchor (SM) & Standard-Model prediction, not measurement; no direct experimental anchor available \\
+		$H_0$ (Planck/DESI/SH0ES) & \ref{sec:cosmo_summary} & Test anchor & External determinations: Planck 2018 $67.36 \pm 0.54$, DESI 2024 $68.52 \pm 0.62$, SH0ES 2022 $73.04 \pm 1.04$ in km\,s$^{-1}$\,Mpc$^{-1}$; compared with the chain prediction $H_0^{\text{EWT}}$ \\
+		$\Omega_\Lambda$, $\Lambda_{\text{obs}}$ (Planck 2018) & \ref{sec:cosmo_summary} & Test anchor & Planck determinations $\Omega_\Lambda = 0.6889 \pm 0.0056$ (TT+BAO) and $\Lambda_{\text{obs}} = 1.089 \times 10^{-52}$~m$^{-2}$; compared with $\Omega_{\text{vac}}$ and $\Lambda_{\text{vac}}$ \\
 		\midrule
 		\multicolumn{4}{l}{\textit{III. Discrete postulates and geometrically fixed integers}} \\
 		\midrule
@@ -8978,7 +9000,9 @@ enters and what role it plays.
 		$K_{WC} = 10$ & \ref{sec:nonlinear_stability} & Geometric integer & 1-3-6 tetrahedral configuration of the BCC lattice; stability proof open in M4 \\
 		$Q = 10$ & \ref{subsub:winding_number} & Topological invariant (structural assignment) & Degree of the map $n: S^2 \to S^2$, $Q = (1/4\pi)\int_{S^2} n\cdot(\partial_\theta n \times \partial_\phi n)\,d\theta\,d\phi \in \mathbb{Z}$ (Eq.~\ref{eq:winding_number}); assigned structurally to the 1-3-6 wave-centre configuration with $K_{WC} = 10$ (Eq.~\ref{eq:Q_KWC}); first-principles derivation that $Q=10$ is energetically preferred over neighbouring integers remains open (OpenWave M4) \\
 		\midrule
-		\multicolumn{4}{l}{\textit{IV. Parameter-free functional forms}} \\
+		\multicolumn{4}{l}{\textit{IV. Model functional forms and chain outputs}} \\
+		\midrule
+		\multicolumn{4}{l}{\textit{IV.A Parameter-free functional forms}} \\
 		\midrule
 		$\zeta$ & \ref{sec:alpha_geometric_deficit} & Functional form & Lattice impedance $(1-\eta)/(\eta N_{\text{ideal}})$ from BCC packing fraction \\
 		$C_{\text{unif}}$ & \ref{sec:unified_coupling} & Functional form & Unified coupling $1/K_{WC} + 1 + \alpha/(\pi L_p)$ \\
@@ -8994,6 +9018,16 @@ enters and what role it plays.
 		$\gamma$ & \ref{sec:nonlinear_stability} & Functional form & Nonlinear coefficient $1/\epsilon_M$ in the $\gamma \Psi^3$ term \\
 		$n_\gamma$ & \ref{sec:n_from_energy_density} & Postulate & Null-probe refractive index $(1 - r_s/r)^{-1}$; full derivation open \\
 		$q_P$ & \ref{sec:qP_from_alpha} & Derived quantity & Planck charge $q_P = e/\sqrt{\alpha_{\rm geom}} \approx 1.8755 \times 10^{-18}$~m. Parameter-free combination of the anchor $e$ (class~I) and the geometric $\alpha_{\rm geom}$ defined in Section~\ref{sec:alpha_geometric_deficit}. Inherits the same relative deviation as $\alpha_{\rm geom}$ vs.\ $\alpha_{\rm CODATA}$ ($\sim 1$~ppm in $q_P$). Not an independent prediction; sets the amplitude scale for $r_\nu$. \\
+		\midrule
+		\multicolumn{4}{l}{\textit{IV.B Cosmological chain}} \\
+		\midrule
+		Haug relation & \ref{sec:cosmo_H0_derivation} & Recovered & $T_{\text{cmb},0} = (T_p/8\pi)\sqrt{2\lambda_l/R_H}$; recovered from BCC horizon model (naive equipartition corrected by $H = 8(2\pi)^2$). Phase-unit ansatz is a model assumption \\
+		$T_p$ & \ref{sec:cosmo_summary} & Derived & $1.416444 \times 10^{32}$~K; output of the EWT trinity $(1/k_B)\sqrt{\hbar_{\text{geom}} c^5/G_{\text{geom}}}$ \\
+		$R_H$ & \ref{sec:cosmo_H0_derivation} & Derived & $1.382521 \times 10^{26}$~m; $\lambda_l (T_p/T_{\text{cmb},0})^2/H$; conditional on the phase-unit ansatz \\
+		$H_0^{\text{EWT}}$ & \ref{sec:cosmo_H0_derivation} & Predicted & $66.9113$~km\,s$^{-1}$\,Mpc$^{-1}$; from BCC chain $+$ one anchor $T_{\text{cmb},0}$; $-0.83\sigma$ vs Planck \\
+		$\Lambda_{\text{dS}}$ & \ref{sec:summary_Lambda} & Predicted & $1.5696 \times 10^{-52}$~m$^{-2}$; de Sitter value $3H_0^2/c^2$; $1.441\times$ Planck (structural) \\
+		$\Omega_{\text{vac}}$ & \ref{sec:summary_vacuum_fraction} & Geometric mechanism & $\eta_{\text{BCC}} C_{\text{gap}} = 0.689749$; plays the role of $\Omega_\Lambda$ in $\Lambda$CDM; $+0.15\sigma$ vs Planck+BAO. Composition rule is a model assumption; first-principles derivation open \\
+		$\Lambda_{\text{vac}}$ & \ref{sec:summary_vacuum_fraction} & Derived (consequence) & $\Omega_{\text{vac}} \Lambda_{\text{dS}} = 1.0826 \times 10^{-52}$~m$^{-2}$; $-0.588\%$ vs Planck \\
 		\midrule
 		\multicolumn{4}{l}{\textit{V. Roundings of derived quantities (not postulates)}} \\
 		\midrule
@@ -9012,7 +9046,6 @@ enters and what role it plays.
 		\bottomrule
 	\end{longtable}
 }
-
 \noindent\textbf{No continuously adjustable parameter appears in the
 	core predictive content of this table.} The model's predictive
 content is fixed once the primary anchors of class~I
