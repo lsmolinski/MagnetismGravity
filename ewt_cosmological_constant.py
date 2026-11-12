@@ -15,7 +15,8 @@ Chain (each step shown in its own Part below):
     [6]  EWT trinity         alpha, hbar, G, lambda_l
     [7]  Planck temperature  T_p    = (1/k_B)*sqrt(hbar*c^5/G)
     [8]  Horizon radius      R_H    = lambda_l*(T_p/T_cmb)^2 / H
-                             Haug relation DERIVED, not imported
+                             Haug relation RECOVERED from the BCC
+                             horizon model, not imported
     [9]  Hubble constant     H_0    = c/R_H
     [10] de Sitter Lambda    Lambda_dS = 3*H_0^2/c^2
     [11] Vacuum fraction     Omega_vac = eta_BCC * C_gap
@@ -27,14 +28,21 @@ close the Haug relation is exactly 8*(2*pi)^2 = 8 times the 2D unit,
 where 8 is BCC coordination and (2*pi)^2 is the AMM projection unit.
 
 The Haug relation T_cmb = (T_p/8pi)*sqrt(2*lambda_l/R_H) is therefore
-DERIVED, not imported. It is the combination of:
+RECOVERED from the BCC horizon model, not imported. It is the
+combination of:
     - naive equipartition: T_cmb = T_p*sqrt(lambda_l/R_H)
-    - BCC horizon factor:  H = 8*(2*pi)^2
+    - BCC horizon factor:  H = 8*(2*pi)^2  (phase-unit ansatz)
     - corrected:           T_cmb = T_p*sqrt(lambda_l/(H*R_H))
 
-Lattice discrimination: only N=8 (BCC) gives H_0 = 66.91 km/s/Mpc
-matching Planck. N=4 (tetrahedron), N=6 (SC), N=12 (FCC), and
-N=16 (hypercubic) are all excluded at many sigma.
+The horizon factor H itself is a model construct: each of the 8 BCC
+directions contributes one 2D phase unit (2*pi)^2. A first-principles
+derivation of H from the elastic properties of the lattice is open.
+
+Lattice discrimination: under the phase-unit ansatz, only N=8 (BCC)
+gives H_0 = 66.91 km/s/Mpc matching Planck. N=4 (tetrahedron),
+N=6 (SC), N=12 (FCC), and N=16 (hypercubic) are all excluded at
+many sigma. This is a conditional falsification of the ansatz, not
+an absolute derivation that other lattices are impossible.
 
 Anchors: r_e, m_e, c, e (dimensional) and T_cmb (cosmological).
 No continuously adjustable parameter appears in the chain.
@@ -129,8 +137,11 @@ def derive_vacuum_chain():
     Derive N_geom, eps_M, M_mu, and H from the BCC lattice.
 
     The chain closes exactly: H*M_mu = 8*N_geom. This identity is
-    the algebraic consequence of eps_M being the SAME vacuum
-    property in both the AMM (via O_mu) and the horizon (via H).
+    the algebraic expression of eps_M being the SAME vacuum property
+    in both the AMM (via O_mu) and the horizon (via H). The identity
+    itself is tautological by construction; the non-trivial content
+    is the shared physical origin of the (2*pi)^2 factor (2D Fourier
+    normalisation), not the algebraic identity.
     """
     bcc = derive_eps_M_from_BCC(8.0 * PI**4)
     N_geom = bcc["N_geom"]
@@ -196,6 +207,14 @@ def print_vacuum_chain(vc):
     print("  independent postulate: it follows from the ratio 8/4 = 2,")
     print("  where 8 is the BCC coordination and 4 is the coefficient")
     print("  in (2*pi)^2 = 4*pi^2.")
+    print()
+    print("  Independent confirmation from the 2D Fourier transform:")
+    print("  O_mu = 1/(2*pi)^2 is also the standard normalisation of")
+    print("  the inverse 2D Fourier transform, which contracts two")
+    print("  phase dimensions into a single scalar observable. The")
+    print("  operator is therefore doubly fixed: algebraically by the")
+    print("  AMM algorithm, and independently by the phase-space")
+    print("  normalisation of any 2D-to-1D projection.")
 
     sep("PART 4: Horizon factor H = 8*(2*pi)^2 = 32*pi^2")
     print()
@@ -207,7 +226,7 @@ def print_vacuum_chain(vc):
     print()
     print(f"  H = {vc['H']:.10f}")
     print()
-    print("  Structural consistency (the eps_M identity):")
+    print("  Structural consistency between the two sectors:")
     H_M_mu   = vc["H"] * vc["M_mu"]
     eight_N  = 8.0 * vc["N_geom"]
     print(f"      H * M_mu   = {H_M_mu:.6f}")
@@ -215,22 +234,43 @@ def print_vacuum_chain(vc):
     print(f"      ratio      = {H_M_mu/eight_N:.12f}")
     print("      (must be 1)")
     print()
-    print("  This identity is the algebraic consequence of eps_M")
-    print("  being the SAME vacuum property in both the AMM (via")
-    print("  O_mu) and the horizon (via H).")
+    print("  Note on interpretation: this identity is algebraic and")
+    print("  holds for any X in H = 8*X, M_mu = N_geom/X. It is not")
+    print("  a derivation of the (2*pi)^2 factor. What is non-trivial")
+    print("  is that (2*pi)^2 is the standard 2D phase-space unit")
+    print("  (inverse 2D Fourier normalisation), and that it appears")
+    print("  independently in both the AMM and the horizon sectors.")
+    print("  The shared origin is the 2D Fourier normalisation, not")
+    print("  the algebraic cancellation of X.")
 
 
 # ======================================================================
 # PART 5: Lattice discrimination test
 # ======================================================================
 def lattice_discrimination_test(H_BCC, H0_BCC):
-    """Show that only N=8 (BCC) is consistent with the Planck H_0."""
-    sep("PART 5: Lattice discrimination -- only N=8 (BCC) works")
+    """
+    Show that, UNDER THE PHASE-UNIT ANSATZ, only N=8 (BCC) is
+    consistent with the Planck H_0.
+
+    This test is conditional: it assumes H(N) = N*(2*pi)^2 for any
+    lattice, i.e. each coordination direction contributes one 2D
+    phase unit. A full treatment would compute the elastic tensor
+    and dispersion relations for each lattice independently; that
+    is an open objective.
+    """
+    sep("PART 5: Lattice discrimination under the phase-unit ansatz")
     print()
-    print("  For a lattice with N nearest neighbours, the horizon")
-    print("  factor generalises to H(N) = N*(2*pi)^2, so:")
+    print("  Model ansatz: each coordination direction of the vacuum")
+    print("  lattice contributes one 2D phase unit (2*pi)^2 to the")
+    print("  horizon. Under this ansatz, H(N) = N*(2*pi)^2, so:")
     print()
     print("      H_0(N) = (N/8) * H_0^BCC")
+    print()
+    print("  This is a conditional falsification: only N=8 (BCC) should")
+    print("  match Planck if the ansatz is correct. It is NOT a")
+    print("  derivation that other lattices are impossible in general,")
+    print("  because a full elastic-tensor treatment might give")
+    print("  different scalings for different lattice types.")
     print()
     print(f"  Tension against Planck ({H0_PLANCK} +/- {H0_PLANCK_SIGMA} km/s/Mpc):")
     print()
@@ -248,8 +288,11 @@ def lattice_discrimination_test(H_BCC, H0_BCC):
         results[N] = {"H_0": H_N, "tension": t}
 
     print()
-    print("  Only N=8 (BCC) is consistent with Planck. All other")
-    print("  lattice types are excluded at many sigma.")
+    print("  Under the ansatz, only N=8 (BCC) is consistent with")
+    print("  Planck. Other lattice types are excluded at many sigma.")
+    print("  The value of the test lies in the specificity of the")
+    print("  prediction, not in a claim that other lattices are")
+    print("  physically impossible.")
     return results
 
 
@@ -328,6 +371,12 @@ def print_ewt_trinity(tri):
     print("  Parts 7-8 below), the individual CODATA residuals do")
     print("  not propagate to H_0 or Lambda. The chain is a test of")
     print("  the BCC geometry at the level of the products.")
+    print()
+    print("  This is consistent with Haug's composite-constant view")
+    print("  (Haug 2020 Physics Essays, Haug 2022 Universe, Haug 2023")
+    print("  JAMP): all observable gravitational predictions depend")
+    print("  on GM, not on G and M separately. The specific form of")
+    print("  G_geom is therefore not critical for the predictions.")
 
     sep("PART 7: Planck temperature from the EWT trinity")
     print()
@@ -352,6 +401,8 @@ def horizon_radius_derived(tri, H_factor):
 
     This recovers the Haug relation exactly:
         T_cmb = (T_p / (8*pi)) * sqrt(2*lambda_l / R_H)
+    The recovery is algebraic; the horizon factor H itself is a
+    model construct (phase-unit ansatz).
     """
     R_H_naive = tri["lambda_l"] * (tri["T_p"] / T_CMB_CODATA)**2
     R_H       = R_H_naive / H_factor
@@ -379,9 +430,14 @@ def print_horizon_and_h0(tri, R_H_naive, R_H_BCC):
     print(f"  Recovered T_cmb = {T_check:.10f} K")
     print(f"  Match: {'YES' if abs(T_check - T_CMB_CODATA) < 1e-4 else 'NO'}")
     print()
-    print("  The Haug relation is now DERIVED, not imported. It is")
+    print("  The Haug relation is now RECOVERED, not imported. It is")
     print("  the combination of naive equipartition and the BCC")
-    print("  horizon factor.")
+    print("  horizon factor H = 8*(2*pi)^2. The horizon factor itself")
+    print("  is a model construct: each of the 8 BCC directions")
+    print("  contributes one 2D phase unit (2*pi)^2. A first-principles")
+    print("  derivation of H from the elastic properties of the lattice")
+    print("  is open. The recovery is therefore a consequence of the")
+    print("  BCC horizon model, not an import from external literature.")
 
     sep("PART 9: Hubble constant H_0 and tension analysis")
     H_0_BCC = h0_km_s_mpc(R_H_BCC)
@@ -402,9 +458,10 @@ def print_horizon_and_h0(tri, R_H_naive, R_H_BCC):
         print(f"  {name:<20} {H0_ref:>10.2f} {H0_sig:>8.2f} {t:>+13.2f} sigma")
     print()
     print("  H_0 = 66.91 is on the Planck side of the Hubble tension.")
-    print("  Because both the horizon relation and T_cmb are external")
-    print("  to the lattice, the 0.83-sigma agreement is a consistency")
-    print("  check of the chain, not a pure EWT prediction.")
+    print("  Because the horizon relation is recovered from the BCC")
+    print("  horizon model and T_cmb is external to the lattice, the")
+    print("  0.83-sigma agreement is a consistency check of the model")
+    print("  against observation, not an unconditional derivation.")
     return H_0_BCC
 
 
@@ -467,11 +524,11 @@ def omega_vac_mechanism(tri):
 def print_omega_vac(tri, Omega_vac):
     sep("PART 11: Vacuum fraction Omega_vac -- geometric mechanism")
     print()
-    print("  In Lambda-CDM, this quantity is called the dark-energy")
-    print("  fraction. In EWT, it is a derived geometric property of")
-    print("  the BCC vacuum, not a mysterious substance. The same")
-    print("  numerical value plays the same role, but the physical")
-    print("  interpretation is different.")
+    print("  In Lambda-CDM, the quantity that multiplies Lambda_dS in")
+    print("  the Friedmann equation is called the dark-energy fraction.")
+    print("  In EWT, it is a geometric property of the BCC vacuum, not")
+    print("  a mysterious substance. The same numerical value plays the")
+    print("  same role, but the physical interpretation is different.")
     print()
     print("  The observed cosmological fraction is identified with the")
     print("  effective vacuum fraction of the BCC lattice. This is a")
@@ -480,7 +537,9 @@ def print_omega_vac(tri, Omega_vac):
     print("      Omega_vac = eta_BCC * C_gap")
     print()
     print(f"  eta_BCC = pi*sqrt(3)/8 = {tri['eta_BCC']:.10f}")
-    print("      (BCC packing fraction: occupied sphere volume)")
+    print("      (BCC packing fraction: fraction of BCC space")
+    print("       occupied by EMC spheres; the remaining")
+    print("       1-eta_BCC = 0.32 is the void volume)")
     print(f"  C_gap   = 1 + pi^6*C_local = {tri['C_gap']:.10f}")
     print("      (neutral volumetric response of the vacuum; the")
     print("       same operator that fixes M_W to 0.012%)")
@@ -514,10 +573,11 @@ def print_omega_vac(tri, Omega_vac):
     print("      BCC lattice: (occupied fraction) x (response to voids).")
     print("    - What is not yet established: why the observable")
     print("      cosmological fraction must be exactly this product,")
-    print("      rather than another combination of eta_BCC and C_gap.")
-    print("      The specific composition is identified, not derived")
-    print("      from a horizon-balance argument. This is the")
-    print("      principal open objective of the cosmological sector.")
+    print("      rather than another combination of eta_BCC and C_gap")
+    print("      (e.g., sum, or eta_BCC alone). The specific")
+    print("      composition is identified, not derived from a")
+    print("      horizon-balance argument. This is the principal open")
+    print("      objective of the cosmological sector.")
 
 
 # ======================================================================
@@ -601,7 +661,8 @@ def print_full_chain(vc, tri, R_H_BCC, H_0_BCC, Lambda_dS, Omega_vac, Lambda_vac
     print(f"          H      = {vc['H']:.6f}")
     print(f"          Check: H*M_mu = 8*N_geom = {vc['H']*vc['M_mu']:.4e}")
     print()
-    print("  Step 5: Lattice test -> only N=8 (BCC) matches Planck")
+    print("  Step 5: Lattice test (under phase-unit ansatz)")
+    print("          -> only N=8 (BCC) matches Planck")
     print()
     print(f"  Step 6: T_p = {tri['T_p']:.6e} K")
     print()
@@ -625,14 +686,18 @@ def print_full_chain(vc, tri, R_H_BCC, H_0_BCC, Lambda_dS, Omega_vac, Lambda_vac
     print("  Anchors: r_e, m_e, c, e (dimensional), T_cmb (cosmological).")
     print("  No continuously adjustable parameter in the chain.")
     print()
-    print("  The Haug relation is DERIVED from BCC, not imported. The")
-    print("  factor 32*pi^2 = 8*(2*pi)^2 comes from 8 BCC directions,")
-    print("  each contributing the 2D unit (2*pi)^2 = 1/O_mu.")
+    print("  The Haug relation is RECOVERED from the BCC horizon model,")
+    print("  not imported. The factor 32*pi^2 = 8*(2*pi)^2 comes from 8")
+    print("  BCC directions, each contributing the 2D unit")
+    print("  (2*pi)^2 = 1/O_mu. The phase-unit ansatz itself (one")
+    print("  (2*pi)^2 per BCC direction) is a model construct; its")
+    print("  first-principles derivation is open.")
     print()
     print("  Open: the specific composition Omega_vac = eta_BCC*C_gap")
     print("  is a geometric mechanism with derived ingredients; a")
     print("  horizon-balance derivation of why this exact product is")
-    print("  required remains the principal open objective.")
+    print("  required (rather than, e.g., a sum or eta_BCC alone)")
+    print("  remains the principal open objective.")
 
 
 # ======================================================================
@@ -646,9 +711,6 @@ def main():
     # Parts 1-4: vacuum chain
     vc = derive_vacuum_chain()
     print_vacuum_chain(vc)
-
-    # Part 5: lattice discrimination (needs H_0^BCC, computed at the end)
-    # We defer Part 5 until after Part 9, where H_0^BCC is known.
 
     # Parts 6-7: EWT trinity and T_p
     tri = derive_ewt_trinity()
