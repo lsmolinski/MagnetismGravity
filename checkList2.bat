@@ -1,2 +1,0 @@
-powershell -Command "Get-Content MagnetismGravity.tex | Select-Object -Skip 6477 -First 8"
-powershell -Command "Select-String -Path MagnetismGravity.tex -Pattern '[^\x00-\x7F]' | Select-Object -First 20"
