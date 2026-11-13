@@ -6156,6 +6156,12 @@ dark-energy substance, and the first-principles derivation of why
 the vacuum response takes this particular form remains the principal
 open objective of the cosmological sector.
 
+All numerical results of this section, together with their
+derivation steps and console output, are computed by
+\texttt{ewt\_cosmological\_constant.py}; the script and its output
+are reproduced in Appendix~\ref{app:ewt_cosmological_constant} and
+Appendix~\ref{app:ewt_cosmological_constant_output}.
+
 \subsection{The EWT trinity (derived)}
 
 The three fundamental constants that enter the cosmological sector are
@@ -9501,6 +9507,46 @@ caption={Console output from \texttt{ewt\_robustness\_plots.py}.},
 label={lst:ewt_robustness_plots_output}
 ]{ewt_robustness_plots.txt}
 
+\subsubsection{Cosmological Constant Module}
+\label{app:ewt_cosmological_constant}
+
+\texttt{ewt\_cosmological\_constant.py} implements the cosmological
+sector described in Section~\ref{sec:cosmo_summary}. It imports the
+EWT trinity from the emergence engine and adds the BCC horizon factor
+$H = 8(2\pi)^2$, the Haug horizon relation (recovered from naive
+equipartition), and the effective vacuum fraction
+$\Omega_{\rm vac} = \eta_{\rm BCC} C_{\rm gap}$. The script computes
+$T_p$, $R_H$, $H_0$, $\Lambda_{\rm dS}$, $\Omega_{\rm vac}$, and
+$\Lambda_{\rm vac}$, performs the lattice discrimination test
+($N = 4, 6, 8, 12, 16$; only BCC is compatible with the Planck
+$H_0$), and reports the tension analysis against Planck 2018,
+DESI 2024, and SH0ES 2022. The Haug relation is obtained as a
+\emph{recovered} result (Section~\ref{sec:cosmo_H0_derivation}),
+conditional on the phase-unit ansatz for the horizon factor; the
+$\Omega_{\rm vac}$ composition rule is stated explicitly as a model
+assumption (Section~\ref{sec:summary_vacuum_fraction}).
+
+\lstinputlisting[
+language=Python,
+caption={Cosmological constant module.},
+label={lst:ewt_cosmological_constant}
+]{ewt_cosmological_constant.py}
+
+\subsubsection{Cosmological Constant Output}
+\label{app:ewt_cosmological_constant_output}
+
+The console output of \texttt{ewt\_cosmological\_constant.py} is
+reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_cosmological\_constant.py}.},
+label={lst:ewt_cosmological_constant_output}
+]{ewt_cosmological_constant.txt}
 
 \section*{Statements and Declarations}
 
@@ -9510,12 +9556,12 @@ label={lst:ewt_robustness_plots_output}
 
 \textbf{Author Contributions:} Ł. Smoliński is the sole author of this manuscript, responsible for the conceptualization, methodology, formal analysis, and writing.
 
-\textbf{Data and Code Availability:} The complete repository for Project MagnetismGravity is openly accessible to support scientific reproducibility:
-\begin{itemize}
-	\item \textbf{Datasets:} The EWT core dataset is available on Hugging Face: \url{https://huggingface.co/datasets/luksmol/EWT-Vacuum-Lattice-Unified-Physics/tree/main}.
-	\item \textbf{Interactive Auditor:} The web-based EWT Auditor application is deployed at: \url{https://huggingface.co/spaces/luksmol/EWTAuditor}.
-	\item \textbf{Version Control:} The active development source code is maintained on GitHub: \url{https://github.com/lsmolinski/MagnetismGravity}.
-\end{itemize}
+%\textbf{Data and Code Availability:} The complete repository for Project MagnetismGravity is openly accessible to support scientific reproducibility:
+%\begin{itemize}
+%	\item \textbf{Datasets:} The EWT core dataset is available on Hugging Face: \url{https://huggingface.co/datasets/luksmol/EWT-Vacuum-Lattice-Unified-Physics/tree/main}.
+%	\item \textbf{Interactive Auditor:} The web-based EWT Auditor application is deployed at: \url{https://huggingface.co/spaces/luksmol/EWTAuditor}.
+%	\item \textbf{Version Control:} The active development source code is maintained on GitHub: \url{https://github.com/lsmolinski/MagnetismGravity}.
+/%\end{itemize}
 \clearpage
 
 \begin{thebibliography}{99}
