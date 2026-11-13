@@ -730,7 +730,7 @@ def print_full_chain(vc, tri, R_H_BCC, H_0_BCC, Lambda_dS, Omega_vac, Lambda_vac
 # ======================================================================
 def main():
     print("=" * 78)
-    print("M4.14 -- Cosmological constant from the BCC lattice")
+    print("Cosmological constant from the BCC lattice")
     print("=" * 78)
 
     # Parts 1-4: vacuum chain
