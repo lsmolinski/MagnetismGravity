@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-M4.14 -- Cosmological constant from the BCC lattice.
+From manuscript version: 5.3.0 or leter
+Cosmological constant from the BCC lattice.
 
 Chain (each step shown in its own Part below):
 
@@ -545,7 +546,31 @@ def print_omega_vac(tri, Omega_vac):
     print("       same operator that fixes M_W to 0.012%)")
     print(f"  Omega_vac = {Omega_vac:.10f}")
     print()
+    print()
+    print("  Algebraic decomposition of the product:")
+    eta = tri['eta_BCC']
+    C_gap = tri['C_gap']
+    delta_C = C_gap - 1.0  # = pi^6 * C_local
+    # Sum: eta + eta*delta_C
+    sum_form = eta + eta * delta_C
+    print(f"      eta_BCC                       = {eta:.10f}")
+    print(f"      eta_BCC * (C_gap - 1)         = {eta * delta_C:.10f}")
+    print(f"      Sum                           = {sum_form:.10f}")
+    print(f"      Product (cross-check)         = {Omega_vac:.10f}")
+    print(f"      Difference                    = {abs(sum_form - Omega_vac):.3e}")
+    print()
+    print("  The sum is an algebraic decomposition of the product, not a")
+    print("  replacement of the composition rule. In the expanded form:")
+    print("      Omega_vac = pi*sqrt(3)/8 + sqrt(3/2)/(2^7*(1-zeta))")
+    print("  , the transcendental factor pi cancels in the correction")
+    print("  leaving a correction that depends only on")
+    print("  algebraic factors: sqrt(3/2) and 128 = 2^7. The exponent 7")
+    print("  is the same as in the magnetic deficit eps_M = 1/(8*pi^7(1-zeta)):")
+    print("  it is the dimensionality of the charged weak rung. The same")
+    print("  7-dimensional phase space that fixes the charged weak response")
+    print("  also fixes the vacuum response to depletion.")        
     print("  Interpretation:")
+    print()
     print("    eta_BCC is the fraction of BCC space occupied by EMC")
     print("    spheres. The remaining 1-eta_BCC = 0.32 is the void")
     print("    fraction where matter solitons reside. C_gap is the")

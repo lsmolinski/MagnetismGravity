@@ -48,6 +48,14 @@ PART 3: AMM projection -> M_mu is forced
   where 8 is the BCC coordination and 4 is the coefficient
   in (2*pi)^2 = 4*pi^2.
 
+  Independent confirmation from the 2D Fourier transform:
+  O_mu = 1/(2*pi)^2 is also the standard normalisation of
+  the inverse 2D Fourier transform, which contracts two
+  phase dimensions into a single scalar observable. The
+  operator is therefore doubly fixed: algebraically by the
+  AMM algorithm, and independently by the phase-space
+  normalisation of any 2D-to-1D projection.
+
 ==============================================================================
 PART 4: Horizon factor H = 8*(2*pi)^2 = 32*pi^2
 ==============================================================================
@@ -60,15 +68,20 @@ PART 4: Horizon factor H = 8*(2*pi)^2 = 32*pi^2
 
   H = 315.8273408349
 
-  Structural consistency (the eps_M identity):
+  Structural consistency between the two sectors:
       H * M_mu   = 6230.420143
       8 * N_geom = 6230.420143
       ratio      = 1.000000000000
       (must be 1)
 
-  This identity is the algebraic consequence of eps_M
-  being the SAME vacuum property in both the AMM (via
-  O_mu) and the horizon (via H).
+  Note on interpretation: this identity is algebraic and
+  holds for any X in H = 8*X, M_mu = N_geom/X. It is not
+  a derivation of the (2*pi)^2 factor. What is non-trivial
+  is that (2*pi)^2 is the standard 2D phase-space unit
+  (inverse 2D Fourier normalisation), and that it appears
+  independently in both the AMM and the horizon sectors.
+  The shared origin is the 2D Fourier normalisation, not
+  the algebraic cancellation of X.
 
 ==============================================================================
 PART 6: EWT trinity -- alpha, hbar, G, lambda_l
@@ -90,6 +103,12 @@ PART 6: EWT trinity -- alpha, hbar, G, lambda_l
   Parts 7-8 below), the individual CODATA residuals do
   not propagate to H_0 or Lambda. The chain is a test of
   the BCC geometry at the level of the products.
+
+  This is consistent with Haug's composite-constant view
+  (Haug 2020 Physics Essays, Haug 2022 Universe, Haug 2023
+  JAMP): all observable gravitational predictions depend
+  on GM, not on G and M separately. The specific form of
+  G_geom is therefore not critical for the predictions.
 
 ==============================================================================
 PART 7: Planck temperature from the EWT trinity
@@ -123,9 +142,14 @@ PART 8: Horizon radius from T_cmb and the horizon factor
   Recovered T_cmb = 2.7255000000 K
   Match: YES
 
-  The Haug relation is now DERIVED, not imported. It is
+  The Haug relation is now RECOVERED, not imported. It is
   the combination of naive equipartition and the BCC
-  horizon factor.
+  horizon factor H = 8*(2*pi)^2. The horizon factor itself
+  is a model construct: each of the 8 BCC directions
+  contributes one 2D phase unit (2*pi)^2. A first-principles
+  derivation of H from the elastic properties of the lattice
+  is open. The recovery is therefore a consequence of the
+  BCC horizon model, not an import from external literature.
 
 ==============================================================================
 PART 9: Hubble constant H_0 and tension analysis
@@ -143,18 +167,26 @@ PART 9: Hubble constant H_0 and tension analysis
   SH0ES 2022                73.04     1.04         -5.89 sigma
 
   H_0 = 66.91 is on the Planck side of the Hubble tension.
-  Because both the horizon relation and T_cmb are external
-  to the lattice, the 0.83-sigma agreement is a consistency
-  check of the chain, not a pure EWT prediction.
+  Because the horizon relation is recovered from the BCC
+  horizon model and T_cmb is external to the lattice, the
+  0.83-sigma agreement is a consistency check of the model
+  against observation, not an unconditional derivation.
 
 ==============================================================================
-PART 5: Lattice discrimination -- only N=8 (BCC) works
+PART 5: Lattice discrimination under the phase-unit ansatz
 ==============================================================================
 
-  For a lattice with N nearest neighbours, the horizon
-  factor generalises to H(N) = N*(2*pi)^2, so:
+  Model ansatz: each coordination direction of the vacuum
+  lattice contributes one 2D phase unit (2*pi)^2 to the
+  horizon. Under this ansatz, H(N) = N*(2*pi)^2, so:
 
       H_0(N) = (N/8) * H_0^BCC
+
+  This is a conditional falsification: only N=8 (BCC) should
+  match Planck if the ansatz is correct. It is NOT a
+  derivation that other lattices are impossible in general,
+  because a full elastic-tensor treatment might give
+  different scalings for different lattice types.
 
   Tension against Planck (67.36 +/- 0.54 km/s/Mpc):
 
@@ -166,8 +198,11 @@ PART 5: Lattice discrimination -- only N=8 (BCC) works
    12 FCC                    100.3670        +61.12 sigma
    16 hypercubic             133.8226       +123.08 sigma
 
-  Only N=8 (BCC) is consistent with Planck. All other
-  lattice types are excluded at many sigma.
+  Under the ansatz, only N=8 (BCC) is consistent with
+  Planck. Other lattice types are excluded at many sigma.
+  The value of the test lies in the specificity of the
+  prediction, not in a claim that other lattices are
+  physically impossible.
 
 ==============================================================================
 PART 10: De Sitter cosmological constant
@@ -188,11 +223,11 @@ PART 10: De Sitter cosmological constant
 PART 11: Vacuum fraction Omega_vac -- geometric mechanism
 ==============================================================================
 
-  In Lambda-CDM, this quantity is called the dark-energy
-  fraction. In EWT, it is a derived geometric property of
-  the BCC vacuum, not a mysterious substance. The same
-  numerical value plays the same role, but the physical
-  interpretation is different.
+  In Lambda-CDM, the quantity that multiplies Lambda_dS in
+  the Friedmann equation is called the dark-energy fraction.
+  In EWT, it is a geometric property of the BCC vacuum, not
+  a mysterious substance. The same numerical value plays the
+  same role, but the physical interpretation is different.
 
   The observed cosmological fraction is identified with the
   effective vacuum fraction of the BCC lattice. This is a
@@ -201,13 +236,34 @@ PART 11: Vacuum fraction Omega_vac -- geometric mechanism
       Omega_vac = eta_BCC * C_gap
 
   eta_BCC = pi*sqrt(3)/8 = 0.6801747616
-      (BCC packing fraction: occupied sphere volume)
+      (BCC packing fraction: fraction of BCC space
+       occupied by EMC spheres; the remaining
+       1-eta_BCC = 0.32 is the void volume)
   C_gap   = 1 + pi^6*C_local = 1.0140759358
       (neutral volumetric response of the vacuum; the
        same operator that fixes M_W to 0.012%)
   Omega_vac = 0.6897488579
 
+
+  Algebraic decomposition of the product:
+      eta_BCC                       = 0.6801747616
+      eta_BCC * (C_gap - 1)         = 0.0095740963
+      Sum                           = 0.6897488579
+      Product (cross-check)         = 0.6897488579
+      Difference                    = 0.000e+00
+
+  The sum is an algebraic decomposition of the product, not a
+  replacement of the composition rule. In the expanded form:
+      Omega_vac = pi*sqrt(3)/8 + sqrt(3/2)/(2^7*(1-zeta))
+  , the transcendental factor pi cancels in the correction
+  leaving a correction that depends only on
+  algebraic factors: sqrt(3/2) and 128 = 2^7. The exponent 7
+  is the same as in the magnetic deficit eps_M = 1/(8*pi^7(1-zeta)):
+  it is the dimensionality of the charged weak rung. The same
+  7-dimensional phase space that fixes the charged weak response
+  also fixes the vacuum response to depletion.
   Interpretation:
+
     eta_BCC is the fraction of BCC space occupied by EMC
     spheres. The remaining 1-eta_BCC = 0.32 is the void
     fraction where matter solitons reside. C_gap is the
@@ -231,10 +287,11 @@ PART 11: Vacuum fraction Omega_vac -- geometric mechanism
       BCC lattice: (occupied fraction) x (response to voids).
     - What is not yet established: why the observable
       cosmological fraction must be exactly this product,
-      rather than another combination of eta_BCC and C_gap.
-      The specific composition is identified, not derived
-      from a horizon-balance argument. This is the
-      principal open objective of the cosmological sector.
+      rather than another combination of eta_BCC and C_gap
+      (e.g., sum, or eta_BCC alone). The specific
+      composition is identified, not derived from a
+      horizon-balance argument. This is the principal open
+      objective of the cosmological sector.
 
 ==============================================================================
 PART 12: Observed cosmological constant Lambda_vac
@@ -287,7 +344,8 @@ PART 14: FULL CHAIN -- from eps_M to Lambda_vac
           H      = 315.827341
           Check: H*M_mu = 8*N_geom = 6.2304e+03
 
-  Step 5: Lattice test -> only N=8 (BCC) matches Planck
+  Step 5: Lattice test (under phase-unit ansatz)
+          -> only N=8 (BCC) matches Planck
 
   Step 6: T_p = 1.416444e+32 K
 
@@ -311,11 +369,15 @@ PART 14: FULL CHAIN -- from eps_M to Lambda_vac
   Anchors: r_e, m_e, c, e (dimensional), T_cmb (cosmological).
   No continuously adjustable parameter in the chain.
 
-  The Haug relation is DERIVED from BCC, not imported. The
-  factor 32*pi^2 = 8*(2*pi)^2 comes from 8 BCC directions,
-  each contributing the 2D unit (2*pi)^2 = 1/O_mu.
+  The Haug relation is RECOVERED from the BCC horizon model,
+  not imported. The factor 32*pi^2 = 8*(2*pi)^2 comes from 8
+  BCC directions, each contributing the 2D unit
+  (2*pi)^2 = 1/O_mu. The phase-unit ansatz itself (one
+  (2*pi)^2 per BCC direction) is a model construct; its
+  first-principles derivation is open.
 
   Open: the specific composition Omega_vac = eta_BCC*C_gap
   is a geometric mechanism with derived ingredients; a
   horizon-balance derivation of why this exact product is
-  required remains the principal open objective.
+  required (rather than, e.g., a sum or eta_BCC alone)
+  remains the principal open objective.
