@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-From manuscript version: 5.2.4 or leter
+From manuscript version: 5.3.2 or leter
 
 Enhanced EWT -- Electroweak and Heavy Boson Module
 ====================================================
@@ -32,8 +32,12 @@ try:
         PI, SQRT2, SQRT3, EULER,
         M_Z_CODATA, M_H_CODATA,
         BCC_PACKING_FRACTION,
+        E_CHARGE_CODATA,
         compute_alpha_core,
+        compute_alpha_geometric,
         derive_eps_M_from_BCC,
+        derive_planck_charge_from_e,
+        derive_neutrino_radius,
         build_geometric_ladder,
         lattice_impedance,
     )
@@ -566,7 +570,11 @@ def main():
     run_weinberg_tests(geom, mixed_result["M_W_pred"], higgs["M_Z_EWT"])
 
     # --- Heavy boson radii ---
-    r_e_geom = 100.0 * 2.817935436016830e-17
+    alpha_inv = compute_alpha_geometric(eps_M)
+    alpha_geom = 1.0 / alpha_inv
+    q_P = derive_planck_charge_from_e(alpha_geom, E_CHARGE_CODATA)
+    r_nu = derive_neutrino_radius(alpha_geom, q_P)["r_nu"]
+    r_e_geom = 100.0 * r_nu
     run_radii_sector(r_e_geom)
 
     # --- Cabibbo sector ---
