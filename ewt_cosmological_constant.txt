@@ -26,9 +26,10 @@ PART 2: Vacuum deficit eps_M
 
   eps_M = 4.141169769303932e-05
 
-  This is the SAME eps_M that appears in the AMM, in alpha,
-  and in the cosmological horizon. It is the universal
-  vacuum property of the BCC lattice.
+  This is the same eps_M that appears in the AMM and in alpha.
+  It reaches H_0 only through the trinity of Part 6: the
+  horizon factor H of Part 4 is a fixed number, so Parts 1-4
+  do not enter H_0 directly.
 
 ==============================================================================
 PART 3: AMM projection -> M_mu is forced
@@ -68,7 +69,7 @@ PART 4: Horizon factor H = 8*(2*pi)^2 = 32*pi^2
 
   H = 315.8273408349
 
-  Structural consistency between the two sectors:
+  Algebraic identity (tautological by construction):
       H * M_mu   = 6230.420143
       8 * N_geom = 6230.420143
       ratio      = 1.000000000000
@@ -98,17 +99,11 @@ PART 6: EWT trinity -- alpha, hbar, G, lambda_l
   The residual against CODATA is 0.048% for G and 0.028%
   for lambda_l, attributed to the lattice impedance zeta.
 
-  Note: because hbar and G enter the cosmological chain
-  only through the combinations hbar/G and hbar*G (see
-  Parts 7-8 below), the individual CODATA residuals do
-  not propagate to H_0 or Lambda. The chain is a test of
-  the BCC geometry at the level of the products.
-
-  This is consistent with Haug's composite-constant view
-  (Haug 2020 Physics Essays, Haug 2022 Universe, Haug 2023
-  JAMP): all observable gravitational predictions depend
-  on GM, not on G and M separately. The specific form of
-  G_geom is therefore not critical for the predictions.
+  Note: G_geom is itself an expression in the anchors and
+  alpha_geom. lambda_l is the Planck length of hbar_geom and
+  G_geom, so H_0 is proportional to G_geom^(1/2): the 0.048%
+  residual on G enters H_0 at 0.024% and Lambda at 0.048%
+  (Part 9 gives the H_0 figure for CODATA hbar and G).
 
 ==============================================================================
 PART 7: Planck temperature from the EWT trinity
@@ -137,19 +132,20 @@ PART 8: Horizon radius from T_cmb and the horizon factor
   R_H_naive = 4.366379e+28 m
   R_H       = 1.382521e+26 m
 
-  The Haug relation is recovered exactly:
+  This is the Haug and Tatum relation, with its factor
+  32*pi^2 read as 8*(2*pi)^2:
       T_cmb = (T_p / (8*pi)) * sqrt(2*lambda_l/R_H)
-  Recovered T_cmb = 2.7255000000 K
-  Match: YES
+  T_cmb from the inverse relation = 2.7255000000 K
+  Identity: YES
+  (an identity, not a test: it inverts the relation R_H was
+   computed from and returns the input T_cmb for any input)
 
-  The Haug relation is now RECOVERED, not imported. It is
-  the combination of naive equipartition and the BCC
-  horizon factor H = 8*(2*pi)^2. The horizon factor itself
-  is a model construct: each of the 8 BCC directions
-  contributes one 2D phase unit (2*pi)^2. A first-principles
-  derivation of H from the elastic properties of the lattice
-  is open. The recovery is therefore a consequence of the
-  BCC horizon model, not an import from external literature.
+  In this reading the relation is the combination of naive
+  equipartition and the BCC horizon factor H = 8*(2*pi)^2.
+  The horizon factor itself is a model construct: each of
+  the 8 BCC directions contributes one 2D phase unit
+  (2*pi)^2. A first-principles derivation of H from the
+  elastic properties of the lattice is open.
 
 ==============================================================================
 PART 9: Hubble constant H_0 and tension analysis
@@ -162,15 +158,18 @@ PART 9: Hubble constant H_0 and tension analysis
   Tension analysis:
   Reference                   H_0    sigma        tension
   ----------------------------------------------------------
-  Planck 2018               67.36     0.54         -0.83 sigma
+  Planck 2018 base          67.36     0.54         -0.83 sigma
+  Planck 2018 +BAO          67.66     0.42         -1.78 sigma
   DESI 2024                 68.52     0.62         -2.59 sigma
   SH0ES 2022                73.04     1.04         -5.89 sigma
 
   H_0 = 66.91 is on the Planck side of the Hubble tension.
-  Because the horizon relation is recovered from the BCC
-  horizon model and T_cmb is external to the lattice, the
-  0.83-sigma agreement is a consistency check of the model
-  against observation, not an unconditional derivation.
+  The same relation with CODATA hbar and G, and no lattice
+  quantity, gives H_0 = 66.8954 km/s/Mpc, so the
+  0.83-sigma agreement is that of the Haug and Tatum
+  relation. The lattice adds the reading of 32*pi^2 as
+  8*(2*pi)^2 and the +0.0238% carried by the
+  trinity. T_cmb is external to the lattice.
 
 ==============================================================================
 PART 5: Lattice discrimination under the phase-unit ansatz
@@ -204,6 +203,11 @@ PART 5: Lattice discrimination under the phase-unit ansatz
   prediction, not in a claim that other lattices are
   physically impossible.
 
+  The unit X = (2*pi)^2 is part of the phase-unit ansatz; the
+  test is conditional on it. It discriminates the product
+  N*X = 32*pi^2, not N alone: N = 16 with unit 2*pi^2 gives
+  the same H_0 = 66.9113.
+
 ==============================================================================
 PART 10: De Sitter cosmological constant
 ==============================================================================
@@ -211,8 +215,10 @@ PART 10: De Sitter cosmological constant
   Lambda_dS = 3*H_0^2 / c^2
 
   Lambda_dS     = 1.569560e-52 m^-2
-  Lambda_Planck = 1.089000e-52 m^-2
-  Ratio         = 1.441285
+  Lambda_Planck = 1.089139e-52 m^-2
+  Ratio         = 1.441102
+  (Lambda_Planck = 3*Omega_Lambda*H_0^2/c^2 on the Planck
+   2018 base set; Planck does not publish it separately)
 
   The 1.44x ratio is structural: it decomposes as
   (H_0^EWT/H_0^Planck)^2 * (Omega_Lambda^Planck)^-1
@@ -240,8 +246,9 @@ PART 11: Vacuum fraction Omega_vac -- geometric mechanism
        occupied by EMC spheres; the remaining
        1-eta_BCC = 0.32 is the void volume)
   C_gap   = 1 + pi^6*C_local = 1.0140759358
-      (neutral volumetric response of the vacuum; the
-       same operator that fixes M_W to 0.012%)
+      (neutral volumetric response of the vacuum: the
+       pure pi^6 operator the engine assigns to neutral
+       vertices; using it here is part of the identification)
   Omega_vac = 0.6897488579
 
 
@@ -271,15 +278,27 @@ PART 11: Vacuum fraction Omega_vac -- geometric mechanism
     depletion. The product is the natural composition:
     (occupied fraction) times (response to voids).
 
-  Comparison with Planck:
-  Omega_L^Planck (TT)     = 0.6847 +/- 0.0073
+  Comparison with Planck 2018 (base = TT,TE,EE+lowE+lensing):
+  Omega_L^Planck (base)   = 0.6847 +/- 0.0073
   Omega_L^Planck (+BAO)   = 0.6889 +/- 0.0056
-  Rel diff (TT):   +0.737%  (+0.69 sigma)
+  Rel diff (base): +0.737%  (+0.69 sigma)
   Rel diff (+BAO): +0.123%  (+0.15 sigma)
 
+  The data do not choose between the candidates:
+  candidate                   Omega          base          +BAO
+  -------------------------------------------------------------
+  eta_BCC alone              0.6802   -0.62 sigma   -1.56 sigma
+  eta_BCC * C_gap            0.6897   +0.69 sigma   +0.15 sigma
+  eta_BCC * C_gap_mixed      0.6874   +0.37 sigma   -0.26 sigma
+  C_gap - 1 = 1.41%; the Planck 1-sigma on Omega_Lambda is
+  1.07% (base) and 0.81% (+BAO).
+
   Status:
-    - The ingredients eta_BCC and C_gap are derived or
-      independently tested (M_W), not free parameters.
+    - The ingredients eta_BCC and C_gap are fixed by the
+      lattice quantities, not free parameters. C_gap is the
+      pure pi^6 operator; the engine's M_W prediction uses
+      the mixed operator C_gap_mixed, so M_W does not test
+      this ingredient.
     - The product is the natural geometric composition.
     - The quantity plays the role that Lambda-CDM calls the
       dark-energy fraction. In EWT it is not a mysterious
@@ -300,35 +319,26 @@ PART 12: Observed cosmological constant Lambda_vac
   Lambda_vac = Omega_vac * Lambda_dS
 
   Lambda_vac    = 1.082602e-52 m^-2
-  Lambda_Planck = 1.089000e-52 m^-2
-  Ratio         = 0.994125
-  Rel diff      = -0.588%
+  Lambda_Planck = 1.089139e-52 m^-2
+  Ratio         = 0.993998
+  Rel diff      = -0.600%
 
-  The chain closes: Lambda is predicted to 0.59% accuracy
-  from the BCC lattice with one cosmological anchor (T_cmb).
+  One Planck 2018 set at a time:
+  set              H_0     Omega_vac  Lambda_vac
+  ----------------------------------------------
+  base     -0.83 sigma   +0.69 sigma      -0.60%
+  +BAO     -1.78 sigma   +0.15 sigma      -2.08%
 
-==============================================================================
-PART 13: Matter correction -- diagnostic only, not derivation
-==============================================================================
-
-  Tests: R_H(Omega_m) = R_H(0) * (1 - Omega_m)^p
-  Find p such that H_0(Omega_m=0.31) = Planck H_0.
-
-  H_0(Omega_m=0)    = 66.911313 km/s/Mpc
-  target H_0        = 67.3600 km/s/Mpc
-  required ratio    = 0.993339
-  best-fit p        = 0.018011
-  f(0.31)           = 0.993339
-
-  H_0(corrected)    = 67.360000 km/s/Mpc
-  Lambda(corrected) = 1.590680e-52 m^-2
-
-  The smallness of p (0.018) confirms that de Sitter
-  already dominates and matter is a ~0.6% perturbation.
-  This is a diagnostic, not a derivation of Lambda.
+  The chain reproduces Lambda to 0.60% on the base set under
+  the two stated identifications (the horizon factor and the
+  Omega_vac product), with one cosmological anchor (T_cmb).
+  On the set with BAO it is -2.08%: a tension, not a victory.
+  Lambda_vac is built from Omega_vac and H_0 by the relation
+  that defines the reference, so this figure combines those
+  two comparisons and is not a third test.
 
 ==============================================================================
-PART 14: FULL CHAIN -- from eps_M to Lambda_vac
+PART 13: FULL CHAIN -- from eps_M to Lambda_vac
 ==============================================================================
 
   Step 1: N_geom = 8*pi^4*(1-zeta)
@@ -361,23 +371,23 @@ PART 14: FULL CHAIN -- from eps_M to Lambda_vac
   Step 11: Lambda_vac = 1.0826e-52 m^-2
 
   Summary:
-    H_0^EWT    = 66.91 km/s/Mpc   (Planck: 67.36)
+    H_0^EWT    = 66.91 km/s/Mpc   (Planck base: 67.36)
     Lambda_dS  = 1.57e-52 m^-2  (1.441 x Planck)
-    Omega_vac  = 0.6897          (Planck+BAO: 0.6889)
+    Omega_vac  = 0.6897          (Planck base: 0.6847; +BAO: 0.6889)
     Lambda_vac = 1.08e-52 m^-2  (0.994 x Planck)
 
   Anchors: r_e, m_e, c, e (dimensional), T_cmb (cosmological).
   No continuously adjustable parameter in the chain.
 
-  The Haug relation is RECOVERED from the BCC horizon model,
-  not imported. The factor 32*pi^2 = 8*(2*pi)^2 comes from 8
-  BCC directions, each contributing the 2D unit
-  (2*pi)^2 = 1/O_mu. The phase-unit ansatz itself (one
-  (2*pi)^2 per BCC direction) is a model construct; its
-  first-principles derivation is open.
+  The horizon relation is the Haug and Tatum relation, with
+  its factor 32*pi^2 read as 8*(2*pi)^2: 8 BCC directions,
+  each contributing the 2D unit (2*pi)^2 = 1/O_mu. The
+  phase-unit ansatz itself (one (2*pi)^2 per BCC direction)
+  is a model construct; its first-principles derivation is
+  open.
 
   Open: the specific composition Omega_vac = eta_BCC*C_gap
-  is a geometric mechanism with derived ingredients; a
+  is a geometric mechanism with lattice-fixed ingredients; a
   horizon-balance derivation of why this exact product is
   required (rather than, e.g., a sum or eta_BCC alone)
   remains the principal open objective.

@@ -6165,12 +6165,14 @@ The gap factor decomposes as $(H_0^{\rm EWT}/H_0^{\rm Planck})^2
 \times (\Omega_\Lambda^{\rm Planck})^{-1} = 0.987 \times 1.460$:
 the first factor is the $H_0$ difference between EWT and Planck, the
 second is the inverse of the observed cosmological vacuum fraction.
-The horizon relation of Haug is derived from the BCC lattice: naive
-equipartition $T_{\rm cmb} \propto \sqrt{\lambda_l/R_H}$ corrected
+The horizon relation is the Haug and Tatum relation, with its factor
+$32\pi^2$ read as $8(2\pi)^2$: naive equipartition
+$T_{\rm cmb} \propto \sqrt{\lambda_l/R_H}$ corrected
 by the horizon factor $H = 8(2\pi)^2$. The remaining gap is closed by
 a geometric property of the vacuum, the BCC packing fraction
 $\eta_{\rm BCC}$ enhanced by the neutral gap operator $C_{\rm gap}$,
-which reproduces the Planck value to $-0.588\%$. This is discussed
+which reproduces the Planck 2018 base set to $-0.60\%$; on the set
+with BAO it is $-2.08\%$, stated as a tension. This is discussed
 in Section~\ref{sec:summary_vacuum_fraction}: it is an
 \emph{identification of a vacuum property}, not a postulate for a
 dark-energy substance, and the first-principles derivation of why
@@ -6228,24 +6230,13 @@ scale rather than a fundamental input. The present derivation of
 Planck scale emerges from the geometry of the vacuum rather than
 being postulated a priori.
 
-A point that deserves emphasis is that the cosmological predictions
-below do \emph{not} depend on the numerical value of \(G_{\rm geom}\)
-separately. In the combinations that determine \(T_p\), \(\lambda_l\),
-\(R_H\), \(H_0\), and \(\Lambda_{\rm dS}\), the factors
-\(\hbar_{\rm geom}\) and \(G_{\rm geom}\) cancel in pairs:
-\(\hbar_{\rm geom}/G_{\rm geom}\) and \(\hbar_{\rm geom}G_{\rm geom}\)
-both reduce to expressions that contain only \(r_e\), \(m_e\), \(c\),
-and the BCC geometric factors \(\alpha_{\rm geom}\) and
-\(F_{\rm geom}\). This is the same structural feature that appears in
-the EMC force gate, where \(G_{\rm geom}\) cancels identically in
-\(F_{\rm EMC} \equiv F_{\rm Newton}\), and it is consistent with
-Haug's composite-constant framework, in which all observable
-gravitational predictions depend on \(GM\) rather than on \(G\) and
-\(M\) separately
-\cite{Haug2020PhysicsEssays,Haug2022Universe,Haug2023JAMP,Haug2024IJTP,Haug2026Astronomy}.
-The residual of \(0.048\%\) against CODATA quoted below is therefore
-a test of the BCC model at the level of \(G\), not an accuracy
-estimate for \(H_0\) or \(\Lambda_{\rm dS}\).
+$G_{\rm geom}$ enters \(H_0\) as a square root:
+\(H_0 \propto G_{\rm geom}^{1/2}\), so its $0.048\%$ residual against
+CODATA enters \(H_0\) at $0.024\%$ and \(\Lambda\) at $0.048\%$.
+With CODATA \(\hbar\) and \(G\) and no lattice quantity, the same
+horizon relation gives $H_0 = 66.8954$~km\,s$^{-1}$\,Mpc$^{-1}$. The
+lattice adds the reading of $32\pi^2$ as $8(2\pi)^2$ and the
+$+0.0238\%$ carried by the trinity.
 
 The residual against CODATA is \(0.048\%\) for \(G\) and \(0.028\%\)
 for \(\lambda_l\), and is attributed to the lattice impedance \(\zeta\)
@@ -6348,6 +6339,9 @@ coordination is preserved (it is the BCC wall with
 \end{equation}
 
 \paragraph{A structural consistency between the two sectors.}
+The identity \(H\cdot M_\mu = 8\,N_{\text{geom}}\) is algebraic by
+construction: it holds for any \(X\) in \(H = 8X\),
+\(M_\mu = N_{\text{geom}}/X\).
 The AMM projection \(\mathcal{O}_\mu = 1/(2\pi)^2\) and the horizon
 factor \(H = 8(2\pi)^2\) both contain the same numerical factor
 \((2\pi)^2\). This is not a coincidence: \((2\pi)^2\) is the standard
@@ -6390,7 +6384,10 @@ lattices are impossible: it is a falsification of the linear-scaling
 ansatz applied to other coordination numbers. A more complete
 treatment, in which the elastic constants and dispersion relations
 of each lattice type are computed independently, is an open
-objective.
+objective. The unit $X = (2\pi)^2$ is part of the phase-unit
+ansatz; the test is conditional on it. It discriminates the product
+$N\cdot X = 32\pi^2$, not $N$ alone: $N = 16$ with unit $2\pi^2$
+gives the same $H_0 = 66.9113$~km\,s$^{-1}$\,Mpc$^{-1}$.
 
 \begin{table}[h]
 	\centering
@@ -6462,18 +6459,19 @@ The BCC horizon factor enters as a correction: at the horizon the
 	= 1.382521\times 10^{26}\ {\rm m}.
 	\label{eq:summary_RH}
 \end{equation}
-The corresponding Haug relation~\cite{Haug2026Astronomy,HaugTatum2024},
+The Haug and Tatum
+relation~\cite{Haug2026Astronomy,HaugTatum2024},
 \begin{equation}
 	T_{\rm cmb,0}
 	= \frac{T_p}{8\pi}\sqrt{\frac{2\lambda_l}{R_H}},
 	\label{eq:summary_Haug}
 \end{equation}
 follows algebraically from
-Eqs.~\eqref{eq:cosmo_equipartition} and~\eqref{eq:cosmo_H} and is
-recovered exactly: substituting \(R_H\) from
-Eq.~\eqref{eq:summary_RH} returns \(T_{\rm cmb,0} = 2.7255000000\)~K
-to machine precision. The forward check confirms that no algebraic
-step is inconsistent.
+Eqs.~\eqref{eq:cosmo_equipartition} and~\eqref{eq:cosmo_H}.
+Substituting \(R_H\) from Eq.~\eqref{eq:summary_RH} returns
+\(T_{\rm cmb,0} = 2.7255000000\)~K; this is an identity, not a test,
+since it inverts the relation \(R_H\) was computed from and returns
+the input \(T_{\rm cmb,0}\) for any input.
 
 The Hubble constant follows by definition:
 \begin{equation}
@@ -6482,9 +6480,10 @@ The Hubble constant follows by definition:
 	\label{eq:summary_H0}
 \end{equation}
 
-\emph{Status.} Equation~\eqref{eq:summary_Haug} is derived from the
-BCC lattice as naive equipartition corrected by the horizon factor
-\(H = 8(2\pi)^2\). The derivation uses one physically motivated
+\emph{Status.} Equation~\eqref{eq:summary_Haug} is the Haug and
+Tatum relation, with its factor $32\pi^2$ read as $8(2\pi)^2$: naive
+equipartition corrected by the horizon factor \(H = 8(2\pi)^2\). The
+derivation uses one physically motivated
 starting point (equipartition scaling) and one cosmological anchor
 (\(T_{\rm cmb,0}\)). The value of \(H_0^{\rm EWT}\) is therefore a
 prediction of the BCC chain with one anchor, not a fit. An
@@ -6508,14 +6507,16 @@ compares \(H_0^{\rm EWT}\) with three independent determinations.
 		\textbf{Reference} & \(H_0\) [km\,s\(^{-1}\)\,Mpc\(^{-1}\)] & \(\sigma\) & \textbf{Tension} \\
 		\midrule
 		Planck 2018 \cite{Planck2018} & \(67.36\) & \(0.54\) & \(-0.83\sigma\) \\
+		Planck 2018 + BAO             & \(67.66\) & \(0.42\) & \(-1.78\sigma\) \\
 		DESI 2024 \cite{DESI2024}     & \(68.52\) & \(0.62\) & \(-2.59\sigma\) \\
 		SH0ES 2022 \cite{SH0ES2022}   & \(73.04\) & \(1.04\) & \(-5.89\sigma\) \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-The value \(H_0^{\rm EWT} = 66.9113\) lies \(0.83\sigma\) from Planck,
-\(2.59\sigma\) from DESI, and \(5.89\sigma\) from SH0ES. The
+The value \(H_0^{\rm EWT} = 66.9113\) lies \(0.83\sigma\) from Planck
+2018 base, $1.78\sigma$ from Planck 2018 with BAO, \(2.59\sigma\) from
+DESI, and \(5.89\sigma\) from SH0ES. The
 \(0.83\sigma\) agreement with Planck is a consistency check of the
 BCC chain against the CMB-anisotropy determination of \(H_0\), on the
 Planck side of the Hubble tension. As shown in
@@ -6613,9 +6614,12 @@ response is enhanced by the neutral volumetric gap operator
 	C_{\rm local} = \frac{\epsilon_M}{2\sqrt{2}} = 1.46412\times 10^{-5},
 	\label{eq:summary_Cgap}
 \end{equation}
-which is the same operator that fixes $M_W$ in the electroweak
-sector (Section~\ref{sec:mixed_wz_vertex}). The effective vacuum
-fraction is therefore
+which is the pure $\pi^6$ operator the engine assigns to neutral
+vertices (Section~\ref{sec:mixed_wz_vertex}). The engine's \(M_W\)
+prediction at $0.012\%$ uses the mixed operator
+$C_{\rm gap}^{\rm mixed}$, so \(M_W\) does not test this ingredient;
+using $C_{\rm gap}$ here is part of the identification. The
+effective vacuum fraction is therefore
 \begin{equation}
 	\boxed{
 		\Omega_{\rm vac} = \eta_{\rm BCC}\cdot C_{\rm gap} = 0.689749.
@@ -6710,8 +6714,9 @@ is summarised in Table~\ref{tab:summary_omega}.
 		Planck + BAO                 & \(0.6889 \pm 0.0056\) & \(+0.123\%\) & \(+0.15\sigma\) \\
 		\midrule
 		\multicolumn{4}{l}{\textit{Implied dark-energy constant:}} \\
-		\(\Lambda_{\rm vac}\) (this work) & \(1.082602\times 10^{-52}\)~m\(^{-2}\) & & \\
-		\(\Lambda_{\rm obs}\) (Planck)     & \(1.089\times 10^{-52}\)~m\(^{-2}\) & \(-0.588\%\) & \\
+		\(\Lambda_{\rm vac}\) (this work)      & \(1.082602\times 10^{-52}\)~m\(^{-2}\) & & \\
+		\(\Lambda_{\rm obs}\) (Planck base)    & \(1.0891\times 10^{-52}\)~m\(^{-2}\)  & $-0.60\%$ & \\
+		\(\Lambda_{\rm obs}\) (Planck + BAO)   & \(1.1056\times 10^{-52}\)~m\(^{-2}\)  & $-2.08\%$ & tension \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -6741,11 +6746,13 @@ Status paragraph below.
 not depend on $C_{\rm gap}$: the bare packing fraction
 $\eta_{\rm BCC} = 0.680$ already matches the observed
 $\Omega_\Lambda \approx 0.685$ to $0.7\%$. The $C_{\rm gap}$
-correction, which is $1.4\%$, is the same operator that fixes $M_W$
-to $0.012\%$ in the electroweak sector; it is not adjusted here. The
-improvement from $0.7\%$ to $0.12\%$ (Planck+BAO) is therefore a
-consequence of the electroweak-tested correction, not of a new
-fitting.
+correction, which is $1.4\%$, is the pure $\pi^6$ operator the
+engine assigns to neutral vertices; it is not adjusted here. On the
+Planck 2018 base set the improvement is from $-0.62\sigma$
+($\eta_{\rm BCC}$ alone) to $+0.69\sigma$ ($\eta_{\rm BCC}\cdot
+C_{\rm gap}$); the factor separating the two is $C_{\rm gap}-1 =
+1.41\%$, about the size of the Planck $1\sigma$ on $\Omega_\Lambda$
+($1.07\%$).
 
 \paragraph{Status.} The identification
 \(\Omega_{\rm vac} = \eta_{\rm BCC}\,C_{\rm gap}\) is a geometric
@@ -6781,21 +6788,6 @@ values at sub-percent precision (DESI~DR2, Euclid, Roman, CMB-S4)
 would give substantial empirical support, though a first-principles
 derivation of the vacuum response would still be required to
 establish the identification.
-
-\paragraph{Matter correction (diagnostic only).} A simple matter
-correction to the Haug relation,
-\begin{equation}
-	R_H(\Omega_m) = R_H(0)\,(1-\Omega_m)^p,
-	\label{eq:summary_matter_corr}
-\end{equation}
-chosen so that \(H_0(\Omega_m = 0.31) = 67.36\)
-km\,s\(^{-1}\)\,Mpc\(^{-1}\), requires \(p = 0.018011\)
-(\(f(0.31) = 0.99334\), a \(0.67\%\) correction). The resulting
-\(\Lambda\) moves from \(1.5696\times 10^{-52}\) to
-\(1.5907\times 10^{-52}\)~m\(^{-2}\), i.e.\ it remains close to the
-de~Sitter value. The correction is a diagnostic for the \(H_0\)
-tension, not a derivation of \(\Lambda\): it adjusts \(H_0\) and
-leaves the effective vacuum fraction essentially unchanged.
 
 \subsection{Status of the cosmological sector}
 \label{sec:summary_status_table}
@@ -6838,15 +6830,15 @@ first-principles derivation of the specific composition),
 		\(T_p\)                          & \(1.416444\times 10^{32}\)~K & Output of the trinity \\
 		\(T_{\rm cmb,0}\)                & \(2.7255\)~K             & \textbf{Anchor} (COBE/FIRAS) \\
 		\midrule
-		Haug relation \eqref{eq:summary_Haug} & --- & \textbf{Recovered} (naive equipartition + \(H\)) \\
-		\(H_0^{\rm EWT}\)                & \(66.9113\)~km\,s\(^{-1}\)\,Mpc\(^{-1}\) & \textbf{Prediction} (BCC chain + \(T_{\rm cmb}\); \(-0.83\sigma\)) \\
+		Haug relation \eqref{eq:summary_Haug} & --- & \textbf{Haug and Tatum}, factor $32\pi^2$ read as $8(2\pi)^2$ \\
+		\(H_0^{\rm EWT}\)                & \(66.9113\)~km\,s\(^{-1}\)\,Mpc\(^{-1}\) & \textbf{Prediction} (BCC chain + \(T_{\rm cmb}\); \(-0.83\sigma\) base, \(-1.78\sigma\) +BAO) \\
 		\(\Lambda_{\rm dS}\)            & \(1.569560\times 10^{-52}\)~m\(^{-2}\) & \textbf{Prediction} (de~Sitter limit from BCC \(H_0\)) \\
 		\midrule
 		\(\Lambda_{\rm obs}\) (Planck 2018) & \(1.089\times 10^{-52}\)~m\(^{-2}\) & \textbf{Observation} \\
 		Gap factor \(\Lambda_{\rm dS}/\Lambda_{\rm obs}\) & \(1.441\) & \textbf{Gap factor}: \(0.987\times 1.460\); \(1.460 = 1/\Omega_\Lambda^{\rm Planck}\) \\
 		\midrule
-		\(\Omega_{\rm vac}\)            & \(0.689749\)             & \textbf{Geometric mechanism}: \(\eta_{\rm BCC}C_{\rm gap}\), \(+0.15\sigma\) vs observed \(\Omega_\Lambda\) (Planck+BAO) \\
-		\(\Lambda_{\rm vac}\)          & \(1.082602\times 10^{-52}\)~m\(^{-2}\) & Consequence of the vacuum fraction, \(-0.588\%\) vs observed \(\Lambda\) \\
+		\(\Omega_{\rm vac}\)            & \(0.689749\)             & \textbf{Geometric mechanism}: \(\eta_{\rm BCC}C_{\rm gap}\), \(+0.69\sigma\) (base), \(+0.15\sigma\) (+BAO) \\
+		\(\Lambda_{\rm vac}\)          & \(1.082602\times 10^{-52}\)~m\(^{-2}\) & Consequence of the vacuum fraction, $-0.60\%$ (base), $-2.08\%$ (+BAO) \\
 		\midrule
 		First-principles derivation of \(\Omega_{\rm vac} = \eta_{\rm BCC}\,C_{\rm gap}\) & --- & \textbf{Open} \\
 		\bottomrule
@@ -6977,16 +6969,17 @@ The cosmological sector of the present framework presents four
 results.
 
 \begin{enumerate}
-	\item \textbf{A recovery of the Haug relation and a prediction of
-		\(H_0\).} The horizon relation of Haug is \emph{recovered}
-	from the BCC lattice as naive equipartition corrected by the
+	\item \textbf{The Haug and Tatum relation and a prediction of
+		\(H_0\).} The horizon relation is the Haug and Tatum relation,
+	with its factor $32\pi^2$ read as $8(2\pi)^2$: naive equipartition
+	corrected by the
 	horizon factor \(H = 8(2\pi)^2\), which follows from the
 	phase-unit ansatz of Section~\ref{sec:cosmo_vacuum_chain}
 	(each of the 8 BCC directions contributes one 2D phase unit).
-	The recovery is algebraically exact and returns the observed
-	\(T_{\rm cmb,0}\) to machine precision, but the horizon factor
-	itself is a model construct rather than a first-principles
-	derivation from the elastic properties of the lattice. The
+	The substitution that returns \(T_{\rm cmb,0}\) is algebraically
+	exact but is an identity, not a test; the horizon factor itself
+	is a model construct rather than a first-principles derivation
+	from the elastic properties of the lattice. The
 	resulting value \(H_0 = 66.91\)~km\,s\(^{-1}\)\,Mpc\(^{-1}\)
 	follows from the BCC chain and one measured anchor
 	(\(T_{\rm cmb,0}\)), with no fitting of any parameter. It lies
@@ -6996,11 +6989,11 @@ results.
 	the lattice coordination
 	(Section~\ref{sec:cosmo_lattice_test}): only \(N=8\) (BCC) is
 	compatible with observation, while \(N=4\), \(6\), \(12\), and
-	\(16\) lattices are excluded at tens of sigma. The value of
-	\(G_{\rm geom}\) cancels in the combinations that fix \(T_p\)
-	and \(\lambda_l\), so the prediction tests the BCC geometric
-	structure at the level of \(\hbar/G\) and \(\hbar G\), not the
-	numerical value of \(G_{\rm geom}\) separately.
+	\(16\) lattices are excluded at tens of sigma.
+	\(G_{\rm geom}\) enters \(H_0\) as a square root: \(H_0 \propto G_{\rm geom}^{1/2}\),
+	so its $0.048\%$ residual against CODATA enters \(H_0\) at $0.024\%$
+	and \(\Lambda\) at $0.048\%$. With CODATA \(\hbar\) and \(G\) and no
+	lattice quantity, the same relation gives $H_0 = 66.8954$~km\,s$^{-1}$\,Mpc$^{-1}$.
 	\item \textbf{A prediction of \(\Lambda_{\rm dS}\).} The de
 	Sitter value \(\Lambda_{\rm dS} = 1.5696\times 10^{-52}\)~m\(^{-2}\)
 	follows from the same chain and is a definite number, not a
@@ -7018,11 +7011,13 @@ results.
 	cosmological sector.
 	\item \textbf{A geometric mechanism for \(\Omega_\Lambda\) with a
 		falsifiable consequence.} The identification
-	\(\Omega_{\rm vac} = \eta_{\rm BCC} C_{\rm gap}\) uses the same
-	neutral gap operator that fixes \(M_W\) in the electroweak
-	sector. It reproduces Planck+BAO to \(0.12\%\) and the Planck
-	dark-energy constant to \(0.59\%\), reducing the gap factor
-	\(1.441\) to \(1.006\). This is a geometric mechanism, not a
+	\(\Omega_{\rm vac} = \eta_{\rm BCC} C_{\rm gap}\) uses the pure
+	$\pi^6$ neutral-vertex operator; the engine's \(M_W\) prediction uses
+	the mixed operator, so \(M_W\) does not test this ingredient.
+	The product reproduces the Planck 2018 base set to $+0.69\sigma$
+	(\(\Lambda\) at $-0.60\%$); on the set with BAO it is $+0.15\sigma$
+	(\(\Lambda\) at $-2.08\%$, stated as a tension), reducing the gap factor
+	\(1.441\) to \(1.006\) on the base set. This is a geometric mechanism, not a
 	numerical fit: the components are derived or independently
 	tested, and the product identifies the vacuum property that
 	plays the role of \(\Omega_\Lambda\) in \(\Lambda\)CDM. It is
@@ -7046,22 +7041,16 @@ Importantly, the framework does not require a derivation of
 \(G_{\rm geom}\) ``from an action'': as established in
 Section~\ref{sec:cosmo_summary} and in the magneto-geometric
 hypotheses, \(G_{\rm geom}\) is a composite constant whose effective
-value varies with local magnetic coherence. Furthermore, the
-\emph{specific form} of \(G_{\rm geom}\) is not critical for any of
-the cosmological predictions: as shown in the trinity discussion of
-Section~\ref{sec:cosmo_summary}, the factors \(\hbar_{\rm geom}\)
-and \(G_{\rm geom}\) enter only through the combinations
-\(\hbar_{\rm geom}/G_{\rm geom}\) and \(\hbar_{\rm geom}G_{\rm geom}\),
-in which \(G_{\rm geom}\) cancels against itself. The same
-cancellation appears in the EMC force gate
-(\(F_{\rm EMC} \equiv F_{\rm Newton}\), where \(G_{\rm geom}\)
-cancels identically) and in the local metric phenomena of
-Section~\ref{sec:local_metric_emc}, where the gravitational
-potential is determined by the product \(GM\) rather than by \(G\)
-and \(M\) separately. This is consistent with Haug's result that all
-observable gravitational phenomena depend only on the product
-\(GM\), and that the composite nature of \(G\) is invisible to any
-such observation~\cite{Haug2020PhysicsEssays,Haug2022Universe,Haug2023JAMP}.
+value varies with local magnetic coherence. The \emph{specific form}
+of \(G_{\rm geom}\) is not critical for the cosmological predictions
+because \(G_{\rm geom}\) is an expression in the anchors $r_e$, $m_e$, $c$, $e$
+and $\alpha_{\rm geom}$: the $0.048\%$ residual of \(G_{\rm geom}\) against
+CODATA enters \(H_0\) at $0.024\%$ (since \(H_0 \propto G_{\rm geom}^{1/2}\))
+and \(\Lambda\) at $0.048\%$. With CODATA \(\hbar\) and \(G\) and no lattice
+quantity, the same relation gives $H_0 = 66.8954$~km\,s$^{-1}$\,Mpc$^{-1}$.
+This is consistent with Haug's result that all
+observable gravitational phenomena depend on the product
+\(GM\)~\cite{Haug2020PhysicsEssays,Haug2022Universe,Haug2023JAMP}.
 The open question is therefore not whether \(G_{\rm geom}\) has the
 ``right'' form --- any form that preserves the BCC structure at the
 level of these products would give the same cosmological
@@ -8507,7 +8496,18 @@ are computed:
 	log-space scan followed by bisection.
 \end{enumerate}
 
-The procedure is implemented in the OpenWave script \texttt{m4\_11\_lock\_in\_n\_scan.py} \cite{OpenWaveM411}.
+The cosmological rows $\Lambda_{\text{vac}}$ and $\Omega_{\text{vac}}$ extend
+the scan from the parameter-level constants to the full chain of
+Section~\ref{sec:cosmo_summary}: $\Lambda_{\text{vac}}(N)$ follows the full
+chain $N \to \varepsilon_M \to \alpha \to \{\hbar, \lambda_l\} \to G \to T_p
+\to R_H \to H_0 \to \Lambda_{\text{dS}} \to \Omega_{\text{vac}} \to
+\Lambda_{\text{vac}}$, while $\Omega_{\text{vac}}(N)$ depends on $N$ only
+through $\varepsilon_M$ via the neutral gap operator $C_{\text{gap}}$.
+
+The procedure is implemented in the OpenWave script
+\texttt{m4\_11\_lock\_in\_n\_scan.py} (Listing~\ref{lst:ewt_lock_in_scan});
+its console output is reproduced in
+Listing~\ref{lst:ewt_lock_in_scan_output}. \cite{OpenWaveM411}
 
 The sectors are classified into three groups according to their resolution:
 \begin{itemize}
@@ -8520,7 +8520,76 @@ The sectors are classified into three groups according to their resolution:
 	provide no information about $N$.
 \end{itemize}
 
-\subsubsection{Results}
+\subsubsection{Reference values at $N_{\text{geom}}$}
+
+Table~\ref{tab:lock_in_reference_values} lists the value of each sector at
+$N_{\text{geom}} = 778.8025$.
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Reference values of the nine sectors at
+		$N_{\text{geom}} = 778.8025$.}
+	\label{tab:lock_in_reference_values}
+	\begin{tabular}{lc}
+		\toprule
+		\textbf{Quantity} & \textbf{Value} \\
+		\midrule
+		$\alpha^{-1}$                & $137.036262364$ \\
+		$G$                          & $6.677519975508 \times 10^{-11}$ \\
+		$a_e$                        & $1.159916228104 \times 10^{-3}$ \\
+		$a_\mu$                      & $1.166212608460 \times 10^{-3}$ \\
+		$a_\tau$                     & $1.176838130442 \times 10^{-3}$ \\
+		$\sin^2\theta_W$             & $0.2338363612028$ \\
+		$\sin\theta_C$               & $0.2242955156684$ \\
+		$\Lambda_{\text{vac}}$       & $1.082602080379 \times 10^{-52}$ \\
+		$\Omega_{\text{vac}}$        & $6.897488578712 \times 10^{-1}$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Drift relative to $N_{\text{geom}}$}
+
+The drift of each sector at $N_{\text{geom}} \pm 10$ is reported in
+Table~\ref{tab:lock_in_drift}. The reference is $N_{\text{geom}}$ itself,
+not a fit to CODATA/PDG: every sector has by construction zero drift at
+$N = N_{\text{geom}}$, and the question is how sharply the model reacts
+when $N$ moves away from that point.
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Relative drift $|O(N) - O(N_{\text{geom}})| / |O(N_{\text{geom}})|$
+		for each sector at $N_{\text{geom}}$ and $N_{\text{geom}} \pm 10$.}
+	\label{tab:lock_in_drift}
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Sector} & \textbf{Drift at $N_{\text{geom}}$}
+		& \textbf{Drift at $-10$} & \textbf{Drift at $+10$} \\
+		\midrule
+		$\alpha^{-1}$          & $0$ & $3.931 \times 10^{-9}$ & $3.831 \times 10^{-9}$ \\
+		$G$                    & $0$ & $1.678 \times 10^{-1}$ & $1.420 \times 10^{-1}$ \\
+		$a_e$                  & $0$ & $1.672 \times 10^{-5}$ & $1.630 \times 10^{-5}$ \\
+		$a_\mu$                & $0$ & $1.841 \times 10^{-5}$ & $1.794 \times 10^{-5}$ \\
+		$a_\tau$               & $0$ & $2.860 \times 10^{-3}$ & $2.798 \times 10^{-3}$ \\
+		$\sin^2\theta_W$       & $0$ & $5.915 \times 10^{-4}$ & $5.767 \times 10^{-4}$ \\
+		$\sin\theta_C$         & $0$ & $5.314 \times 10^{-6}$ & $5.179 \times 10^{-6}$ \\
+		$\Lambda_{\text{vac}}$ & $0$ & $1.680 \times 10^{-1}$ & $1.421 \times 10^{-1}$ \\
+		$\Omega_{\text{vac}}$  & $0$ & $1.805 \times 10^{-4}$ & $1.760 \times 10^{-4}$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+These three columns are evaluated at $N_{\text{geom}}$ and at
+$N_{\text{geom}} \pm 10$ directly, not at the nearest point of the scan
+grid, so the zero in the first column is exact and the $\pm 10$ columns
+are at exactly $\pm 10$. The CSV keeps the uniform grid of step 2; the
+scan grid does not contain $N_{\text{geom}} = 778.8025$, so a
+nearest-grid lookup would report $N = 778$, $N_{\text{geom}} - 10.80$ and
+$N_{\text{geom}} + 9.20$, which for $G$ at $\beta = -12$ is a visible
+difference.
+
+\subsubsection{Resolution}
 
 The resolution analysis is summarised in
 Table~\ref{tab:lock_in_results}. The grouping of sectors follows directly
@@ -8539,10 +8608,12 @@ from the resolution column.
 		\multicolumn{4}{l}{\textit{PRIMARY (resolves $N$, $< 1\%$)}} \\
 		$G$              & $-12.000002$              & $4.0 \times 10^{-5}$ & 778.83 \\
 		$a_\tau$         & $+0.220297$               & $1.4 \times 10^{-3}$ & 779.92 \\
-		$\sin\theta_C$   & $-0.008921$               & $6.2 \times 10^{-3}$ & 774.03 \\
+		$\Lambda_{\text{vac}}$ & $-12.01$            & $4.9 \times 10^{-4}$ & 778.42 \\
 		\midrule
 		\multicolumn{4}{l}{\textit{WEAK (consistent, $1\%$--$100\%$)}} \\
-		$\sin^2\theta_W$ & $-0.045754$               & $1.5 \times 10^{-1}$ & 910.04 \\
+		$\sin\theta_C$   & $-4.086 \times 10^{-4}$   & $4.9 \times 10^{-2}$ & 742.47 \\
+		$\Omega_{\text{vac}}$ & $-1.388 \times 10^{-2}$ & $8.9 \times 10^{-2}$ & 854.57 \\
+		$\sin^2\theta_W$ & $-4.548 \times 10^{-2}$   & $2.5 \times 10^{-1}$ & 1031.78 \\
 		$a_e$            & $+0.001285$               & $1.8 \times 10^{-1}$ & 661.63 \\
 		$a_\mu$          & $+0.001415$               & $1.8 \times 10^{-1}$ & 661.69 \\
 		\midrule
@@ -8552,11 +8623,141 @@ from the resolution column.
 	\end{tabular}
 \end{table}
 
-\subsubsection{PRIMARY sectors: $G$, $a_\tau$, and $\sin\theta_C$}
+The exponent for $G$ is exactly $-12$, not $-3$. This is a consequence of the
+self-consistent derivation of $\lambda_l$ in the chain:
+$\lambda_l \propto N^{-6}$, and $G$ inherits an additional $N^{-9}$
+dependence through $N_{\nu,\text{eff}}$, compounding with the explicit
+$N^{-3}$ factor. The cosmological row $\Lambda_{\text{vac}}$ inherits this
+$\beta = -12$ from $G$ through the full chain (see the interpretation
+below).
 
-Three sectors resolve $N$ at the sub-percent level. The two strongest are the
-gravitational constant $G$ ($0.004\%$) and the tau anomalous magnetic moment
-$a_\tau$ ($0.14\%$). Their separately optimal values are
+\subsubsection{Grouping}
+
+Table~\ref{tab:lock_in_grouping} summarises the classification. The two
+cosmological rows enter as one PRIMARY and one WEAK member, with the
+caveats discussed in the next paragraph.
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Grouping of sectors by resolution.}
+	\label{tab:lock_in_grouping}
+	\begin{tabular}{lll}
+		\toprule
+		\textbf{Group} & \textbf{Sectors} & \textbf{Resolution range} \\
+		\midrule
+		PRIMARY (resolves $N$)   & $G$, $a_\tau$, $\Lambda_{\text{vac}}$
+		& $< 1\%$ \\
+		WEAK (consistent only)   & $a_e$, $a_\mu$, $\sin\theta_C$,
+		$\sin^2\theta_W$, $\Omega_{\text{vac}}$
+		& $1\%$--$100\%$ \\
+		NO CONSTRAINT            & $\alpha^{-1}$ & $> 100\%$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The script's top-2 primary agreement line reports $G$ vs
+$\Lambda_{\text{vac}}$ at \textbf{0.0530\%} ($N_{\text{opt}} = 778.8338$
+vs $778.4206$). This is \emph{not an independent agreement}:
+$\Lambda_{\text{vac}}$ inherits $\beta = -12$ from $G$ through the chain
+$N \to \varepsilon_M \to \alpha \to \{\hbar, \lambda_l\} \to G \to T_p \to
+R_H \to H_0 \to \Lambda_{\text{dS}} \to \Omega_{\text{vac}} \to
+\Lambda_{\text{vac}}$, so its $N_{\text{opt}}$ tracks $G$'s by
+construction. The $G$--$\Lambda_{\text{vac}}$ agreement is a consistency
+check that the full cosmological chain reproduces the same
+$N_{\text{geom}}$ as $G$.
+
+The independent primary agreement remains $G$ vs $a_\tau$:
+\begin{equation}
+	G \text{ vs } a_\tau: \quad
+	N_{\text{opt}} = 778.8338 \text{ vs } 779.9210, \qquad
+	\Delta = 0.1396\% \text{ of } N_{\text{geom}}.
+\end{equation}
+This is the central quantitative result: $G$ and $a_\tau$ independently
+locate $N$ with resolutions of $0.004\%$ and $0.14\%$, and they agree to
+$0.14\%$. The cosmological chain adds a third PRIMARY row
+($\Lambda_{\text{vac}}$), but it is a consequence of $G$ rather than an
+independent signal. The independent cosmological signal is
+$\Omega_{\text{vac}}$ (WEAK, resolution $8.88 \times 10^{-2}$), which
+depends on $N$ only through $\varepsilon_M$ and does not inherit $G$'s
+sensitivity.
+
+\subsubsection{What each sector is compared against}
+
+The resolution column measures each sector against a target constant in
+the engine, and those targets are not all of the same kind. Two of them
+carry a qualification that bears on how much weight the corresponding leg
+can take.
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Target and qualification of each sector.}
+	\label{tab:lock_in_targets}
+	\begin{tabular}{p{0.16\linewidth} p{0.24\linewidth} p{0.50\linewidth}}
+		\toprule
+		\textbf{Sector} & \textbf{Target} & \textbf{What it is} \\
+		\midrule
+		$G$ & \texttt{G\_CODATA} $= 6.674305 \times 10^{-11}$
+		& Measured. CODATA relative uncertainty $2.2 \times 10^{-5}$,
+		so the model's $4.8 \times 10^{-4}$ residual is about
+		$21$ times the experimental uncertainty. \\
+		$a_\tau$ & \texttt{A\_TAU\_EXP} $= 1.177210 \times 10^{-3}$
+		& The \textbf{Standard Model prediction},
+		$a_\tau^{\text{SM}} = 117721(5) \times 10^{-8}$, not a
+		measurement. The best experimental bound is
+		$-0.052 < a_\tau < 0.013$ at $95\%$~CL (DELPHI,
+		Eur.~Phys.~J.~C \textbf{35} (2004) 159), a window
+		$55$ times the value itself. \\
+		$\sin^2\theta_W$ & inverted from \texttt{M\_W\_PDG}
+		$= 80.377$~GeV (PDG 2022 average)
+		& The CDF~II 2022 value ($80.4335$~GeV) is treated as a
+		$5.8\sigma$ outlier by ATLAS/CMS 2024 and is no longer
+		used as the anchor. The PDG-average anchor gives
+		resolution $24.9\%$ and $N_{\text{opt}} = 1031.8$. The
+		sector stays WEAK. The row is computed with the pure
+		$\pi^6$ operator $C_{\text{gap}}$, while the engine's
+		$W$ prediction uses $C_{\text{gap,mixed}}$; with the
+		mixed operator the same row reads $0.231260$ and
+		resolution $0.49\%$ on this anchor, or $2.3\%$ on the
+		PDG 2024 average ($80.3692$~GeV). The choice of
+		operator for the lock-in row is recorded as a known
+		issue. \\
+		$\Lambda_{\text{vac}}$ & \texttt{LAMBDA\_PLANCK}
+		$= 1.089 \times 10^{-52}$~m$^{-2}$
+		& Planck 2018 base set, $3\,\Omega_\Lambda H_0^2/c^2$
+		rounded to four digits (Planck does not publish it;
+		unrounded it is $1.0891 \times 10^{-52}$, against which
+		the cosmological chain reads $-0.600\%$ where this row
+		reads $0.5875\%$). $\Lambda_{\text{vac}}$ inherits
+		$\beta = -12$ from $G$, so its resolution of
+		$4.89 \times 10^{-4}$ is not an independent constraint
+		on $N$. \\
+		$\Omega_{\text{vac}}$ & \texttt{OMEGA\_L\_BAO} $= 0.6889$
+		& Planck+BAO. Independent of $G$ (tests only
+		$\varepsilon_M(N)$ through $C_{\text{gap}}$); resolution
+		$8.88 \times 10^{-2}$. \\
+		$\alpha^{-1}$, $a_e$, $a_\mu$, $\sin\theta_C$
+		& CODATA and PDG values & Measured. \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+What this means for the $a_\tau$ leg: it tests agreement with the Standard
+Model's own computed value. That is a real internal test, since the model's
+$a_\tau$ construction could have selected a different $N$ and did not, but
+it is not an experimental anchor, and no measurement of $a_\tau$ constrains
+$N$ at any level. Its residual, $3.16 \times 10^{-4}$ relative, is also
+about $7.4$ times the uncertainty on the SM value it is compared against.
+
+\subsubsection{PRIMARY sectors: $G$, $a_\tau$, and $\Lambda_{\text{vac}}$}
+
+Three sectors resolve $N$ at the sub-percent level. Two of them are
+independent; the third inherits its sensitivity from $G$.
+
+The two strongest are the gravitational constant $G$ ($0.004\%$) and the
+tau anomalous magnetic moment $a_\tau$ ($0.14\%$). Their separately
+optimal values are
 \begin{equation}
 	N_{\text{opt}}(G) = 778.83, \qquad
 	N_{\text{opt}}(a_\tau) = 779.92,
@@ -8566,87 +8767,195 @@ which agree to within
 	\Delta = 0.14\% \quad \text{of } N_{\text{geom}}.
 \end{equation}
 
-Crucially, the two sectors are constructed from completely different chains.
-$G$ arises from the gravitational self-consistent derivation involving
-$\lambda_l$, $N_{\nu,\text{eff}}$, and the surface projection. $a_\tau$
-arises from the recursive lepton shell damping governed by $\epsilon_M$ and
-the Fibonacci latching. Neither chain uses the other's inputs. The agreement
-between them is therefore not tautological.
+Crucially, the two sectors are constructed from completely different
+chains. $G$ arises from the gravitational self-consistent derivation
+involving $\lambda_l$, $N_{\nu,\text{eff}}$, and the surface projection.
+$a_\tau$ arises from the recursive lepton shell damping governed by
+$\epsilon_M$ and the Fibonacci latching. Neither chain uses the other's
+inputs. The agreement between them is therefore not tautological.
 
 The exponent $\beta_G = -12$ (rather than the naive $-3$) is a structural
 consequence of the self-consistent derivation of $\lambda_l$: the lattice
-spacing scales as $\lambda_l \propto N^{-6}$, and $G$ inherits an additional
-$N^{-9}$ dependence through $N_{\nu,\text{eff}}$, compounding with the
-explicit $N^{-3}$ factor. This makes gravity by far the most sensitive probe
-of the lattice stiffness.
+spacing scales as $\lambda_l \propto N^{-6}$, and $G$ inherits an
+additional $N^{-9}$ dependence through $N_{\nu,\text{eff}}$, compounding
+with the explicit $N^{-3}$ factor. This makes gravity by far the most
+sensitive probe of the lattice stiffness.
 
-The Cabibbo angle $\sin\theta_C$ formally lands in the PRIMARY group with a
-resolution of $0.62\%$. This result is, however, conditioned on the central
-PDG values for the light quark masses. The experimental uncertainty on
-$m_d$ and $m_s$ spans approximately $14\%$, roughly fifteen times larger
-than the geometric correction being tested. At the low corner of that range
-no positive $N$ reproduces $\sin\theta_C$. The Cabibbo leg is therefore
-treated as \emph{conditionally} primary, not as a fully independent
-constraint.
+The third PRIMARY row, $\Lambda_{\text{vac}}$, enters with a resolution of
+$4.9 \times 10^{-4}$ and $N_{\text{opt}} = 778.42$. Because the full
+cosmological chain contains $G(N) \propto N^{-12}$ multiplicatively, the
+exponent $\beta_{\Lambda} = -12.01$ is dominated by the same $-12$ that
+enters $G$. Its $N_{\text{opt}}$ therefore tracks $G$'s by construction:
+the $\Lambda_{\text{vac}}$ row is a \emph{consistency check} that the
+cosmological chain reproduces the same $N_{\text{geom}}$ as gravity, not
+an independent constraint on the lattice stiffness.
 
-\subsubsection{WEAK sectors: $a_e$, $a_\mu$, and $\sin^2\theta_W$}
+\subsubsection{WEAK sectors: $a_e$, $a_\mu$, $\sin\theta_C$,
+	$\sin^2\theta_W$, and $\Omega_{\text{vac}}$}
 
-Three sectors are consistent with $N_{\text{geom}}$ but cannot discriminate
-it from neighbouring values. Their resolutions of approximately $15$--$18\%$
+Five sectors are consistent with $N_{\text{geom}}$ but cannot discriminate
+it from neighbouring values. Their resolutions span $5\%$--$25\%$ and
 reflect different suppression mechanisms.
 
-For the electron anomalous magnetic moment $a_e$, the sensitivity to $N$ is
-suppressed because the prediction is dominated by the nearly
+For the electron anomalous magnetic moment $a_e$, the sensitivity to $N$
+is suppressed because the prediction is dominated by the nearly
 $N$-independent Schwinger term. The electron AMM therefore confirms the
 overall framework but does not constrain the lattice stiffness.
 
 For the muon anomalous magnetic moment $a_\mu$, the projection operator
-$\mathcal{O}_\mu = 1/(4\pi^2)$ suppresses the sensitivity of the muon shell.
-The muon leg is consistent with $N_{\text{geom}}$ but, like the electron,
-cannot discriminate between neighbouring values.
+$\mathcal{O}_\mu = 1/(4\pi^2)$ suppresses the sensitivity of the muon
+shell. The muon leg is consistent with $N_{\text{geom}}$ but, like the
+electron, cannot discriminate between neighbouring values.
 
-For the Weinberg angle $\sin^2\theta_W$, the logarithmic derivative is small
-($\beta \approx -0.046$), giving a resolution of $14.6\%$. The comparison
-between the model value $\sin^2\theta_W = 0.23276$ and the PDG reference
-uses the MS-bar scheme, while the on-shell value derived from the PDG masses
-is $0.22305$. The geometric correction $C_{\text{gap}}$ occupies the same
-slot as a known scheme-conversion factor of approximately $1.06\%$.
-Consequently, the Weinberg leg cannot yet carry independent weight.
+For the Cabibbo angle $\sin\theta_C$, the value itself reproduces the PDG
+2024 target to $0.002\%$, but the sector cannot discriminate $N$: the
+linear flavor deficit $\varepsilon_{\text{flavor}} = 1/(\pi N)$ has a
+logarithmic derivative of only $\beta \approx -4 \times 10^{-4}$, so
+changing $N$ by $\pm 10$ moves $\sin\theta_C$ by less than
+$6 \times 10^{-6}$. The sector is consistent with $N_{\text{geom}}$ but
+carries no independent constraint.
+
+For the Weinberg angle $\sin^2\theta_W$, the logarithmic derivative is
+small ($\beta \approx -0.045$), giving a resolution of $24.9\%$. The
+comparison between the model value $\sin^2\theta_W = 0.23384$ (anchored on
+\texttt{M\_W\_PDG} $= 80.377$~GeV) and the PDG reference uses the MS-bar
+scheme, while the on-shell value derived from the PDG masses is $0.22305$.
+The geometric correction $C_{\text{gap}}$ occupies the same slot as a
+known scheme-conversion factor of approximately $1.06\%$. Consequently,
+the Weinberg leg cannot yet carry independent weight.
+
+For the effective vacuum fraction $\Omega_{\text{vac}}$, the logarithmic
+derivative is small ($\beta \approx -0.014$) and the resolution is
+$8.9 \times 10^{-2}$. The sector is independent of $G$ and $\lambda_l$
+--- it depends on $N$ only through $\varepsilon_M(N)$, which enters via
+the neutral gap operator $C_{\text{gap}}$ in
+$\Omega_{\text{vac}} = \eta_{\text{BCC}} \cdot C_{\text{gap}}$. It is the
+only cosmological row that tests $N$ independently of gravity, and it
+enters WEAK rather than PRIMARY because the $N$-dependence is weak.
 
 \subsubsection{NO CONSTRAINT: $\alpha^{-1}$}
 
 The inverse fine-structure constant provides no constraint on $N$. Its
 logarithmic derivative is $\beta \approx 3 \times 10^{-7}$, giving a
 resolution of $635\%$. This is expected and consistent with the model
-structure: $\alpha^{-1}$ is dominated by the geometric core $A_\pi$, and the
-$\epsilon_M$ correction is tiny. $\alpha$ therefore confirms the model but
-does not constrain its central parameter. Its inclusion in the lock-in
-analysis serves as a consistency check: the absence of a constraint is
-itself a prediction of the model's structure.
+structure: $\alpha^{-1}$ is dominated by the geometric core $A_\pi$, and
+the $\epsilon_M$ correction is tiny. $\alpha$ therefore confirms the
+model but does not constrain its central parameter. Its inclusion in the
+lock-in analysis serves as a consistency check: the absence of a
+constraint is itself a prediction of the model's structure.
 
 \subsubsection{Interpretation}
 
-The lock-in test demonstrates that $N_{\text{geom}}$ is not a fitted
-parameter in the usual sense. It is a \emph{node} at which two independent
-physical sectors --- gravity and the tau anomalous magnetic moment ---
-converge to within $0.14\%$, with completely different construction chains
-and different sensitivities to the lattice stiffness.
+\begin{enumerate}
+	\item \textbf{Gravity is the primary leg of the lock-in.}
+	The drift of $G$ at $N_{\text{geom}} \pm 10$ exceeds $10\%$, and its
+	resolution is $4 \times 10^{-5}$. The very high exponent $N^{-12}$
+	makes gravity by far the most sensitive probe of the lattice
+	stiffness.
+	
+	\item \textbf{The tau AMM is the only other sector that resolves $N$.}
+	With $\beta_{a_\tau} = 0.22$, $a_\tau$ locates $N$ to $0.14\%$.
+	Crucially, its construction is completely different from $G$: it comes
+	from the recursive lepton shell damping, not from the gravitational
+	chain. The agreement between $G$ and $a_\tau$ at the $0.14\%$ level is
+	the falsifiable core of the shared-lattice claim.
+	
+	\item \textbf{Electron and muon AMMs are weak confirmations.}
+	Their projection $\mathcal{O}_\mu = 1/(4\pi^2)$ suppresses the
+	sensitivity of the muon shell, and the electron AMM is dominated by
+	the nearly $N$-independent Schwinger term. Their resolutions of
+	$\sim 18\%$ mean they are consistent with $N_{\text{geom}}$ but cannot
+	discriminate it from neighbouring values.
+	
+	\item \textbf{The Cabibbo angle is a weak constraint.}
+	$\sin\theta_C$ lands in the WEAK group with a resolution of $4.9\%$.
+	The value itself reproduces the PDG 2024 target to $0.002\%$, but the
+	sector cannot discriminate $N$: the linear flavor deficit
+	$\varepsilon_{\text{flavor}} = 1/(\pi N)$ has a logarithmic derivative
+	of only $\beta \approx -4 \times 10^{-4}$, so changing $N$ by $\pm 10$
+	moves $\sin\theta_C$ by less than $6 \times 10^{-6}$.
+	
+	\item \textbf{The Weinberg angle is weak and scheme-sensitive.}
+	The logarithmic derivative is small ($-0.045$), giving a resolution
+	of $24.9\%$. Moreover, the comparison between the model's
+	$\sin^2\theta_W = 0.23384$ (anchored on \texttt{M\_W\_PDG}
+	$= 80.377$~GeV) and the PDG value uses the MS-bar scheme, while the
+	on-shell value from the PDG masses is $0.22305$. The geometric
+	correction $C_{\text{gap}}$ sits in the same slot as a known
+	scheme-conversion factor of $1.06\%$, so the Weinberg leg cannot yet
+	carry independent weight.
+	
+	\item \textbf{Alpha provides no constraint on $N$.}
+	With $\beta \approx 3 \times 10^{-7}$ and a resolution of $635\%$,
+	$\alpha$ cannot serve as a lock-in test. This is expected: $A_\pi$
+	dominates $\alpha^{-1}$, and the $\varepsilon_M$ correction is tiny.
+	
+	\item \textbf{Gravity as a residual force explains the hierarchy.}
+	The extreme sensitivity of $G$ to $N$ is not an accident. In the
+	Enhanced EWT framework gravity is a residual force, arising from the
+	near-exact cancellation of large geometric factors. Small changes in
+	the lattice parameter therefore produce large relative changes in $G$,
+	while first-order quantities such as $\alpha$ remain nearly unchanged.
+	This is a feature of the hierarchy, not a defect of the model.
+	
+	\item \textbf{Cosmology adds one inherited and one independent leg.}
+	Two cosmological rows are reported. $\Lambda_{\text{vac}}$ (the full
+	chain to the observed cosmological constant) inherits the
+	$G \propto N^{-12}$ sensitivity and enters PRIMARY at resolution
+	$4.89 \times 10^{-4}$; its $N_{\text{opt}}$ tracks $G$'s because the
+	chain preserves the exponent. It is a consistency test, not an
+	independent constraint. $\Omega_{\text{vac}}$ (the effective vacuum
+	fraction) depends on $N$ only through $\varepsilon_M$ via
+	$C_{\text{gap}}$, so it is independent of $G$ and $\lambda_l$; it
+	enters WEAK at resolution $8.88 \times 10^{-2}$. This is the only
+	cosmological sector that tests $N$ independently of gravity. The
+	distinction matters: the apparent improvement of the primary-agreement
+	line ($0.0530\%$ for $G$ vs $\Lambda_{\text{vac}}$ versus $0.1396\%$
+	for $G$ vs $a_\tau$) is not an independent strengthening ---
+	$\Lambda_{\text{vac}}$ is a function of $G$.
+	
+	\item \textbf{Evidence quality.}
+	No sector is classified as PRIMARY unless its prediction chain
+	actually contains $N$ and can discriminate $N$. The agreement between
+	$G$ and $a_\tau$ is therefore non-tautological: the two sectors use
+	completely different constructions, and either could have located a
+	different optimal $N$. Sectors marked as conditional or weak are
+	reported as \emph{consistent with} $N_{\text{geom}}$, not as
+	\emph{confirmed}. $\Lambda_{\text{vac}}$ is classified PRIMARY by its
+	resolution but flagged here as a consistency test with $G$; the
+	PRIMARY classification reflects its sharp $N$-sensitivity, not its
+	independence.
+\end{enumerate}
 
-The PRIMARY sectors are those whose prediction chains contain $N$ at high
-powers ($\beta_G = -12$, $\beta_{a_\tau} = 0.22$) and whose targets are
-known with sufficient precision. The WEAK sectors are those whose
-sensitivity is suppressed by projection operators or by dominant
-$N$-independent terms. The NO CONSTRAINT sector is dominated by the
-geometric core $A_\pi$ and is essentially insensitive to $N$.
+\subsubsection{Technical notes}
 
-This hierarchy is a falsifiable structural feature of the model. If future
-measurements of $a_\tau$ (currently only bounded experimentally) or of $G$
-(currently known to $2.2 \times 10^{-5}$) were to shift either sector's
-optimal $N$ beyond the common interval, the model would be challenged. If,
-on the other hand, the PRIMARY sectors were to remain in agreement while
-a WEAK sector moved into the PRIMARY group, the model would be strengthened
-by the addition of a third independent constraint.
-
+\begin{itemize}
+	\item The scan grid (step 2, from 500 to 1100) does not contain
+	$N_{\text{geom}} = 778.8025$, so the three reported drift columns are
+	evaluated directly at $N_{\text{geom}}$ and
+	$N_{\text{geom}} \pm 10$ rather than by nearest-grid lookup. A
+	nearest-grid lookup would report $N = 778$, $N_{\text{geom}} - 10.80$
+	and $N_{\text{geom}} + 9.20$, which for $G$ at $\beta = -12$ is a
+	visible difference.
+	\item The logarithmic derivatives $\beta$ were computed by central
+	difference in $\log N$ with step $10^{-6}$.
+	\item The separately optimal $N$ values were found by log-space scan
+	and bisection, not by local extrapolation, because the functions are
+	not pure power laws over the scanned range.
+	\item The resolution reported above is a local measure at
+	$N_{\text{geom}}$, computed from the logarithmic derivative $\beta$
+	and the relative error at that point. It estimates how far $N$ can
+	move before the sector's prediction changes by its own error; it is
+	not a global confidence interval.
+	\item A shifted-crossing check between $\sin^2\theta_W$ and
+	$\sin\theta_C$ was also performed in the script; it is omitted from
+	the main results because it does not affect the grouping and is
+	superseded by the direct resolution analysis.
+	\item The cosmological rows carry a note in the script output:
+	$\Lambda_{\text{vac}}$ inherits $\beta = -12$ from $G$ (consistency
+	test, not independent), while $\Omega_{\text{vac}}$ is independent
+	of $G$ (tests $\varepsilon_M(N)$ only).
+\end{itemize}
 
 
 \section{Geometric Phase Transitions: From Neutrino to Black Hole with EMC Wall}
@@ -9310,7 +9619,7 @@ enters and what role it plays.
 		\midrule
 		\multicolumn{4}{l}{\textit{IV.B Cosmological chain}} \\
 		\midrule
-		Haug relation & \ref{sec:cosmo_H0_derivation} & Recovered & $T_{\text{cmb},0} = (T_p/8\pi)\sqrt{2\lambda_l/R_H}$; recovered from BCC horizon model (naive equipartition corrected by $H = 8(2\pi)^2$). Phase-unit ansatz is a model assumption \\
+		Haug relation & \ref{sec:cosmo_H0_derivation} & identity & $T_{\text{cmb},0} = (T_p/8\pi)\sqrt{2\lambda_l/R_H}$; recovered from BCC horizon model (naive equipartition corrected by $H = 8(2\pi)^2$). Phase-unit ansatz is a model assumption \\
 		$T_p$ & \ref{sec:cosmo_summary} & Derived & $1.416444 \times 10^{32}$~K; output of the EWT trinity $(1/k_B)\sqrt{\hbar_{\text{geom}} c^5/G_{\text{geom}}}$ \\
 		$R_H$ & \ref{sec:cosmo_H0_derivation} & Derived & $1.382521 \times 10^{26}$~m; $\lambda_l (T_p/T_{\text{cmb},0})^2/H$; conditional on the phase-unit ansatz \\
 		$H_0^{\text{EWT}}$ & \ref{sec:cosmo_H0_derivation} & Predicted & $66.9113$~km\,s$^{-1}$\,Mpc$^{-1}$; from BCC chain $+$ one anchor $T_{\text{cmb},0}$; $-0.83\sigma$ vs Planck \\
@@ -9501,6 +9810,32 @@ frame=single,
 caption={Console output from \texttt{ewt\_particle\_masses.py}.},
 label={lst:ewt_particle_masses_output}
 ]{ewt_particle_masses.txt}
+
+\subsubsection{Lock-in Scan Module}
+\label{app:ewt_lock_in_scan}
+
+\texttt{ewt\_lock\_in\_scan.py} treats the geometric stiffness $N$ as a free parameter and implements the drift, resolution, and grouping analysis of the internal lock-in point. For each observable it reports $\beta = d\ln O/d\ln N$, the relative error against its target, the resolution $\varepsilon/|\beta|$, and the value $N_{\text{opt}}$ that would null the error; the observables are then grouped into PRIMARY (resolution $<1\%$, i.e.\ sectors that can locate $N$), WEAK ($1$--$100\%$, consistent only), and NO CONSTRAINT ($>100\%$). The two cosmological rows are reported with their provenance stated explicitly: $\Lambda_{\text{vac}}(N)$ inherits the $-12$ exponent of $G(N)$ and is therefore a consistency test with $G$, not an independent constraint, while $\Omega_{\text{vac}}(N)$ depends on $N$ only through $\varepsilon_M$ and is independent of $G$ and $\lambda_l$.
+
+\lstinputlisting[
+language=Python,
+caption={Drift, resolution, and grouping of the $N$-lock-in scan.},
+label={lst:ewt_lock_in_scan}
+]{ewt_lock_in_scan.py}
+
+\subsubsection{Lock-in Scan Module Output}
+\label{app:ewt_lock_in_scan_output}
+
+The console output of \texttt{ewt\_lock\_in\_scan.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_lock\_in\_scan.py}.},
+label={lst:ewt_lock_in_scan_output}
+]{ewt_lock_in_scan.txt}
 
 \subsubsection{Robustness and Stability Plots}
 \label{app:ewt_robustness_plots}

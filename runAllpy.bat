@@ -11,7 +11,7 @@ if errorlevel 1 (
     exit /b 1
 )
 
-set "scripts=ewt_amm_extended.py ewt_amm_resonance_scanner.py ewt_amm_structural_resonance.py ewt_electroweak_bosons.py ewt_emergence_engine.py ewt_particle_masses.py ewt_robustness_plots.py ewt_cosmological_constant.py"
+set "scripts=ewt_amm_extended.py ewt_amm_resonance_scanner.py ewt_amm_structural_resonance.py ewt_electroweak_bosons.py ewt_emergence_engine.py ewt_particle_masses.py ewt_robustness_plots.py ewt_cosmological_constant.py ewt_lock_in_scan.py"
 
 set "FAILED="
 set "OK_COUNT=0"

@@ -1,0 +1,109 @@
+==============================================================================
+M4.11 - N AS INTERNAL LOCK-IN POINT
+       drift | resolution | grouping
+==============================================================================
+Reference N_geom = 778.802518
+
+Reference values at N_geom:
+  alpha^-1           = 1.370362623642e+02
+  G                  = 6.677519975508e-11
+  a_e                = 1.159916228104e-03
+  a_mu               = 1.166212608460e-03
+  a_tau              = 1.176838130442e-03
+  sin^2(theta_W)     = 2.338363612028e-01
+  sin(theta_C)       = 2.242955156684e-01
+  Lambda_vac         = 1.082602080379e-52
+  Omega_vac          = 6.897488578712e-01
+
+shift_C (sin^2W - sinC at N_geom) = 0.0095408455
+
+Drift scan range: [500.0, 1100.0], step = 2.0, 301 points
+
+Computing drift ...
+  0/301
+  50/301
+  100/301
+  150/301
+  200/301
+  250/301
+  300/301
+
+==============================================================================
+SECTION 1: DRIFT relative to N_geom (zero at N_geom by construction)
+==============================================================================
+Sector               drift@N_geom    drift@-10    drift@+10
+-----------------------------------------------------------
+alpha^-1             0.000000e+00 3.930726e-09 3.831062e-09
+G                    0.000000e+00 1.677520e-01 1.419577e-01
+a_e                  0.000000e+00 1.671913e-05 1.629522e-05
+a_mu                 0.000000e+00 1.840503e-05 1.793894e-05
+a_tau                0.000000e+00 2.860361e-03 2.797658e-03
+sin^2(theta_W)       0.000000e+00 5.914569e-04 5.766661e-04
+sin(theta_C)         0.000000e+00 5.314110e-06 5.179371e-06
+Lambda_vac           0.000000e+00 1.679628e-01 1.421087e-01
+Omega_vac            0.000000e+00 1.805477e-04 1.759700e-04
+
+==============================================================================
+SECTION 2: RESOLUTION (error / |d ln O / d ln N|)
+==============================================================================
+Sector                     beta        error     resolution        N_opt
+------------------------------------------------------------------------
+alpha^-1              3.024e-07 1.921248e-06   6.352814e+00       105.85
+G                    -1.200e+01 4.816944e-04   4.014120e-05       778.83
+a_e                   1.285e-03 2.276946e-04   1.771431e-01       661.63
+a_mu                  1.415e-03 2.504445e-04   1.769919e-01       661.69
+a_tau                 2.203e-01 3.158906e-04   1.433929e-03       779.92
+sin^2(theta_W)       -4.548e-02 1.131546e-02   2.488032e-01      1031.78
+sin(theta_C)         -4.086e-04 1.999256e-05   4.893540e-02       742.47
+Lambda_vac           -1.201e+01 5.875041e-03   4.890210e-04       778.42
+Omega_vac            -1.388e-02 1.232193e-03   8.877118e-02       854.57
+
+==============================================================================
+SECTION 3: GROUPING
+==============================================================================
+
+PRIMARY (resolves N, <1%):
+  G                  N_opt =   778.833773 resolution = 4.014120e-05
+  a_tau              N_opt =   779.921003 resolution = 1.433929e-03
+  Lambda_vac         N_opt =   778.420638 resolution = 4.890210e-04
+
+WEAK (consistent, 1-100%):
+  a_e                N_opt =   661.626645 resolution = 1.771431e-01
+  a_mu               N_opt =   661.692453 resolution = 1.769919e-01
+  sin^2(theta_W)     N_opt =  1031.775418 resolution = 2.488032e-01
+  sin(theta_C)       N_opt =   742.468785 resolution = 4.893540e-02
+  Omega_vac          N_opt =   854.570378 resolution = 8.877118e-02
+
+NO CONSTRAINT (>100%):
+  alpha^-1           N_opt =   105.849669 resolution = 6.352814e+00
+
+Primary agreement (G vs Lambda_vac): 0.0530% of N_geom
+
+==============================================================================
+NOTE: cosmological rows
+==============================================================================
+  Two distinct G-related observations:
+
+  1. G_geom is a derived quantity, not a free parameter.
+     It is itself an expression in r_e, m_e, c, alpha_geom,
+     and the BCC geometric factors (manuscript v5.3.1,
+     sec:cosmo_summary). H_0 is proportional to G_geom^(1/2),
+     so the 0.048% residual of G_geom against CODATA enters
+     H_0 at 0.024% and Lambda_vac at 0.048%.
+
+  2. G(N) sensitivity propagates through the chain (this is
+     what the lock-in scan measures).
+     G depends on N through the -12 exponent of the lattice
+     stiffness, and Lambda_vac inherits this exponent:
+     beta(Lambda_vac) = -12.014, dominated by -12 from G.
+     Lambda_vac is therefore a CONSISTENCY TEST WITH G, not
+     an independent constraint on N.
+
+  Omega_vac depends on N only through eps_M (via C_gap), so it
+  is INDEPENDENT of G and lambda_l. It is the only
+  cosmological sector that does not inherit G's sensitivity.
+
+Saved: D:\myDesgins\TeX\data\m4_11_lock_in_n_scan.csv
+Saved: D:\myDesgins\TeX\data\m4_11_lock_in_n_scan.json
+
+Done.
