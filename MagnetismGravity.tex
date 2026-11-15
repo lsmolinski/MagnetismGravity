@@ -73,7 +73,7 @@
 
 \begin{center}
 \today \\
-Version: 5.3.1	
+Version: 5.3.2	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -167,6 +167,21 @@ cosmological constant as sub-percent predictions.
 	
 	\bottomrule
 	\endlastfoot
+	5.3.2 & 2026.11.15 &
+	Revised the cosmological sector and the lock-in test in response to the
+	OpenWave review. The Haug horizon relation is now presented as the Haug
+	and Tatum relation with its factor read from the BCC horizon factor,
+	rather than ``recovered''; the incorrect claim that \(G_{\rm geom}\)
+	cancels in the cosmological combinations is corrected, and every
+	tension is reported against both the Planck 2018 base set and the set
+	with BAO. In the vacuum-fraction section, \(C_{\rm gap}\) is stated as
+	the pure \(\pi^6\) operator (the engine's \(M_W\) prediction uses the
+	mixed operator and does not test it), the matter-correction diagnostic
+	is removed, and the identity \(H\,M_\mu = 8\,N_{\rm geom}\) is
+	relabeled a tautology by construction. The lock-in test gains
+	reference-value, drift, grouping, and per-sector-target tables, with
+	\(\Lambda_{\rm vac}\) flagged as inheriting its exponent from \(G\);
+	the companion scripts and appendices are updated accordingly. \\
 	5.3.1 & 2026.11.13 &
 	Added a new section ``The Cosmological Constant from the BCC Lattice'', which recovers the Haug horizon
 	relation from the BCC horizon factor \(H = 8(2\pi)^2\), predicts
@@ -9619,7 +9634,7 @@ enters and what role it plays.
 		\midrule
 		\multicolumn{4}{l}{\textit{IV.B Cosmological chain}} \\
 		\midrule
-		Haug relation & \ref{sec:cosmo_H0_derivation} & identity & $T_{\text{cmb},0} = (T_p/8\pi)\sqrt{2\lambda_l/R_H}$; recovered from BCC horizon model (naive equipartition corrected by $H = 8(2\pi)^2$). Phase-unit ansatz is a model assumption \\
+		Haug relation & \ref{sec:cosmo_H0_derivation} & identity & $T_{\text{cmb},0} = (T_p/8\pi)\sqrt{2\lambda_l/R_H}$; the Haug and Tatum relation, with factor $32\pi^2$ read as $8(2\pi)^2$. Phase-unit ansatz is a model assumption \\
 		$T_p$ & \ref{sec:cosmo_summary} & Derived & $1.416444 \times 10^{32}$~K; output of the EWT trinity $(1/k_B)\sqrt{\hbar_{\text{geom}} c^5/G_{\text{geom}}}$ \\
 		$R_H$ & \ref{sec:cosmo_H0_derivation} & Derived & $1.382521 \times 10^{26}$~m; $\lambda_l (T_p/T_{\text{cmb},0})^2/H$; conditional on the phase-unit ansatz \\
 		$H_0^{\text{EWT}}$ & \ref{sec:cosmo_H0_derivation} & Predicted & $66.9113$~km\,s$^{-1}$\,Mpc$^{-1}$; from BCC chain $+$ one anchor $T_{\text{cmb},0}$; $-0.83\sigma$ vs Planck \\

@@ -86,7 +86,7 @@ try:
     )
 except ImportError as e:
     raise ImportError(
-        "This script requires m4_7_ewt_emergence_engine.py in the same directory."
+        "This script requires ewt_emergence_engine.py in the same directory."
     ) from e
 
 
