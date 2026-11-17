@@ -83,6 +83,7 @@ try:
         derive_lambda_l_geometric,
         gravity_sector,
         build_geometric_ladder,
+        derive_planck_temperature,
     )
 except ImportError as e:
     raise ImportError(
@@ -350,7 +351,7 @@ def derive_ewt_trinity():
 
     hbar_geom = derive_hbar(alpha_geom, R_E, M_E, C0)
     G_geom    = res_gravity["G_EWT"]
-    T_p       = (1.0 / K_B) * math.sqrt(hbar_geom * C0**5 / G_geom)
+    T_p = derive_planck_temperature(hbar_geom, G_geom)
 
     ladder = build_geometric_ladder(eps_M, "BCC packing derived", zeta=zeta)
 
