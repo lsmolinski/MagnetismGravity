@@ -2653,6 +2653,52 @@ so the relative deviation is approximately \(0.0276\%\). This is a genuine geome
 
 \(X_{\text{eff}}\) is not a free parameter; it is the geometric bridge that connects the statutory EMC background to the effective soliton deficit. It encapsulates how \(K_{WC}=10\), the ideal BCC projection, and the geometric core \(A_\pi\) jointly dilute the vacuum density inside matter.
 
+\subsection{The Electron Mass Cancellation in the Planck Length}
+\label{sec:planck_mass_cancellation}
+
+One of the most striking structural features of the EWT geometric formulation is that the Planck length \(\lambda_l\) is completely independent of the electron mass. This can be seen by combining the geometric definitions of the reduced Planck constant and the gravitational constant.
+
+In the EWT framework, the reduced Planck constant is anchored to the electron soliton:
+\begin{equation}
+	\hbar_{\text{geom}} = \frac{m_e c r_e}{\alpha_{\text{geom}}}.
+	\label{eq:hbar_mass_dep}
+\end{equation}
+Conversely, the gravitational constant is derived from the BCC lattice stiffness and the geometric projection of the same soliton:
+\begin{equation}
+	G_{\text{geom}} = \frac{c^2 r_e}{m_e} \, \frac{1}{A_\pi} \left(\frac{1}{N_{\text{geom}} A_\pi}\right)^3 \frac{1}{K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:G_mass_dep}
+\end{equation}
+
+The Planck length is defined by the closed condition:
+\begin{equation}
+	\lambda_{l,\text{geom}}^2 = \frac{\hbar_{\text{geom}} G_{\text{geom}}}{c^3}.
+	\label{eq:planck_condition}
+\end{equation}
+Substituting Eqs.~\eqref{eq:hbar_mass_dep} and~\eqref{eq:G_mass_dep} into Eq.~\eqref{eq:planck_condition}, we obtain:
+\begin{equation}
+	\lambda_{l,\text{geom}}^2 = 
+	\left( \frac{m_e c r_e}{\alpha_{\text{geom}}} \right)
+	\left( \frac{c^2 r_e}{m_e} \right)
+	\frac{1}{c^3}
+	\frac{1}{A_\pi} \left(\frac{1}{N_{\text{geom}} A_\pi}\right)^3 \frac{1}{K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+\end{equation}
+The electron mass \(m_e\) and the speed of light \(c\) cancel identically:
+\begin{equation}
+	\lambda_{l,\text{geom}}^2 = 
+	\frac{r_e^2}{\alpha_{\text{geom}} A_\pi}
+	\left(\frac{1}{N_{\text{geom}} A_\pi}\right)^3 \frac{1}{K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:planck_no_mass}
+\end{equation}
+Taking the square of both sides, we find:
+\begin{equation}
+	\boxed{
+		\lambda_{l,\text{geom}} = \frac{r_e}{\sqrt{\alpha_{\text{geom}} \, A_\pi}} \left(\frac{1}{N_{\text{geom}} A_\pi}\right)^{3/2} \frac{1}{\sqrt{K_{WC} \sqrt{N_{\nu,\text{eff}}}}}.
+	}
+	\label{eq:lambda_l_geom_final}
+\end{equation}
+
+Equation~\eqref{eq:lambda_l_geom_final} demonstrates that the Planck scale is not a property of the electron. It is a direct consequence of the BCC vacuum geometry. The electron mass merely serves as a bridge to connect the geometric constants to our SI units; physically, the Planck length is the fundamental spacing of the EMC lattice.
+
 \subsection{Consistency with the Planck Charge}
 \label{sec:consistency_qP}
 
@@ -6196,51 +6242,7 @@ which is in excellent agreement with the CODATA 2022 recommended value:
 \end{equation}
 The relative error is approximately \(0.004\%\), confirming that the gravitational coupling is fully determined by the BCC geometry.
 
-\subsection{The Electron Mass Cancellation in the Planck Length}
-\label{sec:planck_mass_cancellation}
 
-One of the most striking structural features of the EWT geometric formulation is that the Planck length \(\lambda_l\) is completely independent of the electron mass. This can be seen by combining the geometric definitions of the reduced Planck constant and the gravitational constant.
-
-In the EWT framework, the reduced Planck constant is anchored to the electron soliton:
-\begin{equation}
-	\hbar_{\text{geom}} = \frac{m_e c r_e}{\alpha_{\text{geom}}}.
-	\label{eq:hbar_mass_dep}
-\end{equation}
-Conversely, the gravitational constant is derived from the BCC lattice stiffness and the geometric projection of the same soliton:
-\begin{equation}
-	G_{\text{geom}} = \frac{c^2 r_e}{m_e} \, \frac{1}{A_\pi} \left(\frac{1}{N_{\text{geom}} A_\pi}\right)^3 \frac{1}{K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
-	\label{eq:G_mass_dep}
-\end{equation}
-
-The Planck length is defined by the closed condition:
-\begin{equation}
-	\lambda_{l,\text{geom}}^2 = \frac{\hbar_{\text{geom}} G_{\text{geom}}}{c^3}.
-	\label{eq:planck_condition}
-\end{equation}
-Substituting Eqs.~\eqref{eq:hbar_mass_dep} and~\eqref{eq:G_mass_dep} into Eq.~\eqref{eq:planck_condition}, we obtain:
-\begin{equation}
-	\lambda_{l,\text{geom}}^2 = 
-	\left( \frac{m_e c r_e}{\alpha_{\text{geom}}} \right)
-	\left( \frac{c^2 r_e}{m_e} \right)
-	\frac{1}{c^3}
-	\frac{1}{A_\pi} \left(\frac{1}{N_{\text{geom}} A_\pi}\right)^3 \frac{1}{K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
-\end{equation}
-The electron mass \(m_e\) and the speed of light \(c\) cancel identically:
-\begin{equation}
-	\lambda_{l,\text{geom}}^2 = 
-	\frac{r_e^2}{\alpha_{\text{geom}} A_\pi}
-	\left(\frac{1}{N_{\text{geom}} A_\pi}\right)^3 \frac{1}{K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
-	\label{eq:planck_no_mass}
-\end{equation}
-Taking the square of both sides, we find:
-\begin{equation}
-	\boxed{
-		\lambda_{l,\text{geom}} = \frac{r_e}{\sqrt{\alpha_{\text{geom}} \, A_\pi}} \left(\frac{1}{N_{\text{geom}} A_\pi}\right)^{3/2} \frac{1}{\sqrt{K_{WC} \sqrt{N_{\nu,\text{eff}}}}}.
-	}
-	\label{eq:lambda_l_geom_final}
-\end{equation}
-
-Equation~\eqref{eq:lambda_l_geom_final} demonstrates that the Planck scale is not a property of the electron. It is a direct consequence of the BCC vacuum geometry. The electron mass merely serves as a bridge to connect the geometric constants to our SI units; physically, the Planck length is the fundamental spacing of the EMC lattice.
 
 \subsection{Cosmological Radiation Density and $\Omega_\gamma$ Emergence}
 \label{sec:omega_gamma}
