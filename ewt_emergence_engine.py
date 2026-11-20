@@ -1288,10 +1288,6 @@ def derive_gravitational_coupling(alpha_geom: float, G_EWT: float, G_Base: float
     """
     return alpha_geom * (G_EWT / G_Base)
     
-# =============================================================================
-# SECTION 10: THERMODYNAMIC AND COSMOLOGICAL SCALES
-# =============================================================================
-
 def derive_hubble_entropy(R_H: float, lambda_l: float) -> float:
     """
     Derive the entropy of the Hubble horizon in Planck units (Bekenstein-Hawking).
@@ -1506,7 +1502,6 @@ def main():
 
     print("\n" + "=" * 78)
     
-
     G_EWT = gravity_res['G_EWT']
     T_p = derive_planck_temperature(hbar_geom, G_EWT)
     T_cmb = T_CMB_COBE_FIRAS
@@ -1538,3 +1533,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
