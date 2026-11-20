@@ -73,7 +73,7 @@
 
 \begin{center}
 \today \\
-Version: 5.3.2	
+Version: 5.4.0	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -2288,9 +2288,9 @@ In the current formulation, \(m_e\), \(r_e\), and \(c\) are the metric and struc
 \begin{equation}
 	r_e = 100\,r_\nu ,
 \end{equation}
-while \(m_e\) is constrained by the \(E \propto r^5\) scaling law discussed in Section~\ref{sec:geometric_mass_to_radius}. Their full derivation from the BCC lattice alone is a central open objective.
+while \(m_e\) is constrained by the \(E \propto r^5\) scaling law discussed in Section~\ref{sec:geometric_mass_to_radius}. 
 
-The subsequent derivation of \(G\) therefore contains no free dimensional parameters: the only inputs are \(r_e\), \(m_e\), \(c\), and the elementary charge amplitude \(e\). In natural units (\(c=1\)), the number of independent inputs reduces further, and the gravitational constant becomes a purely geometric prediction.
+The subsequent derivation of \(G\) therefore contains no free dimensional parameters: the only inputs are \(r_e\), \(m_e\), \(c\), and the elementary charge amplitude \(e\). In natural units (\(c=1\), \(m_e\)), the number of independent inputs reduces further, and the gravitational constant becomes a purely geometric prediction.
 
 \subsubsection*{The Final Geometric Identity for $G$}
 
@@ -2716,7 +2716,7 @@ Equation~\eqref{eq:lambda_l_geom_final} demonstrates that the Planck scale is no
 \paragraph{Algebraic Closure of the Planck Scale.}
 It is instructive to compare Eq.~\eqref{eq:lambda_l_geometric} (derived from the self-consistent gravitational sector) with Eq.~\eqref{eq:lambda_l_geom_final} (derived directly from the geometric identity). Substituting the definition of the effective neutrino density \(N_{\nu,\text{eff}}\) into Eq.~\eqref{eq:lambda_l_geom_final} recovers Eq.~\eqref{eq:lambda_l_geometric} exactly. 
 
-This algebraic identity is not a coincidence; it demonstrates the internal closure of the model. It proves that the Planck length computed from the gravitational field equations is identical to the Planck length computed from pure BCC geometry. The electron mass \(m_e\) and the specific ratio \(r_e/r_\nu\) factor out perfectly, confirming that the Planck scale is a fundamental property of the vacuum lattice, independent of which sector of the theory is used to calculate it.
+This algebraic identity is not a coincidence; it demonstrates the internal closure of the model. It proves that the Planck length computed from the gravitational field equations matches the Planck length computed from the BCC geometric identity. The mass-scale metric \(m_e\) (along with \(c\) in \(\lambda_{l,\text{geom}}^2\)) cancels identically, confirming that the Planck scale is governed by the vacuum lattice geometry and soliton scale consistently across both sectors.
 
 \subsection{Consistency with the Planck Charge}
 \label{sec:consistency_qP}
@@ -4163,7 +4163,7 @@ geometric dimension $[\text{m}^5]$:
 \begin{equation}
 	[r_e / m_e] = \frac{[\text{m}]}{[\text{m}^5]} = [\text{m}^{-4}].
 \end{equation}
-\\
+
 The gravitational constant therefore requires no independent
 mass scale: its dimension, and ultimately its value, is entirely
 determined by the geometry of the BCC lattice.
@@ -6217,20 +6217,20 @@ All three derive from the same geometric inputs --- the statutory neutrino radiu
 
 The sub-ppm agreement confirms that the fine-structure constant and the electron radius are not independent empirical parameters but manifestations of a single underlying BCC geometry. The slightly larger error in \(R_\infty\) reflects the cumulative effect of the \(\alpha_{\text{geom}}^3\) factor, consistent with the lattice impedance \(\zeta\) introduced in Section~\ref{sec:alpha_geometric_deficit}.
 
-\subsection{The Planck Temperature and its Mass Dependence}
+\subsection{The Planck Temperature}
 \label{sec:planck_temperature}
 
-While the Planck length is a pure property of the BCC vacuum (Section~\ref{sec:planck_mass_cancellation}), the Planck temperature retains a dependence on the electron mass. The Planck temperature is defined by the thermodynamic condition:
+While the Planck length is invariant under the algebraic cancellation of the mass-scale metric \(m_e\) (Section~\ref{sec:planck_mass_cancellation}), the Planck temperature expressed in kelvins explicitly carries the SI unit-conversion factors \(m_e\), \(c\), and \(k_B\). Starting from the thermodynamic definition:
 \begin{equation}
 	T_{p,\text{geom}} = \frac{1}{k_B} \sqrt{\frac{\hbar_{\text{geom}} c^5}{G_{\text{geom}}}}.
 	\label{eq:Tp_def}
 \end{equation}
-Substituting the geometric expressions for \(\hbar_{\text{geom}} \propto m_e\) and \(G_{\text{geom}} \propto 1/m_e\), we find that the electron mass does not cancel, but instead forms the electron rest energy:
+Substituting the geometric expressions for \(\hbar_{\text{geom}} \propto m_e\) and \(G_{\text{geom}} \propto 1/m_e\), we find that the metric factor \(m_e\) does not cancel in the ratio \(\hbar_{\text{geom}}/G_{\text{geom}}\), yielding the rest-energy conversion unit factor \(m_e c^2 / k_B\)
 \begin{equation}
 	T_{p,\text{geom}} = \frac{m_e c^2}{k_B} \sqrt{\frac{A_\pi}{\alpha_{\text{geom}}}} \left(N_{\text{geom}} A_\pi\right)^{3/2} \left( K_{WC} \sqrt{N_{\nu,\text{eff}}} \right)^{1/2}.
 	\label{eq:Tp_geom}
 \end{equation}
-This expression reveals that the Planck temperature is not an abstract limit, but the electron rest energy scaled by the geometric stiffness of the BCC lattice. Substituting the zero-calibration parameters yields:
+This expression reveals that the Planck temperature is not an abstract limit, but the electron rest energy unit convention scaled by the geometric stiffness of the BCC lattice. Substituting the zero-calibration parameters yields:
 \begin{equation}
 	T_{p,\text{geom}} \approx 1.416444 \times 10^{32}\ \text{K},
 \end{equation}
@@ -6254,24 +6254,13 @@ This result is profound: the ratio of the gravitational to electromagnetic force
 
 Numerically, Eq.~\eqref{eq:alpha_G_geom} yields:
 \begin{equation}
-	\alpha_G^{\text{EWT}} = 1.75174 \times 10^{-45},
+	\alpha_G^{\text{EWT}} = 1.752651 \times 10^{-45},
 \end{equation}
-which is in excellent agreement with the CODATA 2022 recommended value:
+which matches the CODATA 2022 recommended value:
 \begin{equation}
-	\alpha_G^{\text{CODATA}} = 1.75181 \times 10^{-45}.
+	\alpha_G^{\text{CODATA}} = 1.751810 \times 10^{-45}.
 \end{equation}
-The relative error is approximately \(0.004\%\), confirming that the gravitational coupling is fully determined by the BCC geometry.
-
-
-
-\subsection{Cosmological Radiation Density and $\Omega_\gamma$ Emergence}
-\label{sec:omega_gamma}
-
-Applying the Stefan-Boltzmann radiation law to the Hubble sphere yields the analytical EWT prediction for the radiation density parameter[cite: 10]:
-\begin{equation}
-	\Omega_\gamma = \frac{1}{5760\pi} \approx 5.526 \times 10^{-5}.
-\end{equation}
-Comparing this parameter-free geometric baseline with the empirical Planck estimate (\(\Omega_{\gamma,\text{obs}} \approx 5.402 \times 10^{-5}\)) yields a close agreement within a $\sim 2.3\%$ margin. This confirms that the foundational radiation-to-critical density ratio emerges naturally from the lattice vacuum structure without adjustable parameters.
+The relative error is approximately \(0.048\%\) (\(0.048018\%\)), confirming that the gravitational coupling is determined by the BCC lattice geometry.
 
 \section{The Cosmological Constant from the BCC Lattice}
 \label{sec:cosmo_summary}
@@ -6944,30 +6933,45 @@ The entropy is therefore a pure number determined by the BCC lattice geometry an
 \end{equation}
 Numerically, this yields the standard Bekenstein-Hawking entropy of the observable universe (\(S \approx 10^{122}\)), confirming that the thermodynamic properties of the horizon are a direct consequence of the EMC vacuum granularity.
 
+\subsection{Cosmological Radiation Density and $\Omega_\gamma$ Emergence}
+\label{sec:omega_gamma_emergence}
+
+Applying the Stefan--Boltzmann radiation law to the Hubble sphere together with the EWT geometric trinity ($\hbar_{\text{geom}}$, $G_{\text{geom}}$, and the Haug--Tatum relation for $H_0$) yields the parameter-free prediction for the present-day radiation density parameter:
+\begin{equation}
+	\Omega_\gamma = \frac{1}{5760\pi} \approx 5.526 \times 10^{-5}.
+	\label{eq:omega_gamma_geom}
+\end{equation}
+Because the dimensional conversion factors cancel in the ratio $\Omega_\gamma = \rho_\gamma / \rho_{\text{crit}}$, this value emerges directly from the BCC lattice structure without adjustable parameters (see Section~\ref{sec:omega_gamma_cmb} for the explicit derivation and phase-space factor). Comparing Eq.~\eqref{eq:omega_gamma_geom} with the empirical Planck reference estimate (\(\Omega_{\gamma,\text{obs}} \approx 5.402 \times 10^{-5}\)) gives agreement within \(\sim 2.3\%\) (\(2.299\%\)).
+
 \subsection{The CMB Radiation Density Parameter}
-\label{sec:omega_gamma}
+\label{sec:omega_gamma_cmb}
 
-In the \(R_H = ct\) thermodynamic model, Haug derives that the present-day radiation density parameter is a pure constant:
-\begin{equation}
-	\Omega_\gamma = \frac{1}{5760\pi} \approx 5.52 \times 10^{-5}.
-\end{equation}
-In the EWT framework, this parameter can be derived directly from the geometric trinity. The radiation density is:
-\begin{equation}
-	\rho_\gamma = \frac{\pi^2 k_B^4}{15 \hbar_{\text{geom}}^3 c^3} T_{\text{cmb}}^4,
-\end{equation}
-and the critical density is:
-\begin{equation}
-	\rho_{\text{crit}} = \frac{3 H_0^2 c^2}{8\pi G_{\text{geom}}}.
-\end{equation}
-Taking the ratio \(\Omega_\gamma = \rho_\gamma / \rho_{\text{crit}}\) and substituting the geometric expressions for \(\hbar_{\text{geom}}\), \(G_{\text{geom}}\), and the Haug-Tatum relation for \(H_0\), all dimensional constants cancel. The result is a pure geometric constant:
-\begin{equation}
-	\boxed{
-		\Omega_\gamma = \frac{1}{5760\pi}.
-	}
-\end{equation}
-Comparing this with the Planck 2018 measured value \(\Omega_\gamma^{\text{Planck}} \approx 5.402 \times 10^{-5}\), we find a relative error of approximately \(2.2\%\). 
+The CMB radiation density parameter is obtained from the geometric Planck scales ($\lambda_{l,\text{geom}}$, $\hbar_{\text{geom}}$, and $G_{\text{geom}}$) together with the present CMB temperature $T_{\text{cmb}} = 2.7255\ \text{K}$ (COBE/FIRAS) and the exact SI conversion factors $c$ and $k_B$.
 
-The appearance of the factor \(5760 = 128 \times 45 = 2^7 \times 45\) is not coincidental: the factor \(2^7\) is the exact same exponent that appears in the magnetic deficit \(\epsilon_M = 1/(8\pi^7(1-\zeta))\). This confirms that the radiation content of the universe is locked to the same 7-dimensional phase space of the BCC lattice that governs the charged weak sector.
+Using the Haug--Tatum scaling relation with the geometric factor $H_{\text{factor}} = 8(2\pi)^2 = 32\pi^2$, the Hubble radius is evaluated as:
+\begin{equation}
+	R_H = \frac{\lambda_{l,\text{geom}}}{32\pi^2} \left(\frac{T_{p,\text{geom}}}{T_{\text{cmb}}}\right)^2 \approx 1.382521 \times 10^{26}\ \text{m},
+	\label{eq:R_H_ewt}
+\end{equation}
+which fixes the Hubble expansion rate $H_0 = c / R_H$ and the dimensionless Bekenstein--Hawking horizon entropy:
+\begin{equation}
+	S = \pi \left(\frac{R_H}{\lambda_{l,\text{geom}}}\right)^2 \approx 2.297541 \times 10^{122}.
+	\label{eq:S_hubble_ewt}
+\end{equation}
+
+The photon energy density $\rho_\gamma$ and critical density $\rho_{\text{crit}}$ are then computed from $\hbar_{\text{geom}}$, $G_{\text{EWT}}$, $H_0$, and $T_{\text{cmb}}$ via:
+\begin{equation}
+	\rho_\gamma = \frac{\pi^2 k_B^4}{15\,\hbar_{\text{geom}}^3 c^3}\,T_{\text{cmb}}^4,
+	\qquad
+	\rho_{\text{crit}} = \frac{3 H_0^2 c^2}{8\pi G_{\text{geom}}},
+	\label{eq:rho_gamma_crit}
+\end{equation}
+giving the dimensionless density parameter $\Omega_\gamma = \rho_\gamma / \rho_{\text{crit}}$:
+\begin{equation}
+	\Omega_\gamma^{\text{EWT}} \approx 5.526213 \times 10^{-5},
+	\label{eq:omega_gamma_computed}
+\end{equation}
+matching the analytical expression $1/(5760\pi) \approx 5.526213 \times 10^{-5}$. Against the reference value $\Omega_{\gamma,\text{ref}} = 5.402 \times 10^{-5}$ used in the verification script, this corresponds to a relative error of \(2.2994\%\).
 
 \subsection{Status of the cosmological sector}
 \label{sec:summary_status_table}
@@ -8165,7 +8169,7 @@ with relative errors \(0.022769\%\), \(0.025044\%\), and \(0.031589\%\).
 
 The projection rules \(\mathcal{O}_e = \mathcal{O}_\tau = 1\) and \(\mathcal{O}_\mu = 1/(4\pi^2)\) are fixed by the dimensional hierarchy and contain no generation-specific parameters. A fourth generation would require a second 2D projection and is geometrically forbidden by the saturation limit of the BCC lattice.
 
-\subsection{Cosmological Predictions: Recovered Relation and Predicted Constants}
+\subsection{Cosmological Predictions: Identified Relation and Predicted Constants}
 \label{sec:cosmo_predictions_pp}
 
 The cosmological sector (Section~\ref{sec:cosmo_summary}) extends the
@@ -8186,7 +8190,7 @@ into four categories, summarised in Table~\ref{tab:cosmo_predictions}.
 		\midrule
 		Haug relation
 		& $T_{\rm cmb,0} = \dfrac{T_p}{8\pi}\sqrt{\dfrac{2\lambda_l}{R_H}}$
-		& \textbf{Recovered}
+		& \textbf{Identified}
 		& From naive equipartition corrected by $H = 8(2\pi)^2$; phase-unit ansatz is a model assumption \\
 		$H_0^{\text{EWT}}$
 		& $66.9113$~km\,s$^{-1}$\,Mpc$^{-1}$
@@ -8210,7 +8214,7 @@ into four categories, summarised in Table~\ref{tab:cosmo_predictions}.
 
 The two \emph{predictions} are directly testable: they depend on the
 BCC geometry and the single anchor \(T_{\rm cmb,0}\), with no
-calibrated parameter. The \emph{recovered} Haug relation is a
+calibrated parameter. The \emph{identified} Haug relation is a
 reformulation of the equipartition scaling; the horizon factor
 \(H = 8(2\pi)^2\) is a model construct, not a first-principles
 derivation. The \emph{mechanism} $\Omega_{\rm vac} = \eta_{\rm
@@ -9666,7 +9670,7 @@ empirical anchor, the present CMB temperature \(T_{\rm cmb,0}\)
 (COBE/FIRAS~\cite{Fixsen2009}), and by one further exact
 unit-conversion constant, the Boltzmann constant \(k_B\), which,
 like \(c\) and \(m_e\), carries no dynamical information. With these two
-additions the same BCC geometry recovers the thermodynamic horizon
+additions the same BCC geometry identifies the thermodynamic horizon
 relation of Haug and predicts the Hubble constant and the de Sitter
 value of the cosmological constant. The horizon factor
 \(H = 8(2\pi)^2\) that closes the recovered relation is a model
@@ -9764,7 +9768,7 @@ enters and what role it plays.
 		\multicolumn{4}{l}{\quad\textit{I.B Metric conversions (unit bridges to the SI system)}} \\
 		\midrule
 		$c$    & \ref{sec:c_as_metric} & Unit conversion (spacetime metric) & Exact by SI 2019 ($299\,792\,458$~m\,s$^{-1}$); conversion between spatial and temporal lattice steps; not a dynamical input \\
-		$m_e$  & \ref{sec:mass_geometric_status}, \ref{sec:planck_mass_cancellation}, \ref{sec:amm_mass_independence} & Unit conversion (mass metric) & Electron mass; acts as the mass-scale conversion between BCC geometry and SI kilograms. See G remainder factor in eq. \ref{eq:G_remainder} and $G_{base}$ in eq. \ref{eq:G_base_v2}. It is not an independent dynamical parameter: it cancels identically in the Planck length (Section~\ref{sec:planck_mass_cancellation}), is absent from the AMM predictions (Section~\ref{sec:amm_mass_independence}), and the SI kilogram itself reduces to purely geometric dimensions (Section~\ref{sec:mass_geometric_status}) \\
+		$m_e$  & \ref{sec:mass_geometric_status}, \ref{sec:planck_mass_cancellation}, \ref{sec:amm_mass_independence}, \ref{sec:gravitational_coupling} & Unit conversion (mass metric) & Electron mass; acts as the mass-scale conversion between BCC geometry and SI kilograms. See G remainder factor in eq. \ref{eq:G_remainder} and $G_{base}$ in eq. \ref{eq:G_base_v2}. It is not an independent dynamical parameter: it cancels identically in the Planck length (Section~\ref{sec:planck_mass_cancellation}), is absent from the AMM predictions (Section~\ref{sec:amm_mass_independence}), is absent from \ref{sec:gravitational_coupling} gravitational coupling, and the SI kilogram itself reduces to purely geometric dimensions (Section~\ref{sec:mass_geometric_status}) \\
 		$k_B$ & \ref{sec:cosmo_summary} & Unit conversion (thermodynamic metric) & Exact by SI 2019 ($1.380649 \times 10^{-23}$~J\,K$^{-1}$); converts Planck energy to Planck temperature $T_p$; not a dynamical input \\
 		\midrule
 		\multicolumn{4}{l}{\textit{II. Test anchors (consistency checks, not predictions)}} \\
@@ -9858,7 +9862,7 @@ the baseline EWT formulation, not used in predictions).
 \subsection{Computational Scripts (Python)}
 \label{app:python_scripts}
 
-All numerical results in this work are produced by a set of Python scripts that implement the zero-calibration geometric model described in the main text. The scripts are self-contained and use only standard scientific libraries. The source code and console outputs are listed below. Persistent identifiers for each script will be added in the final published version.
+All numerical results in this work are produced by a set of Python scripts that implement the zero-calibration geometric model described in the main text. The scripts are self-contained and use only standard scientific libraries. The source code and console outputs are listed below. The latest versions of the verification scripts are available on Zenodo at \url{https://doi.org/10.5281/zenodo.22540261}.
 
 \subsubsection{Emergence Engine}
 \label{app:ewt_emergence_engine}
@@ -10053,7 +10057,7 @@ label={lst:ewt_robustness_plots_output}
 \texttt{ewt\_cosmological\_constant.py} implements the cosmological
 sector described in Section~\ref{sec:cosmo_summary}. It imports the
 EWT trinity from the emergence engine and adds the BCC horizon factor
-$H = 8(2\pi)^2$, the Haug horizon relation (recovered from naive
+$H = 8(2\pi)^2$, the Haug horizon relation (identified from naive
 equipartition), and the effective vacuum fraction
 $\Omega_{\rm vac} = \eta_{\rm BCC} C_{\rm gap}$. The script computes
 $T_p$, $R_H$, $H_0$, $\Lambda_{\rm dS}$, $\Omega_{\rm vac}$, and
