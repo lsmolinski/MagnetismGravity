@@ -73,7 +73,7 @@
 
 \begin{center}
 \today \\
-Version: 5.4.0	
+Version: 5.4.1	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -5577,31 +5577,30 @@ The results of this numerical reproduction are summarized in Table \ref{tab:mass
 		\midrule
 		Neutrino         & 1/2 & 1   & Spherical & 0.000000002389 & 0.000000002380 & 0.3886\% \\
 		Quark $u$        & 1/2 & 13  & Spherical & 0.001948910346 & 0.002162000000 & 9.8561\%\textsuperscript{*} \\
-		Electron         & 1/2 & 10  & Spherical & 0.000510998963 & 0.000510990000 & 0.0018\% \\
+		Electron         & 1/2 & 10  & Spherical & 0.000510998963 & 0.000510998950 & 0.0000\% \\
 		Quark $d$        & 1/2 & 15  & Spherical & 0.004034394152 & 0.004692000000 & 14.0155\%\textsuperscript{*} \\
 		Muon ($\mu$)     & 1/2 & 20  & Orbital   & 0.094885062179 & 0.094885430000 & 0.0004\%\textsuperscript{\dag} \\
 		Quark $s$        & 1/2 & 28  & Spherical & 0.094885432231 & 0.094954000000 & 0.0722\% \\
 		Tau ($\tau$)     & 1/2 & 50  & Orbital   & 1.756198681131 & 1.756199090000 & 0.0000\%\textsuperscript{\dag} \\
-		$\Omega_{cc}^*$    & 1/2 & 58  & Spherical & 3.701123374091 & 3.725900000000 & 0.6650\% \\
-		W Boson          & 1   & 109 & Spherical & 87.627848552791 & 80.387000000000 & 9.0075\% \\
-		Z Boson          & 1   & 110 & Spherical & 91.731362798344 & 91.182000000000 & 0.6025\% \\
-		Higgs ($H$)      & 0   & 117 & Spherical & 124.961346975376& 124.961300000000& 0.0000\% \\
+		$\Omega_{cc}^*$  & 1/2 & 58  & Spherical & 3.701123374091 & 3.725900000000 & 0.6650\% \\
+		W Boson          & 1   & 109 & Spherical & 87.627848552791 & 80.377000000000 & 9.0210\% \\
+		Z Boson          & 1   & 110 & Spherical & 91.731362798344 & 91.187600000000 & 0.5963\% \\
+		Higgs ($H$)      & 0   & 117 & Spherical & 124.961346975376& 125.250000000000& 0.2305\% \\
 		\bottomrule
 	\end{tabular}
 	
 	\vspace{4pt}
 	\raggedright\footnotesize
 	\textsuperscript{*} For light quarks the relative error exceeds 10\% because 
-	the PDG ``quark mass'' is an effective parameter; see explanation in 
+	the PDG ``quark mass'' is an effective, scheme-dependent parameter; see explanation in 
 	Sec.~\ref{subsec:quark-mass-interpretation}.
 	
 	\vspace{2pt}
-	\textsuperscript{\dag}~Orbital-mode entries (Muon, Tau) are calibrated to
-	internal EWT reference masses (0.09488543~GeV and 1.75619909~GeV) and
-	therefore constitute an \emph{internal consistency test} of the orbital
-	calibration. The corresponding PDG comparison is reported
-	in Table~\ref{tab:meson_mode_scan}, where the meson-mode scaling achieves
-	0.80\% and 0.78\% agreement.
+	\textsuperscript{\dag}~Orbital-mode entries (Muon, Tau) rely on the calibrated 
+	multipliers \(\delta_\mu, \delta_\tau\) (see Appendix~\ref{app:inventory_status}, Class VI). 
+	They are reported here as an \emph{internal consistency test} of the orbital calibration, 
+	not as zero-parameter predictions. The pure meson-mode (Spherical) scaling achieves 
+	0.80\% and 0.78\% agreement for Muon and Tau, respectively (see Table~\ref{tab:meson_mode_scan}).
 \end{table}
 
 \subsection{Universal $({K_{WC}})^5$ Meson-Mode Scan: Independent Mass Validation}
@@ -5615,7 +5614,7 @@ This scaling law was previously validated for the electron, pion, kaon, and prot
 	K_{WC} = K_e \cdot \left(\frac{m_{\text{target}}}{m_e}\right)^{1/5}
 \end{equation}
 
-Particles whose exact $K$ falls within $|K_{WC} - \text{round}(K_{WC})| < 0.15$ of an integer are identified as \textbf{natural EWT resonances} --- states that align with discrete lattice wave-center counts without any parameter adjustment. The results are presented in Table~\ref{tab:meson_mode_scan}.
+Particles whose exact $K$ falls within $|K_{WC} - \text{round}(K_{WC})| < 0.15$ of an integer are identified as \textbf{natural EWT resonances} --- states that align with discrete lattice wave-center counts without any parameter adjustment. The results are presented in Table~\ref{tab:meson_mode_scan}. While the integer matching successfully identifies known particles, it is crucial to evaluate this against a formal null hypothesis. The tolerance window \(|K_{\text{exact}} - K_{\text{int}}| < 0.15\) spans a width of \(0.30\) on a uniform distribution bounded by \([-0.5, +0.5]\). Therefore, \(30\%\) of any random continuous masses would fall within this window purely by chance. For the 51 non-anchor entries in our dataset, the expected random hit rate is \(51 \times 0.30 = 15.3\). The observed 13 hits (\(25.5\%\)) are slightly below this random expectation (binomial test \(p=0.54\)). This indicates that the integer clustering in the meson-mode scan is not statistically significant beyond random chance, and the matches should be interpreted as consistency checks rather than independent statistical post-dictions.
 
 However, it is important to note that current mass-eigenvalue calculations assume an ideal geometric configuration, neglecting spin-induced radial compression. Consequently, observed minor variances in mass predictions  are attributed to this non-linear modulation of the soliton, where the intrinsic magnetic torque acts as an anisotropic deformation.
 
@@ -5658,13 +5657,13 @@ However, it is important to note that current mass-eigenvalue calculations assum
 		\toprule
 		\textbf{Particle} & \textbf{Mode} & \textbf{($K_{WC}$)} & \textbf{Calculated [GeV]} & \textbf{Error (\%)} \\
 		\midrule
-		\textbf{W Boson} & Spherical & 109 & 87.6278 & 9.0075\% \\
+		\textbf{W Boson} & Spherical & 109 & 87.6278 & 9.0210\% \\
 		(Target: 80.377) & \textbf{Meson} & \textbf{109} & \textbf{78.6235} & \textbf{2.1816\%} \\
 		\midrule
-		\textbf{Z Boson} & \textbf{Spherical} & \textbf{110} & \textbf{91.7313} & \textbf{0.6025\%} \\
-		(Target: 91.187) & Meson & 112 & 90.0554 & 1.2415\% \\
+		\textbf{Z Boson} & \textbf{Spherical} & \textbf{110} & \textbf{91.7313} & \textbf{0.5963\%} \\
+		(Target: 91.1876) & Meson & 112 & 90.0554 & 1.2415\% \\
 		\midrule
-		\textbf{Higgs (H)} & \textbf{Spherical} & \textbf{117} & \textbf{124.9613} & \textbf{0.0000\%} \\
+		\textbf{Higgs (H)} & \textbf{Spherical} & \textbf{117} & \textbf{124.9613} & \textbf{0.2305\%} \\
 		(Target: 125.25) & Meson & 120 & 127.1528 & 1.5193\% \\
 		\midrule
 		\textbf{Quark $s$} & \textbf{Spherical} & \textbf{28} & \textbf{0.09488} & \textbf{0.0722\%} \\
@@ -5674,7 +5673,7 @@ However, it is important to note that current mass-eigenvalue calculations assum
 		(Target: 0.00216) & Meson & 13 & 0.00189 & 12.2431\%\textsuperscript{*} \\
 		\midrule
 		\textbf{Quark $d$} & Spherical & 15 & 0.00403 & 14.0155\%\textsuperscript{*} \\
-		(Target: 0.00469) & Meson  & 16 & 0.00402 & 14.1989\%\textsuperscript{*} \\
+		(Target: 0.00469) & Meson  & 16 & 0.00535 & 14.1989\%\textsuperscript{*} \\
 		\midrule
 		\textbf{$\Omega_{cc}^*$} & \textbf{Spherical} & \textbf{58} & \textbf{3.7011} & \textbf{0.6650\%} \\
 		(Target: 3.7259) & Meson & 59 & 3.6533 & 1.9497\% \\
@@ -5690,9 +5689,11 @@ However, it is important to note that current mass-eigenvalue calculations assum
 
 \subsubsection{Key conclusions from the meson-mode scan}
 \begin{enumerate}
-	\item \textbf{Spin is not a predictive factor.} Particles with spin $0$, $1/2$, or $1$ can be predicted accurately or poorly depending solely on whether their wave‑center count $K_{WC}$ lies close to an integer.
-	\item \textbf{Geometric matching of the standing wave to the nodal structure (quantisation of $K_{WC}$) is the essential condition.}
-	\item \textbf{The model becomes asymptotically exact at high energies.} Even small deviations of $K_{WC}$ from an integer yield small relative errors because the pure ${K_{WC}}^5$ geometry dominates over non‑perturbative effects.
+	\item \textbf{Spin is not a predictive factor.} Particles with spin $0$, $1/2$, or $1$ can be predicted accurately or poorly depending solely on whether their wave-center count \(K_{WC}\) lies close to an integer.
+	
+	\item \textbf{Geometric matching of the standing wave to the nodal structure (quantisation of \(K_{WC}\)) is the essential condition.}
+	
+	\item \textbf{The apparent "asymptotic exactness" at high energies is a consequence of Jacobian compression, not a dynamical prediction.} Because mass scales as \(K_{WC}^5\), the relative mass spacing between consecutive integers is \(\Delta m/m \approx 5/K_{WC}\). Consequently, for large \(K_{WC}\) (high masses), small deviations in \(K_{WC}\) from an integer algebraically guarantee small relative mass errors. This mathematical property of the fifth-root scaling law means that a fixed tolerance window (e.g., \(|K_{\text{exact}} - K_{\text{int}}| < 0.15\)) will naturally yield smaller fractional mass errors at high \(K\). This must be accounted for when evaluating the statistical significance of the matches against a uniform null hypothesis.
 \end{enumerate}
 
 \paragraph{The neutrino as a special case: sub‑threshold anchor}
@@ -5768,7 +5769,7 @@ characterises the natural EWT resonances.  This result is
 particularly noteworthy because the \(\Omega_{cc}^*\) was observed
 after the EWT framework was formulated; it therefore constitutes a
 genuine \textbf{post‑diction} that independently validates the
-geometric mass hierarchy.
+geometric mass hierarchy. For the \(\Omega_{cc}^*\) baryon, the meson-mode exact integer \(K_{\text{exact}}=59.2328\) fails the tolerance criterion (yielding a \(1.95\%\) error at \(K=59\)). Switching to the Spherical mode at \(K=58\) reduces the error to \(0.665\%\). This mode-switching increases the effective look-elsewhere probability. We present these mode transitions transparently as exploratory mapping, acknowledging that the availability of multiple modes and adjacent integers loosens the statistical strictness of the prediction.
 
 
 \subsubsection{Discussion and Cross-Mode Consistency}
@@ -8237,10 +8238,9 @@ derivation. The \emph{mechanism} $\Omega_{\rm vac} = \eta_{\rm
 conditional on the composition rule, which is stated as a model
 assumption in Section~\ref{sec:summary_vacuum_fraction}.
 
-As with the lepton AMM predictions, none of these results depends
-on the numerical value of \(G_{\rm geom}\) separately: the factors
-\(\hbar_{\rm geom}\) and \(G_{\rm geom}\) cancel in the combinations
-that fix \(T_p\) and \(\lambda_l\).
+As with the lepton AMM predictions, these results do not depend on the numerical value of the electron mass \(m_e\) separately: the mass metric \(m_e\) cancels identically in the algebraic derivation of the Planck length \(\lambda_{l,\text{geom}}\), as demonstrated in Section~\ref{sec:planck_mass_cancellation}. 
+
+However, the gravitational constant \(G_{\rm geom}\) does not cancel in the cosmological combinations. Because \(\lambda_{l,\text{geom}} \propto G_{\rm geom}^{1/2}\) and \(T_p \propto G_{\rm geom}^{-1/2}\), the horizon radius scales as \(R_H \propto G_{\rm geom}^{-1/2}\). Consequently, the Hubble constant scales as \(H_0 \propto G_{\rm geom}^{1/2}\) and the de Sitter cosmological constant scales linearly as \(\Lambda_{\rm dS} \propto G_{\rm geom}\). The \(0.048\%\) residual of \(G_{\rm geom}\) against CODATA therefore propagates to \(H_0\) at \(0.024\%\) and to \(\Lambda\) at \(0.048\%\).
 
 \subsection{Magnetic Sensitivity \(G(B)\) and Hypotheses Testing}
 \label{sec:G_magnetic_sensitivity_pp}
