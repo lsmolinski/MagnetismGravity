@@ -73,7 +73,7 @@
 
 \begin{center}
 \today \\
-Version: 5.4.1	
+Version: 5.4.2	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -863,10 +863,11 @@ The formation of mixing angles within the EWT framework is governed by a hierarc
 The \textbf{Unified Local Constant} is the structural bridge between the global lattice magnetic deficit ($\epsilon_{M}$) and the local chiral projection ($2\sqrt{2}$):
 \begin{equation}
 	\boxed{\mathbf{C}_{\text{local}} \equiv \frac{\epsilon_{M}}{2\sqrt{2}}}
+	\label{eq:C_local}
 \end{equation}
 
 \subsubsection{The $\pi^6$ Resonance: Volumetric Bosonic Coupling}
-
+\label{sec:natural_pi_6}
 Neutral vector bosons ($Z, H$) and neutral--neutral vertices are high-energy excitations involving the full six-dimensional phase space. The modulator $\mathbf{C}_{\text{gap}}$ accounts for the volumetric resistance of the lattice in a pure neutral vertex:
 \begin{equation}
 	C_{\text{gap}} = 1 + \pi^6 \cdot C_{\text{local}}
@@ -5701,7 +5702,8 @@ However, it is important to note that current mass-eigenvalue calculations assum
 	
 	\item \textbf{Geometric matching of the standing wave to the nodal structure (quantisation of \(K_{WC}\)) is the essential condition.}
 	
-	\item \textbf{The apparent "asymptotic exactness" at high energies is a consequence of Jacobian compression, not a dynamical prediction.} Because mass scales as \(K_{WC}^5\), the relative mass spacing between consecutive integers is \(\Delta m/m \approx 5/K_{WC}\). Consequently, for large \(K_{WC}\) (high masses), small deviations in \(K_{WC}\) from an integer algebraically guarantee small relative mass errors. This mathematical property of the fifth-root scaling law means that a fixed tolerance window (e.g., \(|K_{\text{exact}} - K_{\text{int}}| < 0.15\)) will naturally yield smaller fractional mass errors at high \(K\). This must be accounted for when evaluating the statistical significance of the matches against a uniform null hypothesis.
+	\item \textbf{The apparent "asymptotic exactness" at high energies is a consequence of Jacobian compression, not a dynamical prediction.} Because mass scales as \(K_{WC}^5\), small deviations \(\delta K = |K_{\text{exact}} - K_{\text{int}}|\) map to relative mass errors \(\Delta m/m \approx 5\,\delta K/K_{WC}\) (remaining below \(\approx 1\%\) for \(K_{WC} \gtrsim 75\) within \(\delta K < 0.15\)). This fifth-root scaling must be accounted for when evaluating matches against a uniform null hypothesis, since not every integer \(K\) is occupied; any new states discovered in this mass regime should likewise fall along this discrete \(K_{WC}^5\) sequence.
+	\item \textbf{Large energy steps between consecutive nodes counterbalance fractional error compression at high \(K\).} While the fractional error \(\Delta m/m\) decreases at large \(K_{WC}\), the absolute mass step between adjacent integers grows as \(\Delta m_{\text{step}} \approx 5m/K_{WC} \propto K_{WC}^4\) (amounting to several GeV at high masses), so the model does not create a dense continuum of mass targets in GeV.
 \end{enumerate}
 
 \paragraph{The neutrino as a special case: sub‑threshold anchor}
@@ -6737,8 +6739,8 @@ the vacuum response; this is discussed in the next subsection.
 \subsection{The effective vacuum fraction from the BCC lattice}
 \label{sec:summary_vacuum_fraction}
 
-The BCC lattice has a natural vacuum volume fraction: the packing
-fraction
+The BCC lattice has a natural vacuum volume fraction: the fundamental packing
+fraction, presented in Geometric Ladder Section~\ref{sec:geom_ladder}: 
 \begin{equation}
 	\eta_{\rm BCC} = \frac{\pi\sqrt{3}}{8} = 0.680175,
 	\label{eq:summary_eta_BCC}
@@ -6754,7 +6756,7 @@ sensitive to the occupied fraction \(\eta_{\rm BCC}\), not to the
 voids as separate objects.
 
 The cosmological term responds to this vacuum fraction, but the
-response is enhanced by the neutral volumetric gap operator
+response is enhanced by the neutral volumetric gap operator, which accounts for the volumetric resistance of the lattice (see Section~\ref{sec:magnetic_deficit}): 
 \begin{equation}
 	C_{\rm gap} = 1 + \pi^6 C_{\rm local},
 	\qquad
@@ -6762,7 +6764,7 @@ response is enhanced by the neutral volumetric gap operator
 	\label{eq:summary_Cgap}
 \end{equation}
 which is the pure $\pi^6$ operator the engine assigns to neutral
-vertices (Section~\ref{sec:mixed_wz_vertex}). The engine's \(M_W\)
+vertices (Sections~\ref{sec:natural_pi_6}, \ref{sec:mixed_wz_vertex}). The engine's \(M_W\)
 prediction at $0.012\%$ uses the mixed operator
 $C_{\rm gap}^{\rm mixed}$, so \(M_W\) does not test this ingredient;
 using $C_{\rm gap}$ here is part of the identification. The
@@ -6773,7 +6775,7 @@ effective vacuum fraction is therefore
 	}
 	\label{eq:summary_omega_value}
 \end{equation}
-The choice $C_{\rm gap}$ over $C_{\rm gap}^{\rm mixed}$ is dictated
+The choice of $C_{\rm gap}$ over $C_{\rm gap}^{\rm mixed}$ is dictated
 by the charge neutrality of the global vacuum: the vacuum has no net
 charge, so its gap structure is the neutral one. The mixed operator
 was tested at the $0.012\%$ level in the \(W\)--\(Z\) prediction; the
@@ -6839,8 +6841,8 @@ Eq.~\eqref{eq:summary_Lambda_relation} gives
 	= 1.082602\times 10^{-52}\ {\rm m^{-2}},
 	\label{eq:summary_Lambda_pred}
 \end{equation}
-which is \(0.588\%\) below the Planck value
-$\Lambda_{\rm obs} = 1.089\times 10^{-52}$~m$^{-2}$. The comparison
+which is \(0.597\%\) below the Planck base value
+$\Lambda_{\rm obs} = 1.0891\times 10^{-52}$~m$^{-2}$. The comparison
 is summarised in Table~\ref{tab:summary_omega}.
 
 \begin{table}[h]
@@ -6863,7 +6865,7 @@ is summarised in Table~\ref{tab:summary_omega}.
 		\multicolumn{4}{l}{\textit{Implied dark-energy constant:}} \\
 		\(\Lambda_{\rm vac}\) (this work)      & \(1.082602\times 10^{-52}\)~m\(^{-2}\) & & \\
 		\(\Lambda_{\rm obs}\) (Planck base)    & \(1.0891\times 10^{-52}\)~m\(^{-2}\)  & $-0.60\%$ & \\
-		\(\Lambda_{\rm obs}\) (Planck + BAO)   & \(1.1056\times 10^{-52}\)~m\(^{-2}\)  & $-2.08\%$ & tension \\
+		\(\Lambda_{\rm obs}\) (Planck + BAO)   & \(1.1056\times 10^{-52}\)~m\(^{-2}\)  & $-2.08\%$ & \\
 		\bottomrule
 	\end{tabular}
 \end{table}
