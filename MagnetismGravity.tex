@@ -6020,6 +6020,37 @@ which matches the CODATA 2022 recommended value:
 \end{equation}
 The relative error is approximately \(0.048\%\) (\(0.048018\%\)), confirming that the gravitational coupling is determined by the BCC lattice geometry.
 
+In pure geometric and lattice variables, with \(N_{\text{geom}} = 8\pi^4(1-\zeta)\) and \(A_\pi = 4\pi^3 + \pi^2 + \pi\), the coupling takes the dimensionless geometric form:
+\begin{equation}
+	\alpha_G
+	= \frac{\alpha_{\text{geom}}}
+	{A_\pi^4 \, N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:alpha_G_pure_geom}
+\end{equation}
+Factoring out the leading cubic BCC stiffness scale \(N_{\text{geom}}^3\) and the four-step geometric ladder \(A_\pi^4\) exposes the explicit lattice normalization:
+\begin{equation}
+	\alpha_G
+	= \frac{\alpha_{\text{geom}}}{N_{\text{geom}}^3}
+	\cdot \mathcal{N}_{\text{BCC}},
+	\qquad
+	\mathcal{N}_{\text{BCC}}
+	= \frac{1}{A_\pi^4 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:alpha_G_bcc_norm}
+\end{equation}
+
+Substituting \(\alpha_{\text{geom}} = (A_\pi - \epsilon_M)^{-1}\) from Eq.~\eqref{eq:alpha_normalized_final} into Eq.~\eqref{eq:alpha_G_geom} removes \(\alpha_{\text{geom}}\) and places the factor \((A_\pi - \epsilon_M)\) in the denominator:
+\begin{equation}
+	\alpha_G
+	= \frac{1}{(A_\pi - \epsilon_M)\, A_\pi^4 \, N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:alpha_G_no_alpha_geom}
+\end{equation}
+Factoring \(A_\pi\) out of \((A_\pi - \epsilon_M)\) in Eq.~\eqref{eq:alpha_G_no_alpha_geom} keeps unity in the numerator and exposes the dimensionless correction ratio \(\epsilon_M / A_\pi\):
+\begin{equation}
+	\alpha_G
+	= \frac{1}{A_\pi^5 \left(1 - \dfrac{\epsilon_M}{A_\pi}\right) N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:alpha_G_factored_Api}
+\end{equation}
+
 \section{The Cosmological Constant from the BCC Lattice}
 \label{sec:cosmo_summary}
 
