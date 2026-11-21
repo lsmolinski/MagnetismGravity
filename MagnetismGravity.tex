@@ -147,272 +147,7 @@ cosmological constant as sub-percent predictions.
 \noindent\rule{\textwidth}{1pt}
 \vspace{10pt}
 \clearpage
-\section*{Change Log}
-\addcontentsline{toc}{section}{Change Log}
 
-\begin{longtable}{@{}p{1.6cm}p{1.8cm}p{10.1cm}@{}}
-	\toprule
-	\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
-	\midrule
-	\endfirsthead
-	
-	\toprule
-	\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
-	\midrule
-	\endhead
-	
-	\midrule
-	\multicolumn{3}{r}{\small\textit{continued on next page}} \\
-	\endfoot
-	
-	\bottomrule
-	\endlastfoot
-	5.4.1 & 2026.11.20 &
-	Updated particle mass reference values and recalculated relative errors 
-	across the manuscript, \texttt{ewt\_particle\_masses.py}, and its output 
-	log, while clarifying the internal calibration status of orbital muon and 
-	tau entries. Added null-hypothesis testing, fifth-root Jacobian compression, 
-	and mode-switching caveats to the \(K_{WC}^5\) mass-scan analysis. 
-	Corrected the cosmological discussion to distinguish exact \(m_e\) 
-	cancellation from the explicit scaling and error propagation of \(G_{\rm geom}\). \\
-	5.4.0 & 2026.11.20 &
-	Reclassified the electron mass \(m_e\) as a unit-conversion metric, 
-	analogous to \(c\) and \(k_B\), supported by its exact algebraic 
-	cancellation in the Planck length and its complete absence in the 
-	lepton AMM predictions. The Haug-Tatum relation is now explicitly 
-	labeled as an identification rather than a recovery. Expanded the 
-	geometric landscape by introducing parameter-free derivations for 
-	the gravitational coupling constant \(\alpha_G\), the Planck 
-	temperature \(T_p\), the Hubble horizon entropy, and the CMB radiation 
-	density parameter \(\Omega_\gamma\). The Inventory of Inputs and 
-	Status of Inputs sections were updated to reflect the metric status 
-	of \(m_e\). \\
-	5.3.2 & 2026.11.15 &
-	Revised the cosmological sector and the lock-in test in response to the
-	OpenWave review. The Haug horizon relation is now presented as the Haug
-	and Tatum relation with its factor read from the BCC horizon factor,
-	rather than ``recovered''; the incorrect claim that \(G_{\rm geom}\)
-	cancels in the cosmological combinations is corrected, and every
-	tension is reported against both the Planck 2018 base set and the set
-	with BAO. In the vacuum-fraction section, \(C_{\rm gap}\) is stated as
-	the pure \(\pi^6\) operator (the engine's \(M_W\) prediction uses the
-	mixed operator and does not test it), the matter-correction diagnostic
-	is removed, and the identity \(H\,M_\mu = 8\,N_{\rm geom}\) is
-	relabeled a tautology by construction. The lock-in test gains
-	reference-value, drift, grouping, and per-sector-target tables, with
-	\(\Lambda_{\rm vac}\) flagged as inheriting its exponent from \(G\);
-	the companion scripts and appendices are updated accordingly. \\
-	5.3.1 & 2026.11.13 &
-	Added a new section ``The Cosmological Constant from the BCC Lattice'', which recovers the Haug horizon
-	relation from the BCC horizon factor \(H = 8(2\pi)^2\), predicts
-	\(H_0^{\rm EWT} = 66.9113\) km\,s\(^{-1}\)\,Mpc\(^{-1}\) (\(-0.83\sigma\)
-	vs Planck) and the de Sitter value
-	\(\Lambda_{\rm dS} = 1.5696\times 10^{-52}\) m\(^{-2}\) from the EWT
-	trinity plus the single CMB anchor \(T_{\rm cmb,0}\), and gives the
-	observed cosmological constant through the geometric mechanism
-	\(\Omega_{\rm vac} = \eta_{\rm BCC} C_{\rm gap} = 0.6897\) (composition
-	rule stated as a model assumption). Under the phase-unit ansatz only
-	\(N=8\) (BCC) reproduces the Planck \(H_0\), while tetrahedral, simple
-	cubic, FCC, and hypercubic lattices are excluded at many sigma.
-	Added the companion script \texttt{ewt\_cosmological\_constant.py} and
-	its output, extended
-	the inventory with subclasses
-	I.A/I.B (measured anchors versus exact SI conversions) and IV.A/IV.B
-	(functional forms and cosmological chain), and added 11 references
-	(Planck 2018, DESI 2024, SH0ES 2022, Fixsen 2009, and six Haug papers).
-	Updated the abstract, keywords, Status of Inputs, Final Synthesis, the
-	new cosmological predictions subsection
-	, and the Dark Energy bullet to reflect the cosmological extension. \\
-	5.2.4 & 2026.11.10 &
-	Rewrote the local-metric section: replaced the vector displacement
-	field $\vec{u}(r)$ with a scalar density deficit $\delta(r)$ (new
-	eqs.~\texttt{eq:density\_deficit}, \texttt{eq:delta\_r},
-	\texttt{eq:n\_gamma\_exact}); rewrote the Doppler section with an
-	arithmetic/geometric mean construction (new eqs.~\texttt{eq:doppler\_means},
-	\texttt{eq:lorentz\_ratio}). Added geometric interpretation of the
-	emission surface $S = 4\pi l^2 + (\pi rl + \pi r^2)$ (cone inscribed
-	in sphere) and an explicit natural-units convention paragraph.
-	Added $q_P$ to inventory class~IV. Updated
-	\texttt{tab:final\_results\_confirmed} (tau $^\dagger$ note:
-	Shell Ref.\ and Full AMM coincide via $\mathcal{O}_\tau=1$) and
-	\texttt{tab:target\_comparison} (corrected scanner values; the
-	$0.0012$~ppm engine--scanner discrepancy is resolved). Renamed
-	\texttt{Q\_P\_INPUT}$\to$\texttt{Q\_P\_REFERENCE}. Removed a
-	duplicated paragraph in the Higgs--vector mixing section. Fixed SNO
-	bibliography (Charged-Current~$\to$~Neutral-Current), typos, and
-	removed the boxed ``Remark on the Muon Anomaly.'' \\
-	5.2.3 & 2026.11.09 &
-	Fixed cubic nonlinearity sign ($+\gamma\Psi^{3} \to -\gamma\Psi^{3}$,
-	self-focusing) and added Derrick-instability note. Replaced scalar
-	winding number with degree of map $\mathbf{n}: S^2 \to S^2$
-	(Manton--Sutcliffe 2004); $Q = K_{WC} = 10$ now stated as structural
-	postulate. Added inventory class~VI for legacy EWT constants
-	(diagnostic only), $r_\nu$ as derived quantity, $e$-notation warning,
-	and $K_{WC}$ vs.\ $Q$ distinction. Fixed \texttt{ewt\_robustness\_plots.py}:
-	hardcoded $A_\pi$, $C_{\text{fermion}}$, quark masses, and $N_\nu$
-	replaced with model-derived values; modules~6 and~9 use real
-	computations instead of synthetic placeholders. Minor encoding fix. \\
-	5.2.2 & 2026.11.08 &
-	Replaced the deprecated quadratic fermionic correction
-	$C_{\text{fermion}} = (1 + \pi^5 C_{\text{local}})^2$ with a linear
-	flavor deficit
-	$\epsilon_{\text{flavor}} = 1/(8\pi^5(1-\zeta))$, structurally
-	analogous to the magnetic deficit
-	$\epsilon_M = 1/(8\pi^7(1-\zeta))$ at the charged weak rung (both
-	follow $\epsilon_n = 1/(8\pi^n(1-\zeta))$ with $n \in \{5, 7\}$).
-	The Cabibbo relation becomes
-	$\sin\theta_C = \sqrt{M_d/M_s}\,(1 + \epsilon_{\text{flavor}})$, the
-	bare Gatto--Sartori--Tonin amplitude multiplied by a single lattice
-	deficit, consistent with the linear form of the bosonic corrections.
-	The previous quadratic form required non-standard quark masses to
-	agree with experiment; the new form uses standard PDG~2024 masses
-	(and a PDG~2022 variant for comparison), improving the agreement with
-	the measured Cabibbo angle. In the N-Stiffness section the flavor
-	deficit is expressed as $\epsilon_{\text{flavor}} =
-	1/(\pi\,N_{\text{geom}})$, the natural $\pi^1$ suppression
-	analogous to the $\pi^3$ suppression of $C_{\text{gap}}$. Updated
-	the inventory, the electroweak module
-	\texttt{ewt\_electroweak\_bosons.py}, and the engine
-	\texttt{ewt\_emergence\_engine.py} (\texttt{build\_geometric\_ladder}
-	now takes the lattice impedance $\zeta$); console outputs in
-	Appendix~A.3 regenerated. \\
-	5.2.1 & 2026.11.02 &
-	Renamed the mixed $W$--$Z$ operator from ``harmonic mean'' to
-	``parallel-impedance combination'', reflecting the correct
-	mathematical structure of $\pi^6\pi^7/(\pi^6+\pi^7)$ as the parallel
-	combination of two channel impedances. Replaced the informal
-	``$\pi^7 \to \infty$'' decoupling argument with an explicit
-	uniqueness criterion: $\pi^6$ and $\pi^7$ are fixed values, and the
-	limit is taken on the effective impedance, not on the rung number.
-	Added a discussion of the SM indirect electroweak fit
-	($M_W = 80.353 \pm 0.006$~GeV) in Section~3.1.4, noting that the
-	$\pm 6$~MeV SM uncertainty is input-parameter propagation only; the
-	realistic theory uncertainty ($\pm 10$--$15$~MeV) makes the 26~MeV
-	EWT--SM difference $\approx 2\sigma$, not $4.3\sigma$. Extended the
-	Higgs--vector mixing section with an explicit note on the auxiliary
-	spherical-mode masses (and their dependence on the legacy wave
-	constants of inventory class~V) and on the SME bounds on
-	Lorentz-violating operators ($\sim 10^{-16}$), which make on-shell
-	scalar--vector mixing experimentally indistinguishable from the SM
-	prohibition. Added the Gatto--Sartori--Tonin (1968) and Kleinert
-	(1987) references. \\
-	5.2.0 & 2026.11.02 &
-	Introduced the mixed $W$--$Z$ vertex operator, a harmonic
-	combination $O_{\text{mixed}} = \pi^6\pi^7/(\pi^6+\pi^7)$ of the
-	neutral and charged weak rungs. The pure $\pi^6$
-	operator is retained for genuinely neutral vertices ($Z$--$Z$,
-	$Z$--$H$); the mixed operator is used for the $W$--$Z$ vertex and
-	for the $W$--$H$ mixing angle. Updated inventory table. \\
-	5.1.8 & 2026.10.30 &
-	Extended the Abstract with explicit accounting of the four empirical
-	anchors ($r_e$, $m_e$, $c$, $e$), the single discrete postulate
-	$L_\mu = F_5 = 5$, and the geometrically fixed integer $K_{WC} = 10$.
-	Added Appendix, a complete inventory
-	classifying every model element as anchor, test anchor, postulate,
-	geometric integer, or parameter-free functional form. Downgraded
-	the null-probe metric encoding $v_\gamma = \eta$ from derived to
-	postulated, with explicit open-item remarks (M4.13) and falsification
-	conditions. Introduced a uniform ppm convention in the AMM section,
-	with reference to \texttt{ewt\_amm\_extended.py}, and reframed the
-	lepton anomalies as three independent evaluations of the same
-	geometric identity. Corrected the $B_c^{*+}$ wave-centre count from
-	$K_{WC}=59$ to $K_{WC}=66$ and removed the erroneous ``Topological
-	Isomorphism and Dual Realisation'' subsection built on the wrong
-	value.\\
-	5.1.7 & 2026.10.22 &
-	Corrected the optical refractive index from
-	$n_\gamma = (1-2r_s/r)^{-1/2}$ to $n_\gamma = \eta^{-1} = (1-r_s/r)^{-1}$,
-	which matches the exact Schwarzschild optical metric factor and removes
-	the spurious singularity at $r = 2r_s$. Split the derivation into the
-	timelike encoding $v_{\text{clock}} = \sqrt{\eta}$ and the null-probe
-	encoding $n_\gamma = \sqrt{g_{rr}/g_{00}} = \eta^{-1}$, closing the
-	algebraic gap. Updated the M4.3 and M4.5 numerical entries in the
-	local-metric validation table. \\
-	\midrule
-	
-	5.1.6 & 2026.10.18 &
-	Revised the electromagnetic consistency check: the SI
-	identity $e^2 = 4\pi\epsilon_0 m_e c^2 r_e$ is now written in EWT
-	natural units as $x\, e^2 = m_e r_e$ with the dimensionful
-	conversion factor $x = \mu_0/(4\pi) = 10^{-7}\,\text{m}^4$. Added
-	the explicit dimensional check $[x][e^2] = [\text{m}^6] = [m_e][r_e]$
-	and clarified that $x$ is a unit-conversion quantity (structural
-	form from $\alpha, e, h, c$; numerical value from SI conventions),
-	with $k_e = c^2 x$ in SI and $k_e = x$ only in the $c=1$ limit. In
-	the Remark on $\epsilon_0$, the role of the vacuum permittivity is
-	absorbed into $x$. \\
-	\midrule
-	
-	5.1.5 & 2026.10.17 &
-	Stated the muon label $L_\mu = F_5 = 5$ explicitly as the model's
-	sole discrete postulate in ``Status of Inputs'' and ``Final
-	Synthesis''. Aligned Pillar~3 with the Fibonacci label terminology
-	($L_\mu = F_5$, $L_\tau = F_9$) and corrected ``wave centres'' to
-	``lattice nodes'' in the closure criterion. Removed a residual
-	fragment from the Final Synthesis. \\
-	\midrule
-	
-	5.1.4 & 2026.10.17 &
-	Introduced a unified discrete operator for the nodal shell hierarchy,
-	$\Delta K_k = \mathrm{round}(10^k \pi^2)$ for the electron core
-	($k=0$) and $\mathrm{round}(10^k \cdot 2\pi^2)$ for the shells
-	($k\geq 1$), which generates $K_n = 10, 207, 2181, 21920$ without a
-	hard-coded seed. Added the ``Discrete Resonance Labels of the BCC
-	Lattice'' section with Fibonacci labels $F_{1+4k} = 1, 5, 34, 233$
-	and the ``Termination at Three Generations'' section with a candidate
-	closure criterion $K_n/L_n^2 > 1$, satisfied by the three observed
-	generations and violated by the formally generated fourth. Softened
-	stability language in the physical interpretation, reconciled
-	``interface tension'' with ``interface area'' and ``interface
-	contribution'', and rephrased ``topological invariant'' as
-	``topologically determined quantity''. Adopted the symmetric
-	Lorentz--Heaviside convention $\epsilon_0 = \mu_0 = 1$
-	($e^2 = 4\pi m_e r_e$); minor typographical corrections. \\
-	\midrule
-	
-	5.1.3 & 2026.10.16 &
-	Corrected the refractive-index encoding to $n_\gamma=(2\eta-1)^{-1/2}$
-	and distinguished timelike from null probes in the Summary of Local
-	Metric Observables. Added the algebraic derivation of
-	$\mathcal{O}_\mu = M_\mu/N_{\text{geom}} = 1/(4\pi^2)$ and clarified the
-	dimensional origin of the interface tension $\delta = L_\mu^2 = 25$.
-	Added notes on the role of $s_\mu$ in $\sigma_\tau$, on orbital-mode
-	internal-consistency tests, and on the status of $\epsilon_0$. Removed
-	the VEV-falsification paragraphs and the ``deeper mathematical
-	structure'' claim; rephrased the muon-anomaly remark. Minor
-	typographical corrections. \\
-	\midrule
-	
-	5.1.2 & 2026.10.09 &
-	Replaced the ``Mutual Falsification: The Ultimate Test'' subsection
-	with ``Two Readings of the Higgs Sector: What a Future Measurement
-	Can Settle''. Stated the three Standard-Model theses on the Higgs
-	explicitly (fundamental scalar, fundamental VEV, fundamental mass
-	mechanism) and contrasted them with the EWT reading. Removed the
-	claim that a confirmed substructure would make the Standard Model
-	``automatically fall''; the falsification now targets the
-	interpretation, not the effective theory. Added a cross-reference
-	to the $X_{\text{eff}}$ equation. Minor cross-reference corrections. \\
-	\midrule
-	
-	5.1.1 & 2026.09.28 &
-	Replaced the preliminary Higgs-sector verification proposal with a
-	fully formulated observable-based test section. Pillar~I is now
-	stated as a falsifiable zero-modification prediction under an
-	explicit restricted tree-level hypothesis ($\mu_{ZH} = 1$);
-	Pillar~II is presented as a search framework using Legendre
-	moments of the $Z$ production angle, with an explicit proof that
-	an $s$-only form factor leaves the normalised angular shape
-	unchanged. Added experimental references. \\
-	\midrule
-	
-	5.1.0 & 2026.09.26 &
-	Corrected the $r^5$ scaling label (``Resonance Mode Count'' instead
-	of ``Resonance Frequency''); added the Lock-In Test and in-platform
-	validation subsections; added OpenWave M4 references; minor
-	typographical corrections. \\
-\end{longtable}
-\clearpage
 \section{Geometric Hierarchy of EWT and Spacetime Elasticity}
 
 Energy Wave Theory (EWT) is based on a quantum medium and establishes a clear hierarchy of entities, starting from the Planck scale. This geometric structure is crucial for the elasticity of spacetime and maintaining the constancy of the speed of light \cite{Yee2020Aether}.
@@ -10117,6 +9852,9 @@ caption={Console output from \texttt{ewt\_cosmological\_constant.py}.},
 label={lst:ewt_cosmological_constant_output}
 ]{ewt_cosmological_constant.txt}
 
+
+\clearpage
+
 \section*{Statements and Declarations}
 
 \textbf{Funding:} The author declares that no funds, grants, or other support were received during the preparation of this manuscript.
@@ -10600,6 +10338,273 @@ Addison-Wesley.
 	DOI: \href{https://doi.org/10.1088/2399-6528/ab9dd7}{10.1088/2399-6528/ab9dd7}.
 	
 \end{thebibliography}
+
+\clearpage
+\section*{Change Log}
+\addcontentsline{toc}{section}{Change Log}
+
+\begin{longtable}{@{}p{1.6cm}p{1.8cm}p{10.1cm}@{}}
+	\toprule
+	\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
+	\midrule
+	\endfirsthead
+	
+	\toprule
+	\textbf{Version} & \textbf{Date} & \textbf{Changes} \\
+	\midrule
+	\endhead
+	
+	\midrule
+	\multicolumn{3}{r}{\small\textit{continued on next page}} \\
+	\endfoot
+	
+	\bottomrule
+	\endlastfoot
+	5.4.1 & 2026.11.20 &
+	Updated particle mass reference values and recalculated relative errors 
+	across the manuscript, \texttt{ewt\_particle\_masses.py}, and its output 
+	log, while clarifying the internal calibration status of orbital muon and 
+	tau entries. Added null-hypothesis testing, fifth-root Jacobian compression, 
+	and mode-switching caveats to the \(K_{WC}^5\) mass-scan analysis. 
+	Corrected the cosmological discussion to distinguish exact \(m_e\) 
+	cancellation from the explicit scaling and error propagation of \(G_{\rm geom}\). \\
+	5.4.0 & 2026.11.20 &
+	Reclassified the electron mass \(m_e\) as a unit-conversion metric, 
+	analogous to \(c\) and \(k_B\), supported by its exact algebraic 
+	cancellation in the Planck length and its complete absence in the 
+	lepton AMM predictions. The Haug-Tatum relation is now explicitly 
+	labeled as an identification rather than a recovery. Expanded the 
+	geometric landscape by introducing parameter-free derivations for 
+	the gravitational coupling constant \(\alpha_G\), the Planck 
+	temperature \(T_p\), the Hubble horizon entropy, and the CMB radiation 
+	density parameter \(\Omega_\gamma\). The Inventory of Inputs and 
+	Status of Inputs sections were updated to reflect the metric status 
+	of \(m_e\). \\
+	5.3.2 & 2026.11.15 &
+	Revised the cosmological sector and the lock-in test in response to the
+	OpenWave review. The Haug horizon relation is now presented as the Haug
+	and Tatum relation with its factor read from the BCC horizon factor,
+	rather than ``recovered''; the incorrect claim that \(G_{\rm geom}\)
+	cancels in the cosmological combinations is corrected, and every
+	tension is reported against both the Planck 2018 base set and the set
+	with BAO. In the vacuum-fraction section, \(C_{\rm gap}\) is stated as
+	the pure \(\pi^6\) operator (the engine's \(M_W\) prediction uses the
+	mixed operator and does not test it), the matter-correction diagnostic
+	is removed, and the identity \(H\,M_\mu = 8\,N_{\rm geom}\) is
+	relabeled a tautology by construction. The lock-in test gains
+	reference-value, drift, grouping, and per-sector-target tables, with
+	\(\Lambda_{\rm vac}\) flagged as inheriting its exponent from \(G\);
+	the companion scripts and appendices are updated accordingly. \\
+	5.3.1 & 2026.11.13 &
+	Added a new section ``The Cosmological Constant from the BCC Lattice'', which recovers the Haug horizon
+	relation from the BCC horizon factor \(H = 8(2\pi)^2\), predicts
+	\(H_0^{\rm EWT} = 66.9113\) km\,s\(^{-1}\)\,Mpc\(^{-1}\) (\(-0.83\sigma\)
+	vs Planck) and the de Sitter value
+	\(\Lambda_{\rm dS} = 1.5696\times 10^{-52}\) m\(^{-2}\) from the EWT
+	trinity plus the single CMB anchor \(T_{\rm cmb,0}\), and gives the
+	observed cosmological constant through the geometric mechanism
+	\(\Omega_{\rm vac} = \eta_{\rm BCC} C_{\rm gap} = 0.6897\) (composition
+	rule stated as a model assumption). Under the phase-unit ansatz only
+	\(N=8\) (BCC) reproduces the Planck \(H_0\), while tetrahedral, simple
+	cubic, FCC, and hypercubic lattices are excluded at many sigma.
+	Added the companion script \texttt{ewt\_cosmological\_constant.py} and
+	its output, extended
+	the inventory with subclasses
+	I.A/I.B (measured anchors versus exact SI conversions) and IV.A/IV.B
+	(functional forms and cosmological chain), and added 11 references
+	(Planck 2018, DESI 2024, SH0ES 2022, Fixsen 2009, and six Haug papers).
+	Updated the abstract, keywords, Status of Inputs, Final Synthesis, the
+	new cosmological predictions subsection
+	, and the Dark Energy bullet to reflect the cosmological extension. \\
+	5.2.4 & 2026.11.10 &
+	Rewrote the local-metric section: replaced the vector displacement
+	field $\vec{u}(r)$ with a scalar density deficit $\delta(r)$ (new
+	eqs.~\texttt{eq:density\_deficit}, \texttt{eq:delta\_r},
+	\texttt{eq:n\_gamma\_exact}); rewrote the Doppler section with an
+	arithmetic/geometric mean construction (new eqs.~\texttt{eq:doppler\_means},
+	\texttt{eq:lorentz\_ratio}). Added geometric interpretation of the
+	emission surface $S = 4\pi l^2 + (\pi rl + \pi r^2)$ (cone inscribed
+	in sphere) and an explicit natural-units convention paragraph.
+	Added $q_P$ to inventory class~IV. Updated
+	\texttt{tab:final\_results\_confirmed} (tau $^\dagger$ note:
+	Shell Ref.\ and Full AMM coincide via $\mathcal{O}_\tau=1$) and
+	\texttt{tab:target\_comparison} (corrected scanner values; the
+	$0.0012$~ppm engine--scanner discrepancy is resolved). Renamed
+	\texttt{Q\_P\_INPUT}$\to$\texttt{Q\_P\_REFERENCE}. Removed a
+	duplicated paragraph in the Higgs--vector mixing section. Fixed SNO
+	bibliography (Charged-Current~$\to$~Neutral-Current), typos, and
+	removed the boxed ``Remark on the Muon Anomaly.'' \\
+	5.2.3 & 2026.11.09 &
+	Fixed cubic nonlinearity sign ($+\gamma\Psi^{3} \to -\gamma\Psi^{3}$,
+	self-focusing) and added Derrick-instability note. Replaced scalar
+	winding number with degree of map $\mathbf{n}: S^2 \to S^2$
+	(Manton--Sutcliffe 2004); $Q = K_{WC} = 10$ now stated as structural
+	postulate. Added inventory class~VI for legacy EWT constants
+	(diagnostic only), $r_\nu$ as derived quantity, $e$-notation warning,
+	and $K_{WC}$ vs.\ $Q$ distinction. Fixed \texttt{ewt\_robustness\_plots.py}:
+	hardcoded $A_\pi$, $C_{\text{fermion}}$, quark masses, and $N_\nu$
+	replaced with model-derived values; modules~6 and~9 use real
+	computations instead of synthetic placeholders. Minor encoding fix. \\
+	5.2.2 & 2026.11.08 &
+	Replaced the deprecated quadratic fermionic correction
+	$C_{\text{fermion}} = (1 + \pi^5 C_{\text{local}})^2$ with a linear
+	flavor deficit
+	$\epsilon_{\text{flavor}} = 1/(8\pi^5(1-\zeta))$, structurally
+	analogous to the magnetic deficit
+	$\epsilon_M = 1/(8\pi^7(1-\zeta))$ at the charged weak rung (both
+	follow $\epsilon_n = 1/(8\pi^n(1-\zeta))$ with $n \in \{5, 7\}$).
+	The Cabibbo relation becomes
+	$\sin\theta_C = \sqrt{M_d/M_s}\,(1 + \epsilon_{\text{flavor}})$, the
+	bare Gatto--Sartori--Tonin amplitude multiplied by a single lattice
+	deficit, consistent with the linear form of the bosonic corrections.
+	The previous quadratic form required non-standard quark masses to
+	agree with experiment; the new form uses standard PDG~2024 masses
+	(and a PDG~2022 variant for comparison), improving the agreement with
+	the measured Cabibbo angle. In the N-Stiffness section the flavor
+	deficit is expressed as $\epsilon_{\text{flavor}} =
+	1/(\pi\,N_{\text{geom}})$, the natural $\pi^1$ suppression
+	analogous to the $\pi^3$ suppression of $C_{\text{gap}}$. Updated
+	the inventory, the electroweak module
+	\texttt{ewt\_electroweak\_bosons.py}, and the engine
+	\texttt{ewt\_emergence\_engine.py} (\texttt{build\_geometric\_ladder}
+	now takes the lattice impedance $\zeta$); console outputs in
+	Appendix~A.3 regenerated. \\
+	5.2.1 & 2026.11.02 &
+	Renamed the mixed $W$--$Z$ operator from ``harmonic mean'' to
+	``parallel-impedance combination'', reflecting the correct
+	mathematical structure of $\pi^6\pi^7/(\pi^6+\pi^7)$ as the parallel
+	combination of two channel impedances. Replaced the informal
+	``$\pi^7 \to \infty$'' decoupling argument with an explicit
+	uniqueness criterion: $\pi^6$ and $\pi^7$ are fixed values, and the
+	limit is taken on the effective impedance, not on the rung number.
+	Added a discussion of the SM indirect electroweak fit
+	($M_W = 80.353 \pm 0.006$~GeV) in Section~3.1.4, noting that the
+	$\pm 6$~MeV SM uncertainty is input-parameter propagation only; the
+	realistic theory uncertainty ($\pm 10$--$15$~MeV) makes the 26~MeV
+	EWT--SM difference $\approx 2\sigma$, not $4.3\sigma$. Extended the
+	Higgs--vector mixing section with an explicit note on the auxiliary
+	spherical-mode masses (and their dependence on the legacy wave
+	constants of inventory class~V) and on the SME bounds on
+	Lorentz-violating operators ($\sim 10^{-16}$), which make on-shell
+	scalar--vector mixing experimentally indistinguishable from the SM
+	prohibition. Added the Gatto--Sartori--Tonin (1968) and Kleinert
+	(1987) references. \\
+	5.2.0 & 2026.11.02 &
+	Introduced the mixed $W$--$Z$ vertex operator, a harmonic
+	combination $O_{\text{mixed}} = \pi^6\pi^7/(\pi^6+\pi^7)$ of the
+	neutral and charged weak rungs. The pure $\pi^6$
+	operator is retained for genuinely neutral vertices ($Z$--$Z$,
+	$Z$--$H$); the mixed operator is used for the $W$--$Z$ vertex and
+	for the $W$--$H$ mixing angle. Updated inventory table. \\
+	5.1.8 & 2026.10.30 &
+	Extended the Abstract with explicit accounting of the four empirical
+	anchors ($r_e$, $m_e$, $c$, $e$), the single discrete postulate
+	$L_\mu = F_5 = 5$, and the geometrically fixed integer $K_{WC} = 10$.
+	Added Appendix, a complete inventory
+	classifying every model element as anchor, test anchor, postulate,
+	geometric integer, or parameter-free functional form. Downgraded
+	the null-probe metric encoding $v_\gamma = \eta$ from derived to
+	postulated, with explicit open-item remarks (M4.13) and falsification
+	conditions. Introduced a uniform ppm convention in the AMM section,
+	with reference to \texttt{ewt\_amm\_extended.py}, and reframed the
+	lepton anomalies as three independent evaluations of the same
+	geometric identity. Corrected the $B_c^{*+}$ wave-centre count from
+	$K_{WC}=59$ to $K_{WC}=66$ and removed the erroneous ``Topological
+	Isomorphism and Dual Realisation'' subsection built on the wrong
+	value.\\
+	5.1.7 & 2026.10.22 &
+	Corrected the optical refractive index from
+	$n_\gamma = (1-2r_s/r)^{-1/2}$ to $n_\gamma = \eta^{-1} = (1-r_s/r)^{-1}$,
+	which matches the exact Schwarzschild optical metric factor and removes
+	the spurious singularity at $r = 2r_s$. Split the derivation into the
+	timelike encoding $v_{\text{clock}} = \sqrt{\eta}$ and the null-probe
+	encoding $n_\gamma = \sqrt{g_{rr}/g_{00}} = \eta^{-1}$, closing the
+	algebraic gap. Updated the M4.3 and M4.5 numerical entries in the
+	local-metric validation table. \\
+	\midrule
+	
+	5.1.6 & 2026.10.18 &
+	Revised the electromagnetic consistency check: the SI
+	identity $e^2 = 4\pi\epsilon_0 m_e c^2 r_e$ is now written in EWT
+	natural units as $x\, e^2 = m_e r_e$ with the dimensionful
+	conversion factor $x = \mu_0/(4\pi) = 10^{-7}\,\text{m}^4$. Added
+	the explicit dimensional check $[x][e^2] = [\text{m}^6] = [m_e][r_e]$
+	and clarified that $x$ is a unit-conversion quantity (structural
+	form from $\alpha, e, h, c$; numerical value from SI conventions),
+	with $k_e = c^2 x$ in SI and $k_e = x$ only in the $c=1$ limit. In
+	the Remark on $\epsilon_0$, the role of the vacuum permittivity is
+	absorbed into $x$. \\
+	\midrule
+	
+	5.1.5 & 2026.10.17 &
+	Stated the muon label $L_\mu = F_5 = 5$ explicitly as the model's
+	sole discrete postulate in ``Status of Inputs'' and ``Final
+	Synthesis''. Aligned Pillar~3 with the Fibonacci label terminology
+	($L_\mu = F_5$, $L_\tau = F_9$) and corrected ``wave centres'' to
+	``lattice nodes'' in the closure criterion. Removed a residual
+	fragment from the Final Synthesis. \\
+	\midrule
+	
+	5.1.4 & 2026.10.17 &
+	Introduced a unified discrete operator for the nodal shell hierarchy,
+	$\Delta K_k = \mathrm{round}(10^k \pi^2)$ for the electron core
+	($k=0$) and $\mathrm{round}(10^k \cdot 2\pi^2)$ for the shells
+	($k\geq 1$), which generates $K_n = 10, 207, 2181, 21920$ without a
+	hard-coded seed. Added the ``Discrete Resonance Labels of the BCC
+	Lattice'' section with Fibonacci labels $F_{1+4k} = 1, 5, 34, 233$
+	and the ``Termination at Three Generations'' section with a candidate
+	closure criterion $K_n/L_n^2 > 1$, satisfied by the three observed
+	generations and violated by the formally generated fourth. Softened
+	stability language in the physical interpretation, reconciled
+	``interface tension'' with ``interface area'' and ``interface
+	contribution'', and rephrased ``topological invariant'' as
+	``topologically determined quantity''. Adopted the symmetric
+	Lorentz--Heaviside convention $\epsilon_0 = \mu_0 = 1$
+	($e^2 = 4\pi m_e r_e$); minor typographical corrections. \\
+	\midrule
+	
+	5.1.3 & 2026.10.16 &
+	Corrected the refractive-index encoding to $n_\gamma=(2\eta-1)^{-1/2}$
+	and distinguished timelike from null probes in the Summary of Local
+	Metric Observables. Added the algebraic derivation of
+	$\mathcal{O}_\mu = M_\mu/N_{\text{geom}} = 1/(4\pi^2)$ and clarified the
+	dimensional origin of the interface tension $\delta = L_\mu^2 = 25$.
+	Added notes on the role of $s_\mu$ in $\sigma_\tau$, on orbital-mode
+	internal-consistency tests, and on the status of $\epsilon_0$. Removed
+	the VEV-falsification paragraphs and the ``deeper mathematical
+	structure'' claim; rephrased the muon-anomaly remark. Minor
+	typographical corrections. \\
+	\midrule
+	
+	5.1.2 & 2026.10.09 &
+	Replaced the ``Mutual Falsification: The Ultimate Test'' subsection
+	with ``Two Readings of the Higgs Sector: What a Future Measurement
+	Can Settle''. Stated the three Standard-Model theses on the Higgs
+	explicitly (fundamental scalar, fundamental VEV, fundamental mass
+	mechanism) and contrasted them with the EWT reading. Removed the
+	claim that a confirmed substructure would make the Standard Model
+	``automatically fall''; the falsification now targets the
+	interpretation, not the effective theory. Added a cross-reference
+	to the $X_{\text{eff}}$ equation. Minor cross-reference corrections. \\
+	\midrule
+	
+	5.1.1 & 2026.09.28 &
+	Replaced the preliminary Higgs-sector verification proposal with a
+	fully formulated observable-based test section. Pillar~I is now
+	stated as a falsifiable zero-modification prediction under an
+	explicit restricted tree-level hypothesis ($\mu_{ZH} = 1$);
+	Pillar~II is presented as a search framework using Legendre
+	moments of the $Z$ production angle, with an explicit proof that
+	an $s$-only form factor leaves the normalised angular shape
+	unchanged. Added experimental references. \\
+	\midrule
+	
+	5.1.0 & 2026.09.26 &
+	Corrected the $r^5$ scaling label (``Resonance Mode Count'' instead
+	of ``Resonance Frequency''); added the Lock-In Test and in-platform
+	validation subsections; added OpenWave M4 references; minor
+	typographical corrections. \\
+\end{longtable}
 
 \clearpage
 
