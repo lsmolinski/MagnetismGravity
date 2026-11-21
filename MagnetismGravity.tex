@@ -2113,7 +2113,7 @@ The derivation of the Gravitational Constant \(\mathbf{G}\) follows a systematic
 
 \begin{enumerate}[label=\textbf{Step \arabic*:}]
 	\item \textbf{Establishment of the EM Base (\(\mathbf{G}_{\text{Base}}\)):}
-	The process is initiated by defining \(\mathbf{G}_{\text{Base}}\), which links the classical electron radius (\(r_e\)) and its mass (\(m_e\)). This term represents the maximum potential coupling scale before geometric dilution is applied.
+	The process is initiated by defining \(\mathbf{G}_{\text{Base}}\), which links the classical electron radius (\(r_e\)) and its mass (\(m_e\)). This term represents the maximum potential coupling scale before geometric dilution is applied. Although \(G_{\text{Base}}\) uses the mass metric \(m_e\) to map into SI units, \(m_e\) cancels completely when computing the dimensionless geometric coupling \(\alpha_G\) (Section~\ref{sec:gravitational_coupling}).
 	
 	\item \textbf{Geometric Stability Factor (\({\mathbf{A}_{\pi}}^{-1}\)):}
 	The first scaling step introduces the normalization to the static wavelength-to-radius ratio of the Soliton.
@@ -2428,7 +2428,7 @@ so the relative deviation is approximately \(0.0276\%\). This is a genuine geome
 
 One of the most striking structural features of the EWT geometric formulation is that the Planck length \(\lambda_l\) is completely independent of the electron mass. This can be seen by combining the geometric definitions of the reduced Planck constant and the gravitational constant.
 
-In the EWT framework, the reduced Planck constant is anchored to the electron soliton:
+In the EWT framework, the reduced Planck constant is anchored to the electron soliton (Section \ref{sec:planck_from_geometry}):
 \begin{equation}
 	\hbar_{\text{geom}} = \frac{m_e c r_e}{\alpha_{\text{geom}}}.
 	\label{eq:hbar_mass_dep}
@@ -2572,6 +2572,70 @@ identified with wave amplitude in metres, the vacuum permittivity is
 therefore not required as a dynamical parameter. Its entire role is
 absorbed into the single dimensionful factor
 $x = 10^{-7}\ \text{m}^4$ of Eq.~\eqref{eq:e2_geometric}.
+
+\subsection{The Gravitational Coupling Constant}
+\label{sec:gravitational_coupling}
+
+The hierarchy problem of physics---why gravity is immensely weaker than electromagnetism---is often treated as an unexplained fine-tuning. In the EWT framework, it is a direct geometric consequence of the BCC lattice stiffness. The dimensionless gravitational coupling constant between two electrons is defined as:
+\begin{equation}
+	\alpha_G = \frac{G_{\text{geom}} m_e^2}{\hbar_{\text{geom}} c}.
+\end{equation}
+Substituting the geometric expressions for \(G_{\text{geom}}\) and \(\hbar_{\text{geom}}\), the electron mass \(m_e\) and the electron radius \(r_e\) cancel identically:
+\begin{equation}
+	\boxed{
+		\alpha_G = \alpha_{\text{geom}} \frac{1}{A_\pi} \left(\frac{1}{N_{\text{geom}} A_\pi}\right)^3 \frac{1}{K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	}
+	\label{eq:alpha_G_geom}
+\end{equation}
+This result is profound: the ratio of the gravitational to electromagnetic force is a pure number derived entirely from the vacuum lattice geometry. The electron mass and the charge anchor \(e\) do not appear. The weakness of gravity is not a mystery; it is simply the geometric dilution factor of the BCC lattice. 
+
+Numerically, Eq.~\eqref{eq:alpha_G_geom} yields:
+\begin{equation}
+	\alpha_G^{\text{EWT}} = 1.752651 \times 10^{-45},
+\end{equation}
+which matches the CODATA 2022 recommended value:
+\begin{equation}
+	\alpha_G^{\text{CODATA}} = 1.751810 \times 10^{-45}.
+\end{equation}
+The relative error is approximately \(0.048\%\) (\(0.048018\%\)), confirming that the gravitational coupling is determined by the BCC lattice geometry.
+
+In pure geometric and lattice variables, with \(N_{\text{geom}} = 8\pi^4(1-\zeta)\) and \(A_\pi = 4\pi^3 + \pi^2 + \pi\), the coupling takes the dimensionless geometric form:
+\begin{equation}
+	\alpha_G
+	= \frac{\alpha_{\text{geom}}}
+	{A_\pi^4 \, N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:alpha_G_pure_geom}
+\end{equation}
+Factoring out the leading cubic BCC stiffness scale \(N_{\text{geom}}^3\) and the four-step geometric ladder \(A_\pi^4\) exposes the explicit lattice normalization:
+\begin{equation}
+	\alpha_G
+	= \frac{\alpha_{\text{geom}}}{N_{\text{geom}}^3}
+	\cdot \mathcal{N}_{\text{BCC}},
+	\qquad
+	\mathcal{N}_{\text{BCC}}
+	= \frac{1}{A_\pi^4 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:alpha_G_bcc_norm}
+\end{equation}
+
+Substituting \(\alpha_{\text{geom}} = (A_\pi - \epsilon_M)^{-1}\) from Eq.~\eqref{eq:alpha_normalized_final} into Eq.~\eqref{eq:alpha_G_geom} removes \(\alpha_{\text{geom}}\) and places the factor \((A_\pi - \epsilon_M)\) in the denominator:
+\begin{equation}
+	\alpha_G
+	= \frac{1}{(A_\pi - \epsilon_M)\, A_\pi^4 \, N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:alpha_G_no_alpha_geom}
+\end{equation}
+Factoring \(A_\pi\) out of \((A_\pi - \epsilon_M)\) in Eq.~\eqref{eq:alpha_G_no_alpha_geom} keeps unity in the numerator and exposes the dimensionless correction ratio \(\epsilon_M / A_\pi\):
+\begin{equation}
+	\alpha_G
+	= \frac{1}{A_\pi^5 \left(1 - \dfrac{\epsilon_M}{A_\pi}\right) N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
+	\label{eq:alpha_G_factored_Api}
+\end{equation}
+
+The hierarchy problem---why gravity is roughly \(10^{-45}\) times weaker than electromagnetism---is often treated in the Standard Model as an unexplained fine-tuning. The EWT framework resolves this through a compelling structural isomorphism with Sakharov's induced gravity, where gravity emerges as the elastic resistance of the vacuum and scales as \(G \propto 1/\Lambda^4\) \cite{sakharov1968}(Section \ref{sub:sakaharov_compare}). In EWT, the role of the quantum cutoff \(\Lambda\) is played by the geometric saturation constant \(A_\pi\), yielding the quartic attenuation \(A_\pi^{-4}\) directly from the linear and volumetric saturation of the BCC lattice. 
+
+The resulting geometric flow proceeds in two distinct phases: first, a volumetric push-out phase governed by the lattice stiffness \((N_{\text{geom}} A_\pi)^{-3}\), which quantifies the structural dilution of the soliton; second, a holographic surface projection \((K_{WC} \sqrt{N_{\nu,\text{eff}}})^{-1}\), which maps the 3D internal packing deficit onto the 2D observable boundary. The total suppression is therefore not an arbitrary number, but the algebraic product of the electromagnetic coupling \(\alpha_{\text{geom}}\) diluted by the immense geometric phase-space factor \(A_\pi^4 N_{\text{geom}}^3 \sim 10^{17}\). 
+
+Crucially, the electron mass \(m_e\) and radius \(r_e\) cancel identically in this derivation (Eq.~\eqref{eq:alpha_G_factored_Api}). This proves that the extreme weakness of gravity is entirely independent of the masses of the particles it acts upon. Gravity is thus revealed as an emergent, pressure-driven surface phenomenon, and the \(10^{45}\) hierarchy is not a mystery, but a direct algebraic consequence of the BCC vacuum's geometry.
+
 
 \subsection{Status of Inputs}
 \label{sec:inputs_planck}
@@ -3696,7 +3760,7 @@ The frameworks rely on fundamentally different scaling parameters to define the 
 	\item \textbf{Induced (Sakharov):} $G$ is inversely proportional to the **fourth power of the quantum field theory cutoff scale ($\mathbf{\Lambda}$)**, $\mathbf{G} \propto 1/\mathbf{\Lambda}^4$.
 \item \textbf{EWT (Geometric Soliton):} $G$ is scaled by the complete, derived, dimensionless scaling factor $\mathbf{\Omega_G}$:
 \begin{equation}
-	\mathbf{G} = \mathbf{G}_{\text{Base}} \cdot \mathbf{\Omega_G}, \quad \text{where } \mathbf{\Omega_G} = \frac{1}{\mathbf{A}_{\pi}} \cdot \left( \frac{1}{\mathbf{N}_{\text{final}} \mathbf{A}_{\pi}} \right)^{3} \cdot \frac{1}{\mathbf{K_{WC}} \cdot \sqrt{\mathbf{N}_{\nu, \text{effective}}}}
+	\mathbf{G} = \mathbf{G}_{\text{Base}} \cdot \mathbf{\Omega_G}, \quad \text{where } \mathbf{\Omega_G} = \frac{1}{\mathbf{A}_{\pi}} \cdot \left( \frac{1}{\mathbf{N}_{\text{geom}} \mathbf{A}_{\pi}} \right)^{3} \cdot \frac{1}{\mathbf{K_{WC}} \cdot \sqrt{\mathbf{N}_{\nu, \text{effective}}}}
 \end{equation}
 The EWT scaling factor $\mathbf{\Omega_G}$ is \textbf{explicitly constructed} from the Soliton's geometric parameters ($\mathbf{A}_{\pi}$, $\mathbf{N}_{\text{final}}$) and the unified volume deficit ($\mathbf{N}_{\nu, \text{effective}}$), linking $G$ to the Soliton's internal dynamics rather than external thermodynamic quantities.
 \end{itemize}
@@ -3721,7 +3785,7 @@ While Sakharov required vacuum fluctuations to define the scale, EWT identifies 
 
 This perspective implies that within a certain range, the gravitational strength is determined by the lattice's volumetric resistance, while the final $10^{42}$ weakness is dominated by the geometric projection:
 \begin{equation}
-	\mathbf{G} = \underbrace{\frac{\mathbf{G}_{\text{Base}}}{{\mathbf{A}_{\pi}}^{4} \cdot {\mathbf{N}_{\text{final}}}^{3}}}_{\text{Volumetric Energy Density  (push-out)}} \cdot \underbrace{\frac{1}{K_{WC} \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}}_{\text{Surface Dilution}}
+	\mathbf{G} = \underbrace{\frac{\mathbf{G}_{\text{Base}}}{{\mathbf{A}_{\pi}}^{4} \cdot {\mathbf{N}_{\text{geom}}}^{3}}}_{\text{Volumetric Energy Density  (push-out)}} \cdot \underbrace{\frac{1}{K_{WC} \cdot \sqrt{\mathbf{N}_{\nu, \text{eff}}}}}_{\text{Surface Dilution}}
 	\label{eq:G_final_quartic}
 \end{equation}
 
@@ -5994,62 +6058,6 @@ This expression reveals that the Planck temperature is not an abstract limit, bu
 \end{equation}
 which matches the standard Planck temperature, confirming that the thermodynamic scale of the vacuum is fully determined by the BCC geometry.
 
-\subsection{The Gravitational Coupling Constant}
-\label{sec:gravitational_coupling}
-
-The hierarchy problem of physics---why gravity is immensely weaker than electromagnetism---is often treated as an unexplained fine-tuning. In the EWT framework, it is a direct geometric consequence of the BCC lattice stiffness. The dimensionless gravitational coupling constant between two electrons is defined as:
-\begin{equation}
-	\alpha_G = \frac{G_{\text{geom}} m_e^2}{\hbar_{\text{geom}} c}.
-\end{equation}
-Substituting the geometric expressions for \(G_{\text{geom}}\) and \(\hbar_{\text{geom}}\), the electron mass \(m_e\) and the electron radius \(r_e\) cancel identically:
-\begin{equation}
-	\boxed{
-		\alpha_G = \alpha_{\text{geom}} \frac{1}{A_\pi} \left(\frac{1}{N_{\text{geom}} A_\pi}\right)^3 \frac{1}{K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
-	}
-	\label{eq:alpha_G_geom}
-\end{equation}
-This result is profound: the ratio of the gravitational to electromagnetic force is a pure number derived entirely from the vacuum lattice geometry. The electron mass and the charge anchor \(e\) do not appear. The weakness of gravity is not a mystery; it is simply the geometric dilution factor of the BCC lattice. 
-
-Numerically, Eq.~\eqref{eq:alpha_G_geom} yields:
-\begin{equation}
-	\alpha_G^{\text{EWT}} = 1.752651 \times 10^{-45},
-\end{equation}
-which matches the CODATA 2022 recommended value:
-\begin{equation}
-	\alpha_G^{\text{CODATA}} = 1.751810 \times 10^{-45}.
-\end{equation}
-The relative error is approximately \(0.048\%\) (\(0.048018\%\)), confirming that the gravitational coupling is determined by the BCC lattice geometry.
-
-In pure geometric and lattice variables, with \(N_{\text{geom}} = 8\pi^4(1-\zeta)\) and \(A_\pi = 4\pi^3 + \pi^2 + \pi\), the coupling takes the dimensionless geometric form:
-\begin{equation}
-	\alpha_G
-	= \frac{\alpha_{\text{geom}}}
-	{A_\pi^4 \, N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
-	\label{eq:alpha_G_pure_geom}
-\end{equation}
-Factoring out the leading cubic BCC stiffness scale \(N_{\text{geom}}^3\) and the four-step geometric ladder \(A_\pi^4\) exposes the explicit lattice normalization:
-\begin{equation}
-	\alpha_G
-	= \frac{\alpha_{\text{geom}}}{N_{\text{geom}}^3}
-	\cdot \mathcal{N}_{\text{BCC}},
-	\qquad
-	\mathcal{N}_{\text{BCC}}
-	= \frac{1}{A_\pi^4 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
-	\label{eq:alpha_G_bcc_norm}
-\end{equation}
-
-Substituting \(\alpha_{\text{geom}} = (A_\pi - \epsilon_M)^{-1}\) from Eq.~\eqref{eq:alpha_normalized_final} into Eq.~\eqref{eq:alpha_G_geom} removes \(\alpha_{\text{geom}}\) and places the factor \((A_\pi - \epsilon_M)\) in the denominator:
-\begin{equation}
-	\alpha_G
-	= \frac{1}{(A_\pi - \epsilon_M)\, A_\pi^4 \, N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
-	\label{eq:alpha_G_no_alpha_geom}
-\end{equation}
-Factoring \(A_\pi\) out of \((A_\pi - \epsilon_M)\) in Eq.~\eqref{eq:alpha_G_no_alpha_geom} keeps unity in the numerator and exposes the dimensionless correction ratio \(\epsilon_M / A_\pi\):
-\begin{equation}
-	\alpha_G
-	= \frac{1}{A_\pi^5 \left(1 - \dfrac{\epsilon_M}{A_\pi}\right) N_{\text{geom}}^3 \, K_{WC} \sqrt{N_{\nu,\text{eff}}}}.
-	\label{eq:alpha_G_factored_Api}
-\end{equation}
 
 \section{The Cosmological Constant from the BCC Lattice}
 \label{sec:cosmo_summary}
