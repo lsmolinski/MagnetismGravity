@@ -1,0 +1,19 @@
+[1/4] Loading physical constants...
+    G          = 6.674300e-11 m^3 kg^-1 s^-2
+    c          = 299792458.000 m/s
+    M_sun      = 1.989e+30 kg
+    R_sun      = 6.957e+08 m
+    r_s        = 2954.127 m
+    b          = 6.957e+08 m
+[2/4] Building the EMC refractive index and integration path...
+    L = sqrt(AU^2 - b^2) = 1.495963e+11 m
+[3/4] Computing the Shapiro delay by numerical integration...
+    Integral one-way  = 3.582727e+04 m
+    Delay round-trip  = 2.390138e-04 s
+    Delay round-trip  = 239.014 us
+[4/4] Comparing with the standard weak-field formula...
+    Standard delay     = 239.014 us
+    Relative difference = 0.000020%
+    RESULT: PASS (numerical quadrature matches standard formula)
+
+Done.

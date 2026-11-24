@@ -145,9 +145,15 @@ Reference experimental:
     rel_error     : 0.000019 %
 
 ==============================================================================
-alpha_G (EWT)    = 1.752651e-45
-alpha_G (CODATA) = 1.751810e-45
-Relative error   = 0.048018 %
+GRAVITATIONAL COUPLING CONSTANT (alpha_G)
+==============================================================================
+  Path 1 (from G_EWT and hbar)     = 1.752651e-45
+  Path 2 (geometric with alpha)    = 1.752651e-45
+  Path 3 (pure BCC geometry)       = 1.752651e-45
+  CODATA 2022 reference            = 1.751810e-45
+  Relative error (Path 3 vs CODATA)= 0.048018 %
+  -> m_e, r_e, G and hbar cancel entirely. Gravity is pure geometry.
+==============================================================================
 
 ==============================================================================
 Hubble Radius R_H = 1.382521e+26 m

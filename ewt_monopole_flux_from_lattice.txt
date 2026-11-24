@@ -1,0 +1,34 @@
+[1/4] Loading physical constants and EWT lattice parameters...
+    c                    = 299792458.000 m/s
+    m_e                  = 9.109383701500001e-31 kg
+    r_e                  = 2.817940326200000e-15 m
+    M_sun                = 1.989e+30 kg
+    R_sun                = 6.957e+08 m
+    N_ideal              = 779.272728272019322
+    zeta_est             = 6.033964371294027e-04
+    N_zeta               = 778.802517884227882
+    alpha_geo            = 0.007297338547954
+    L_p_geom             = 1.154700538379252
+
+[2/4] Test 1: pure BCC geometry...
+    G_EWT_pure           = 6.662662892091293e-11 m^3 kg^-1 s^-2
+    A_pure               = 2.948975829211922e+03 m
+    Difference in ppm    = 1743.57 ppm
+
+[3/4] Test 2: BCC geometry corrected by packing impedance...
+    G_EWT_zeta           = 6.674738142638409e-11 m^3 kg^-1 s^-2
+    A_zeta               = 2.954320482329130e+03 m
+    Difference in ppm    = 65.65 ppm
+
+[4/4] Solving radial Laplace equation with corrected geometric flux...
+    Max relative error of eta  = 5.684358e-14
+    at r                       = 1.043e+09 m
+    Robin relative residual    = 5.609927e-14
+
+Summary...
+    Pure geometry test: PASS (1743.57 ppm, expected scale)
+    Zeta-corrected test: PASS (65.65 ppm)
+    Profile verification: PASS
+    Robin boundary condition: PASS
+
+Done.

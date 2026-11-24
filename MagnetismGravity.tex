@@ -26,8 +26,8 @@
 \usepackage{longtable}
 \usepackage{float}
 \lstset{
-	inputencoding=utf8, 
-	extendedchars=true
+	inputencoding=utf8,
+	extendedchars=true,
 	language=Python,
 	basicstyle=\scriptsize\ttfamily,
 	keywordstyle=\color{blue},
@@ -37,8 +37,7 @@
 	numberstyle=\tiny\color{gray},
 	breaklines=true,
 	frame=single,
-	breaklines=true,
-	captionpos=b, 
+	captionpos=b,
 	tabsize=4
 }
 
@@ -73,7 +72,7 @@
 
 \begin{center}
 \today \\
-Version: 5.4.2	
+Version: 5.4.3	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -2646,7 +2645,7 @@ The only experimental inputs in the model are the geometric anchor, the electrom
 \end{equation}
 However, their epistemological status is not the same. 
 
-The speed of light \(c\) is a metric conversion between space and time (as established in Section~\ref{sec:c_as_metric}). The electron mass \(m_e\) acts as a mass-scale conversion. That mass is a purely derived geometric unit is explicitly demonstrated by the \(r^5\) scaling law and the dimensional reduction of the kilogram (Section~\ref{sec:mass_geometric_status}). Its status as a mere metric is then definitively proven by two independent geometric facts: it cancels identically in the algebraic derivation of the Planck length (Section~\ref{sec:planck_mass_cancellation}), and it is entirely absent from the computation of the lepton anomalous magnetic moments (Section~\ref{sec:amm_mass_independence}). 
+The speed of light \(c\) is a metric conversion between space and time (as established in Section~\ref{sec:c_as_metric}). The electron mass \(m_e\) acts as a mass-scale conversion. That mass is a purely derived geometric unit is explicitly demonstrated by the \(r^5\) scaling law and the dimensional reduction of the kilogram (Section~\ref{sec:mass_geometric_status}). Its status as a mere metric is then definitively proven by three independent geometric facts: it cancels identically in the algebraic derivation of the Planck length (Section~\ref{sec:planck_mass_cancellation}), it is entirely absent from the computation of the lepton anomalous magnetic moments (Section~\ref{sec:amm_mass_independence}), and it cancels completely in the dimensionless gravitational coupling constant (Section~\ref{sec:gravitational_coupling}).
 
 Like the Boltzmann constant \(k_B\), neither \(c\) nor \(m_e\) carries independent geometric dynamical information; they simply convert the internal BCC geometry into the SI units of metres, seconds, and kilograms. The true geometric anchors are \(r_e\) (the classical electron radius, linked to \(r_\nu\)) and \(e\) (the charge amplitude). 
 
@@ -3479,7 +3478,7 @@ Table~\ref{tab:local_metric_validation}.
 
 The numerical results reproduce the analytical predictions of this
 section. The scripts are part of the OpenWave research repository
-\cite{OpenWaveM4Metric}.
+\cite{OpenWaveM4Metric} and presented in appendix \ref{app:python_scripts}.
 
 For M4.3, M4.4, and M4.5 the encoding of the EMC density profile into
 the refractive index and the clock speed is taken from this manuscript;
@@ -3717,7 +3716,7 @@ for the gravitational sector are stated as follows.
 \end{itemize}
 
 The scripts are part of the OpenWave research repository
-\cite{OpenWaveM4Force}.
+\cite{OpenWaveM4Force} and presented in appendix \ref{app:python_scripts}.
 
 \section{Relation to Existing Emergent Gravity Frameworks}
 \label{sec:emergent_comparison}
@@ -9461,7 +9460,9 @@ These anchors are fixed by measurement and by the metric convention. They are no
 
 Of these anchors, \(c\) and \(m_e\) are a metric conversion factors rather than a dynamical parameters.  The true irreducible anchors are \(r_e\) and \(e\). 
 
-The electron mass \(m_e\) acts as a mass-scale conversion. That mass is a purely derived geometric unit is explicitly demonstrated by the \(r^5\) scaling law and the dimensional reduction of the kilogram (Section~\ref{sec:mass_geometric_status}). Its status as a mere metric is then definitively proven by two independent geometric facts: it cancels identically in the algebraic derivation of the Planck length (Section~\ref{sec:planck_mass_cancellation}), and it is entirely absent from the computation of the lepton anomalous magnetic moments (Section~\ref{sec:amm_mass_independence}). See G remainder factor in eq. \ref{eq:G_remainder} and $G_{base}$ in eq. \ref{eq:G_base_v2}. 
+The speed of light \(c\) is a metric conversion between space and time (as established in Section~\ref{sec:c_as_metric}).
+
+The electron mass \(m_e\) acts as a mass-scale conversion. That mass is a purely derived geometric unit is explicitly demonstrated by the \(r^5\) scaling law and the dimensional reduction of the kilogram (Section~\ref{sec:mass_geometric_status}). Its status as a mere metric is then definitively proven by three independent geometric facts: it cancels identically in the algebraic derivation of the Planck length (Section~\ref{sec:planck_mass_cancellation}), it is entirely absent from the computation of the lepton anomalous magnetic moments (Section~\ref{sec:amm_mass_independence}), and it cancels completely in the dimensionless gravitational coupling constant (Section~\ref{sec:gravitational_coupling}). See G remainder factor in eq. \ref{eq:G_remainder} and $G_{base}$ in eq. \ref{eq:G_base_v2}. 
 See also inventory section \ref{app:inventory_status}. 
 
 The cosmological sector extends this accounting by one further
@@ -9891,6 +9892,197 @@ caption={Console output from \texttt{ewt\_cosmological\_constant.py}.},
 label={lst:ewt_cosmological_constant_output}
 ]{ewt_cosmological_constant.txt}
 
+\subsubsection{AMM Structural Resonance}
+\label{app:ewt_amm_structural_resonance}
+
+\texttt{ewt\_amm\_structural\_resonance.py} analyzes the structural resonance modes of the lepton anomalous magnetic moments within the lattice framework.
+
+\lstinputlisting[
+language=Python,
+caption={Structural resonance analysis for lepton anomalous magnetic moments.},
+label={lst:ewt_amm_structural_resonance}
+]{ewt_amm_structural_resonance.py}
+
+\subsubsection{AMM Structural Resonance Output}
+\label{app:ewt_amm_structural_resonance_output}
+
+The console output of \texttt{ewt\_amm\_structural\_resonance.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_amm\_structural\_resonance.py}.},
+label={lst:ewt_amm_structural_resonance_output}
+]{ewt_amm_structural_resonance.txt}
+
+\subsubsection{EMC Far-Field Profile}
+\label{app:ewt_emc_far_field_profile}
+
+\texttt{ewt\_emc\_far\_field\_profile.py} computes the far-field profile of the Energy--Momentum / Elastic--Magnetic--Curvature (EMC) field in the asymptotic regime.
+
+\lstinputlisting[
+language=Python,
+caption={Asymptotic EMC far-field profile computation.},
+label={lst:ewt_emc_far_field_profile}
+]{ewt_emc_far_field_profile.py}
+
+\subsubsection{EMC Far-Field Profile Output}
+\label{app:ewt_emc_far_field_profile_output}
+
+The console output of \texttt{ewt\_emc\_far\_field\_profile.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_emc\_far\_field\_profile.py}.},
+label={lst:ewt_emc_far_field_profile_output}
+]{ewt_emc_far_field_profile.txt}
+
+\subsubsection{Gravitational Time Dilation}
+\label{app:ewt_gravitational_time_dilation}
+
+\texttt{ewt\_gravitational\_time\_dilation.py} evaluates gravitational time dilation from the geometric potential and lattice parameters of the model.
+
+\lstinputlisting[
+language=Python,
+caption={Gravitational time dilation calculation.},
+label={lst:ewt_gravitational_time_dilation}
+]{ewt_gravitational_time_dilation.py}
+
+\subsubsection{Gravitational Time Dilation Output}
+\label{app:ewt_gravitational_time_dilation_output}
+
+The console output of gravitational time dilation Output  is reproduced below.
+
+\lstinputlisting[
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+mathescape=false,
+texcl=false,
+escapechar={},
+literate={},
+caption={Console output from \texttt{ewt\_gravitational\_time\_dilation.py}.},
+label={lst:ewt_gravitational_time_dilation_output}
+]{ewt_gravitational_time_dilation.txt}
+
+
+\subsubsection{Light Bending EMC Displacement}
+\label{app:ewt_light_bending_emc_displacement}
+
+\texttt{ewt\_light\_bending\_emc\_displacement.py} computes light deflection and the corresponding EMC displacement profile in the gravitational field.
+
+\lstinputlisting[
+language=Python,
+caption={Light bending and EMC displacement calculation.},
+label={lst:ewt_light_bending_emc_displacement}
+]{ewt_light_bending_emc_displacement.py}
+
+\subsubsection{Light Bending EMC Displacement Output}
+\label{app:ewt_light_bending_emc_displacement_output}
+
+The console output of \texttt{ewt\_light\_bending\_emc\_displacement.py} is reproduced below.
+
+\lstinputlisting[
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+mathescape=false,
+texcl=false,
+escapechar={},
+literate={},
+caption={Console output from \texttt{ewt\_light\_bending\_emc\_displacement.py}.},
+label={lst:ewt_light_bending_emc_displacement_output}
+]{ewt_light_bending_emc_displacement.txt}
+
+\subsubsection{Monopole Flux from Lattice}
+\label{app:ewt_monopole_flux_from_lattice}
+
+\texttt{ewt\_monopole\_flux\_from\_lattice.py} derives monopole flux quantities directly from the underlying lattice geometry.
+
+\lstinputlisting[
+language=Python,
+caption={Lattice-derived monopole flux calculation.},
+label={lst:ewt_monopole_flux_from_lattice}
+]{ewt_monopole_flux_from_lattice.py}
+
+\subsubsection{Monopole Flux from Lattice Output}
+\label{app:ewt_monopole_flux_from_lattice_output}
+
+The console output of \texttt{ewt\_monopole\_flux\_from\_lattice.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_monopole\_flux\_from\_lattice.py}.},
+label={lst:ewt_monopole_flux_from_lattice_output}
+]{ewt_monopole_flux_from_lattice.txt}
+
+\subsubsection{Newtonian Force EMC}
+\label{app:ewt_newtonian_force_emc}
+
+\texttt{ewt\_newtonian\_force\_emc.py} computes the Newtonian force expression and its EMC geometric components.
+
+\lstinputlisting[
+language=Python,
+caption={Newtonian force and EMC components calculation.},
+label={lst:ewt_newtonian_force_emc}
+]{ewt_newtonian_force_emc.py}
+
+\subsubsection{Newtonian Force EMC Output}
+\label{app:ewt_newtonian_force_emc_output}
+
+The console output of \texttt{ewt\_newtonian\_force\_emc.py} is reproduced below.
+
+\lstinputlisting[
+language={},
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+caption={Console output from \texttt{ewt\_newtonian\_force\_emc.py}.},
+label={lst:ewt_newtonian_force_emc_output}
+]{ewt_newtonian_force_emc.txt}
+
+\subsubsection{Shapiro Delay}
+\label{app:ewt_shapiro_delay}
+
+\texttt{ewt\_shapiro\_delay.py} calculates the Shapiro time delay from the model's metric/potential formulation.
+
+\lstinputlisting[
+language=Python,
+caption={Shapiro time delay calculation.},
+label={lst:ewt_shapiro_delay}
+]{ewt_shapiro_delay.py}
+
+\subsubsection{Shapiro Delay Output}
+\label{app:ewt_shapiro_delay_output}
+
+The console output of \texttt{ewt\_shapiro\_delay.py} is reproduced below.
+
+\lstinputlisting[
+basicstyle=\scriptsize\ttfamily,
+breaklines=true,
+breakatwhitespace=false,
+frame=single,
+mathescape=false,
+texcl=false,
+escapechar={},
+literate={},
+caption={Console output from \texttt{ewt\_shapiro\_delay.py}.},
+label={lst:ewt_shapiro_delay_output}
+]{ewt_shapiro_delay.txt}
 
 \clearpage
 
@@ -10399,6 +10591,8 @@ Addison-Wesley.
 	
 	\bottomrule
 	\endlastfoot
+	5.4.2 & 2026.11.21 &
+	Repositioned the Change Log and the Gravitational Coupling Constant section for better logical flow, and completed the bibliography with the missing Haug references. Strengthened the derivation of the gravitational coupling by explicitly linking it to Sakharov's induced gravity and the two-phase geometric mechanism, thereby resolving the hierarchy problem. Corrected the BCC stiffness notation in the Sakharov comparison equations and clarified the role of the mass metric in the gravitational identity flow. Refined the mass-scan discussion by adding counterarguments regarding Jacobian compression and absolute mass steps between nodes. \\
 	5.4.1 & 2026.11.20 &
 	Updated particle mass reference values and recalculated relative errors 
 	across the manuscript, \texttt{ewt\_particle\_masses.py}, and its output 

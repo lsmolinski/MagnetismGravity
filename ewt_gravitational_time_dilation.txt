@@ -1,0 +1,20 @@
+[1/3] Loading physical constants...
+    G          = 6.674300e-11 m^3 kg^-1 s^-2
+    c          = 299792458.000 m/s
+    M_sun      = 1.989e+30 kg
+    R_sun      = 6.957e+08 m
+    r_s        = 2954.127 m
+[2/3] Computing EMC density ratio and internal clock speed...
+    eta = N_nu/N_stat = 0.999995753735
+    v_clock / c       = 0.999997876865
+    Phi_N at limb     = 2.123132e-06
+[3/3] Computing gravitational redshift and comparing with GR...
+    EWT predicted df/f        = -2.123135e-06
+    GR exact df/f             = -2.123135e-06
+    |EWT - GR exact|          = 0.000e+00  (identity check)
+    First-order -Phi_N        = -2.123132e-06  (sanity line)
+    Rel. diff. vs first-order = 0.000106%
+    Expected truncation x/4   = 0.000106%
+    RESULT: PASS (exact GR factor reproduced; first-order residue = x/4)
+
+Done.

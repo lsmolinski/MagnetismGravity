@@ -1,0 +1,21 @@
+[1/4] Loading physical constants...
+    G          = 6.674300e-11 m^3 kg^-1 s^-2
+    c          = 299792458.000 m/s
+    M_sun      = 1.989e+30 kg
+    R_sun      = 6.957e+08 m
+    r_s        = 2954.127 m
+    R_outer    = 3.478e+11 m
+    N_steps    = 20000
+[2/4] Solving the radial Laplace equation...
+    delta_eta(R_sun)   = -4.246264992174e-06
+    A_numerical        = 2.954126555055404e+03 m
+    A_expected = r_s   = 2.954126555055405e+03 m
+[3/4] Verifying numerical solution against analytic eta(r) profile...
+    Max relative error (eta) = 5.684358e-14
+    at r                     = 1.043e+09 m
+    Max relative error (delta_eta) = 2.494668e-08   (eta-relative / (r_s/r))
+[4/4] Summary...
+    Monopole amplitude: PASS (A_numerical == r_s)
+    Profile verification: PASS (numerical eta matches analytic eta)
+
+Done.

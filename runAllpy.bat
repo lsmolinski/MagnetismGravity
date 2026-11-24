@@ -11,22 +11,20 @@ if errorlevel 1 (
     exit /b 1
 )
 
-set "scripts=ewt_amm_extended.py ewt_amm_resonance_scanner.py ewt_amm_structural_resonance.py ewt_electroweak_bosons.py ewt_emergence_engine.py ewt_particle_masses.py ewt_robustness_plots.py ewt_cosmological_constant.py ewt_lock_in_scan.py"
-
 set "FAILED="
 set "OK_COUNT=0"
 set "FAIL_COUNT=0"
 
 REM ---------------------------------------------------------------
-REM Run each script and check its exit code
+REM Run each *.py script in current directory and check exit code
 REM ---------------------------------------------------------------
-for %%f in (%scripts%) do (
+for %%f in (*.py) do (
     echo.
     echo ============================================================
     echo Running %%f ...
     echo ============================================================
 
-    python3 -X utf8 %%f > %%~nf.txt 2>&1
+    python3 -X utf8 "%%f" > "%%~nf.txt" 2>&1
 
     if errorlevel 1 (
         set /a FAIL_COUNT+=1

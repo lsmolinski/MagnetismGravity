@@ -1,0 +1,24 @@
+[1/4] Loading physical constants and EWT density levels...
+    G          = 6.674300e-11 m^3 kg^-1 s^-2
+    c          = 299792458.000 m/s
+    M_sun      = 1.989e+30 kg
+    R_sun      = 6.957e+08 m
+    r_s        = 2954.127 m
+    N_stat     = 3.298652e+52
+    N_eff      = 6.252518e+48
+    N_max      = 5.300416e+54
+[2/4] Building EMC density profile and scalar encoding n(r)...
+    N_nu(R_sun) / N_stat = 0.999995753735
+    n(R_sun)              = 1.000004246283
+[3/4] Integrating the light bending angle using u = R/r ...
+    Integral over u     = 1.000007e+00
+    Integral over r     = 6.103627e-15
+    theta numerical     = 1.751722 arcsec
+    theta analytic      = 1.751710 arcsec
+[4/4] Comparing with the GR solar-limb prediction...
+    GR prediction        = 1.7517 arcsec
+    EWT numeric result   = 1.751722 arcsec
+    Relative difference  = 0.0012%
+    RESULT: PASS (within 1%)
+
+Done.

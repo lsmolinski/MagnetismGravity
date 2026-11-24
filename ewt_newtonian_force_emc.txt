@@ -1,0 +1,30 @@
+[1/5] Deriving G_geom from the M4.7 self-consistent trinity...
+    G_geom             = 6.677519975508460e-11 m^3 kg^-1 s^-2
+    lambda_l (derived) = 1.616646406608278e-35 m
+    alpha_geom         = 0.007297338549284
+    r_nu               = 2.817935436016830e-17 m
+    N_geom             = 778.8025178842
+
+[2/5] Accuracy statement (strength clause, accuracy half)...
+    G_CODATA            = 6.674305000000000e-11 m^3 kg^-1 s^-2
+    relative residual   = 0.048169 %
+    CODATA rel. unc. on G = 22 ppm (2.2e-5)
+    residual / uncertainty = 21.9x
+    Note: r_e, m_e, c are the dimensional anchors. The derivation
+          produces G_geom as a dimensionless ratio against
+          c^2 r_e / m_e, not G from nothing.
+
+[3/5] Loading physical parameters for the force test...
+    c          = 299792458.000 m/s
+    G_geom     = 6.677519975508460e-11 m^3 kg^-1 s^-2
+    A1 (Sun)   = 2955.552 m
+    A2 (Earth) = 0.009 m
+    R (1 AU)   = 1.496e+11 m
+
+[4/5] Performing mapped 3D spatial integration over [R, inf)...
+
+[5/5] Converting field integral to physical force...
+    |F_EMC| (numerical) = 3.544205553218e+22 N
+    |F_Newton|          = 3.544205979545e+22 N
+    Rel. diff.          = 1.202882579231e-05%
+    RESULT: PASS (normalization of A, K_emc and 4pi consistent; G_geom cancels)
