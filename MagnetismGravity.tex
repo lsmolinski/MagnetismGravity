@@ -72,7 +72,7 @@
 
 \begin{center}
 \today \\
-Version: 5.4.3	
+Version: 5.4.4	
 \end{center}
 
 % For convenience during refereeing: line numbers
@@ -2635,6 +2635,9 @@ The resulting geometric flow proceeds in two distinct phases: first, a volumetri
 
 Crucially, the electron mass \(m_e\) and radius \(r_e\) cancel identically in this derivation (Eq.~\eqref{eq:alpha_G_factored_Api}). This proves that the extreme weakness of gravity is entirely independent of the masses of the particles it acts upon. Gravity is thus revealed as an emergent, pressure-driven surface phenomenon, and the \(10^{45}\) hierarchy is not a mystery, but a direct algebraic consequence of the BCC vacuum's geometry.
 
+\paragraph{Scale Invariance and the Absence of Implicit Anchor Dependence.}
+A careful reader might note that the effective neutrino density \(N_{\nu,\text{eff}}\) entering Eq.~\eqref{eq:alpha_G_factored_Api} is defined via the ratio \((r_\nu/\lambda_l)^3\), and since \(\lambda_l\) is derived from \(r_e\), there appears to be an implicit dependence on the empirical anchors \(r_e\) and \(e\). However, this is not a dynamical dependence, but a manifestation of \emph{scale invariance}. The anchors \(r_e\) and \(e\) merely set the absolute unit scale (in metres) and do not dictate the geometric ratios. Specifically, the fundamental geometric link \(r_e = 100\,r_\nu\) enforces a rigid ratio, meaning the factor \((r_e/r_\nu)^6\) is a fixed geometric constant (\(10^{12}\)), while \(e\) cancels identically in the geometric fixed-point equation for \(r_\nu\) (Section~\ref{sec:gv_fixed_point}). Consequently, if one were to artificially scale the anchor \(r_e\) by any factor, the derived Planck length \(\lambda_l\) would scale by the exact same factor, leaving the dimensionless density \(N_{\nu,\text{eff}}\) and the coupling \(\alpha_G\) completely invariant. The gravitational coupling is therefore a pure, dimensionless geometric ratio of the BCC lattice, entirely independent of the numerical values of the empirical anchors.
+
 
 \subsection{Status of Inputs}
 \label{sec:inputs_planck}
@@ -2660,6 +2663,7 @@ The quantities \(G_{\text{geom}}\), \(\lambda_l\), \(\hbar_{\text{geom}}\), and 
 Solving this system is the geometric self-consistency of the model, not a stepwise derivation of one constant from another.
 
 In the standard framework the Planck-length relation links three independent empirical constants. In the present model the same relation emerges as an internal geometric condition, because both \(\hbar_{\text{geom}}\) and \(G_{\text{geom}}\) are already determined by the BCC lattice. The Planck scale is therefore not imported from the Standard Model; it is reconstructed as a consequence of the underlying geometry.
+
 
 \subsection{Duality of Soliton Density}
 \label{density_duality}
@@ -10591,6 +10595,8 @@ Addison-Wesley.
 	
 	\bottomrule
 	\endlastfoot
+	5.4.4 & 2026.11.24 &
+	Added a scale-invariance clarification to the gravitational coupling section, explicitly demonstrating that \(\alpha_G\) remains independent of the empirical anchor values due to the fixed \((r_e/r_\nu)^6\) geometric ratio. \\
 	5.4.3 & 2026.11.24 &
 	Added three-path gravitational coupling verification (\(\alpha_G\)) and explicit Planck-length mass-cancellation checks to \texttt{ewt\_emergence\_engine.py} and its console output. Updated the epistemological status of \(m_e\) to include its exact cancellation in \(\alpha_G\). Integrated 7 additional computational modules and console outputs into Appendix, and linked them from the numerical validation sections.\\
 	5.4.2 & 2026.11.21 &
