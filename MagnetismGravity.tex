@@ -1722,7 +1722,7 @@ where \(X_{\text{eff}}\) is the geometric dilution factor defined in Section~\re
 \subsection{Unified Geometric Coupling}
 \label{sec:unified_coupling}
 
-The transition from the statutory background to the effective density is governed by the unified coupling operator \(C_{\text{unif}}\) and the geometric dilution factor \(X_{\text{eff}}\), already introduced in Section~\ref{sec:planck_from_geometry}. Both quantities are fixed by the BCC lattice geometry and the electron wave-centre count \(K_{WC}=10\).
+The transition from the statutory background to the effective density is governed by the unified coupling operator \(C_{\text{unif}}\) and the geometric dilution factor \(X_{\text{eff}}\), already introduced in Section~\ref{sec:lambda_l_geom}. Both quantities are fixed by the BCC lattice geometry and the electron wave-centre count \(K_{WC}=10\).
 
 The resulting effective gravitational density is
 \begin{equation}
@@ -2642,28 +2642,41 @@ A careful reader might note that the effective neutrino density \(N_{\nu,\text{e
 \subsection{Status of Inputs}
 \label{sec:inputs_planck}
 
-The only experimental inputs in the model are the geometric anchor, the electromagnetic anchor, and two unit-conversion metrics:
+The only experimental inputs in the model are the electromagnetic amplitude anchor and three unit-conversion metrics:
 \begin{equation}
-	r_e,\quad e,\quad c,\quad m_e .
+	e_{\text{charge}},\quad c,\quad m_e,\quad k_B .
 \end{equation}
-However, their epistemological status is not the same. 
+However, their epistemological status is not the same.
 
-The speed of light \(c\) is a metric conversion between space and time (as established in Section~\ref{sec:c_as_metric}). The electron mass \(m_e\) acts as a mass-scale conversion. That mass is a purely derived geometric unit is explicitly demonstrated by the \(r^5\) scaling law and the dimensional reduction of the kilogram (Section~\ref{sec:mass_geometric_status}). Its status as a mere metric is then definitively proven by three independent geometric facts: it cancels identically in the algebraic derivation of the Planck length (Section~\ref{sec:planck_mass_cancellation}), it is entirely absent from the computation of the lepton anomalous magnetic moments (Section~\ref{sec:amm_mass_independence}), and it cancels completely in the dimensionless gravitational coupling constant (Section~\ref{sec:gravitational_coupling}).
+\paragraph{The metric conversions (\(c, m_e, k_B\).)}
+The speed of light \(c\) is a metric conversion between space and time (Section~\ref{sec:c_as_metric}). The electron mass \(m_e\) acts as a mass-scale conversion, and the Boltzmann constant \(k_B\) acts as a thermodynamic conversion. That mass is a purely derived geometric unit is explicitly demonstrated by the \(r^5\) scaling law and the dimensional reduction of the kilogram (Section~\ref{sec:mass_geometric_status}). Its status as a mere metric is definitively proven by three independent geometric facts: it cancels identically in the algebraic derivation of the Planck length (Section~\ref{sec:planck_mass_cancellation}), it is entirely absent from the computation of the lepton anomalous magnetic moments (Section~\ref{sec:amm_mass_independence}), and it cancels completely in the dimensionless gravitational coupling constant (Section~\ref{sec:gravitational_coupling}). Like \(k_B\), neither \(c\) nor \(m_e\) carries independent geometric dynamical information; they simply convert the internal BCC geometry into the SI units of metres, seconds, and kilograms.
 
-Like the Boltzmann constant \(k_B\), neither \(c\) nor \(m_e\) carries independent geometric dynamical information; they simply convert the internal BCC geometry into the SI units of metres, seconds, and kilograms. The true geometric anchors are \(r_e\) (the classical electron radius, linked to \(r_\nu\)) and \(e\) (the charge amplitude). 
+\paragraph{Structural coupling of \(r_e\).}
+Crucially, the classical electron radius \(r_e\) is \textbf{not} treated as an independent input anchor. Within the model's relation \(r_e = 100\,r_\nu\) (from the fixed-point equation for \(g_v\) and the \(r^5\) scaling law), its scale is structurally tied to the system and anchored through \(e_{\text{charge}}\) and the coupled algebraic relations rather than introduced as a separate empirical free parameter.
 
-In SI units, the relation between charge, \(\hbar\), and \(\alpha\) is \(e^2 = 4\pi\epsilon_0\hbar c\alpha\). In the EWT framework \(\epsilon_0\) is not an independent input: together with \(\mu_0\) it is fixed by the metric condition \(c^2 = 1/(\mu_0\epsilon_0)\) and therefore carries no new geometric information. No calibrated parameters appear in this section. Note that the lepton AMM sector, discussed in Section~\ref{sec:recursive_prediction}, introduces one additional discrete postulate, the muon Fibonacci label \(L_\mu = F_5 = 5\), which is absent from the gravitational and electromagnetic constants derived here.
+\paragraph{The electromagnetic anchor and Euler's number.}
+The only true empirical anchor of the geometric core is the elementary charge amplitude \(e_{\text{charge}}\). In the EWT framework, charge is identified with wave amplitude, so \(e_{\text{charge}}\) has the dimension of length. Its SI numerical value is \(e_{\text{charge}} = 1.602176634 \times 10^{-19}\text{ m}\), which sets the absolute scale of the lattice.
+\textit{Notation warning:} throughout the text, the symbol \(\mathrm{e}\) appearing in the geometric expressions for \(S_{\text{tot}}\) (Eq.~\eqref{eq:S_tot}) and \(r_\nu\) (Eq.~\eqref{eq:r_nu_geom}) denotes Euler's number (\(2.71828\ldots\)), not the elementary charge. The two are physically unrelated and are separated in the Python implementation (\texttt{E\_CHARGE\_CODATA} vs \texttt{EULER}).
 
-The cosmological sector, discussed in Section~\ref{sec:cosmo_summary}, introduces one further empirical anchor beyond the four above: the present CMB temperature \(T_{\rm cmb,0} = 2.7255 \pm 0.0006\)~K (COBE/FIRAS~\cite{Fixsen2009}). The exact SI conversion constant \(k_B\) enters the same sector, but it carries no dynamical information: like \(c\) and \(m_e\), it is a unit-conversion factor fixed by the SI 2019 definitions. With these additions, the cosmological chain predicts \(H_0\) and the de Sitter value of \(\Lambda\) from the same BCC geometry, as detailed in Section~\ref{sec:cosmo_summary}.
+\paragraph{The zero-parameter limit and the choice of units.}
+The fact that \(e_{\text{charge}}\) is the sole anchor is a statement about our choice of units. If one adopts the natural EWT units where \(r_e = 1\), \(c = 1\), and \(m_e = 1\), the model contains \textbf{zero continuous dimensional parameters}. In these natural units, the anchor \(e_{\text{charge}}\) is no longer an independent input but a dimensionless geometric ratio:
+\begin{equation}
+	e_{\text{charge}}^{\text{natural}} = \frac{\sqrt{\alpha_{\text{geom}}}}{100 \, S_{\text{tot}}} \approx 7.3 \times 10^{-5}.
+\end{equation}
+Thus, the only "input" in the model is the arbitrary choice of the metre, which sets the absolute scale. All physical constants (\(G_{\text{geom}}\), \(\hbar_{\text{geom}}\), \(\alpha_{\text{geom}}\), etc.) emerge as pure, dimensionless geometric ratios of the BCC lattice.
 
-The quantities \(G_{\text{geom}}\), \(\lambda_l\), \(\hbar_{\text{geom}}\), and \(\alpha_{\text{geom}}\) are not independent predictions. They form a single closed algebraic system fixed by the BCC lattice geometry, the soliton anchors (\(r_e, e\)), the metric conversions (\(c, m_e\)), and the geometric self-consistency condition:
+\paragraph{Electromagnetic consistency and \(\epsilon_0\).}
+In SI units, the relation between charge, \(\hbar\), and \(\alpha\) is \(e_{\text{charge}}^2 = 4\pi\epsilon_0\hbar c\alpha\). In the EWT framework \(\epsilon_0\) is not an independent input: together with \(\mu_0\) it is fixed by the metric condition \(c^2 = 1/(\mu_0\epsilon_0)\) and therefore carries no new geometric information. No calibrated parameters appear in this section. Note that the lepton AMM sector introduces one additional discrete postulate, the muon Fibonacci label \(L_\mu = F_5 = 5\), which is absent from the gravitational and electromagnetic constants derived here.
+
+\paragraph{The cosmological sector.}
+The cosmological sector introduces one further empirical anchor beyond \(e_{\text{charge}}\): the present CMB temperature \(T_{\rm cmb,0} = 2.7255 \pm 0.0006\)~K (COBE/FIRAS~\cite{Fixsen2009}). The exact SI conversion constant \(k_B\) enters the same sector, but it carries no dynamical information: like \(c\) and \(m_e\), it is a unit-conversion factor fixed by the SI 2019 definitions. With these additions, the cosmological chain predicts \(H_0\) and the de Sitter value of \(\Lambda\) from the same BCC geometry, as detailed in Section~\ref{sec:cosmo_summary}.
+
+\paragraph{A closed algebraic system.}
+The quantities \(G_{\text{geom}}\), \(\lambda_l\), \(\hbar_{\text{geom}}\), and \(\alpha_{\text{geom}}\) are not independent predictions. They form a single closed algebraic system fixed by the BCC lattice geometry, the single anchor \(e_{\text{charge}}\), the metric conversions (\(c, m_e, k_B\)), and the geometric self-consistency condition:
 \begin{equation}
 	\lambda_l = \sqrt{\frac{\hbar_{\text{geom}}\,G_{\text{geom}}}{c^3}} .
 \end{equation}
-Solving this system is the geometric self-consistency of the model, not a stepwise derivation of one constant from another.
-
-In the standard framework the Planck-length relation links three independent empirical constants. In the present model the same relation emerges as an internal geometric condition, because both \(\hbar_{\text{geom}}\) and \(G_{\text{geom}}\) are already determined by the BCC lattice. The Planck scale is therefore not imported from the Standard Model; it is reconstructed as a consequence of the underlying geometry.
-
+Solving this system is the geometric self-consistency of the model, not a stepwise derivation of one constant from another. In the standard framework the Planck-length relation links three independent empirical constants. In the present model the same relation emerges as an internal geometric condition, because both \(\hbar_{\text{geom}}\) and \(G_{\text{geom}}\) are already determined by the BCC lattice. The Planck scale is therefore not imported from the Standard Model; it is reconstructed as a consequence of the underlying geometry.
 
 \subsection{Duality of Soliton Density}
 \label{density_duality}
